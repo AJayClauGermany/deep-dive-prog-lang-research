@@ -79,7 +79,7 @@ def fetch(url):
     parts = urlsplit(fetch_url)
     frag = urlsplit(url).fragment if mode == "page" else ""
     last = None
-    for attempt in range(3):
+    for attempt in range(5):
         try:
             with host_lock(parts.netloc):
                 r = session().get(fetch_url.split("#")[0], timeout=(15, 40), stream=True, allow_redirects=True)
@@ -101,9 +101,9 @@ def fetch(url):
         except Exception as e:
             last = {"status": "error", "http": None, "note": f"{type(e).__name__}: {str(e)[:100]}"}
             time.sleep(2 * (attempt + 1)); continue
-        if code in (429, 502, 503, 504) and attempt < 2:
+        if code in (429, 502, 503, 504) and attempt < 4:
             last = {"status": "error", "http": code}
-            time.sleep(4 * (attempt + 1)); continue
+            time.sleep(5 * (attempt + 1)); continue
         res = {"http": code}
         if final.split("#")[0].rstrip("/") != fetch_url.split("#")[0].rstrip("/") and mode == "page":
             res["redirected_to"] = final
