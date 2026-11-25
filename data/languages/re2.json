@@ -1,0 +1,372 @@
+{
+ "id": "re2",
+ "name": "RE2 syntax",
+ "aliases": [
+  "RE2 regular expressions",
+  "Go regexp syntax"
+ ],
+ "categories": [
+  "pattern-matching",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Russ Cox"
+ ],
+ "summary": "The regular-expression dialect accepted by Google's RE2 library and its ports (Go's regexp, RE2/J): a Perl/PCRE-like syntax deliberately restricted to constructs matchable in linear time with automata (no backreferences or lookaround), with leftmost-first or POSIX leftmost-longest semantics.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "homepage": "https://github.com/google/re2",
+ "influenced_by": [
+  "pcre",
+  "regex-posix"
+ ],
+ "related": [
+  {
+   "id": "pcre",
+   "relation": "family"
+  },
+  {
+   "id": "go",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: the RE2 Syntax wiki page (mirrored as doc/syntax.txt in the repository) and Go's regexp/syntax package documentation define the dialect; Russ Cox's article series is the design rationale.",
+  "0": "RE2 (C++: parser, compiler to a Prog, and DFA / NFA / one-pass / bit-state matchers), Go's regexp package, and RE2/J (Java)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "RE2 — source repository",
+   "url": "https://github.com/google/re2",
+   "implementation": "RE2",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — parse.cc (regexp parser and simplifier input)",
+   "url": "https://github.com/google/re2/blob/main/re2/parse.cc",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — regexp.h (Regexp AST)",
+   "url": "https://github.com/google/re2/blob/main/re2/regexp.h",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — compile.cc (compile to Prog instructions)",
+   "url": "https://github.com/google/re2/blob/main/re2/compile.cc",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "bytecode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — dfa.cc (lazily built DFA)",
+   "url": "https://github.com/google/re2/blob/main/re2/dfa.cc",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — nfa.cc (Pike VM / Thompson NFA simulation)",
+   "url": "https://github.com/google/re2/blob/main/re2/nfa.cc",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — onepass.cc (one-pass matcher)",
+   "url": "https://github.com/google/re2/blob/main/re2/onepass.cc",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2 — bitstate.cc (bit-state backtracker)",
+   "url": "https://github.com/google/re2/blob/main/re2/bitstate.cc",
+   "implementation": "RE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go — regexp/syntax/parse.go",
+   "url": "https://github.com/golang/go/blob/master/src/regexp/syntax/parse.go",
+   "implementation": "Go regexp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go — regexp/exec.go (choice of matching engine)",
+   "url": "https://github.com/golang/go/blob/master/src/regexp/exec.go",
+   "implementation": "Go regexp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RE2/J — Parser.java",
+   "url": "https://github.com/google/re2j/blob/master/java/com/google/re2j/Parser.java",
+   "implementation": "RE2/J",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "RE2 Syntax (wiki)",
+   "url": "https://github.com/google/re2/wiki/Syntax",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "RE2 doc/syntax.txt (syntax table source)",
+   "url": "https://github.com/google/re2/blob/main/doc/syntax.txt",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "RE2 — re2.h public API (options, longest-match, encodings)",
+   "url": "https://github.com/google/re2/blob/main/re2/re2.h",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Go package regexp/syntax — syntax accepted by Go regular expressions",
+   "url": "https://pkg.go.dev/regexp/syntax",
+   "implementation": "Go regexp",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "RE2: a principled approach to regular expression matching (announcement)",
+   "url": "https://opensource.googleblog.com/2010/03/re2-principled-approach-to-regular.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2010,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Regular Expression Matching Can Be Simple And Fast",
+   "url": "https://swtch.com/~rsc/regexp/regexp1.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2007,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Regular Expression Matching: the Virtual Machine Approach",
+   "url": "https://swtch.com/~rsc/regexp/regexp2.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2009,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Regular Expression Matching in the Wild (RE2 internals)",
+   "url": "https://swtch.com/~rsc/regexp/regexp3.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2010,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Regular Expression Matching with a Trigram Index",
+   "url": "https://swtch.com/~rsc/regexp/regexp4.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2012,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "Implementing Regular Expressions (Russ Cox's index of articles and references)",
+   "url": "https://swtch.com/~rsc/regexp/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Russ Cox"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — RE2 (software)",
+   "url": "https://en.wikipedia.org/wiki/RE2_(software)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

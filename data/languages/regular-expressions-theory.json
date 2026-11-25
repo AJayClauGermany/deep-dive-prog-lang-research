@@ -1,0 +1,421 @@
+{
+  "id": "regular-expressions-theory",
+  "name": "Regular expressions / Kleene algebra",
+  "aliases": [
+    "regular expressions (formal)",
+    "regular events",
+    "Kleene algebra",
+    "KAT"
+  ],
+  "categories": [
+    "theoretical-model",
+    "pattern-matching"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [],
+  "first_appeared": 1951,
+  "designers": [
+    "Stephen C. Kleene"
+  ],
+  "summary": "Kleene's algebraic notation for regular languages (union, concatenation, star), equivalent to finite automata (Kleene's theorem), and its axiomatisation as Kleene algebra (Kozen) and Kleene algebra with tests. It is the formal basis of practical regex dialects (POSIX, PCRE, RE2, which are separate entries).",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [],
+  "related": [
+    {
+      "id": "finite-automata",
+      "relation": "family"
+    },
+    {
+      "id": "regex-posix",
+      "relation": "family"
+    },
+    {
+      "id": "re2",
+      "relation": "family"
+    },
+    {
+      "id": "context-free-grammars",
+      "relation": "subset-of"
+    }
+  ],
+  "level_notes": {
+    "0": "Mechanisations (Lean mathlib, Coq RegLang, Isabelle AFP) of regular expressions, derivatives and Kleene algebra."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Kleene (1951) — Representation of Events in Nerve Nets and Finite Automata (RAND RM-704)",
+      "url": "https://www.rand.org/content/dam/rand/pubs/research_memoranda/2008/RM704.pdf",
+      "concepts": [
+        "automata",
+        "history",
+        "formal-grammars"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stephen C. Kleene"
+      ],
+      "year": 1951
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Brzozowski (1964) — Derivatives of Regular Expressions",
+      "url": "https://doi.org/10.1145/321239.321249",
+      "concepts": [
+        "automata",
+        "rewriting"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Janusz A. Brzozowski"
+      ],
+      "year": 1964
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Thompson (1968) — Regular Expression Search Algorithm",
+      "url": "https://doi.org/10.1145/363347.363387",
+      "concepts": [
+        "automata",
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Ken Thompson"
+      ],
+      "year": 1968
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Kozen (1994) — A Completeness Theorem for Kleene Algebras and the Algebra of Regular Events",
+      "url": "https://doi.org/10.1006/inco.1994.1037",
+      "concepts": [
+        "logic-foundations",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Dexter Kozen"
+      ],
+      "year": 1994
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Antimirov (1996) — Partial Derivatives of Regular Expressions and Finite Automaton Constructions",
+      "url": "https://doi.org/10.1016/0304-3975(95)00182-4",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Valentin Antimirov"
+      ],
+      "year": 1996
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/RegularExpressions.lean (syntax, matching via derivatives)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/RegularExpressions.lean",
+      "concepts": [
+        "formal-semantics",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "RegLang — Coq library of regular languages (regex, DFA/NFA, Myhill-Nerode)",
+      "url": "https://github.com/coq-community/reglang",
+      "concepts": [
+        "automata",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — Regular Sets and Expressions",
+      "url": "https://www.isa-afp.org/entries/Regular-Sets.html",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — Unified Decision Procedures for Regular Expression Equivalence",
+      "url": "https://www.isa-afp.org/entries/Regex_Equivalence.html",
+      "concepts": [
+        "verification",
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — Kleene Algebra",
+      "url": "https://www.isa-afp.org/entries/Kleene_Algebra.html",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Cox — Regular Expression Matching Can Be Simple And Fast (Thompson NFA vs backtracking)",
+      "url": "https://swtch.com/~rsc/regexp/regexp1.html",
+      "concepts": [
+        "automata",
+        "performance",
+        "comparison"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Russ Cox"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Cox — Implementing Regular Expressions (article series index)",
+      "url": "https://swtch.com/~rsc/regexp/",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Russ Cox"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Owens, Reppy & Turon (2009) — Regular-expression Derivatives Re-examined",
+      "url": "https://www.ccs.neu.edu/home/turon/re-deriv.pdf",
+      "concepts": [
+        "automata",
+        "lexer"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Scott Owens",
+        "John Reppy",
+        "Aaron Turon"
+      ],
+      "year": 2009
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Regular expressions",
+      "url": "https://introtcs.org/public/lec_05_infinite.html#regexpsec",
+      "concepts": [
+        "formal-grammars",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Limitations of regular expressions and the pumping lemma",
+      "url": "https://introtcs.org/public/lec_05_infinite.html#limitations-of-regular-expressions-and-the-pumping-lemma",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Erickson — Models of Computation: Regular Languages (lecture notes)",
+      "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/models/02-regular.pdf",
+      "concepts": [
+        "formal-grammars",
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Jeff Erickson"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Software Foundations vol. 1 — IndProp: inductive definition of regular-expression matching (Coq)",
+      "url": "https://softwarefoundations.cis.upenn.edu/lf-current/IndProp.html",
+      "concepts": [
+        "formal-semantics",
+        "pattern-matching"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Benjamin C. Pierce et al."
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Regular expression: Formal language theory",
+      "url": "https://en.wikipedia.org/wiki/Regular_expression#Formal_language_theory",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Regular expression: Deciding equivalence of regular expressions",
+      "url": "https://en.wikipedia.org/wiki/Regular_expression#Deciding_equivalence_of_regular_expressions",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Regular expression: History",
+      "url": "https://en.wikipedia.org/wiki/Regular_expression#History",
+      "concepts": [
+        "history"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Kleene algebra",
+      "url": "https://en.wikipedia.org/wiki/Kleene_algebra",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Regular language",
+      "url": "https://en.wikipedia.org/wiki/Regular_language",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — Kleene algebra",
+      "url": "https://ncatlab.org/nlab/show/Kleene+algebra",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — regular language",
+      "url": "https://ncatlab.org/nlab/show/regular+language",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

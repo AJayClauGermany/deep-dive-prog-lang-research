@@ -1,0 +1,226 @@
+{
+ "id": "avr-assembly",
+ "name": "AVR assembly",
+ "aliases": [
+  "Atmel AVR assembly",
+  "AVR8"
+ ],
+ "categories": [
+  "assembly"
+ ],
+ "paradigms": [
+  "imperative",
+  "load-store"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1997,
+ "designers": [
+  "Alf-Egil Bogen",
+  "Vegard Wollan"
+ ],
+ "summary": "Assembly language of Atmel's (now Microchip's) 8-bit AVR Harvard-architecture microcontrollers, best known from the Arduino Uno's ATmega328P; 32 general-purpose registers and mostly single-cycle 16-bit instructions.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".asm",
+  ".s",
+  ".S",
+  ".inc"
+ ],
+ "homepage": "https://www.microchip.com/",
+ "level_notes": {
+  "1": "Microchip's instruction set manual defines the ISA; there are two assembler dialects, Atmel/Microchip AVRASM2 syntax and GNU avr-as syntax. The calling convention is defined by avr-gcc.",
+  "0": "No reference implementation; AVRA, GNU binutils, LLVM, simavr and QEMU are independent implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AVR Instruction Set Manual (Microchip DS40002198A)",
+   "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/AVR-Instruction-Set-Manual-DS40002198A.pdf",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 2020,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AVR Assembler User Guide (Microchip DS40001917A)",
+   "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/40001917A.pdf",
+   "concepts": [
+    "assembler-directives",
+    "macros",
+    "expressions"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — AVR Dependent Features",
+   "url": "https://sourceware.org/binutils/docs/as/AVR_002dDependent.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "avr-gcc ABI (GCC wiki: register usage, calling convention)",
+   "url": "https://gcc.gnu.org/wiki/avr-gcc",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "implementation": "GCC",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "avr-libc — Using the GNU tools: avr-as assembler programs",
+   "url": "https://www.nongnu.org/avr-libc/user-manual/assembler.html",
+   "concepts": [
+    "hello-world",
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "avr-libc — Inline Assembler Cookbook",
+   "url": "https://www.nongnu.org/avr-libc/user-manual/inline_asm.html",
+   "concepts": [
+    "ffi",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "avr-libc user manual",
+   "url": "https://www.nongnu.org/avr-libc/user-manual/",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "AVRA — open-source AVR assembler (Atmel-compatible syntax)",
+   "url": "https://github.com/Ro5bert/avra",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "AVRA",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "simavr — AVR simulator",
+   "url": "https://github.com/buserror/simavr",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "simavr",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simavr sim/sim_core.c — AVR instruction decoder and executor",
+   "url": "https://github.com/buserror/simavr/blob/master/simavr/sim/sim_core.c",
+   "concepts": [
+    "interpreter",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "simavr",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM AVRInstrInfo.td — AVR backend instruction definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/AVR/AVRInstrInfo.td",
+   "concepts": [
+    "instruction-set",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/avr/insn.decode — AVR instruction decoder",
+   "url": "https://github.com/qemu/qemu/blob/master/target/avr/insn.decode",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Atmel AVR instruction set",
+   "url": "https://en.wikipedia.org/wiki/Atmel_AVR_instruction_set",
+   "concepts": [
+    "instruction-set",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

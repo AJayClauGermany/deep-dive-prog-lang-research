@@ -1,0 +1,589 @@
+{
+ "id": "typst",
+ "name": "Typst",
+ "aliases": [],
+ "categories": [
+  "document-typesetting",
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional",
+  "markup"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2023,
+ "designers": [
+  "Laurenz Mädje",
+  "Martin Haug"
+ ],
+ "summary": "A markup-based typesetting system and language designed as a modern alternative to LaTeX: lightweight markup and math modes combined with an embedded, dynamically typed, functional scripting language, set and show rules for styling, and incremental compilation.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".typ"
+ ],
+ "homepage": "https://typst.app/",
+ "influenced_by": [
+  "latex",
+  "markdown",
+  "rust"
+ ],
+ "related": [
+  {
+   "id": "latex",
+   "relation": "family"
+  },
+  {
+   "id": "rust",
+   "relation": "implemented-in"
+  }
+ ],
+ "level_notes": {
+  "0": "The open-source Rust compiler is the only implementation and defines the language.",
+  "1": "The online reference documentation (typst.app/docs) is the language reference; no separate specification."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "typst/typst — the Typst compiler (Rust)",
+   "url": "https://github.com/typst/typst",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-syntax lexer.rs — mode-dependent lexer (markup, math, code)",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-syntax/src/lexer.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-syntax parser.rs — incremental parser producing a lossless syntax tree",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-syntax/src/parser.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-syntax kind.rs — syntax node kinds",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-syntax/src/kind.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "keywords"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-eval flow.rs — if/while/for, break/continue/return",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-eval/src/flow.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-eval rules.rs — evaluating set and show rules",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-eval/src/rules.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-eval import.rs — modules, imports and packages",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-eval/src/import.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-library foundations/styles.rs — style chains",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-library/src/foundations/styles.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "typst-layout inline/linebreak.rs — Knuth-Plass style paragraph line breaking",
+   "url": "https://github.com/typst/typst/blob/main/crates/typst-layout/src/inline/linebreak.rs",
+   "authority": "official",
+   "implementation": "typst (Rust)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst documentation (reference)",
+   "url": "https://typst.app/docs/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Syntax: modes (markup, math, code)",
+   "url": "https://typst.app/docs/reference/syntax/#modes",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Syntax: markup",
+   "url": "https://typst.app/docs/reference/syntax/#markup",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Syntax: comments",
+   "url": "https://typst.app/docs/reference/syntax/#comments",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Syntax: escape sequences",
+   "url": "https://typst.app/docs/reference/syntax/#escapes",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Syntax: identifiers",
+   "url": "https://typst.app/docs/reference/syntax/#identifiers",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: blocks (code and content blocks)",
+   "url": "https://typst.app/docs/reference/scripting/#blocks",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: let bindings and destructuring",
+   "url": "https://typst.app/docs/reference/scripting/#bindings",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "destructuring"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: conditionals",
+   "url": "https://typst.app/docs/reference/scripting/#conditionals",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: loops",
+   "url": "https://typst.app/docs/reference/scripting/#loops",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: fields and methods",
+   "url": "https://typst.app/docs/reference/scripting/#methods",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: modules",
+   "url": "https://typst.app/docs/reference/scripting/#modules",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: packages",
+   "url": "https://typst.app/docs/reference/scripting/#packages",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Scripting: operators",
+   "url": "https://typst.app/docs/reference/scripting/#operators",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Styling: set rules",
+   "url": "https://typst.app/docs/reference/styling/#set-rules",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Styling: show rules",
+   "url": "https://typst.app/docs/reference/styling/#show-rules",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Context (contextual content, state)",
+   "url": "https://typst.app/docs/reference/context/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: str",
+   "url": "https://typst.app/docs/reference/foundations/str/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: array",
+   "url": "https://typst.app/docs/reference/foundations/array/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: dictionary",
+   "url": "https://typst.app/docs/reference/foundations/dictionary/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: function (closures, named args, with)",
+   "url": "https://typst.app/docs/reference/foundations/function/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: type",
+   "url": "https://typst.app/docs/reference/foundations/type/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: label",
+   "url": "https://typst.app/docs/reference/foundations/label/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Model: ref (references)",
+   "url": "https://typst.app/docs/reference/model/ref/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Typst reference — Foundations: eval",
+   "url": "https://typst.app/docs/reference/foundations/eval/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Typst changelog",
+   "url": "https://typst.app/docs/changelog/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Typst tutorial",
+   "url": "https://typst.app/docs/tutorial/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Typst guide for LaTeX users",
+   "url": "https://typst.app/docs/guides/for-latex-users/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Laurenz Mädje — Layout models (design notes by a Typst creator)",
+   "url": "https://laurmaedje.github.io/posts/layout-models/",
+   "authority": "designer",
+   "authors": [
+    "Laurenz Mädje"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Typst",
+   "url": "https://en.wikipedia.org/wiki/Typst",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Typst",
+   "url": "https://pldb.io/concepts/typst.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

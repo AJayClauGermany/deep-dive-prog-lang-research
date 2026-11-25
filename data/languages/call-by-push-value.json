@@ -1,0 +1,213 @@
+{
+ "id": "call-by-push-value",
+ "name": "Call-by-push-value",
+ "aliases": [
+  "CBPV"
+ ],
+ "categories": [
+  "theoretical-model",
+  "calculus"
+ ],
+ "paradigms": [
+  "functional",
+  "effectful"
+ ],
+ "typing": [
+  "static",
+  "value/computation types"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Paul Blain Levy"
+ ],
+ "summary": "Levy's calculus that separates values from computations (with thunk/force and the F/U adjunction), so that both call-by-value and call-by-name lambda calculi embed into it; a standard intermediate language for semantics of effects.",
+ "status": "theoretical",
+ "defined_by": [
+  "academic-paper"
+ ],
+ "homepage": "https://www.cs.bham.ac.uk/~pbl/cbpv.html",
+ "influenced_by": [
+  "lambda-calculus",
+  "pcf",
+  "linear-logic"
+ ],
+ "related": [
+  {
+   "id": "pcf",
+   "relation": "family"
+  },
+  {
+   "id": "algebraic-effects",
+   "relation": "family"
+  },
+  {
+   "id": "lambda-mu-calculus",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Theoretical calculus: level 0 is the PL Zoo \"levy\" interpreter; a Coq mechanisation accompanies Forster et al. (CPP 2019).",
+  "1": "Defined by Levy's TLCA 1999 paper, his 2003 monograph and the HOSC 2006 journal paper."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Levy — Call-by-Push-Value: A Subsuming Paradigm (TLCA 1999)",
+   "url": "https://doi.org/10.1007/3-540-48959-2_17",
+   "concepts": [
+    "evaluation-order",
+    "effect-systems"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Paul Blain Levy"
+   ],
+   "year": 1999
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Levy — Call-by-push-value: Decomposing Call-by-Value and Call-by-Name (HOSC 19, 2006)",
+   "url": "https://doi.org/10.1007/s10990-006-0480-6",
+   "concepts": [
+    "evaluation-order",
+    "lazy-evaluation",
+    "effect-systems"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Paul Blain Levy"
+   ],
+   "year": 2006
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Levy — Call-By-Push-Value FAQ",
+   "url": "https://www.cs.bham.ac.uk/~pbl/cbpv.html",
+   "concepts": [
+    "evaluation-order",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Paul Blain Levy"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Forster, Schäfer, Spies & Stark — Call-by-Push-Value in Coq: Operational, Equational, and Denotational Theory (CPP 2019)",
+   "url": "https://doi.org/10.1145/3293880.3294097",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Yannick Forster",
+    "Steven Schäfer",
+    "Simon Spies",
+    "Kathrin Stark"
+   ],
+   "year": 2019
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Call-by-push-value",
+   "url": "https://en.wikipedia.org/wiki/Call-by-push-value",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "nLab — call-by-push-value",
+   "url": "https://ncatlab.org/nlab/show/call-by-push-value",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "PL Zoo levy — interpreter for Levy's call-by-push-value language",
+   "url": "https://github.com/andrejbauer/plzoo/tree/master/src/levy",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "directory",
+   "access": "open",
+   "implementation": "PL Zoo levy"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PL Zoo levy/syntax.ml — value and computation types, thunk/force/return",
+   "url": "https://github.com/andrejbauer/plzoo/blob/master/src/levy/syntax.ml",
+   "concepts": [
+    "ast",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "PL Zoo levy"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PL Zoo levy/type_check.ml — CBPV type checker",
+   "url": "https://github.com/andrejbauer/plzoo/blob/master/src/levy/type_check.ml",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "PL Zoo levy"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PL Zoo levy/eval.ml — CBPV evaluator",
+   "url": "https://github.com/andrejbauer/plzoo/blob/master/src/levy/eval.ml",
+   "concepts": [
+    "interpreter",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "PL Zoo levy"
+  }
+ ]
+}

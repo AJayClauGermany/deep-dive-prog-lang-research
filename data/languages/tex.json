@@ -1,0 +1,498 @@
+{
+ "id": "tex",
+ "name": "TeX",
+ "aliases": [
+  "TeX82",
+  "plain TeX"
+ ],
+ "categories": [
+  "document-typesetting",
+  "markup"
+ ],
+ "paradigms": [
+  "macro",
+  "imperative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1978,
+ "designers": [
+  "Donald E. Knuth"
+ ],
+ "summary": "Donald Knuth's typesetting system and its macro language: a category-code tokenizer, expansion of user-defined macros and conditionals, registers for integers, dimensions and glue, and a typesetting engine with optimum-fit line breaking. Frozen since 1989 (version numbers converge to pi); extended by e-TeX, pdfTeX, XeTeX and LuaTeX.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".tex"
+ ],
+ "homepage": "https://tug.org/",
+ "related": [
+  {
+   "id": "latex",
+   "relation": "host-of"
+  },
+  {
+   "id": "context",
+   "relation": "host-of"
+  },
+  {
+   "id": "metafont",
+   "relation": "family"
+  },
+  {
+   "id": "texinfo",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "0": "tex.web is both the implementation and, with The TeXbook, the definition; the TRIP test certifies conforming implementations. TeX Live's GitHub mirror (TeX-Live/texlive-source) is used for file links. mirrors.ctan.org links redirect to a random mirror.",
+  "1": "The TeXbook is commercially published (paywalled); its source and the woven program text are freely available. Wiley/doi.org links report as blocked."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "tex.web — Knuth's literate WEB source of TeX (TeX Live copy)",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/tex.web",
+   "authority": "designer",
+   "implementation": "TeX82 (tex.web)",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "notes": "Parts include: the hash table, token lists, expansion (\\expandafter, \\if...), the chief executive (main_control), line breaking and page building.",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "macros",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tex.ch — Web2C change file adapting tex.web to C (TeX Live)",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/tex.ch",
+   "authority": "designer",
+   "implementation": "Web2C",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "bootstrapping",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "triptrap/trip.tex — the TRIP torture test every TeX implementation must pass",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/triptrap/trip.tex",
+   "authority": "designer",
+   "implementation": "TeX82 (tex.web)",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "etexdir/etex.ch — e-TeX extensions (\\protected, \\detokenize, \\numexpr, extra registers)",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/etexdir/etex.ch",
+   "authority": "community",
+   "implementation": "e-TeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pdftexdir/pdftex.web — pdfTeX (TeX producing PDF, micro-typography)",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/pdftexdir/pdftex.web",
+   "authority": "community",
+   "implementation": "pdfTeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaTeX tex/textoken.c — tokenizer: category codes, control sequences",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/luatexdir/tex/textoken.c",
+   "authority": "community",
+   "implementation": "LuaTeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaTeX tex/expand.c — macro expansion",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/luatexdir/tex/expand.c",
+   "authority": "community",
+   "implementation": "LuaTeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaTeX tex/scanning.c — scanning numbers, dimensions, glue",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/luatexdir/tex/scanning.c",
+   "authority": "community",
+   "implementation": "LuaTeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaTeX tex/maincontrol.c — the main control loop (mode-dependent command dispatch)",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/luatexdir/tex/maincontrol.c",
+   "authority": "community",
+   "implementation": "LuaTeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaTeX tex/linebreak.c — Knuth-Plass optimum-fit paragraph line breaking",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/luatexdir/tex/linebreak.c",
+   "authority": "community",
+   "implementation": "LuaTeX",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The TeXbook (Computers & Typesetting, Vol. A) — CTAN entry for its source",
+   "url": "https://ctan.org/pkg/texbook",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "year": 1984,
+   "access": "partially-open",
+   "notes": "The printed book is sold by Addison-Wesley; the source texbook.tex is on CTAN but may not be typeset for distribution.",
+   "scope": "whole",
+   "format": "html",
+   "concepts": [
+    "grammar",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TeX: The Program — woven tex.web (tex.pdf, TeX Live documentation)",
+   "url": "https://texdoc.org/serve/tex/0",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "plain.tex — the plain TeX format (macro package defined in The TeXbook, Appendix B)",
+   "url": "https://ctan.org/pkg/plain",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "tex82.bug — complete log of changes to TeX since 1982",
+   "url": "https://mirrors.ctan.org/systems/knuth/dist/errata/tex82.bug",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Knuth — The new versions of TeX and METAFONT (TUGboat 10:4, 1989)",
+   "url": "https://tug.org/TUGboat/Articles/tb10-4/tb26knut.pdf",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "year": 1989,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Knuth & Plass — Breaking Paragraphs into Lines (Software: Practice and Experience, 1981)",
+   "url": "https://doi.org/10.1002/spe.4380111102",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth",
+    "Michael F. Plass"
+   ],
+   "year": 1981,
+   "access": "paywalled",
+   "scope": "whole",
+   "format": "html",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Knuth — The Errors of TeX (Software: Practice and Experience, 1989)",
+   "url": "https://doi.org/10.1002/spe.4380190702",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "year": 1989,
+   "access": "paywalled",
+   "scope": "whole",
+   "format": "html",
+   "concepts": [
+    "history",
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Knuth — Computers & Typesetting (book series page)",
+   "url": "https://www-cs-faculty.stanford.edu/~knuth/abcde.html",
+   "authority": "designer",
+   "authors": [
+    "Donald E. Knuth"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The e-TeX manual",
+   "url": "https://texdoc.org/serve/etex_man/0",
+   "authority": "community",
+   "format": "pdf",
+   "implementation": "e-TeX",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LuaTeX reference manual",
+   "url": "https://texdoc.org/serve/luatex/0",
+   "authority": "community",
+   "format": "pdf",
+   "implementation": "LuaTeX",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Victor Eijkhout — TeX by Topic (free)",
+   "url": "https://www.eijkhout.net/texbytopic/texbytopic.html",
+   "authority": "community",
+   "authors": [
+    "Victor Eijkhout"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Abrahams, Hargreaves, Berry — TeX for the Impatient (free)",
+   "url": "https://ctan.org/pkg/impatient",
+   "authority": "community",
+   "authors": [
+    "Paul W. Abrahams",
+    "Kathryn A. Hargreaves",
+    "Karl Berry"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Michael Doob — A Gentle Introduction to TeX",
+   "url": "https://mirrors.ctan.org/info/gentle/gentle.pdf",
+   "authority": "community",
+   "authors": [
+    "Michael Doob"
+   ],
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "TUG — plain TeX control sequences (primitives and plain macros)",
+   "url": "https://www.tug.org/utilities/plain/cseq.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "The TeX FAQ",
+   "url": "https://texfaq.org/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "TUG — What is TeX?",
+   "url": "https://www.tug.org/whatis.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "TUGboat — the journal of the TeX Users Group (all issues)",
+   "url": "https://tug.org/TUGboat/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TeX",
+   "url": "https://en.wikipedia.org/wiki/TeX",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — TeX",
+   "url": "https://pldb.io/concepts/tex.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

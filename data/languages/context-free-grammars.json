@@ -1,0 +1,344 @@
+{
+  "id": "context-free-grammars",
+  "name": "Context-free grammars",
+  "aliases": [
+    "CFG",
+    "type-2 grammars",
+    "phrase-structure grammars"
+  ],
+  "categories": [
+    "theoretical-model",
+    "grammar-notation"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [],
+  "first_appeared": 1956,
+  "designers": [
+    "Noam Chomsky"
+  ],
+  "summary": "Grammars whose productions rewrite a single nonterminal, introduced by Chomsky (1956) and, as BNF, used to define ALGOL 60. They generate exactly the languages of pushdown automata and are the basis of programming-language syntax definitions and parsing algorithms (LL, LR, Earley, CYK).",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [
+    "post-canonical-system"
+  ],
+  "related": [
+    {
+      "id": "pushdown-automata",
+      "relation": "family"
+    },
+    {
+      "id": "bnf",
+      "relation": "family"
+    },
+    {
+      "id": "ebnf",
+      "relation": "family"
+    },
+    {
+      "id": "peg",
+      "relation": "family"
+    },
+    {
+      "id": "regular-expressions-theory",
+      "relation": "superset-of"
+    }
+  ],
+  "level_notes": {
+    "0": "Mechanised grammar theory (Lean mathlib, Isabelle AFP, Coq). Parser generators are separate entries (yacc, antlr-grammar, tree-sitter-grammar)."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Chomsky (1956) — Three Models for the Description of Language",
+      "url": "https://doi.org/10.1109/TIT.1956.1056813",
+      "concepts": [
+        "formal-grammars",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Noam Chomsky"
+      ],
+      "year": 1956
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Chomsky (1959) — On Certain Formal Properties of Grammars (Chomsky hierarchy)",
+      "url": "https://doi.org/10.1016/S0019-9958(59)90362-6",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Noam Chomsky"
+      ],
+      "year": 1959
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Knuth (1965) — On the Translation of Languages from Left to Right (LR(k) grammars)",
+      "url": "https://doi.org/10.1016/S0019-9958(65)90426-2",
+      "concepts": [
+        "parser",
+        "formal-grammars"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Donald E. Knuth"
+      ],
+      "year": 1965
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Younger (1967) — Recognition and Parsing of Context-Free Languages in Time n^3 (CYK)",
+      "url": "https://doi.org/10.1016/S0019-9958(67)80007-X",
+      "concepts": [
+        "parser",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Daniel H. Younger"
+      ],
+      "year": 1967
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Earley (1970) — An Efficient Context-Free Parsing Algorithm",
+      "url": "https://doi.org/10.1145/362007.362035",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Jay Earley"
+      ],
+      "year": 1970
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/ContextFreeGrammar.lean",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/ContextFreeGrammar.lean",
+      "concepts": [
+        "formal-grammars",
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — Context-Free Grammars (normal forms, parsing, pumping lemma)",
+      "url": "https://www.isa-afp.org/entries/Context_Free_Grammar.html",
+      "concepts": [
+        "formal-grammars",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability CFG/CFG.v — context-free grammars and undecidable problems (Coq)",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/CFG/CFG.v",
+      "concepts": [
+        "formal-grammars",
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Context-free grammars as a computational model",
+      "url": "https://introtcs.org/public/lec_08a_restricted_models.html#seccfg",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Uncomputability of context-free grammar equivalence",
+      "url": "https://introtcs.org/public/lec_08a_restricted_models.html#uncomputability-of-context-free-grammar-equivalence-optional",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Erickson — Models of Computation: Context-Free Languages and Grammars (lecture notes)",
+      "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/models/05-context-free.pdf",
+      "concepts": [
+        "formal-grammars",
+        "parser"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Jeff Erickson"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Grune & Jacobs — Parsing Techniques: A Practical Guide (1st ed., free)",
+      "url": "https://dickgrune.com/Books/PTAPG_1st_Edition/",
+      "concepts": [
+        "parser",
+        "formal-grammars"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Dick Grune",
+        "Ceriel J. H. Jacobs"
+      ],
+      "year": 1990
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Context-free grammar",
+      "url": "https://en.wikipedia.org/wiki/Context-free_grammar",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Context-free grammar: Formal definitions",
+      "url": "https://en.wikipedia.org/wiki/Context-free_grammar#Formal_definitions",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Context-free grammar: Derivations and syntax trees",
+      "url": "https://en.wikipedia.org/wiki/Context-free_grammar#Derivations_and_syntax_trees",
+      "concepts": [
+        "ast",
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Context-free grammar: Normal forms",
+      "url": "https://en.wikipedia.org/wiki/Context-free_grammar#Normal_forms",
+      "concepts": [
+        "formal-grammars"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Context-free grammar: Undecidable problems",
+      "url": "https://en.wikipedia.org/wiki/Context-free_grammar#Undecidable_problems",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Chomsky hierarchy",
+      "url": "https://en.wikipedia.org/wiki/Chomsky_hierarchy",
+      "concepts": [
+        "formal-grammars",
+        "comparison"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — context-free grammar",
+      "url": "https://ncatlab.org/nlab/show/context-free+grammar",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

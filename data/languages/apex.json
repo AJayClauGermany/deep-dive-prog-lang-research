@@ -1,0 +1,39 @@
+{
+ "id": "apex",
+ "name": "Salesforce Apex",
+ "aliases": ["Apex"],
+ "categories": ["domain-specific", "object-oriented", "database-procedural"],
+ "paradigms": ["object-oriented", "imperative", "event-driven (triggers)"],
+ "typing": ["static", "strong", "nominal"],
+ "first_appeared": 2007,
+ "designers": ["Salesforce"],
+ "summary": "Proprietary, Java-like, strongly typed object-oriented language that runs multi-tenant on the Salesforce platform, with embedded SOQL/SOSL queries, DML statements, database triggers and enforced governor limits on resource use.",
+ "status": "active",
+ "defined_by": ["vendor-specification"],
+ "file_extensions": [".cls", ".trigger", ".apex"],
+ "homepage": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dev_guide.htm",
+ "influenced_by": ["java", "csharp"],
+ "related": [{"id": "soql", "relation": "embeds"}, {"id": "java", "relation": "family"}],
+ "level_notes": {"0": "The compiler and runtime are closed and run only on Salesforce servers; level 0 lists the community ANTLR grammar (apex-parser) used by tools like PMD.", "1": "The Apex Developer Guide and Apex Reference Guide are the vendor definition. developer.salesforce.com answers scripted requests with 403, so its links report 'blocked'; only page names confirmed through search engines or Wikipedia citations are linked."},
+ "resources": [
+  {"level": 0, "kind": "grammar-source", "title": "apex-dev-tools/apex-parser — BaseApexParser.g4 (ANTLR4 Apex grammar)", "url": "https://github.com/apex-dev-tools/apex-parser/blob/main/antlr/BaseApexParser.g4", "implementation": "apex-parser", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "grammar-source", "title": "apex-dev-tools/apex-parser — BaseApexLexer.g4", "url": "https://github.com/apex-dev-tools/apex-parser/blob/main/antlr/BaseApexLexer.g4", "implementation": "apex-parser", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["lexer", "lexical-structure"]},
+  {"level": 0, "kind": "tooling-source", "title": "PMD — Apex language module documentation", "url": "https://github.com/pmd/pmd/blob/main/docs/pages/pmd/languages/apex.md", "implementation": "PMD", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dev_guide.htm", "scope": "whole", "authority": "vendor", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — What is Apex?", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro_what_is_apex.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — Writing Apex", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_writing.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — Data types", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_data_types.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["primitive-types", "type-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — Collections (lists, sets, maps)", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_collections.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["lists", "sets", "maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — Switch statements", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_switch.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — Execution governors and limits", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["resource-management"]},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — Triggers", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["stored-procedures"]},
+  {"level": 1, "kind": "library-reference", "title": "Apex Reference Guide", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_ref_guide.htm", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Trailhead — Apex Basics & Database", "url": "https://trailhead.salesforce.com/content/learn/modules/apex_database", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "style-guide", "title": "PMD rules for Apex", "url": "https://pmd.github.io/pmd/pmd_rules_apex.html", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["style-conventions"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Salesforce (Apex section of the platform article)", "url": "https://en.wikipedia.org/wiki/Salesforce", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Apex", "url": "https://pldb.io/concepts/apex.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

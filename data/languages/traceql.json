@@ -1,0 +1,236 @@
+{
+ "id": "traceql",
+ "name": "TraceQL",
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "pipeline"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2022,
+ "designers": [
+  "Grafana Labs (Tempo team)"
+ ],
+ "summary": "Query language of Grafana Tempo for distributed traces: spanset filters over span intrinsics and attributes ({ span.http.status_code >= 500 }), combined with logical and structural operators (parent/child, ancestor/descendant, sibling), piped through aggregators, grouping and selection, plus TraceQL metrics functions producing time series.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://grafana.com/docs/tempo/latest/traceql/",
+ "influenced_by": [
+  "promql",
+  "logql"
+ ],
+ "level_notes": {
+  "1": "Defined by the Tempo documentation (TraceQL pages, sourced from docs/sources/tempo/traceql in the repo) and the goyacc grammar in pkg/traceql; the 2022 design proposal records the intended semantics. The rendered docs carry no static section anchors.",
+  "0": "Grafana Tempo (Go) is the only implementation: goyacc grammar expr.y, hand-written lexer, AST and a storage-pushdown engine.",
+  "3": "No encyclopedia or catalog entry for TraceQL exists (no Wikipedia article, not in PLDB)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "grafana/tempo — Tempo trace store and TraceQL engine",
+   "url": "https://github.com/grafana/tempo",
+   "implementation": "Grafana Tempo",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Tempo — pkg/traceql/expr.y (goyacc grammar)",
+   "url": "https://github.com/grafana/tempo/blob/main/pkg/traceql/expr.y",
+   "implementation": "Grafana Tempo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tempo — pkg/traceql/lexer.go",
+   "url": "https://github.com/grafana/tempo/blob/main/pkg/traceql/lexer.go",
+   "implementation": "Grafana Tempo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tempo — pkg/traceql/ast.go (spanset pipeline AST, static types)",
+   "url": "https://github.com/grafana/tempo/blob/main/pkg/traceql/ast.go",
+   "implementation": "Grafana Tempo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tempo — pkg/traceql/enum_operators.go (operators)",
+   "url": "https://github.com/grafana/tempo/blob/main/pkg/traceql/enum_operators.go",
+   "implementation": "Grafana Tempo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tempo — pkg/traceql/engine.go (query engine, storage pushdown)",
+   "url": "https://github.com/grafana/tempo/blob/main/pkg/traceql/engine.go",
+   "implementation": "Grafana Tempo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tempo — pkg/traceql/engine_metrics.go (TraceQL metrics evaluation)",
+   "url": "https://github.com/grafana/tempo/blob/main/pkg/traceql/engine_metrics.go",
+   "implementation": "Grafana Tempo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "time-series",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Grafana Tempo docs — TraceQL",
+   "url": "https://grafana.com/docs/tempo/latest/traceql/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Grafana Tempo docs — Construct a TraceQL query (spanset filters, operators, aggregators)",
+   "url": "https://grafana.com/docs/tempo/latest/traceql/construct-traceql-queries/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "graph-patterns",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Grafana Tempo docs — TraceQL metrics queries",
+   "url": "https://grafana.com/docs/tempo/latest/metrics-from-traces/metrics-queries/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TraceQL docs source — construct-traceql-queries.md (value types, literals, structural operators)",
+   "url": "https://github.com/grafana/tempo/blob/main/docs/sources/tempo/traceql/construct-traceql-queries.md",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "primitive-types",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "TraceQL Concepts — design proposal (2022-04)",
+   "url": "https://github.com/grafana/tempo/blob/main/docs/design-proposals/2022-04%20TraceQL%20Concepts.md",
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 2022,
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Grafana Tempo docs — TraceQL query editor in Grafana",
+   "url": "https://grafana.com/docs/tempo/latest/traceql/query-editor/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "TraceQL: a first-of-its-kind query language to accelerate trace analysis in Tempo 2.0",
+   "url": "https://grafana.com/blog/2022/11/30/traceql-a-first-of-its-kind-query-language-to-accelerate-trace-analysis-in-tempo-2.0/",
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,396 @@
+{
+ "id": "regex-ecmascript",
+ "name": "ECMAScript regular expressions",
+ "aliases": [
+  "JavaScript RegExp",
+  "ECMA-262 Patterns"
+ ],
+ "categories": [
+  "pattern-matching",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Ecma TC39"
+ ],
+ "summary": "The regular-expression pattern language of ECMA-262 (JavaScript), specified with a formal grammar and a continuation-passing matcher semantics; Perl-derived backtracking syntax extended over time with sticky/unicode flags (ES2015), named groups, lookbehind and dotAll (ES2018), match indices, the v flag with set notation (ES2024) and inline modifiers.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "ECMA-262 §22.2 RegExp (Regular Expression) Objects",
+  "ISO/IEC 16262"
+ ],
+ "homepage": "https://tc39.es/ecma262/#sec-regexp-regular-expression-objects",
+ "influenced_by": [
+  "pcre"
+ ],
+ "related": [
+  {
+   "id": "javascript",
+   "relation": "embeds"
+  },
+  {
+   "id": "pcre",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "ECMA-262 clause 22.2 gives the Pattern grammar and its semantics as matcher/continuation abstract operations; Annex B.1.2 adds legacy web-compatibility syntax. Deep links target the living draft at tc39.es; new syntax arrives through TC39 proposals.",
+  "0": "V8's Irregexp (backtracking compiler/interpreter plus an experimental linear-time engine, also used by SpiderMonkey) and QuickJS's libregexp; test262 holds conformance tests."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "V8 Irregexp — regexp-parser.cc",
+   "url": "https://github.com/v8/v8/blob/main/src/regexp/regexp-parser.cc",
+   "implementation": "V8 Irregexp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "V8 Irregexp — regexp-compiler.cc (to native code / bytecode)",
+   "url": "https://github.com/v8/v8/blob/main/src/regexp/regexp-compiler.cc",
+   "implementation": "V8 Irregexp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "jit"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "V8 — experimental/experimental-compiler.cc (linear-time engine)",
+   "url": "https://github.com/v8/v8/blob/main/src/regexp/experimental/experimental-compiler.cc",
+   "implementation": "V8 experimental engine",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QuickJS — libregexp.c",
+   "url": "https://github.com/bellard/quickjs/blob/master/libregexp.c",
+   "implementation": "QuickJS",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "test262 — RegExp built-in tests (sample file)",
+   "url": "https://github.com/tc39/test262/blob/main/test/built-ins/RegExp/S15.10.1_A1_T1.js",
+   "implementation": "test262",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — 22.2 RegExp (Regular Expression) Objects",
+   "url": "https://tc39.es/ecma262/#sec-regexp-regular-expression-objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — 22.2.1 Patterns (grammar)",
+   "url": "https://tc39.es/ecma262/#sec-patterns",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — 22.2.2 Pattern Semantics (matchers and continuations)",
+   "url": "https://tc39.es/ecma262/#sec-pattern-semantics",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "continuations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — RepeatMatcher (quantifier backtracking)",
+   "url": "https://tc39.es/ecma262/#sec-runtime-semantics-repeatmatcher-abstract-operation",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — CompileAssertion (anchors, lookaround)",
+   "url": "https://tc39.es/ecma262/#sec-compileassertion",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — BackreferenceMatcher",
+   "url": "https://tc39.es/ecma262/#sec-backreference-matcher",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — CompileCharacterClass (incl. v-flag set notation)",
+   "url": "https://tc39.es/ecma262/#sec-compilecharacterclass",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — 12.9.5 Regular Expression Literals",
+   "url": "https://tc39.es/ecma262/#sec-literals-regular-expression-literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-262 — Annex B.1.2 Regular Expressions Patterns (web legacy syntax)",
+   "url": "https://tc39.es/ecma262/#sec-regular-expressions-patterns",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — RegExp v flag with set notation and properties of strings",
+   "url": "https://github.com/tc39/proposal-regexp-v-flag",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2023,
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — RegExp named capture groups",
+   "url": "https://github.com/tc39/proposal-regexp-named-groups",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2018,
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — RegExp lookbehind assertions",
+   "url": "https://github.com/tc39/proposal-regexp-lookbehind",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2018,
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — RegExp modifiers",
+   "url": "https://github.com/tc39/proposal-regexp-modifiers",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "TC39 finished proposals",
+   "url": "https://github.com/tc39/proposals/blob/main/finished-proposals.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Regular expressions guide",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — RegExp reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "javascript.info — Regular expressions",
+   "url": "https://javascript.info/regular-expressions",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 blog — An additional non-backtracking RegExp engine",
+   "url": "https://v8.dev/blog/non-backtracking-regexp",
+   "implementation": "V8",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 blog — Improving V8 regular expressions (tier-up)",
+   "url": "https://v8.dev/blog/regexp-tier-up",
+   "implementation": "V8",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Regular expression: Perl and PCRE (ECMAScript lineage)",
+   "url": "https://en.wikipedia.org/wiki/Regular_expression#Perl_and_PCRE",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

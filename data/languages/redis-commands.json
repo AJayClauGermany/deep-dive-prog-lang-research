@@ -1,0 +1,382 @@
+{
+ "id": "redis-commands",
+ "name": "Redis commands (RESP)",
+ "aliases": [
+  "Redis command language",
+  "RESP",
+  "Redis Serialization Protocol"
+ ],
+ "categories": [
+  "query",
+  "protocol",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "imperative",
+  "command-based"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Salvatore Sanfilippo"
+ ],
+ "summary": "The command language of the Redis key-value data-structure server: flat, verb-first commands (GET, SET, LPUSH, ZRANGE, XADD ...) over strings, lists, hashes, sets, sorted sets and streams, sent over the RESP wire protocol, with MULTI/EXEC transactions, pub/sub, and server-side Lua scripts and functions.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://redis.io/docs/latest/commands/",
+ "related": [
+  {
+   "id": "lua",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "The command reference (one page per command, generated from the JSON command specs in the source tree) and the RESP protocol specification are the definition. Valkey (the 2024 BSD-licensed fork) documents the same command set.",
+  "0": "redis/redis (C) is the reference implementation; each command's syntax is declared in src/commands/*.json and compiled into commands.def. Valkey is a compatible fork."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "redis/redis — reference server implementation",
+   "url": "https://github.com/redis/redis",
+   "implementation": "Redis",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redis — networking.c (RESP request parsing, reply encoding)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/networking.c",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redis — server.c (command table and dispatch)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/server.c",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Redis — commands/set.json (machine-readable command syntax spec)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/commands/set.json",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redis — commands.def (generated command table)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/commands.def",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redis — t_zset.c (sorted set commands)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/t_zset.c",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redis — multi.c (MULTI/EXEC/WATCH transactions)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/multi.c",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redis — script_lua.c (embedded Lua scripting)",
+   "url": "https://github.com/redis/redis/blob/unstable/src/script_lua.c",
+   "implementation": "Redis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "stored-procedures"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Valkey — BSD-licensed fork of Redis",
+   "url": "https://github.com/valkey-io/valkey",
+   "implementation": "Valkey",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Redis command reference",
+   "url": "https://redis.io/docs/latest/commands/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Redis command reference — SET",
+   "url": "https://redis.io/docs/latest/commands/set/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Redis command reference — ZRANGE",
+   "url": "https://redis.io/docs/latest/commands/zrange/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Redis command reference — SCAN (cursor iteration)",
+   "url": "https://redis.io/docs/latest/commands/scan/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iterators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Redis serialization protocol (RESP) specification",
+   "url": "https://redis.io/docs/latest/develop/reference/protocol-spec/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RESP specification — RESP protocol description (data types)",
+   "url": "https://redis.io/docs/latest/develop/reference/protocol-spec/#resp-protocol-description",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RESP specification — Multiple commands and pipelining",
+   "url": "https://redis.io/docs/latest/develop/reference/protocol-spec/#multiple-commands-and-pipelining",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RESP specification — Inline commands",
+   "url": "https://redis.io/docs/latest/develop/reference/protocol-spec/#inline-commands",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Redis — command arguments (key specs, argument schema)",
+   "url": "https://redis.io/docs/latest/develop/reference/command-arguments/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Redis — Transactions (MULTI, EXEC, WATCH)",
+   "url": "https://redis.io/docs/latest/develop/using-commands/transactions/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Redis — Scripting with Lua (EVAL)",
+   "url": "https://redis.io/docs/latest/develop/programmability/eval-intro/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "stored-procedures"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Redis — Functions",
+   "url": "https://redis.io/docs/latest/develop/programmability/functions-intro/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "stored-procedures",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Redis — Keys and values (keyspace)",
+   "url": "https://redis.io/docs/latest/develop/using-commands/keyspace/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Redis — Data types overview",
+   "url": "https://redis.io/docs/latest/develop/data-types/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Redis — Pub/sub",
+   "url": "https://redis.io/docs/latest/develop/pubsub/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "channels-message-passing"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Redis",
+   "url": "https://en.wikipedia.org/wiki/Redis",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

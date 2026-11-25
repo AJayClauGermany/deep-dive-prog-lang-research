@@ -1,0 +1,414 @@
+{
+  "id": "first-order-logic",
+  "name": "First-order logic",
+  "aliases": [
+    "predicate logic",
+    "first-order predicate calculus",
+    "FOL"
+  ],
+  "categories": [
+    "theoretical-model"
+  ],
+  "paradigms": [
+    "logic",
+    "declarative"
+  ],
+  "typing": [
+    "many-sorted-optional"
+  ],
+  "first_appeared": 1879,
+  "designers": [
+    "Gottlob Frege",
+    "Charles S. Peirce",
+    "David Hilbert",
+    "Wilhelm Ackermann"
+  ],
+  "summary": "Classical predicate logic with quantifiers over individuals, function and relation symbols and equality; complete (Gödel 1930) but undecidable (Church, Turing 1936). It is the specification language underlying databases (relational calculus), logic programming, SMT and most program logics.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [],
+  "related": [
+    {
+      "id": "horn-clauses",
+      "relation": "superset-of"
+    },
+    {
+      "id": "tptp",
+      "relation": "family"
+    },
+    {
+      "id": "smt-lib",
+      "relation": "family"
+    },
+    {
+      "id": "relational-calculus",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "No single defining document; the classic primary texts (Frege, Hilbert-Ackermann, Gödel, Gentzen, Church) are mostly paywalled or in German. SEP and open textbooks give the standard modern definition.",
+    "0": "Mechanised syntax/semantics (Lean mathlib model theory, Isabelle/FOL, Coq) and automated provers (Vampire, E)."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Gentzen (1935) — Untersuchungen über das logische Schließen I (natural deduction and sequent calculus)",
+      "url": "https://doi.org/10.1007/BF01201353",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Gerhard Gentzen"
+      ],
+      "year": 1935
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Church (1936) — A Note on the Entscheidungsproblem (undecidability of first-order validity)",
+      "url": "https://doi.org/10.2307/2269326",
+      "concepts": [
+        "turing-completeness",
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Alonzo Church"
+      ],
+      "year": 1936
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Robinson (1965) — A Machine-Oriented Logic Based on the Resolution Principle",
+      "url": "https://doi.org/10.1145/321250.321253",
+      "concepts": [
+        "unification",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "J. A. Robinson"
+      ],
+      "year": 1965
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — ModelTheory/Syntax.lean (first-order terms, formulas, binders)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/ModelTheory/Syntax.lean",
+      "concepts": [
+        "grammar",
+        "substitution-binding"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — ModelTheory/Semantics.lean (structures and satisfaction)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/ModelTheory/Semantics.lean",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Isabelle/FOL — IFOL.thy (intuitionistic first-order logic object logic)",
+      "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/FOL/IFOL.thy",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Isabelle/FOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Isabelle/FOL — FOL.thy (classical first-order logic)",
+      "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/FOL/FOL.thy",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Isabelle/FOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability FOL/FOL.v — syntax, deduction systems and undecidability of FOL",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/FOL/FOL.v",
+      "concepts": [
+        "formal-semantics",
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Vampire — automated theorem prover for first-order logic",
+      "url": "https://github.com/vprover/vampire",
+      "concepts": [
+        "verification",
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Vampire"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "E — equational first-order theorem prover",
+      "url": "https://github.com/eprover/eprover",
+      "concepts": [
+        "verification",
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open",
+      "implementation": "E"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Stanford Encyclopedia of Philosophy — Classical Logic",
+      "url": "https://plato.stanford.edu/entries/logic-classical/",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Stewart Shapiro",
+        "Teresa Kouri Kissel"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Classical Logic — 2. Language (building blocks, atomic and compound formulas)",
+      "url": "https://plato.stanford.edu/entries/logic-classical/#Lan",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Classical Logic — 3. Deduction",
+      "url": "https://plato.stanford.edu/entries/logic-classical/#Ded",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Classical Logic — 4. Semantics",
+      "url": "https://plato.stanford.edu/entries/logic-classical/#Sem",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Classical Logic — 5. Meta-theory (soundness, completeness, compactness)",
+      "url": "https://plato.stanford.edu/entries/logic-classical/#MetThe",
+      "concepts": [
+        "type-soundness",
+        "logic-foundations"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "Stanford Encyclopedia of Philosophy — The Emergence of First-Order Logic",
+      "url": "https://plato.stanford.edu/entries/logic-firstorder-emergence/",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Open Logic Project — Sets, Logic, Computation (first-order syntax, semantics, completeness)",
+      "url": "https://builds.openlogicproject.org/courses/sets-logic-computation/slc-screen.pdf",
+      "concepts": [
+        "logic-foundations",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Magnus & Button — forall x: Calgary (open introduction to formal logic)",
+      "url": "https://forallx.openlogicproject.org/forallxyyc.pdf",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "P. D. Magnus",
+        "Tim Button",
+        "Robert Trueman",
+        "Richard Zach"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — First-order logic",
+      "url": "https://en.wikipedia.org/wiki/First-order_logic",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — First-order logic: Syntax",
+      "url": "https://en.wikipedia.org/wiki/First-order_logic#Syntax",
+      "concepts": [
+        "grammar",
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — First-order logic: Free and bound variables",
+      "url": "https://en.wikipedia.org/wiki/First-order_logic#Free_and_bound_variables",
+      "concepts": [
+        "substitution-binding",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — First-order logic: Semantics",
+      "url": "https://en.wikipedia.org/wiki/First-order_logic#Semantics",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — First-order logic: Deductive systems",
+      "url": "https://en.wikipedia.org/wiki/First-order_logic#Deductive_systems",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — First-order logic: Completeness and undecidability",
+      "url": "https://en.wikipedia.org/wiki/First-order_logic#Completeness_and_undecidability",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — first-order logic",
+      "url": "https://ncatlab.org/nlab/show/predicate+logic",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}
