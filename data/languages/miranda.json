@@ -1,0 +1,45 @@
+{
+ "id": "miranda",
+ "name": "Miranda",
+ "aliases": ["Miranda(TM)"],
+ "categories": ["functional", "historical"],
+ "paradigms": ["functional", "pure", "lazy", "declarative"],
+ "typing": ["static", "strong", "inferred", "hindley-milner"],
+ "first_appeared": 1985,
+ "designers": ["David Turner"],
+ "summary": "Lazy, purely functional language by David Turner with polymorphic type inference, algebraic and abstract types, list comprehensions and offside-rule layout; implemented by combinator graph reduction, it was the main precursor of Haskell.",
+ "status": "historical",
+ "defined_by": ["reference-implementation", "academic-paper"],
+ "file_extensions": [".m"],
+ "homepage": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/",
+ "influenced_by": ["sasl", "krc", "ml-lcf", "hope"],
+ "related": [{"id": "krc", "relation": "successor-of"}, {"id": "haskell", "relation": "family"}, {"id": "c", "relation": "implemented-in"}],
+ "level_notes": {"0": "Turner released the original Research Software Ltd implementation (written in C, a combinator graph-reduction interpreter) as open source in 2020; it is maintained on Codeberg.", "1": "The Miranda System Manual (on-line, sections 1-35) contains the formal syntax and is the language definition, together with Turner's 1985/1986 papers."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "DATurner/miranda — the original Miranda system source (C, released 2020)", "url": "https://codeberg.org/DATurner/miranda", "implementation": "Miranda (Turner)", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "grammar-source", "title": "Miranda rules.y — yacc grammar", "url": "https://codeberg.org/DATurner/miranda/src/branch/main/rules.y", "implementation": "Miranda (Turner)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Miranda lex.c — lexical analyser including the offside rule", "url": "https://codeberg.org/DATurner/miranda/src/branch/main/lex.c", "implementation": "Miranda (Turner)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["lexer", "whitespace-layout"]},
+  {"level": 0, "kind": "implementation-source", "title": "Miranda types.c — polymorphic type checker", "url": "https://codeberg.org/DATurner/miranda/src/branch/main/types.c", "implementation": "Miranda (Turner)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["type-inference"]},
+  {"level": 0, "kind": "implementation-source", "title": "Miranda trans.c — translation to combinators (pattern matching, comprehensions)", "url": "https://codeberg.org/DATurner/miranda/src/branch/main/trans.c", "implementation": "Miranda (Turner)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["combinators", "pattern-matching"]},
+  {"level": 0, "kind": "implementation-source", "title": "Miranda reduce.c — combinator graph reduction machine", "url": "https://codeberg.org/DATurner/miranda/src/branch/main/reduce.c", "implementation": "Miranda (Turner)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["reduction", "lazy-evaluation", "runtime-system"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — contents", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/", "scope": "whole", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 7. Expressions", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/7.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 8. Operators", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/8.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["operators", "operator-precedence"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 11. Literals", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/11.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 12. Tokenisation and layout", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/12.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["lexical-structure", "whitespace-layout"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 15. Definitions", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/15.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["functions", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 16. Pattern matching", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/16.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 20. Algebraic types", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/20.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["algebraic-data-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 21. Abstract types", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/21.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["encapsulation"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 24. Formal syntax of Miranda scripts", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/24.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Miranda System Manual — 28. The standard environment", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/manual/28.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "original-paper", "title": "An Overview of Miranda — David Turner (SIGPLAN Notices 1986)", "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/Overview.html", "scope": "whole", "authority": "designer", "authors": ["David Turner"], "year": 1986, "format": "html", "access": "open", "concepts": ["design-rationale"]},
+
+  {"level": 2, "kind": "history", "title": "Some History of Functional Programming Languages — David Turner (TFP 2012)", "url": "https://www.cs.kent.ac.uk/people/staff/dat/tfp12/tfp12.pdf", "scope": "whole", "authority": "designer", "authors": ["David Turner"], "year": 2012, "format": "pdf", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "book", "title": "Miranda: The Craft of Functional Programming — Simon Thompson (book site)", "url": "https://www.cs.kent.ac.uk/people/staff/sjt/Miranda_craft/", "scope": "whole", "authority": "academic", "authors": ["Simon Thompson"], "year": 1995, "format": "html", "access": "partially-open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Miranda (programming language)", "url": "https://en.wikipedia.org/wiki/Miranda_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Miranda", "url": "https://pldb.io/concepts/miranda.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

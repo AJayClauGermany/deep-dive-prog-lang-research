@@ -1,0 +1,265 @@
+{
+ "id": "interaction-nets",
+ "name": "Interaction nets",
+ "aliases": [
+  "interaction combinators",
+  "interaction calculus"
+ ],
+ "categories": [
+  "theoretical-model",
+  "calculus"
+ ],
+ "paradigms": [
+  "graph-rewriting",
+  "parallel"
+ ],
+ "typing": [
+  "typed agents (optional)"
+ ],
+ "first_appeared": 1990,
+ "designers": [
+  "Yves Lafont"
+ ],
+ "summary": "Lafont's graphical model of computation derived from linear-logic proof nets: agents with a principal port interact pairwise by local graph rewriting, which makes reduction strongly confluent and inherently parallel; interaction combinators are a universal three-agent system, and the model underlies optimal lambda-calculus reduction and the HVM runtime.",
+ "status": "theoretical",
+ "defined_by": [
+  "academic-paper"
+ ],
+ "homepage": "https://en.wikipedia.org/wiki/Interaction_nets",
+ "influenced_by": [
+  "linear-logic",
+  "graph-rewriting"
+ ],
+ "related": [
+  {
+   "id": "graph-rewriting",
+   "relation": "variant-of"
+  },
+  {
+   "id": "linear-logic",
+   "relation": "family"
+  },
+  {
+   "id": "lambda-calculus",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Level 0 lists interaction-net runtimes: HVM (Higher Order Company) and Inpla.",
+  "1": "Lafont's POPL 1990 paper defines interaction nets and his 1997 paper interaction combinators."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Lafont — Interaction Nets (POPL 1990)",
+   "url": "https://doi.org/10.1145/96709.96718",
+   "concepts": [
+    "rewriting",
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Yves Lafont"
+   ],
+   "year": 1990
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Lafont — Interaction Combinators (Information and Computation 137, 1997)",
+   "url": "https://doi.org/10.1006/inco.1997.2643",
+   "concepts": [
+    "combinators",
+    "turing-completeness"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Yves Lafont"
+   ],
+   "year": 1997
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Lamping — An Algorithm for Optimal Lambda Calculus Reduction (POPL 1990)",
+   "url": "https://doi.org/10.1145/96709.96711",
+   "concepts": [
+    "reduction",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "John Lamping"
+   ],
+   "year": 1990
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Taelin — HVM2: A Parallel Evaluator for Interaction Combinators (paper)",
+   "url": "https://github.com/HigherOrderCO/HVM/blob/main/paper/HVM2.pdf",
+   "concepts": [
+    "parallelism",
+    "runtime-system"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Victor Taelin"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Interaction nets",
+   "url": "https://en.wikipedia.org/wiki/Interaction_nets",
+   "concepts": [
+    "rewriting"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Interaction nets — Definitions",
+   "url": "https://en.wikipedia.org/wiki/Interaction_nets#Definitions",
+   "concepts": [
+    "rewriting",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Interaction nets — Properties (strong confluence)",
+   "url": "https://en.wikipedia.org/wiki/Interaction_nets#Properties",
+   "concepts": [
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Interaction nets — Interaction combinators",
+   "url": "https://en.wikipedia.org/wiki/Interaction_nets#Interaction_combinators",
+   "concepts": [
+    "combinators"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Interaction nets — Interaction calculus",
+   "url": "https://en.wikipedia.org/wiki/Interaction_nets#Interaction_calculus",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "HigherOrderCO/HVM — massively parallel interaction-combinator runtime (Rust/C/CUDA)",
+   "url": "https://github.com/HigherOrderCO/HVM",
+   "concepts": [
+    "runtime-system",
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "HVM"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "HVM src/hvm.c — interaction rules and parallel evaluator (C)",
+   "url": "https://github.com/HigherOrderCO/HVM/blob/main/src/hvm.c",
+   "concepts": [
+    "interpreter",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "HVM"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "HVM src/ast.rs — textual net syntax",
+   "url": "https://github.com/HigherOrderCO/HVM/blob/main/src/ast.rs",
+   "concepts": [
+    "ast",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "HVM"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "inpla/inpla — Inpla: multi-threaded interaction-nets language and evaluator",
+   "url": "https://github.com/inpla/inpla",
+   "concepts": [
+    "interpreter",
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Inpla"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Inpla src/inpla.y — grammar of the interaction-nets language",
+   "url": "https://github.com/inpla/inpla/blob/main/src/inpla.y",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Inpla"
+  }
+ ]
+}

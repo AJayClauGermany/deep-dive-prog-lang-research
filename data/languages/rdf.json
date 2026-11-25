@@ -1,0 +1,2089 @@
+{
+ "id": "rdf",
+ "name": "RDF (Resource Description Framework)",
+ "aliases": [
+  "RDF",
+  "RDF/XML",
+  "N-Triples",
+  "N-Quads",
+  "RDF 1.1",
+  "RDF 1.2",
+  "RDF-star"
+ ],
+ "categories": [
+  "data-serialization",
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative",
+  "graph-data-model"
+ ],
+ "typing": [
+  "datatyped literals (XSD)",
+  "open-world"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Ora Lassila",
+  "Ralph Swick",
+  "R. V. Guha",
+  "Tim Berners-Lee",
+  "Patrick Hayes",
+  "Richard Cyganiak",
+  "David Wood",
+  "Markus Lanthaler",
+  "Olaf Hartig",
+  "Pierre-Antoine Champin"
+ ],
+ "summary": "W3C graph data model in which statements are subject-predicate-object triples over IRIs, literals and blank nodes, grouped into graphs and datasets, with a model-theoretic semantics and several concrete syntaxes (RDF/XML, N-Triples, N-Quads, Turtle, TriG, JSON-LD). RDF 1.2 adds triple terms (reification, ex-RDF-star) and directional language-tagged strings.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C RDF 1.1 Concepts and Abstract Syntax (2014)",
+  "W3C RDF 1.1 Semantics",
+  "W3C RDF 1.1 XML Syntax",
+  "W3C RDF 1.1 N-Triples",
+  "W3C RDF 1.1 N-Quads",
+  "W3C RDF 1.2 (Candidate Recommendation, 2025)"
+ ],
+ "file_extensions": [
+  ".rdf",
+  ".nt",
+  ".nq",
+  ".owl"
+ ],
+ "homepage": "https://www.w3.org/RDF/",
+ "influenced_by": [
+  "xml",
+  "mcf"
+ ],
+ "related": [
+  {
+   "id": "turtle",
+   "relation": "family"
+  },
+  {
+   "id": "json-ld",
+   "relation": "family"
+  },
+  {
+   "id": "rdfs",
+   "relation": "family"
+  },
+  {
+   "id": "owl",
+   "relation": "family"
+  },
+  {
+   "id": "shacl",
+   "relation": "family"
+  },
+  {
+   "id": "sparql",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "W3C Recommendations: RDF 1.1 (2014) Concepts, Semantics, RDF/XML, N-Triples, N-Quads are the current Recommendations; the RDF 1.2 suite (Concepts, Semantics, N-Triples, N-Quads, RDF/XML, Turtle, TriG) is in Candidate Recommendation and is linked alongside. RDF 1.0 (1999/2004) documents are linked for history. Turtle/TriG/N3 and RDF Schema have their own catalog entries (turtle, rdfs).",
+  "0": "The W3C rdf-tests repository holds the official test manifests for every syntax and for entailment. Major independent implementations: Apache Jena (Java), Eclipse RDF4J (Java), rdflib (Python), N3.js (JavaScript), Oxigraph (Rust), Raptor and Serd (C).",
+  "2": "The W3C RDF Primer (1.1 Note and 1.2 draft) is the official tutorial."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts and Abstract Syntax (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/rdf11-concepts/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Richard Cyganiak",
+    "David Wood",
+    "Markus Lanthaler"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 1.1 Graph-based Data Model",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#data-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 1.4 RDF Vocabularies and Namespace IRIs",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#vocabularies",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 1.6 Working with Multiple RDF Graphs",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#managing-graphs",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 3.1 Triples",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-triples",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 3.2 IRIs",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-IRIs",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 3.3 Literals",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "scalars",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 3.4 Blank Nodes",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-blank-nodes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "existential-types",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 3.5 Replacing Blank Nodes with IRIs (Skolemization)",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-skolemization",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 3.6 Graph Comparison (isomorphism)",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#graph-isomorphism",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 4 RDF Datasets",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-dataset",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 5 Datatypes",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-Datatypes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 5.1 The XML Schema Built-in Datatypes",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#xsd-datatypes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "integers",
+    "floating-point",
+    "booleans",
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — 6 Fragment Identifiers",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#section-fragID",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Concepts — Appendix A: Changes between RDF 1.0 and RDF 1.1",
+   "url": "https://www.w3.org/TR/rdf11-concepts/#changes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts and Abstract Syntax (W3C Candidate Recommendation)",
+   "url": "https://www.w3.org/TR/rdf12-concepts/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Olaf Hartig",
+    "Pierre-Antoine Champin",
+    "Gregg Kellogg",
+    "Andy Seaborne"
+   ],
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 1.5 Triple Terms and Reification",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-triple-terms-reification",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 1.8 Equivalence, Entailment and Inconsistency",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#entailment",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 1.10 RDF Version Announcement",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-version-announcement",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 2.2 Strings in RDF",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#rdf-strings",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 3.2 RDF Terms",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-terms",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 3.4.3 Initial Text Direction (directional language-tagged strings)",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-text-direction",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 3.6 Triple Terms",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-triple-terms",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 4.3 Quads",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-dataset-quad",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — 7 Generalizations of RDF (symmetric and generalized RDF)",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-generalizations-of-rdf",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — A.3 The rdf:JSON Datatype",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#section-json",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Concepts — E Security Considerations",
+   "url": "https://www.w3.org/TR/rdf12-concepts/#security",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "What's New in RDF 1.2",
+   "url": "https://www.w3.org/TR/rdf12-new/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "RDF 1.1: What's New in RDF 1.1",
+   "url": "https://www.w3.org/TR/rdf11-new/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics (model theory)",
+   "url": "https://www.w3.org/TR/rdf11-mt/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Patrick J. Hayes",
+    "Peter F. Patel-Schneider"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — 3 Semantic Extensions and Entailment Regimes",
+   "url": "https://www.w3.org/TR/rdf11-mt/#extensions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — 5 Simple Interpretations",
+   "url": "https://www.w3.org/TR/rdf11-mt/#simple",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — 5.1 Blank nodes (existential semantics)",
+   "url": "https://www.w3.org/TR/rdf11-mt/#blank_nodes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "existential-types",
+    "substitution-binding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — 6 Skolemization",
+   "url": "https://www.w3.org/TR/rdf11-mt/#skolemization",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "substitution-binding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — 7 Literals and datatypes (D-interpretations)",
+   "url": "https://www.w3.org/TR/rdf11-mt/#datatypes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — 8 RDF Interpretations",
+   "url": "https://www.w3.org/TR/rdf11-mt/#rdf_d_interpretations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — A Entailment rules",
+   "url": "https://www.w3.org/TR/rdf11-mt/#entailment_rules",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.1 Semantics — D RDF reification, containers and collections",
+   "url": "https://www.w3.org/TR/rdf11-mt/#non_semantics",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "RDF 1.2 Semantics (Candidate Recommendation draft)",
+   "url": "https://www.w3.org/TR/rdf12-semantics/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 XML Syntax (RDF/XML)",
+   "url": "https://www.w3.org/TR/rdf-syntax-grammar/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Fabien Gandon",
+    "Guus Schreiber"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 XML Syntax — 7 RDF/XML Grammar",
+   "url": "https://www.w3.org/TR/rdf-syntax-grammar/#section-Infoset-Grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 XML Syntax — 8 Serializing an RDF Graph to RDF/XML",
+   "url": "https://www.w3.org/TR/rdf-syntax-grammar/#section-Serialising",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.2 Node Elements and Property Elements",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-node-property-elements",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.7 Languages: xml:lang",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-languages",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.9 Typed Literals: rdf:datatype",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-datatyped-literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.10 Identifying Blank Nodes: rdf:nodeID",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-blank-nodes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.14 Abbreviating URIs: rdf:ID and xml:base",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-ID-xml-base",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.15 Container Membership Property Elements: rdf:li",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-list-elements",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.16 Collections: rdf:parseType=\"Collection\"",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-parsetype-Collection",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.17 Reifying Statements: rdf:ID",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-reifying",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 2.18 Triple terms (rdf:parseType=\"Triple\")",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Syntax-triple-terms",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 6 Syntax Data Model (XML infoset events)",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-Data-Model",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 7.2 Grammar Productions",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-grammar-productions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — 7.4 List Expansion Rules",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-List-Expand",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 XML Syntax — C.1 RELAX NG Compact Schema for RDF/XML",
+   "url": "https://www.w3.org/TR/rdf12-xml/#section-RELAXNG-Schema",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 N-Triples — A line-based syntax for an RDF graph",
+   "url": "https://www.w3.org/TR/n-triples/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Gavin Carothers",
+    "Andy Seaborne"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 N-Quads — A line-based syntax for RDF datasets",
+   "url": "https://www.w3.org/TR/n-quads/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Gavin Carothers"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 N-Quads — 4 Grammar",
+   "url": "https://www.w3.org/TR/n-quads/#sec-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 2.1 Simple Triples",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#simple-triples",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 2.3 RDF Literals",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#sec-literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 2.4 RDF Blank Nodes",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#BNodes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 4 A Canonical form of N-Triples",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#canonical-ntriples",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 7.2 Comments",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#sec-grammar-comments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 7.1 White Space",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#sec-grammar-ws",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 7.3 Grammar (EBNF)",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#sec-grammar-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 N-Triples — 8 Parsing (term and triple construction)",
+   "url": "https://www.w3.org/TR/rdf12-n-triples/#sec-parsing",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF Dataset Canonicalization (RDFC-1.0)",
+   "url": "https://www.w3.org/TR/rdf-canon/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2024,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Test Cases (W3C Note on test manifests)",
+   "url": "https://www.w3.org/TR/rdf11-testcases/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Resource Description Framework (RDF) Model and Syntax Specification (1999 Recommendation)",
+   "url": "https://www.w3.org/TR/1999/REC-rdf-syntax-19990222/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Ora Lassila",
+    "Ralph R. Swick"
+   ],
+   "year": 1999,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF Concepts and Abstract Syntax (2004 Recommendation)",
+   "url": "https://www.w3.org/TR/2004/REC-rdf-concepts-20040210/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Graham Klyne",
+    "Jeremy J. Carroll"
+   ],
+   "year": 2004,
+   "version": "2004",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Meta Content Framework Using XML (W3C Note, RDF precursor)",
+   "url": "https://www.w3.org/TR/NOTE-MCF-XML/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "R. V. Guha",
+    "Tim Bray"
+   ],
+   "year": 1997,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Tim Berners-Lee — Design Issues: What the Semantic Web can represent",
+   "url": "https://www.w3.org/DesignIssues/RDFnot.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee"
+   ],
+   "year": 1998,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Tim Berners-Lee — Design Issues: Linked Data",
+   "url": "https://www.w3.org/DesignIssues/LinkedData.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee"
+   ],
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "RDF-star and SPARQL-star — Community Group report (origin of RDF 1.2 triple terms)",
+   "url": "https://w3c.github.io/rdf-star/cg-spec/editors_draft.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Olaf Hartig",
+    "Pierre-Antoine Champin",
+    "Gregg Kellogg",
+    "Andy Seaborne"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "W3C RDF & SPARQL Working Group (RDF-star WG) — group page",
+   "url": "https://www.w3.org/groups/wg/rdf-star/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "w3c/rdf-tests — official RDF and SPARQL test suites",
+   "url": "https://github.com/w3c/rdf-tests",
+   "scope": "whole",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "rdf-tests rdf/rdf11/rdf-n-triples/manifest.ttl — N-Triples syntax tests",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/rdf/rdf11/rdf-n-triples/manifest.ttl",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "rdf-tests rdf/rdf11/rdf-xml/manifest.ttl — RDF/XML parser tests",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/rdf/rdf11/rdf-xml/manifest.ttl",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "rdf-tests rdf/rdf11/rdf-mt/manifest.ttl — entailment tests",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/rdf/rdf11/rdf-mt/manifest.ttl",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "rdf-tests rdf/rdf12/rdf-semantics/manifest.ttl — RDF 1.2 semantics tests",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/rdf/rdf12/rdf-semantics/manifest.ttl",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apache/jena — Apache Jena RDF framework (Java)",
+   "url": "https://github.com/apache/jena",
+   "scope": "whole",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jena jena-core graph/Triple.java — triple representation",
+   "url": "https://github.com/apache/jena/blob/main/jena-core/src/main/java/org/apache/jena/graph/Triple.java",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jena jena-core graph/Node.java — RDF term (IRI, literal, blank node, triple term)",
+   "url": "https://github.com/apache/jena/blob/main/jena-core/src/main/java/org/apache/jena/graph/Node.java",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jena RIOT tokens/TokenizerText.java — tokenizer for N-Triples/Turtle family",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/riot/tokens/TokenizerText.java",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jena RIOT lang/LangNTriples.java — N-Triples parser",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/riot/lang/LangNTriples.java",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jena RIOT rdfxml/rrx/ParserRRX_SAX.java — RDF/XML parser (SAX)",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/riot/lang/rdfxml/rrx/ParserRRX_SAX.java",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "RDFLib/rdflib — RDF library for Python",
+   "url": "https://github.com/RDFLib/rdflib",
+   "scope": "whole",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib/term.py — URIRef, BNode, Literal and datatype mapping",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/term.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "type-conversion",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib/graph.py — Graph, ConjunctiveGraph and Dataset",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/graph.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "collections"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib/compare.py — graph isomorphism and canonicalization",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/compare.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib/collection.py — RDF collections (rdf:first/rdf:rest lists)",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/collection.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib plugins/parsers/ntriples.py — N-Triples parser",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/plugins/parsers/ntriples.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib plugins/parsers/rdfxml.py — RDF/XML parser",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/plugins/parsers/rdfxml.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib plugins/serializers/rdfxml.py — RDF/XML serializer",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/plugins/serializers/rdfxml.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "eclipse-rdf4j/rdf4j — Eclipse RDF4J (Java)",
+   "url": "https://github.com/eclipse-rdf4j/rdf4j",
+   "scope": "whole",
+   "implementation": "RDF4J",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RDF4J model-api Statement.java — statement interface",
+   "url": "https://github.com/eclipse-rdf4j/rdf4j/blob/main/core/model-api/src/main/java/org/eclipse/rdf4j/model/Statement.java",
+   "scope": "section",
+   "implementation": "RDF4J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RDF4J Rio NTriplesParser.java",
+   "url": "https://github.com/eclipse-rdf4j/rdf4j/blob/main/core/rio/ntriples/src/main/java/org/eclipse/rdf4j/rio/ntriples/NTriplesParser.java",
+   "scope": "section",
+   "implementation": "RDF4J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RDF4J Rio RDFXMLParser.java",
+   "url": "https://github.com/eclipse-rdf4j/rdf4j/blob/main/core/rio/rdfxml/src/main/java/org/eclipse/rdf4j/rio/rdfxml/RDFXMLParser.java",
+   "scope": "section",
+   "implementation": "RDF4J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "oxigraph/oxigraph — RDF/SPARQL database and parsers (Rust)",
+   "url": "https://github.com/oxigraph/oxigraph",
+   "scope": "whole",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxrdf/src/triple.rs — RDF terms, triples and quads",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxrdf/src/triple.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxrdf/src/literal.rs — literals",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxrdf/src/literal.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxrdf/src/blank_node.rs — blank nodes",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxrdf/src/blank_node.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxttl/src/ntriples.rs — N-Triples parser/serializer",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxttl/src/ntriples.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxttl/src/lexer.rs — lexer shared by N-Triples/Turtle family",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxttl/src/lexer.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxrdfxml/src/parser.rs — RDF/XML parser",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxrdfxml/src/parser.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "rdfjs/N3.js — RDF parser/writer/store (JavaScript)",
+   "url": "https://github.com/rdfjs/N3.js",
+   "scope": "whole",
+   "implementation": "N3.js",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "N3.js src/N3Lexer.js — lexer",
+   "url": "https://github.com/rdfjs/N3.js/blob/main/src/N3Lexer.js",
+   "scope": "section",
+   "implementation": "N3.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "N3.js src/N3DataFactory.js — RDF/JS terms and quads",
+   "url": "https://github.com/rdfjs/N3.js/blob/main/src/N3DataFactory.js",
+   "scope": "section",
+   "implementation": "N3.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "N3.js src/N3Store.js — indexed in-memory quad store",
+   "url": "https://github.com/rdfjs/N3.js/blob/main/src/N3Store.js",
+   "scope": "section",
+   "implementation": "N3.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "indexes",
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "RDF 1.1 Primer (W3C Working Group Note)",
+   "url": "https://www.w3.org/TR/rdf11-primer/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Guus Schreiber",
+    "Yves Raimond"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "RDF 1.1 Primer — 3 RDF Data Model",
+   "url": "https://www.w3.org/TR/rdf11-primer/#section-data-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "RDF 1.1 Primer — 5 Writing RDF graphs (syntaxes)",
+   "url": "https://www.w3.org/TR/rdf11-primer/#section-graph-syntax",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "RDF 1.2 Primer — Triple terms",
+   "url": "https://www.w3.org/TR/rdf12-primer/#section-triple-terms",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "RDF 1.2 Primer — Blank node representation",
+   "url": "https://www.w3.org/TR/rdf12-primer/#section-blank-node-representation",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Defining N-ary Relations on the Semantic Web (W3C Working Group Note)",
+   "url": "https://www.w3.org/TR/swbp-n-aryRelations/",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Cool URIs for the Semantic Web (W3C Interest Group Note)",
+   "url": "https://www.w3.org/TR/cooluris/",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2008,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Best Practices for Publishing Linked Data (W3C Note)",
+   "url": "https://www.w3.org/TR/ld-bp/",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Apache Jena — An Introduction to RDF and the Jena RDF API",
+   "url": "https://jena.apache.org/tutorials/rdf_api.html",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apache Jena — Reading and Writing RDF (RIOT)",
+   "url": "https://jena.apache.org/documentation/io/",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "file-io"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RDF4J — The RDF Model API",
+   "url": "https://rdf4j.org/documentation/programming/model/",
+   "scope": "section",
+   "implementation": "RDF4J",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RDF/JS Data Model specification (community API for RDF in JavaScript)",
+   "url": "https://rdf.js.org/data-model-spec/",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Linked Data: Evolving the Web into a Global Data Space (Heath & Bizer)",
+   "url": "http://linkeddatabook.com/editions/1.0/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Tom Heath",
+    "Christian Bizer"
+   ],
+   "year": 2011,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Ontola — RDF serialization formats compared",
+   "url": "https://ontola.io/blog/rdf-serialization-formats",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "serialization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Resource Description Framework",
+   "url": "https://en.wikipedia.org/wiki/Resource_Description_Framework",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — RDF/XML",
+   "url": "https://en.wikipedia.org/wiki/RDF/XML",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — N-Triples",
+   "url": "https://en.wikipedia.org/wiki/N-Triples",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Blank node",
+   "url": "https://en.wikipedia.org/wiki/Blank_node",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — RDF",
+   "url": "https://pldb.io/concepts/rdf.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — N-Triples",
+   "url": "https://pldb.io/concepts/n-triples.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "W3C Semantic Web wiki — Tools",
+   "url": "https://www.w3.org/2001/sw/wiki/Tools",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "W3C Resource Description Framework (RDF) — overview page",
+   "url": "https://www.w3.org/RDF/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

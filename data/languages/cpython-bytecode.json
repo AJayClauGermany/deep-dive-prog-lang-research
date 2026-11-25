@@ -1,0 +1,400 @@
+{
+ "id": "cpython-bytecode",
+ "name": "CPython bytecode",
+ "aliases": [
+  "Python bytecode",
+  ".pyc"
+ ],
+ "categories": [
+  "bytecode",
+  "intermediate-representation"
+ ],
+ "paradigms": [
+  "stack-based"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 1991,
+ "designers": [
+  "Guido van Rossum",
+  "CPython core developers"
+ ],
+ "summary": "The stack-based bytecode executed by CPython's virtual machine, stored in code objects and cached in .pyc files; an unstable, implementation-specific format that changes every minor release (wordcode since 3.6, adaptive specializing instructions since 3.11).",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".pyc"
+ ],
+ "homepage": "https://docs.python.org/3/library/dis.html",
+ "related": [
+  {
+   "id": "python",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "No specification: the dis module documentation lists the instructions of the current release only, and PEPs describe interpreter changes. Bytecode is explicitly not a stable interface.",
+  "0": "CPython (Python/bytecodes.c generates the interpreter cases) is the sole definition; other Pythons (PyPy, GraalPy) use different internal formats.",
+  "3": "No dedicated encyclopedia, PLDB or Rosetta entry exists; see the python entry for tertiary sources."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — Disassembler for Python bytecode",
+   "url": "https://docs.python.org/3/library/dis.html",
+   "concepts": [
+    "bytecode",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — Python bytecode instructions",
+   "url": "https://docs.python.org/3/library/dis.html#python-bytecode-instructions",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — POP_JUMP_IF_FALSE",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-POP_JUMP_IF_FALSE",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — FOR_ITER",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-FOR_ITER",
+   "concepts": [
+    "iteration-foreach",
+    "iterators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — CALL",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-CALL",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — LOAD_DEREF (cell/free variables)",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-LOAD_DEREF",
+   "concepts": [
+    "closures",
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — PUSH_EXC_INFO (zero-cost exception handling)",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-PUSH_EXC_INFO",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — YIELD_VALUE",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-YIELD_VALUE",
+   "concepts": [
+    "generators",
+    "coroutines"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "dis — MATCH_CLASS",
+   "url": "https://docs.python.org/3/library/dis.html#opcode-MATCH_CLASS",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Python data model — Code objects",
+   "url": "https://docs.python.org/3/reference/datamodel.html#code-objects",
+   "concepts": [
+    "bytecode",
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "marshal — internal object serialization (.pyc payload)",
+   "url": "https://docs.python.org/3/library/marshal.html",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 659 — Specializing Adaptive Interpreter",
+   "url": "https://peps.python.org/pep-0659/",
+   "concepts": [
+    "interpreter",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2021,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 523 — Adding a frame evaluation API to CPython",
+   "url": "https://peps.python.org/pep-0523/",
+   "concepts": [
+    "jit",
+    "interpreter"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2016,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 744 — JIT Compilation",
+   "url": "https://peps.python.org/pep-0744/",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2024,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "CPython InternalDocs — The bytecode interpreter",
+   "url": "https://github.com/python/cpython/blob/main/InternalDocs/interpreter.md",
+   "concepts": [
+    "interpreter",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "CPython InternalDocs — Compiler design",
+   "url": "https://github.com/python/cpython/blob/main/InternalDocs/compiler.md",
+   "concepts": [
+    "compiler-architecture",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "CPython InternalDocs — Exception handling (exception table)",
+   "url": "https://github.com/python/cpython/blob/main/InternalDocs/exception_handling.md",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Inside the Python Virtual Machine (Obi Ike-Nwosu)",
+   "url": "https://leanpub.com/insidethepythonvirtualmachine",
+   "concepts": [
+    "virtual-machine",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Obi Ike-Nwosu"
+   ],
+   "format": "html",
+   "access": "partially-open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Python/bytecodes.c — instruction definitions (DSL)",
+   "url": "https://github.com/python/cpython/blob/main/Python/bytecodes.c",
+   "concepts": [
+    "instruction-set",
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "CPython",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Python/ceval.c — evaluation loop",
+   "url": "https://github.com/python/cpython/blob/main/Python/ceval.c",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "CPython",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Python/codegen.c — AST to pseudo-instructions",
+   "url": "https://github.com/python/cpython/blob/main/Python/codegen.c",
+   "concepts": [
+    "code-generation",
+    "ast"
+   ],
+   "scope": "section",
+   "implementation": "CPython",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Python/flowgraph.c — CFG optimizer and assembler",
+   "url": "https://github.com/python/cpython/blob/main/Python/flowgraph.c",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "implementation": "CPython",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Python/specialize.c — adaptive specialization",
+   "url": "https://github.com/python/cpython/blob/main/Python/specialize.c",
+   "concepts": [
+    "optimization",
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "CPython",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython importlib/_bootstrap_external.py — .pyc header and MAGIC_NUMBER history",
+   "url": "https://github.com/python/cpython/blob/main/Lib/importlib/_bootstrap_external.py",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "implementation": "CPython",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "xdis — cross-version Python bytecode disassembler",
+   "url": "https://github.com/rocky/python-xdis",
+   "concepts": [
+    "tooling",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "implementation": "xdis",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  }
+ ]
+}

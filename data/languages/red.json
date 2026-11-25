@@ -1,0 +1,78 @@
+{
+ "id": "red",
+ "name": "Red",
+ "categories": [
+  "general-purpose",
+  "scripting",
+  "systems",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "imperative",
+  "functional",
+  "homoiconic",
+  "dialecting",
+  "reactive"
+ ],
+ "typing": [
+  "dynamic",
+  "strong"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Nenad Rakočević"
+ ],
+ "summary": "Rebol-inspired homoiconic language with a rich set of literal datatypes, PARSE dialect for grammars, VID GUI dialect and reactive programming, paired with Red/System, a C-level statically typed dialect used to implement its runtime; one toolchain interprets, compiles and cross-compiles.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".red",
+  ".reds"
+ ],
+ "homepage": "https://www.red-lang.org/",
+ "influenced_by": [
+  "rebol",
+  "lua",
+  "scala"
+ ],
+ "related": [
+  {
+   "id": "rebol",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "red/red: the toolchain (red.r, system/compiler.r) is still written in Rebol 2; the runtime is in Red/System (runtime/*.reds) and the standard environment in Red (environment/*.red).",
+  "1": "No specification for Red itself beyond the red/docs reference (datatypes, PARSE, VID, reactivity); Red/System has a written specification. Many Rebol 2 documents still apply.",
+  "3": "Rosetta Code reports 'blocked' to automated checkers."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "red/red — Red and Red/System toolchain and runtime", "url": "https://github.com/red/red", "implementation": "Red", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "tooling-source", "title": "red.r — toolchain front end (written in Rebol 2)", "url": "https://github.com/red/red/blob/master/red.r", "implementation": "Red", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "system/compiler.r — Red/System compiler", "url": "https://github.com/red/red/blob/master/system/compiler.r", "implementation": "Red", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "runtime/lexer.reds — lexer/loader for Red source", "url": "https://github.com/red/red/blob/master/runtime/lexer.reds", "implementation": "Red", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer", "lexical-structure"]},
+  {"level": 0, "kind": "implementation-source", "title": "runtime/interpreter.reds — Red interpreter", "url": "https://github.com/red/red/blob/master/runtime/interpreter.reds", "implementation": "Red", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "runtime/parse.reds — PARSE dialect engine", "url": "https://github.com/red/red/blob/master/runtime/parse.reds", "implementation": "Red", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "formal-grammars"]},
+  {"level": 0, "kind": "implementation-source", "title": "environment/natives.red — native function declarations", "url": "https://github.com/red/red/blob/master/environment/natives.red", "implementation": "Red", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — block! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/block.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lists", "quotation-homoiconicity"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — word! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/word.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["identifiers", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — function! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/function.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — object! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/object.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["objects"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — map! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/map.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — string! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/string.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — error! datatype", "url": "https://github.com/red/docs/blob/master/en/datatypes/error.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — PARSE dialect", "url": "https://github.com/red/docs/blob/master/en/parse.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching", "formal-grammars"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — Preprocessor (macros)", "url": "https://github.com/red/docs/blob/master/en/preprocessor.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros", "preprocessor"]},
+  {"level": 1, "kind": "reference-manual", "title": "Red docs — VID: visual interface dialect", "url": "https://github.com/red/docs/blob/master/en/vid.adoc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["templating"]},
+  {"level": 1, "kind": "specification", "title": "Red/System language specification", "url": "https://static.red-lang.org/red-system-specs.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "pointers-references"]},
+  {"level": 1, "kind": "grammar", "title": "A BNF grammar of Red/System (PDF)", "url": "http://static.red-lang.org/A_BNF_grammar_of_Red_System.pdf", "scope": "whole", "authority": "official", "format": "pdf", "access": "open", "concepts": ["grammar"]},
+  {"level": 2, "kind": "article", "title": "Introducing Parse (Red blog, 0.4.1)", "url": "https://www.red-lang.org/2013/11/041-introducing-parse.html", "scope": "section", "authority": "designer", "authors": ["Nenad Rakočević"], "year": 2013, "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 2, "kind": "by-example", "title": "Red by Example", "url": "https://www.red-by-example.org/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 2, "kind": "tutorial", "title": "Helpin'Red", "url": "https://helpin.red/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Red (programming language)", "url": "https://en.wikipedia.org/wiki/Red_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Red", "url": "https://pldb.io/concepts/red.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Red", "url": "https://rosettacode.org/wiki/Category:Red", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

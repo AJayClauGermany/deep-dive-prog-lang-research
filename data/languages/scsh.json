@@ -1,0 +1,33 @@
+{
+ "id": "scsh",
+ "name": "scsh (Scheme Shell)",
+ "aliases": ["Scheme Shell"],
+ "categories": ["shell", "scripting", "functional"],
+ "paradigms": ["functional", "imperative"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 1994,
+ "designers": ["Olin Shivers"],
+ "summary": "Unix shell programming embedded in Scheme 48: a process notation (run, &, |, redirections as S-expressions) for pipelines plus a full POSIX system-call library, AWK-style field readers and SRE regular-expression notation, so shell scripts are ordinary Scheme programs.",
+ "status": "historical",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".scm"],
+ "homepage": "https://scsh.net/",
+ "influenced_by": ["scheme", "posix-sh", "awk"],
+ "related": [{"id": "scheme", "relation": "embeds"}],
+ "level_notes": {"1": "Shivers' 1994 MIT LCS technical report \"A Scheme Shell\" and the scsh Reference Manual define it.", "2": "Few secondary sources beyond the designer's papers."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "scheme/scsh — scsh source (on Scheme 48)", "url": "https://github.com/scheme/scsh", "implementation": "scsh", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "scheme/syntax.scm — process-notation macros", "url": "https://github.com/scheme/scsh/blob/master/scheme/syntax.scm", "implementation": "scsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros", "processes-system"]},
+  {"level": 0, "kind": "implementation-source", "title": "scheme/process.scm — fork, exec, wait and pipelines", "url": "https://github.com/scheme/scsh/blob/master/scheme/process.scm", "implementation": "scsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["processes-system", "pipelines"]},
+  {"level": 0, "kind": "implementation-source", "title": "scheme/awk.scm — the awk macro", "url": "https://github.com/scheme/scsh/blob/master/scheme/awk.scm", "implementation": "scsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros", "pattern-matching"]},
+
+  {"level": 1, "kind": "original-paper", "title": "A Scheme Shell (MIT LCS TR-635)", "url": "https://www.ccs.neu.edu/home/shivers/papers/scsh.pdf", "implementation": "scsh", "scope": "whole", "authority": "designer", "authors": ["Olin Shivers"], "year": 1994, "format": "pdf", "access": "open", "concepts": ["design-rationale", "processes-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "Scsh Reference Manual — Introduction and lexical issues", "url": "https://scsh.net/docu/html/man-Z-H-2.html", "implementation": "scsh", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["lexical-structure", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "Scsh Reference Manual — Process notation", "url": "https://scsh.net/docu/html/man-Z-H-3.html", "implementation": "scsh", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["processes-system", "pipelines", "input-output"]},
+  {"level": 1, "kind": "reference-manual", "title": "Scsh Reference Manual — System calls", "url": "https://scsh.net/docu/html/man-Z-H-4.html", "implementation": "scsh", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["file-io", "error-handling", "ffi"]},
+  {"level": 1, "kind": "design-document", "title": "SRE — S-expression regular-expression notation", "url": "https://scsh.net/docu/post/sre.html", "implementation": "scsh", "scope": "whole", "authority": "designer", "authors": ["Olin Shivers"], "format": "html", "access": "open", "concepts": ["regular-expressions"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Scsh", "url": "https://en.wikipedia.org/wiki/Scsh", "implementation": "scsh", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — scsh", "url": "https://pldb.io/concepts/scsh.html", "implementation": "scsh", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}
