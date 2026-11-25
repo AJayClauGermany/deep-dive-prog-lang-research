@@ -1,0 +1,559 @@
+{
+ "id": "org-mode",
+ "name": "Org mode",
+ "aliases": [
+  "Org",
+  "Org-mode",
+  ".org"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup",
+  "literate"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2003,
+ "designers": [
+  "Carsten Dominik",
+  "Bastien Guerry",
+  "Ihor Radchenko (maintainer)"
+ ],
+ "summary": "The outline-based plain-text markup of the Emacs Org mode: headings, drawers and properties, plain lists, tables with a spreadsheet formula language, links, macros, timestamps and executable source blocks (Babel) for literate programming; exported to HTML, LaTeX, ODT and more.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".org"
+ ],
+ "homepage": "https://orgmode.org/",
+ "influenced_by": [
+  "emacs-lisp"
+ ],
+ "related": [
+  {
+   "id": "emacs-lisp",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Org is implemented in Emacs Lisp and ships with Emacs; links use the GitHub emacs-mirror (canonical repository at git.savannah.gnu.org / git.sr.ht).",
+  "1": "\"Org Syntax\" on Worg is the closest thing to a specification and is kept in sync with org-element.el; the Org Manual documents behaviour."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "org-element.el — the Org parser producing the element/object syntax tree",
+   "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/org/org-element.el",
+   "authority": "official",
+   "implementation": "Org (Emacs Lisp)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "org-table.el — tables and the spreadsheet formula engine",
+   "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/org/org-table.el",
+   "authority": "official",
+   "implementation": "Org (Emacs Lisp)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ol.el — hyperlink types and link resolution",
+   "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/org/ol.el",
+   "authority": "official",
+   "implementation": "Org (Emacs Lisp)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "org-macro.el — macro replacement",
+   "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/org/org-macro.el",
+   "authority": "official",
+   "implementation": "Org (Emacs Lisp)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ob-core.el — Babel: evaluating source blocks, header arguments, noweb",
+   "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/org/ob-core.el",
+   "authority": "official",
+   "implementation": "Org (Emacs Lisp)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ox.el — the generic export framework (back-ends, export settings)",
+   "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/org/ox.el",
+   "authority": "official",
+   "implementation": "Org (Emacs Lisp)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax (Worg, maintained by the Org developers)",
+   "url": "https://orgmode.org/worg/org-syntax.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Headings and sections",
+   "url": "https://orgmode.org/worg/org-syntax.html#Headings_and_Sections",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Greater blocks",
+   "url": "https://orgmode.org/worg/org-syntax.html#Greater_Blocks",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Drawers and property drawers",
+   "url": "https://orgmode.org/worg/org-syntax.html#Drawers",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Plain lists and items",
+   "url": "https://orgmode.org/worg/org-syntax.html#Plain_Lists",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Tables",
+   "url": "https://orgmode.org/worg/org-syntax.html#Tables",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Comments",
+   "url": "https://orgmode.org/worg/org-syntax.html#Comments",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Keywords and affiliated keywords",
+   "url": "https://orgmode.org/worg/org-syntax.html#Keywords",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Links",
+   "url": "https://orgmode.org/worg/org-syntax.html#Links",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Macros",
+   "url": "https://orgmode.org/worg/org-syntax.html#Macros",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Emphasis markers",
+   "url": "https://orgmode.org/worg/org-syntax.html#Emphasis_Markers",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Org Syntax — Timestamps",
+   "url": "https://orgmode.org/worg/org-syntax.html#Timestamps",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Org Manual",
+   "url": "https://orgmode.org/manual/index.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Document structure (outlines)",
+   "url": "https://orgmode.org/manual/Document-Structure.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Tables",
+   "url": "https://orgmode.org/manual/Tables.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — The spreadsheet (formulas, references)",
+   "url": "https://orgmode.org/manual/The-Spreadsheet.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Hyperlinks",
+   "url": "https://orgmode.org/manual/Hyperlinks.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Markup for rich contents",
+   "url": "https://orgmode.org/manual/Markup-for-Rich-Contents.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Escape character (zero-width space)",
+   "url": "https://orgmode.org/manual/Escape-Character.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Comment lines",
+   "url": "https://orgmode.org/manual/Comment-Lines.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Macro replacement",
+   "url": "https://orgmode.org/manual/Macro-Replacement.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Include files",
+   "url": "https://orgmode.org/manual/Include-Files.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Properties and columns",
+   "url": "https://orgmode.org/manual/Properties-and-Columns.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Working with source code (Babel)",
+   "url": "https://orgmode.org/manual/Working-with-Source-Code.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — Noweb reference syntax (literate programming)",
+   "url": "https://orgmode.org/manual/Noweb-Reference-Syntax.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Org Manual — In-buffer settings (#+KEYWORDS)",
+   "url": "https://orgmode.org/manual/In_002dbuffer-Settings.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Org Element API (Worg)",
+   "url": "https://orgmode.org/worg/dev/org-element-api.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Schulte, Davison, Dye, Dominik — A Multi-Language Computing Environment for Literate Programming and Reproducible Research (J. Stat. Software, 2012)",
+   "url": "https://www.jstatsoft.org/article/view/v046i03",
+   "authority": "designer",
+   "authors": [
+    "Eric Schulte",
+    "Dan Davison",
+    "Thomas Dye",
+    "Carsten Dominik"
+   ],
+   "year": 2012,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Org Mode Compact Guide",
+   "url": "https://orgmode.org/guide/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Worg — Org tutorials index",
+   "url": "https://orgmode.org/worg/org-tutorials/index.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Org-mode",
+   "url": "https://en.wikipedia.org/wiki/Org-mode",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Org",
+   "url": "https://pldb.io/concepts/org.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

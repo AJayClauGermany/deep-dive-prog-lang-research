@@ -1,0 +1,38 @@
+{
+ "id": "rc",
+ "name": "rc (Plan 9 shell)",
+ "aliases": ["rc shell", "Plan 9 rc"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative"],
+ "typing": ["untyped", "string-lists"],
+ "first_appeared": 1989,
+ "designers": ["Tom Duff"],
+ "summary": "The command interpreter of Research Unix v10 and Plan 9: a cleaner Bourne-shell replacement whose variables are lists of strings, with a single quoting mechanism, no re-scanning of variable values, C-like braces syntax and `if not`/`switch` constructs.",
+ "status": "maintained",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".rc"],
+ "homepage": "https://9p.io/sys/doc/rc.html",
+ "influenced_by": ["posix-sh", "c"],
+ "related": [],
+ "level_notes": {"1": "Tom Duff's paper \"Rc — The Plan 9 Shell\" and the rc(1) manual page define the language.", "0": "Plan 9 / plan9port sources (yacc grammar syn.y compiled to a small stack-machine code); Byron Rakitzis' independent Unix reimplementation is widely packaged as rc."},
+ "resources": [
+  {"level": 0, "kind": "grammar-source", "title": "plan9port src/cmd/rc/syn.y — yacc grammar", "url": "https://github.com/9fans/plan9port/blob/master/src/cmd/rc/syn.y", "implementation": "Plan 9 rc (plan9port)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "plan9port src/cmd/rc/lex.c — lexer", "url": "https://github.com/9fans/plan9port/blob/master/src/cmd/rc/lex.c", "implementation": "Plan 9 rc (plan9port)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "plan9port src/cmd/rc/code.c — compiles syntax trees to rc machine code", "url": "https://github.com/9fans/plan9port/blob/master/src/cmd/rc/code.c", "implementation": "Plan 9 rc (plan9port)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode", "code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "plan9port src/cmd/rc/exec.c — the rc virtual machine", "url": "https://github.com/9fans/plan9port/blob/master/src/cmd/rc/exec.c", "implementation": "Plan 9 rc (plan9port)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["virtual-machine", "interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "plan9port src/cmd/rc/glob.c — pattern matching", "url": "https://github.com/9fans/plan9port/blob/master/src/cmd/rc/glob.c", "implementation": "Plan 9 rc (plan9port)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 0, "kind": "implementation-repository", "title": "rakitzis/rc — rc for Unix", "url": "https://github.com/rakitzis/rc", "implementation": "rc (Byron Rakitzis)", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "grammar-source", "title": "rakitzis/rc parse.y — yacc grammar", "url": "https://github.com/rakitzis/rc/blob/master/parse.y", "implementation": "rc (Byron Rakitzis)", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["grammar"]},
+
+  {"level": 1, "kind": "original-paper", "title": "Rc — The Plan 9 Shell", "url": "https://9p.io/sys/doc/rc.html", "scope": "whole", "authority": "designer", "authors": ["Tom Duff"], "year": 1990, "format": "html", "access": "open", "concepts": ["design-rationale", "grammar", "variables", "lists", "conditionals", "loops", "functions"]},
+  {"level": 1, "kind": "original-paper", "title": "Rc — The Plan 9 Shell (2nd edition text, cat-v)", "url": "https://doc.cat-v.org/plan_9/2nd_edition/papers/rc", "scope": "whole", "authority": "designer", "authors": ["Tom Duff"], "year": 1995, "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 1, "kind": "reference-manual", "title": "rc(1) — Plan 9 manual page", "url": "https://9p.io/magic/man2html/1/rc", "implementation": "Plan 9 rc", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "strings", "pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "rc(1) — plan9port manual page", "url": "https://9fans.github.io/plan9port/man/man1/rc.html", "implementation": "Plan 9 rc (plan9port)", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "rc(1) — rakitzis rc manual source", "url": "https://github.com/rakitzis/rc/blob/master/rc.1", "implementation": "rc (Byron Rakitzis)", "scope": "whole", "authority": "community", "format": "source-file", "access": "open"},
+
+  {"level": 2, "kind": "guide", "title": "rc.cat-v.org — rc shell resources, scripts and history", "url": "http://rc.cat-v.org/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — rc (Unix shell)", "url": "https://en.wikipedia.org/wiki/Rc_(Unix_shell)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — rc", "url": "https://pldb.io/concepts/rc.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

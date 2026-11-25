@@ -1,0 +1,47 @@
+{
+ "id": "ysh",
+ "name": "YSH / Oils",
+ "aliases": ["YSH", "Oil", "Oil shell", "Oils for Unix", "OSH"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative", "procedural", "functional"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 2016,
+ "designers": ["Andy Chu"],
+ "summary": "Oils is a project with two languages: OSH, a bash-compatible shell, and YSH, a new shell language that adds Python/JavaScript-like expressions, typed data (lists, dicts, JSON/J8), procs and funcs, eggex regular expressions and strict error handling on top of shell commands.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".ysh", ".sh"],
+ "homepage": "https://oils.pub/",
+ "influenced_by": ["bash", "posix-sh", "python", "javascript", "ksh"],
+ "related": [{"id": "bash", "relation": "family"}, {"id": "posix-sh", "relation": "superset-of"}, {"id": "python", "relation": "implemented-in"}],
+ "level_notes": {"1": "The Oils Reference (doc/ref/chap-*.md, published on oils.pub, which blocks automated access here, so the GitHub sources are linked) is the language definition, together with the large spec-test suite.", "0": "oils-for-unix/oils: written in a typed Python subset and translated to C++ (mycpp) for release builds."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "oils-for-unix/oils — OSH and YSH source", "url": "https://github.com/oils-for-unix/oils", "implementation": "Oils", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter", "bootstrapping"]},
+  {"level": 0, "kind": "grammar-source", "title": "ysh/grammar.pgen2 — YSH expression grammar (pgen2)", "url": "https://github.com/oils-for-unix/oils/blob/master/ysh/grammar.pgen2", "implementation": "Oils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "formal-grammars", "expressions"]},
+  {"level": 0, "kind": "implementation-source", "title": "ysh/expr_to_ast.py — expression parse tree to AST", "url": "https://github.com/oils-for-unix/oils/blob/master/ysh/expr_to_ast.py", "implementation": "Oils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["ast", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "ysh/expr_eval.py — expression evaluator", "url": "https://github.com/oils-for-unix/oils/blob/master/ysh/expr_eval.py", "implementation": "Oils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "operators"]},
+  {"level": 0, "kind": "implementation-source", "title": "osh/cmd_eval.py — command evaluator shared by OSH and YSH", "url": "https://github.com/oils-for-unix/oils/blob/master/osh/cmd_eval.py", "implementation": "Oils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "conditionals", "loops"]},
+  {"level": 0, "kind": "conformance-tests", "title": "spec/ysh-expr.test.sh — YSH expression tests", "url": "https://github.com/oils-for-unix/oils/blob/master/spec/ysh-expr.test.sh", "implementation": "Oils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["expressions", "testing"]},
+  {"level": 0, "kind": "conformance-tests", "title": "spec/ysh-case.test.sh — YSH case/pattern tests", "url": "https://github.com/oils-for-unix/oils/blob/master/spec/ysh-case.test.sh", "implementation": "Oils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching", "switch-case", "testing"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Oils Reference — YSH table of contents", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ref/toc-ysh.md", "implementation": "Oils", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Oils Reference — YSH command language (proc, func, if, case, for, while, try)", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ref/chap-cmd-lang.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case", "functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Oils Reference — YSH expression language", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ref/chap-expr-lang.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions", "operators", "literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Oils Reference — Types and methods", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ref/chap-type-method.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "methods", "lists", "maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Oils Reference — Builtin functions", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ref/chap-builtin-func.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "design-document", "title": "Command vs. expression mode", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/command-vs-expression-mode.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "design-rationale"]},
+  {"level": 1, "kind": "design-document", "title": "Guide to procs and funcs", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/proc-func.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments", "closures"]},
+  {"level": 1, "kind": "design-document", "title": "YSH error handling (try, failed status)", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/error-handling.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["error-handling", "exceptions"]},
+  {"level": 1, "kind": "design-document", "title": "Egg expressions (eggex) — YSH regular expressions", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/eggex.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["regular-expressions"]},
+  {"level": 1, "kind": "design-document", "title": "Variable declaration, mutation and scope", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/variables.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "scope", "assignment"]},
+  {"level": 1, "kind": "specification", "title": "J8 notation — JSON-compatible string and data encoding", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/j8-notation.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["serialization", "strings", "unicode"]},
+  {"level": 1, "kind": "design-document", "title": "Hay — custom languages for unix systems (blocks as data)", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/hay.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["code-generation", "macros"]},
+
+  {"level": 2, "kind": "tutorial", "title": "A tour of YSH", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ysh-tour.md", "implementation": "Oils", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "comparison-guide", "title": "YSH vs. Python", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ysh-vs-python.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "comparison-guide", "title": "YSH vs. shell", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/ysh-vs-shell.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "guide", "title": "Shell language changes (upgrade breakage) from OSH to YSH", "url": "https://github.com/oils-for-unix/oils/blob/master/doc/upgrade-breakage.md", "implementation": "Oils", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["versioning-compatibility", "language-evolution"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Oil shell", "url": "https://pldb.io/concepts/oil.html", "implementation": "Oils", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

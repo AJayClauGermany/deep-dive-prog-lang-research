@@ -1,0 +1,390 @@
+{
+ "id": "odata-query",
+ "name": "OData query options",
+ "aliases": [
+  "OData $filter expressions",
+  "OData URL conventions"
+ ],
+ "categories": [
+  "query",
+  "protocol",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "Microsoft",
+  "OASIS OData Technical Committee"
+ ],
+ "summary": "URL-embedded query language of the Open Data Protocol: system query options ($filter, $select, $expand, $orderby, $top/$skip, $count, $search, $compute, $apply) with a common expression syntax of operators, canonical functions and lambda operators over an entity data model.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "consortium-standard"
+ ],
+ "standards": [
+  "OASIS OData Version 4.01",
+  "ISO/IEC 20802-1:2016"
+ ],
+ "homepage": "https://www.odata.org/",
+ "level_notes": {
+  "1": "OData 4.01 Part 2: URL Conventions defines the query syntax normatively, with an ABNF in the separate 'ABNF Construction Rules'. Aggregation ($apply) is defined by the Data Aggregation Extension. OData 4.0 is also ISO/IEC 20802.",
+  "0": "Apache Olingo (Java) and Microsoft's odata.net (C#) are the main open-source server/client libraries."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "odata.net — UriQueryExpressionParser.cs ($filter/$orderby expression parser)",
+   "url": "https://github.com/OData/odata.net/blob/main/src/Microsoft.OData.Core/UriParser/Parsers/UriQueryExpressionParser.cs",
+   "implementation": "odata.net",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "odata.net — ExpressionLexer.cs",
+   "url": "https://github.com/OData/odata.net/blob/main/src/Microsoft.OData.Core/UriParser/ExpressionLexer.cs",
+   "implementation": "odata.net",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache Olingo — ExpressionParser.java",
+   "url": "https://github.com/apache/olingo-odata4/blob/master/lib/server-core/src/main/java/org/apache/olingo/server/core/uri/parser/ExpressionParser.java",
+   "implementation": "Apache Olingo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData Version 4.01 Part 2: URL Conventions",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — 4 Resource Path",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_ResourcePath",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — 5.1 System Query Options",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_SystemQueryOptions",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — 5.1.1.1 Logical Operators",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_LogicalOperators",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — 5.1.1.4-5.1.1.11 Canonical Functions",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_CanonicalFunctions",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "strings",
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — Conditional functions (case)",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_ConditionalFunctions",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — Lambda Operators (any, all)",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_LambdaOperators",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — Literals",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_Literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — Operator Precedence",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_OperatorPrecedence",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — System Query Option $filter",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_SystemQueryOptionfilter",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — System Query Option $expand",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_SystemQueryOptionexpand",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — System Query Option $select",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_SystemQueryOptionselect",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — System Query Option $orderby",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_SystemQueryOptionorderby",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData 4.01 Part 2: URL Conventions — System Query Options $top and $skip",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_SystemQueryOptionstopandskip",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "OData 4.01 ABNF Construction Rules",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/os/abnf/odata-abnf-construction-rules.txt",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData Extension for Data Aggregation 4.0 ($apply)",
+   "url": "https://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "4.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OData Version 4.01 Part 1: Protocol",
+   "url": "https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "OData Basic Tutorial (odata.org)",
+   "url": "https://www.odata.org/getting-started/basic-tutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "OData Advanced Tutorial (odata.org)",
+   "url": "https://www.odata.org/getting-started/advanced-tutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Microsoft Learn — OData query options overview",
+   "url": "https://learn.microsoft.com/en-us/odata/concepts/queryoptions-overview",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Open Data Protocol",
+   "url": "https://en.wikipedia.org/wiki/Open_Data_Protocol",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — OData",
+   "url": "https://pldb.io/concepts/odata.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

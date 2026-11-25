@@ -1,0 +1,48 @@
+{
+ "id": "nushell",
+ "name": "Nushell",
+ "aliases": ["Nu", "nu"],
+ "categories": ["shell", "scripting", "functional"],
+ "paradigms": ["functional", "pipeline", "structured-data"],
+ "typing": ["static-parse-time-checks", "dynamic", "structural"],
+ "first_appeared": 2019,
+ "designers": ["Jonathan Turner", "Yehuda Katz", "Andrés N. Robalino"],
+ "summary": "Cross-platform shell and language where pipelines carry structured data (records, tables, lists) instead of text; variables are immutable by default, custom commands have typed signatures, and scripts are parsed and type-checked before evaluation.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".nu"],
+ "homepage": "https://www.nushell.sh/",
+ "influenced_by": ["powershell", "rust", "posix-sh"],
+ "related": [{"id": "rust", "relation": "implemented-in"}],
+ "level_notes": {"1": "No formal specification (pre-1.0, breaking changes each release); the Language Reference Guide and command reference on nushell.sh are the closest to a reference.", "0": "nushell/nushell (Rust workspace: nu-parser, nu-engine, nu-protocol, nu-cmd-lang) is the definition."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "nushell/nushell — Nushell source (Rust)", "url": "https://github.com/nushell/nushell", "implementation": "nu", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "nu-parser/src/lex.rs — lexer", "url": "https://github.com/nushell/nushell/blob/main/crates/nu-parser/src/lex.rs", "implementation": "nu", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "nu-parser/src/parser.rs — parser and parse-time type checking", "url": "https://github.com/nushell/nushell/blob/main/crates/nu-parser/src/parser.rs", "implementation": "nu", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "nu-engine/src/eval.rs — evaluator", "url": "https://github.com/nushell/nushell/blob/main/crates/nu-engine/src/eval.rs", "implementation": "nu", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "nu-protocol/src/value/mod.rs — the Value type (structured data)", "url": "https://github.com/nushell/nushell/blob/main/crates/nu-protocol/src/value/mod.rs", "implementation": "nu", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["data-model", "records-structs"]},
+  {"level": 0, "kind": "implementation-source", "title": "nu-cmd-lang core_commands/try_.rs — try/catch", "url": "https://github.com/nushell/nushell/blob/main/crates/nu-cmd-lang/src/core_commands/try_.rs", "implementation": "nu", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["exceptions", "error-handling"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Nushell Language Reference Guide", "url": "https://www.nushell.sh/lang-guide/", "implementation": "nu", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — Types overview", "url": "https://www.nushell.sh/lang-guide/chapters/types/00_types_overview.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — Records", "url": "https://www.nushell.sh/lang-guide/chapters/types/basic_types/record.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs", "maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — Closures", "url": "https://www.nushell.sh/lang-guide/chapters/types/basic_types/closure.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — Type signatures", "url": "https://www.nushell.sh/lang-guide/chapters/types/type_signatures.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-annotations", "function-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — if/else", "url": "https://www.nushell.sh/lang-guide/chapters/flow_control/if-else.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — match", "url": "https://www.nushell.sh/lang-guide/chapters/flow_control/match.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching", "switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — for", "url": "https://www.nushell.sh/lang-guide/chapters/flow_control/for.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — try/catch", "url": "https://www.nushell.sh/lang-guide/chapters/flow_control/try-catch.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — Variable scope", "url": "https://www.nushell.sh/lang-guide/chapters/variable_scope.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "Nu lang guide — Strings and text", "url": "https://www.nushell.sh/lang-guide/chapters/strings_and_text.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "string-formatting"]},
+  {"level": 1, "kind": "library-reference", "title": "Nushell command reference", "url": "https://www.nushell.sh/commands/", "implementation": "nu", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "guide", "title": "The Nushell Book — Pipelines", "url": "https://www.nushell.sh/book/pipelines.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pipelines"]},
+  {"level": 2, "kind": "guide", "title": "The Nushell Book — Custom commands", "url": "https://www.nushell.sh/book/custom_commands.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments"]},
+  {"level": 2, "kind": "guide", "title": "The Nushell Book — Modules", "url": "https://www.nushell.sh/book/modules.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports"]},
+  {"level": 2, "kind": "guide", "title": "The Nushell Book — Parallelism (par-each)", "url": "https://www.nushell.sh/book/parallelism.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism"]},
+  {"level": 2, "kind": "comparison-guide", "title": "The Nushell Book — Coming from Bash", "url": "https://www.nushell.sh/book/coming_from_bash.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "internals-guide", "title": "The Nushell Book — How Nushell code gets run (parse-then-evaluate)", "url": "https://www.nushell.sh/book/how_nushell_code_gets_run.html", "implementation": "nu", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["evaluation-order", "design-rationale"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Nushell", "url": "https://pldb.io/concepts/nushell.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

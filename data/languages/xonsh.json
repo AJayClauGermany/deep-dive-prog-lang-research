@@ -1,0 +1,46 @@
+{
+ "id": "xonsh",
+ "name": "Xonsh",
+ "aliases": ["xsh"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative", "object-oriented", "functional"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 2015,
+ "designers": ["Anthony Scopatz"],
+ "summary": "Python-powered shell whose language is a superset of Python 3: lines are parsed as Python where possible and as subprocess commands otherwise, with $(), !(), @() and @$() operators bridging the two modes.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".xsh"],
+ "homepage": "https://xon.sh/",
+ "influenced_by": ["python", "posix-sh"],
+ "related": [{"id": "python", "relation": "superset-of"}, {"id": "python", "relation": "implemented-in"}],
+ "level_notes": {"1": "No specification; the official tutorial documents the Python/subprocess mode rules.", "0": "xonsh/xonsh: a PLY-based parser extending the Python grammar per Python version (xonsh/parsers/v3xx.py)."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "xonsh/xonsh — Xonsh source (Python)", "url": "https://github.com/xonsh/xonsh", "implementation": "xonsh", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "xonsh/parsers/lexer.py — lexer extending Python tokens", "url": "https://github.com/xonsh/xonsh/blob/main/xonsh/parsers/lexer.py", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "xonsh/parsers/base.py — PLY grammar for Python plus subprocess syntax", "url": "https://github.com/xonsh/xonsh/blob/main/xonsh/parsers/base.py", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "xonsh/execer.py — mode detection, compile and exec", "url": "https://github.com/xonsh/xonsh/blob/main/xonsh/execer.py", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "eval"]},
+  {"level": 0, "kind": "implementation-source", "title": "xonsh/procs/specs.py — subprocess specifications and pipelines", "url": "https://github.com/xonsh/xonsh/blob/main/xonsh/procs/specs.py", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["processes-system", "pipelines"]},
+  {"level": 0, "kind": "implementation-source", "title": "xonsh/built_ins.py — builtins backing $(), !(), globbing", "url": "https://github.com/xonsh/xonsh/blob/main/xonsh/built_ins.py", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library", "pattern-matching"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial (de facto language reference)", "url": "https://xon.sh/tutorial.html", "implementation": "xonsh", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world", "grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Python-mode vs Subprocess-mode", "url": "https://xon.sh/tutorial.html#python-mode-vs-subprocess-mode", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "design-rationale"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Environment variables", "url": "https://xon.sh/tutorial.html#environment-variables", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "processes-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Captured subprocess with $() and !()", "url": "https://xon.sh/tutorial.html#captured-subprocess-with-and", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["processes-system", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Python evaluation with @()", "url": "https://xon.sh/tutorial.html#python-evaluation-with", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["interoperability", "eval"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Pipes", "url": "https://xon.sh/tutorial.html#pipes", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pipelines"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Input/Output redirection", "url": "https://xon.sh/tutorial.html#input-output-redirection", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["input-output"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Filename globbing (incl. regex globs)", "url": "https://xon.sh/tutorial.html#filename-globbing", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching", "regular-expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Callable aliases", "url": "https://xon.sh/tutorial.html#callable-aliases", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "higher-order-functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Error handling", "url": "https://xon.sh/tutorial.html#error-handling", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["error-handling", "exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh tutorial — Importing xonsh (*.xsh)", "url": "https://xon.sh/tutorial.html#importing-xonsh-xsh", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh — Subprocess strings", "url": "https://xon.sh/tutorial_subproc_strings.html", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xonsh — Macros", "url": "https://xon.sh/tutorial_macros.html", "implementation": "xonsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros", "quotation-homoiconicity"]},
+
+  {"level": 2, "kind": "comparison-guide", "title": "Bash to Xonsh translation guide", "url": "https://xon.sh/bash_to_xsh.html", "implementation": "xonsh", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "comparison-guide", "title": "Xonsh comparison with other shells", "url": "https://xon.sh/comparison.html", "implementation": "xonsh", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "faq", "title": "Xonsh FAQ", "url": "https://xon.sh/faq.html", "implementation": "xonsh", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+
+  {"level": 3, "kind": "curated-list", "title": "awesome-xontribs", "url": "https://github.com/xonsh/awesome-xontribs", "implementation": "xonsh", "scope": "whole", "authority": "community", "format": "repository", "access": "open"}
+ ]
+}

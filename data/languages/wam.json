@@ -1,0 +1,240 @@
+{
+  "id": "wam",
+  "name": "Warren Abstract Machine",
+  "aliases": [
+    "WAM"
+  ],
+  "categories": [
+    "theoretical-model",
+    "abstract-machine",
+    "bytecode"
+  ],
+  "paradigms": [
+    "logic"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 1983,
+  "designers": [
+    "David H. D. Warren"
+  ],
+  "summary": "David H. D. Warren's 1983 abstract instruction set for Prolog: registers, heap, environment and choice-point stacks, a trail, and specialised get/put/unify instructions for compiled unification and backtracking. It is the de facto target of Prolog compilers.",
+  "status": "maintained",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [
+    "prolog",
+    "horn-clauses"
+  ],
+  "related": [
+    {
+      "id": "prolog",
+      "relation": "host-of"
+    },
+    {
+      "id": "horn-clauses",
+      "relation": "formalizes"
+    }
+  ],
+  "level_notes": {
+    "0": "GNU Prolog compiles Prolog to WAM code (Pl2Wam) and then to native code; its sources are listed as a real WAM implementation."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Warren (1983) — An Abstract Prolog Instruction Set (SRI Technical Note 309)",
+      "url": "https://www.sri.com/wp-content/uploads/2021/12/641.pdf",
+      "concepts": [
+        "instruction-set",
+        "unification",
+        "virtual-machine"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "David H. D. Warren"
+      ],
+      "year": 1983
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Aït-Kaci — Warren's Abstract Machine: A Tutorial Reconstruction (1991, free PDF)",
+      "url": "https://github.com/a-yiorgos/wambook/blob/master/wambook.pdf",
+      "concepts": [
+        "unification",
+        "virtual-machine",
+        "instruction-set"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "authors": [
+        "Hassan Aït-Kaci"
+      ],
+      "year": 1991
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Aït-Kaci — WAM tutorial reconstruction: slides",
+      "url": "https://github.com/a-yiorgos/wambook/blob/master/wam-slides.pdf",
+      "concepts": [
+        "virtual-machine"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "authors": [
+        "Hassan Aït-Kaci"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "GNU Prolog — Prolog compiler via WAM to native code",
+      "url": "https://github.com/didoudiaz/gprolog",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open",
+      "implementation": "GNU Prolog"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Prolog src/Pl2Wam/code_gen.pl — generating WAM code from clauses",
+      "url": "https://github.com/didoudiaz/gprolog/blob/master/src/Pl2Wam/code_gen.pl",
+      "concepts": [
+        "code-generation-backend",
+        "unification"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GNU Prolog"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Prolog src/Pl2Wam/indexing.pl — first-argument indexing (switch/try instructions)",
+      "url": "https://github.com/didoudiaz/gprolog/blob/master/src/Pl2Wam/indexing.pl",
+      "concepts": [
+        "optimization",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GNU Prolog"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Prolog src/Pl2Wam/reg_alloc.pl — WAM register allocation",
+      "url": "https://github.com/didoudiaz/gprolog/blob/master/src/Pl2Wam/reg_alloc.pl",
+      "concepts": [
+        "optimization"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GNU Prolog"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Prolog src/EnginePl/wam_inst.c — run-time support for WAM instructions",
+      "url": "https://github.com/didoudiaz/gprolog/blob/master/src/EnginePl/wam_inst.c",
+      "concepts": [
+        "virtual-machine",
+        "unification",
+        "runtime-system"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GNU Prolog"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Prolog src/EnginePl/wam_archi.def — WAM registers and stacks definition",
+      "url": "https://github.com/didoudiaz/gprolog/blob/master/src/EnginePl/wam_archi.def",
+      "concepts": [
+        "virtual-machine",
+        "memory-management"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GNU Prolog"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Warren Abstract Machine",
+      "url": "https://en.wikipedia.org/wiki/Warren_Abstract_Machine",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Warren Abstract Machine: Memory areas",
+      "url": "https://en.wikipedia.org/wiki/Warren_Abstract_Machine#Memory_areas",
+      "concepts": [
+        "memory-management",
+        "virtual-machine"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Warren Abstract Machine: Example",
+      "url": "https://en.wikipedia.org/wiki/Warren_Abstract_Machine#Example",
+      "concepts": [
+        "instruction-set",
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Prolog",
+      "url": "https://en.wikipedia.org/wiki/Prolog",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

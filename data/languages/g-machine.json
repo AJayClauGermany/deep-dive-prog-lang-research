@@ -1,0 +1,307 @@
+{
+  "id": "g-machine",
+  "name": "G-machine / STG machine",
+  "aliases": [
+    "G-machine",
+    "Spineless Tagless G-machine",
+    "STG machine",
+    "graph reduction machine"
+  ],
+  "categories": [
+    "theoretical-model",
+    "abstract-machine"
+  ],
+  "paradigms": [
+    "functional",
+    "lazy"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 1984,
+  "designers": [
+    "Thomas Johnsson",
+    "Lennart Augustsson",
+    "Simon Peyton Jones"
+  ],
+  "summary": "Abstract machines for lazy functional languages by compiled graph reduction: Johnsson and Augustsson's G-machine (1984, Lazy ML) and Peyton Jones's Spineless Tagless G-machine (1992), which remains the execution model of GHC.",
+  "status": "maintained",
+  "defined_by": [
+    "academic-paper",
+    "reference-implementation"
+  ],
+  "influenced_by": [
+    "lambda-calculus",
+    "combinatory-logic"
+  ],
+  "related": [
+    {
+      "id": "haskell",
+      "relation": "host-of"
+    },
+    {
+      "id": "haskell-core",
+      "relation": "family"
+    },
+    {
+      "id": "lazy-ml",
+      "relation": "host-of"
+    }
+  ],
+  "level_notes": {
+    "0": "GHC's STG pipeline (Core-to-STG, STG-to-Cmm, the RTS) is the living implementation of the STG machine."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Johnsson (1984) — Efficient Compilation of Lazy Evaluation",
+      "url": "https://doi.org/10.1145/502874.502880",
+      "concepts": [
+        "lazy-evaluation",
+        "code-generation-backend"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Thomas Johnsson"
+      ],
+      "year": 1984
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Augustsson (1984) — A Compiler for Lazy ML",
+      "url": "https://doi.org/10.1145/800055.802038",
+      "concepts": [
+        "lazy-evaluation",
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Lennart Augustsson"
+      ],
+      "year": 1984
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Peyton Jones (1992) — Implementing Lazy Functional Languages on Stock Hardware: the Spineless Tagless G-machine",
+      "url": "https://www.microsoft.com/en-us/research/publication/implementing-lazy-functional-languages-on-stock-hardware-the-spineless-tagless-g-machine/",
+      "concepts": [
+        "virtual-machine",
+        "lazy-evaluation",
+        "closures"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Simon Peyton Jones"
+      ],
+      "year": 1992
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Marlow & Peyton Jones (2004) — Making a Fast Curry: Push/Enter vs. Eval/Apply",
+      "url": "https://www.microsoft.com/en-us/research/publication/make-fast-curry-pushenter-vs-evalapply/",
+      "concepts": [
+        "calling-convention-abi",
+        "currying"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Simon Marlow",
+        "Simon Peyton Jones"
+      ],
+      "year": 2004
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Peyton Jones — The Implementation of Functional Programming Languages (1987; graph reduction, G-machine)",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-implementation-of-functional-programming-languages-2/",
+      "concepts": [
+        "lazy-evaluation",
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Simon Peyton Jones"
+      ],
+      "year": 1987
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Peyton Jones & Lester — Implementing Functional Languages: a Tutorial (template instantiation, G-machine, TIM)",
+      "url": "https://www.microsoft.com/en-us/research/publication/implementing-functional-languages-a-tutorial/",
+      "concepts": [
+        "interpreter",
+        "virtual-machine"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Simon Peyton Jones",
+        "David Lester"
+      ],
+      "year": 1992
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "GHC Developer Wiki — Haskell execution (STG evaluation in the RTS)",
+      "url": "https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/rts/haskell-execution",
+      "concepts": [
+        "runtime-system",
+        "calling-convention-abi"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/Stg/Syntax.hs — STG language syntax",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/Stg/Syntax.hs",
+      "concepts": [
+        "intermediate-representation",
+        "ast"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/CoreToStg.hs — translation from Core to STG",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/CoreToStg.hs",
+      "concepts": [
+        "intermediate-representation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/StgToCmm.hs — code generation from STG to Cmm",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/StgToCmm.hs",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/StgToCmm/Expr.hs — compiling STG expressions (case, let, application)",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/StgToCmm/Expr.hs",
+      "concepts": [
+        "code-generation-backend",
+        "lazy-evaluation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC rts/Apply.cmm — generic application (eval/apply) in the runtime",
+      "url": "https://github.com/ghc/ghc/blob/master/rts/Apply.cmm",
+      "concepts": [
+        "runtime-system",
+        "calling-convention-abi"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC rts/include/rts/storage/Closures.h — heap closure layouts (thunks, functions, constructors)",
+      "url": "https://github.com/ghc/ghc/blob/master/rts/include/rts/storage/Closures.h",
+      "concepts": [
+        "runtime-system",
+        "memory-management",
+        "lazy-evaluation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Graph reduction machine",
+      "url": "https://en.wikipedia.org/wiki/Graph_reduction_machine",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Graph reduction",
+      "url": "https://en.wikipedia.org/wiki/Graph_reduction",
+      "concepts": [
+        "lazy-evaluation",
+        "rewriting"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Supercombinator",
+      "url": "https://en.wikipedia.org/wiki/Supercombinator",
+      "concepts": [
+        "combinators"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

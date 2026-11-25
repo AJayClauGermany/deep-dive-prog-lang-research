@@ -1,0 +1,36 @@
+{
+ "id": "c-minus-minus",
+ "name": "C--",
+ "aliases": ["C minus minus", "Cmm"],
+ "categories": ["intermediate-representation", "assembly", "historical"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["weak", "bits-typed"],
+ "first_appeared": 1997,
+ "designers": ["Simon Peyton Jones", "Norman Ramsey", "Thomas Nordin", "Dino Oliva", "João Dias", "Christian Lindig"],
+ "summary": "Portable assembly language designed as a compiler target: C-like syntax over machine-level types (bits8..bits64) plus a run-time interface that lets the front end's runtime walk the stack for garbage collection and exception handling. GHC's internal Cmm language is a descendant.",
+ "status": "historical",
+ "defined_by": ["academic-paper", "community-specification"],
+ "file_extensions": [".c--", ".cmm"],
+ "homepage": "https://www.microsoft.com/en-us/research/publication/c-a-portable-assembly-language/",
+ "influenced_by": ["c"],
+ "related": [{"id": "haskell", "relation": "host-of"}, {"id": "llvm-ir", "relation": "family"}],
+ "level_notes": {"0": "Quick C-- (OCaml/noweb, retired around 2007) was the reference compiler; GHC's Cmm parser and RTS .cmm files show the surviving dialect.", "1": "The C-- language specification (v2.0, 2005) and the original papers were hosted at cs.tufts.edu/~nr/c--, which could not be reached from the sandbox and is not linked; cminusminus.org no longer belongs to the project. The 1998 reference manual remains on Microsoft Research.", "3": "Wikipedia and PLDB."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "Quick C-- compiler (qc--) source", "url": "https://github.com/nrnrnr/qc--", "implementation": "Quick C--", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "Quick C-- — INSTALL (source organisation overview)", "url": "https://github.com/nrnrnr/qc--/blob/master/INSTALL", "implementation": "Quick C--", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "GHC — compiler/GHC/Cmm/Parser.y — Cmm grammar", "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/Cmm/Parser.y", "implementation": "GHC Cmm", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "GHC — compiler/GHC/Cmm.hs — Cmm abstract syntax", "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/Cmm.hs", "implementation": "GHC Cmm", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["intermediate-representation", "ast"]},
+  {"level": 0, "kind": "implementation-source", "title": "GHC — rts/Apply.cmm — hand-written Cmm in the GHC runtime", "url": "https://github.com/ghc/ghc/blob/master/rts/Apply.cmm", "implementation": "GHC Cmm", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["runtime-system"]},
+
+  {"level": 1, "kind": "original-paper", "title": "Peyton Jones, Oliva, Nordin — C--: A Portable Assembly Language (IFL 1997)", "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/1997/01/pal-ifl.pdf", "scope": "whole", "authority": "designer", "authors": ["Simon Peyton Jones", "Dino Oliva", "Thomas Nordin"], "year": 1997, "format": "pdf", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 1, "kind": "reference-manual", "title": "The C-- Language Reference Manual (1998)", "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/1998/01/pal-manual.pdf", "scope": "whole", "authority": "designer", "authors": ["Simon Peyton Jones", "Thomas Nordin", "Dino Oliva"], "year": 1998, "format": "pdf", "access": "open", "concepts": ["grammar", "primitive-types", "functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Microsoft Research — The C-- language reference manual (publication page)", "url": "https://www.microsoft.com/en-us/research/publication/the-c-language-reference-manual/", "scope": "whole", "authority": "designer", "year": 1998, "format": "html", "access": "open"},
+  {"level": 1, "kind": "original-paper", "title": "Microsoft Research — C--: A Portable Assembly Language (publication page)", "url": "https://www.microsoft.com/en-us/research/publication/c-a-portable-assembly-language/", "scope": "whole", "authority": "designer", "year": 1997, "format": "html", "access": "open", "concepts": ["history"]},
+
+  {"level": 2, "kind": "internals-guide", "title": "GHC commentary — Cmm types", "url": "https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/compiler/cmm-type", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["intermediate-representation"]},
+  {"level": 2, "kind": "internals-guide", "title": "GHC commentary — writing Cmm in the RTS", "url": "https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/rts/cmm", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["runtime-system"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — C--", "url": "https://en.wikipedia.org/wiki/C--", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — C--", "url": "https://pldb.io/concepts/c--.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

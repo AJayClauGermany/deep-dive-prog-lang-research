@@ -1,0 +1,396 @@
+{
+ "id": "mediawiki-wikitext",
+ "name": "MediaWiki wikitext",
+ "aliases": [
+  "wikitext",
+  "wiki markup",
+  "MediaWiki markup"
+ ],
+ "categories": [
+  "markup",
+  "template"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2002,
+ "designers": [
+  "Magnus Manske",
+  "Lee Daniel Crocker",
+  "Wikimedia Foundation"
+ ],
+ "summary": "The markup language of MediaWiki and Wikipedia: apostrophe-based emphasis, [[internal links]], sections, lists and tables, plus a macro layer of templates with parameters, magic words and parser functions that is effectively a small (Turing-complete with recursion limits) template language.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".wiki",
+  ".mediawiki"
+ ],
+ "homepage": "https://www.mediawiki.org/wiki/Wikitext",
+ "related": [
+  {
+   "id": "html",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "creole",
+   "relation": "family"
+  },
+  {
+   "id": "lua",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "0": "Wikitext is defined by MediaWiki's PHP parser; Parsoid (PEG grammar plus token transformers) is the modern implementation and parserTests.txt the shared test corpus.",
+  "1": "No complete specification exists; the mediawiki.org Markup spec and Specs/wikitext pages are partial. Help pages are used as section-level references because MediaWiki section anchors are generated per heading text."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "MediaWiki includes/Parser/Parser.php — the legacy wikitext parser (regex/pass-based)",
+   "url": "https://github.com/wikimedia/mediawiki/blob/master/includes/Parser/Parser.php",
+   "authority": "official",
+   "implementation": "MediaWiki core",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MediaWiki includes/Parser/Preprocessor_Hash.php — template/argument expansion preprocessor",
+   "url": "https://github.com/wikimedia/mediawiki/blob/master/includes/Parser/Preprocessor_Hash.php",
+   "authority": "official",
+   "implementation": "MediaWiki core",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "macros",
+    "templating"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "MediaWiki tests/parser/parserTests.txt — parser test cases shared with Parsoid",
+   "url": "https://github.com/wikimedia/mediawiki/blob/master/tests/parser/parserTests.txt",
+   "authority": "official",
+   "implementation": "MediaWiki core",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "wikimedia/mediawiki-services-parsoid — Parsoid, the bidirectional wikitext ↔ HTML converter",
+   "url": "https://github.com/wikimedia/mediawiki-services-parsoid",
+   "authority": "official",
+   "implementation": "Parsoid",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Parsoid src/Wt2Html/Grammar.pegphp — PEG grammar for wikitext tokenizing",
+   "url": "https://github.com/wikimedia/mediawiki-services-parsoid/blob/master/src/Wt2Html/Grammar.pegphp",
+   "authority": "official",
+   "implementation": "Parsoid",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ParserFunctions extension ParserFunctions.php — #if, #ifeq, #switch, #expr",
+   "url": "https://github.com/wikimedia/mediawiki-extensions-ParserFunctions/blob/master/includes/ParserFunctions.php",
+   "authority": "official",
+   "implementation": "ParserFunctions",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "switch-case",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Specs/wikitext/1.0.0 — draft wikitext specification",
+   "url": "https://www.mediawiki.org/wiki/Specs/wikitext/1.0.0",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markup spec (community effort to specify wikitext)",
+   "url": "https://www.mediawiki.org/wiki/Markup_spec",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Markup spec — BNF for an article",
+   "url": "https://www.mediawiki.org/wiki/Markup_spec/BNF/Article",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Parsoid — overview and MediaWiki DOM spec links",
+   "url": "https://www.mediawiki.org/wiki/Parsoid",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Formatting (bold, italics, nowiki, comments)",
+   "url": "https://www.mediawiki.org/wiki/Help:Formatting",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "escaping",
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Sections",
+   "url": "https://www.mediawiki.org/wiki/Help:Sections",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Lists",
+   "url": "https://www.mediawiki.org/wiki/Help:Lists",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Tables",
+   "url": "https://www.mediawiki.org/wiki/Help:Tables",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Links (internal, external, interwiki, anchors)",
+   "url": "https://www.mediawiki.org/wiki/Help:Links",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Templates (transclusion, parameters)",
+   "url": "https://www.mediawiki.org/wiki/Help:Templates",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "macros",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Magic words (behaviour switches, variables, parser functions)",
+   "url": "https://www.mediawiki.org/wiki/Help:Magic_words",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — ParserFunctions (#if, #switch, #expr)",
+   "url": "https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "switch-case",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Cite (<ref> footnotes)",
+   "url": "https://www.mediawiki.org/wiki/Help:Cite",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Categories",
+   "url": "https://www.mediawiki.org/wiki/Help:Categories",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MediaWiki Help — Manual: Parser.php (how the parser works)",
+   "url": "https://www.mediawiki.org/wiki/Manual:Parser.php",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Wikipedia — Help:Wikitext",
+   "url": "https://en.wikipedia.org/wiki/Help:Wikitext",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "MediaWiki — Alternative parsers (list of wikitext parsers)",
+   "url": "https://www.mediawiki.org/wiki/Alternative_parsers",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Wiki markup",
+   "url": "https://en.wikipedia.org/wiki/Wiki_markup",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MediaWiki",
+   "url": "https://pldb.io/concepts/mediawiki.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

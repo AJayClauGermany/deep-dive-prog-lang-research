@@ -1,0 +1,41 @@
+{
+ "id": "cilk",
+ "name": "Cilk / OpenCilk",
+ "aliases": ["Cilk", "Cilk-5", "Cilk Plus", "OpenCilk"],
+ "categories": ["systems", "scientific"],
+ "paradigms": ["imperative", "parallel", "fork-join"],
+ "typing": ["static", "weak", "nominal"],
+ "first_appeared": 1994,
+ "designers": ["Charles E. Leiserson", "MIT Supertech group"],
+ "summary": "Extension of C (and C++) for fork-join task parallelism with the keywords cilk_spawn, cilk_sync and cilk_for, executed by a provably efficient work-stealing scheduler; reducers (hyperobjects) give race-free parallel reductions. Lineage: MIT Cilk (1994) → Cilk++ / Intel Cilk Plus → OpenCilk (Tapir/LLVM).",
+ "status": "active",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".c", ".cpp", ".cilk"],
+ "homepage": "https://www.opencilk.org/",
+ "influenced_by": ["c", "cpp"],
+ "related": [{"id": "c", "relation": "superset-of"}],
+ "level_notes": {"1": "No standard; the OpenCilk reference documentation and the MIT papers define the language. Intel Cilk Plus (deprecated 2017) had its own specification.", "0": "OpenCilk = opencilk-project (Clang/LLVM fork with the Tapir parallel IR; linked at the opencilk/v3.0 release branch) plus the cheetah work-stealing runtime."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "OpenCilk/opencilk-project — OpenCilk compiler (Clang/LLVM with Tapir)", "url": "https://github.com/OpenCilk/opencilk-project", "implementation": "OpenCilk", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "parallelism"]},
+  {"level": 0, "kind": "implementation-source", "title": "OpenCilk clang/lib/Parse/ParseCilk.cpp — parsing cilk_spawn / cilk_sync / cilk_for", "url": "https://github.com/OpenCilk/opencilk-project/blob/opencilk/v3.0/clang/lib/Parse/ParseCilk.cpp", "implementation": "OpenCilk", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "parallelism"]},
+  {"level": 0, "kind": "implementation-source", "title": "OpenCilk clang/lib/CodeGen/CGCilk.cpp — emitting Tapir detach/sync", "url": "https://github.com/OpenCilk/opencilk-project/blob/opencilk/v3.0/clang/lib/CodeGen/CGCilk.cpp", "implementation": "OpenCilk", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["intermediate-representation", "parallelism"]},
+  {"level": 0, "kind": "implementation-source", "title": "OpenCilk llvm/lib/Transforms/Tapir/OpenCilkABI.cpp — lowering Tapir to the runtime ABI", "url": "https://github.com/OpenCilk/opencilk-project/blob/opencilk/v3.0/llvm/lib/Transforms/Tapir/OpenCilkABI.cpp", "implementation": "OpenCilk", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend", "calling-convention-abi"]},
+  {"level": 0, "kind": "implementation-repository", "title": "OpenCilk/cheetah — the work-stealing runtime", "url": "https://github.com/OpenCilk/cheetah", "implementation": "cheetah", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["runtime-system"]},
+  {"level": 0, "kind": "implementation-source", "title": "cheetah runtime/scheduler.cpp — work-stealing scheduler", "url": "https://github.com/OpenCilk/cheetah/blob/dev/runtime/scheduler.cpp", "implementation": "cheetah", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["runtime-system", "parallelism", "threads"]},
+  {"level": 0, "kind": "implementation-source", "title": "cheetah runtime/local-reducer-api.cpp — reducer hyperobjects", "url": "https://github.com/OpenCilk/cheetah/blob/dev/runtime/local-reducer-api.cpp", "implementation": "cheetah", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["synchronization", "parallelism"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "OpenCilk reference documentation", "url": "https://www.opencilk.org/doc/reference/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenCilk reference — Reducers", "url": "https://www.opencilk.org/doc/reference/reducers/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism", "synchronization"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cilk 5.4.6 Reference Manual (MIT)", "url": "https://supertech.mit.edu/biblio/cilk-546-reference-manual/", "implementation": "MIT Cilk-5", "scope": "whole", "authority": "official", "year": 1998, "format": "html", "access": "open"},
+  {"level": 1, "kind": "original-paper", "title": "Cilk: An Efficient Multithreaded Runtime System (PPoPP 1995)", "url": "https://doi.org/10.1145/209936.209958", "scope": "whole", "authority": "designer", "authors": ["Robert D. Blumofe", "Christopher F. Joerg", "Bradley C. Kuszmaul", "Charles E. Leiserson", "Keith H. Randall", "Yuli Zhou"], "year": 1995, "format": "html", "access": "open", "concepts": ["runtime-system", "parallelism"]},
+  {"level": 1, "kind": "original-paper", "title": "The Implementation of the Cilk-5 Multithreaded Language (PLDI 1998)", "url": "https://doi.org/10.1145/277650.277725", "scope": "whole", "authority": "designer", "authors": ["Matteo Frigo", "Charles E. Leiserson", "Keith H. Randall"], "year": 1998, "format": "html", "access": "open", "concepts": ["compiler-architecture", "runtime-system", "parallelism"]},
+  {"level": 1, "kind": "original-paper", "title": "Tapir: Embedding Fork-Join Parallelism into LLVM's Intermediate Representation (PPoPP 2017)", "url": "https://dl.acm.org/doi/10.1145/3018743.3018758", "scope": "whole", "authority": "designer", "authors": ["Tao B. Schardl", "William S. Moses", "Charles E. Leiserson"], "year": 2017, "format": "html", "access": "open", "concepts": ["intermediate-representation", "parallelism"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Introduction to Cilk programming (OpenCilk)", "url": "https://www.opencilk.org/doc/tutorials/introduction-to-cilk-programming/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism", "hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "OpenCilk concepts", "url": "https://www.opencilk.org/doc/tutorials/opencilk-concepts/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism", "concurrency"]},
+  {"level": 2, "kind": "guide", "title": "OpenCilk user guide — Convert a C program", "url": "https://www.opencilk.org/doc/users-guide/convert-a-c-program/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Cilk", "url": "https://en.wikipedia.org/wiki/Cilk", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Cilk", "url": "https://pldb.io/concepts/cilk.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

@@ -1,0 +1,398 @@
+{
+ "id": "css-selectors",
+ "name": "CSS Selectors",
+ "aliases": [
+  "Selectors Level 3",
+  "Selectors Level 4"
+ ],
+ "categories": [
+  "query",
+  "pattern-matching",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1996,
+ "designers": [
+  "Håkon Wium Lie",
+  "Bert Bos",
+  "Tantek Çelik",
+  "Elika J. Etemad",
+  "W3C CSS Working Group"
+ ],
+ "summary": "Pattern language for matching elements in a document tree, defined by the W3C CSS Working Group and used by CSS rules, the DOM querySelector API and many scraping/testing tools: type, class, id and attribute selectors, pseudo-classes, combinators and (Level 4) logical and relational selectors such as :is(), :not() and :has().",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C Selectors Level 3 (Recommendation)",
+  "W3C Selectors Level 4 (Working Draft)"
+ ],
+ "homepage": "https://drafts.csswg.org/selectors-4/",
+ "related": [
+  {
+   "id": "css",
+   "relation": "subset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "Selectors Level 3 is a W3C Recommendation; Level 4 is a Working Draft (deep links point at the CSSWG editor's draft). www.w3.org returns a Cloudflare 403 to the link checker; those links were verified with plain curl.",
+  "0": "Implemented in every browser engine (Servo/Stylo's selectors crate, WebKit SelectorChecker and its selector JIT) and in standalone libraries (css-what/css-select, soupsieve, nwsapi)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo/Servo selectors crate — parser.rs",
+   "url": "https://github.com/servo/stylo/blob/main/selectors/parser.rs",
+   "implementation": "Servo/Stylo (Firefox)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo/Servo selectors crate — matching.rs (right-to-left matching)",
+   "url": "https://github.com/servo/stylo/blob/main/selectors/matching.rs",
+   "implementation": "Servo/Stylo (Firefox)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit — SelectorChecker.cpp",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/css/SelectorChecker.cpp",
+   "implementation": "WebKit",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit — cssjit/SelectorCompiler.cpp (selector JIT compiler)",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/cssjit/SelectorCompiler.cpp",
+   "implementation": "WebKit",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "jit",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "css-what — parse.ts (JavaScript selector parser)",
+   "url": "https://github.com/fb55/css-what/blob/master/src/parse.ts",
+   "implementation": "css-what",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "soupsieve — css_parser.py (Beautiful Soup selector engine)",
+   "url": "https://github.com/facelessuser/soupsieve/blob/main/soupsieve/css_parser.py",
+   "implementation": "soupsieve",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 (CSSWG Editor's Draft)",
+   "url": "https://drafts.csswg.org/selectors-4/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 3.1 Structure and Terminology",
+   "url": "https://drafts.csswg.org/selectors-4/#structure",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 3.2 Data Model",
+   "url": "https://drafts.csswg.org/selectors-4/#data-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 4 Logical Combinations (:is, :not, :where, :has)",
+   "url": "https://drafts.csswg.org/selectors-4/#logical-combination",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 4.5 The Relational Pseudo-class :has()",
+   "url": "https://drafts.csswg.org/selectors-4/#relational",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 6 Attribute Selectors",
+   "url": "https://drafts.csswg.org/selectors-4/#attribute-selectors",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 14 Tree-Structural pseudo-classes (:nth-child etc.)",
+   "url": "https://drafts.csswg.org/selectors-4/#structural-pseudos",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 16 Combinators",
+   "url": "https://drafts.csswg.org/selectors-4/#combinators",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 17 Calculating a selector's specificity",
+   "url": "https://drafts.csswg.org/selectors-4/#specificity-rules",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4 — 18 Grammar",
+   "url": "https://drafts.csswg.org/selectors-4/#grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "4",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Selectors Level 3 (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/selectors-3/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2018,
+   "version": "3",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "DOM Standard — scope-match a selectors string (querySelector)",
+   "url": "https://dom.spec.whatwg.org/#scope-match-a-selectors-string",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS selectors (module guide)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Selectors and combinators",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selectors_and_combinators",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Specificity",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Pseudo-classes reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Basic CSS selectors",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "WebKit blog — CSS Selector JIT Compiler",
+   "url": "https://webkit.org/blog/3271/webkit-css-selector-jit-compiler/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — CSS: Selector",
+   "url": "https://en.wikipedia.org/wiki/CSS#Selector",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}
