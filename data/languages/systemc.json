@@ -1,0 +1,238 @@
+{
+ "id": "systemc",
+ "name": "SystemC",
+ "categories": [
+  "hardware-description",
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "object-oriented",
+  "event-driven",
+  "concurrent"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "nominal"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Open SystemC Initiative (Synopsys, CoWare, Frontier Design)",
+  "Accellera Systems Initiative"
+ ],
+ "summary": "C++ class library and simulation kernel for system-level and transaction-level hardware modelling, standardised as IEEE 1666; modules, ports, signals, channels and processes are C++ classes scheduled by a discrete-event kernel with delta cycles, plus TLM-2.0 for transaction-level models.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "reference-implementation"
+ ],
+ "standards": [
+  "IEEE 1666-2023",
+  "IEEE 1666.1 (SystemC AMS)"
+ ],
+ "file_extensions": [
+  ".cpp",
+  ".h"
+ ],
+ "homepage": "https://systemc.org/",
+ "influenced_by": [
+  "cpp",
+  "vhdl",
+  "verilog"
+ ],
+ "related": [
+  {
+   "id": "cpp",
+   "relation": "implemented-in"
+  }
+ ],
+ "level_notes": {
+  "1": "IEEE 1666 (SystemC Language Reference Manual) is available free of charge through the IEEE GET Program (registration); the Accellera page links it.",
+  "0": "The Accellera proof-of-concept implementation (accellera-official/systemc) is the reference simulator."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Accellera — SystemC standards and LRM download (IEEE 1666)",
+   "url": "https://www.accellera.org/downloads/standards/systemc",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE GET Program — free IEEE design-automation standards incl. IEEE 1666",
+   "url": "https://ieeexplore.ieee.org/browse/standards/get-program/page/series?id=80",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "registration"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "accellera-official/systemc — reference implementation",
+   "url": "https://github.com/accellera-official/systemc",
+   "concepts": [
+    "compiler-architecture",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC kernel/sc_simcontext.cpp — simulation kernel / scheduler (delta cycles)",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/kernel/sc_simcontext.cpp",
+   "concepts": [
+    "hdl-signals-timing",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC kernel/sc_module.h — sc_module",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/kernel/sc_module.h",
+   "concepts": [
+    "hdl-structure",
+    "classes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC kernel/sc_event.cpp — events and notification",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/kernel/sc_event.cpp",
+   "concepts": [
+    "hdl-signals-timing",
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC kernel/sc_thread_process.cpp — SC_THREAD processes (coroutines)",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/kernel/sc_thread_process.cpp",
+   "concepts": [
+    "coroutines",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC communication/sc_signal.h — sc_signal primitive channel",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/communication/sc_signal.h",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC communication/sc_fifo.h — sc_fifo channel",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/communication/sc_fifo.h",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SystemC datatypes/int/sc_int_base.h — fixed-width integer datatypes",
+   "url": "https://github.com/accellera-official/systemc/blob/main/src/sysc/datatypes/int/sc_int_base.h",
+   "concepts": [
+    "integers",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Accellera SystemC"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos — SystemC KnowHow",
+   "url": "https://www.doulos.com/knowhow/systemc/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn SystemC by example",
+   "url": "https://www.learnsystemc.com/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SystemC",
+   "url": "https://en.wikipedia.org/wiki/SystemC",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

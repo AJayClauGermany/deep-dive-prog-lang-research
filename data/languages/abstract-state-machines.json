@@ -1,0 +1,224 @@
+{
+ "id": "abstract-state-machines",
+ "name": "Abstract State Machines",
+ "aliases": [
+  "ASM",
+  "Evolving algebras",
+  "AsmetaL",
+  "CoreASM",
+  "AsmL"
+ ],
+ "categories": [
+  "specification-modeling",
+  "theoretical-model"
+ ],
+ "paradigms": [
+  "state-based",
+  "declarative",
+  "parallel-update"
+ ],
+ "typing": [
+  "untyped (pure ASM)",
+  "static (AsmetaL, AsmL)"
+ ],
+ "first_appeared": 1988,
+ "designers": [
+  "Yuri Gurevich",
+  "Egon Börger"
+ ],
+ "summary": "Gurevich's model of computation (originally 'evolving algebras') in which a state is a first-order structure and a program is a set of guarded function updates fired in parallel; Börger's ASM method uses it for stepwise-refined system specification, executed by tools such as ASMETA (AsmetaL), CoreASM and Microsoft's AsmL.",
+ "status": "maintained",
+ "defined_by": [
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".asm",
+  ".casm"
+ ],
+ "homepage": "https://asmeta.github.io/",
+ "influenced_by": [
+  "first-order-logic"
+ ],
+ "related": [
+  {
+   "id": "b-method",
+   "relation": "family"
+  },
+  {
+   "id": "tla-plus",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: the Lipari Guide (1993) and Gurevich's sequential-ASM thesis paper define the model; concrete languages (AsmetaL, CoreASM, AsmL) are each defined by their tool documentation.",
+  "0": "ASMETA (Java/Xtext, AsmetaL) and CoreASM (Java, extensible interpreter) are the maintained open-source toolsets."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Evolving Algebras 1993: Lipari Guide",
+   "url": "https://www.microsoft.com/en-us/research/publication/evolving-algebras-1993-lipari-guide/",
+   "concepts": [
+    "formal-semantics",
+    "design-rationale"
+   ],
+   "authors": [
+    "Yuri Gurevich"
+   ],
+   "year": 1995,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Sequential Abstract State Machines Capture Sequential Algorithms (ACM TOCL 1(1), 2000)",
+   "url": "https://www.microsoft.com/en-us/research/publication/sequential-abstract-state-machines-capture-sequential-algorithms/",
+   "concepts": [
+    "formal-semantics",
+    "turing-completeness"
+   ],
+   "authors": [
+    "Yuri Gurevich"
+   ],
+   "year": 2000,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Abstract State Machines: A Method for High-Level System Design and Analysis (Springer 2003)",
+   "url": "https://link.springer.com/book/10.1007/978-3-642-18216-7",
+   "concepts": [
+    "verification",
+    "design-rationale"
+   ],
+   "authors": [
+    "Egon Börger",
+    "Robert Stärk"
+   ],
+   "year": 2003,
+   "access": "paywalled",
+   "authority": "designer",
+   "format": "book",
+   "scope": "whole"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "asmeta/asmeta — ASMETA framework (AsmetaL parser, simulator, validator, model checking)",
+   "url": "https://github.com/asmeta/asmeta",
+   "concepts": [
+    "interpreter",
+    "verification"
+   ],
+   "implementation": "ASMETA",
+   "authority": "academic",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "ASMETA — AsmetaL quick guide",
+   "url": "https://asmeta.github.io/material/AsmetaL_quickguide.html",
+   "concepts": [
+    "grammar",
+    "conditionals",
+    "parallelism"
+   ],
+   "implementation": "ASMETA",
+   "authority": "academic",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ASMETA project site",
+   "url": "https://asmeta.github.io/",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "ASMETA",
+   "authority": "academic",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "CoreASM/coreasm.core — CoreASM extensible ASM interpreter",
+   "url": "https://github.com/CoreASM/coreasm.core",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "CoreASM",
+   "authority": "academic",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CoreASM — engine/interpreter/InterpreterImp.java (ASM step and update-set computation)",
+   "url": "https://github.com/CoreASM/coreasm.core/blob/master/org.coreasm.engine/src/org/coreasm/engine/interpreter/InterpreterImp.java",
+   "concepts": [
+    "interpreter",
+    "parallelism"
+   ],
+   "implementation": "CoreASM",
+   "authority": "academic",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CoreASM — engine/parser/JParsecParser.java",
+   "url": "https://github.com/CoreASM/coreasm.core/blob/master/org.coreasm.engine/src/org/coreasm/engine/parser/JParsecParser.java",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "CoreASM",
+   "authority": "academic",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Abstract state machine",
+   "url": "https://en.wikipedia.org/wiki/Abstract_state_machine",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — AsmL",
+   "url": "https://en.wikipedia.org/wiki/AsmL",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

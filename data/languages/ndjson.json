@@ -1,0 +1,290 @@
+{
+ "id": "ndjson",
+ "name": "NDJSON / JSON Lines",
+ "aliases": [
+  "NDJSON",
+  "Newline-delimited JSON",
+  "JSON Lines",
+  "JSONL",
+  "LDJSON"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing"
+ ],
+ "first_appeared": 2013,
+ "summary": "Streaming convention of one JSON text per line, separated by \\n, used for logs, data pipelines and ML datasets; documented by two near-identical community specs (NDJSON and JSON Lines). The IETF's related JSON Text Sequences (RFC 7464) uses RS separators instead.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "RFC 7464 (related: JSON Text Sequences)"
+ ],
+ "file_extensions": [
+  ".ndjson",
+  ".jsonl"
+ ],
+ "homepage": "https://jsonlines.org/",
+ "influenced_by": [
+  "json"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "csv",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Two informal specs: ndjson-spec (2014) and jsonlines.org; RFC 7464 standardises the record-separator variant.",
+  "0": "No reference implementation; any JSON parser plus line splitting suffices. A few dedicated libraries are listed."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ndjson/ndjson-spec — specification repository",
+   "url": "https://github.com/ndjson/ndjson-spec",
+   "implementation": "ndjson-spec",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python jsonlines — Reader/Writer for JSON Lines",
+   "url": "https://github.com/wbolster/jsonlines/blob/master/jsonlines/jsonlines.py",
+   "implementation": "jsonlines (Python)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "file-io",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "NDJSON specification (ndjson-spec) — serialization, parsing, media type",
+   "url": "https://github.com/ndjson/ndjson-spec/blob/master/README.md",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Lines — documentation (jsonlines.org)",
+   "url": "https://jsonlines.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Lines — UTF-8 encoding",
+   "url": "https://jsonlines.org/#utf-8-encoding",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Lines — Each line is a valid JSON value",
+   "url": "https://jsonlines.org/#each-line-is-a-valid-json-value",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Lines — Line terminator is \\n",
+   "url": "https://jsonlines.org/#line-terminator-is-n",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Lines — Conventions (.jsonl, compression)",
+   "url": "https://jsonlines.org/#conventions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7464 — JavaScript Object Notation (JSON) Text Sequences",
+   "url": "https://www.rfc-editor.org/rfc/rfc7464.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Nico Williams"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7464 — 2.1 JSON text sequence parsing",
+   "url": "https://www.rfc-editor.org/rfc/rfc7464.html#section-2.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7464 — 3 Security considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc7464.html#section-3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "JSON Lines — Examples (CSV-like tabular data, nested data)",
+   "url": "https://jsonlines.org/examples/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "JSON Lines — online validator",
+   "url": "https://jsonlines.org/validator/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ndjson.org — NDJSON overview",
+   "url": "https://ndjson.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON streaming",
+   "url": "https://en.wikipedia.org/wiki/JSON_streaming",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON streaming: Newline-delimited JSON",
+   "url": "https://en.wikipedia.org/wiki/JSON_streaming#Newline-delimited_JSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON streaming: Record separator-delimited JSON (RFC 7464)",
+   "url": "https://en.wikipedia.org/wiki/JSON_streaming#Record_separator-delimited_JSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  }
+ ]
+}

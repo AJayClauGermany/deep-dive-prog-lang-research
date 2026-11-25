@@ -1,0 +1,689 @@
+{
+ "id": "ttcn-3",
+ "name": "TTCN-3",
+ "aliases": [
+  "Testing and Test Control Notation version 3",
+  "TTCN"
+ ],
+ "categories": [
+  "specification-modeling",
+  "domain-specific",
+  "protocol"
+ ],
+ "paradigms": [
+  "imperative",
+  "concurrent",
+  "test-description"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2000,
+ "designers": [
+  "ETSI MTS technical committee",
+  "ITU-T SG17"
+ ],
+ "summary": "ETSI's standardized language for specifying and executing black-box conformance and interoperability tests, especially for telecommunication protocols: modules declare ASN.1-compatible types, message/procedure ports, test components and templates with powerful matching, and test cases whose alt statements react to messages and timers and set verdicts.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "ETSI ES 201 873-1 (core language)",
+  "ETSI ES 201 873-2..11 (presentation formats, runtime/control interfaces, ASN.1/IDL/XSD/JSON mappings)",
+  "ITU-T Z.161"
+ ],
+ "file_extensions": [
+  ".ttcn",
+  ".ttcn3",
+  ".ttcnpp"
+ ],
+ "homepage": "https://ttcn-3.etsi.org/",
+ "influenced_by": [
+  "asn1"
+ ],
+ "related": [
+  {
+   "id": "asn1",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "The multi-part ETSI ES 201 873 series is freely downloadable from etsi.org and also published as ITU-T Z.161 ff. Section links use #page=N into the core-language PDF V4.17.1 (PDF page = printed page).",
+  "0": "Eclipse Titan (Ericsson-originated, open source; moved from GitHub to gitlab.eclipse.org) is the main open implementation: a TTCN-3-to-C++ compiler with runtime. gitlab.eclipse.org rate-limits automated checkers (429); file paths were confirmed through the /-/raw/ endpoint.",
+  "3": "No PLDB entry was found."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 — TTCN-3 Part 1: Core Language (full PDF)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf",
+   "concepts": [
+    "standardization",
+    "grammar"
+   ],
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 5.1 Identifiers and keywords",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=28",
+   "concepts": [
+    "identifiers",
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 5.2 Scope rules",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=29",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 5.4 Parameterization (formal/actual parameters)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=32",
+   "concepts": [
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.1 Basic types and values (integer, float, boolean, verdicttype, strings)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=46",
+   "concepts": [
+    "primitive-types",
+    "strings"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.1.2 Subtyping of basic types (ranges, lengths, patterns)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=50",
+   "concepts": [
+    "subtyping",
+    "ranges"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.1 Record type and values",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=55",
+   "concepts": [
+    "records-structs",
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.3 Records and sets of single types (record of / set of)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=61",
+   "concepts": [
+    "lists",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.4 Enumerated type and values",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=65",
+   "concepts": [
+    "enums"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.5 Unions",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=67",
+   "concepts": [
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.7 Arrays",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=70",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.9 Communication port types",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=72",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.10 Component types",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=74",
+   "concepts": [
+    "concurrency",
+    "classes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.2.15 Map types",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=87",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 6.3 Type compatibility",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=92",
+   "concepts": [
+    "type-equivalence",
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 7.1 Operators",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=102",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 8 Modules (definitions part, control part, import)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=117",
+   "concepts": [
+    "modules",
+    "imports",
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 10-11 Declaring constants and variables",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=143",
+   "concepts": [
+    "constants",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 15 Declaring templates",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=150",
+   "concepts": [
+    "pattern-matching",
+    "data-model"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 15.7 Template matching mechanisms",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=170",
+   "concepts": [
+    "pattern-matching",
+    "regular-expressions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 16 Functions, altsteps and testcases",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=184",
+   "concepts": [
+    "functions",
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 19 Basic program statements (assignment, if-else, select, for, while, goto, return, log)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=199",
+   "concepts": [
+    "statements",
+    "conditionals",
+    "switch-case",
+    "loops",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 20 Alternative behaviours (alt, repeat, interleave, defaults)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=215",
+   "concepts": [
+    "concurrency",
+    "channels-message-passing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 21 Configuration operations (create, connect, map, start)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=227",
+   "concepts": [
+    "concurrency",
+    "threads"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 22 Communication operations (send, receive, call, getreply)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=246",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 23 Timer operations",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=280",
+   "concepts": [
+    "date-time"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 24 Test verdict operations",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=285",
+   "concepts": [
+    "testing",
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — 27 Specifying attributes (encoding, variant)",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=292",
+   "concepts": [
+    "annotations-attributes",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — Annex A BNF and static semantics",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=308",
+   "concepts": [
+    "grammar",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — Annex C Predefined TTCN-3 functions",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=350",
+   "concepts": [
+    "standard-library",
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-1 V4.17.1 (TTCN-3 core language) — Annex D Preprocessing macros",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187301/04.17.01_60/es_20187301v041701p.pdf#page=377",
+   "concepts": [
+    "macros",
+    "preprocessor"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "4.17.1",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-4 — TTCN-3 Part 4: Operational Semantics",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187304/04.06.01_60/es_20187304v040601p.pdf",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "authority": "standards-body",
+   "version": "4.6.1",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ETSI ES 201 873-7 — TTCN-3 Part 7: Using ASN.1 with TTCN-3",
+   "url": "https://www.etsi.org/deliver/etsi_es/201800_201899/20187307/04.10.01_60/es_20187307v041001p.pdf",
+   "concepts": [
+    "interoperability",
+    "encoding-wire-format"
+   ],
+   "authority": "standards-body",
+   "version": "4.10.1",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Eclipse Titan — titan.core (TTCN-3 compiler and runtime)",
+   "url": "https://gitlab.eclipse.org/eclipse/titan/titan.core",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "Eclipse Titan",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Eclipse Titan — compiler2/ttcn3/compiler.l (flex lexer)",
+   "url": "https://gitlab.eclipse.org/eclipse/titan/titan.core/-/blob/master/compiler2/ttcn3/compiler.l",
+   "concepts": [
+    "lexer",
+    "keywords"
+   ],
+   "implementation": "Eclipse Titan",
+   "format": "source-file",
+   "scope": "section",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Eclipse Titan — compiler2/ttcn3/compiler.y (bison grammar)",
+   "url": "https://gitlab.eclipse.org/eclipse/titan/titan.core/-/blob/master/compiler2/ttcn3/compiler.y",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "Eclipse Titan",
+   "format": "source-file",
+   "scope": "section",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "TTCN-3 tutorials (ETSI TTCN-3 site)",
+   "url": "https://ttcn-3.etsi.org/index.php/learn/tutorials",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "TTCN-3 examples (ETSI TTCN-3 site)",
+   "url": "https://ttcn-3.etsi.org/index.php/learn/examples",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "History of TTCN-3 (ETSI)",
+   "url": "https://ttcn-3.etsi.org/index.php/about/history",
+   "concepts": [
+    "history"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Eclipse Titan project page",
+   "url": "https://projects.eclipse.org/projects/tools.titan",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Eclipse Titan",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TTCN-3",
+   "url": "https://en.wikipedia.org/wiki/TTCN-3",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

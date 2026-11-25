@@ -1,0 +1,260 @@
+{
+ "id": "jsonc",
+ "name": "JSONC",
+ "aliases": [
+  "JSON with Comments",
+  "jsonc"
+ ],
+ "categories": [
+  "data-serialization",
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing"
+ ],
+ "first_appeared": 2015,
+ "designers": [
+  "Microsoft (VS Code team)"
+ ],
+ "summary": "JSON extended with JavaScript-style // and /* */ comments (and, in VS Code and TypeScript tooling, tolerated trailing commas); the de-facto format of VS Code settings and tsconfig.json, later written up as a community specification at jsonc.org.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".jsonc",
+  ".json"
+ ],
+ "homepage": "https://jsonc.org/",
+ "influenced_by": [
+  "json",
+  "javascript"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "superset-of"
+  },
+  {
+   "id": "json5",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Long defined only by Microsoft's node-jsonc-parser behaviour and the VS Code docs; the jsonc.org specification (2024) documents the comments-only core and explains why trailing commas are optional.",
+  "0": "microsoft/node-jsonc-parser (used by VS Code) is the de-facto reference implementation.",
+  "3": "No dedicated Wikipedia or PLDB page; covered within the JSON article."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "microsoft/node-jsonc-parser — scanner/parser used by VS Code",
+   "url": "https://github.com/microsoft/node-jsonc-parser",
+   "implementation": "node-jsonc-parser",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "node-jsonc-parser scanner.ts — tokenizer including comment trivia",
+   "url": "https://github.com/microsoft/node-jsonc-parser/blob/main/src/impl/scanner.ts",
+   "implementation": "node-jsonc-parser",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "node-jsonc-parser parser.ts — fault-tolerant visitor parser (allowTrailingComma, disallowComments)",
+   "url": "https://github.com/microsoft/node-jsonc-parser/blob/main/src/impl/parser.ts",
+   "implementation": "node-jsonc-parser",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "node-jsonc-parser edit.ts — comment-preserving edits",
+   "url": "https://github.com/microsoft/node-jsonc-parser/blob/main/src/impl/edit.ts",
+   "implementation": "node-jsonc-parser",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC — JSON with Comments specification (jsonc.org)",
+   "url": "https://jsonc.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Single-line comments",
+   "url": "https://jsonc.org/#single-line-comments",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Multi-line comments",
+   "url": "https://jsonc.org/#multi-line-comments",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Trailing commas (optional)",
+   "url": "https://jsonc.org/#trailing-commas",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Semantics: comments carry no meaning",
+   "url": "https://jsonc.org/#semantics",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Formal grammar",
+   "url": "https://jsonc.org/#formal-grammar",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Media type and filename extension",
+   "url": "https://jsonc.org/#media-type",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSONC specification — Appendix A: why trailing commas are not a requirement",
+   "url": "https://jsonc.org/#why-trailing-commas-are-not-a-requirement",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VS Code docs — JSON with Comments (jsonc mode, allowTrailingCommas)",
+   "url": "https://code.visualstudio.com/docs/languages/json#_json-with-comments",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "VS Code docs — Editing JSON with Visual Studio Code (schemas, jsonc)",
+   "url": "https://code.visualstudio.com/docs/languages/json",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Supersets (JSONC among derivatives)",
+   "url": "https://en.wikipedia.org/wiki/JSON#Supersets",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  }
+ ]
+}

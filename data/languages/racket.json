@@ -1,0 +1,1697 @@
+{
+  "id": "racket",
+  "name": "Racket",
+  "aliases": [
+    "PLT Scheme",
+    "Racket CS"
+  ],
+  "categories": [
+    "general-purpose",
+    "functional",
+    "educational"
+  ],
+  "paradigms": [
+    "multi-paradigm",
+    "functional",
+    "object-oriented",
+    "language-oriented",
+    "meta"
+  ],
+  "typing": [
+    "dynamic",
+    "strong",
+    "gradual (Typed Racket)"
+  ],
+  "first_appeared": 1995,
+  "designers": [
+    "Matthias Felleisen",
+    "Matthew Flatt",
+    "Robert Bruce Findler",
+    "Shriram Krishnamurthi",
+    "PLT"
+  ],
+  "summary": "Scheme-descended language-oriented programming language with a module system and #lang mechanism for building languages, scope-set hygienic macros, contracts, delimited continuations, Typed Racket, and Racket CS on Chez Scheme.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "vendor-specification"
+  ],
+  "file_extensions": [
+    ".rkt",
+    ".rktl",
+    ".rktd",
+    ".scrbl"
+  ],
+  "homepage": "https://racket-lang.org/",
+  "influenced_by": [
+    "scheme",
+    "lisp",
+    "common-lisp",
+    "eiffel",
+    "standard-ml"
+  ],
+  "related": [
+    {
+      "id": "scheme",
+      "relation": "family"
+    },
+    {
+      "id": "chez-scheme",
+      "relation": "implemented-in"
+    }
+  ],
+  "level_notes": {
+    "1": "No external standard: The Racket Reference (level 1) is normative alongside the implementation; The Racket Guide is the official tutorial (level 2). Key design papers (scope sets, compilable macros, Typed Scheme) define core mechanisms.",
+    "0": "racket/racket contains Racket CS (default since 8.0; runtime \"rumble\" layer on Chez Scheme, expander/io/thread layers written in Racket) and the legacy BC C runtime."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference",
+      "url": "https://docs.racket-lang.org/reference/",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Matthew Flatt",
+        "PLT"
+      ],
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Evaluation Model (tail position, continuations, garbage collection)",
+      "url": "https://docs.racket-lang.org/reference/eval-model.html",
+      "concepts": [
+        "evaluation-order",
+        "tail-calls",
+        "continuations"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Syntax Model (scopes, phases, expansion)",
+      "url": "https://docs.racket-lang.org/reference/syntax-model.html",
+      "concepts": [
+        "macros",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — The Reader",
+      "url": "https://docs.racket-lang.org/reference/reader.html",
+      "concepts": [
+        "lexical-structure",
+        "parser",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — The Printer",
+      "url": "https://docs.racket-lang.org/reference/printing.html",
+      "concepts": [
+        "input-output"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Procedure Expressions: lambda and case-lambda",
+      "url": "https://docs.racket-lang.org/reference/lambda.html",
+      "concepts": [
+        "functions",
+        "closures",
+        "parameters-arguments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Local Binding: let, let*, letrec",
+      "url": "https://docs.racket-lang.org/reference/let.html",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Conditionals: if, cond, and, or",
+      "url": "https://docs.racket-lang.org/reference/if.html",
+      "concepts": [
+        "conditionals",
+        "short-circuit"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Dispatch: case",
+      "url": "https://docs.racket-lang.org/reference/case.html",
+      "concepts": [
+        "switch-case"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Definitions",
+      "url": "https://docs.racket-lang.org/reference/define.html",
+      "concepts": [
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Guarded Evaluation: when and unless",
+      "url": "https://docs.racket-lang.org/reference/when_unless.html",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Assignment: set!",
+      "url": "https://docs.racket-lang.org/reference/set_.html",
+      "concepts": [
+        "assignment"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Iterations and Comprehensions: for, for/list, ...",
+      "url": "https://docs.racket-lang.org/reference/for.html",
+      "concepts": [
+        "loops",
+        "comprehensions",
+        "iteration-foreach"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Literals: quote",
+      "url": "https://docs.racket-lang.org/reference/quote.html",
+      "concepts": [
+        "quotation-homoiconicity",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Quasiquoting",
+      "url": "https://docs.racket-lang.org/reference/quasiquote.html",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Modules: module",
+      "url": "https://docs.racket-lang.org/reference/module.html",
+      "concepts": [
+        "modules"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Importing and Exporting: require and provide",
+      "url": "https://docs.racket-lang.org/reference/require.html",
+      "concepts": [
+        "imports",
+        "visibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Defining Structure Types: struct",
+      "url": "https://docs.racket-lang.org/reference/define-struct.html",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Classes and Objects",
+      "url": "https://docs.racket-lang.org/reference/mzlib_class.html",
+      "concepts": [
+        "classes",
+        "objects",
+        "mixins"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Generic Interfaces",
+      "url": "https://docs.racket-lang.org/reference/struct-generics.html",
+      "concepts": [
+        "interfaces-protocols"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Contracts",
+      "url": "https://docs.racket-lang.org/reference/contracts.html",
+      "concepts": [
+        "assertions",
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Pattern Matching",
+      "url": "https://docs.racket-lang.org/reference/match.html",
+      "concepts": [
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Numbers",
+      "url": "https://docs.racket-lang.org/reference/numbers.html",
+      "concepts": [
+        "integers",
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Strings",
+      "url": "https://docs.racket-lang.org/reference/strings.html",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Pairs and Lists",
+      "url": "https://docs.racket-lang.org/reference/pairs.html",
+      "concepts": [
+        "lists"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Vectors",
+      "url": "https://docs.racket-lang.org/reference/vectors.html",
+      "concepts": [
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Hash Tables",
+      "url": "https://docs.racket-lang.org/reference/hashtables.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Sequences and Streams",
+      "url": "https://docs.racket-lang.org/reference/sequences.html",
+      "concepts": [
+        "iterators",
+        "generators"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Dictionaries",
+      "url": "https://docs.racket-lang.org/reference/dicts.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Parameters (dynamic binding)",
+      "url": "https://docs.racket-lang.org/reference/parameters.html",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Exceptions",
+      "url": "https://docs.racket-lang.org/reference/exns.html",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Continuations (call/cc, delimited control)",
+      "url": "https://docs.racket-lang.org/reference/cont.html",
+      "concepts": [
+        "continuations"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Continuation Marks",
+      "url": "https://docs.racket-lang.org/reference/wcm.html",
+      "concepts": [
+        "continuations",
+        "reflection"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Threads",
+      "url": "https://docs.racket-lang.org/reference/threads.html",
+      "concepts": [
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Channels",
+      "url": "https://docs.racket-lang.org/reference/channel.html",
+      "concepts": [
+        "channels-message-passing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Futures",
+      "url": "https://docs.racket-lang.org/reference/futures.html",
+      "concepts": [
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Places",
+      "url": "https://docs.racket-lang.org/reference/places.html",
+      "concepts": [
+        "parallelism",
+        "actors"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Pattern-Based Syntax Matching (syntax-case)",
+      "url": "https://docs.racket-lang.org/reference/stx-patterns.html",
+      "concepts": [
+        "macros",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Macros",
+      "url": "https://docs.racket-lang.org/reference/Macros.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Namespaces and eval",
+      "url": "https://docs.racket-lang.org/reference/eval.html",
+      "concepts": [
+        "eval",
+        "reflection"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Regular Expressions",
+      "url": "https://docs.racket-lang.org/reference/regexp.html",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Garbage Collection",
+      "url": "https://docs.racket-lang.org/reference/garbagecollection.html",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Racket Reference — Delayed Evaluation (promises)",
+      "url": "https://docs.racket-lang.org/reference/Delayed_Evaluation.html",
+      "concepts": [
+        "lazy-evaluation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "The Racket Foreign Interface",
+      "url": "https://docs.racket-lang.org/foreign/",
+      "concepts": [
+        "ffi"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "syntax/parse — Parsing and specifying syntax",
+      "url": "https://docs.racket-lang.org/syntax/stxparse.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Typed Racket Reference",
+      "url": "https://docs.racket-lang.org/ts-reference/",
+      "concepts": [
+        "gradual-typing",
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "Racket release notes index",
+      "url": "https://docs.racket-lang.org/release/",
+      "concepts": [
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "Racket HISTORY.txt (v8.15 core release history)",
+      "url": "https://download.racket-lang.org/releases/8.15/doc/release/HISTORY.txt",
+      "concepts": [
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "format": "html",
+      "version": "8.15",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "raco: Racket Command-Line Tools",
+      "url": "https://docs.racket-lang.org/raco/",
+      "concepts": [
+        "tooling",
+        "build-systems"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Package Management in Racket",
+      "url": "https://docs.racket-lang.org/pkg/",
+      "concepts": [
+        "package-management"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Binding as Sets of Scopes (Flatt, POPL 2016)",
+      "url": "https://www.cs.utah.edu/plt/scope-sets/",
+      "concepts": [
+        "macros",
+        "scope",
+        "formal-semantics"
+      ],
+      "authors": [
+        "Matthew Flatt"
+      ],
+      "year": 2016,
+      "authority": "designer",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Composable and Compilable Macros: You Want It When? (Flatt, ICFP 2002)",
+      "url": "https://www.cs.utah.edu/plt/publications/macromod.pdf",
+      "concepts": [
+        "macros",
+        "modules",
+        "compile-time-evaluation"
+      ],
+      "authors": [
+        "Matthew Flatt"
+      ],
+      "year": 2002,
+      "authority": "designer",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Languages as Libraries (Tobin-Hochstadt et al., PLDI 2011)",
+      "url": "https://www.cs.utah.edu/plt/publications/pldi11-tscff.pdf",
+      "concepts": [
+        "macros",
+        "code-generation"
+      ],
+      "authors": [
+        "Sam Tobin-Hochstadt",
+        "Vincent St-Amour",
+        "Ryan Culpepper",
+        "Matthew Flatt",
+        "Matthias Felleisen"
+      ],
+      "year": 2011,
+      "authority": "designer",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "The Design and Implementation of Typed Scheme (Tobin-Hochstadt & Felleisen, POPL 2008)",
+      "url": "https://www2.ccs.neu.edu/racket/pubs/popl08-thf.pdf",
+      "concepts": [
+        "gradual-typing",
+        "type-system"
+      ],
+      "authors": [
+        "Sam Tobin-Hochstadt",
+        "Matthias Felleisen"
+      ],
+      "year": 2008,
+      "authority": "designer",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Rebuilding Racket on Chez Scheme (Experience Report, ICFP 2019)",
+      "url": "https://www.cs.utah.edu/plt/publications/icfp19-fddkmstz.pdf",
+      "concepts": [
+        "compiler-architecture",
+        "runtime-system"
+      ],
+      "authors": [
+        "Matthew Flatt",
+        "Caner Derici",
+        "R. Kent Dybvig",
+        "Andrew W. Keep",
+        "Gustavo E. Massaccesi",
+        "Sarah Spall",
+        "Sam Tobin-Hochstadt",
+        "Jon Zeppieri"
+      ],
+      "year": 2019,
+      "authority": "academic",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "The Racket Manifesto (SNAPL 2015)",
+      "url": "https://www2.ccs.neu.edu/racket/pubs/manifesto.pdf",
+      "concepts": [
+        "design-rationale",
+        "history"
+      ],
+      "authors": [
+        "Matthias Felleisen",
+        "Robert Bruce Findler",
+        "Matthew Flatt",
+        "Shriram Krishnamurthi",
+        "Eli Barzilay",
+        "Jay McCarthy",
+        "Sam Tobin-Hochstadt"
+      ],
+      "year": 2015,
+      "authority": "designer",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide",
+      "url": "https://docs.racket-lang.org/guide/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Welcome to Racket",
+      "url": "https://docs.racket-lang.org/guide/intro.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Functions: lambda (optional and keyword arguments)",
+      "url": "https://docs.racket-lang.org/guide/lambda.html",
+      "concepts": [
+        "functions",
+        "parameters-arguments"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Definitions",
+      "url": "https://docs.racket-lang.org/guide/define.html",
+      "concepts": [
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Local Binding",
+      "url": "https://docs.racket-lang.org/guide/let.html",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Conditionals",
+      "url": "https://docs.racket-lang.org/guide/conditionals.html",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Assignment",
+      "url": "https://docs.racket-lang.org/guide/set_.html",
+      "concepts": [
+        "assignment"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Quoting",
+      "url": "https://docs.racket-lang.org/guide/quote.html",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Quasiquoting",
+      "url": "https://docs.racket-lang.org/guide/qq.html",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Programmer-Defined Datatypes",
+      "url": "https://docs.racket-lang.org/guide/define-struct.html",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Module Basics",
+      "url": "https://docs.racket-lang.org/guide/module-basics.html",
+      "concepts": [
+        "modules"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Contracts",
+      "url": "https://docs.racket-lang.org/guide/contracts.html",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Regular Expressions",
+      "url": "https://docs.racket-lang.org/guide/regexp.html",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Exceptions",
+      "url": "https://docs.racket-lang.org/guide/exns.html",
+      "concepts": [
+        "exceptions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Prompts and Aborts",
+      "url": "https://docs.racket-lang.org/guide/prompt.html",
+      "concepts": [
+        "continuations"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Iterations and Comprehensions",
+      "url": "https://docs.racket-lang.org/guide/for.html",
+      "concepts": [
+        "loops",
+        "comprehensions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Pattern Matching",
+      "url": "https://docs.racket-lang.org/guide/match.html",
+      "concepts": [
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Classes and Objects",
+      "url": "https://docs.racket-lang.org/guide/classes.html",
+      "concepts": [
+        "classes",
+        "mixins"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Reflection and Dynamic Evaluation",
+      "url": "https://docs.racket-lang.org/guide/reflection.html",
+      "concepts": [
+        "eval",
+        "reflection"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Pattern-Based Macros",
+      "url": "https://docs.racket-lang.org/guide/pattern-macros.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — General Macro Transformers",
+      "url": "https://docs.racket-lang.org/guide/proc-macros.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Creating Languages (#lang)",
+      "url": "https://docs.racket-lang.org/guide/languages.html",
+      "concepts": [
+        "code-generation",
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Concurrency and Synchronization",
+      "url": "https://docs.racket-lang.org/guide/concurrency.html",
+      "concepts": [
+        "concurrency",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Performance",
+      "url": "https://docs.racket-lang.org/guide/performance.html",
+      "concepts": [
+        "performance",
+        "jit"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Parallelism (futures, places)",
+      "url": "https://docs.racket-lang.org/guide/parallelism.html",
+      "concepts": [
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Hash Tables",
+      "url": "https://docs.racket-lang.org/guide/hash-tables.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Racket Guide — Strings (Unicode)",
+      "url": "https://docs.racket-lang.org/guide/strings.html",
+      "concepts": [
+        "strings",
+        "unicode"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Typed Racket Guide",
+      "url": "https://docs.racket-lang.org/ts-guide/",
+      "concepts": [
+        "gradual-typing",
+        "type-annotations"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Quick: An Introduction to Racket with Pictures",
+      "url": "https://docs.racket-lang.org/quick/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "More: Systems Programming with Racket",
+      "url": "https://docs.racket-lang.org/more/",
+      "concepts": [
+        "threads",
+        "input-output"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "How to Design Programs, 2nd ed. (HtDP)",
+      "url": "https://htdp.org/",
+      "concepts": [
+        "hello-world",
+        "recursion"
+      ],
+      "authors": [
+        "Matthias Felleisen",
+        "Robert Bruce Findler",
+        "Matthew Flatt",
+        "Shriram Krishnamurthi"
+      ],
+      "year": 2018,
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Beautiful Racket (Butterick) — making languages with Racket",
+      "url": "https://beautifulracket.com/",
+      "concepts": [
+        "macros",
+        "parser"
+      ],
+      "authors": [
+        "Matthew Butterick"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "style-guide",
+      "title": "How to Program Racket: a Style Guide",
+      "url": "https://docs.racket-lang.org/style/",
+      "concepts": [
+        "style-conventions"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "cheatsheet",
+      "title": "Learn X in Y minutes — Racket",
+      "url": "https://learnxinyminutes.com/racket/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "The Racket Manifesto in 20 pages (Felleisen et al., web edition)",
+      "url": "https://felleisen.org/matthias/manifesto/",
+      "concepts": [
+        "design-rationale"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "racket/racket — Racket core (Racket CS and BC)",
+      "url": "https://github.com/racket/racket",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "Racket CS",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/README.txt — Racket CS architecture (Racket on Chez Scheme)",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/README.txt",
+      "concepts": [
+        "compiler-architecture",
+        "runtime-system"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/expander/README.txt — macro expander overview (implemented in Racket, flattened into the runtime)",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/expander/README.txt",
+      "concepts": [
+        "macros",
+        "bootstrapping"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/expander/expand/main.rkt — core expansion loop",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/expander/expand/main.rkt",
+      "concepts": [
+        "macros"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/expander/syntax/scope.rkt — scope sets and binding resolution",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/expander/syntax/scope.rkt",
+      "concepts": [
+        "macros",
+        "scope"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/expander/expand/module.rkt — module expansion",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/expander/expand/module.rkt",
+      "concepts": [
+        "modules"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/expander/read/main.rkt — reader",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/expander/read/main.rkt",
+      "concepts": [
+        "lexer",
+        "parser"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/schemify/README.txt — schemify: linklet to Chez Scheme conversion",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/schemify/README.txt",
+      "concepts": [
+        "intermediate-representation"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/linklet.sls — linklet compilation and evaluation on Chez",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/linklet.sls",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/rumble/control.ss — continuations, prompts and continuation marks on Chez",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/rumble/control.ss",
+      "concepts": [
+        "continuations"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/rumble/struct.ss — structure types and properties",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/rumble/struct.ss",
+      "concepts": [
+        "records-structs"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/rumble/hash.ss — hash tables",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/rumble/hash.ss",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/rumble/error.ss — exceptions and error display",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/rumble/error.ss",
+      "concepts": [
+        "exceptions"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/rumble/foreign.ss — FFI implementation",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/rumble/foreign.ss",
+      "concepts": [
+        "ffi"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/cs/rumble/memory.ss — memory management hooks over the Chez GC",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/cs/rumble/memory.ss",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/thread/README.txt — thread scheduler layer (green threads, events)",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/thread/README.txt",
+      "concepts": [
+        "threads",
+        "concurrency"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket collects/racket/private/for.rkt — for loops and sequences",
+      "url": "https://github.com/racket/racket/blob/master/racket/collects/racket/private/for.rkt",
+      "concepts": [
+        "loops",
+        "iterators"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket collects/racket/private/kw.rkt — keyword arguments and lambda",
+      "url": "https://github.com/racket/racket/blob/master/racket/collects/racket/private/kw.rkt",
+      "concepts": [
+        "parameters-arguments"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket collects/racket/private/class-internal.rkt — class system",
+      "url": "https://github.com/racket/racket/blob/master/racket/collects/racket/private/class-internal.rkt",
+      "concepts": [
+        "classes"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket collects/racket/match/match.rkt — match pattern matcher",
+      "url": "https://github.com/racket/racket/blob/master/racket/collects/racket/match/match.rkt",
+      "concepts": [
+        "pattern-matching"
+      ],
+      "implementation": "Racket CS",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Racket src/bc/README.txt — Racket BC (legacy C runtime with JIT)",
+      "url": "https://github.com/racket/racket/blob/master/racket/src/bc/README.txt",
+      "concepts": [
+        "jit"
+      ],
+      "implementation": "Racket BC",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Racket (programming language)",
+      "url": "https://en.wikipedia.org/wiki/Racket_(programming_language)",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Racket",
+      "url": "https://pldb.io/concepts/racket.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Racket",
+      "url": "https://rosettacode.org/wiki/Category:Racket",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "curated-list",
+      "title": "Awesome Racket",
+      "url": "https://github.com/avelino/awesome-racket",
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open"
+    }
+  ]
+}

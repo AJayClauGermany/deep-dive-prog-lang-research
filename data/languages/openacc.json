@@ -1,0 +1,394 @@
+{
+ "id": "openacc",
+ "name": "OpenACC",
+ "aliases": [
+  "Open Accelerators"
+ ],
+ "categories": [
+  "domain-specific",
+  "scientific"
+ ],
+ "paradigms": [
+  "directive-based",
+  "data-parallel",
+  "accelerator offload"
+ ],
+ "typing": [
+  "inherits base language"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Cray",
+  "CAPS",
+  "NVIDIA",
+  "PGI",
+  "OpenACC organization"
+ ],
+ "summary": "Directive-based programming model for offloading C, C++ and Fortran loops and data regions to GPUs and other accelerators (parallel/kernels/loop/data directives with gang/worker/vector parallelism), specified by the OpenACC organization.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "OpenACC 1.0 (2011)",
+  "OpenACC 2.7 (2018)",
+  "OpenACC 3.3 (2022)",
+  "OpenACC 3.4 (2025)"
+ ],
+ "homepage": "https://www.openacc.org/",
+ "influenced_by": [
+  "openmp",
+  "cuda"
+ ],
+ "related": [
+  {
+   "id": "openmp",
+   "relation": "family"
+  },
+  {
+   "id": "c",
+   "relation": "embeds"
+  },
+  {
+   "id": "fortran",
+   "relation": "embeds"
+  },
+  {
+   "id": "cpp",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "The OpenACC Application Programming Interface specification (free PDFs for every version) is normative.",
+  "0": "Implementations: NVIDIA HPC SDK (proprietary), GCC (libgomp oacc-*), LLVM Flang and Clang (in progress), Clacc."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenACC Application Programming Interface 3.4 (PDF)",
+   "url": "https://www.openacc.org/sites/default/files/inline-files/OpenACC_3.4.pdf",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open",
+   "version": "3.4"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenACC Application Programming Interface 3.3 (PDF)",
+   "url": "https://www.openacc.org/sites/default/files/inline-images/Specification/OpenACC-3.3-final.pdf",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open",
+   "version": "3.3",
+   "year": 2022
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenACC 2.6 — list of changes (PDF)",
+   "url": "https://www.openacc.org/sites/default/files/inline-files/OpenACC.2.6.final-changes.pdf",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open",
+   "version": "2.6"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenACC specification index (all versions)",
+   "url": "https://www.openacc.org/specification",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GCC wiki — OpenACC support in GCC",
+   "url": "https://gcc.gnu.org/wiki/OpenACC",
+   "concepts": [
+    "tooling",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GCC"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Flang — OpenACC implementation notes",
+   "url": "https://flang.llvm.org/docs/OpenACC.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "LLVM Flang"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NVIDIA HPC SDK — OpenACC Getting Started Guide",
+   "url": "https://docs.nvidia.com/hpc-sdk/compilers/openacc-gs/index.html",
+   "concepts": [
+    "hello-world",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "implementation": "NVIDIA HPC SDK"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NVIDIA OpenACC Getting Started — Atomic support",
+   "url": "https://docs.nvidia.com/hpc-sdk/compilers/openacc-gs/index.html#openacc-atomic-support",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "implementation": "NVIDIA HPC SDK"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NVIDIA OpenACC Getting Started — C structs in OpenACC",
+   "url": "https://docs.nvidia.com/hpc-sdk/compilers/openacc-gs/index.html#c-structs-in-openacc",
+   "concepts": [
+    "records-structs",
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "implementation": "NVIDIA HPC SDK"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NVIDIA OpenACC Getting Started — Error handling",
+   "url": "https://docs.nvidia.com/hpc-sdk/compilers/openacc-gs/index.html#openacc-error-handling",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "implementation": "NVIDIA HPC SDK"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NVIDIA OpenACC Getting Started — Environment variables",
+   "url": "https://docs.nvidia.com/hpc-sdk/compilers/openacc-gs/index.html#environment-variables",
+   "concepts": [
+    "command-line"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "implementation": "NVIDIA HPC SDK"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "LLVM — ACC.td (TableGen definition of OpenACC directives and clauses)",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/Frontend/OpenACC/ACC.td",
+   "concepts": [
+    "grammar",
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "LLVM"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Clang — ParseOpenACC.cpp",
+   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Parse/ParseOpenACC.cpp",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Clang — SemaOpenACC.cpp",
+   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Sema/SemaOpenACC.cpp",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Flang — Lower/OpenACC.cpp (lowering to the MLIR acc dialect)",
+   "url": "https://github.com/llvm/llvm-project/blob/main/flang/lib/Lower/OpenACC.cpp",
+   "concepts": [
+    "intermediate-representation",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "LLVM Flang"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GCC libgomp — oacc-parallel.c (launch of parallel regions)",
+   "url": "https://github.com/gcc-mirror/gcc/blob/master/libgomp/oacc-parallel.c",
+   "concepts": [
+    "runtime-system",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GCC libgomp"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GCC libgomp — oacc-mem.c (device data management)",
+   "url": "https://github.com/gcc-mirror/gcc/blob/master/libgomp/oacc-mem.c",
+   "concepts": [
+    "memory-management",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GCC libgomp"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OpenACC Programming and Best Practices Guide",
+   "url": "https://openacc-best-practices-guide.readthedocs.io/en/latest/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OpenACC Best Practices Guide — Parallelize loops (parallel, kernels, loop)",
+   "url": "https://openacc-best-practices-guide.readthedocs.io/en/latest/04-Parallelize.html",
+   "concepts": [
+    "parallelism",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OpenACC Best Practices Guide — Optimize data locality (data regions)",
+   "url": "https://openacc-best-practices-guide.readthedocs.io/en/latest/05-Data-Locality.html",
+   "concepts": [
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OpenACC Best Practices Guide — Optimize loops (gang, worker, vector)",
+   "url": "https://openacc-best-practices-guide.readthedocs.io/en/latest/06-Loops.html",
+   "concepts": [
+    "loops",
+    "performance"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OpenACC Best Practices Guide — Interoperability with CUDA and libraries",
+   "url": "https://openacc-best-practices-guide.readthedocs.io/en/latest/07-Interoperability.html",
+   "concepts": [
+    "interoperability",
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — OpenACC",
+   "url": "https://en.wikipedia.org/wiki/OpenACC",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,526 @@
+{
+ "id": "cbor",
+ "name": "CBOR",
+ "aliases": [
+  "Concise Binary Object Representation"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing",
+  "tagged"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "Carsten Bormann",
+  "Paul Hoffman"
+ ],
+ "summary": "IETF binary data format modelled on the JSON data model plus byte strings, tags and simple values; designed for small code size, small messages and extensibility without version negotiation. Used by COSE, CWT, WebAuthn and CoAP.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "RFC 8949 (STD 94)",
+  "RFC 7049 (obsoleted)",
+  "RFC 8610 (CDDL)"
+ ],
+ "file_extensions": [
+  ".cbor"
+ ],
+ "homepage": "https://cbor.io/",
+ "influenced_by": [
+  "json",
+  "messagepack"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "messagepack",
+   "relation": "variant-of"
+  },
+  {
+   "id": "cddl",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "RFC 8949 (Internet Standard STD 94) is normative and obsoletes RFC 7049; RFC 8610 defines CDDL, the schema notation commonly used with CBOR; the IANA tag registry extends the data model.",
+  "0": "No reference implementation; tinycbor (Intel), fxamacker/cbor (Go) and many others implement the RFC; the cbor/test-vectors repository mirrors RFC Appendix A as JSON for conformance testing."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "cbor/test-vectors — appendix_a.json, RFC Appendix A examples as machine-readable test vectors",
+   "url": "https://github.com/cbor/test-vectors/blob/master/appendix_a.json",
+   "implementation": "cbor test-vectors",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "intel/tinycbor — small C CBOR encoder/decoder library",
+   "url": "https://github.com/intel/tinycbor",
+   "implementation": "TinyCBOR",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tinycbor src/cborparser.c — streaming decoder for all major types",
+   "url": "https://github.com/intel/tinycbor/blob/main/src/cborparser.c",
+   "implementation": "TinyCBOR",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tinycbor src/cborencoder.c — encoder, indefinite-length containers",
+   "url": "https://github.com/intel/tinycbor/blob/main/src/cborencoder.c",
+   "implementation": "TinyCBOR",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fxamacker/cbor decode.go — Go decoder with duplicate-key and limit options",
+   "url": "https://github.com/fxamacker/cbor/blob/master/decode.go",
+   "implementation": "fxamacker/cbor",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fxamacker/cbor encode.go — Go encoder with preferred/core-deterministic modes",
+   "url": "https://github.com/fxamacker/cbor/blob/master/encode.go",
+   "implementation": "fxamacker/cbor",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fxamacker/cbor diagnose.go — CBOR diagnostic notation output",
+   "url": "https://github.com/fxamacker/cbor/blob/master/diagnose.go",
+   "implementation": "fxamacker/cbor",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 — Concise Binary Object Representation (CBOR)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §2 — CBOR Data Models",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-cbor-data-models",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §3.1 — Major Types",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-major-types",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "scalars",
+    "collections",
+    "integers",
+    "strings",
+    "arrays",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §3.2 — Indefinite Lengths for Some Major Types",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-indefinite-lengths-for-some",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §3.3 — Floating-Point Numbers and Values with No Content (simple values)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-floating-point-numbers-and-",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "booleans",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §3.4 — Tagging of Items (date/time, bignums, decimal fractions)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-tagging-of-items",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "type-annotations",
+    "date-time",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §4.2 — Deterministically Encoded CBOR",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-deterministically-encoded-c",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §5.4 — Validity and Evolution",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-validity-and-evolution",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §6 — Converting Data between CBOR and JSON",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-converting-data-between-cbo",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §8 — Diagnostic Notation",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-diagnostic-notation",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "literals",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 §10 — Security Considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-security-considerations",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 Appendix E — Comparison of Other Binary Formats (ASN.1, MessagePack, BSON)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-comparison-of-other-binary-",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 Appendix G — Changes from RFC 7049",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#name-changes-from-rfc-7049",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8949",
+   "year": 2020,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7049 — Concise Binary Object Representation (CBOR), original edition",
+   "url": "https://www.rfc-editor.org/rfc/rfc7049.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 7049",
+   "year": 2013,
+   "authors": [
+    "Carsten Bormann",
+    "Paul Hoffman"
+   ],
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8610 — Concise Data Definition Language (CDDL) for CBOR and JSON",
+   "url": "https://www.rfc-editor.org/rfc/rfc8610.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 8610",
+   "year": 2019,
+   "authors": [
+    "Henk Birkholz",
+    "Christoph Vigano",
+    "Carsten Bormann"
+   ],
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "IANA — CBOR Tags registry",
+   "url": "https://www.iana.org/assignments/cbor-tags",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "access": "open",
+   "concepts": [
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "cbor.io — CBOR overview and specification pointers",
+   "url": "https://cbor.io/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "cbor.io — Implementations by language",
+   "url": "https://cbor.io/impls.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — CBOR",
+   "url": "https://en.wikipedia.org/wiki/CBOR",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CBOR",
+   "url": "https://pldb.io/concepts/cbor.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open"
+  }
+ ]
+}

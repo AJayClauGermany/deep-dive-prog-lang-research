@@ -1,0 +1,391 @@
+{
+ "id": "bson",
+ "name": "BSON",
+ "aliases": [
+  "Binary JSON"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "MongoDB Inc. (10gen)"
+ ],
+ "summary": "Length-prefixed binary document format used by MongoDB for storage and wire protocol; extends the JSON data model with typed integers, dates, ObjectIds, binary data, Decimal128 and regular expressions, optimised for traversal rather than compactness.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "standards": [
+  "BSON 1.1 (bsonspec.org)"
+ ],
+ "file_extensions": [
+  ".bson"
+ ],
+ "homepage": "https://bsonspec.org/",
+ "influenced_by": [
+  "json"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "mongodb-mql",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The grammar at bsonspec.org (version 1.1) is the specification; MongoDB's driver specifications (Extended JSON, Decimal128, ObjectId, UUID) refine it.",
+  "0": "libbson (in mongo-c-driver) and the PyMongo bson package are vendor implementations; the BSON corpus in mongodb/specifications is the shared conformance suite for all drivers."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mongodb/specifications bson-corpus.md — BSON corpus test format and rules",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-corpus/bson-corpus.md",
+   "implementation": "BSON corpus",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "BSON corpus tests/decimal128-1.json — Decimal128 encode/decode vectors",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-corpus/tests/decimal128-1.json",
+   "implementation": "BSON corpus",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "BSON corpus tests/top.json — top-level document validity and parse errors",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-corpus/tests/top.json",
+   "implementation": "BSON corpus",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "document-structure",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "BSON corpus tests/string.json — UTF-8 string encoding and invalid lengths",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-corpus/tests/string.json",
+   "implementation": "BSON corpus",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libbson bson.c — document building and appending typed elements",
+   "url": "https://github.com/mongodb/mongo-c-driver/blob/master/src/libbson/src/bson/bson.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "libbson",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libbson bson-iter.c — zero-copy element iterator and validation",
+   "url": "https://github.com/mongodb/mongo-c-driver/blob/master/src/libbson/src/bson/bson-iter.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "libbson",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "iterators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libbson bson-json.c — Extended JSON reader",
+   "url": "https://github.com/mongodb/mongo-c-driver/blob/master/src/libbson/src/bson/bson-json.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "libbson",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libbson bson-decimal128.c — IEEE 754-2008 decimal128 conversion",
+   "url": "https://github.com/mongodb/mongo-c-driver/blob/master/src/libbson/src/bson/bson-decimal128.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "libbson",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyMongo bson/__init__.py — pure-Python BSON encoder/decoder",
+   "url": "https://github.com/mongodb/mongo-python-driver/blob/master/bson/__init__.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "PyMongo bson",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyMongo bson/json_util.py — Extended JSON (canonical/relaxed) conversion",
+   "url": "https://github.com/mongodb/mongo-python-driver/blob/master/bson/json_util.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "PyMongo bson",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "BSON Specification Version 1.1 — grammar of documents, elements and types",
+   "url": "https://bsonspec.org/spec.html",
+   "authority": "official",
+   "version": "1.1",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "encoding-wire-format",
+    "data-model",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "bsonspec.org — FAQ (design goals, comparison with JSON)",
+   "url": "https://bsonspec.org/faq.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MongoDB driver spec — Extended JSON",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/extended-json/extended-json.md",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "type-conversion",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MongoDB driver spec — BSON Decimal128",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-decimal128/decimal128.md",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MongoDB driver spec — BSON ObjectId",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-objectid/objectid.md",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MongoDB driver spec — BSON Binary UUID",
+   "url": "https://github.com/mongodb/specifications/blob/master/source/bson-binary-uuid/uuid.md",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — BSON Types",
+   "url": "https://www.mongodb.com/docs/manual/reference/bson-types/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — BSON Types: ObjectId",
+   "url": "https://www.mongodb.com/docs/manual/reference/bson-types/#objectid",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — BSON Types: Timestamps",
+   "url": "https://www.mongodb.com/docs/manual/reference/bson-types/#timestamps",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — BSON Types: Date",
+   "url": "https://www.mongodb.com/docs/manual/reference/bson-types/#date",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — BSON Types: decimal128",
+   "url": "https://www.mongodb.com/docs/manual/reference/bson-types/#decimal128-bson-data-type",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Extended JSON (v2): BSON data types and representations",
+   "url": "https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/#bson-data-types-and-associated-representations",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "MongoDB — JSON and BSON explained",
+   "url": "https://www.mongodb.com/resources/basics/json-and-bson",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — BSON",
+   "url": "https://en.wikipedia.org/wiki/BSON",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

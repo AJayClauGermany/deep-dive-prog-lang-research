@@ -1,0 +1,609 @@
+{
+ "id": "shacl",
+ "name": "SHACL (Shapes Constraint Language)",
+ "aliases": [
+  "SHACL",
+  "SHACL Core",
+  "SHACL-SPARQL"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative",
+  "constraint-based"
+ ],
+ "typing": [
+  "closed-world validation over RDF graphs"
+ ],
+ "first_appeared": 2017,
+ "designers": [
+  "Holger Knublauch",
+  "Dimitris Kontokostas",
+  "W3C RDF Data Shapes Working Group"
+ ],
+ "summary": "W3C language for validating RDF graphs against shapes: node and property shapes select focus nodes via targets and SHACL property paths and apply constraint components (cardinality, datatype, class, value range, string, logical and/or/not/xone, shape-based, closed) or SPARQL-based constraints, producing an RDF validation report.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C SHACL Recommendation (2017)",
+  "W3C SHACL 1.2 Core (Working Draft)"
+ ],
+ "file_extensions": [
+  ".ttl",
+  ".shacl"
+ ],
+ "homepage": "https://www.w3.org/TR/shacl/",
+ "influenced_by": [
+  "rdf",
+  "sparql",
+  "spin"
+ ],
+ "related": [
+  {
+   "id": "shex",
+   "relation": "family"
+  },
+  {
+   "id": "rdf",
+   "relation": "family"
+  },
+  {
+   "id": "sparql",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "SHACL 2017 is a W3C Recommendation; SHACL Advanced Features is a Working Group Note; SHACL 1.2 (Core, SPARQL extensions, rules, compact syntax) is being developed by the Data Shapes WG.",
+  "0": "The W3C data-shapes test suite; TopBraid SHACL (Java, by the spec editor) is the de-facto reference, with pySHACL, Apache Jena SHACL and rdf-validate-shacl as independent implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Shapes Constraint Language (SHACL) — W3C Recommendation",
+   "url": "https://www.w3.org/TR/shacl/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "constraints"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 1.5 Relationship between SHACL and RDFS inferencing",
+   "url": "https://www.w3.org/TR/shacl/#shacl-rdfs",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 2.1 Shapes",
+   "url": "https://www.w3.org/TR/shacl/#shapes",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 2.1.3 Targets",
+   "url": "https://www.w3.org/TR/shacl/#targets",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 2.1.4 Declaring the Severity of a Shape",
+   "url": "https://www.w3.org/TR/shacl/#severity",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 2.2 Node Shapes",
+   "url": "https://www.w3.org/TR/shacl/#node-shapes",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 2.3 Property Shapes",
+   "url": "https://www.w3.org/TR/shacl/#property-shapes",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 2.3.1 SHACL Property Paths",
+   "url": "https://www.w3.org/TR/shacl/#property-paths",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 3.4.3 Handling of Recursive Shapes",
+   "url": "https://www.w3.org/TR/shacl/#shapes-recursion",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 3.6 Validation Report",
+   "url": "https://www.w3.org/TR/shacl/#validation-report",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 4 Core Constraint Components",
+   "url": "https://www.w3.org/TR/shacl/#core-components",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 4.6 Logical Constraint Components (not, and, or, xone)",
+   "url": "https://www.w3.org/TR/shacl/#core-components-logical",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 4.7 Shape-based Constraint Components (node, property, qualified value shape)",
+   "url": "https://www.w3.org/TR/shacl/#core-components-shape",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 4.8 Other Constraint Components (closed, hasValue, in)",
+   "url": "https://www.w3.org/TR/shacl/#core-components-others",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums",
+    "constraints-integrity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 5 SPARQL-based Constraints",
+   "url": "https://www.w3.org/TR/shacl/#sparql-constraints",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — 6 SPARQL-based Constraint Components (user-defined constraint components)",
+   "url": "https://www.w3.org/TR/shacl/#sparql-constraint-components",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL — C SHACL Shapes to Validate Shapes Graphs (SHACL in SHACL)",
+   "url": "https://www.w3.org/TR/shacl/#shacl-shacl",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SHACL Advanced Features (W3C Working Group Note: rules, functions, targets)",
+   "url": "https://www.w3.org/TR/shacl-af/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Holger Knublauch",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SHACL 1.2 Core (W3C Working Draft)",
+   "url": "https://www.w3.org/TR/shacl12-core/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "SHACL Use Cases and Requirements (W3C Working Group Note)",
+   "url": "https://www.w3.org/TR/shacl-ucr/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "2017",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "w3c/data-shapes — SHACL test suite",
+   "url": "https://github.com/w3c/data-shapes/tree/gh-pages/data-shapes-test-suite",
+   "scope": "whole",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "TopQuadrant/shacl — TopBraid SHACL API (Java)",
+   "url": "https://github.com/TopQuadrant/shacl",
+   "scope": "whole",
+   "implementation": "TopBraid SHACL",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "RDFLib/pySHACL — SHACL validator (Python)",
+   "url": "https://github.com/RDFLib/pySHACL",
+   "scope": "whole",
+   "implementation": "pySHACL",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pySHACL pyshacl/shape.py — shape evaluation, targets and paths",
+   "url": "https://github.com/RDFLib/pySHACL/blob/master/pyshacl/shape.py",
+   "scope": "section",
+   "implementation": "pySHACL",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pySHACL constraints/core/logical_constraints.py — sh:and/or/not/xone",
+   "url": "https://github.com/RDFLib/pySHACL/blob/master/pyshacl/constraints/core/logical_constraints.py",
+   "scope": "section",
+   "implementation": "pySHACL",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pySHACL constraints/core/cardinality_constraints.py — minCount/maxCount",
+   "url": "https://github.com/RDFLib/pySHACL/blob/master/pyshacl/constraints/core/cardinality_constraints.py",
+   "scope": "section",
+   "implementation": "pySHACL",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "constraints"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Validating RDF Data (Labra Gayo et al.) — Chapter: SHACL",
+   "url": "https://book.validatingrdf.com/bookHtml011.html",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Jose Emilio Labra Gayo",
+    "Eric Prud'hommeaux",
+    "Iovka Boneva",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Validating RDF Data — Comparing ShEx and SHACL",
+   "url": "https://book.validatingrdf.com/bookHtml013.html",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Jose Emilio Labra Gayo",
+    "Eric Prud'hommeaux",
+    "Iovka Boneva",
+    "Dimitris Kontokostas"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apache Jena — SHACL",
+   "url": "https://jena.apache.org/documentation/shacl/",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SHACL",
+   "url": "https://en.wikipedia.org/wiki/SHACL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — SHACL",
+   "url": "https://pldb.io/concepts/shacl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
