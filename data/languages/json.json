@@ -1,0 +1,4918 @@
+{
+ "id": "json",
+ "name": "JSON",
+ "aliases": [
+  "JavaScript Object Notation",
+  "RFC 8259",
+  "ECMA-404",
+  "ISO/IEC 21778",
+  "STD 90"
+ ],
+ "categories": [
+  "data-serialization",
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing",
+  "untyped-numbers"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "Douglas Crockford"
+ ],
+ "summary": "Minimal text format for structured data derived from JavaScript literal syntax: objects, arrays, strings, numbers, true, false and null. Defined twice (RFC 8259 / STD 90 and ECMA-404), deliberately unversioned, and the lingua franca of web APIs and configuration.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "consortium-standard"
+ ],
+ "standards": [
+  "RFC 8259 (STD 90)",
+  "ECMA-404 2nd edition",
+  "ISO/IEC 21778:2017",
+  "RFC 7493 (I-JSON)",
+  "RFC 8785 (JCS)"
+ ],
+ "file_extensions": [
+  ".json"
+ ],
+ "homepage": "https://www.json.org/json-en.html",
+ "influenced_by": [
+  "javascript"
+ ],
+ "related": [
+  {
+   "id": "javascript",
+   "relation": "subset-of"
+  },
+  {
+   "id": "yaml",
+   "relation": "subset-of"
+  },
+  {
+   "id": "json5",
+   "relation": "family"
+  },
+  {
+   "id": "jsonc",
+   "relation": "family"
+  },
+  {
+   "id": "hjson",
+   "relation": "family"
+  },
+  {
+   "id": "ndjson",
+   "relation": "family"
+  },
+  {
+   "id": "json-schema",
+   "relation": "family"
+  },
+  {
+   "id": "json-pointer",
+   "relation": "family"
+  },
+  {
+   "id": "json-patch",
+   "relation": "family"
+  },
+  {
+   "id": "jsonpath",
+   "relation": "family"
+  },
+  {
+   "id": "json-ld",
+   "relation": "family"
+  },
+  {
+   "id": "json-type-definition",
+   "relation": "family"
+  },
+  {
+   "id": "cbor",
+   "relation": "family"
+  },
+  {
+   "id": "bson",
+   "relation": "family"
+  },
+  {
+   "id": "jq",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "JSON has no reference implementation: json.org's JSON_checker and Crockford's json2.js are historical reference code, and nst/JSONTestSuite is the de-facto conformance corpus. Level 0 therefore samples widely used parsers/serializers in many host languages, with files tagged by the part of the format they implement (lexing, number conversion, string escaping, UTF-8 validation, duplicate keys, depth limits).",
+  "1": "Two co-equal normative texts: RFC 8259 (IETF STD 90; grammar in ABNF plus interoperability guidance) and ECMA-404 (syntax only, railroad diagrams; also published as ISO/IEC 21778). They are intended to describe the same language. ECMA-262's JSON.parse/JSON.stringify, I-JSON (RFC 7493) and JCS (RFC 8785) are linked as normative profiles; JSON Pointer/Patch/Path and JSON Schema have their own catalog entries.",
+  "2": "Much of the secondary literature is about interoperability hazards (numbers, duplicate keys, invalid Unicode) and about parser engineering (SIMD, on-demand parsing).",
+  "3": "Rosetta Code has a JSON task rather than a category."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "nst/JSONTestSuite — RFC 8259 parsing conformance corpus (y_/n_/i_ cases) and cross-parser result matrix",
+   "url": "https://github.com/nst/JSONTestSuite",
+   "implementation": "JSONTestSuite",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "parser",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite README — naming scheme: y_ must accept, n_ must reject, i_ implementation-defined",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/README.md",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite run_tests.py — harness that drives ~100 parsers and builds the result matrix",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/run_tests.py",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/y_structure_lonely_null.json — scalar at top level",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/y_structure_lonely_null.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/y_object_duplicated_key.json — duplicate object member names are syntactically valid",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/y_object_duplicated_key.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_object_trailing_comma.json — trailing comma must be rejected",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_object_trailing_comma.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "collections"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_array_extra_comma.json — extra comma in array must be rejected",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_array_extra_comma.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_object_single_quote.json — single-quoted names are not JSON",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_object_single_quote.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_number_NaN.json — NaN is not a JSON number",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_number_NaN.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/y_number_real_exponent.json — number with fraction and exponent",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/y_number_real_exponent.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/i_number_huge_exp.json — huge exponent: accept/reject/round is implementation-defined",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/i_number_huge_exp.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_string_unescaped_tab.json — raw control characters in strings must be rejected",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_string_unescaped_tab.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/y_string_surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json — escaped UTF-16 surrogate pair",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/y_string_surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/y_string_nonCharacterInUTF-8_U+FFFF.json — Unicode noncharacter in a string",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/y_string_nonCharacterInUTF-8_U+FFFF.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/i_string_UTF-16LE_with_BOM.json — UTF-16 input with BOM (allowed by RFC 4627, not RFC 8259)",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/i_string_UTF-16LE_with_BOM.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/i_structure_UTF-8_BOM_empty_object.json — leading UTF-8 byte order mark",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/i_structure_UTF-8_BOM_empty_object.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_structure_100000_opening_arrays.json — deep nesting: stack-overflow probe",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_structure_100000_opening_arrays.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "recursion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_structure_open_array_object.json — unterminated structures",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_structure_open_array_object.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_parsing/n_object_with_single_string.json — object member without value",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_parsing/n_object_with_single_string.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_transform/number_1e-999.json — transform test: underflowing number round trip",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_transform/number_1e-999.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_transform/object_same_key_different_values.json — transform test: which duplicate wins",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_transform/object_same_key_different_values.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONTestSuite test_transform/string_1_escaped_invalid_codepoint.json — transform test: escaped lone surrogate",
+   "url": "https://github.com/nst/JSONTestSuite/blob/master/test_transform/string_1_escaped_invalid_codepoint.json",
+   "implementation": "JSONTestSuite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "JSON_checker.c — Crockford's table-driven pushdown-automaton JSON validator (json.org reference checker)",
+   "url": "https://github.com/douglascrockford/JSON-c/blob/master/JSON_checker.c",
+   "implementation": "JSON_checker",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "douglascrockford/JSON-js — json2.js, the original JavaScript reference encoder/decoder",
+   "url": "https://github.com/douglascrockford/JSON-js",
+   "implementation": "JSON-js",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "parser",
+    "history"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "JSON-js json2.js — JSON.parse via regex validation + eval, and JSON.stringify (the pre-ES5 polyfill)",
+   "url": "https://github.com/douglascrockford/JSON-js/blob/master/json2.js",
+   "implementation": "JSON-js",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization",
+    "eval",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "JSON-js cycle.js — decycle/retrocycle: encoding cyclic object graphs with JSONPath $ref",
+   "url": "https://github.com/douglascrockford/JSON-js/blob/master/cycle.js",
+   "implementation": "JSON-js",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "test262 JSON.parse — negative zero",
+   "url": "https://github.com/tc39/test262/blob/main/test/built-ins/JSON/parse/text-negative-zero.js",
+   "implementation": "test262",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "test262 JSON.parse — duplicate __proto__ keys are ordinary data properties",
+   "url": "https://github.com/tc39/test262/blob/main/test/built-ins/JSON/parse/duplicate-proto.js",
+   "implementation": "test262",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "test262 JSON.stringify — lone surrogates are escaped",
+   "url": "https://github.com/tc39/test262/blob/main/test/built-ins/JSON/stringify/value-string-escape-unicode.js",
+   "implementation": "test262",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "test262 JSON.stringify — BigInt throws TypeError",
+   "url": "https://github.com/tc39/test262/blob/main/test/built-ins/JSON/stringify/value-bigint.js",
+   "implementation": "test262",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "json-canonicalization — JCS (RFC 8785) reference implementations and test vectors",
+   "url": "https://github.com/cyberphone/json-canonicalization/blob/master/README.md",
+   "implementation": "JCS reference",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "json-canonicalization canonicalize.js — the 30-line ECMAScript JCS serializer",
+   "url": "https://github.com/cyberphone/json-canonicalization/blob/master/node-es6/canonicalize.js",
+   "implementation": "JCS reference",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "json-canonicalization testdata — canonicalization and IEEE 754 number-serialization vectors",
+   "url": "https://github.com/cyberphone/json-canonicalization/blob/master/testdata/README.md",
+   "implementation": "JCS reference",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "json-patch-tests spec_tests.json — conformance cases from RFC 6902",
+   "url": "https://github.com/json-patch/json-patch-tests/blob/master/spec_tests.json",
+   "implementation": "json-patch-tests",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSONPath Compliance Test Suite cts.json (RFC 9535)",
+   "url": "https://github.com/jsonpath-standard/jsonpath-compliance-test-suite/blob/main/cts.json",
+   "implementation": "jsonpath-compliance-test-suite",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "ANTLR grammars-v4 JSON.g4 — complete JSON grammar in ~80 lines",
+   "url": "https://github.com/antlr/grammars-v4/blob/master/json/JSON.g4",
+   "implementation": "ANTLR grammars-v4",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-json grammar.js",
+   "url": "https://github.com/tree-sitter/tree-sitter-json/blob/master/grammar.js",
+   "implementation": "tree-sitter-json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "DaveGamble/cJSON — ultralightweight ANSI C JSON parser",
+   "url": "https://github.com/DaveGamble/cJSON",
+   "implementation": "cJSON",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cJSON.c — recursive-descent parse_value/parse_string/parse_number and print_* with nesting limit",
+   "url": "https://github.com/DaveGamble/cJSON/blob/master/cJSON.c",
+   "implementation": "cJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization",
+    "escaping",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cJSON_Utils.c — JSON Pointer, JSON Patch and Merge Patch",
+   "url": "https://github.com/DaveGamble/cJSON/blob/master/cJSON_Utils.c",
+   "implementation": "cJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsmn.h — allocation-free tokenizer that only records token boundaries",
+   "url": "https://github.com/zserge/jsmn/blob/master/jsmn.h",
+   "implementation": "jsmn",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "yyjson.c — fast C reader/writer: custom strtod, digit tables, immutable/mutable documents",
+   "url": "https://github.com/ibireme/yyjson/blob/master/src/yyjson.c",
+   "implementation": "yyjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "floating-point",
+    "performance",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "yajl_lex.c — streaming lexer with UTF-8 validation and optional comments",
+   "url": "https://github.com/lloyd/yajl/blob/master/src/yajl_lex.c",
+   "implementation": "yajl",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "unicode",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "yajl_parser.c — event-driven (SAX-style) state-stack parser",
+   "url": "https://github.com/lloyd/yajl/blob/master/src/yajl_parser.c",
+   "implementation": "yajl",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jansson load.c — lexer/parser with JSON_REJECT_DUPLICATES and depth limit",
+   "url": "https://github.com/akheron/jansson/blob/master/src/load.c",
+   "implementation": "Jansson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jansson dump.c — serializer: key sorting, ASCII escaping, real precision",
+   "url": "https://github.com/akheron/jansson/blob/master/src/dump.c",
+   "implementation": "Jansson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jansson strconv.c — locale-independent double conversion",
+   "url": "https://github.com/akheron/jansson/blob/master/src/strconv.c",
+   "implementation": "Jansson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "json-c json_tokener.c — incremental state-machine tokenizer with strict mode",
+   "url": "https://github.com/json-c/json-c/blob/master/json_tokener.c",
+   "implementation": "json-c",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq jv_parse.c — incremental JSON and JSON-seq parser",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv_parse.c",
+   "implementation": "jq",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq jv_print.c — JSON output, colouring and number formatting",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv_print.c",
+   "implementation": "jq",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PostgreSQL jsonapi.c — recursive-descent and incremental table-driven JSON parsers",
+   "url": "https://github.com/postgres/postgres/blob/master/src/common/jsonapi.c",
+   "implementation": "PostgreSQL",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PostgreSQL jsonb_util.c — binary jsonb container layout, key sorting and de-duplication",
+   "url": "https://github.com/postgres/postgres/blob/master/src/backend/utils/adt/jsonb_util.c",
+   "implementation": "PostgreSQL",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SQLite json.c — JSON text and JSONB blob processing, JSON5 input",
+   "url": "https://github.com/sqlite/sqlite/blob/master/src/json.c",
+   "implementation": "SQLite",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "encoding-wire-format",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "simdjson/simdjson — SIMD-accelerated JSON parser (gigabytes per second)",
+   "url": "https://github.com/simdjson/simdjson",
+   "implementation": "simdjson",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "performance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson stage 1 — structural-character indexing with SIMD bitmaps",
+   "url": "https://github.com/simdjson/simdjson/blob/master/src/generic/stage1/json_structural_indexer.h",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "optimization",
+    "parallelism"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson — lookup-table UTF-8 validation",
+   "url": "https://github.com/simdjson/simdjson/blob/master/src/generic/stage1/utf8_lookup4_algorithm.h",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson stage 2 — building the DOM tape",
+   "url": "https://github.com/simdjson/simdjson/blob/master/src/generic/stage2/tape_builder.h",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson — string unescaping and surrogate-pair handling",
+   "url": "https://github.com/simdjson/simdjson/blob/master/src/generic/stage2/stringparsing.h",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson — exact number parsing (fast path, Eisel-Lemire)",
+   "url": "https://github.com/simdjson/simdjson/blob/master/include/simdjson/generic/numberparsing.h",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "integers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson doc/tape.md — the tape: a flat 64-bit-word DOM representation",
+   "url": "https://github.com/simdjson/simdjson/blob/master/doc/tape.md",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "simdjson doc/ondemand_design.md — design of the lazy On-Demand API",
+   "url": "https://github.com/simdjson/simdjson/blob/master/doc/ondemand_design.md",
+   "implementation": "simdjson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation",
+    "design-rationale",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Tencent/rapidjson — fast header-only C++ parser/generator with SAX and DOM APIs",
+   "url": "https://github.com/Tencent/rapidjson",
+   "implementation": "RapidJSON",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RapidJSON reader.h — recursive and iterative (LL(1) table) SAX parsers, number parsing, parse flags",
+   "url": "https://github.com/Tencent/rapidjson/blob/master/include/rapidjson/reader.h",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RapidJSON writer.h — SAX generator with escape table",
+   "url": "https://github.com/Tencent/rapidjson/blob/master/include/rapidjson/writer.h",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RapidJSON encodings.h — UTF-8/16/32 transcoding and validation",
+   "url": "https://github.com/Tencent/rapidjson/blob/master/include/rapidjson/encodings.h",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RapidJSON dtoa.h — Grisu2 shortest double-to-string",
+   "url": "https://github.com/Tencent/rapidjson/blob/master/include/rapidjson/internal/dtoa.h",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RapidJSON strtod.h — correctly rounded string-to-double",
+   "url": "https://github.com/Tencent/rapidjson/blob/master/include/rapidjson/internal/strtod.h",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RapidJSON document.h — 16-byte tagged Value, short-string optimisation",
+   "url": "https://github.com/Tencent/rapidjson/blob/master/include/rapidjson/document.h",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nlohmann/json lexer.hpp — hand-written scanner following RFC 8259 token by token",
+   "url": "https://github.com/nlohmann/json/blob/develop/include/nlohmann/detail/input/lexer.hpp",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "unicode",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nlohmann/json parser.hpp — non-recursive parser driving SAX events, callbacks",
+   "url": "https://github.com/nlohmann/json/blob/develop/include/nlohmann/detail/input/parser.hpp",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nlohmann/json serializer.hpp — dump(): escaping, UTF-8 validation, indentation",
+   "url": "https://github.com/nlohmann/json/blob/develop/include/nlohmann/detail/output/serializer.hpp",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nlohmann/json to_chars.hpp — Grisu2 shortest round-trip float printing",
+   "url": "https://github.com/nlohmann/json/blob/develop/include/nlohmann/detail/conversions/to_chars.hpp",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "nlohmann/json unit-testsuites.cpp — runs json.org, JSONTestSuite and nativejson-benchmark corpora",
+   "url": "https://github.com/nlohmann/json/blob/develop/tests/src/unit-testsuites.cpp",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Boost.JSON basic_parser_impl.hpp — resumable incremental parser",
+   "url": "https://github.com/boostorg/json/blob/master/include/boost/json/basic_parser_impl.hpp",
+   "implementation": "Boost.JSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "coroutines"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Ryu d2s.c — shortest round-trip double-to-string (used by JSON serializers and cited by RFC 8785)",
+   "url": "https://github.com/ulfjack/ryu/blob/master/ryu/d2s.c",
+   "implementation": "Ryu",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "V8 json-parser.cc — JSON.parse: one-pass scanner building objects with hidden-class transitions",
+   "url": "https://github.com/v8/v8/blob/main/src/json/json-parser.cc",
+   "implementation": "V8",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "V8 json-stringifier.cc — JSON.stringify fast paths, escaping tables, cycle detection",
+   "url": "https://github.com/v8/v8/blob/main/src/json/json-stringifier.cc",
+   "implementation": "V8",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "JavaScriptCore LiteralParser.cpp — strict JSON and JSONP-pattern literal parser",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/runtime/LiteralParser.cpp",
+   "implementation": "JavaScriptCore",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "JavaScriptCore JSONObject.cpp — Stringifier and Walker (reviver)",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/runtime/JSONObject.cpp",
+   "implementation": "JavaScriptCore",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SpiderMonkey JSONParser.cpp — tokenizer and iterative parser",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/js/src/vm/JSONParser.cpp",
+   "implementation": "SpiderMonkey",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Lib/json/decoder.py — py_scanstring, JSONObject/JSONArray, NaN/Infinity constants",
+   "url": "https://github.com/python/cpython/blob/main/Lib/json/decoder.py",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Lib/json/scanner.py — NUMBER_RE and value dispatch",
+   "url": "https://github.com/python/cpython/blob/main/Lib/json/scanner.py",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Lib/json/encoder.py — ESCAPE tables, floatstr, circular-reference check",
+   "url": "https://github.com/python/cpython/blob/main/Lib/json/encoder.py",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Modules/_json.c — C accelerator for scanning and encoding",
+   "url": "https://github.com/python/cpython/blob/main/Modules/_json.c",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization",
+    "performance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "CPython test_json/test_fail.py — json.org JSON_checker fail cases",
+   "url": "https://github.com/python/cpython/blob/main/Lib/test/test_json/test_fail.py",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go encoding/json scanner.go — byte-at-a-time state machine validator",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/scanner.go",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go encoding/json decode.go — reflection-driven Unmarshal, case-insensitive field matching",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/decode.go",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "reflection",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go encoding/json encode.go — Marshal: struct tags, sorted map keys, HTML-safe escaping",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/encode.go",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "reflection",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go encoding/json stream.go — Decoder/Encoder over streams of concatenated values",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/stream.go",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go encoding/json/jsontext doc.go — v2 syntactic layer: RFC 8259/7493 conformance, duplicate-name rejection",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/jsontext/doc.go",
+   "implementation": "Go encoding/json/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go encoding/json/jsontext decode.go — streaming token decoder",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/jsontext/decode.go",
+   "implementation": "Go encoding/json/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go jsonwire/decode.go — low-level consumption of strings and numbers with UTF-8 validation",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/json/internal/jsonwire/decode.go",
+   "implementation": "Go encoding/json/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serde_json de.rs — Deserializer: recursion limit, number parsing, trailing-character check",
+   "url": "https://github.com/serde-rs/json/blob/master/src/de.rs",
+   "implementation": "serde_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serde_json read.rs — string scanning, escape decoding, surrogate handling",
+   "url": "https://github.com/serde-rs/json/blob/master/src/read.rs",
+   "implementation": "serde_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serde_json ser.rs — Serializer, Formatter trait, CharEscape table",
+   "url": "https://github.com/serde-rs/json/blob/master/src/ser.rs",
+   "implementation": "serde_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serde_json number.rs — Number as u64/i64/f64 or arbitrary-precision string",
+   "url": "https://github.com/serde-rs/json/blob/master/src/number.rs",
+   "implementation": "serde_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serde_json map.rs — BTreeMap vs insertion-ordered IndexMap (preserve_order)",
+   "url": "https://github.com/serde-rs/json/blob/master/src/map.rs",
+   "implementation": "serde_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jackson ReaderBasedJsonParser.java — streaming pull parser over chars",
+   "url": "https://github.com/FasterXML/jackson-core/blob/2.x/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+   "implementation": "Jackson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jackson UTF8StreamJsonParser.java — byte-level parser with inline UTF-8 decoding",
+   "url": "https://github.com/FasterXML/jackson-core/blob/2.x/src/main/java/com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java",
+   "implementation": "Jackson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "unicode",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jackson WriterBasedJsonGenerator.java — streaming generator and escaping",
+   "url": "https://github.com/FasterXML/jackson-core/blob/2.x/src/main/java/com/fasterxml/jackson/core/json/WriterBasedJsonGenerator.java",
+   "implementation": "Jackson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jackson JsonReadFeature.java — catalogue of non-standard syntax switches (comments, single quotes, NaN, trailing commas)",
+   "url": "https://github.com/FasterXML/jackson-core/blob/2.x/src/main/java/com/fasterxml/jackson/core/json/JsonReadFeature.java",
+   "implementation": "Jackson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jackson StreamReadConstraints.java — depth, number-length and string-length limits against DoS",
+   "url": "https://github.com/FasterXML/jackson-core/blob/2.x/src/main/java/com/fasterxml/jackson/core/StreamReadConstraints.java",
+   "implementation": "Jackson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gson JsonReader.java — pull parser with lenient/strict modes and XSSI-prefix handling",
+   "url": "https://github.com/google/gson/blob/main/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+   "implementation": "Gson",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gson JsonWriter.java — writer with HTML-safe escaping",
+   "url": "https://github.com/google/gson/blob/main/gson/src/main/java/com/google/gson/stream/JsonWriter.java",
+   "implementation": "Gson",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "JSON-java (org.json) JSONTokener.java — Crockford's original Java tokenizer lineage",
+   "url": "https://github.com/stleary/JSON-java/blob/master/src/main/java/org/json/JSONTokener.java",
+   "implementation": "JSON-java",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "System.Text.Json Utf8JsonReader.cs — forward-only UTF-8 token reader",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/libraries/System.Text.Json/src/System/Text/Json/Reader/Utf8JsonReader.cs",
+   "implementation": "System.Text.Json",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "System.Text.Json Utf8JsonWriter.cs — validating UTF-8 writer",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/libraries/System.Text.Json/src/System/Text/Json/Writer/Utf8JsonWriter.cs",
+   "implementation": "System.Text.Json",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Newtonsoft.Json JsonTextReader.cs — permissive reader (comments, single quotes, dates)",
+   "url": "https://github.com/JamesNK/Newtonsoft.Json/blob/master/Src/Newtonsoft.Json/JsonTextReader.cs",
+   "implementation": "Newtonsoft.Json",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ruby/json parser.c — C parser for Ruby's json gem",
+   "url": "https://github.com/ruby/json/blob/master/ext/json/ext/parser/parser.c",
+   "implementation": "ruby/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ruby/json generator.c — generator with script-safe escaping",
+   "url": "https://github.com/ruby/json/blob/master/ext/json/ext/generator/generator.c",
+   "implementation": "ruby/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PHP ext/json json_scanner.re — re2c lexer with UTF-8 and escape states",
+   "url": "https://github.com/php/php-src/blob/master/ext/json/json_scanner.re",
+   "implementation": "PHP ext/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "unicode",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PHP ext/json json_parser.y — Bison LALR grammar with depth tracking",
+   "url": "https://github.com/php/php-src/blob/master/ext/json/json_parser.y",
+   "implementation": "PHP ext/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PHP ext/json json_encoder.c — json_encode: escaping options, precision, recursion guard",
+   "url": "https://github.com/php/php-src/blob/master/ext/json/json_encoder.c",
+   "implementation": "PHP ext/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "swift-foundation JSONScanner.swift — two-pass scanner producing a compact JSONMap",
+   "url": "https://github.com/swiftlang/swift-foundation/blob/main/Sources/FoundationEssentials/JSON/JSONScanner.swift",
+   "implementation": "Swift Foundation",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zig std.json Scanner.zig — explicit state-machine streaming scanner",
+   "url": "https://github.com/ziglang/zig/blob/master/lib/std/json/Scanner.zig",
+   "implementation": "Zig std.json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yojson read.mll — ocamllex JSON lexer/parser",
+   "url": "https://github.com/ocaml-community/yojson/blob/master/lib/read.mll",
+   "implementation": "Yojson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "aeson Decoding/ByteString.hs — token-stream decoder over strict ByteStrings",
+   "url": "https://github.com/haskell/aeson/blob/master/src/Data/Aeson/Decoding/ByteString.hs",
+   "implementation": "aeson",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jason decoder.ex — Elixir decoder built on binary pattern matching and continuation passing",
+   "url": "https://github.com/michalmuskala/jason/blob/master/lib/decoder.ex",
+   "implementation": "Jason",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — The JavaScript Object Notation (JSON) Data Interchange Format (STD 90)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "grammar",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 1 Introduction: four primitive types and two structured types",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "scalars",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 1.2 Specifications of JSON (relationship to ECMA-404 and ECMA-262)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-1.2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 2 JSON Grammar: JSON-text, structural characters, insignificant whitespace",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "whitespace-layout",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 3 Values: false, null, true literals",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "booleans",
+    "null-optional",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 4 Objects: members, name uniqueness and ordering",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-4",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "records-structs",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 5 Arrays",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-5",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 6 Numbers: grammar, IEEE 754 binary64 interoperability range",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-6",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "scalars",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 7 Strings: quotation, escapes, \\uXXXX and surrogate pairs",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-7",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "unicode",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 8.1 Character Encoding: UTF-8 only, no BOM",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-8.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 8.2 Unicode Characters: unpaired surrogates and unpredictable behaviour",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-8.2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "strings",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 8.3 String Comparison",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-8.3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 9 Parsers: extensions, depth/size/range limits",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-9",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 10 Generators",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-10",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 11 IANA Considerations: application/json media type (no charset parameter)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-11",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 12 Security Considerations: never eval() JSON text",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-12",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — 13 Examples",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#section-13",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 — Appendix A: Changes from RFC 7159",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259.html#appendix-A",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8259 errata (RFC Editor)",
+   "url": "https://www.rfc-editor.org/errata/rfc8259",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-404 — The JSON data interchange syntax (standard landing page)",
+   "url": "https://ecma-international.org/publications-and-standards/standards/ecma-404/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "2nd edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-404 2nd edition (December 2017) — full text PDF",
+   "url": "https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "2nd edition",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-model"
+   ],
+   "notes": "Syntax only: explicitly leaves semantics (number precision, duplicate names, ordering) to the consumer. Identical text is ISO/IEC 21778:2017."
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-404 1st edition (October 2013) — full text PDF",
+   "url": "https://ecma-international.org/wp-content/uploads/ECMA-404_1st_edition_october_2013.pdf",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2013,
+   "version": "1st edition",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 21778:2017 — Information technology — The JSON data interchange syntax",
+   "url": "https://www.iso.org/standard/71616.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "format": "html",
+   "access": "paywalled",
+   "concepts": [
+    "standardization"
+   ],
+   "notes": "ISO adoption of ECMA-404 2nd edition; the Ecma PDF is the free equivalent."
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "json.org — Introducing JSON (railroad diagrams and McKeeman-form grammar)",
+   "url": "https://www.json.org/json-en.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-model",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "json.org — JSON grammar in McKeeman Form",
+   "url": "https://www.json.org/json-en.html#grammar",
+   "scope": "section",
+   "authority": "designer",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Douglas Crockford — McKeeman Form (the grammar notation used on json.org)",
+   "url": "https://www.crockford.com/mckeeman.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "IANA media type registration — application/json",
+   "url": "https://www.iana.org/assignments/media-types/application/json",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4627 — The application/json Media Type for JavaScript Object Notation (JSON) — original 2006 definition",
+   "url": "https://www.rfc-editor.org/rfc/rfc4627.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "grammar",
+    "data-model"
+   ],
+   "notes": "Obsoleted by RFC 7159 then RFC 8259; only objects and arrays were allowed at top level."
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4627 — 2 JSON Grammar: a JSON text is an object or array",
+   "url": "https://www.rfc-editor.org/rfc/rfc4627.html#section-2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "document-structure",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4627 — 3 Encoding: UTF-8/16/32 detection from the first four octets",
+   "url": "https://www.rfc-editor.org/rfc/rfc4627.html#section-3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4627 — 6 IANA Considerations: the regular-expression safety check before eval()",
+   "url": "https://www.rfc-editor.org/rfc/rfc4627.html#section-6",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "eval",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7159 — The JavaScript Object Notation (JSON) Data Interchange Format (2014 revision)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7159.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7159 — Appendix A: Changes from RFC 4627 (any value at top level, interoperability notes)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7159.html#appendix-A",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "IETF JSON working group charter (2013-2014 revision of RFC 4627)",
+   "url": "https://datatracker.ietf.org/wg/json/about/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "IETF jsonbis working group charter (RFC 8259 / STD 90)",
+   "url": "https://datatracker.ietf.org/wg/jsonbis/about/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — The I-JSON Message Format (restricted interoperable profile)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 2.1 Encoding and Characters: UTF-8, no surrogates or noncharacters",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-2.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 2.2 Numbers: stay within IEEE 754 double, ±2^53 integers",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-2.2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 2.3 Object Constraints: no duplicate member names, order is insignificant",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-2.3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 4.1 Top-Level Constructs",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-4.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 4.2 Must-Ignore Policy for unknown members",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-4.2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 4.3 Time and Date Handling: RFC 3339 strings",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-4.3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7493 — I-JSON 4.4 Binary Data: base64url strings",
+   "url": "https://www.rfc-editor.org/rfc/rfc7493.html#section-4.4",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JSON Canonicalization Scheme (JCS)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Anders Rundgren",
+    "Bret Jordan",
+    "Samuel Erdtman"
+   ],
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ],
+   "notes": "Informational RFC; deterministic serialization for hashing and signing."
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.1 Creation of Input Data (I-JSON subset)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-creation-of-input-data",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.2.1 Whitespace",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-whitespace",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.2.2.1 Serialization of Literals",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-serialization-of-literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "booleans",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.2.2.2 Serialization of Strings: minimal escaping",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-serialization-of-strings",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.2.2.3 Serialization of Numbers: ECMAScript Number-to-String",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-serialization-of-numbers",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "integers",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.2.3 Sorting of Object Properties by UTF-16 code units",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-sorting-of-object-propertie",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "sorting-limiting",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 3.2.4 UTF-8 Generation",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-utf-8-generation",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS Appendix D: Dealing with Big Numbers",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-dealing-with-big-numbers",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8785 — JCS 5 Security Considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc8785.html#name-security-considerations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7464 — JavaScript Object Notation (JSON) Text Sequences (application/json-seq)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7464.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Nicolas Williams"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7464 — JSON Text Sequences 2.1 JSON Text Sequence Parsing (RS-delimited, error recovery)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7464.html#section-2.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7464 — JSON Text Sequences 2.4 Top-Level Values: numbers, true, false, null and truncation",
+   "url": "https://www.rfc-editor.org/rfc/rfc7464.html#section-2.4",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6839 — RFC 6839 3.1 The +json Structured Syntax Suffix",
+   "url": "https://www.rfc-editor.org/rfc/rfc6839.html#section-3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2013,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6901 — JavaScript Object Notation (JSON) Pointer",
+   "url": "https://www.rfc-editor.org/rfc/rfc6901.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2013,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "references-anchors"
+   ],
+   "notes": "Has its own catalog entry (json-pointer)."
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6901 — JSON Pointer 3 Syntax: reference tokens and ~0 / ~1 escaping",
+   "url": "https://www.rfc-editor.org/rfc/rfc6901.html#section-3",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2013,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "escaping",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6902 — JavaScript Object Notation (JSON) Patch",
+   "url": "https://www.rfc-editor.org/rfc/rfc6902.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2013,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ],
+   "notes": "Has its own catalog entry (json-patch)."
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7396 — JSON Merge Patch",
+   "url": "https://www.rfc-editor.org/rfc/rfc7396.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7396 — JSON Merge Patch 2 Processing Merge Patch Documents: null means delete",
+   "url": "https://www.rfc-editor.org/rfc/rfc7396.html#section-2",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "null-optional",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 9535 — JSONPath: Query Expressions for JSON",
+   "url": "https://www.rfc-editor.org/rfc/rfc9535.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2024,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "selection-projection"
+   ],
+   "notes": "Has its own catalog entry (jsonpath)."
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 9535 — JSONPath 1.1.1 JSON Values as Trees of Nodes",
+   "url": "https://www.rfc-editor.org/rfc/rfc9535.html#name-json-values-as-trees-of-nod",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8927 — JSON Type Definition (JTD)",
+   "url": "https://www.rfc-editor.org/rfc/rfc8927.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-system"
+   ],
+   "notes": "Has its own catalog entry (json-type-definition)."
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8949 — CBOR (RFC 8949) 6 Converting Data between CBOR and JSON",
+   "url": "https://www.rfc-editor.org/rfc/rfc8949.html#section-6",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "type-conversion",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — 25.5 The JSON Object",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — 25.5.1 JSON.parse(text [, reviver]): JSON text is validated then evaluated as an ECMAScript literal",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json.parse",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "type-conversion",
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — InternalizeJSONProperty: the reviver walk",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-internalizejsonproperty",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — 25.5.4 JSON.stringify(value [, replacer [, space]])",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json.stringify",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — SerializeJSONProperty: toJSON, undefined/function omission, non-finite numbers become null",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-serializejsonproperty",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion",
+    "null-optional",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — QuoteJSONString: escape table and lone-surrogate escaping (well-formed stringify)",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-quotejsonstring",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — SerializeJSONObject: property enumeration order and cycle detection",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-serializejsonobject",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "serialization",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — SerializeJSONArray",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-serializejsonarray",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — JSON.rawJSON(text): lossless serialization of big numbers",
+   "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json.rawjson",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-262 — String literals: U+2028/U+2029 allowed so that JSON is a syntactic subset of ECMAScript",
+   "url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-literals-string-literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — Subsume JSON (JSON ⊂ ECMAScript), ES2019",
+   "url": "https://tc39.es/proposal-json-superset/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Richard Gibson"
+   ],
+   "year": 2018,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "interoperability",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — Well-formed JSON.stringify, ES2019",
+   "url": "https://tc39.es/proposal-well-formed-stringify/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Richard Gibson"
+   ],
+   "year": 2018,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "escaping",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — JSON.parse source text access",
+   "url": "https://tc39.es/proposal-json-parse-with-source/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Richard Gibson",
+    "Mathias Bynens"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "parser",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "TC39 proposal — JSON modules (import ... with { type: 'json' })",
+   "url": "https://tc39.es/proposal-json-modules/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WHATWG Infra Standard — 6 JSON: parsing and serializing algorithms shared by web specs",
+   "url": "https://infra.spec.whatwg.org/#json",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WHATWG Infra — parse JSON bytes to a JavaScript value (UTF-8 decode, BOM stripped)",
+   "url": "https://infra.spec.whatwg.org/#parse-json-bytes-to-a-javascript-value",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WHATWG Infra — convert a JSON-derived JavaScript value to an Infra value",
+   "url": "https://infra.spec.whatwg.org/#convert-a-json-derived-javascript-value-to-an-infra-value",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WHATWG MIME Sniffing — JSON MIME type (application/json, text/json, +json)",
+   "url": "https://mimesniff.spec.whatwg.org/#json-mime-type",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python json module — Standard Compliance and Interoperability",
+   "url": "https://docs.python.org/3/library/json.html#standard-compliance-and-interoperability",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python json module — Infinite and NaN Number Values",
+   "url": "https://docs.python.org/3/library/json.html#infinite-and-nan-number-values",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python json module — Repeated Names Within an Object",
+   "url": "https://docs.python.org/3/library/json.html#repeated-names-within-an-object",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python json module — JSON to Python conversion table",
+   "url": "https://docs.python.org/3/library/json.html#json-to-py-table",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python json module — Character Encodings",
+   "url": "https://docs.python.org/3/library/json.html#character-encodings",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Go encoding/json — package documentation",
+   "url": "https://pkg.go.dev/encoding/json",
+   "implementation": "Go encoding/json",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Go encoding/json — Marshal: struct tags, omitempty, HTML escaping, map key ordering",
+   "url": "https://pkg.go.dev/encoding/json#Marshal",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "annotations-attributes",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Go encoding/json — Number: preserving numeric literals",
+   "url": "https://pkg.go.dev/encoding/json#Number",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "serde_json — crate documentation",
+   "url": "https://docs.rs/serde_json/latest/serde_json/",
+   "implementation": "serde_json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "serde_json — enum Value: the JSON data model as a Rust algebraic data type",
+   "url": "https://docs.rs/serde_json/latest/serde_json/enum.Value.html",
+   "implementation": "serde_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Ruby JSON module documentation",
+   "url": "https://docs.ruby-lang.org/en/master/JSON.html",
+   "implementation": "ruby/json",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "PHP manual — JSON extension",
+   "url": "https://www.php.net/manual/en/book.json.php",
+   "implementation": "PHP ext/json",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "PostgreSQL — 8.14 JSON Types (json vs jsonb, type mapping, containment)",
+   "url": "https://www.postgresql.org/docs/current/datatype-json.html",
+   "implementation": "PostgreSQL",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "PostgreSQL JSON Types — Table 8.23 JSON primitive types and corresponding PostgreSQL types",
+   "url": "https://www.postgresql.org/docs/current/datatype-json.html#JSON-TYPE-MAPPING-TABLE",
+   "implementation": "PostgreSQL",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "SQLite — JSON functions and operators (JSON1, JSONB, JSON5 input extensions)",
+   "url": "https://www.sqlite.org/json1.html",
+   "implementation": "SQLite",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "SQLite JSON — 3 Interface overview: JSON arguments, PATH arguments, compatibility quirks",
+   "url": "https://www.sqlite.org/json1.html#interface_overview",
+   "implementation": "SQLite",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield (Nicolas Seriot) — survey of specification ambiguities and parser divergence",
+   "url": "https://seriot.ch/security/parsing_json.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "parser",
+    "testing"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 1 JSON Specifications: RFC 4627/7159/8259, ECMA-404, json.org compared",
+   "url": "https://seriot.ch/security/parsing_json.html#1",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "history",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 2.1 Structure: scalars, trailing commas, comments, unclosed structures, nesting, whitespace",
+   "url": "https://seriot.ch/security/parsing_json.html#21",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "document-structure",
+    "comments",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 2.2 Numbers: NaN/Infinity, hex, range and precision, exponents",
+   "url": "https://seriot.ch/security/parsing_json.html#22",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 2.3 Arrays",
+   "url": "https://seriot.ch/security/parsing_json.html#23",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 2.4 Objects: duplicated keys",
+   "url": "https://seriot.ch/security/parsing_json.html#24",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 2.5 Strings: encodings, BOM, control characters, escapes, raw non-Unicode bytes",
+   "url": "https://seriot.ch/security/parsing_json.html#25",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "unicode",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 2.6 RFC 8259 Ambiguities",
+   "url": "https://seriot.ch/security/parsing_json.html#26",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "standardization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 3 Testing Architecture",
+   "url": "https://seriot.ch/security/parsing_json.html#3",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 4.1 Full Results: the parser x test matrix",
+   "url": "https://seriot.ch/security/parsing_json.html#41",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "testing"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Parsing JSON is a Minefield — 5 Parsing Contents: what parsers return for the same valid input",
+   "url": "https://seriot.ch/security/parsing_json.html#5",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nicolas Seriot"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "An Exploration of JSON Interoperability Vulnerabilities (Bishop Fox)",
+   "url": "https://bishopfox.com/blog/json-interoperability-vulnerabilities",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Jake Miller"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "interoperability",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Unexpected security footguns in Go's parsers (Trail of Bits) — Duplicate fields",
+   "url": "https://blog.trailofbits.com/2025/06/17/unexpected-security-footguns-in-gos-parsers/#duplicate-fields",
+   "scope": "section",
+   "authority": "community",
+   "year": 2025,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Unexpected security footguns in Go's parsers (Trail of Bits) — Case-insensitive key matching",
+   "url": "https://blog.trailofbits.com/2025/06/17/unexpected-security-footguns-in-gos-parsers/#case-insensitive-key-matching",
+   "scope": "section",
+   "authority": "community",
+   "year": 2025,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Unexpected security footguns in Go's parsers (Trail of Bits) — Attack scenario 2: parser differentials",
+   "url": "https://blog.trailofbits.com/2025/06/17/unexpected-security-footguns-in-gos-parsers/#attack-scenario-2-parser-differentials",
+   "scope": "section",
+   "authority": "community",
+   "year": 2025,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Working with JSON",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Working with JSON: JSON structure",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON#json_structure",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Working with JSON: Arrays as JSON",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON#arrays_as_json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Working with JSON: JSON syntax restrictions",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON#json_syntax_restrictions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "strings",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Working with JSON: Converting between objects and text",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON#converting_between_objects_and_text",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — JSON global object reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN JSON — JavaScript and JSON differences",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON#javascript_and_json_differences",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "literals",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN JSON — Full JSON grammar",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON#full_json_grammar",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — JSON.parse(): reviver and the source-text context argument",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "type-conversion",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — JSON.stringify(): replacer, space, toJSON() behaviour",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN JSON.stringify() — Issue with serializing circular references",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#issue_with_serializing_circular_references",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — import attributes (with { type: \"json\" })",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — JSON",
+   "url": "https://learnxinyminutes.com/json/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "JSON: The Fat-Free Alternative to XML (Douglas Crockford, XML 2006)",
+   "url": "https://www.json.org/fatfree.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "json.org — JSON Example (JSON vs XML encodings of the same data)",
+   "url": "https://json.org/example.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "json.org — JSON in JavaScript and JSONRequest proposal",
+   "url": "https://www.json.org/JSONRequest.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "year": 2006,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "The Rise and Rise of JSON (Two-Bit History)",
+   "url": "https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Sinclair Target"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "The Rise and Rise of JSON — The Birth of JSON",
+   "url": "https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html#the-birth-of-json",
+   "scope": "section",
+   "authority": "community",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "The Rise and Rise of JSON — JSON vs XML",
+   "url": "https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html#json-vs-xml",
+   "scope": "section",
+   "authority": "community",
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "CoRecursive podcast — JSON vs XML with Douglas Crockford (transcript)",
+   "url": "https://corecursive.com/json-vs-xml-douglas-crockford/",
+   "scope": "whole",
+   "authority": "designer",
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "video",
+   "title": "Douglas Crockford — Heretical Open Source (the JSON licence and 'discovering' JSON), InfoQ",
+   "url": "https://www.infoq.com/presentations/Heretical-Open-Source/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Douglas Crockford"
+   ],
+   "year": 2011,
+   "format": "video",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Tim Bray — JSON Redux AKA RFC 7159 (editor's commentary on the revision)",
+   "url": "https://www.tbray.org/ongoing/When/201x/2014/03/05/RFC7159-JSON",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Bray"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "language-evolution",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Tim Bray — Fixing JSON (commas, timestamps, schemas)",
+   "url": "https://www.tbray.org/ongoing/When/201x/2016/08/20/Fixing-JSON",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Bray"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "date-time"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Nigel Tao — JSON with Commas and Comments: The many JSON extensions",
+   "url": "https://nigeltao.github.io/blog/2021/json-with-commas-comments.html#the-many-json-extensions",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Nigel Tao"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "comments",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "V8 — Subsume JSON a.k.a. JSON ⊂ ECMAScript",
+   "url": "https://v8.dev/features/subsume-json",
+   "scope": "whole",
+   "authority": "vendor",
+   "authors": [
+    "Mathias Bynens"
+   ],
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "interoperability",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "V8 — Subsume JSON: Embedding JSON into JavaScript programs and the security angle",
+   "url": "https://v8.dev/features/subsume-json#security",
+   "scope": "section",
+   "authority": "vendor",
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "V8 — Well-formed JSON.stringify",
+   "url": "https://v8.dev/features/well-formed-json-stringify",
+   "scope": "whole",
+   "authority": "vendor",
+   "authors": [
+    "Mathias Bynens"
+   ],
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "escaping",
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 — How we made JSON.stringify more than twice as fast",
+   "url": "https://v8.dev/blog/json-stringify",
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 2025,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "optimization",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 JSON.stringify — Optimizing string serialization with SIMD",
+   "url": "https://v8.dev/blog/json-stringify#optimizing-string-serialization-with-simd",
+   "scope": "section",
+   "authority": "vendor",
+   "year": 2025,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 JSON.stringify — A faster double-to-string algorithm (Dragonbox)",
+   "url": "https://v8.dev/blog/json-stringify#a-faster-double-to-string-algorithm",
+   "scope": "section",
+   "authority": "vendor",
+   "year": 2025,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "V8 — The cost of JavaScript in 2019: JSON.parse is faster than object literals",
+   "url": "https://v8.dev/blog/cost-of-javascript-2019#json",
+   "scope": "section",
+   "authority": "vendor",
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The Go Blog — JSON and Go",
+   "url": "https://go.dev/blog/json",
+   "implementation": "Go encoding/json",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Andrew Gerrand"
+   ],
+   "year": 2011,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "JSON and Go — Decoding arbitrary data",
+   "url": "https://go.dev/blog/json#decoding-arbitrary-data",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing",
+    "type-conversion",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "JSON and Go — Streaming Encoders and Decoders",
+   "url": "https://go.dev/blog/json#streaming-encoders-and-decoders",
+   "implementation": "Go encoding/json",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Serde — JSON data format and how Rust structs/enums map to it",
+   "url": "https://serde.rs/json.html",
+   "implementation": "serde_json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "algebraic-data-types",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Gson User Guide",
+   "url": "https://github.com/google/gson/blob/main/UserGuide.md",
+   "implementation": "Gson",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion",
+    "generics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": ".NET — System.Text.Json overview",
+   "url": "https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/overview",
+   "implementation": "System.Text.Json",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Types: how objects, arrays, strings, booleans and numbers are stored",
+   "url": "https://json.nlohmann.me/features/types/",
+   "implementation": "nlohmann/json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Types: Objects (key order, duplicate keys, limits)",
+   "url": "https://json.nlohmann.me/features/types/#objects",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Types: Strings (encoding, comparison)",
+   "url": "https://json.nlohmann.me/features/types/#strings",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Number Handling: JSON number syntax",
+   "url": "https://json.nlohmann.me/features/types/number_handling/#json-number-syntax",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Number Handling: Number interoperability",
+   "url": "https://json.nlohmann.me/features/types/number_handling/#number-interoperability",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Number Handling: NaN handling",
+   "url": "https://json.nlohmann.me/features/types/number_handling/#nan-handling",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Object Order",
+   "url": "https://json.nlohmann.me/features/object_order/",
+   "implementation": "nlohmann/json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — Comments (and why JSON has none)",
+   "url": "https://json.nlohmann.me/features/comments/",
+   "implementation": "nlohmann/json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "nlohmann/json docs — SAX Interface",
+   "url": "https://json.nlohmann.me/features/parsing/sax_interface/",
+   "implementation": "nlohmann/json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "iterators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "nlohmann/json docs — Binary Formats (BJData, BSON, CBOR, MessagePack, UBJSON): comparison and completeness",
+   "url": "https://json.nlohmann.me/features/binary_formats/#comparison",
+   "implementation": "nlohmann/json",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RapidJSON — Internals: Value data layout and flags",
+   "url": "https://rapidjson.org/md_doc_internals.html#Value",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RapidJSON — Internals: Parser optimisations (SIMD whitespace skipping, parsing to double)",
+   "url": "https://rapidjson.org/md_doc_internals.html#Parser",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "optimization",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RapidJSON — Internals: Iterative Parser (LL(1) grammar and parsing table)",
+   "url": "https://rapidjson.org/md_doc_internals.html#IterativeParser",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "formal-grammars",
+    "automata"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RapidJSON — SAX: Reader and Handler events",
+   "url": "https://rapidjson.org/md_doc_sax.html#Reader",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "iterators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RapidJSON — Encoding: Unicode, UTF and transcoding",
+   "url": "https://rapidjson.org/md_doc_encoding.html#Unicode",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RapidJSON — DOM: Parsing, in-situ parsing and parse errors",
+   "url": "https://rapidjson.org/md_doc_dom.html#Parsing",
+   "implementation": "RapidJSON",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "memory-management",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "simdjson — The Basics (DOM vs On-Demand, error handling, UTF-8, number types)",
+   "url": "https://github.com/simdjson/simdjson/blob/master/doc/basics.md",
+   "implementation": "simdjson",
+   "scope": "whole",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lazy-evaluation",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Parsing Gigabytes of JSON per Second (Langdale & Lemire, VLDB Journal 2019)",
+   "url": "https://arxiv.org/abs/1902.08318",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Geoff Langdale",
+    "Daniel Lemire"
+   ],
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "optimization",
+    "parallelism",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "On-Demand JSON: A Better Way to Parse Documents? (Keiser & Lemire, 2023)",
+   "url": "https://arxiv.org/abs/2312.17149",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "John Keiser",
+    "Daniel Lemire"
+   ],
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lazy-evaluation",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Number Parsing at a Gigabyte per Second (Lemire, 2021) — the Eisel-Lemire algorithm used by JSON parsers",
+   "url": "https://arxiv.org/abs/2101.11408",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Daniel Lemire"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "type-conversion",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Mison: A Fast JSON Parser for Data Analytics (Li et al., VLDB 2017)",
+   "url": "https://www.vldb.org/pvldb/vol10/p1118-li.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Yinan Li",
+    "Nikos R. Katsipoulakis",
+    "Badrish Chandramouli",
+    "Jonathan Goldstein",
+    "Donald Kossmann"
+   ],
+   "year": 2017,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "optimization",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "JSON: Data model, Query languages and Schema specification (Bourhis, Reutter, Suárez, Vrgoč, PODS 2017)",
+   "url": "https://arxiv.org/abs/1701.02221",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Pierre Bourhis",
+    "Juan L. Reutter",
+    "Fernando Suárez",
+    "Domagoj Vrgoč"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "formal-semantics",
+    "schema-validation",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Unicode FAQ — UTF-8, UTF-16, UTF-32 & BOM (background for RFC 8259 section 8)",
+   "url": "https://unicode.org/faq/utf_bom.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON",
+   "url": "https://en.wikipedia.org/wiki/JSON",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "data-model"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: History",
+   "url": "https://en.wikipedia.org/wiki/JSON#History",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Syntax",
+   "url": "https://en.wikipedia.org/wiki/JSON#Syntax",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "literals"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Data types",
+   "url": "https://en.wikipedia.org/wiki/JSON#Data_types",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "scalars",
+    "collections"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Interoperability",
+   "url": "https://en.wikipedia.org/wiki/JSON#Interoperability",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Safety",
+   "url": "https://en.wikipedia.org/wiki/JSON#Safety",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Supersets and derivatives (YAML, CSON, HOCON, JSON5, JSONC)",
+   "url": "https://en.wikipedia.org/wiki/JSON#Supersets",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON streaming (NDJSON, RS-delimited, concatenated, length-prefixed)",
+   "url": "https://en.wikipedia.org/wiki/JSON_streaming",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSONP",
+   "url": "https://en.wikipedia.org/wiki/JSONP",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of data-serialization formats",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — JSON",
+   "url": "https://pldb.io/concepts/json.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — JSON task (parse and serialize in many languages)",
+   "url": "https://rosettacode.org/wiki/JSON",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-json — curated list of JSON libraries and resources",
+   "url": "https://github.com/burningtree/awesome-json",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "nativejson-benchmark — conformance and performance of 40+ C/C++ JSON libraries",
+   "url": "https://github.com/miloyip/nativejson-benchmark",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "testing",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "kostya/benchmarks — cross-language JSON parse/generate benchmarks",
+   "url": "https://github.com/kostya/benchmarks",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "JSONPath Comparison — consensus matrix across implementations",
+   "url": "https://cburgmer.github.io/json-path-comparison/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "IETF Datatracker — jsonpath working group documents",
+   "url": "https://datatracker.ietf.org/wg/jsonpath/about/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  }
+ ]
+}
