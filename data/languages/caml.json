@@ -1,0 +1,47 @@
+{
+ "id": "caml",
+ "name": "Caml / Caml Light",
+ "aliases": ["Caml", "Caml Light", "Heavy Caml", "CAML"],
+ "categories": ["general-purpose", "functional", "historical"],
+ "paradigms": ["functional", "imperative"],
+ "typing": ["static", "strong", "inferred", "hindley-milner"],
+ "first_appeared": 1985,
+ "designers": ["Gérard Huet", "Guy Cousineau", "Ascánder Suárez", "Pierre Weis", "Michel Mauny", "Xavier Leroy", "Damien Doligez"],
+ "summary": "INRIA's dialect of ML: the original Caml (1987) ran on the Categorical Abstract Machine, and Caml Light (1990) was a lightweight bytecode reimplementation based on Leroy's ZINC machine; Caml Light evolved into Caml Special Light and then OCaml.",
+ "status": "historical",
+ "defined_by": ["reference-implementation", "vendor-specification"],
+ "file_extensions": [".ml", ".mli"],
+ "homepage": "https://caml.inria.fr/caml-light/",
+ "influenced_by": ["ml-lcf", "standard-ml"],
+ "related": [{"id": "ocaml", "relation": "family"}, {"id": "zinc-machine", "relation": "compiles-to"}, {"id": "categorical-abstract-machine", "relation": "compiles-to"}, {"id": "standard-ml", "relation": "family"}],
+ "level_notes": {"0": "The Caml Light 0.7x sources (compiler in Caml Light, bytecode runtime in C) are preserved in the camllight/camllight GitHub repository. The original 'heavy' Caml (on Le_Lisp) has no public source.", "1": "The Caml Light reference manual (Leroy) is the definition; its core-language chapter is split into per-topic pages used for deep links."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "camllight/camllight — Caml Light 0.7x sources", "url": "https://github.com/camllight/camllight", "implementation": "Caml Light", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "bytecode"]},
+  {"level": 0, "kind": "grammar-source", "title": "Caml Light compiler/parser.mly — yacc grammar", "url": "https://github.com/camllight/camllight/blob/master/sources/src/compiler/parser.mly", "implementation": "Caml Light", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Caml Light compiler/typing.ml — type inference", "url": "https://github.com/camllight/camllight/blob/master/sources/src/compiler/typing.ml", "implementation": "Caml Light", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["type-inference"]},
+  {"level": 0, "kind": "implementation-source", "title": "Caml Light compiler/matching.ml — pattern-matching compilation", "url": "https://github.com/camllight/camllight/blob/master/sources/src/compiler/matching.ml", "implementation": "Caml Light", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 0, "kind": "implementation-source", "title": "Caml Light compiler/back.ml — generation of ZINC bytecode", "url": "https://github.com/camllight/camllight/blob/master/sources/src/compiler/back.ml", "implementation": "Caml Light", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["code-generation-backend", "bytecode"]},
+  {"level": 0, "kind": "implementation-source", "title": "Caml Light runtime/interp.c — the bytecode interpreter", "url": "https://github.com/camllight/camllight/blob/master/sources/src/runtime/interp.c", "implementation": "Caml Light", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "Caml Light runtime/minor_gc.c — generational GC (minor heap)", "url": "https://github.com/camllight/camllight/blob/master/sources/src/runtime/minor_gc.c", "implementation": "Caml Light", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "The Caml Light system, release 0.74 — documentation and user's manual (Xavier Leroy)", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/", "scope": "whole", "authority": "designer", "authors": ["Xavier Leroy"], "version": "0.74", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Lexical conventions", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.2.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["lexical-structure", "comments", "identifiers", "keywords"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Values", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.4.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["primitive-types", "tuples", "records-structs", "arrays"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Type expressions", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.5.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["type-system", "type-annotations"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Constants", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.6.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Patterns", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.7.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Expressions", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.8.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["expressions", "conditionals", "loops", "exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Global definitions (types, exceptions)", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.9.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["algebraic-data-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Module implementations", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node3.11.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["modules"]},
+  {"level": 1, "kind": "reference-manual", "title": "Caml Light manual — Interfacing C with Caml Light", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node13.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["ffi"]},
+  {"level": 1, "kind": "library-reference", "title": "Caml Light manual — The standard library", "url": "https://caml.inria.fr/pub/docs/manual-caml-light/node15.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "original-paper", "title": "The ZINC experiment: an economical implementation of the ML language — Xavier Leroy (1990)", "url": "https://xavierleroy.org/publi/ZINC.pdf", "scope": "whole", "authority": "designer", "authors": ["Xavier Leroy"], "year": 1990, "format": "pdf", "access": "open", "concepts": ["virtual-machine", "compiler-architecture"]},
+
+  {"level": 2, "kind": "book", "title": "Functional Programming Using Caml Light — Michel Mauny", "url": "https://caml.inria.fr/pub/docs/fpcl/index.html", "scope": "whole", "authority": "designer", "authors": ["Michel Mauny"], "year": 1995, "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "history", "title": "A History of OCaml (incl. Caml and Caml Light) — ocaml.org", "url": "https://ocaml.org/history", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "guide", "title": "Caml Light homepage (INRIA)", "url": "https://caml.inria.fr/caml-light/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Caml", "url": "https://en.wikipedia.org/wiki/Caml", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Caml", "url": "https://pldb.io/concepts/caml.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

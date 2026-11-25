@@ -1,0 +1,33 @@
+{
+ "id": "eff",
+ "name": "Eff",
+ "categories": ["functional"],
+ "paradigms": ["functional", "effect-oriented"],
+ "typing": ["static", "strong", "inferred", "effect-types"],
+ "first_appeared": 2012,
+ "designers": ["Andrej Bauer", "Matija Pretnar"],
+ "summary": "ML-style research language built around algebraic effects and handlers, in which effects such as state, exceptions, non-determinism and I/O are declared as operations and given meaning by user-defined handlers; later versions add an effect system and compilation to (multicore) OCaml.",
+ "status": "experimental",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".eff"],
+ "homepage": "https://www.eff-lang.org/",
+ "influenced_by": ["ocaml", "standard-ml", "algebraic-effects"],
+ "related": [{"id": "ocaml", "relation": "implemented-in"}, {"id": "ocaml", "relation": "compiles-to"}, {"id": "algebraic-effects", "relation": "family"}],
+ "level_notes": {"0": "matijapretnar/eff (OCaml) is organised in numbered layers: parser, type checker, optimiser, back ends (runtime interpreter, plain and multicore OCaml).", "1": "Defined by the papers of Bauer and Pretnar; there is no separate reference manual."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "matijapretnar/eff — the Eff interpreter and compiler", "url": "https://github.com/matijapretnar/eff", "implementation": "eff", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "interpreter"]},
+  {"level": 0, "kind": "grammar-source", "title": "eff src/02-parser/grammar.mly — Menhir grammar", "url": "https://github.com/matijapretnar/eff/blob/master/src/02-parser/grammar.mly", "implementation": "eff", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "eff src/02-parser/lexer.mll — lexer", "url": "https://github.com/matijapretnar/eff/blob/master/src/02-parser/lexer.mll", "implementation": "eff", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "eff src/03-typechecker/infer.ml — type and effect inference", "url": "https://github.com/matijapretnar/eff/blob/master/src/03-typechecker/infer.ml", "implementation": "eff", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["type-inference", "effect-systems"]},
+  {"level": 0, "kind": "implementation-source", "title": "eff src/05-backends/runtime/eval.ml — evaluator with handlers", "url": "https://github.com/matijapretnar/eff/blob/master/src/05-backends/runtime/eval.ml", "implementation": "eff", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["interpreter", "effect-systems", "continuations"]},
+
+  {"level": 1, "kind": "original-paper", "title": "Programming with Algebraic Effects and Handlers — Bauer, Pretnar (JLAMP 2015, arXiv)", "url": "https://arxiv.org/abs/1203.1539", "scope": "whole", "authority": "designer", "authors": ["Andrej Bauer", "Matija Pretnar"], "year": 2012, "format": "html", "access": "open", "concepts": ["effect-systems", "formal-semantics"]},
+  {"level": 1, "kind": "original-paper", "title": "An Effect System for Algebraic Effects and Handlers — Bauer, Pretnar (LMCS 2014, arXiv)", "url": "https://arxiv.org/abs/1306.6316", "scope": "whole", "authority": "designer", "authors": ["Andrej Bauer", "Matija Pretnar"], "year": 2013, "format": "html", "access": "open", "concepts": ["effect-systems", "type-soundness"]},
+
+  {"level": 2, "kind": "tutorial", "title": "An Introduction to Algebraic Effects and Handlers — Matija Pretnar (MFPS tutorial, PDF)", "url": "https://www.eff-lang.org/handlers-tutorial.pdf", "scope": "whole", "authority": "designer", "authors": ["Matija Pretnar"], "year": 2015, "format": "pdf", "access": "open", "concepts": ["effect-systems"]},
+  {"level": 2, "kind": "guide", "title": "Eff — Learn (papers, examples and resources)", "url": "https://www.eff-lang.org/learn/", "scope": "whole", "authority": "designer", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "bibliography", "title": "yallop/effects-bibliography — bibliography of algebraic effects work", "url": "https://github.com/yallop/effects-bibliography", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["effect-systems"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Eff", "url": "https://pldb.io/concepts/eff.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

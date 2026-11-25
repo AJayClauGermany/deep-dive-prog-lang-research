@@ -1,0 +1,31 @@
+{
+ "id": "frank",
+ "name": "Frank",
+ "categories": ["functional"],
+ "paradigms": ["functional", "effect-oriented"],
+ "typing": ["static", "strong", "effect-types", "bidirectional"],
+ "first_appeared": 2017,
+ "designers": ["Sam Lindley", "Conor McBride", "Craig McLaughlin"],
+ "summary": "Strict functional research language with effect handlers in which functions are a special case of 'operators' that handle effects of their arguments; it has an ambient-ability effect type system with implicit effect polymorphism and multihandlers.",
+ "status": "experimental",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".fk"],
+ "influenced_by": ["eff", "haskell", "call-by-push-value", "algebraic-effects"],
+ "related": [{"id": "haskell", "relation": "implemented-in"}, {"id": "algebraic-effects", "relation": "family"}, {"id": "unison", "relation": "family"}],
+ "level_notes": {"0": "frank-lang/frank is a prototype in Haskell (parser, refinement, bidirectional type checker) that compiles to the untyped 'Shonky' language and interprets it.", "1": "Defined by 'Do Be Do Be Do' (POPL 2017) and its extended journal version 'Doo Bee Doo Bee Doo' (JFP 2020). No reference manual exists.", "2": "No books or tutorials exist; the repository README (syntax overview and examples) is the only introductory text."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "frank-lang/frank — prototype Frank implementation (Haskell)", "url": "https://github.com/frank-lang/frank", "implementation": "frank (prototype)", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "frank Parser.hs — parser", "url": "https://github.com/frank-lang/frank/blob/master/Parser.hs", "implementation": "frank (prototype)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "frank TypeCheck.hs — bidirectional type and effect checking", "url": "https://github.com/frank-lang/frank/blob/master/TypeCheck.hs", "implementation": "frank (prototype)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["type-inference", "effect-systems"]},
+  {"level": 0, "kind": "implementation-source", "title": "frank Unification.hs — unification of value and effect types", "url": "https://github.com/frank-lang/frank/blob/master/Unification.hs", "implementation": "frank (prototype)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["unification"]},
+  {"level": 0, "kind": "implementation-source", "title": "frank shonky/src/Shonky/Semantics.hs — semantics of the Shonky target language", "url": "https://github.com/frank-lang/frank/blob/master/shonky/src/Shonky/Semantics.hs", "implementation": "frank (prototype)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["interpreter", "continuations"]},
+  {"level": 0, "kind": "implementation-source", "title": "frank examples/coroutines.fk — coroutines via handlers", "url": "https://github.com/frank-lang/frank/blob/master/examples/coroutines.fk", "implementation": "frank (prototype)", "scope": "section", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["coroutines", "effect-systems"]},
+
+  {"level": 1, "kind": "original-paper", "title": "Do Be Do Be Do — Lindley, McBride, McLaughlin (POPL 2017, arXiv)", "url": "https://arxiv.org/abs/1611.09259", "scope": "whole", "authority": "designer", "authors": ["Sam Lindley", "Conor McBride", "Craig McLaughlin"], "year": 2017, "format": "html", "access": "open", "concepts": ["effect-systems", "formal-semantics"]},
+  {"level": 1, "kind": "original-paper", "title": "Doo Bee Doo Bee Doo — Convent, Lindley, McBride, McLaughlin (JFP 2020)", "url": "https://doi.org/10.1017/S0956796820000039", "scope": "whole", "authority": "designer", "authors": ["Lukas Convent", "Sam Lindley", "Conor McBride", "Craig McLaughlin"], "year": 2020, "format": "html", "access": "open", "concepts": ["effect-systems", "type-soundness"]},
+
+  {"level": 2, "kind": "guide", "title": "Frank README — overview of syntax, examples and usage", "url": "https://github.com/frank-lang/frank/blob/master/README.md", "scope": "whole", "authority": "designer", "format": "source-file", "access": "open", "concepts": ["hello-world"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Frank", "url": "https://pldb.io/concepts/frank.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

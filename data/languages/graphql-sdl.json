@@ -1,0 +1,533 @@
+{
+ "id": "graphql-sdl",
+ "name": "GraphQL Schema Definition Language (SDL)",
+ "aliases": [
+  "GraphQL SDL",
+  "GraphQL IDL",
+  "GraphQL type system definition language"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal",
+  "non-null by annotation",
+  "interfaces and unions"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Lee Byron",
+  "GraphQL Working Group"
+ ],
+ "summary": "The type-system definition part of the GraphQL language: schema, scalar, object, interface, union, enum and input-object type definitions with fields, arguments, directives, descriptions and type extensions, used to declare the schema a GraphQL service exposes. Standardised in the June 2018 GraphQL specification.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "GraphQL Specification, September 2025 Edition",
+  "GraphQL Specification, October 2021 Edition",
+  "GraphQL Specification, June 2018 Edition"
+ ],
+ "file_extensions": [
+  ".graphql",
+  ".graphqls",
+  ".gql"
+ ],
+ "homepage": "https://graphql.org/learn/schema/",
+ "influenced_by": [
+  "graphql"
+ ],
+ "related": [
+  {
+   "id": "graphql",
+   "relation": "subset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by section 3 (Type System) and the Appendix grammar of the GraphQL Specification maintained by the GraphQL Foundation's working group; changes go through an RFC process (graphql-spec repository, rfcs/ directory).",
+  "0": "graphql-js is the reference implementation: buildASTSchema/extendSchema turn SDL into schemas and findBreakingChanges implements schema-evolution checks."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (September 2025) — 3 Type System",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.1 Type System Extensions",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System-Extensions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.2 Type System Descriptions",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System-Descriptions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.3 Schema (root operation types)",
+   "url": "https://spec.graphql.org/September2025/#sec-Schema",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.5 Scalars",
+   "url": "https://spec.graphql.org/September2025/#sec-Scalars",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.6 Objects",
+   "url": "https://spec.graphql.org/September2025/#sec-Objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.6.3 Field Deprecation",
+   "url": "https://spec.graphql.org/September2025/#sec-Field-Deprecation",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.7 Interfaces (incl. interfaces implementing interfaces)",
+   "url": "https://spec.graphql.org/September2025/#sec-Interfaces",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "subtyping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.8 Unions",
+   "url": "https://spec.graphql.org/September2025/#sec-Unions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.9 Enums",
+   "url": "https://spec.graphql.org/September2025/#sec-Enums",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.10 Input Objects",
+   "url": "https://spec.graphql.org/September2025/#sec-Input-Objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.10.1 OneOf Input Objects",
+   "url": "https://spec.graphql.org/September2025/#sec-OneOf-Input-Objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.11 List",
+   "url": "https://spec.graphql.org/September2025/#sec-List",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.12 Non-Null",
+   "url": "https://spec.graphql.org/September2025/#sec-Non-Null",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 3.13 Directives (incl. @deprecated, @specifiedBy, @oneOf)",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System.Directives",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 4 Introspection",
+   "url": "https://spec.graphql.org/September2025/#sec-Introspection",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — 2.1.6 Descriptions (lexical)",
+   "url": "https://spec.graphql.org/September2025/#sec-Descriptions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — Appendix: Lexical and Syntactic Grammar",
+   "url": "https://spec.graphql.org/September2025/#sec-Lexical-and-Syntactic-Grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Spec — Appendix: Type System Definitions (built-in types and directives)",
+   "url": "https://spec.graphql.org/September2025/#sec-Appendix-Type-System-Definitions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September 2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "graphql-spec CONTRIBUTING.md — RFC stages and change process",
+   "url": "https://github.com/graphql/graphql-spec/blob/main/CONTRIBUTING.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "graphql-js src/utilities/buildASTSchema.ts — build a schema from SDL",
+   "url": "https://github.com/graphql/graphql-js/blob/16.x.x/src/utilities/buildASTSchema.ts",
+   "scope": "section",
+   "implementation": "graphql-js",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js src/type/definition.ts — type system classes",
+   "url": "https://github.com/graphql/graphql-js/blob/16.x.x/src/type/definition.ts",
+   "scope": "section",
+   "implementation": "graphql-js",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js src/type/validate.ts — schema validation rules",
+   "url": "https://github.com/graphql/graphql-js/blob/16.x.x/src/type/validate.ts",
+   "scope": "section",
+   "implementation": "graphql-js",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js src/type/introspection.ts — introspection types",
+   "url": "https://github.com/graphql/graphql-js/blob/16.x.x/src/type/introspection.ts",
+   "scope": "section",
+   "implementation": "graphql-js",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "reflection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js src/utilities/findBreakingChanges.ts — breaking/dangerous schema changes",
+   "url": "https://github.com/graphql/graphql-js/blob/16.x.x/src/utilities/findBreakingChanges.ts",
+   "scope": "section",
+   "implementation": "graphql-js",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js src/language/parser.ts — parser (executable and SDL documents)",
+   "url": "https://github.com/graphql/graphql-js/blob/16.x.x/src/language/parser.ts",
+   "scope": "section",
+   "implementation": "graphql-js",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "graphql.org Learn — Schemas and Types",
+   "url": "https://graphql.org/learn/schema/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "type-system"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "graphql.org Learn — Introspection",
+   "url": "https://graphql.org/learn/introspection/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "graphql.org Learn — Schema Design (versioning, nullability)",
+   "url": "https://graphql.org/learn/schema-design/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GraphQL Inspector — schema diffing and validation docs",
+   "url": "https://the-guild.dev/graphql/inspector/docs",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — GraphQL",
+   "url": "https://en.wikipedia.org/wiki/GraphQL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — GraphQL SDL",
+   "url": "https://pldb.io/concepts/graphql-sdl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,287 @@
+{
+ "id": "schematron",
+ "name": "Schematron",
+ "aliases": [
+  "ISO Schematron",
+  "ISO/IEC 19757-3"
+ ],
+ "categories": [
+  "schema-idl",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "rule-based",
+  "assertion-based"
+ ],
+ "typing": [
+  "untyped (XPath-based)"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Rick Jelliffe"
+ ],
+ "summary": "Rule-based XML validation language: patterns contain rules whose XPath context selects nodes and whose assert/report elements state natural-language-documented XPath conditions; phases, abstract patterns, variables and diagnostics are supported, and reports are produced in SVRL. Usually implemented by compiling the schema to XSLT.",
+ "status": "maintained",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "ISO/IEC 19757-3:2006",
+  "ISO/IEC 19757-3:2016",
+  "ISO/IEC 19757-3:2020"
+ ],
+ "file_extensions": [
+  ".sch"
+ ],
+ "homepage": "https://schematron.com/",
+ "influenced_by": [
+  "xpath",
+  "xslt"
+ ],
+ "related": [
+  {
+   "id": "relax-ng",
+   "relation": "family"
+  },
+  {
+   "id": "xml-schema",
+   "relation": "family"
+  },
+  {
+   "id": "xslt",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by ISO/IEC 19757-3 (DSDL Part 3); the 2016 edition is freely downloadable from ISO's Publicly Available Standards page (zip). Pre-ISO Schematron 1.5 was Rick Jelliffe's own specification.",
+  "0": "The original 'skeleton' XSLT implementation (Schematron/schematron, archived 2020) compiles schemas to XSLT; SchXslt (now on Codeberg) is its recommended successor."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 19757-3:2016 — DSDL Part 3: Rule-based validation — Schematron (free ISO download)",
+   "url": "https://standards.iso.org/ittf/PubliclyAvailableStandards/c055982_ISO_IEC_19757-3_2016.zip",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2016,
+   "version": "ISO/IEC 19757-3:2016",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "assertions",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "schematron.com — Overview of Schematron",
+   "url": "https://schematron.com/home/overview.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Rick Jelliffe"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "schematron.com — Why is Schematron different?",
+   "url": "https://schematron.com/home/whyisschematrondifferent_.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Rick Jelliffe"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Rick Jelliffe — Design motivations of different schema languages",
+   "url": "https://schematron.com/news/design_motivations_of_different_schema_languages.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Rick Jelliffe"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "schematron.com — ISO Schematron 2016 released",
+   "url": "https://schematron.com/news/iso_schematron_2016_released%21.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Rick Jelliffe"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Schematron/schematron — 'skeleton' XSLT implementation of ISO Schematron (archived)",
+   "url": "https://github.com/Schematron/schematron",
+   "scope": "whole",
+   "implementation": "Schematron skeleton",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "iso_schematron_skeleton_for_saxon.xsl — compiles a Schematron schema to XSLT 2",
+   "url": "https://github.com/Schematron/schematron/blob/master/trunk/schematron/code/iso_schematron_skeleton_for_saxon.xsl",
+   "scope": "section",
+   "implementation": "Schematron skeleton",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "iso_svrl_for_xslt2.xsl — SVRL (validation report) output meta-stylesheet",
+   "url": "https://github.com/Schematron/schematron/blob/master/trunk/schematron/code/iso_svrl_for_xslt2.xsl",
+   "scope": "section",
+   "implementation": "Schematron skeleton",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "SchXslt — XSLT-based Schematron processor (Codeberg)",
+   "url": "https://codeberg.org/SchXslt/schxslt",
+   "scope": "whole",
+   "implementation": "SchXslt",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "schematron.com — Schematron cheat sheet",
+   "url": "https://schematron.com/schematron_open_documentation/schematron_cheat_sheet.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "assertions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Rick Jelliffe — Schematron hints (PDF)",
+   "url": "https://schematron.com/download/hints/schematron.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Rick Jelliffe"
+   ],
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "XML.com — Introduction to Schematron (2003)",
+   "url": "https://www.xml.com/pub/a/2003/11/12/schematron.html",
+   "scope": "section",
+   "authority": "community",
+   "year": 2003,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "assertions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "Schematron/awesome-schematron — implementations and resources",
+   "url": "https://github.com/Schematron/awesome-schematron",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Schematron",
+   "url": "https://en.wikipedia.org/wiki/Schematron",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Schematron",
+   "url": "https://pldb.io/concepts/schematron.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

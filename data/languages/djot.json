@@ -1,0 +1,382 @@
+{
+ "id": "djot",
+ "name": "Djot",
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "lightweight markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2022,
+ "designers": [
+  "John MacFarlane"
+ ],
+ "summary": "Lightweight markup language by the author of Pandoc and CommonMark, designed to fix Markdown's parsing ambiguities: it can be parsed in linear time without backtracking, has uniform attribute syntax, and adds spans, divs, highlighting, footnotes and math.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".dj",
+  ".djot"
+ ],
+ "homepage": "https://djot.net/",
+ "influenced_by": [
+  "commonmark",
+  "markdown",
+  "pandoc-markdown"
+ ],
+ "related": [
+  {
+   "id": "commonmark",
+   "relation": "family"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  },
+  {
+   "id": "pandoc-markdown",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The syntax reference (doc/syntax.md in jgm/djot) is the only definition; there is no formal spec yet. Its rendered HTML is served through htmlpreview, which builds the page client-side, so no section anchors are linked.",
+  "0": "djot.js is the reference implementation; its test/*.test files double as the conformance suite. djot.lua (original), jotdown (Rust) and Pandoc's reader are independent implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Djot syntax reference (doc/syntax.md)",
+   "url": "https://github.com/jgm/djot/blob/main/doc/syntax.md",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "escaping",
+    "document-structure"
+   ],
+   "authors": [
+    "John MacFarlane"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Djot syntax reference — rendered HTML",
+   "url": "https://htmlpreview.github.io/?https://github.com/jgm/djot/blob/master/doc/syntax.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "jgm/djot README — rationale: what Djot changes relative to CommonMark and why",
+   "url": "https://github.com/jgm/djot/blob/main/README.md",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ],
+   "authors": [
+    "John MacFarlane"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Beyond Markdown (John MacFarlane, 2018) — the essay that motivated Djot",
+   "url": "https://johnmacfarlane.net/beyond-markdown.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "year": 2018,
+   "authors": [
+    "John MacFarlane"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "djot.js — reference implementation in TypeScript",
+   "url": "https://github.com/jgm/djot.js",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "djot.js — src/block.ts: block-level parser",
+   "url": "https://github.com/jgm/djot.js/blob/main/src/block.ts",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "djot.js — src/inline.ts: inline parser (no backtracking)",
+   "url": "https://github.com/jgm/djot.js/blob/main/src/inline.ts",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "djot.js — src/attributes.ts: attribute syntax {#id .class key=val}",
+   "url": "https://github.com/jgm/djot.js/blob/main/src/attributes.ts",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "data-model"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "djot.js — src/ast.ts: AST node types",
+   "url": "https://github.com/jgm/djot.js/blob/main/src/ast.ts",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "djot.js — src/html.ts: HTML renderer",
+   "url": "https://github.com/jgm/djot.js/blob/main/src/html.ts",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "escaping"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "djot.js tests — test/escapes.test",
+   "url": "https://github.com/jgm/djot.js/blob/main/test/escapes.test",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "djot.js tests — test/links_and_images.test",
+   "url": "https://github.com/jgm/djot.js/blob/main/test/links_and_images.test",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "djot.js tests — test/headings.test",
+   "url": "https://github.com/jgm/djot.js/blob/main/test/headings.test",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "djot.js tests — test/verbatim.test",
+   "url": "https://github.com/jgm/djot.js/blob/main/test/verbatim.test",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "djot.js tests — test/attributes.test",
+   "url": "https://github.com/jgm/djot.js/blob/main/test/attributes.test",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "djot.js tests — test/raw.test",
+   "url": "https://github.com/jgm/djot.js/blob/main/test/raw.test",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "djot.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "djot.lua — djot/block.lua: original Lua implementation",
+   "url": "https://github.com/jgm/djot.lua/blob/main/djot/block.lua",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "djot.lua"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jotdown — src/inline.rs: Djot parser in Rust",
+   "url": "https://github.com/hellux/jotdown/blob/master/src/inline.rs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "jotdown"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc — Readers/Djot.hs",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/Djot.hs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interoperability"
+   ],
+   "implementation": "Pandoc"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Djot quick start for Markdown users",
+   "url": "https://github.com/jgm/djot/blob/main/doc/quickstart-for-markdown-users.md",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Djot cheatsheet",
+   "url": "https://github.com/jgm/djot/blob/main/doc/cheatsheet.md",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Djot playground",
+   "url": "https://djot.net/playground/",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Djot",
+   "url": "https://pldb.io/concepts/djot.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

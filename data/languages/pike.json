@@ -1,0 +1,48 @@
+{
+ "id": "pike",
+ "name": "Pike",
+ "categories": ["general-purpose", "scripting", "object-oriented"],
+ "paradigms": ["object-oriented", "imperative", "functional"],
+ "typing": ["dynamic", "static-optional", "strong"],
+ "first_appeared": 1994,
+ "designers": ["Fredrik Hübinette"],
+ "summary": "Interpreted, C-syntax, garbage-collected language descended from LPC (originally µLPC), with optional static typing, first-class programs/classes, mappings and multisets, and a large standard library; developed at Roxen and Linköping University.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".pike", ".pmod"],
+ "homepage": "https://pike.lysator.liu.se/",
+ "influenced_by": ["lpc", "c", "cpp"],
+ "related": [{"id": "lpc", "relation": "successor-of"}, {"id": "c", "relation": "implemented-in"}],
+ "level_notes": {"0": "One implementation (pikelang/Pike).", "1": "No specification; the Pike Reference Manual on pike.lysator.liu.se is the official description."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "pikelang/Pike — the Pike interpreter and standard library", "url": "https://github.com/pikelang/Pike", "implementation": "Pike", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "Pike src/language.yacc — grammar", "url": "https://github.com/pikelang/Pike/blob/master/src/language.yacc", "implementation": "Pike", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Pike src/lexer.h — lexer", "url": "https://github.com/pikelang/Pike/blob/master/src/lexer.h", "implementation": "Pike", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "Pike src/docode.c — bytecode generation", "url": "https://github.com/pikelang/Pike/blob/master/src/docode.c", "implementation": "Pike", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode"]},
+  {"level": 0, "kind": "implementation-source", "title": "Pike src/interpret.c — the interpreter", "url": "https://github.com/pikelang/Pike/blob/master/src/interpret.c", "implementation": "Pike", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "Pike src/program.c — programs (classes) and inheritance", "url": "https://github.com/pikelang/Pike/blob/master/src/program.c", "implementation": "Pike", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["classes", "inheritance"]},
+  {"level": 0, "kind": "implementation-source", "title": "Pike src/gc.c — reference counting plus cycle-collecting garbage collector", "url": "https://github.com/pikelang/Pike/blob/master/src/gc.c", "implementation": "Pike", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual", "url": "https://pike.lysator.liu.se/docs/man/", "implementation": "Pike", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 2 Data types and literal values", "url": "https://pike.lysator.liu.se/docs/man/chapter_2.html", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types", "literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 2.2 Pointer types (array, mapping, multiset, object, function, program)", "url": "https://pike.lysator.liu.se/docs/man/chapter_2.html#2.2", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays", "maps-dictionaries", "sets"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 3.2 Functions", "url": "https://pike.lysator.liu.se/docs/man/chapter_3.html#3.2", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 3.4 Classes", "url": "https://pike.lysator.liu.se/docs/man/chapter_3.html#3.4", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 4 Control structures", "url": "https://pike.lysator.liu.se/docs/man/chapter_4.html", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 5 Operators", "url": "https://pike.lysator.liu.se/docs/man/chapter_5.html", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 6 Preprocessor", "url": "https://pike.lysator.liu.se/docs/man/chapter_6.html", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["preprocessor", "macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 7.2 catch", "url": "https://pike.lysator.liu.se/docs/man/chapter_7.html#7.2", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 7.5 yield (generators)", "url": "https://pike.lysator.liu.se/docs/man/chapter_7.html#7.5", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generators"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pike Reference Manual — 9.1 LFUN — operator overloading hooks", "url": "https://pike.lysator.liu.se/docs/man/chapter_9.html#9.1", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operator-overloading"]},
+  {"level": 1, "kind": "library-reference", "title": "Pike module reference", "url": "https://pike.lysator.liu.se/generated/manual/modref/", "implementation": "Pike", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "release-notes", "title": "Pike release notes", "url": "https://pike.lysator.liu.se/download/notes/", "implementation": "Pike", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+
+  {"level": 2, "kind": "history", "title": "Pike Reference Manual — 1.2 The history of Pike", "url": "https://pike.lysator.liu.se/docs/man/chapter_1.html#1.2", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "tutorial", "title": "Pike Beginner's Tutorial", "url": "https://pike.lysator.liu.se/docs/tut/", "implementation": "Pike", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "CMOD step by step — writing C modules for Pike", "url": "https://pike.lysator.liu.se/docs/cmod-step-by-step/", "implementation": "Pike", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ffi"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Pike (programming language)", "url": "https://en.wikipedia.org/wiki/Pike_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Pike", "url": "https://pldb.io/concepts/pike.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Pike", "url": "https://rosettacode.org/wiki/Category:Pike", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

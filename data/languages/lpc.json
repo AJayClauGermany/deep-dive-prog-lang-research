@@ -1,0 +1,37 @@
+{
+ "id": "lpc",
+ "name": "LPC",
+ "aliases": ["Lars Pensjö C"],
+ "categories": ["scripting", "object-oriented", "domain-specific"],
+ "paradigms": ["object-oriented", "imperative", "prototype-free class-as-file"],
+ "typing": ["dynamic", "static-optional"],
+ "first_appeared": 1989,
+ "designers": ["Lars Pensjö"],
+ "summary": "C-like object-oriented language created for LPMud multi-user dungeons, in which every source file is a program/blueprint object loaded by a game driver; dialects are defined by drivers such as LDMud, FluffOS (MudOS) and DGD.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation", "informal"],
+ "file_extensions": [".c", ".h"],
+ "homepage": "https://www.ldmud.eu/",
+ "influenced_by": ["c"],
+ "related": [{"id": "pike", "relation": "family"}],
+ "level_notes": {"0": "Each MUD driver (LDMud, FluffOS/MudOS, DGD) implements its own LPC dialect; there is no common definition.", "1": "No specification; driver documentation (e.g. LDMud doc/LPC/*) is the de-facto reference for each dialect."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "LDMud — LPMud game driver", "url": "https://github.com/ldmud/ldmud", "implementation": "LDMud", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "LDMud src/prolang.y — LPC compiler grammar", "url": "https://github.com/ldmud/ldmud/blob/master/src/prolang.y", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "LDMud src/interpret.c — LPC bytecode interpreter", "url": "https://github.com/ldmud/ldmud/blob/master/src/interpret.c", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter", "bytecode"]},
+  {"level": 0, "kind": "implementation-repository", "title": "FluffOS — MudOS-derived LPC driver", "url": "https://github.com/fluffos/fluffos", "implementation": "FluffOS", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "FluffOS src/compiler/internal/grammar.y — LPC grammar", "url": "https://github.com/fluffos/fluffos/blob/master/src/compiler/internal/grammar.y", "implementation": "FluffOS", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["grammar"]},
+  {"level": 0, "kind": "implementation-repository", "title": "DGD — Dworkin's Game Driver", "url": "https://github.com/dworkin/dgd", "implementation": "DGD", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "LDMud LPC documentation — types", "url": "https://github.com/ldmud/ldmud/blob/master/doc/LPC/types", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["type-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "LDMud LPC documentation — closures", "url": "https://github.com/ldmud/ldmud/blob/master/doc/LPC/closures", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "LDMud LPC documentation — mappings", "url": "https://github.com/ldmud/ldmud/blob/master/doc/LPC/mappings", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "LDMud LPC documentation — structs", "url": "https://github.com/ldmud/ldmud/blob/master/doc/LPC/structs", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["records-structs"]},
+  {"level": 1, "kind": "reference-manual", "title": "LDMud LPC documentation — coroutines", "url": "https://github.com/ldmud/ldmud/blob/master/doc/LPC/coroutines", "implementation": "LDMud", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["coroutines"]},
+
+  {"level": 2, "kind": "guide", "title": "FluffOS documentation", "url": "https://www.fluffos.info/", "implementation": "FluffOS", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — LPC (programming language)", "url": "https://en.wikipedia.org/wiki/LPC_(programming_language)", "implementation": "LDMud", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — LPC", "url": "https://pldb.io/concepts/lpc.html", "implementation": "LDMud", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

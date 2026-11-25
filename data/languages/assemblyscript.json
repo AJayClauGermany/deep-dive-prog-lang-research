@@ -1,0 +1,47 @@
+{
+ "id": "assemblyscript",
+ "name": "AssemblyScript",
+ "categories": ["general-purpose", "systems"],
+ "paradigms": ["imperative", "object-oriented"],
+ "typing": ["static", "strong", "nominal"],
+ "first_appeared": 2017,
+ "designers": ["Daniel Wirtz", "Max Graey"],
+ "summary": "Strictly typed TypeScript-like language that compiles ahead of time to WebAssembly via Binaryen, using WebAssembly value types (i32, f64, ...) and a small managed runtime with an incremental tracing GC.",
+ "status": "active",
+ "defined_by": ["reference-implementation", "community-specification"],
+ "file_extensions": [".ts"],
+ "homepage": "https://www.assemblyscript.org/",
+ "influenced_by": ["typescript"],
+ "related": [{"id": "typescript", "relation": "variant-of"}, {"id": "webassembly", "relation": "compiles-to"}],
+ "level_notes": {"0": "Single self-hosted compiler (asc) written in AssemblyScript-compatible TypeScript.", "1": "No formal specification; the official documentation site defines the language and its divergences from TypeScript."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "AssemblyScript/assemblyscript — the asc compiler and standard library", "url": "https://github.com/AssemblyScript/assemblyscript", "implementation": "asc", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc src/tokenizer.ts — tokenizer", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/src/tokenizer.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc src/parser.ts — parser", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/src/parser.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc src/resolver.ts — type resolver", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/src/resolver.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "type-inference"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc src/flow.ts — flow analysis (nullability, definite assignment)", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/src/flow.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["null-optional"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc src/compiler.ts — compiler to Binaryen IR", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/src/compiler.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc src/builtins.ts — builtins", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/src/builtins.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+  {"level": 0, "kind": "implementation-source", "title": "asc std/assembly/rt/itcms.ts — incremental tri-colour mark-and-sweep GC", "url": "https://github.com/AssemblyScript/assemblyscript/blob/main/std/assembly/rt/itcms.ts", "implementation": "asc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Introduction", "url": "https://www.assemblyscript.org/introduction.html", "implementation": "asc", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale", "comparison"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Types", "url": "https://www.assemblyscript.org/types.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Types: casting", "url": "https://www.assemblyscript.org/types.html#casting", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-conversion"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Types: nullability", "url": "https://www.assemblyscript.org/types.html#nullability", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["null-optional"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Types: inference", "url": "https://www.assemblyscript.org/types.html#inference", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-inference"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Implementation status (closures, dynamicness)", "url": "https://www.assemblyscript.org/status.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures", "language-evolution"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Runtime: memory layout", "url": "https://www.assemblyscript.org/runtime.html#memory-layout", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management", "runtime-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Runtime: calling convention", "url": "https://www.assemblyscript.org/runtime.html#calling-convention", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["calling-convention-abi"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Concepts (modules, exports, imports)", "url": "https://www.assemblyscript.org/concepts.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports", "interoperability"]},
+  {"level": 1, "kind": "reference-manual", "title": "AssemblyScript — Using the compiler", "url": "https://www.assemblyscript.org/compiler.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["tooling"]},
+  {"level": 1, "kind": "library-reference", "title": "AssemblyScript standard library — Globals", "url": "https://www.assemblyscript.org/stdlib/globals.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "library-reference", "title": "AssemblyScript standard library — String", "url": "https://www.assemblyscript.org/stdlib/string.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings"]},
+  {"level": 1, "kind": "library-reference", "title": "AssemblyScript standard library — Array", "url": "https://www.assemblyscript.org/stdlib/array.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
+
+  {"level": 2, "kind": "tutorial", "title": "AssemblyScript — Getting started", "url": "https://www.assemblyscript.org/getting-started.html", "implementation": "asc", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "by-example", "title": "AssemblyScript — Examples", "url": "https://www.assemblyscript.org/examples.html", "implementation": "asc", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — AssemblyScript", "url": "https://en.wikipedia.org/wiki/AssemblyScript", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — AssemblyScript", "url": "https://pldb.io/concepts/assemblyscript.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}
