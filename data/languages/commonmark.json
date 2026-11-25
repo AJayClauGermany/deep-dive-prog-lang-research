@@ -1,0 +1,822 @@
+{
+ "id": "commonmark",
+ "name": "CommonMark",
+ "aliases": [
+  "Standard Markdown"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "John MacFarlane",
+  "Jeff Atwood",
+  "David Greenspan",
+  "Vicent Marti",
+  "Neil Williams",
+  "Benjamin Dumke-von der Ehe"
+ ],
+ "summary": "A strongly specified, unambiguous dialect of Markdown: the CommonMark spec defines block and inline structure with hundreds of normative examples and a two-phase parsing strategy, and is the basis of GFM and most modern Markdown parsers.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "CommonMark Spec 0.31.2"
+ ],
+ "file_extensions": [
+  ".md"
+ ],
+ "homepage": "https://commonmark.org/",
+ "influenced_by": [
+  "markdown"
+ ],
+ "related": [
+  {
+   "id": "markdown",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "gfm",
+   "relation": "family"
+  },
+  {
+   "id": "html",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "0": "cmark (C) and commonmark.js are the reference implementations; the examples embedded in spec.txt are the conformance suite used by every other parser listed.",
+  "1": "The spec is versioned (0.x); links point at 0.31.2. Section anchors are stable across versions."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "commonmark/cmark — C reference implementation",
+   "url": "https://github.com/commonmark/cmark",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark blocks.c — phase 1: block structure (container/leaf blocks, open-block matching)",
+   "url": "https://github.com/commonmark/cmark/blob/master/src/blocks.c",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark inlines.c — phase 2: inline parsing, delimiter stack for emphasis and links",
+   "url": "https://github.com/commonmark/cmark/blob/master/src/inlines.c",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "styling-layout",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark scanners.re — re2c scanners (HTML blocks, autolinks, fences)",
+   "url": "https://github.com/commonmark/cmark/blob/master/src/scanners.re",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark references.c — link reference definitions map",
+   "url": "https://github.com/commonmark/cmark/blob/master/src/references.c",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark node.h — the document AST node types",
+   "url": "https://github.com/commonmark/cmark/blob/master/src/node.h",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark html.c — HTML renderer (escaping, URL normalisation)",
+   "url": "https://github.com/commonmark/cmark/blob/master/src/html.c",
+   "authority": "official",
+   "implementation": "cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "commonmark.js lib/blocks.js — JavaScript reference implementation, block parser",
+   "url": "https://github.com/commonmark/commonmark.js/blob/master/lib/blocks.js",
+   "authority": "official",
+   "implementation": "commonmark.js",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "commonmark.js lib/inlines.js — inline parser",
+   "url": "https://github.com/commonmark/commonmark.js/blob/master/lib/inlines.js",
+   "authority": "official",
+   "implementation": "commonmark.js",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "commonmark-spec spec.txt — spec source; its ~650 examples are the conformance tests",
+   "url": "https://github.com/commonmark/commonmark-spec/blob/master/spec.txt",
+   "authority": "official",
+   "implementation": "CommonMark spec tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "commonmark-spec test/spec_tests.py — runner that checks an implementation against the examples",
+   "url": "https://github.com/commonmark/commonmark-spec/blob/master/test/spec_tests.py",
+   "authority": "official",
+   "implementation": "CommonMark spec tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pulldown-cmark firstpass.rs — Rust pull parser, block pass",
+   "url": "https://github.com/pulldown-cmark/pulldown-cmark/blob/master/pulldown-cmark/src/firstpass.rs",
+   "authority": "community",
+   "implementation": "pulldown-cmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "iterators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "micromark core-commonmark attention.js — emphasis resolution as a state machine",
+   "url": "https://github.com/micromark/micromark/blob/main/packages/micromark-core-commonmark/dev/lib/attention.js",
+   "authority": "community",
+   "implementation": "micromark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "goldmark parser/parser.go — Go CommonMark parser (Hugo)",
+   "url": "https://github.com/yuin/goldmark/blob/master/parser/parser.go",
+   "authority": "community",
+   "implementation": "goldmark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "comrak src/parser/mod.rs — Rust port of cmark-gfm",
+   "url": "https://github.com/kivikakk/comrak/blob/main/src/parser/mod.rs",
+   "authority": "community",
+   "implementation": "comrak",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "markdown-it src/parser_block.ts — CommonMark-compliant JS parser with plugin rules",
+   "url": "https://github.com/markdown-it/markdown-it/blob/master/src/parser_block.ts",
+   "authority": "community",
+   "implementation": "markdown-it",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec 0.31.2",
+   "url": "https://spec.commonmark.org/0.31.2/",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §1.2 Why is a spec needed?",
+   "url": "https://spec.commonmark.org/0.31.2/#why-is-a-spec-needed-",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §2.1 Characters and lines",
+   "url": "https://spec.commonmark.org/0.31.2/#characters-and-lines",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §2.2 Tabs",
+   "url": "https://spec.commonmark.org/0.31.2/#tabs",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §2.4 Backslash escapes",
+   "url": "https://spec.commonmark.org/0.31.2/#backslash-escapes",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §2.5 Entity and numeric character references",
+   "url": "https://spec.commonmark.org/0.31.2/#entity-and-numeric-character-references",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §3.1 Precedence (blocks before inlines)",
+   "url": "https://spec.commonmark.org/0.31.2/#precedence",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §3.2 Container blocks and leaf blocks",
+   "url": "https://spec.commonmark.org/0.31.2/#container-blocks-and-leaf-blocks",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §4.2 ATX headings",
+   "url": "https://spec.commonmark.org/0.31.2/#atx-headings",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §4.5 Fenced code blocks",
+   "url": "https://spec.commonmark.org/0.31.2/#fenced-code-blocks",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §4.6 HTML blocks",
+   "url": "https://spec.commonmark.org/0.31.2/#html-blocks",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §4.7 Link reference definitions",
+   "url": "https://spec.commonmark.org/0.31.2/#link-reference-definitions",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §5.1 Block quotes",
+   "url": "https://spec.commonmark.org/0.31.2/#block-quotes",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §5.2 List items",
+   "url": "https://spec.commonmark.org/0.31.2/#list-items",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §5.3 Lists (tight vs loose)",
+   "url": "https://spec.commonmark.org/0.31.2/#lists",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §6.1 Code spans",
+   "url": "https://spec.commonmark.org/0.31.2/#code-spans",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §6.2 Emphasis and strong emphasis (left/right-flanking delimiter runs)",
+   "url": "https://spec.commonmark.org/0.31.2/#emphasis-and-strong-emphasis",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §6.3 Links",
+   "url": "https://spec.commonmark.org/0.31.2/#links",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §6.5 Autolinks",
+   "url": "https://spec.commonmark.org/0.31.2/#autolinks",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — §6.6 Raw HTML",
+   "url": "https://spec.commonmark.org/0.31.2/#raw-html",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — Appendix A: A parsing strategy",
+   "url": "https://spec.commonmark.org/0.31.2/#appendix-a-parsing-strategy",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CommonMark Spec — Appendix A: Algorithm for nested emphasis and links (delimiter stack)",
+   "url": "https://spec.commonmark.org/0.31.2/#an-algorithm-for-parsing-nested-emphasis-and-links",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "CommonMark spec changelog",
+   "url": "https://github.com/commonmark/commonmark-spec/blob/master/changelog.txt",
+   "authority": "official",
+   "version": "0.31.2",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "year": 2024,
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "spec.commonmark.org — index of all spec versions",
+   "url": "https://spec.commonmark.org/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "CommonMark — 10-minute interactive tutorial",
+   "url": "https://commonmark.org/help/tutorial/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "CommonMark — Markdown reference (quick help)",
+   "url": "https://commonmark.org/help/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "commonmark.js dingus — live parser with AST view",
+   "url": "https://spec.commonmark.org/dingus/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "John MacFarlane — Beyond Markdown (limits of the CommonMark approach)",
+   "url": "https://johnmacfarlane.net/beyond-markdown.html",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Jeff Atwood — Standard Flavored Markdown (announcement)",
+   "url": "https://blog.codinghorror.com/standard-flavored-markdown/",
+   "authority": "designer",
+   "authors": [
+    "Jeff Atwood"
+   ],
+   "year": 2014,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Markdown § CommonMark",
+   "url": "https://en.wikipedia.org/wiki/Markdown#CommonMark",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CommonMark",
+   "url": "https://pldb.io/concepts/commonmark.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

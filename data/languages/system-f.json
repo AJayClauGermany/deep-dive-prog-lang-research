@@ -1,0 +1,1081 @@
+{
+  "id": "system-f",
+  "name": "System F",
+  "aliases": [
+    "polymorphic lambda calculus",
+    "second-order lambda calculus",
+    "Girard-Reynolds polymorphic lambda calculus",
+    "λ2"
+  ],
+  "categories": [
+    "theoretical-model",
+    "calculus"
+  ],
+  "paradigms": [
+    "functional"
+  ],
+  "typing": [
+    "static",
+    "explicit",
+    "impredicative",
+    "parametric-polymorphism"
+  ],
+  "first_appeared": 1971,
+  "designers": [
+    "Jean-Yves Girard",
+    "John C. Reynolds"
+  ],
+  "summary": "The polymorphic (second-order) typed lambda calculus, discovered independently by Girard (1971/72, as a proof system for second-order arithmetic) and Reynolds (1974, for parametric polymorphism). It adds type abstraction and application to the simply typed lambda calculus; it is strongly normalising, its type inference is undecidable, and it underlies GHC Core, ML polymorphism and the theory of parametricity.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "homepage": "https://en.wikipedia.org/wiki/System_F",
+  "influenced_by": [
+    "simply-typed-lambda-calculus",
+    "lambda-calculus"
+  ],
+  "related": [
+    {
+      "id": "simply-typed-lambda-calculus",
+      "relation": "superset-of"
+    },
+    {
+      "id": "system-f-omega",
+      "relation": "subset-of"
+    },
+    {
+      "id": "system-fsub",
+      "relation": "family"
+    },
+    {
+      "id": "pure-type-systems",
+      "relation": "family"
+    },
+    {
+      "id": "hindley-milner",
+      "relation": "family"
+    },
+    {
+      "id": "haskell-core",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "0": "Theoretical calculus - level 0 lists reference type checkers (Pierce's TAPL fullpoly), mechanised metatheory (Coq/Autosubst, Agda) and production compilers whose core language is an extension of System F (GHC Core / System FC).",
+    "1": "Defined by Girard's 1971/72 work and Reynolds' 1974 paper; several publisher links are paywalled and report 'blocked'. Girard's thesis is linked from his own site."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Girard (1971) — Une extension de l'interprétation de Gödel à l'analyse (introduces System F)",
+      "url": "https://doi.org/10.1016/S0049-237X(08)70843-7",
+      "concepts": [
+        "history",
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Jean-Yves Girard"
+      ],
+      "year": 1971
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Girard (1972) — Interprétation fonctionnelle et élimination des coupures de l'arithmétique d'ordre supérieur (thèse d'État)",
+      "url": "https://girard.perso.math.cnrs.fr/These.pdf",
+      "concepts": [
+        "logic-foundations",
+        "type-soundness",
+        "reduction"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Jean-Yves Girard"
+      ],
+      "year": 1972,
+      "notes": "Defines System F and F-omega and proves strong normalisation via reducibility candidates."
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Reynolds (1974) — Towards a Theory of Type Structure (publisher)",
+      "url": "https://doi.org/10.1007/3-540-06859-7_148",
+      "concepts": [
+        "generics",
+        "type-system"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "John C. Reynolds"
+      ],
+      "year": 1974
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Reynolds (1974) — Towards a Theory of Type Structure (course copy)",
+      "url": "https://www.cs.cmu.edu/~crary/819-f09/Reynolds74.pdf",
+      "concepts": [
+        "generics",
+        "type-system",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "John C. Reynolds"
+      ],
+      "year": 1974
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Reynolds (1983) — Types, Abstraction and Parametric Polymorphism",
+      "url": "https://people.mpi-sws.org/~dreyer/tor/papers/reynolds.pdf",
+      "concepts": [
+        "generics",
+        "formal-semantics",
+        "existential-types"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "John C. Reynolds"
+      ],
+      "year": 1983
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Reynolds (1984) — Polymorphism is not Set-Theoretic",
+      "url": "https://doi.org/10.1007/3-540-13346-1_7",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "John C. Reynolds"
+      ],
+      "year": 1984
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Böhm & Berarducci (1985) — Automatic Synthesis of Typed Λ-Programs on Term Algebras (Church/Böhm-Berarducci encodings)",
+      "url": "https://doi.org/10.1016/0304-3975(85)90135-5",
+      "concepts": [
+        "encodings",
+        "algebraic-data-types"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Corrado Böhm",
+        "Alessandro Berarducci"
+      ],
+      "year": 1985
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Mitchell & Plotkin (1988) — Abstract Types Have Existential Type",
+      "url": "https://doi.org/10.1145/44501.45065",
+      "concepts": [
+        "existential-types",
+        "modules"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "John C. Mitchell",
+        "Gordon D. Plotkin"
+      ],
+      "year": 1988
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Wadler (1989) — Theorems for Free!",
+      "url": "https://people.mpi-sws.org/~dreyer/tor/papers/wadler.pdf",
+      "concepts": [
+        "generics",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Philip Wadler"
+      ],
+      "year": 1989
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Plotkin & Abadi (1993) — A Logic for Parametric Polymorphism",
+      "url": "https://doi.org/10.1007/BFb0037118",
+      "concepts": [
+        "formal-semantics",
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Gordon Plotkin",
+        "Martín Abadi"
+      ],
+      "year": 1993
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Leivant (1983) — Polymorphic Type Inference",
+      "url": "https://doi.org/10.1145/567067.567077",
+      "concepts": [
+        "type-inference"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Daniel Leivant"
+      ],
+      "year": 1983
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Wells (1999) — Typability and Type Checking in System F Are Equivalent and Undecidable",
+      "url": "https://doi.org/10.1016/S0168-0072(98)00047-5",
+      "concepts": [
+        "type-inference",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "J. B. Wells"
+      ],
+      "year": 1999
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Peyton Jones, Vytiniotis, Weirich, Shields (2007) — Practical Type Inference for Arbitrary-Rank Types",
+      "url": "https://www.microsoft.com/en-us/research/publication/practical-type-inference-for-arbitrary-rank-types/",
+      "concepts": [
+        "type-inference",
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Simon Peyton Jones",
+        "Dimitrios Vytiniotis",
+        "Stephanie Weirich",
+        "Mark Shields"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Sulzmann, Chakravarty, Peyton Jones, Donnelly (2007) — System F with Type Equality Coercions (System FC)",
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2007/01/tldi22-sulzmann-with-appendix.pdf",
+      "concepts": [
+        "intermediate-representation",
+        "type-system"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Martin Sulzmann",
+        "Manuel M. T. Chakravarty",
+        "Simon Peyton Jones",
+        "Kevin Donnelly"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "TAPL checkers — fullpoly (System F with existentials, Pierce)",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullpoly/",
+      "concepts": [
+        "type-system",
+        "interpreter"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "directory",
+      "access": "open",
+      "implementation": "TAPL fullpoly (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL fullpoly core.ml — type checking and evaluation for universal and existential types",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullpoly/core.ml",
+      "concepts": [
+        "semantic-analysis",
+        "reduction",
+        "existential-types"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL fullpoly (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL fullpoly syntax.ml — de Bruijn-indexed terms, type shifting and substitution",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullpoly/syntax.ml",
+      "concepts": [
+        "ast",
+        "substitution-binding"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL fullpoly (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL fullpoly parser.mly — concrete syntax (lambda X. t, t [T], {*T, t})",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullpoly/parser.mly",
+      "concepts": [
+        "parser",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL fullpoly (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL fullpoly test.f — example System F programs",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullpoly/test.f",
+      "concepts": [
+        "hello-world",
+        "encodings"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL fullpoly (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Pfenning 15-814 — nat.poly: Church numerals in the course's System F implementation",
+      "url": "https://www.cs.cmu.edu/~fp/courses/15814-f21/lectures/06-polymorphism/nat.poly",
+      "concepts": [
+        "encodings",
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "15-814 LAMBDA checker"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Autosubst — de Bruijn substitution library for Coq (examples include System F)",
+      "url": "https://github.com/uds-psl/autosubst",
+      "concepts": [
+        "substitution-binding"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Autosubst examples/ssr/SystemF_SN.v — strong normalisation of System F (Girard's method) in Coq",
+      "url": "https://github.com/uds-psl/autosubst/blob/master/examples/ssr/SystemF_SN.v",
+      "concepts": [
+        "type-soundness",
+        "reduction",
+        "verification"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Autosubst examples/ssr/SystemF_CBV.v — call-by-value System F, progress and preservation",
+      "url": "https://github.com/uds-psl/autosubst/blob/master/examples/ssr/SystemF_CBV.v",
+      "concepts": [
+        "type-soundness",
+        "evaluation-order"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability SystemF/SysF.v — System F syntax and typing (Church and Curry style)",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/SystemF/SysF.v",
+      "concepts": [
+        "type-system",
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability SystemF/SysF_undec.v — undecidability of System F typability, type checking and inhabitation",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/SystemF/SysF_undec.v",
+      "concepts": [
+        "type-inference",
+        "verification"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability SystemF/Autosubst/sysf.sig — binder signature of System F",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/SystemF/Autosubst/sysf.sig",
+      "concepts": [
+        "substitution-binding",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/Core.hs — GHC Core, an explicitly typed System F variant (System FC)",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/Core.hs",
+      "concepts": [
+        "intermediate-representation",
+        "ast"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/Core/Lint.hs — Core Lint: type checker for System FC",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/Core/Lint.hs",
+      "concepts": [
+        "semantic-analysis",
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC compiler/GHC/Core/TyCo/Rep.hs — representation of types (ForAllTy) and coercions",
+      "url": "https://github.com/ghc/ghc/blob/master/compiler/GHC/Core/TyCo/Rep.hs",
+      "concepts": [
+        "intermediate-representation",
+        "generics"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GHC docs/core-spec/core-spec.pdf — formal specification of System FC as implemented",
+      "url": "https://github.com/ghc/ghc/blob/master/docs/core-spec/core-spec.pdf",
+      "concepts": [
+        "formal-semantics",
+        "intermediate-representation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GHC"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Pierce — Types and Programming Languages (ch. 23 Universal Types, ch. 24 Existential Types, ch. 25 An ML Implementation of System F)",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/",
+      "concepts": [
+        "generics",
+        "existential-types",
+        "type-soundness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Benjamin C. Pierce"
+      ],
+      "year": 2002
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Girard, Lafont, Taylor — Proofs and Types (ch. 11 System F, ch. 14 strong normalisation, ch. 15 representation theorem)",
+      "url": "https://www.paultaylor.eu/stable/prot.pdf",
+      "concepts": [
+        "logic-foundations",
+        "type-soundness",
+        "encodings"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Jean-Yves Girard",
+        "Yves Lafont",
+        "Paul Taylor"
+      ],
+      "year": 1989
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Harper — Practical Foundations for Programming Languages (chapters on polymorphic and abstract types)",
+      "url": "https://www.cs.cmu.edu/~rwh/pfpl/",
+      "concepts": [
+        "generics",
+        "existential-types",
+        "type-soundness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "partially-open",
+      "authors": [
+        "Robert Harper"
+      ],
+      "year": 2016
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barendregt — Lambda Calculi with Types (handbook chapter; λ2 in the lambda cube)",
+      "url": "https://home.ttic.edu/~dreyer/course/papers/barendregt.pdf",
+      "concepts": [
+        "type-system",
+        "type-soundness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Henk Barendregt"
+      ],
+      "year": 1992
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Cardelli & Wegner (1985) — On Understanding Types, Data Abstraction, and Polymorphism",
+      "url": "https://lucacardelli.name/Papers/OnUnderstanding.A4.pdf",
+      "concepts": [
+        "generics",
+        "existential-types",
+        "subtyping"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Luca Cardelli",
+        "Peter Wegner"
+      ],
+      "year": 1985
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Cardelli — Type Systems (CRC handbook chapter, second-order type systems)",
+      "url": "https://lucacardelli.name/Papers/TypeSystems.pdf",
+      "concepts": [
+        "type-system",
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Luca Cardelli"
+      ],
+      "year": 2004
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Wadler — Propositions as Types (Girard-Reynolds and second-order logic)",
+      "url": "https://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf",
+      "concepts": [
+        "logic-foundations",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Philip Wadler"
+      ],
+      "year": 2015
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Wadler — Parametricity papers and links (topic page)",
+      "url": "https://homepages.inf.ed.ac.uk/wadler/topics/parametricity.html",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Philip Wadler"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Chapman, Kireev, Nester, Wadler (2019) — System F in Agda, for Fun and Profit",
+      "url": "https://homepages.inf.ed.ac.uk/wadler/papers/mpc-2019/system-f-in-agda.pdf",
+      "concepts": [
+        "verification",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "James Chapman",
+        "Roman Kireev",
+        "Chad Nester",
+        "Philip Wadler"
+      ],
+      "year": 2019
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Pfenning — 15-814 Lecture 6: Parametric Polymorphism (notes)",
+      "url": "https://www.cs.cmu.edu/~fp/courses/15814-f21/lectures/06-polymorphism.pdf",
+      "concepts": [
+        "generics",
+        "encodings"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Frank Pfenning"
+      ],
+      "year": 2021
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Pfenning — 15-814 Lecture 6: Polymorphism inference rules",
+      "url": "https://www.cs.cmu.edu/~fp/courses/15814-f21/lectures/06-poly-rules.pdf",
+      "concepts": [
+        "type-system"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Frank Pfenning"
+      ],
+      "year": 2021
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Pfenning — 15-814 Lecture 14: Parametricity",
+      "url": "https://www.cs.cmu.edu/~fp/courses/15814-f21/lectures/14-parametricity.pdf",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Frank Pfenning"
+      ],
+      "year": 2021
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Pfenning — 15-814 Lecture 15: Abstract (existential) types",
+      "url": "https://www.cs.cmu.edu/~fp/courses/15814-f21/lectures/15-abstypes.pdf",
+      "concepts": [
+        "existential-types",
+        "modules"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Frank Pfenning"
+      ],
+      "year": 2021
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "GHC User's Guide — Arbitrary-rank polymorphism (RankNTypes)",
+      "url": "https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/rank_polymorphism.html",
+      "concepts": [
+        "generics",
+        "type-inference",
+        "comparison"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "GHC User's Guide — Impredicative polymorphism (Quick Look)",
+      "url": "https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/impredicative_types.html",
+      "concepts": [
+        "generics",
+        "type-inference"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "OCaml manual — Polymorphism and its limitations (explicit and higher-rank polymorphism)",
+      "url": "https://ocaml.org/manual/5.2/polymorphism.html",
+      "concepts": [
+        "generics",
+        "comparison"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "POPLmark Challenge — mechanised metatheory benchmark based on System F<:",
+      "url": "https://www.seas.upenn.edu/~plclub/poplmark/",
+      "concepts": [
+        "verification",
+        "substitution-binding"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Paul Taylor — Proofs and Types (book page with errata and formats)",
+      "url": "https://www.paultaylor.eu/stable/Proofs+Types.html",
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F",
+      "url": "https://en.wikipedia.org/wiki/System_F",
+      "concepts": [
+        "type-system"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F: Typing rules",
+      "url": "https://en.wikipedia.org/wiki/System_F#Typing_rules",
+      "concepts": [
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F: Logic and predicates (Church-encoded booleans)",
+      "url": "https://en.wikipedia.org/wiki/System_F#Logic_and_predicates",
+      "concepts": [
+        "encodings",
+        "booleans"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F: System F structures (encoding data types)",
+      "url": "https://en.wikipedia.org/wiki/System_F#System_F_structures",
+      "concepts": [
+        "encodings",
+        "algebraic-data-types"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F: Use in programming languages",
+      "url": "https://en.wikipedia.org/wiki/System_F#Use_in_programming_languages",
+      "concepts": [
+        "comparison",
+        "type-inference"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F: System Fω",
+      "url": "https://en.wikipedia.org/wiki/System_F#System_Fω",
+      "concepts": [
+        "higher-kinded-types"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Parametric polymorphism",
+      "url": "https://en.wikipedia.org/wiki/Parametric_polymorphism",
+      "concepts": [
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Parametricity",
+      "url": "https://en.wikipedia.org/wiki/Parametricity",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Impredicativity",
+      "url": "https://en.wikipedia.org/wiki/Impredicativity",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Lambda cube",
+      "url": "https://en.wikipedia.org/wiki/Lambda_cube",
+      "concepts": [
+        "type-system",
+        "comparison"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Church encoding",
+      "url": "https://en.wikipedia.org/wiki/Church_encoding",
+      "concepts": [
+        "encodings"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Existential type (abstract data types in System F)",
+      "url": "https://en.wikipedia.org/wiki/Existential_type",
+      "concepts": [
+        "existential-types"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Girard's paradox (System U)",
+      "url": "https://en.wikipedia.org/wiki/Girard%27s_paradox",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — System F",
+      "url": "https://ncatlab.org/nlab/show/System+F",
+      "concepts": [
+        "logic-foundations"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — polymorphism (parametric)",
+      "url": "https://ncatlab.org/nlab/show/polymorphism",
+      "concepts": [
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

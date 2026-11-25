@@ -1,0 +1,48 @@
+{
+ "id": "ksh",
+ "name": "KornShell",
+ "aliases": ["ksh", "ksh88", "ksh93", "ksh93u+m", "pdksh", "mksh"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["untyped", "optional-attributes"],
+ "first_appeared": 1983,
+ "designers": ["David G. Korn"],
+ "summary": "Bourne-compatible shell from Bell Labs that added command-line editing, functions with local scope, arrays, associative arrays (ksh93), floating-point arithmetic, coprocesses and [[ ]] tests; ksh88 was the main basis of the POSIX shell standard.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".ksh", ".sh"],
+ "homepage": "http://www.kornshell.com/",
+ "influenced_by": ["posix-sh", "csh"],
+ "related": [{"id": "posix-sh", "relation": "superset-of"}, {"id": "bash", "relation": "family"}, {"id": "zsh", "relation": "family"}],
+ "level_notes": {"1": "Defined by AT&T ksh88/ksh93 and their manual pages plus Bolsky & Korn's book; POSIX sh standardised a subset of ksh88. Public-domain clones (pdksh, OpenBSD ksh, MirBSD mksh) differ in details.", "0": "ksh93/ksh is the maintained continuation (ksh 93u+m) of AT&T's ksh93 from att/ast; OpenBSD ksh and mksh are pdksh descendants."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "ksh93/ksh — KornShell 93u+m", "url": "https://github.com/ksh93/ksh", "implementation": "ksh 93u+m", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "ksh93 sh/lex.c — lexer", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/sh/lex.c", "implementation": "ksh 93u+m", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "ksh93 sh/parse.c — parser", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/sh/parse.c", "implementation": "ksh 93u+m", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "ksh93 sh/xec.c — command execution", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/sh/xec.c", "implementation": "ksh 93u+m", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter", "processes-system", "conditionals", "loops"]},
+  {"level": 0, "kind": "implementation-source", "title": "ksh93 sh/macro.c — word expansion", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/sh/macro.c", "implementation": "ksh 93u+m", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["string-formatting", "variables"]},
+  {"level": 0, "kind": "implementation-source", "title": "ksh93 sh/arith.c — arithmetic (integer and floating point)", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/sh/arith.c", "implementation": "ksh 93u+m", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["operators", "floating-point"]},
+  {"level": 0, "kind": "conformance-tests", "title": "ksh93 tests/arrays.sh — indexed and associative arrays", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/tests/arrays.sh", "implementation": "ksh 93u+m", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["arrays", "maps-dictionaries", "testing"]},
+  {"level": 0, "kind": "implementation-repository", "title": "att/ast — original AT&T AST/ksh93 sources", "url": "https://github.com/att/ast", "implementation": "AT&T ksh93", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "mksh syn.c — MirBSD Korn shell parser", "url": "https://github.com/MirBSD/mksh/blob/master/syn.c", "implementation": "mksh", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "OpenBSD bin/ksh/syn.c — pdksh-derived parser", "url": "https://github.com/openbsd/src/blob/master/bin/ksh/syn.c", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "ksh93 sh.1 — the KornShell manual page (source)", "url": "https://github.com/ksh93/ksh/blob/dev/src/cmd/ksh93/sh.1", "implementation": "ksh 93u+m", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "standard-library"]},
+  {"level": 1, "kind": "original-paper", "title": "ksh — An Extensible High Level Language (USENIX VHLL 1994)", "url": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a", "implementation": "ksh 93u+m", "scope": "whole", "authority": "designer", "authors": ["David G. Korn"], "year": 1994, "format": "html", "access": "open", "concepts": ["design-rationale", "history"]},
+  {"level": 1, "kind": "reference-manual", "title": "ksh93 documentation page (kornshell.com)", "url": "http://www.kornshell.com/doc/ksh93.html", "implementation": "ksh 93u+m", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — Command syntax (compound commands)", "url": "https://man.openbsd.org/ksh.1#Command_syntax", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case", "grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — Quoting", "url": "https://man.openbsd.org/ksh.1#Quoting", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["strings", "escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — Substitution", "url": "https://man.openbsd.org/ksh.1#Substitution", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["string-formatting", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — File name patterns", "url": "https://man.openbsd.org/ksh.1#File_name_patterns", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — Arithmetic expressions", "url": "https://man.openbsd.org/ksh.1#Arithmetic_expressions", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["operators", "integers"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — Co-processes", "url": "https://man.openbsd.org/ksh.1#Co-processes", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["processes-system", "concurrency"]},
+  {"level": 1, "kind": "reference-manual", "title": "OpenBSD ksh(1) — Functions", "url": "https://man.openbsd.org/ksh.1#Functions", "implementation": "OpenBSD ksh", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["functions", "scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "mksh(1) manual page", "url": "https://manpages.debian.org/testing/mksh/mksh.1.en.html", "implementation": "mksh", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+
+  {"level": 2, "kind": "faq", "title": "KornShell FAQ", "url": "https://www.kornshell.com/doc/faq.html", "scope": "whole", "authority": "designer", "authors": ["David G. Korn"], "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "history", "title": "Mascheck — KornShell versions and history", "url": "https://www.in-ulm.de/~mascheck/bourne/korn.html", "scope": "whole", "authority": "community", "authors": ["Sven Mascheck"], "format": "html", "access": "open", "concepts": ["history", "language-evolution"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — KornShell", "url": "https://en.wikipedia.org/wiki/KornShell", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Korn shell", "url": "https://pldb.io/concepts/korn-shell.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

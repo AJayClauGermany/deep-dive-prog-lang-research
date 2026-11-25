@@ -1,0 +1,389 @@
+{
+ "id": "splunk-spl",
+ "name": "Splunk SPL",
+ "aliases": [
+  "Search Processing Language",
+  "SPL",
+  "SPL2"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "pipeline"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2006,
+ "designers": [
+  "Splunk Inc."
+ ],
+ "summary": "Splunk's pipe-based Search Processing Language for searching, transforming and aggregating machine data and time-indexed events; commands such as search, eval, stats, timechart and rex are chained with |. SPL2 is a revised, SQL-compatible dialect for Splunk Cloud.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "homepage": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference",
+ "influenced_by": [
+  "sql"
+ ],
+ "level_notes": {
+  "0": "Proprietary; no open-source implementation. Level 0 lists the official SDK framework for writing custom search commands and the official VS Code extension.",
+  "1": "The Splunk Enterprise Search Reference (help.splunk.com, version 10.6 paths) is the vendor definition; SPL2 has its own Search Reference.",
+  "3": "PLDB has no entry for SPL (pldb.io/concepts/spl.html is an unrelated language)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "splunk-sdk-python — searchcommands/search_command.py (custom search command protocol)",
+   "url": "https://github.com/splunk/splunk-sdk-python/blob/master/splunklib/searchcommands/search_command.py",
+   "implementation": "Splunk SDK for Python",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Splunk Extension for VS Code (SPL2 notebooks, syntax support)",
+   "url": "https://github.com/splunk/vscode-extension-splunk",
+   "implementation": "Splunk VS Code extension",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Enterprise Search Reference",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — Understanding SPL syntax",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/introduction/understanding-spl-syntax",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — Commands by category",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/quick-reference/commands-by-category",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — search command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/search",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — where command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/where",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — eval command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/eval",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — stats command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/stats",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — streamstats command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/streamstats",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "window-functions",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — timechart command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/timechart",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — sort command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/sort",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — join command",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/join",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — append command (subsearch results)",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/append",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries",
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — rex command (regex field extraction)",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/search-commands/rex",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — Comparison and conditional eval functions (if, case, coalesce)",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/evaluation-functions/comparison-and-conditional-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — Conversion eval functions",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/evaluation-functions/conversion-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — Date and time eval functions",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/evaluation-functions/date-and-time-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Splunk Search Reference — Time format variables and modifiers",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/time-format-variables-and-modifiers",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "10.6",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SPL2 Search Reference — Understanding SPL2 syntax",
+   "url": "https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-reference/introduction/understanding-spl2-syntax",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Splunk SPL for SQL users",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/quick-reference/splunk-spl-for-sql-users",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Splunk Quick Reference Guide",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.6/quick-reference/splunk-quick-reference-guide",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Splunk Search Tutorial",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/search-tutorial",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Splunk Search Manual",
+   "url": "https://help.splunk.com/en/splunk-enterprise/search/search-manual",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Splunk",
+   "url": "https://en.wikipedia.org/wiki/Splunk",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

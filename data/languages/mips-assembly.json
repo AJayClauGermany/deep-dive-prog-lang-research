@@ -1,0 +1,303 @@
+{
+ "id": "mips-assembly",
+ "name": "MIPS assembly",
+ "aliases": [
+  "MIPS32",
+  "MIPS64",
+  "MIPS I-V"
+ ],
+ "categories": [
+  "assembly",
+  "educational"
+ ],
+ "paradigms": [
+  "imperative",
+  "load-store"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1985,
+ "designers": [
+  "John L. Hennessy"
+ ],
+ "summary": "Assembly language of the MIPS RISC architecture (Stanford MIPS project, MIPS Computer Systems), notable for branch delay slots and a very regular encoding; long the standard teaching ISA via Patterson & Hennessy and the SPIM/MARS simulators.",
+ "status": "maintained",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".s",
+  ".asm"
+ ],
+ "homepage": "https://www.mips.com/",
+ "influenced_by": [],
+ "related": [
+  {
+   "id": "dlx",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "MIPS Technologies' architecture manuals are the definition; official download links have moved repeatedly, so copies hosted by universities are linked. Assembly syntax (pseudo-instructions, $reg names) is set by the MIPS assembler conventions followed by GNU as and SPIM.",
+  "0": "SPIM and MARS are the teaching simulators; GNU as, LLVM and QEMU provide production assemblers and emulation."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MIPS32 Architecture for Programmers Volume I: Introduction to the MIPS32 Architecture",
+   "url": "https://www.cs.cornell.edu/courses/cs3410/2008fa/MIPS_Vol1.pdf",
+   "concepts": [
+    "instruction-set",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open",
+   "notes": "Copy hosted by a Cornell course."
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MIPS32 Architecture for Programmers Volume II: The MIPS32 Instruction Set",
+   "url": "https://www.cs.cornell.edu/courses/cs3410/2008fa/MIPS_Vol2.pdf",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open",
+   "notes": "Copy hosted by a Cornell course."
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MIPS32 Architecture for Programmers Volume III: Privileged Resource Architecture",
+   "url": "https://www.cs.cornell.edu/courses/cs3410/2008fa/MIPS_Vol3.pdf",
+   "concepts": [
+    "exceptions",
+    "memory-management"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MIPS IV Instruction Set (Revision 3.2)",
+   "url": "https://www.cs.cmu.edu/afs/cs/academic/class/15740-f97/public/doc/mips-isa.pdf",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 1995,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "System V ABI — MIPS RISC Processor Supplement (psABI)",
+   "url": "https://refspecs.linuxfoundation.org/elf/mipsabi.pdf",
+   "concepts": [
+    "calling-convention-abi",
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — MIPS Dependent Features",
+   "url": "https://sourceware.org/binutils/docs/as/MIPS_002dDependent.html",
+   "concepts": [
+    "assembler-directives",
+    "macros"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIPS32 overview page (MIPS Technologies)",
+   "url": "https://www.mips.com/products/architectures/mips32-2/",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Assemblers, Linkers, and the SPIM Simulator (Larus, Patterson & Hennessy Appendix A)",
+   "url": "https://pages.cs.wisc.edu/~larus/HP_AppA.pdf",
+   "concepts": [
+    "assembler-directives",
+    "calling-convention-abi",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "James R. Larus"
+   ],
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "MIPS Reference Data (\"green sheet\")",
+   "url": "https://inst.eecs.berkeley.edu/~cs61c/resources/MIPS_Green_Sheet.pdf",
+   "concepts": [
+    "instruction-set",
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "MIPS opcodes reference (University of Waterloo)",
+   "url": "https://student.cs.uwaterloo.ca/~isg/res/mips/opcodes",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "SPIM — MIPS32 simulator (SourceForge)",
+   "url": "https://sourceforge.net/projects/spimsimulator/",
+   "concepts": [
+    "interpreter",
+    "virtual-machine"
+   ],
+   "scope": "section",
+   "implementation": "SPIM",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "MARS — MIPS Assembler and Runtime Simulator",
+   "url": "https://github.com/dpetersanderson/MARS",
+   "concepts": [
+    "interpreter",
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "MARS",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM MipsInstrInfo.td — MIPS instruction definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/Mips/MipsInstrInfo.td",
+   "concepts": [
+    "instruction-set",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/mips/tcg/translate.c — MIPS instruction translation",
+   "url": "https://github.com/qemu/qemu/blob/master/target/mips/tcg/translate.c",
+   "concepts": [
+    "instruction-set",
+    "jit"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "herdtools7 mips.cat — MIPS memory model",
+   "url": "https://github.com/herd/herdtools7/blob/master/herd/libdir/mips.cat",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "section",
+   "implementation": "herd7",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MIPS architecture",
+   "url": "https://en.wikipedia.org/wiki/MIPS_architecture",
+   "concepts": [
+    "history",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MIPS",
+   "url": "https://pldb.io/concepts/mips.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SPIM simulator homepage and documentation",
+   "url": "https://spimsimulator.sourceforge.net/",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "implementation": "SPIM",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

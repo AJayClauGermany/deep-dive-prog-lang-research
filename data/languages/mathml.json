@@ -1,0 +1,522 @@
+{
+ "id": "mathml",
+ "name": "MathML",
+ "aliases": [
+  "Mathematical Markup Language",
+  "MathML Core"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1998,
+ "designers": [
+  "W3C Math Working Group"
+ ],
+ "summary": "An XML/HTML markup language for mathematical notation, with presentation markup (layout schemata such as mrow, mfrac, msub) and content markup (expression semantics); MathML Core is the subset precisely specified for browser rendering.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C MathML 3.0 (2014)",
+  "MathML 4 (draft)",
+  "MathML Core",
+  "ISO/IEC 40314:2016"
+ ],
+ "file_extensions": [
+  ".mml"
+ ],
+ "homepage": "https://www.w3.org/Math/",
+ "influenced_by": [
+  "xml",
+  "tex"
+ ],
+ "related": [
+  {
+   "id": "xml",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "html",
+   "relation": "family"
+  },
+  {
+   "id": "latex",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Browser engines implement MathML Core; MathJax renders full MathML in JavaScript. The W3C schemas are the machine-readable grammar.",
+  "1": "Deep links use the editor's drafts on w3c.github.io because w3.org/TR answers the link checker with 403."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "w3c/mathml-schema — RELAX NG, XSD and DTD schemas for MathML 4",
+   "url": "https://github.com/w3c/mathml-schema/blob/main/README.md",
+   "authority": "standards-body",
+   "implementation": "W3C MathML schema",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt mathml/ — MathML Core tests in web-platform-tests",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/mathml/README.md",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "mathjax/MathJax-src — MathJax 3/4 source (MathML input, internal MathML tree)",
+   "url": "https://github.com/mathjax/MathJax-src",
+   "authority": "community",
+   "implementation": "MathJax",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MathJax input/mathml/MathMLCompile.ts — converting MathML DOM into the internal tree",
+   "url": "https://github.com/mathjax/MathJax-src/blob/master/ts/input/mathml/MathMLCompile.ts",
+   "authority": "community",
+   "implementation": "MathJax",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MathJax core/MmlTree/OperatorDictionary.ts — the operator dictionary (form, spacing, stretchiness)",
+   "url": "https://github.com/mathjax/MathJax-src/blob/master/ts/core/MmlTree/OperatorDictionary.ts",
+   "authority": "community",
+   "implementation": "MathJax",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "MathML Core — W3C Recommendation track (browser-implemented subset)",
+   "url": "https://www.w3.org/TR/mathml-core/",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — Editor's Draft",
+   "url": "https://w3c.github.io/mathml-core/",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §2.1.1 The top-level <math> element",
+   "url": "https://w3c.github.io/mathml-core/#x2-1-1-the-top-level-math-element",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §2.1.2 Types for MathML attribute values",
+   "url": "https://w3c.github.io/mathml-core/#x2-1-2-types-for-mathml-attribute-values",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §2.2.1 Integration with HTML and SVG",
+   "url": "https://w3c.github.io/mathml-core/#x2-2-1-html-and-svg",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §2.2.2 CSS styling",
+   "url": "https://w3c.github.io/mathml-core/#x2-2-2-css-styling",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §3.1 Visual formatting model",
+   "url": "https://w3c.github.io/mathml-core/#x3-1-visual-formatting-model",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §3.2 Token elements (mi, mn, mo, mtext, ms)",
+   "url": "https://w3c.github.io/mathml-core/#x3-2-token-elements",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §3.3.1 Group sub-expressions <mrow>",
+   "url": "https://w3c.github.io/mathml-core/#x3-3-1-group-sub-expressions-mrow",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §3.5 Tabular math",
+   "url": "https://w3c.github.io/mathml-core/#x3-5-tabular-math",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — §3.8 Semantics and presentation",
+   "url": "https://w3c.github.io/mathml-core/#x3-8-semantics-and-presentation",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML Core — Appendix B.1 Operator dictionary",
+   "url": "https://w3c.github.io/mathml-core/#b-1-operator-dictionary",
+   "authority": "standards-body",
+   "version": "Core",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "MathML Version 4.0 — W3C draft",
+   "url": "https://www.w3.org/TR/mathml4/",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — §2 MathML Fundamentals: syntax and grammar",
+   "url": "https://w3c.github.io/mathml/#fund_syntax",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — §3 Presentation Markup",
+   "url": "https://w3c.github.io/mathml/#presm",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — §4 Content Markup (semantics of expressions, OpenMath correspondence)",
+   "url": "https://w3c.github.io/mathml/#contm",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — §5.1 The intent attribute: grammar",
+   "url": "https://w3c.github.io/mathml/#mixing_intent_grammar",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — §6 Annotating MathML: semantics, annotation-xml",
+   "url": "https://w3c.github.io/mathml/#mixing",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — §8 Characters, entities and fonts",
+   "url": "https://w3c.github.io/mathml/#chars",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "MathML 4 — Appendix A Parsing MathML (RELAX NG, DTD, XSD)",
+   "url": "https://w3c.github.io/mathml/#parsing",
+   "authority": "standards-body",
+   "version": "4",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "MathML 3.0 (Second Edition)",
+   "url": "https://www.w3.org/TR/MathML3/",
+   "authority": "standards-body",
+   "version": "3.0",
+   "year": 2014,
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "MathML 1.0 Recommendation (1998)",
+   "url": "https://www.w3.org/TR/REC-MathML/",
+   "authority": "standards-body",
+   "version": "1.0",
+   "year": 1998,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN — MathML for beginners",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/MathML/Tutorials/For_beginners",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Authoring MathML",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/MathML/Guides/Authoring",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — MathML reference hub",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/MathML",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "W3C Math WG — MathML documentation and notes",
+   "url": "https://w3c.github.io/mathml-docs/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "W3C Math Home",
+   "url": "https://www.w3.org/Math/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MathML",
+   "url": "https://en.wikipedia.org/wiki/MathML",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MathML",
+   "url": "https://pldb.io/concepts/mathml.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

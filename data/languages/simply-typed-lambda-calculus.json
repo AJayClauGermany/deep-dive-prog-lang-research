@@ -1,0 +1,590 @@
+{
+ "id": "simply-typed-lambda-calculus",
+ "name": "Simply typed lambda calculus",
+ "aliases": [
+  "STLC",
+  "λ→",
+  "simple theory of types"
+ ],
+ "categories": [
+  "theoretical-model",
+  "calculus",
+  "functional"
+ ],
+ "paradigms": [
+  "functional"
+ ],
+ "typing": [
+  "static",
+  "simple types",
+  "strong normalization"
+ ],
+ "first_appeared": 1940,
+ "designers": [
+  "Alonzo Church"
+ ],
+ "summary": "The lambda calculus restricted by simple (arrow) types, introduced by Church in 1940 as the simple theory of types; it is strongly normalising (hence not Turing-complete), corresponds to intuitionistic propositional logic via Curry-Howard, and is the base case of nearly every typed functional language and type-soundness proof.",
+ "status": "theoretical",
+ "defined_by": [
+  "academic-paper"
+ ],
+ "homepage": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus",
+ "influenced_by": [
+  "lambda-calculus"
+ ],
+ "related": [
+  {
+   "id": "lambda-calculus",
+   "relation": "subset-of"
+  },
+  {
+   "id": "system-f",
+   "relation": "family"
+  },
+  {
+   "id": "pcf",
+   "relation": "family"
+  },
+  {
+   "id": "system-t",
+   "relation": "family"
+  },
+  {
+   "id": "pure-type-systems",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Theoretical calculus: level 0 lists mechanised definitions and soundness/normalisation proofs (Software Foundations/Coq, PLFA/Agda, Isabelle, Metalib) and the TAPL reference type checkers.",
+  "1": "Church's 1940 JSL paper defines the simple theory of types; Curry (for the Curry-style variant), Tait (1967, normalisation) and Howard (1969/1980, formulae-as-types) are the other primary sources."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Church — A Formulation of the Simple Theory of Types (Journal of Symbolic Logic, 1940)",
+   "url": "https://doi.org/10.2307/2266170",
+   "concepts": [
+    "type-system",
+    "logic-foundations"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Alonzo Church"
+   ],
+   "year": 1940
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Tait — Intensional Interpretations of Functionals of Finite Type I (JSL 1967): reducibility/strong normalisation",
+   "url": "https://doi.org/10.2307/2271658",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "William W. Tait"
+   ],
+   "year": 1967
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Howard — The Formulae-as-Types Notion of Construction (1969, publ. 1980)",
+   "url": "https://www.cs.cmu.edu/~crary/819-f09/Howard80.pdf",
+   "concepts": [
+    "logic-foundations",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "William A. Howard"
+   ],
+   "year": 1980
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Stanford Encyclopedia of Philosophy — Church's Type Theory",
+   "url": "https://plato.stanford.edu/entries/type-theory-church/",
+   "concepts": [
+    "type-system",
+    "logic-foundations",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Christoph Benzmüller",
+    "Peter Andrews"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Stanford Encyclopedia of Philosophy — Type Theory",
+   "url": "https://plato.stanford.edu/entries/type-theory/",
+   "concepts": [
+    "type-system",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Software Foundations vol. 2 (PLF) — Stlc: The Simply Typed Lambda-Calculus",
+   "url": "https://softwarefoundations.cis.upenn.edu/plf-current/Stlc.html",
+   "concepts": [
+    "type-system",
+    "reduction",
+    "substitution-binding"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Benjamin C. Pierce et al."
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Software Foundations PLF — StlcProp: progress and preservation for STLC",
+   "url": "https://softwarefoundations.cis.upenn.edu/plf-current/StlcProp.html",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Software Foundations PLF — MoreStlc: products, sums, lists, let, fix",
+   "url": "https://softwarefoundations.cis.upenn.edu/plf-current/MoreStlc.html",
+   "concepts": [
+    "tuples",
+    "algebraic-data-types",
+    "fixed-points"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Software Foundations PLF — Norm: normalization of STLC",
+   "url": "https://softwarefoundations.cis.upenn.edu/plf-current/Norm.html",
+   "concepts": [
+    "type-soundness",
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Software Foundations PLF — Typechecking: a typechecker for STLC",
+   "url": "https://softwarefoundations.cis.upenn.edu/plf-current/Typechecking.html",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PLFA — Lambda: introduction to the simply typed lambda calculus",
+   "url": "https://plfa.github.io/Lambda/",
+   "concepts": [
+    "type-system",
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Philip Wadler",
+    "Wen Kokke",
+    "Jeremy G. Siek"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PLFA — Properties: progress and preservation",
+   "url": "https://plfa.github.io/Properties/",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PLFA — DeBruijn: intrinsically-typed de Bruijn representation",
+   "url": "https://plfa.github.io/DeBruijn/",
+   "concepts": [
+    "substitution-binding",
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PLFA — More: additional constructs of STLC",
+   "url": "https://plfa.github.io/More/",
+   "concepts": [
+    "tuples",
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PLFA — Inference: bidirectional type inference",
+   "url": "https://plfa.github.io/Inference/",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Cornell CS 6110 Lecture 19 — Typed λ-Calculus",
+   "url": "https://www.cs.cornell.edu/courses/cs6110/2018sp/lectures/lec19.pdf",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Cornell CS 6110 Lecture 20 — Soundness of the Typing Rules",
+   "url": "https://www.cs.cornell.edu/courses/cs6110/2018sp/lectures/lec20.pdf",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Cornell CS 6110 Lecture 22 — Strong Normalization",
+   "url": "https://www.cs.cornell.edu/courses/cs6110/2018sp/lectures/lec22.pdf",
+   "concepts": [
+    "type-soundness",
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Pierce — Types and Programming Languages (ch. 9: Simply Typed Lambda-Calculus)",
+   "url": "https://www.cis.upenn.edu/~bcpierce/tapl/",
+   "concepts": [
+    "type-system",
+    "type-soundness"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Benjamin C. Pierce"
+   ],
+   "year": 2002
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Simply typed lambda calculus",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia STLC — Syntax",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#Syntax",
+   "concepts": [
+    "grammar",
+    "function-types"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia STLC — Typing rules",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#Typing_rules",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia STLC — Intrinsic vs. extrinsic interpretations (Church vs. Curry style)",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#Intrinsic_vs._extrinsic_interpretations",
+   "concepts": [
+    "type-annotations"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia STLC — Semantics (operational, categorical)",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#Semantics",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia STLC — Important results (normalisation, decidability)",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#Important_results",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia STLC — Bidirectional type checking",
+   "url": "https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#Bidirectional_Type_Checking",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "nLab — simple type theory",
+   "url": "https://ncatlab.org/nlab/show/simple+type+theory",
+   "concepts": [
+    "type-system",
+    "logic-foundations"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PLFA Lambda.lagda.md — Agda definition of STLC (named variables)",
+   "url": "https://github.com/plfa/plfa.github.io/blob/dev/src/plfa/part2/Lambda.lagda.md",
+   "concepts": [
+    "type-system",
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Agda (PLFA)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PLFA Properties.lagda.md — mechanised progress/preservation",
+   "url": "https://github.com/plfa/plfa.github.io/blob/dev/src/plfa/part2/Properties.lagda.md",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Agda (PLFA)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Isabelle/HOL Proofs/Lambda/LambdaType.thy — simply typed de Bruijn terms",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/Proofs/Lambda/LambdaType.thy",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Isabelle/HOL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Isabelle/HOL Proofs/Lambda/StrongNorm.thy — strong normalisation of typed terms",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/Proofs/Lambda/StrongNorm.thy",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Isabelle/HOL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Isabelle/HOL Proofs/Lambda/WeakNorm.thy — weak normalisation with extracted normaliser",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/Proofs/Lambda/WeakNorm.thy",
+   "concepts": [
+    "type-soundness",
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Isabelle/HOL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "plclub/metalib Stlc/Definitions.v — locally nameless STLC in Coq",
+   "url": "https://github.com/plclub/metalib/blob/master/Stlc/Definitions.v",
+   "concepts": [
+    "substitution-binding",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Coq (Metalib)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "plclub/metalib Stlc/Lemmas.v — STLC metatheory (preservation)",
+   "url": "https://github.com/plclub/metalib/blob/master/Stlc/Lemmas.v",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Coq (Metalib)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TAPL simplebool/core.ml — reference type checker and evaluator for λ→ with booleans",
+   "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/simplebool/core.ml",
+   "concepts": [
+    "semantic-analysis",
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "TAPL simplebool"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "TAPL checkers — fullsimple: λ→ with records, variants, fix",
+   "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullsimple/",
+   "concepts": [
+    "interpreter",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "directory",
+   "access": "open",
+   "implementation": "TAPL fullsimple"
+  }
+ ]
+}

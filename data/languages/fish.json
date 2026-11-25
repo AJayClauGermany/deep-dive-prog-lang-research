@@ -1,0 +1,48 @@
+{
+ "id": "fish",
+ "name": "fish (friendly interactive shell)",
+ "aliases": ["fish shell", "friendly interactive shell"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["untyped", "string-lists"],
+ "first_appeared": 2005,
+ "designers": ["Axel Liljencrantz"],
+ "summary": "Interactive shell with a deliberately simple, non-POSIX scripting language: every variable is a list, no word splitting, blocks end with `end`, universal variables shared across sessions, and built-in autosuggestions and completions. Rewritten from C++ to Rust in fish 4.0 (2025).",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".fish"],
+ "homepage": "https://fishshell.com/",
+ "influenced_by": ["posix-sh", "zsh", "csh"],
+ "related": [{"id": "rust", "relation": "implemented-in"}],
+ "level_notes": {"1": "No formal specification; \"The fish language\" chapter of the official documentation describes the implementation.", "0": "fish-shell/fish-shell (Rust since 4.0; earlier releases C++) is the definition."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "fish-shell/fish-shell — fish source (Rust)", "url": "https://github.com/fish-shell/fish-shell", "implementation": "fish", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/tokenizer.rs — tokenizer", "url": "https://github.com/fish-shell/fish-shell/blob/master/src/tokenizer.rs", "implementation": "fish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/ast.rs — parser and abstract syntax tree", "url": "https://github.com/fish-shell/fish-shell/blob/master/src/ast.rs", "implementation": "fish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "ast", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/parse_execution.rs — executes the AST (if, switch, for, while, functions)", "url": "https://github.com/fish-shell/fish-shell/blob/master/src/parse_execution.rs", "implementation": "fish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "conditionals", "loops", "switch-case"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/expand.rs — variable, command-substitution and brace expansion", "url": "https://github.com/fish-shell/fish-shell/blob/master/src/expand.rs", "implementation": "fish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["variables", "string-formatting"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/wildcard.rs — wildcard (glob) matching", "url": "https://github.com/fish-shell/fish-shell/blob/master/src/wildcard.rs", "implementation": "fish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/builtins/string.rs — the string builtin", "url": "https://github.com/fish-shell/fish-shell/blob/master/src/builtins/string.rs", "implementation": "fish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["strings", "regular-expressions"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "The fish language (official documentation)", "url": "https://fishshell.com/docs/current/language.html", "implementation": "fish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Quotes", "url": "https://fishshell.com/docs/current/language.html#id1", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Input/Output redirection", "url": "https://fishshell.com/docs/current/language.html#redirects", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["input-output", "file-io"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Functions", "url": "https://fishshell.com/docs/current/language.html#syntax-function", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Conditions (if, switch, and/or)", "url": "https://fishshell.com/docs/current/language.html#syntax-conditional", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "switch-case", "short-circuit"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Loops and blocks", "url": "https://fishshell.com/docs/current/language.html#syntax-loops-and-blocks", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Wildcards (\"Globbing\")", "url": "https://fishshell.com/docs/current/language.html#expand-wildcard", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Command substitution", "url": "https://fishshell.com/docs/current/language.html#expand-command-substitution", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["processes-system", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Variable scope", "url": "https://fishshell.com/docs/current/language.html#variables-scope", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Lists", "url": "https://fishshell.com/docs/current/language.html#variables-lists", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lists", "arrays"]},
+  {"level": 1, "kind": "reference-manual", "title": "fish language — Argument handling", "url": "https://fishshell.com/docs/current/language.html#variables-argv", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["command-line", "parameters-arguments"]},
+  {"level": 1, "kind": "library-reference", "title": "fish commands — string", "url": "https://fishshell.com/docs/current/cmds/string.html", "implementation": "fish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "regular-expressions", "string-formatting"]},
+  {"level": 1, "kind": "release-notes", "title": "fish release notes", "url": "https://fishshell.com/docs/current/relnotes.html", "implementation": "fish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+
+  {"level": 2, "kind": "tutorial", "title": "fish tutorial", "url": "https://fishshell.com/docs/current/tutorial.html", "implementation": "fish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "comparison-guide", "title": "Fish for bash users", "url": "https://fishshell.com/docs/current/fish_for_bash_users.html", "implementation": "fish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "article", "title": "Fish 4.0: The Fish Of Theseus (C++ to Rust port)", "url": "https://fishshell.com/blog/rustport/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["history", "language-evolution"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Fish (Unix shell)", "url": "https://en.wikipedia.org/wiki/Fish_(Unix_shell)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — fish", "url": "https://pldb.io/concepts/fish.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

@@ -1,0 +1,407 @@
+{
+ "id": "6502-assembly",
+ "name": "6502 assembly",
+ "aliases": [
+  "MOS 6502 assembly",
+  "65C02",
+  "65xx"
+ ],
+ "categories": [
+  "assembly",
+  "historical"
+ ],
+ "paradigms": [
+  "imperative",
+  "accumulator-based"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1975,
+ "designers": [
+  "Chuck Peddle",
+  "Bill Mensch"
+ ],
+ "summary": "Assembly language of the 8-bit MOS Technology 6502 microprocessor (and the 65C02/65816 family) used in the Apple II, Commodore 64, Atari 8-bit, BBC Micro and NES; an accumulator machine with zero-page and indexed addressing modes.",
+ "status": "historical",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".s",
+  ".asm",
+  ".a65"
+ ],
+ "homepage": "http://www.6502.org/",
+ "level_notes": {
+  "1": "MOS Technology's 1976 programming manual defines the instruction set and the original assembler syntax; modern assemblers (ca65, ACME, 64tass, DASM) each have their own directive syntax.",
+  "0": "No reference implementation; Visual 6502 simulates the original transistor netlist, and emulator cores (MAME, many others) reimplement it."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MCS6500 Microcomputer Family Programming Manual (MOS Technology, 1976)",
+   "url": "http://archive.6502.org/books/mcs6500_family_programming_manual.pdf",
+   "concepts": [
+    "instruction-set",
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 1976,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "6502 Instruction Set (mass:werk) — full opcode reference",
+   "url": "https://www.masswerk.at/6502/6502_instruction_set.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "6502 Instruction Set (mass:werk) — Address modes",
+   "url": "https://www.masswerk.at/6502/6502_instruction_set.html#addressmodes",
+   "concepts": [
+    "pointers-references",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "6502 Instruction Set (mass:werk) — Registers",
+   "url": "https://www.masswerk.at/6502/6502_instruction_set.html#registers",
+   "concepts": [
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "6502 Instruction Set (mass:werk) — Processor status flags",
+   "url": "https://www.masswerk.at/6502/6502_instruction_set.html#flags",
+   "concepts": [
+    "booleans",
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "6502 Instruction Set (mass:werk) — Instructions by type",
+   "url": "https://www.masswerk.at/6502/6502_instruction_set.html#bytype",
+   "concepts": [
+    "instruction-set",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "6502.org — 6502 Opcodes tutorial reference",
+   "url": "http://www.6502.org/tutorials/6502opcodes.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Easy 6502 — interactive 6502 assembly tutorial",
+   "url": "https://skilldrick.github.io/easy6502/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Easy 6502 — Registers and flags",
+   "url": "https://skilldrick.github.io/easy6502/#registers",
+   "concepts": [
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Easy 6502 — Branching",
+   "url": "https://skilldrick.github.io/easy6502/#branching",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Easy 6502 — Addressing modes",
+   "url": "https://skilldrick.github.io/easy6502/#addressing",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Easy 6502 — The stack",
+   "url": "https://skilldrick.github.io/easy6502/#stack",
+   "concepts": [
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Easy 6502 — JSR/RTS subroutines",
+   "url": "https://skilldrick.github.io/easy6502/#jsrrts",
+   "concepts": [
+    "functions",
+    "return"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — macro assembler for the 6502 family",
+   "url": "https://cc65.github.io/doc/ca65.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Input format (syntax, number format, conditional assembly)",
+   "url": "https://cc65.github.io/doc/ca65.html#s4",
+   "concepts": [
+    "lexical-structure",
+    "literals",
+    "conditionals"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Expressions and operators",
+   "url": "https://cc65.github.io/doc/ca65.html#s5",
+   "concepts": [
+    "expressions",
+    "operators"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Symbols and labels",
+   "url": "https://cc65.github.io/doc/ca65.html#s6",
+   "concepts": [
+    "identifiers",
+    "goto-labels",
+    "constants"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Scopes",
+   "url": "https://cc65.github.io/doc/ca65.html#s7",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Control commands (pseudo-ops)",
+   "url": "https://cc65.github.io/doc/ca65.html#s11",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Macros",
+   "url": "https://cc65.github.io/doc/ca65.html#s12",
+   "concepts": [
+    "macros"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ca65 Users Guide — Structs and unions",
+   "url": "https://cc65.github.io/doc/ca65.html#s15",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cc65 src/ca65/instr.c — 6502-family instruction tables",
+   "url": "https://github.com/cc65/cc65/blob/master/src/ca65/instr.c",
+   "concepts": [
+    "instruction-set",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "cc65",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MAME src/devices/cpu/m6502/m6502.cpp — 6502 emulation core",
+   "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/m6502/m6502.cpp",
+   "concepts": [
+    "interpreter",
+    "virtual-machine"
+   ],
+   "scope": "section",
+   "implementation": "MAME",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Visual 6502 — transistor-level simulation of the NMOS 6502",
+   "url": "http://www.visual6502.org/",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "Visual6502",
+   "authority": "community",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChibiAkumas — Learn 6502 Assembly Programming",
+   "url": "https://www.chibiakumas.com/6502/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MOS Technology 6502",
+   "url": "https://en.wikipedia.org/wiki/MOS_Technology_6502",
+   "concepts": [
+    "history",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

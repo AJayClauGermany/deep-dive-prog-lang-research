@@ -1,0 +1,48 @@
+{
+ "id": "csh",
+ "name": "C shell / tcsh",
+ "aliases": ["csh", "tcsh", "TENEX C shell"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative"],
+ "typing": ["untyped", "string-based"],
+ "first_appeared": 1978,
+ "designers": ["Bill Joy", "Ken Greer (tcsh)"],
+ "summary": "Shell written by Bill Joy for 2BSD with C-like expression syntax, history substitution, aliases and job control; tcsh extended it with command-line editing and completion. Widely used interactively but notorious as a scripting language.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".csh", ".tcsh", ".cshrc"],
+ "homepage": "https://www.tcsh.org/",
+ "influenced_by": ["thompson-shell", "c"],
+ "related": [{"id": "thompson-shell", "relation": "successor-of"}],
+ "level_notes": {"1": "No standard; Bill Joy's \"An Introduction to the C shell\" (BSD USD document 4) and the csh(1)/tcsh(1) manual pages define the language.", "0": "Original csh sources survive in the BSD distributions (TUHS archive); tcsh-org/tcsh is the maintained implementation (FreeBSD and macOS ship it as csh)."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "tcsh-org/tcsh — tcsh source", "url": "https://github.com/tcsh-org/tcsh", "implementation": "tcsh", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "tcsh sh.lex.c — lexer and history substitution", "url": "https://github.com/tcsh-org/tcsh/blob/master/sh.lex.c", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "tcsh sh.parse.c — parser", "url": "https://github.com/tcsh-org/tcsh/blob/master/sh.parse.c", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "tcsh sh.exp.c — expression evaluation (@ and if)", "url": "https://github.com/tcsh-org/tcsh/blob/master/sh.exp.c", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["expressions", "operators"]},
+  {"level": 0, "kind": "implementation-source", "title": "tcsh sh.func.c — builtins incl. if/while/foreach/switch", "url": "https://github.com/tcsh-org/tcsh/blob/master/sh.func.c", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["conditionals", "loops", "switch-case"]},
+  {"level": 0, "kind": "implementation-source", "title": "tcsh sh.glob.c — filename substitution (globbing)", "url": "https://github.com/tcsh-org/tcsh/blob/master/sh.glob.c", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 0, "kind": "conformance-tests", "title": "tcsh tests/syntax.at — syntax tests", "url": "https://github.com/tcsh-org/tcsh/blob/master/tests/syntax.at", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["testing", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "2BSD csh sources (TUHS archive)", "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/src/csh", "implementation": "BSD csh", "scope": "whole", "authority": "designer", "format": "directory", "access": "open", "concepts": ["history"]},
+
+  {"level": 1, "kind": "original-paper", "title": "An Introduction to the C shell (4.4BSD USD:4)", "url": "https://docs.freebsd.org/44doc/usd/04.csh/paper.html", "implementation": "tcsh", "scope": "whole", "authority": "designer", "authors": ["William Joy"], "year": 1980, "format": "html", "access": "open", "concepts": ["hello-world", "design-rationale"]},
+  {"level": 1, "kind": "reference-manual", "title": "csh(1) manual page source (4.4BSD, FreeBSD share/doc)", "url": "https://github.com/freebsd/freebsd-src/blob/main/share/doc/usd/04.csh/csh.1", "implementation": "BSD csh", "scope": "whole", "authority": "designer", "format": "source-file", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) manual page", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html", "implementation": "tcsh", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Lexical structure", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Lexical_structure", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure", "comments"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Variable substitution", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Variable_substitution", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "arrays"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Filename substitution", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Filename_substitution", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Control flow", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Control_flow", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Expressions", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Expressions", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions", "operators", "booleans"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Jobs", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Jobs", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["processes-system", "concurrency"]},
+  {"level": 1, "kind": "reference-manual", "title": "tcsh(1) — Alias substitution", "url": "https://manpages.debian.org/testing/tcsh/tcsh.1.en.html#Alias_substitution", "implementation": "tcsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Grymoire — C shell tutorial", "url": "https://www.grymoire.com/Unix/Csh.html", "scope": "whole", "authority": "community", "authors": ["Bruce Barnett"], "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "article", "title": "Csh Programming Considered Harmful", "url": "https://www.faqs.org/faqs/unix-faq/shell/csh-whynot/", "scope": "whole", "authority": "community", "authors": ["Tom Christiansen"], "year": 1996, "format": "html", "access": "open", "concepts": ["comparison", "design-rationale"]},
+  {"level": 2, "kind": "article", "title": "Top Ten Reasons not to use the C shell", "url": "https://www.grymoire.com/Unix/CshTop10.txt", "scope": "whole", "authority": "community", "authors": ["Bruce Barnett"], "format": "html", "access": "open", "concepts": ["comparison"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — C shell", "url": "https://en.wikipedia.org/wiki/C_shell", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — tcsh", "url": "https://en.wikipedia.org/wiki/Tcsh", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — C shell", "url": "https://pldb.io/concepts/c-shell.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "catalog", "title": "PLDB — tcsh", "url": "https://pldb.io/concepts/tcsh.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

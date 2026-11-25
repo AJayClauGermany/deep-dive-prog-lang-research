@@ -1,0 +1,401 @@
+{
+ "id": "pig-latin",
+ "name": "Pig Latin",
+ "aliases": [
+  "Apache Pig"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "dataflow",
+  "declarative",
+  "procedural"
+ ],
+ "typing": [
+  "dynamic",
+  "optional-schema"
+ ],
+ "first_appeared": 2008,
+ "designers": [
+  "Christopher Olston",
+  "Benjamin Reed",
+  "Utkarsh Srivastava",
+  "Ravi Kumar",
+  "Andrew Tomkins"
+ ],
+ "summary": "Dataflow language of Apache Pig, developed at Yahoo! Research, in which scripts are sequences of relational-style steps (LOAD, FILTER, FOREACH...GENERATE, GROUP, COGROUP, JOIN) over a nested data model of tuples, bags and maps, compiled to MapReduce, Tez or Spark jobs.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".pig"
+ ],
+ "homepage": "https://pig.apache.org/",
+ "influenced_by": [
+  "sql"
+ ],
+ "level_notes": {
+  "0": "Apache Pig (Java) is the only implementation; the ANTLR 3 grammars QueryLexer.g/QueryParser.g and the logical plan operators are the most instructive files.",
+  "1": "Defined by the Pig Latin Basics reference manual and the SIGMOD 2008 paper by Olston et al. (paywalled at ACM; no stable open copy verified)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Apache Pig — source repository",
+   "url": "https://github.com/apache/pig",
+   "implementation": "Apache Pig",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Apache Pig — QueryLexer.g (ANTLR lexer)",
+   "url": "https://github.com/apache/pig/blob/trunk/src/org/apache/pig/parser/QueryLexer.g",
+   "implementation": "Apache Pig",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Apache Pig — QueryParser.g (ANTLR grammar)",
+   "url": "https://github.com/apache/pig/blob/trunk/src/org/apache/pig/parser/QueryParser.g",
+   "implementation": "Apache Pig",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache Pig — LogicalPlanGenerator.g (AST to logical plan)",
+   "url": "https://github.com/apache/pig/blob/trunk/src/org/apache/pig/parser/LogicalPlanGenerator.g",
+   "implementation": "Apache Pig",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache Pig — LOCogroup.java (GROUP/COGROUP operator)",
+   "url": "https://github.com/apache/pig/blob/trunk/src/org/apache/pig/newplan/logical/relational/LOCogroup.java",
+   "implementation": "Apache Pig",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics (reference manual)",
+   "url": "https://pig.apache.org/docs/latest/basic.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — Reserved keywords",
+   "url": "https://pig.apache.org/docs/latest/basic.html#reserved-keywords",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — Data types (simple and complex: tuple, bag, map)",
+   "url": "https://pig.apache.org/docs/latest/basic.html#data-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "data-model",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — Nulls and Pig Latin",
+   "url": "https://pig.apache.org/docs/latest/basic.html#nulls",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — Schemas",
+   "url": "https://pig.apache.org/docs/latest/basic.html#schemas",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — FILTER",
+   "url": "https://pig.apache.org/docs/latest/basic.html#filter",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — FOREACH ... GENERATE (incl. nested blocks)",
+   "url": "https://pig.apache.org/docs/latest/basic.html#foreach",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — GROUP",
+   "url": "https://pig.apache.org/docs/latest/basic.html#group",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — COGROUP",
+   "url": "https://pig.apache.org/docs/latest/basic.html#cogroup",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — JOIN (inner)",
+   "url": "https://pig.apache.org/docs/latest/basic.html#join-inner",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig Latin Basics — ORDER BY",
+   "url": "https://pig.apache.org/docs/latest/basic.html#order-by",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Pig built-in functions",
+   "url": "https://pig.apache.org/docs/latest/func.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig control structures — macros (DEFINE ... RETURNS)",
+   "url": "https://pig.apache.org/docs/latest/cont.html#define-macros",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pig user-defined functions (Java, Python, JavaScript, Ruby, Groovy)",
+   "url": "https://pig.apache.org/docs/latest/udf.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Pig Latin: A Not-So-Foreign Language for Data Processing (SIGMOD 2008)",
+   "url": "https://doi.org/10.1145/1376616.1376726",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Christopher Olston",
+    "Benjamin Reed",
+    "Utkarsh Srivastava",
+    "Ravi Kumar",
+    "Andrew Tomkins"
+   ],
+   "year": 2008,
+   "format": "html",
+   "access": "paywalled",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Building a High-Level Dataflow System on top of Map-Reduce: The Pig Experience (VLDB 2009)",
+   "url": "https://www.vldb.org/pvldb/vol2/vldb09-1074.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Alan F. Gates",
+    "Olga Natkovich",
+    "Shubham Chopra",
+    "Pradeep Kamath",
+    "Shravan M. Narayanamurthy",
+    "Christopher Olston",
+    "Benjamin Reed",
+    "Santhosh Srinivasan",
+    "Utkarsh Srivastava"
+   ],
+   "year": 2009,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Pig — Pig Latin statements and tutorial",
+   "url": "https://pig.apache.org/docs/latest/start.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Pig performance and efficiency",
+   "url": "https://pig.apache.org/docs/latest/perf.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "optimization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Apache Pig",
+   "url": "https://en.wikipedia.org/wiki/Apache_Pig",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Pig Latin",
+   "url": "https://pldb.io/concepts/pig.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
