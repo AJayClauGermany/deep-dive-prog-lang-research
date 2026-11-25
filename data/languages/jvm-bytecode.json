@@ -1,0 +1,1998 @@
+{
+ "id": "jvm-bytecode",
+ "name": "JVM bytecode and class file format",
+ "aliases": [
+  "Java bytecode",
+  "class file",
+  "JVM instruction set"
+ ],
+ "categories": [
+  "bytecode",
+  "intermediate-representation",
+  "abstract-machine"
+ ],
+ "paradigms": [
+  "imperative",
+  "stack-based",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "verified",
+  "nominal"
+ ],
+ "first_appeared": 1995,
+ "designers": [
+  "James Gosling",
+  "Tim Lindholm",
+  "Frank Yellin"
+ ],
+ "summary": "The stack-based instruction set and binary class-file format of the Java Virtual Machine, verified at load time and executed by interpreters and JIT compilers; the compilation target of Java, Kotlin, Scala, Clojure, Groovy and many other languages.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "standards": [
+  "The Java Virtual Machine Specification, Java SE 25 Edition"
+ ],
+ "file_extensions": [
+  ".class",
+  ".jar",
+  ".j"
+ ],
+ "homepage": "https://docs.oracle.com/javase/specs/",
+ "influenced_by": [],
+ "related": [
+  {
+   "id": "java",
+   "relation": "host-of"
+  },
+  {
+   "id": "cil",
+   "relation": "family"
+  },
+  {
+   "id": "dalvik-bytecode",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The JVMS (one edition per Java SE release) is normative and implementation-independent; JEPs/JSRs record evolution. The verifier's type-checking rules are given in Prolog in JVMS 4.10.1; mechanised semantics exist in Isabelle (Jinja) and Leroy's verification survey.",
+  "0": "HotSpot in openjdk/jdk is the reference implementation (other JVMs: OpenJ9, GraalVM). There is no official textual assembly syntax; Jasmin, asmtools jasm and Krakatau define community assembler syntaxes, and javap prints a de-facto disassembly format."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Java Virtual Machine Specification, Java SE 25 Edition",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/index.html",
+   "concepts": [
+    "virtual-machine",
+    "bytecode",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Tim Lindholm",
+    "Frank Yellin",
+    "Gilad Bracha",
+    "Alex Buckley",
+    "Daniel Smith"
+   ],
+   "year": 2025,
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Java Virtual Machine Specification, Java SE 25 Edition (PDF)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/jvms25.pdf",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2025,
+   "version": "Java SE 25",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 1 Introduction (history of the JVM)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-1.html",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.2 Data Types",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.2",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.3 Primitive Types and Values",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.3",
+   "concepts": [
+    "primitive-types",
+    "integers",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.4 Reference Types and Values",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.4",
+   "concepts": [
+    "pointers-references",
+    "null-optional",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.5 Run-Time Data Areas (pc, stacks, heap, method area)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.5",
+   "concepts": [
+    "virtual-machine",
+    "memory-management",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.5.5 Run-Time Constant Pool",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.5.5",
+   "concepts": [
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.6 Frames",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6",
+   "concepts": [
+    "functions",
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.6.1 Local Variables",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6.1",
+   "concepts": [
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.6.2 Operand Stacks",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6.2",
+   "concepts": [
+    "virtual-machine",
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.6.3 Dynamic Linking",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6.3",
+   "concepts": [
+    "separate-compilation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.8 Floating-Point Arithmetic",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.8",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.9 Special Methods (<init>, <clinit>, signature polymorphic)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.9",
+   "concepts": [
+    "constructors",
+    "methods"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.10 Exceptions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.10",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11 Instruction Set Summary",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.2 Load and Store Instructions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.2",
+   "concepts": [
+    "variables",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.3 Arithmetic Instructions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.3",
+   "concepts": [
+    "operators",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.4 Type Conversion Instructions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.4",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.5 Object Creation and Manipulation",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.5",
+   "concepts": [
+    "objects",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.7 Control Transfer Instructions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.7",
+   "concepts": [
+    "conditionals",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.8 Method Invocation and Return Instructions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.8",
+   "concepts": [
+    "methods",
+    "polymorphism",
+    "return"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.11.10 Synchronization",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.11.10",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 2.13 Public Design, Private Implementation",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.13",
+   "concepts": [
+    "design-rationale",
+    "jit"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3 Compiling for the Java Virtual Machine",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.2 Use of Constants, Local Variables, and Control Constructs",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.2",
+   "concepts": [
+    "loops",
+    "variables",
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.5 More Control Examples",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.5",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.7 Invoking Methods",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.7",
+   "concepts": [
+    "methods",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.8 Working with Class Instances",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.8",
+   "concepts": [
+    "objects",
+    "constructors"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.9 Arrays",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.9",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.10 Compiling Switches (tableswitch/lookupswitch)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.10",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.12 Throwing and Handling Exceptions",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.12",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.13 Compiling finally",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.13",
+   "concepts": [
+    "exceptions",
+    "resource-management"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.14 Synchronization",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.14",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.15 Annotations",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.15",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 3.16 Modules",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-3.html#jvms-3.16",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4 The class File Format",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html",
+   "concepts": [
+    "bytecode",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.1 The ClassFile Structure",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.1",
+   "concepts": [
+    "program-structure",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.2 Names (binary, unqualified, module and package names)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.2",
+   "concepts": [
+    "identifiers",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.3 Descriptors (field and method type grammar)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3",
+   "concepts": [
+    "type-annotations",
+    "grammar",
+    "function-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.4 The Constant Pool",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.4",
+   "concepts": [
+    "constants",
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.4.10 CONSTANT_Dynamic_info and CONSTANT_InvokeDynamic_info",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.4.10",
+   "concepts": [
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.5 Fields",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.5",
+   "concepts": [
+    "records-structs",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.6 Methods (access flags)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.6",
+   "concepts": [
+    "methods",
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7 Attributes",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.3 The Code Attribute (exception table)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.3",
+   "concepts": [
+    "bytecode",
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.4 The StackMapTable Attribute",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.4",
+   "concepts": [
+    "type-system",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.6 The InnerClasses Attribute",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.6",
+   "concepts": [
+    "classes",
+    "closures"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.9.1 Signatures (generic type signatures)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.9.1",
+   "concepts": [
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.16 The RuntimeVisibleAnnotations Attribute",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.16",
+   "concepts": [
+    "annotations-attributes",
+    "reflection"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.23 The BootstrapMethods Attribute",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.23",
+   "concepts": [
+    "functions",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.25 The Module Attribute",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.25",
+   "concepts": [
+    "modules",
+    "packages"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.28 The NestHost Attribute (nestmates)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.28",
+   "concepts": [
+    "classes",
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.30 The Record Attribute",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.30",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.7.31 The PermittedSubclasses Attribute (sealed classes)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.31",
+   "concepts": [
+    "inheritance",
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.9 Constraints on Java Virtual Machine Code",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.9",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.10 Verification of class Files",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.10",
+   "concepts": [
+    "type-system",
+    "type-soundness",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.10.1 Verification by Type Checking (Prolog rules)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.10.1",
+   "concepts": [
+    "type-system",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.10.2 Verification by Type Inference",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.10.2",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 4.11 Limitations of the Java Virtual Machine",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.11",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5 Loading, Linking, and Initializing",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html",
+   "concepts": [
+    "modules",
+    "runtime-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.2 Java Virtual Machine Startup",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.2",
+   "concepts": [
+    "program-structure",
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.3 Creation and Loading (class loaders)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.3",
+   "concepts": [
+    "modules",
+    "reflection"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.4.3 Resolution",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.4.3",
+   "concepts": [
+    "separate-compilation",
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.4.3.3 Method Resolution",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.4.3.3",
+   "concepts": [
+    "methods",
+    "inheritance"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.4.4 Access Control",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.4.4",
+   "concepts": [
+    "visibility",
+    "encapsulation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.4.5 Method Overriding",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.4.5",
+   "concepts": [
+    "inheritance",
+    "polymorphism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.4.6 Method Selection",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.4.6",
+   "concepts": [
+    "polymorphism",
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.5 Initialization",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.5",
+   "concepts": [
+    "constructors"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 5.6 Binding Native Method Implementations",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.6",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6 The Java Virtual Machine Instruction Set",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 Instructions (alphabetical opcode reference)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 invokedynamic instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.invokedynamic",
+   "concepts": [
+    "functions",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 invokevirtual instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.invokevirtual",
+   "concepts": [
+    "methods",
+    "polymorphism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 invokeinterface instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.invokeinterface",
+   "concepts": [
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 checkcast instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.checkcast",
+   "concepts": [
+    "type-conversion",
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 instanceof instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.instanceof",
+   "concepts": [
+    "subtyping",
+    "dynamic-typing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 athrow instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.athrow",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 monitorenter instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.monitorenter",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 tableswitch instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.tableswitch",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 if_icmp_cond instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.if_icmp_cond",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 new instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.new",
+   "concepts": [
+    "objects"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 newarray instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.newarray",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 getfield instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.getfield",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 6.5 iadd instruction",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5.iadd",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JVMS — 7 Opcode Mnemonics by Opcode",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-7.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "JEP 0 — JDK Enhancement Proposal index",
+   "url": "https://openjdk.org/jeps/0",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 181: Nest-Based Access Control",
+   "url": "https://openjdk.org/jeps/181",
+   "concepts": [
+    "visibility",
+    "classes"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2018,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 309: Dynamic Class-File Constants (condy)",
+   "url": "https://openjdk.org/jeps/309",
+   "concepts": [
+    "constants",
+    "compile-time-evaluation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2018,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 371: Hidden Classes",
+   "url": "https://openjdk.org/jeps/371",
+   "concepts": [
+    "reflection",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2020,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 484: Class-File API",
+   "url": "https://openjdk.org/jeps/484",
+   "concepts": [
+    "bytecode",
+    "code-generation",
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2025,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 401: Value Classes and Objects (Preview)",
+   "url": "https://openjdk.org/jeps/401",
+   "concepts": [
+    "value-reference-semantics",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": null,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JSR 292: Supporting Dynamically Typed Languages on the Java Platform (invokedynamic)",
+   "url": "https://jcp.org/en/jsr/detail?id=292",
+   "concepts": [
+    "dynamic-typing",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2011,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "java.lang.classfile — Class-File API (JDK 25 API docs)",
+   "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/classfile/package-summary.html",
+   "concepts": [
+    "bytecode",
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "JDK 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "javap — the Java class file disassembler (JDK 25)",
+   "url": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/javap.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "JDK 25",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Java Bytecode Verification: Algorithms and Formalizations (Leroy, JAR 2003)",
+   "url": "https://xavierleroy.org/publi/bytecode-verification-JAR.pdf",
+   "concepts": [
+    "type-soundness",
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Xavier Leroy"
+   ],
+   "year": 2003,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Jinja is not Java — Isabelle/HOL formalization of a Java-like language, JVM and verifier (AFP)",
+   "url": "https://www.isa-afp.org/entries/Jinja.html",
+   "concepts": [
+    "formal-semantics",
+    "type-soundness",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Gerwin Klein",
+    "Tobias Nipkow"
+   ],
+   "year": 2005,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Java Virtual Machine Specification, Java SE 7 Edition (first edition with invokedynamic)",
+   "url": "https://docs.oracle.com/javase/specs/jvms/se7/html/index.html",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "year": 2011,
+   "version": "Java SE 7",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Inside the Java Virtual Machine (Bill Venners), selected chapters",
+   "url": "https://www.artima.com/insidejvm/ed2/",
+   "concepts": [
+    "virtual-machine",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Bill Venners"
+   ],
+   "year": 1999,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ASM 4 Guide — a Java bytecode engineering library (Bruneton)",
+   "url": "https://asm.ow2.io/asm4-guide.pdf",
+   "concepts": [
+    "bytecode",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Eric Bruneton"
+   ],
+   "year": 2011,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "HotSpot Runtime Overview",
+   "url": "https://openjdk.org/groups/hotspot/docs/RuntimeOverview.html",
+   "concepts": [
+    "runtime-system",
+    "interpreter",
+    "synchronization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "HotSpot Glossary of Terms",
+   "url": "https://openjdk.org/groups/hotspot/docs/HotSpotGlossary.html",
+   "concepts": [
+    "virtual-machine",
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Project Valhalla (value objects for the JVM)",
+   "url": "https://openjdk.org/projects/valhalla/",
+   "concepts": [
+    "value-reference-semantics",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "openjdk/jdk — HotSpot JVM and JDK",
+   "url": "https://github.com/openjdk/jdk",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "HotSpot",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK interpreter/bytecodes.hpp — opcode table",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/interpreter/bytecodes.hpp",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK interpreter/bytecodes.cpp — opcode formats and lengths",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/interpreter/bytecodes.cpp",
+   "concepts": [
+    "bytecode"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK zero/bytecodeInterpreter.cpp — C++ switch interpreter",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/interpreter/zero/bytecodeInterpreter.cpp",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK cpu/x86/templateTable_x86.cpp — template interpreter code for each bytecode",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/cpu/x86/templateTable_x86.cpp",
+   "concepts": [
+    "interpreter",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK interpreter/rewriter.cpp — bytecode quickening/rewriting",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/interpreter/rewriter.cpp",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK classfile/classFileParser.cpp — class file parser",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/classfile/classFileParser.cpp",
+   "concepts": [
+    "parser",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK classfile/verifier.cpp — split bytecode verifier",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/classfile/verifier.cpp",
+   "concepts": [
+    "type-system",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK classfile/stackMapTable.cpp — StackMapTable frames",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/classfile/stackMapTable.cpp",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK classfile/systemDictionary.cpp — class loading",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/classfile/systemDictionary.cpp",
+   "concepts": [
+    "modules",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK oops/constantPool.hpp — run-time constant pool",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/oops/constantPool.hpp",
+   "concepts": [
+    "constants"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK interpreter/linkResolver.cpp — method/field resolution",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/interpreter/linkResolver.cpp",
+   "concepts": [
+    "methods",
+    "polymorphism"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK prims/methodHandles.cpp — method handles and invokedynamic support",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/prims/methodHandles.cpp",
+   "concepts": [
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK runtime/synchronizer.cpp — monitorenter/monitorexit",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/runtime/synchronizer.cpp",
+   "concepts": [
+    "synchronization",
+    "threads"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK c1/c1_GraphBuilder.cpp — bytecode to C1 HIR (JIT)",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/hotspot/share/c1/c1_GraphBuilder.cpp",
+   "concepts": [
+    "jit",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK java/lang/classfile/ClassFile.java — Class-File API entry point",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/classfile/ClassFile.java",
+   "concepts": [
+    "bytecode",
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK java/lang/classfile/Opcode.java — opcode enum",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/classfile/Opcode.java",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenJDK javap/JavapTask.java — class file disassembler",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/jdk.jdeps/share/classes/com/sun/tools/javap/JavapTask.java",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "implementation": "HotSpot / OpenJDK",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "openjdk/asmtools — jasm/jcoder class-file assembler and disassembler",
+   "url": "https://github.com/openjdk/asmtools",
+   "concepts": [
+    "assembler-directives",
+    "tooling"
+   ],
+   "scope": "whole",
+   "implementation": "asmtools",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Krakatau — Java bytecode assembler and disassembler (Rust)",
+   "url": "https://github.com/Storyyeller/Krakatau",
+   "concepts": [
+    "assembler-directives",
+    "tooling"
+   ],
+   "scope": "whole",
+   "implementation": "Krakatau",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Jasmin — JVM assembler",
+   "url": "https://jasmin.sourceforge.net/",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "Jasmin",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "ASM — Java bytecode manipulation framework",
+   "url": "https://asm.ow2.io/",
+   "concepts": [
+    "bytecode",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "implementation": "ASM",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Java bytecode",
+   "url": "https://en.wikipedia.org/wiki/Java_bytecode",
+   "concepts": [
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — List of Java bytecode instructions",
+   "url": "https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Java class file",
+   "url": "https://en.wikipedia.org/wiki/Java_class_file",
+   "concepts": [
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Java virtual machine",
+   "url": "https://en.wikipedia.org/wiki/Java_virtual_machine",
+   "concepts": [
+    "virtual-machine",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Java bytecode",
+   "url": "https://pldb.io/concepts/java-bytecode.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "Java SE Specifications — all JLS/JVMS editions",
+   "url": "https://docs.oracle.com/javase/specs/",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

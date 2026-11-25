@@ -1,0 +1,547 @@
+{
+ "id": "svg",
+ "name": "SVG",
+ "aliases": [
+  "Scalable Vector Graphics"
+ ],
+ "categories": [
+  "markup",
+  "diagram"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "W3C SVG Working Group"
+ ],
+ "summary": "An XML-based markup language for two-dimensional vector graphics: shapes, paths (with a compact path-data micro-syntax), text, gradients, filters and reusable symbols, styled with CSS and scriptable through the DOM; embeddable directly in HTML.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C SVG 1.1 Second Edition (2011)",
+  "W3C SVG 2 (Candidate Recommendation)",
+  "SVG Tiny 1.2"
+ ],
+ "file_extensions": [
+  ".svg",
+  ".svgz"
+ ],
+ "homepage": "https://www.w3.org/TR/SVG2/",
+ "influenced_by": [
+  "xml",
+  "css",
+  "postscript"
+ ],
+ "related": [
+  {
+   "id": "xml",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "html",
+   "relation": "family"
+  },
+  {
+   "id": "css",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "0": "Browser engines are the main implementations; standalone renderers (resvg, librsvg), the svgtypes micro-syntax parser, SVGO and web-platform-tests are listed.",
+  "1": "Deep links use the SVG 2 editor's draft at svgwg.org because w3.org/TR answers the link checker with 403; the section ids are the same in the TR version."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "linebender/resvg — SVG renderer in Rust with a large conformance test suite",
+   "url": "https://github.com/linebender/resvg",
+   "authority": "community",
+   "implementation": "resvg / usvg",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "usvg parser/svgtree/mod.rs — SVG document tree (attribute resolution, inheritance)",
+   "url": "https://github.com/linebender/resvg/blob/main/crates/usvg/src/parser/svgtree/mod.rs",
+   "authority": "community",
+   "implementation": "resvg / usvg",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "usvg parser/use_node.rs — <use> instantiation and <symbol>",
+   "url": "https://github.com/linebender/resvg/blob/main/crates/usvg/src/parser/use_node.rs",
+   "authority": "community",
+   "implementation": "resvg / usvg",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "usvg parser/style.rs — presentation attributes and CSS styling",
+   "url": "https://github.com/linebender/resvg/blob/main/crates/usvg/src/parser/style.rs",
+   "authority": "community",
+   "implementation": "resvg / usvg",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "usvg parser/switch.rs — conditional processing (<switch>, systemLanguage)",
+   "url": "https://github.com/linebender/resvg/blob/main/crates/usvg/src/parser/switch.rs",
+   "authority": "community",
+   "implementation": "resvg / usvg",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "svgtypes src/path.rs — path data micro-syntax parser",
+   "url": "https://github.com/linebender/svgtypes/blob/main/src/path.rs",
+   "authority": "community",
+   "implementation": "svgtypes",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "librsvg rsvg/src/path_parser.rs — GNOME SVG library path parser",
+   "url": "https://github.com/GNOME/librsvg/blob/main/rsvg/src/path_parser.rs",
+   "authority": "community",
+   "implementation": "librsvg",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "SVGO plugins/convertPathData.js — optimiser rewriting path data",
+   "url": "https://github.com/svg/svgo/blob/main/plugins/convertPathData.js",
+   "authority": "community",
+   "implementation": "SVGO",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt svg/ — SVG tests in web-platform-tests (README)",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/svg/README.md",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Scalable Vector Graphics (SVG) 2 — W3C Candidate Recommendation",
+   "url": "https://www.w3.org/TR/SVG2/",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 Editor's Draft",
+   "url": "https://svgwg.org/svg2-draft/",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §5.1 Defining an SVG document fragment (the svg element, namespace)",
+   "url": "https://svgwg.org/svg2-draft/struct.html#NewDocument",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §5.6 The use element (shadow tree instantiation)",
+   "url": "https://svgwg.org/svg2-draft/struct.html#UseElement",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §5.7 Conditional processing (switch, requiredExtensions, systemLanguage)",
+   "url": "https://svgwg.org/svg2-draft/struct.html#ConditionalProcessing",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §6.6 Presentation attributes",
+   "url": "https://svgwg.org/svg2-draft/styling.html#PresentationAttributes",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §6.1 Styling SVG content using CSS",
+   "url": "https://svgwg.org/svg2-draft/styling.html#StylingUsingCSS",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §4.2 Syntax for attribute values (micro-syntaxes)",
+   "url": "https://svgwg.org/svg2-draft/types.html#syntax",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §4.6.3 Reflecting attributes in the SVG DOM",
+   "url": "https://svgwg.org/svg2-draft/types.html#ReflectingAttributes",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §8.6 The viewBox attribute",
+   "url": "https://svgwg.org/svg2-draft/coords.html#ViewBoxAttribute",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §9.3 Path data",
+   "url": "https://svgwg.org/svg2-draft/paths.html#PathData",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §9.3.9 Grammar for path data (BNF)",
+   "url": "https://svgwg.org/svg2-draft/paths.html#PathDataBNF",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §9.5.4 Error handling in path data",
+   "url": "https://svgwg.org/svg2-draft/paths.html#PathDataErrorHandling",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §16.1 References (URL references, fragment identifiers)",
+   "url": "https://svgwg.org/svg2-draft/linking.html#URLReference",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — §16.3.2 SVG fragment identifiers",
+   "url": "https://svgwg.org/svg2-draft/linking.html#SVGFragmentIdentifiers",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG 2 — Appendix — Conformance criteria",
+   "url": "https://svgwg.org/svg2-draft/conform.html",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SVG 1.1 (Second Edition)",
+   "url": "https://www.w3.org/TR/SVG11/",
+   "authority": "standards-body",
+   "version": "1.1",
+   "year": 2011,
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SVG 1.0 Recommendation (2001)",
+   "url": "https://www.w3.org/TR/2001/REC-SVG-20010904/",
+   "authority": "standards-body",
+   "version": "1.0",
+   "year": 2001,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SVG Tiny 1.2",
+   "url": "https://www.w3.org/TR/SVGTiny12/",
+   "authority": "standards-body",
+   "version": "Tiny 1.2",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SVG Animations Level 2 (SMIL-based animation)",
+   "url": "https://svgwg.org/specs/animations/",
+   "authority": "standards-body",
+   "version": "2",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN — SVG from scratch: Introduction",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Introduction",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN — SVG from scratch: Paths",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — SVG reference: the d attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/d",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — SVG reference: <use>",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/use",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — SVG documentation hub",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/SVG",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SVG",
+   "url": "https://en.wikipedia.org/wiki/SVG",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — SVG",
+   "url": "https://pldb.io/concepts/svg.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,1311 @@
+{
+ "id": "risc-v-assembly",
+ "name": "RISC-V",
+ "aliases": [
+  "RISC-V assembly",
+  "RV32I",
+  "RV64GC"
+ ],
+ "categories": [
+  "assembly"
+ ],
+ "paradigms": [
+  "imperative",
+  "load-store"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Krste Asanović",
+  "Andrew Waterman",
+  "Yunsup Lee",
+  "David Patterson"
+ ],
+ "summary": "Open, royalty-free modular RISC instruction set architecture from UC Berkeley, now governed by RISC-V International: small RV32I/RV64I base integer ISAs plus standard extensions (M, A, F, D, C, V, B, ...), with a GNU-style assembly language defined by the community assembler manual and the ELF psABI.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "RISC-V Unprivileged ISA 20191213 / 20240411",
+  "RISC-V Privileged Architecture"
+ ],
+ "file_extensions": [
+  ".s",
+  ".S"
+ ],
+ "homepage": "https://riscv.org/",
+ "influenced_by": [
+  "mips-assembly",
+  "dlx"
+ ],
+ "related": [],
+ "level_notes": {
+  "1": "The ISA manuals (ratified by RISC-V International) define the machine; the docs.riscv.org deep links point at the 20260120 build of the manual. Assembly syntax and the calling convention are specified separately (riscv-asm-manual, riscv-elf-psabi-doc). The RVWMO memory model has Alloy/herd/operational formalisations, and Sail RISC-V is the official formal model.",
+  "0": "Sail RISC-V is the golden reference model; Spike is the reference ISA simulator; QEMU, GNU as and LLVM's integrated assembler are the main production implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/unpriv-index.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/priv-index.html",
+   "concepts": [
+    "instruction-set",
+    "runtime-system"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Introduction (goals, harts, execution environments)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/intro.html",
+   "concepts": [
+    "design-rationale",
+    "program-structure"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Memory (address space)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/intro.html#memory",
+   "concepts": [
+    "memory-model",
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Base instruction-length encoding",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/intro.html#base-instruction-length-encoding",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Exceptions, traps and interrupts",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/intro.html#trap-defn",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — UNSPECIFIED behaviors and values",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/intro.html#unspecified-behaviors-and-values",
+   "concepts": [
+    "undefined-behavior"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — RV32I Base Integer Instruction Set",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html",
+   "concepts": [
+    "instruction-set",
+    "integers"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — RV32I programmers' model (registers x0-x31)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#1-1-1-programmers-model-for-base-integer-isa",
+   "concepts": [
+    "variables",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Base instruction formats (R/I/S/U)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#1-1-2-base-instruction-formats",
+   "concepts": [
+    "encoding-wire-format",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Immediate encoding variants",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#1-1-3-immediate-encoding-variants",
+   "concepts": [
+    "literals",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Integer computational instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#1-1-4-integer-computational-instructions",
+   "concepts": [
+    "operators",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Unconditional jumps (JAL, JALR)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#1-1-5-1-unconditional-jumps",
+   "concepts": [
+    "functions",
+    "goto-labels",
+    "return"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Conditional branches",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#1-1-5-2-conditional-branches",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Load and store instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#ldst",
+   "concepts": [
+    "pointers-references",
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Memory ordering instructions (FENCE)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#fence",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Environment call and breakpoints (ECALL/EBREAK)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32.html#ecall-ebreak",
+   "concepts": [
+    "processes-system",
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — RV32E and RV64E base integer instruction sets",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv32e.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — RV64I Base Integer Instruction Set",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv64.html",
+   "concepts": [
+    "instruction-set",
+    "integers"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Zicsr — Control and Status Register instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/zicsr.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Zifencei — instruction-fetch fence",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/zifencei.html",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Counters (Zicntr, Zihpm)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/counters.html",
+   "concepts": [
+    "performance"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — M extension — integer multiplication and division",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/m-st-ext.html",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — A extension — atomic instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/a-st-ext.html",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Load-reserved / store-conditional",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/a-st-ext.html#sec:lrsc",
+   "concepts": [
+    "atomics-memory-ordering",
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Atomic memory operations (AMOs)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/a-st-ext.html#sec:amo",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — RVWMO memory consistency model",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rvwmo.html",
+   "concepts": [
+    "memory-model",
+    "atomics-memory-ordering"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Ztso — total store ordering extension",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/ztso-st-ext.html",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — F extension — single-precision floating point",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/f-st-ext.html",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — NaN generation and propagation",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/f-st-ext.html#20-1-3-nan-generation-and-propagation",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Floating-point conversion and move instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/f-st-ext.html#20-1-7-single-precision-floating-point-conversion-and-move-instructions",
+   "concepts": [
+    "type-conversion",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — D extension — double-precision floating point",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/d-st-ext.html",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — C extension — compressed instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/c-st-ext.html",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — B extension — bit manipulation (Zba/Zbb/Zbc/Zbs)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/b-st-ext.html",
+   "concepts": [
+    "operators",
+    "integers"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Zicond — integer conditional operations",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/zicond.html",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — V extension — vector operations",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html",
+   "concepts": [
+    "parallelism",
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Vector configuration-setting instructions (vsetvli)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html#sec-vector-config",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Vector loads and stores",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html#sec-vector-memory",
+   "concepts": [
+    "arrays",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Vector mask instructions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html#sec-vector-mask",
+   "concepts": [
+    "parallelism",
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Vector assembly code examples",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/vector-examples.html",
+   "concepts": [
+    "parallelism",
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Scalar cryptography extensions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/scalar-crypto.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Calling convention for vector state",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/calling-convention.html",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — ISA extension naming conventions",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/naming.html",
+   "concepts": [
+    "versioning-compatibility",
+    "identifiers"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — RV32/64G instruction set listings",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rv-32-64g.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Formal memory model specifications (Alloy, herd, operational)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/mm-formal.html",
+   "concepts": [
+    "formal-semantics",
+    "memory-model"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Unprivileged ISA — Rationale",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/rationale.html",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — History and change log",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/priv-history.html",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Control and Status Registers",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/priv-csrs.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Machine-level ISA",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/machine.html",
+   "concepts": [
+    "runtime-system",
+    "exceptions"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Physical memory protection (PMP)",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/machine.html#pmp",
+   "concepts": [
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Supervisor-level ISA",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/supervisor.html",
+   "concepts": [
+    "runtime-system",
+    "processes-system"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Sv39 page-based virtual memory",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/supervisor.html#sv39",
+   "concepts": [
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Hypervisor extension",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/hypervisor.html",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V Privileged Architecture — Privileged instruction set listings",
+   "url": "https://docs.riscv.org/reference/isa/v20260120/priv/priv-insns.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "ISA manual 20260120",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "RISC-V International — Ratified Specifications",
+   "url": "https://riscv.org/specifications/ratified/",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "RISC-V Assembly Programmer's Manual (asm-manual.adoc)",
+   "url": "https://github.com/riscv-non-isa/riscv-asm-manual/blob/main/src/asm-manual.adoc",
+   "concepts": [
+    "assembler-directives",
+    "instruction-set",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V ELF psABI — Calling Convention (riscv-cc.adoc)",
+   "url": "https://github.com/riscv-non-isa/riscv-elf-psabi-doc/blob/master/riscv-cc.adoc",
+   "concepts": [
+    "calling-convention-abi",
+    "functions",
+    "parameters-arguments"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RISC-V ELF psABI — ELF specification (relocations, TLS)",
+   "url": "https://github.com/riscv-non-isa/riscv-elf-psabi-doc/blob/master/riscv-elf.adoc",
+   "concepts": [
+    "calling-convention-abi",
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — RISC-V Dependent Features",
+   "url": "https://sourceware.org/binutils/docs/as/RISC_002dV_002dDependent.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — RISC-V Assembler Directives",
+   "url": "https://sourceware.org/binutils/docs/as/RISC_002dV_002dDirectives.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Design of the RISC-V Instruction Set Architecture (Waterman PhD thesis, UCB/EECS-2016-1)",
+   "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-1.pdf",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Andrew Waterman"
+   ],
+   "year": 2016,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Instruction Sets Should Be Free: The Case For RISC-V (UCB/EECS-2014-146)",
+   "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-146.pdf",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Krste Asanović",
+    "David A. Patterson"
+   ],
+   "year": 2014,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "ISA Semantics for ARMv8-A, RISC-V, and CHERI-MIPS (Sail, POPL 2019)",
+   "url": "https://www.cl.cam.ac.uk/~pes20/sail/sail-popl2019.pdf",
+   "concepts": [
+    "formal-semantics",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Alasdair Armstrong",
+    "Thomas Bauereiss",
+    "Brian Campbell",
+    "Alastair Reid",
+    "Kathryn E. Gray",
+    "Robert M. Norton",
+    "Prashanth Mundkur",
+    "Mark Wassell",
+    "Jon French",
+    "Christopher Pulte",
+    "Shaked Flur",
+    "Ian Stark",
+    "Neel Krishnaswami",
+    "Peter Sewell"
+   ],
+   "year": 2019,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The RISC-V Reader: An Open Architecture Atlas (Patterson, Waterman)",
+   "url": "http://www.riscvbook.com/",
+   "concepts": [
+    "instruction-set",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "David Patterson",
+    "Andrew Waterman"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "partially-open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "RISC-V Instruction Set Specifications (riscv-isadoc, per-instruction pages)",
+   "url": "https://msyksphinz-self.github.io/riscv-isadoc/",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "CS 61C: Great Ideas in Computer Architecture (UC Berkeley, RISC-V)",
+   "url": "https://inst.eecs.berkeley.edu/~cs61c/fa24/",
+   "concepts": [
+    "instruction-set",
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Sail RISC-V — formal executable ISA model",
+   "url": "https://github.com/riscv/sail-riscv",
+   "concepts": [
+    "formal-semantics",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "implementation": "Sail RISC-V",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "sail-riscv model/extensions/I/base_insts.sail — RV I instruction semantics",
+   "url": "https://github.com/riscv/sail-riscv/blob/master/model/extensions/I/base_insts.sail",
+   "concepts": [
+    "formal-semantics",
+    "instruction-set",
+    "integers"
+   ],
+   "scope": "section",
+   "implementation": "Sail RISC-V",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Spike — RISC-V ISA simulator (riscv-isa-sim)",
+   "url": "https://github.com/riscv-software-src/riscv-isa-sim",
+   "concepts": [
+    "virtual-machine",
+    "interpreter"
+   ],
+   "scope": "whole",
+   "implementation": "Spike",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Spike riscv/insns/add.h — per-instruction semantics",
+   "url": "https://github.com/riscv-software-src/riscv-isa-sim/blob/master/riscv/insns/add.h",
+   "concepts": [
+    "instruction-set",
+    "integers"
+   ],
+   "scope": "section",
+   "implementation": "Spike",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Spike riscv/execute.cc — fetch/execute loop",
+   "url": "https://github.com/riscv-software-src/riscv-isa-sim/blob/master/riscv/execute.cc",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "Spike",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Spike riscv/processor.cc — hart state, traps, CSRs",
+   "url": "https://github.com/riscv-software-src/riscv-isa-sim/blob/master/riscv/processor.cc",
+   "concepts": [
+    "exceptions",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "implementation": "Spike",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/riscv/insn32.decode — RISC-V decodetree",
+   "url": "https://github.com/qemu/qemu/blob/master/target/riscv/insn32.decode",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/riscv/cpu.c — RISC-V CPU model and extensions",
+   "url": "https://github.com/qemu/qemu/blob/master/target/riscv/cpu.c",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU binutils gas/config/tc-riscv.c — RISC-V assembler backend",
+   "url": "https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=gas/config/tc-riscv.c",
+   "concepts": [
+    "assembler-directives",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM RISCVInstrInfo.td — RISC-V instruction definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/RISCV/RISCVInstrInfo.td",
+   "concepts": [
+    "instruction-set",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM RISCVAsmParser.cpp — RISC-V assembly parser (llvm-mc)",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/RISCV/AsmParser/RISCVAsmParser.cpp",
+   "concepts": [
+    "parser",
+    "assembler-directives"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "riscv-opcodes — machine-readable opcode/encoding tables",
+   "url": "https://github.com/riscv/riscv-opcodes",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "implementation": "riscv-opcodes",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "riscv-arch-test — RISC-V architectural compatibility tests",
+   "url": "https://github.com/riscv-non-isa/riscv-arch-test",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "whole",
+   "implementation": "RISC-V International",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "riscv-tests — ISA unit tests",
+   "url": "https://github.com/riscv-software-src/riscv-tests",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "whole",
+   "implementation": "riscv-tests",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "riscv-gnu-toolchain — GCC/binutils/glibc cross toolchain",
+   "url": "https://github.com/riscv-collab/riscv-gnu-toolchain",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "implementation": "GNU toolchain",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "RARS — RISC-V Assembler and Runtime Simulator",
+   "url": "https://github.com/TheThirdOne/rars",
+   "concepts": [
+    "interpreter",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "implementation": "RARS",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Ripes — visual RISC-V pipeline simulator and assembler",
+   "url": "https://github.com/mortbopet/Ripes",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "implementation": "Ripes",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — RISC-V",
+   "url": "https://en.wikipedia.org/wiki/RISC-V",
+   "concepts": [
+    "history",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — RISC-V",
+   "url": "https://pldb.io/concepts/risc-v.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

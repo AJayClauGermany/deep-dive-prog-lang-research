@@ -1,0 +1,1627 @@
+{
+ "id": "jq",
+ "name": "jq",
+ "categories": [
+  "query",
+  "functional",
+  "domain-specific",
+  "scripting"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative",
+  "stream-processing"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Stephen Dolan"
+ ],
+ "summary": "Lightweight functional language and command-line processor for JSON: programs are filters that map an input value to a stream of outputs, composed with pipes and commas, with backtracking generators, path expressions, reduce/foreach, user-defined functions and modules.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".jq"
+ ],
+ "homepage": "https://jqlang.org/",
+ "influenced_by": [
+  "icon",
+  "haskell"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "jsonpath",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard. The jq Manual (generated from docs/content/manual/manual.yml) is the de-facto definition; Michael Färber's 'A formal specification of the jq language' (2024) gives a denotational semantics. Release notes (NEWS.md) document version changes.",
+  "2": "GitHub wiki pages (jq Language Description, internals) are linked via github.com and checked as repo-only."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "jqlang/jq — reference implementation in C",
+   "url": "https://github.com/jqlang/jq",
+   "implementation": "jq (reference, C)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/lexer.l — flex lexer (tokens, string interpolation)",
+   "url": "https://github.com/jqlang/jq/blob/master/src/lexer.l",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/parser.y — bison grammar and precedence declarations",
+   "url": "https://github.com/jqlang/jq/blob/master/src/parser.y",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/compile.c — compiler from AST blocks to bytecode, variable binding, reduce/foreach",
+   "url": "https://github.com/jqlang/jq/blob/master/src/compile.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "code-generation-backend",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/opcode_list.h — bytecode opcode list (FORK, BACKTRACK, PATH_BEGIN ...)",
+   "url": "https://github.com/jqlang/jq/blob/master/src/opcode_list.h",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "bytecode",
+    "instruction-set"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/bytecode.c — bytecode representation and disassembler",
+   "url": "https://github.com/jqlang/jq/blob/master/src/bytecode.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "bytecode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/execute.c — backtracking stack virtual machine",
+   "url": "https://github.com/jqlang/jq/blob/master/src/execute.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "virtual-machine",
+    "interpreter",
+    "generators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/builtin.c — C-implemented builtins (arithmetic, regex via Oniguruma, dates)",
+   "url": "https://github.com/jqlang/jq/blob/master/src/builtin.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "date-time",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "jq (C) — src/builtin.jq — builtins defined in jq itself (map, select, paths, walk ...)",
+   "url": "https://github.com/jqlang/jq/blob/master/src/builtin.jq",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/jv.c — jv value representation (refcounted JSON values)",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/jv_parse.c — JSON parser incl. streaming parser",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv_parse.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/jv_print.c — JSON serialiser",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv_print.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/jv_unicode.c — UTF-8 handling",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv_unicode.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/jv_aux.c — path get/set/delete, sort, group helpers",
+   "url": "https://github.com/jqlang/jq/blob/master/src/jv_aux.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jq (C) — src/linker.c — module system: import/include resolution",
+   "url": "https://github.com/jqlang/jq/blob/master/src/linker.c",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "jq (C) — tests/jq.test — main test suite (language behaviour by example)",
+   "url": "https://github.com/jqlang/jq/blob/master/tests/jq.test",
+   "implementation": "jq (reference, C)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "gojq — pure Go implementation of jq",
+   "url": "https://github.com/itchyny/gojq",
+   "implementation": "gojq",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "gojq — lexer.go",
+   "url": "https://github.com/itchyny/gojq/blob/main/lexer.go",
+   "implementation": "gojq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "gojq — parser.go (hand-written parser)",
+   "url": "https://github.com/itchyny/gojq/blob/main/parser.go",
+   "implementation": "gojq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "gojq — compiler.go",
+   "url": "https://github.com/itchyny/gojq/blob/main/compiler.go",
+   "implementation": "gojq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "gojq — execute.go (backtracking executor)",
+   "url": "https://github.com/itchyny/gojq/blob/main/execute.go",
+   "implementation": "gojq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "generators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "gojq — builtin.jq",
+   "url": "https://github.com/itchyny/gojq/blob/main/builtin.jq",
+   "implementation": "gojq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "gojq README — differences from jq",
+   "url": "https://github.com/itchyny/gojq/blob/main/README.md",
+   "implementation": "gojq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "jaq — Rust clone of jq focused on correctness and speed",
+   "url": "https://github.com/01mf02/jaq",
+   "implementation": "jaq",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jaq — load/lex.rs lexer",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/load/lex.rs",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jaq — load/parse.rs parser",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/load/parse.rs",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jaq — load/prec_climb.rs precedence climbing",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/load/prec_climb.rs",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jaq — compile.rs",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/compile.rs",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jaq — filter.rs (filter evaluation)",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/filter.rs",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jaq — path.rs (path expressions and updates)",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/path.rs",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "assignment"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "jaq — defs.jq standard definitions",
+   "url": "https://github.com/01mf02/jaq/blob/main/jaq-core/src/defs.jq",
+   "implementation": "jaq",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual (current, 1.8)",
+   "url": "https://jqlang.org/manual/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Invoking jq (command-line options)",
+   "url": "https://jqlang.org/manual/#invoking-jq",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "command-line"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Basic filters",
+   "url": "https://jqlang.org/manual/#basic-filters",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Identity: .",
+   "url": "https://jqlang.org/manual/#identity",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Object Identifier-Index: .foo",
+   "url": "https://jqlang.org/manual/#object-identifier-index",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Optional Object Identifier-Index: .foo?",
+   "url": "https://jqlang.org/manual/#optional-object-identifier-index",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Array Index: .[<number>]",
+   "url": "https://jqlang.org/manual/#array-index",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Array/String Slice: .[<number>:<number>]",
+   "url": "https://jqlang.org/manual/#array-string-slice",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "strings",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Array/Object Value Iterator: .[]",
+   "url": "https://jqlang.org/manual/#array-object-value-iterator",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iterators",
+    "generators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Comma: , (stream concatenation)",
+   "url": "https://jqlang.org/manual/#comma",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Pipe: |",
+   "url": "https://jqlang.org/manual/#pipe",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Types and Values",
+   "url": "https://jqlang.org/manual/#types-and-values",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "data-model",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Array construction: []",
+   "url": "https://jqlang.org/manual/#array-construction",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "collections",
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Object Construction: {}",
+   "url": "https://jqlang.org/manual/#object-construction",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Recursive Descent: ..",
+   "url": "https://jqlang.org/manual/#recursive-descent",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Builtin operators and functions",
+   "url": "https://jqlang.org/manual/#builtin-operators-and-functions",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Addition: + (polymorphic)",
+   "url": "https://jqlang.org/manual/#addition",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — path(path_expression)",
+   "url": "https://jqlang.org/manual/#path",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — to_entries, from_entries, with_entries",
+   "url": "https://jqlang.org/manual/#to_entries-from_entries-with_entries",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — select(boolean_expression)",
+   "url": "https://jqlang.org/manual/#select",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — empty",
+   "url": "https://jqlang.org/manual/#empty",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — error",
+   "url": "https://jqlang.org/manual/#error",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — add",
+   "url": "https://jqlang.org/manual/#add",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — range",
+   "url": "https://jqlang.org/manual/#range",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges",
+    "generators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — type",
+   "url": "https://jqlang.org/manual/#type",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — tostring",
+   "url": "https://jqlang.org/manual/#tostring",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — sort, sort_by",
+   "url": "https://jqlang.org/manual/#sort-sort_by",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — group_by",
+   "url": "https://jqlang.org/manual/#group_by",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — unique, unique_by",
+   "url": "https://jqlang.org/manual/#unique-unique_by",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — while",
+   "url": "https://jqlang.org/manual/#while",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — recurse",
+   "url": "https://jqlang.org/manual/#recurse",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — walk",
+   "url": "https://jqlang.org/manual/#walk",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — String interpolation",
+   "url": "https://jqlang.org/manual/#string-interpolation",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting",
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Convert to/from JSON",
+   "url": "https://jqlang.org/manual/#convert-to-from-json",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Format strings and escaping (@csv, @sh, @base64 ...)",
+   "url": "https://jqlang.org/manual/#format-strings-and-escaping",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Dates",
+   "url": "https://jqlang.org/manual/#dates",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — SQL-Style Operators (INDEX, IN)",
+   "url": "https://jqlang.org/manual/#sql-style-operators",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Conditionals and Comparisons",
+   "url": "https://jqlang.org/manual/#conditionals-and-comparisons",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — if-then-else-end",
+   "url": "https://jqlang.org/manual/#if-then-else-end",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — and, or, not",
+   "url": "https://jqlang.org/manual/#and-or-not",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Alternative operator: //",
+   "url": "https://jqlang.org/manual/#alternative-operator",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — try-catch",
+   "url": "https://jqlang.org/manual/#try-catch",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Breaking out of control structures (label/break)",
+   "url": "https://jqlang.org/manual/#breaking-out-of-control-structures",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Error Suppression / Optional Operator: ?",
+   "url": "https://jqlang.org/manual/#error-suppression-optional-operator",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Regular expressions (Oniguruma)",
+   "url": "https://jqlang.org/manual/#regular-expressions",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Variable / Symbolic Binding Operator: ... as $identifier | ...",
+   "url": "https://jqlang.org/manual/#variable-symbolic-binding-operator",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Destructuring Alternative Operator: ?//",
+   "url": "https://jqlang.org/manual/#destructuring-alternative-operator",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "destructuring",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Defining Functions (filter arguments, closures)",
+   "url": "https://jqlang.org/manual/#defining-functions",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "closures",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Scoping",
+   "url": "https://jqlang.org/manual/#scoping",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — limit",
+   "url": "https://jqlang.org/manual/#limit",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — reduce",
+   "url": "https://jqlang.org/manual/#reduce",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — foreach",
+   "url": "https://jqlang.org/manual/#foreach",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Recursion (tail-call optimisation)",
+   "url": "https://jqlang.org/manual/#recursion",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion",
+    "tail-calls"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Generators and iterators",
+   "url": "https://jqlang.org/manual/#generators-and-iterators",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generators",
+    "iterators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Math (libm functions)",
+   "url": "https://jqlang.org/manual/#math",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — I/O (input, inputs, debug)",
+   "url": "https://jqlang.org/manual/#io",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Streaming (tostream, fromstream)",
+   "url": "https://jqlang.org/manual/#streaming",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Assignment (update-assignment |=, plain =, arithmetic)",
+   "url": "https://jqlang.org/manual/#assignment",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Comments",
+   "url": "https://jqlang.org/manual/#comments",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq Manual — Modules (import, include, modulemeta)",
+   "url": "https://jqlang.org/manual/#modules",
+   "scope": "section",
+   "authority": "official",
+   "version": "1.8",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq 1.7 Manual",
+   "url": "https://jqlang.org/manual/v1.7/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "1.7",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq 1.6 Manual",
+   "url": "https://jqlang.org/manual/v1.6/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "1.6",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "jq 1.5 Manual",
+   "url": "https://jqlang.org/manual/v1.5/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "1.5",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "jq Manual source (manual.yml, the generated manual's source)",
+   "url": "https://github.com/jqlang/jq/blob/master/docs/content/manual/manual.yml",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "jq NEWS.md — release notes",
+   "url": "https://github.com/jqlang/jq/blob/master/NEWS.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "A formal specification of the jq language",
+   "url": "https://arxiv.org/abs/2403.20132",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Michael Färber"
+   ],
+   "year": 2024,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "jq wiki — jq Language Description",
+   "url": "https://github.com/jqlang/jq/wiki/jq-Language-Description",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "generators",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "jq wiki — How to: Avoid Pitfalls",
+   "url": "https://github.com/jqlang/jq/wiki/How-to:-Avoid-Pitfalls",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "jq wiki — For JSONPath users",
+   "url": "https://github.com/jqlang/jq/wiki/For-JSONPath-users",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "jq wiki — Internals: the interpreter",
+   "url": "https://github.com/jqlang/jq/wiki/Internals:-the-interpreter",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "virtual-machine",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "jq wiki — Internals: backtracking",
+   "url": "https://github.com/jqlang/jq/wiki/Internals:-backtracking",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generators",
+    "continuations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "jq Tutorial (official)",
+   "url": "https://jqlang.org/tutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn X in Y minutes — jq",
+   "url": "https://learnxinyminutes.com/jq/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Exercism — jq track",
+   "url": "https://exercism.org/tracks/jq",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "jq playground (official)",
+   "url": "https://play.jqlang.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "jqplay — online jq playground",
+   "url": "https://jqplay.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Original jq home page (stedolan.github.io)",
+   "url": "https://stedolan.github.io/jq/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Stephen Dolan"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — jq (programming language)",
+   "url": "https://en.wikipedia.org/wiki/Jq_(programming_language)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — jq",
+   "url": "https://pldb.io/concepts/jq.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-jq",
+   "url": "https://github.com/fiatjaf/awesome-jq",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:Jq",
+   "url": "https://rosettacode.org/wiki/Category:Jq",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

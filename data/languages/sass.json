@@ -1,0 +1,781 @@
+{
+ "id": "sass",
+ "name": "Sass / SCSS",
+ "aliases": [
+  "Sass",
+  "SCSS",
+  "Syntactically Awesome Style Sheets",
+  "indented syntax"
+ ],
+ "categories": [
+  "stylesheet"
+ ],
+ "paradigms": [
+  "declarative",
+  "imperative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2006,
+ "designers": [
+  "Hampton Catlin",
+  "Natalie Weizenbaum",
+  "Chris Eppstein"
+ ],
+ "summary": "A CSS preprocessor language with two syntaxes (the original whitespace-sensitive indented syntax and the CSS-superset SCSS) adding variables, nesting, mixins, functions, control directives, @extend and a module system; compiled to CSS.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".scss",
+  ".sass"
+ ],
+ "homepage": "https://sass-lang.com/",
+ "influenced_by": [
+  "css",
+  "haml"
+ ],
+ "related": [
+  {
+   "id": "css",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "less",
+   "relation": "family"
+  },
+  {
+   "id": "stylus",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Dart Sass is the reference implementation; LibSass and Ruby Sass are deprecated. sass-spec is the shared conformance suite.",
+  "1": "The sass/sass repository holds a formal-ish language specification (spec/) and the proposal process (proposal/, accepted/); the website documentation is the user-facing reference."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "sass/dart-sass — the primary (reference) Sass implementation, in Dart",
+   "url": "https://github.com/sass/dart-sass",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass parse/stylesheet.dart — shared parser for SCSS and indented syntax",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/parse/stylesheet.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass parse/sass.dart — indented-syntax specifics (whitespace-significant blocks)",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/parse/sass.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass visitor/async_evaluate.dart — evaluator: variables, control flow, mixins, functions, @use",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/visitor/async_evaluate.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "scope",
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass extend/extension_store.dart — @extend selector unification",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/extend/extension_store.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass value/number.dart — numbers with units and unit arithmetic",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/value/number.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass functions/map.dart — sass:map built-in module",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/functions/map.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Dart Sass visitor/serialize.dart — CSS output serializer",
+   "url": "https://github.com/sass/dart-sass/blob/main/lib/src/visitor/serialize.dart",
+   "authority": "official",
+   "implementation": "Dart Sass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "sass/sass-spec — shared Sass language test suite",
+   "url": "https://github.com/sass/sass-spec",
+   "authority": "official",
+   "implementation": "sass-spec",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LibSass parser.cpp — former C++ implementation (deprecated)",
+   "url": "https://github.com/sass/libsass/blob/master/src/parser.cpp",
+   "authority": "official",
+   "implementation": "LibSass",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "sass/sass spec/ — the formal Sass language specification (README)",
+   "url": "https://github.com/sass/sass/blob/main/spec/README.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — syntax.md (grammar of both syntaxes)",
+   "url": "https://github.com/sass/sass/blob/main/spec/syntax.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — variables.md (scoping, !default, !global)",
+   "url": "https://github.com/sass/sass/blob/main/spec/variables.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — modules.md (module system semantics)",
+   "url": "https://github.com/sass/sass/blob/main/spec/modules.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — at-rules/use.md",
+   "url": "https://github.com/sass/sass/blob/main/spec/at-rules/use.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — at-rules/mixin.md",
+   "url": "https://github.com/sass/sass/blob/main/spec/at-rules/mixin.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — at-rules/extend.md",
+   "url": "https://github.com/sass/sass/blob/main/spec/at-rules/extend.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Sass spec — types/number.md (units and arithmetic)",
+   "url": "https://github.com/sass/sass/blob/main/spec/types/number.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "Sass accepted proposal — module-system.md (@use/@forward)",
+   "url": "https://github.com/sass/sass/blob/main/accepted/module-system.md",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation (language reference)",
+   "url": "https://sass-lang.com/documentation/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Syntax (SCSS vs indented)",
+   "url": "https://sass-lang.com/documentation/syntax/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Comments (silent //, loud /* */, doc ///)",
+   "url": "https://sass-lang.com/documentation/syntax/comments/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Parsing a stylesheet (input encoding, errors)",
+   "url": "https://sass-lang.com/documentation/syntax/parsing/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Style rules and nesting",
+   "url": "https://sass-lang.com/documentation/style-rules/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Parent selector &",
+   "url": "https://sass-lang.com/documentation/style-rules/parent-selector/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Placeholder selectors",
+   "url": "https://sass-lang.com/documentation/style-rules/placeholder-selectors/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Variables (!default, !global, scope)",
+   "url": "https://sass-lang.com/documentation/variables/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @use",
+   "url": "https://sass-lang.com/documentation/at-rules/use/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @forward",
+   "url": "https://sass-lang.com/documentation/at-rules/forward/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @import (deprecated)",
+   "url": "https://sass-lang.com/documentation/at-rules/import/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @mixin and @include",
+   "url": "https://sass-lang.com/documentation/at-rules/mixin/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @function",
+   "url": "https://sass-lang.com/documentation/at-rules/function/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @extend",
+   "url": "https://sass-lang.com/documentation/at-rules/extend/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @if and @else",
+   "url": "https://sass-lang.com/documentation/at-rules/control/if/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @each",
+   "url": "https://sass-lang.com/documentation/at-rules/control/each/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach",
+    "destructuring"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @for",
+   "url": "https://sass-lang.com/documentation/at-rules/control/for/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @while",
+   "url": "https://sass-lang.com/documentation/at-rules/control/while/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — @error",
+   "url": "https://sass-lang.com/documentation/at-rules/error/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Numbers and units",
+   "url": "https://sass-lang.com/documentation/values/numbers/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Strings (quoted/unquoted)",
+   "url": "https://sass-lang.com/documentation/values/strings/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Lists",
+   "url": "https://sass-lang.com/documentation/values/lists/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Maps",
+   "url": "https://sass-lang.com/documentation/values/maps/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — null",
+   "url": "https://sass-lang.com/documentation/values/null/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Operators",
+   "url": "https://sass-lang.com/documentation/operators/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Sass documentation — Built-in modules",
+   "url": "https://sass-lang.com/documentation/modules/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Sass documentation — Breaking changes policy",
+   "url": "https://sass-lang.com/documentation/breaking-changes/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Sass Basics (official guide)",
+   "url": "https://sass-lang.com/guide/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Sass blog — The Module System is Launched",
+   "url": "https://sass-lang.com/blog/the-module-system-is-launched/",
+   "authority": "official",
+   "year": 2019,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Sass blog — LibSass is Deprecated",
+   "url": "https://sass-lang.com/blog/libsass-is-deprecated/",
+   "authority": "official",
+   "year": 2020,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "CSS-Tricks — The Sass Ampersand",
+   "url": "https://css-tricks.com/the-sass-ampersand/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — Sass",
+   "url": "https://learnxinyminutes.com/sass/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Sass (style sheet language)",
+   "url": "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Sass",
+   "url": "https://pldb.io/concepts/sass.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
