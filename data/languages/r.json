@@ -1,0 +1,4710 @@
+{
+ "id": "r",
+ "name": "R",
+ "aliases": [
+  "GNU R",
+  "GNU S"
+ ],
+ "categories": [
+  "scientific",
+  "functional",
+  "scripting",
+  "array"
+ ],
+ "paradigms": [
+  "functional",
+  "array",
+  "object-oriented",
+  "imperative",
+  "reflective"
+ ],
+ "typing": [
+  "dynamic",
+  "strong-ish",
+  "vector-based"
+ ],
+ "first_appeared": 1993,
+ "designers": [
+  "Ross Ihaka",
+  "Robert Gentleman"
+ ],
+ "summary": "Dynamically typed, lazily evaluated, vector-oriented language and environment for statistical computing and graphics; an open-source dialect of S with Scheme-style lexical scoping, first-class environments and several object systems (S3, S4, reference classes).",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".R",
+  ".r",
+  ".Rmd",
+  ".Rd",
+  ".rds",
+  ".RData"
+ ],
+ "homepage": "https://www.r-project.org/",
+ "influenced_by": [
+  "s-lang",
+  "scheme",
+  "common-lisp",
+  "apl"
+ ],
+ "related": [
+  {
+   "id": "s-lang",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "julia",
+   "relation": "family"
+  },
+  {
+   "id": "matlab",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "GNU R (developed in Subversion, mirrored at wch/r-source) is the reference implementation and the de-facto definition. Alternative implementations: FastR (GraalVM), Renjin (JVM), pqR, Ř/RIR (research JIT), webR (GNU R on WebAssembly).",
+  "1": "No standard or formal specification. The 'R Language Definition' manual is officially still a draft; together with R Internals, Writing R Extensions and the per-function help pages it is the primary description. There is no numbered proposal process: R Core decides, with discussion on R-devel and Bugzilla. The Core R semantics in Morandat et al. (ECOOP 2012) is the main formalisation.",
+  "2": "'An Introduction to R' is the official tutorial; Advanced R is the standard deep treatment of the language itself."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "wch/r-source — read-only Git mirror of the R Subversion repository",
+   "url": "https://github.com/wch/r-source",
+   "scope": "whole",
+   "notes": "Canonical repository is Subversion at svn.r-project.org; this mirror is updated hourly.",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "R Subversion repository — trunk (canonical source of GNU R)",
+   "url": "https://svn.r-project.org/R/trunk/",
+   "scope": "whole",
+   "format": "repository",
+   "implementation": "GNU R",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "r-source src/main/gram.y — Bison grammar and hand-written lexer",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/gram.y",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser",
+    "lexer",
+    "lexical-structure",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/eval.c — AST evaluator, closure application and the byte-code interpreter loop",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/eval.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "evaluation-order",
+    "closures",
+    "lazy-evaluation",
+    "bytecode",
+    "virtual-machine",
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/names.c — function table of .Primitive/.Internal builtins and symbol table",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/names.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "keywords",
+    "functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/memory.c — generational mark-sweep garbage collector, node allocation, write barrier",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/memory.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "garbage-collection",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/envir.c — environments, variable lookup, global cache, active bindings",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/envir.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables",
+    "namespaces",
+    "assignment"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/context.c — evaluation contexts, call stack, on.exit and non-local jumps",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/context.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "return",
+    "continuations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/match.c — argument matching (exact, partial, positional)",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/match.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/objects.c — S3 dispatch (UseMethod/NextMethod) and S4 dispatch entry",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/objects.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "multiple-dispatch",
+    "methods",
+    "polymorphism",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/attrib.c — attributes, class, names, dim and S4 slots",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/attrib.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "objects",
+    "properties"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/arithmetic.c — vectorised arithmetic, recycling, NA propagation",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/arithmetic.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/subset.c — indexing operators [ , [[ and $",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/subset.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/subassign.c — subset assignment ([<-, [[<-, $<-) and copy-on-modify",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/subassign.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/coerce.c — coercion between vector types, as.* / is.*, substitute and quote",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/coerce.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/errors.c — condition system: warnings, errors, handler stacks, restarts",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/errors.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/dotcode.c — .C, .Fortran, .Call and .External foreign-function interfaces",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/dotcode.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "calling-convention-abi"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/serialize.c — serialization (saveRDS/load) formats",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/serialize.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/grep.c — regular expressions (TRE, PCRE) behind grep/sub/regexpr",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/grep.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/character.c — string primitives (nchar, substr, chartr, ...)",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/character.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/sprintf.c — sprintf formatting",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/sprintf.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/connections.c — connections: files, pipes, sockets, text connections",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/connections.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "file-io"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/main.c — start-up and the read-eval-print loop",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/main.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "command-line"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/deparse.c — deparser: language objects back to source text",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/deparse.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "reflection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/altrep.c — ALTREP alternative vector representations",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/altrep.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/apply.c — lapply/vapply/rapply internals",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/apply.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/main/datetime.c — POSIXct/POSIXlt date-time conversion",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/main/datetime.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/include/Rinternals.h — SEXP types and the C API",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ffi",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/include/Defn.h — internal definitions: SEXPREC layout, contexts, evaluator state",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/include/Defn.h",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "memory-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source src/library/compiler/R/cmp.R — the byte-code compiler, written in R",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/compiler/R/cmp.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "bytecode",
+    "compiler-architecture",
+    "optimization",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/base/R/conditions.R — tryCatch, withCallingHandlers, signalCondition in R",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/base/R/conditions.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/base/R/funprog.R — Reduce, Filter, Map, Find, Position",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/base/R/funprog.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/base/R/namespace.R — package namespaces: loadNamespace, imports and exports",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/base/R/namespace.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "modules",
+    "imports",
+    "visibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/base/R/library.R — library() and require(): attaching packages",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/base/R/library.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "imports"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/methods/R/RClassUtils.R — S4 class definitions and validity (methods package)",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/methods/R/RClassUtils.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/methods/R/refClass.R — Reference classes (R5): mutable objects on top of environments",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/methods/R/refClass.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects",
+    "encapsulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/methods/src/methods_list_dispatch.c — S4 generic dispatch in C",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/methods/src/methods_list_dispatch.c",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "multiple-dispatch"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/parallel/R/unix/mclapply.R — parallel::mclapply (fork-based parallel map)",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/parallel/R/unix/mclapply.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parallelism",
+    "processes-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "r-source src/library/parallel/R/snow.R — parallel socket clusters (snow)",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/parallel/R/snow.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parallelism",
+    "channels-message-passing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "r-source src/library/tools/R/Rd.R — tools for the Rd documentation format",
+   "url": "https://github.com/wch/r-source/blob/trunk/src/library/tools/R/Rd.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "r-source tests/reg-tests-1e.R — regression tests for the interpreter and base packages",
+   "url": "https://github.com/wch/r-source/blob/trunk/tests/reg-tests-1e.R",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "r-source doc/manual/R-lang.texi — Texinfo source of the R Language Definition",
+   "url": "https://github.com/wch/r-source/blob/trunk/doc/manual/R-lang.texi",
+   "scope": "section",
+   "implementation": "GNU R",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "FastR — R on GraalVM/Truffle (Oracle)",
+   "url": "https://github.com/oracle/fastr",
+   "scope": "whole",
+   "implementation": "FastR",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "jit",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FastR README — architecture and compatibility goals",
+   "url": "https://github.com/oracle/fastr/blob/master/README.md",
+   "scope": "section",
+   "implementation": "FastR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "jit",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Renjin — R interpreter on the JVM",
+   "url": "https://github.com/bedatadriven/renjin",
+   "scope": "whole",
+   "implementation": "Renjin",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Renjin core/.../eval/Context.java — evaluation context and function calls",
+   "url": "https://github.com/bedatadriven/renjin/blob/master/core/src/main/java/org/renjin/eval/Context.java",
+   "scope": "section",
+   "implementation": "Renjin",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "pqR — Radford Neal's 'pretty quick' fork of the R interpreter",
+   "url": "https://github.com/radfordneal/pqR",
+   "scope": "whole",
+   "implementation": "pqR",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Ř (RIR) — research JIT compiler for R with the PIR optimizer",
+   "url": "https://github.com/reactorlabs/rir",
+   "scope": "whole",
+   "implementation": "Ř",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "jit",
+    "intermediate-representation",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "webR — GNU R compiled to WebAssembly",
+   "url": "https://github.com/r-wasm/webr",
+   "scope": "whole",
+   "implementation": "webR",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-r grammar.js — independent machine-readable R grammar",
+   "url": "https://github.com/r-lib/tree-sitter-r/blob/main/grammar.js",
+   "scope": "section",
+   "implementation": "tree-sitter-r",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "CoqR — Coq mechanisation of a core of R's interpreter",
+   "url": "https://github.com/Mbodin/CoqR",
+   "scope": "whole",
+   "implementation": "CoqR",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition (whole manual)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html",
+   "scope": "section",
+   "version": "R-release",
+   "notes": "Explicitly a draft, but the closest thing to a language specification.",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1 Basic types",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.1 Vectors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vectors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "integers",
+    "floating-point",
+    "booleans",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.2 Lists",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Lists",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.3 Language objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Language-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.5 Function objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Function-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "closures",
+    "function-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.6 NULL",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#NULL",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.7 Builtin objects and special forms",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Builtin-objects-and-special-forms-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.8 Promise objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Promise-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.9 Dot-dot-dot",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Dot_002ddot_002ddot-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.1.10 Environments",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Environments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.2 Attributes",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Attributes-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.2.4 Classes (the class attribute)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Classes-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.3.1 Factors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Factors-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 2.3.2 Data frame objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Data-frame-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3 Evaluation of expressions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Evaluation-of-expressions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.1.1 Constants",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Constants-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.1.2 Symbol lookup",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Symbol-lookup-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.1.3 Function calls",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Function-calls-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.1.4 Operators (precedence table)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Operators-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2 Control structures",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Control-structures-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2.1 if",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#if-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2.2 Looping (break and next)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Looping-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2.3 repeat",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#repeat-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2.4 while",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#while-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2.5 for",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#for-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.2.6 switch",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#switch-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.3 Elementary arithmetic operations",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Elementary-arithmetic-operations-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.3.1 Recycling rules",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Recycling-rules-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.3.4 NA handling",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#NA-handling-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.4 Indexing",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Indexing-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.4.4 Subset assignment",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Subset-assignment-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.5 Scope of variables",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Scope-of-variables-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.5.2 Lexical environment",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Lexical-environment-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.5.3 The call stack",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#The-call-stack",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 3.5.4 Search path",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Search-path-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 4.1 Writing functions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Writing-functions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 4.1.2 Arguments (defaults, ...)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Arguments-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 4.2 Functions as objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions-as-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 4.3.2 Argument matching",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Argument-matching-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 4.3.3 Argument evaluation (promises, lazy arguments)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Argument-evaluation-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 4.3.4 Scope (function evaluation environment)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Scope-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 5 Object-oriented programming (S3)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Object_002doriented-programming-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "objects",
+    "classes",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 5.2 Inheritance",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Inheritance-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 5.3 Method dispatching",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Method-dispatching-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "multiple-dispatch"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 5.4 UseMethod",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#UseMethod-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 5.5 NextMethod",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#NextMethod-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "methods"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 5.6 Group methods (operator overloading)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Group-methods-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 6 Computing on the language",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Computing-on-the-language-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "reflection",
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 6.1 Direct manipulation of language objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Direct-manipulation-of-language-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 6.2 Substitutions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Substitutions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "substitution-binding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 6.3 More on evaluation (eval, evalq, sys.call)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#More-on-evaluation-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 6.5 Manipulation of function calls",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Manipulation-of-function-calls-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 7.1 Operating system access",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Operating-system-access-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "processes-system",
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 7.2 Foreign language interfaces",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Foreign-language-interfaces-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 7.3 .Internal and .Primitive",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#g_t_002eInternal-and-_002ePrimitive-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 8 Exception handling",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Exception-handling-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 8.1 stop",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#stop-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 8.2 warning",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#warning-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 8.3 on.exit",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#on_002eexit-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "resource-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 9 Debugging",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Debugging-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10 Parser",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Parser-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.2 Comments",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Comments-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.3 Tokens",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Tokens-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.3.1 Constants (numeric, string, logical literals)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Constants-2",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "integers",
+    "floating-point",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.3.2 Identifiers",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Identifiers-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.3.3 Reserved words",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Reserved-words-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.3.5 Separators",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Separators-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.3.6 Operator tokens",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Operator-tokens-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.4 Expressions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Expressions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.4.2 Infix and prefix operators (precedence)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Infix-and-prefix-operators-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.4.4 Compound expressions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Compound-expressions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.4.5 Flow control elements",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Flow-control-elements-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.4.6 Function definitions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Function-definitions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Language Definition — 10.5 Directives (#line)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Directives-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "preprocessor"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals (whole manual)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html",
+   "scope": "section",
+   "version": "R-release",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.1 SEXPs (node types and layout)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "memory-model",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.2 Environments and variable lookup",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Environments-and-variable-lookup-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.4 Contexts",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Contexts-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "continuations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.5 Argument evaluation (promises, missingness)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Argument-evaluation-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.7 The write barrier and the garbage collector",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#The-write-barrier-and-the-garbage-collector",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "garbage-collection",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.8 Serialization formats",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Serialization-Formats-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.9 Encodings for CHARSXPs",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Encodings-for-CHARSXPs-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.11 Warnings and errors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Warnings-and-errors-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.12 S4 objects",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#S4-objects-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "objects",
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.13 Memory allocators",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Memory-allocators-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "memory-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 1.17 Lazy loading",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Lazy-loading-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 2 .Internal vs .Primitive",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#g_t_002eInternal-vs-_002ePrimitive-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 9 R coding standards",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#R-coding-standards-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 10 Testing R code",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Testing-R-code-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "R Internals — 13.1 Long vectors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-ints.html#Long-vectors-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions (whole manual)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html",
+   "scope": "section",
+   "version": "R-release",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 1 Creating R packages",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Creating-R-packages-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 1.1 Package structure (DESCRIPTION, R/, src/)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-structure-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "package-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 1.3 Checking and building packages",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "build-systems",
+    "testing",
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 1.5 Package namespaces (NAMESPACE: export, import)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-namespaces-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "modules",
+    "imports",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 2.1 Rd format",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Rd-format-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 3.2 Profiling R code for speed",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Profiling-R-code-for-speed-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 5 System and foreign language interfaces",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#System-and-foreign-language-interfaces-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 5.2 Interface functions .C and .Fortran",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Interface-functions-_002eC-and-_002eFortran-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 5.9 Handling R objects in C (PROTECT, allocation)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Handling-R-objects-in-C-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "garbage-collection",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 5.11 Evaluating R expressions from C",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Evaluating-R-expressions-from-C-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 5.13 External pointers and weak references",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pointers-references",
+    "resource-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 6 The R API: entry points for C code",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-R-API_003a-entry-points-for-C-code",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "calling-convention-abi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 6.13 Condition handling and cleanup code",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Condition-handling-and-cleanup-code-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "resource-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Writing R Extensions — 7 Generic functions and methods",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Generic-functions-and-methods-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R base package — reference index",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Control: if, for, while, repeat, break, next",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Control.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — switch",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/switch.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Syntax: operator syntax and precedence",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Syntax.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Reserved words",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Quotes: string literals, escapes, raw strings",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Quotes.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — NumericConstants",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/NumericConstants.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Arithmetic operators",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Logic: logical operators, && and ||",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Comparison: relational operators",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — assignOps: <-, <<-, =, ->",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Extract: [, [[, $ indexing",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Extract.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — function: definitions, \\(x) lambdas, return",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/function.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "closures",
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — dots: ..., ..1, ...length()",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/dots.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — pipeOp: the native |> pipe",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/pipeOp.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — environment: environments and enclosures",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/environment.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — conditions: tryCatch, withCallingHandlers, restarts",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/conditions.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — stopifnot",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/stopifnot.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assertions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — on.exit",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/on.exit.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "resource-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — UseMethod: S3 generic dispatch",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/UseMethod.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "polymorphism",
+    "multiple-dispatch"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — class, inherits, oldClass",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/class.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — S3 group generics (Ops, Math, Summary)",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/S3groupGeneric.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — NA: missing values",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/NA.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — NULL",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/NULL.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — integer",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/integer.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — double",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/double.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — character",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/character.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — logical",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/logical.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — list, pairlist",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/list.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — array",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/array.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — factor",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — data.frame",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — vector, is.vector, as.vector",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/vector.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — sprintf",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/sprintf.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — regex: regular expressions as used in R",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — lapply, sapply, vapply",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/lapply.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — funprog: Reduce, Filter, Map",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/funprog.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Recall: recursive calling",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Recall.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — eval, evalq, local",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/eval.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — substitute, quote",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/substitute.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — connections: file, url, pipe, textConnection",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/connections.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Encoding, enc2utf8",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Encoding.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — gc: garbage collection",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/gc.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — library, require",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/library.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — loadNamespace, attachNamespace",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/ns-load.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — Foreign: .C and .Fortran",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/Foreign.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — CallExternal: .Call and .External",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/CallExternal.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — system2: invoke a system command",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/system2.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "processes-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — commandArgs",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/commandArgs.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "command-line"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — DateTimeClasses: POSIXct and POSIXlt",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/DateTimeClasses.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — readRDS, saveRDS",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/readRDS.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — seq, seq_len, seq_along",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/seq.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (base) — identical",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/base/html/identical.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (methods) — Classes_Details: S4 class definitions",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/methods/html/Classes_Details.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (methods) — Methods_Details: S4 generic functions and method dispatch",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/methods/html/Methods_Details.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "multiple-dispatch",
+    "methods"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (methods) — ReferenceClasses",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/methods/html/refClass.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (parallel) — parallel package overview",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/parallel/html/parallel-package.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parallelism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "R help (compiler) — compile, cmpfun, enableJIT: byte-code compiler",
+   "url": "https://stat.ethz.ch/R-manual/R-devel/library/compiler/html/compile.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "bytecode",
+    "jit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Ihaka & Gentleman — R: A Language for Data Analysis and Graphics (JCGS 5(3), 1996)",
+   "url": "https://doi.org/10.1080/10618600.1996.10474713",
+   "scope": "whole",
+   "authors": [
+    "Ross Ihaka",
+    "Robert Gentleman"
+   ],
+   "year": 1996,
+   "authority": "designer",
+   "access": "paywalled",
+   "format": "html",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Ihaka — R: Past and Future History (Interface '98)",
+   "url": "https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf",
+   "scope": "whole",
+   "authors": [
+    "Ross Ihaka"
+   ],
+   "year": 1998,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "R NEWS — changes in the current release series",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/NEWS.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "R Developer Page — design notes and proposals by R Core",
+   "url": "https://developer.r-project.org/",
+   "scope": "whole",
+   "notes": "R has no formal proposal process; changes are decided by the R Core Team and discussed on R-devel and the R Bugzilla.",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Tierney — ALTREP: Alternative Representations for R Objects",
+   "url": "https://svn.r-project.org/R/branches/ALTREP/ALTREP.html",
+   "scope": "section",
+   "authors": [
+    "Luke Tierney",
+    "Gabe Becker",
+    "Tomas Kalibera"
+   ],
+   "year": 2018,
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "optimization",
+    "memory-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Tierney — A Byte Code Compiler for R",
+   "url": "https://homepage.cs.uiowa.edu/~luke/R/compiler/compiler.pdf",
+   "scope": "section",
+   "authors": [
+    "Luke Tierney"
+   ],
+   "year": 2019,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "bytecode",
+    "compiler-architecture",
+    "virtual-machine",
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Morandat, Hill, Osvald, Vitek — Evaluating the Design of the R Language (ECOOP 2012; defines Core R semantics)",
+   "url": "http://janvitek.org/pubs/ecoop12.pdf",
+   "scope": "whole",
+   "authors": [
+    "Floréal Morandat",
+    "Brandon Hill",
+    "Leo Osvald",
+    "Jan Vitek"
+   ],
+   "year": 2012,
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "design-rationale",
+    "lazy-evaluation",
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The R Manuals — index of official manuals on CRAN",
+   "url": "https://cran.r-project.org/manuals.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R (official tutorial, whole)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "W. N. Venables",
+    "D. M. Smith",
+    "R Core Team"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 1.6 An introductory session",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#An-introductory-session-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 2.1 Vectors and assignment",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vectors-and-assignment-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "variables",
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 2.2 Vector arithmetic",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vector-arithmetic-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 2.3 Generating regular sequences",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Generating-regular-sequences-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 2.4 Logical vectors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Logical-vectors-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 2.5 Missing values",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 2.6 Character vectors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Character-vectors-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 3 Objects, their modes and attributes",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Objects_002c-their-modes-and-attributes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "dynamic-typing",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 4 Ordered and unordered factors",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Ordered-and-unordered-factors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 5 Arrays and matrices",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Arrays-and-matrices-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 6 Lists and data frames",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Lists-and-data-frames-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "records-structs",
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 7 Reading data from files",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Reading-data-from-files-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "file-io",
+    "input-output"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 9 Grouping, loops and conditional execution",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Grouping_002c-loops-and-conditional-execution",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "statements"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 10 Writing your own functions",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Writing-your-own-functions-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 10.2 Defining new binary operators",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Defining-new-binary-operators-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-overloading",
+    "operators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 10.3 Named arguments and defaults",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Named-arguments-and-defaults-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 10.7 Scope (lexical scope, closures)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Scope-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "closures"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 13 Packages",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Packages-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "imports",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — 14 OS facilities",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#OS-facilities-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "processes-system",
+    "file-io"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "An Introduction to R — B.4 Scripting with R (Rscript, #!)",
+   "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Scripting-with-R-1",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "command-line",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wickham — Advanced R, 2nd edition (whole book)",
+   "url": "https://adv-r.hadley.nz/",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "format": "book",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 2 Names and values (copy-on-modify, references)",
+   "url": "https://adv-r.hadley.nz/names-values.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "value-reference-semantics",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 3 Vectors (atomic vectors, lists, attributes, data frames)",
+   "url": "https://adv-r.hadley.nz/vectors-chap.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "arrays",
+    "lists",
+    "type-conversion",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 4 Subsetting",
+   "url": "https://adv-r.hadley.nz/subsetting.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 5 Control flow",
+   "url": "https://adv-r.hadley.nz/control-flow.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "switch-case",
+    "loops",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 6 Functions (lexical scoping, lazy evaluation, ...)",
+   "url": "https://adv-r.hadley.nz/functions.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "scope",
+    "lazy-evaluation",
+    "parameters-arguments",
+    "return"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 7 Environments",
+   "url": "https://adv-r.hadley.nz/environments.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces",
+    "closures"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 8 Conditions",
+   "url": "https://adv-r.hadley.nz/conditions.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 9 Functionals",
+   "url": "https://adv-r.hadley.nz/functionals.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 10 Function factories",
+   "url": "https://adv-r.hadley.nz/function-factories.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 11 Function operators",
+   "url": "https://adv-r.hadley.nz/function-operators.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 12 Base types",
+   "url": "https://adv-r.hadley.nz/base-types.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "objects"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 13 S3",
+   "url": "https://adv-r.hadley.nz/s3.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "methods",
+    "polymorphism",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 14 R6",
+   "url": "https://adv-r.hadley.nz/r6.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects",
+    "encapsulation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 15 S4",
+   "url": "https://adv-r.hadley.nz/s4.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "multiple-dispatch",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 16 Trade-offs between S3, S4 and R6",
+   "url": "https://adv-r.hadley.nz/oo-tradeoffs.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "classes"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 18 Expressions (abstract syntax trees, parsing)",
+   "url": "https://adv-r.hadley.nz/expressions.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "quotation-homoiconicity",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 19 Quasiquotation",
+   "url": "https://adv-r.hadley.nz/quasiquotation.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity",
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 20 Evaluation (eval, quosures, data masks)",
+   "url": "https://adv-r.hadley.nz/evaluation.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 21 Translating R code",
+   "url": "https://adv-r.hadley.nz/translation.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 22 Debugging",
+   "url": "https://adv-r.hadley.nz/debugging.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 23 Measuring performance",
+   "url": "https://adv-r.hadley.nz/perf-measure.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 24 Improving performance",
+   "url": "https://adv-r.hadley.nz/perf-improve.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (2e) — 25 Rewriting R code in C++ (Rcpp)",
+   "url": "https://adv-r.hadley.nz/rcpp.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2019,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (1e) — R's C interface",
+   "url": "http://adv-r.had.co.nz/C-interface.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2014,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced R (1e) — Memory",
+   "url": "http://adv-r.had.co.nz/memory.html",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "year": 2014,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "memory-management",
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wickham, Çetinkaya-Rundel, Grolemund — R for Data Science, 2nd edition (whole book)",
+   "url": "https://r4ds.hadley.nz/",
+   "scope": "section",
+   "authors": [
+    "Hadley Wickham",
+    "Mine Çetinkaya-Rundel",
+    "Garrett Grolemund"
+   ],
+   "year": 2023,
+   "format": "book",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Data transformation (dplyr verbs, the pipe)",
+   "url": "https://r4ds.hadley.nz/data-transform.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "aggregation",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Logical vectors",
+   "url": "https://r4ds.hadley.nz/logicals.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Numbers",
+   "url": "https://r4ds.hadley.nz/numbers.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Strings",
+   "url": "https://r4ds.hadley.nz/strings.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Regular expressions",
+   "url": "https://r4ds.hadley.nz/regexps.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Factors",
+   "url": "https://r4ds.hadley.nz/factors.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Dates and times",
+   "url": "https://r4ds.hadley.nz/datetimes.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Missing values",
+   "url": "https://r4ds.hadley.nz/missing-values.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Joins",
+   "url": "https://r4ds.hadley.nz/joins.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Data import",
+   "url": "https://r4ds.hadley.nz/data-import.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "file-io"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Functions",
+   "url": "https://r4ds.hadley.nz/functions.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — Iteration",
+   "url": "https://r4ds.hadley.nz/iteration.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R for Data Science (2e) — A field guide to base R",
+   "url": "https://r4ds.hadley.nz/base-R.html",
+   "scope": "section",
+   "year": 2023,
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "loops",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wickham & Bryan — R Packages, 2nd edition",
+   "url": "https://r-pkgs.org/",
+   "scope": "whole",
+   "authors": [
+    "Hadley Wickham",
+    "Jennifer Bryan"
+   ],
+   "year": 2023,
+   "format": "book",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "package-management"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R Packages (2e) — Dependencies: mindset and background (namespaces, search path)",
+   "url": "https://r-pkgs.org/dependencies-mindset-background.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R Packages (2e) — Testing basics (testthat)",
+   "url": "https://r-pkgs.org/testing-basics.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Peng — R Programming for Data Science",
+   "url": "https://bookdown.org/rdpeng/rprogdatascience/",
+   "scope": "whole",
+   "authors": [
+    "Roger D. Peng"
+   ],
+   "format": "book",
+   "authority": "community",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R Programming for Data Science — History and overview of R",
+   "url": "https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html",
+   "scope": "section",
+   "authors": [
+    "Roger D. Peng"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R Programming for Data Science — Control structures",
+   "url": "https://bookdown.org/rdpeng/rprogdatascience/control-structures.html",
+   "scope": "section",
+   "authors": [
+    "Roger D. Peng"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R Programming for Data Science — Scoping rules of R",
+   "url": "https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html",
+   "scope": "section",
+   "authors": [
+    "Roger D. Peng"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "closures"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "R Programming for Data Science — Loop functions (lapply, apply, mapply)",
+   "url": "https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html",
+   "scope": "section",
+   "authors": [
+    "Roger D. Peng"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Burns — The R Inferno (traps and pitfalls of the language)",
+   "url": "https://www.burns-stat.com/pages/Tutor/R_inferno.pdf",
+   "scope": "whole",
+   "authors": [
+    "Patrick Burns"
+   ],
+   "year": 2011,
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "floating-point",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Gagolewski — Deep R Programming",
+   "url": "https://deepr.gagolewski.com/",
+   "scope": "whole",
+   "authors": [
+    "Marek Gagolewski"
+   ],
+   "year": 2023,
+   "format": "book",
+   "authority": "community",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Grolemund — Hands-On Programming with R",
+   "url": "https://rstudio-education.github.io/hopr/",
+   "scope": "whole",
+   "authors": [
+    "Garrett Grolemund"
+   ],
+   "year": 2014,
+   "format": "book",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Gillespie & Lovelace — Efficient R Programming",
+   "url": "https://csgillespie.github.io/efficientR/",
+   "scope": "whole",
+   "authors": [
+    "Colin Gillespie",
+    "Robin Lovelace"
+   ],
+   "year": 2016,
+   "format": "book",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "R Development Guide (contributing to base R)",
+   "url": "https://contributor.r-project.org/rdevguide/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Wickham — R internals (notes on R's C API)",
+   "url": "https://github.com/hadley/r-internals",
+   "scope": "whole",
+   "authors": [
+    "Hadley Wickham"
+   ],
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "The tidyverse style guide",
+   "url": "https://style.tidyverse.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google's R Style Guide",
+   "url": "https://google.github.io/styleguide/Rguide.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "R FAQ",
+   "url": "https://cran.r-project.org/doc/FAQ/R-FAQ.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "swirl — learn R, in R",
+   "url": "https://swirlstats.com/",
+   "scope": "whole",
+   "format": "interactive",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — R",
+   "url": "https://learnxinyminutes.com/r/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Chambers — S, R, and Data Science (HOPL IV, 2020)",
+   "url": "https://doi.org/10.1145/3386334",
+   "scope": "whole",
+   "authors": [
+    "John M. Chambers"
+   ],
+   "year": 2020,
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Goel & Vitek — On the Design, Implementation, and Use of Laziness in R (OOPSLA 2019)",
+   "url": "https://arxiv.org/abs/1909.08958",
+   "scope": "section",
+   "authors": [
+    "Aviral Goel",
+    "Jan Vitek"
+   ],
+   "year": 2019,
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Turcotte, Goel, Křikava, Vitek — Designing Types for R, Empirically (OOPSLA 2020)",
+   "url": "http://janvitek.org/pubs/oopsla20-r.pdf",
+   "scope": "section",
+   "authors": [
+    "Alexi Turcotte",
+    "Aviral Goel",
+    "Filip Křikava",
+    "Jan Vitek"
+   ],
+   "year": 2020,
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "gradual-typing",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Flückiger et al. — R Melts Brains: An IR for First-Class Environments and Lazy Effectful Arguments (DLS 2019)",
+   "url": "https://arxiv.org/abs/1907.05118",
+   "scope": "section",
+   "authors": [
+    "Olivier Flückiger",
+    "Guido Chari",
+    "Jan Ječmen",
+    "Ming-Ho Yee",
+    "Jakob Hain",
+    "Jan Vitek"
+   ],
+   "year": 2019,
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation",
+    "jit",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Hyperpolyglot — Numerical analysis & statistics: MATLAB, R, NumPy, Julia side by side",
+   "url": "https://hyperpolyglot.org/numerical-analysis",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The R Journal",
+   "url": "https://journal.r-project.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The R Blog (R Core developers)",
+   "url": "https://blog.r-project.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — R (programming language)",
+   "url": "https://en.wikipedia.org/wiki/R_(programming_language)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:R",
+   "url": "https://rosettacode.org/wiki/Category:R",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — R",
+   "url": "https://pldb.io/concepts/r.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-R",
+   "url": "https://github.com/qinwf/awesome-R",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "CRAN Task Views",
+   "url": "https://cran.r-project.org/web/views/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "package-management"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "Books related to R (r-project.org)",
+   "url": "https://www.r-project.org/doc/bib/R-books.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

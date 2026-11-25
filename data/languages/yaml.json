@@ -1,0 +1,2566 @@
+{
+ "id": "yaml",
+ "name": "YAML",
+ "aliases": [
+  "YAML Ain't Markup Language",
+  "Yet Another Markup Language"
+ ],
+ "categories": [
+  "data-serialization",
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "tag-based",
+  "schema-resolved"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "Clark Evans",
+  "Ingy döt Net",
+  "Oren Ben-Kiki"
+ ],
+ "summary": "Human-oriented data serialization language with indentation-based block structure, a JSON-compatible flow syntax, anchors/aliases for shared and cyclic nodes, and tags resolved through schemas. Ubiquitous as a configuration format.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "YAML 1.2.2 (2021)",
+  "RFC 9512"
+ ],
+ "file_extensions": [
+  ".yaml",
+  ".yml"
+ ],
+ "homepage": "https://yaml.org/",
+ "influenced_by": [
+  "xml",
+  "json",
+  "python",
+  "perl",
+  "c",
+  "sgml",
+  "email-rfc822"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "superset-of"
+  },
+  {
+   "id": "strictyaml",
+   "relation": "family"
+  },
+  {
+   "id": "toml",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "There is no single reference implementation. libyaml (C, YAML 1.1) underlies PyYAML, Psych and many bindings; yaml-reference-parser is generated mechanically from the 1.2 spec productions; yaml-test-suite is the shared conformance corpus that implementations are compared against (matrix.yaml.info).",
+  "1": "The YAML 1.2.2 specification (yaml.org) is normative; many deployed parsers still implement YAML 1.1 with its larger implicit-typing rules, so the 1.1 spec and the 1.1 type repository are linked as well. RFC 9512 registers the media type.",
+  "2": "Much secondary literature is implementation- or tool-specific (PyYAML, Ansible, Kubernetes/Helm); critical essays on implicit typing are included because they explain the 1.1/1.2 differences."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "yaml/libyaml — canonical C scanner/parser/emitter (YAML 1.1)",
+   "url": "https://github.com/yaml/libyaml",
+   "scope": "whole",
+   "format": "repository",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml src/reader.c — byte stream reader, BOM and UTF-8/16 detection",
+   "url": "https://github.com/yaml/libyaml/blob/master/src/reader.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml src/scanner.c — tokenizer (indentation, simple keys, block and flow scalars)",
+   "url": "https://github.com/yaml/libyaml/blob/master/src/scanner.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure",
+    "whitespace-layout",
+    "scalars",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml src/parser.c — LL(1) event parser with the grammar in comments",
+   "url": "https://github.com/yaml/libyaml/blob/master/src/parser.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml src/loader.c — composes the document node graph, resolves anchors and aliases",
+   "url": "https://github.com/yaml/libyaml/blob/master/src/loader.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "data-model",
+    "collections"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml src/emitter.c — event emitter choosing scalar and collection styles",
+   "url": "https://github.com/yaml/libyaml/blob/master/src/emitter.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "strings",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml src/dumper.c — serializes a document graph, generating anchors",
+   "url": "https://github.com/yaml/libyaml/blob/master/src/dumper.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyaml include/yaml.h — token, event, node and document types (public API)",
+   "url": "https://github.com/yaml/libyaml/blob/master/include/yaml.h",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "libyaml",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml/yaml-test-suite — language-independent conformance corpus for YAML 1.2",
+   "url": "https://github.com/yaml/yaml-test-suite",
+   "scope": "whole",
+   "format": "repository",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite ReadMe — test case format (in-yaml, in-json, event tree, error flag)",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/ReadMe.md",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite doc/tag-usage.md — tags classifying each test (alias, anchor, folded, flow ...)",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/doc/tag-usage.md",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite src/229Q.yaml — Spec Example 2.4, sequence of mappings",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/src/229Q.yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "lists",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite src/26DV.yaml — whitespace around anchors and aliases",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/src/26DV.yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite src/5TYM.yaml — Spec Example 6.21, local tag prefix (%TAG directive)",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/src/5TYM.yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "type-annotations",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite src/M5DY.yaml — Spec Example 2.11, mapping between sequences (complex keys)",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/src/M5DY.yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "yaml-test-suite src/U9NS.yaml — Spec Example 2.8, play-by-play feed (multiple documents)",
+   "url": "https://github.com/yaml/yaml-test-suite/blob/main/src/U9NS.yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-test-suite",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "yaml/yaml-reference-parser — parsers generated directly from the 1.2 spec's 211 productions",
+   "url": "https://github.com/yaml/yaml-reference-parser",
+   "scope": "whole",
+   "format": "repository",
+   "authority": "official",
+   "implementation": "yaml-reference-parser",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "yaml-reference-parser parser-1.2/javascript/lib/grammar.js — the spec grammar as executable combinators",
+   "url": "https://github.com/yaml/yaml-reference-parser/blob/main/parser-1.2/javascript/lib/grammar.js",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-reference-parser",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "yaml-reference-parser parser-1.2/javascript/lib/parser.js — PEG-style backtracking engine for the grammar",
+   "url": "https://github.com/yaml/yaml-reference-parser/blob/main/parser-1.2/javascript/lib/parser.js",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "yaml-reference-parser",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "yaml/yaml-spec spec/1.2.2/spec.md — Markdown source of the specification with all productions",
+   "url": "https://github.com/yaml/yaml-spec/blob/main/spec/1.2.2/spec.md",
+   "implementation": "yaml-spec",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "yaml/pyyaml — PyYAML, pure-Python YAML 1.1 pipeline with optional libyaml binding",
+   "url": "https://github.com/yaml/pyyaml",
+   "scope": "whole",
+   "format": "repository",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyYAML lib/yaml/scanner.py — tokenizer (annotated port of the libyaml scanner)",
+   "url": "https://github.com/yaml/pyyaml/blob/main/lib/yaml/scanner.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "whitespace-layout",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyYAML lib/yaml/parser.py — event parser with the LL(1) grammar listed in the header",
+   "url": "https://github.com/yaml/pyyaml/blob/main/lib/yaml/parser.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyYAML lib/yaml/composer.py — node graph composition and alias resolution",
+   "url": "https://github.com/yaml/pyyaml/blob/main/lib/yaml/composer.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyYAML lib/yaml/resolver.py — implicit tag resolution regexes (bool, int, float, null, timestamp, merge)",
+   "url": "https://github.com/yaml/pyyaml/blob/main/lib/yaml/resolver.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "type-conversion",
+    "booleans",
+    "integers",
+    "floating-point",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyYAML lib/yaml/constructor.py — Safe/Full/Unsafe constructors mapping nodes to native objects",
+   "url": "https://github.com/yaml/pyyaml/blob/main/lib/yaml/constructor.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "security-considerations",
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PyYAML lib/yaml/representer.py — native objects to representation nodes",
+   "url": "https://github.com/yaml/pyyaml/blob/main/lib/yaml/representer.py",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "PyYAML",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "eemeli/yaml src/parse/lexer.ts — YAML 1.2 lexer (JavaScript 'yaml' package)",
+   "url": "https://github.com/eemeli/yaml/blob/main/src/parse/lexer.ts",
+   "implementation": "yaml (eemeli/yaml)",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "eemeli/yaml src/parse/parser.ts — concrete-syntax-tree parser preserving comments",
+   "url": "https://github.com/eemeli/yaml/blob/main/src/parse/parser.ts",
+   "implementation": "yaml (eemeli/yaml)",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "eemeli/yaml src/compose/resolve-block-scalar.ts — literal/folded block scalars, chomping and indentation",
+   "url": "https://github.com/eemeli/yaml/blob/main/src/compose/resolve-block-scalar.ts",
+   "implementation": "yaml (eemeli/yaml)",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "eemeli/yaml src/schema/tags.ts — failsafe, JSON, core and YAML 1.1 schema tag sets",
+   "url": "https://github.com/eemeli/yaml/blob/main/src/schema/tags.ts",
+   "implementation": "yaml (eemeli/yaml)",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "js-yaml lib/loader.js — single-pass loader",
+   "url": "https://github.com/nodeca/js-yaml/blob/master/lib/loader.js",
+   "implementation": "js-yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "js-yaml lib/schema/core.js — Core schema definition",
+   "url": "https://github.com/nodeca/js-yaml/blob/master/lib/schema/core.js",
+   "implementation": "js-yaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "go-yaml internal/libyaml/scanner.go — Go port of the libyaml scanner",
+   "url": "https://github.com/yaml/go-yaml/blob/main/internal/libyaml/scanner.go",
+   "implementation": "go-yaml",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "go-yaml internal/libyaml/resolver.go — implicit scalar typing",
+   "url": "https://github.com/yaml/go-yaml/blob/main/internal/libyaml/resolver.go",
+   "implementation": "go-yaml",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "HsYAML src/Data/YAML/Token.hs — tokenizer transcribed production-by-production from the 1.2 spec",
+   "url": "https://github.com/haskell-hvr/HsYAML/blob/master/src/Data/YAML/Token.hs",
+   "implementation": "HsYAML",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "HsYAML src/Data/YAML/Schema/Internal.hs — failsafe, JSON and core schema resolvers",
+   "url": "https://github.com/haskell-hvr/HsYAML/blob/master/src/Data/YAML/Schema/Internal.hs",
+   "implementation": "HsYAML",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libfyaml src/lib/fy-parse.c — YAML 1.2 scanner and parser in C (zero-copy atoms)",
+   "url": "https://github.com/pantoniou/libfyaml/blob/master/src/lib/fy-parse.c",
+   "implementation": "libfyaml",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "yaml-cpp src/scanner.cpp — C++ tokenizer",
+   "url": "https://github.com/jbeder/yaml-cpp/blob/master/src/scanner.cpp",
+   "implementation": "yaml-cpp",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "yaml-cpp src/singledocparser.cpp — event parser handling anchors, tags and collections",
+   "url": "https://github.com/jbeder/yaml-cpp/blob/master/src/singledocparser.cpp",
+   "implementation": "yaml-cpp",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SnakeYAML Engine ScannerImpl.java — YAML 1.2 scanner for the JVM",
+   "url": "https://github.com/snakeyaml/snakeyaml-engine/blob/master/src/main/java/org/snakeyaml/engine/v2/scanner/ScannerImpl.java",
+   "implementation": "SnakeYAML Engine",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "SnakeYAML Engine CoreScalarResolver.java — Core schema implicit resolution",
+   "url": "https://github.com/snakeyaml/snakeyaml-engine/blob/master/src/main/java/org/snakeyaml/engine/v2/resolver/CoreScalarResolver.java",
+   "implementation": "SnakeYAML Engine",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Psych lib/psych/scalar_scanner.rb — Ruby's implicit scalar tokenizer (ints, floats, times, symbols)",
+   "url": "https://github.com/ruby/psych/blob/master/lib/psych/scalar_scanner.rb",
+   "implementation": "Psych",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Psych lib/psych/class_loader.rb — restricted class loading behind safe_load",
+   "url": "https://github.com/ruby/psych/blob/master/lib/psych/class_loader.rb",
+   "implementation": "Psych",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "saphyr parser/src/scanner.rs — Rust YAML 1.2 scanner",
+   "url": "https://github.com/saphyr-rs/saphyr/blob/master/parser/src/scanner.rs",
+   "implementation": "saphyr",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "yamllint yamllint/rules/truthy.py — linter rule for ambiguous boolean spellings",
+   "url": "https://github.com/adrienverge/yamllint/blob/master/yamllint/rules/truthy.py",
+   "implementation": "yamllint",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "yamllint yamllint/rules/key_duplicates.py — duplicate mapping key detection",
+   "url": "https://github.com/adrienverge/yamllint/blob/master/yamllint/rules/key_duplicates.py",
+   "implementation": "yamllint",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML Ain't Markup Language (YAML) version 1.2, revision 1.2.2",
+   "url": "https://yaml.org/spec/1.2.2/",
+   "authors": [
+    "Oren Ben-Kiki",
+    "Clark Evans",
+    "Ingy döt Net"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 1.1 Goals",
+   "url": "https://yaml.org/spec/1.2.2/#11-goals",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 1.2 YAML History",
+   "url": "https://yaml.org/spec/1.2.2/#12-yaml-history",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 2.1 Collections (overview)",
+   "url": "https://yaml.org/spec/1.2.2/#21-collections",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "collections",
+    "lists",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 2.2 Structures (documents, anchors, complex keys)",
+   "url": "https://yaml.org/spec/1.2.2/#22-structures",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 2.3 Scalars (overview)",
+   "url": "https://yaml.org/spec/1.2.2/#23-scalars",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 2.4 Tags (overview)",
+   "url": "https://yaml.org/spec/1.2.2/#24-tags",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "type-annotations",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.1 Processes: dump and load",
+   "url": "https://yaml.org/spec/1.2.2/#31-processes",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2 Information Models",
+   "url": "https://yaml.org/spec/1.2.2/#32-information-models",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2.1 Representation Graph",
+   "url": "https://yaml.org/spec/1.2.2/#321-representation-graph",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2.1.2 Tags",
+   "url": "https://yaml.org/spec/1.2.2/#3212-tags",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2.1.3 Node Comparison (equality and key uniqueness)",
+   "url": "https://yaml.org/spec/1.2.2/#3213-node-comparison",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "type-equivalence",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2.2.1 Mapping Key Order",
+   "url": "https://yaml.org/spec/1.2.2/#3221-mapping-key-order",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2.2.2 Anchors and Aliases",
+   "url": "https://yaml.org/spec/1.2.2/#3222-anchors-and-aliases",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.2.3.3 Comments (not part of the model)",
+   "url": "https://yaml.org/spec/1.2.2/#3233-comments",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.3 Loading Failure Points",
+   "url": "https://yaml.org/spec/1.2.2/#33-loading-failure-points",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 3.3.2 Resolved Tags",
+   "url": "https://yaml.org/spec/1.2.2/#332-resolved-tags",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "type-inference",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 4.1 Production Syntax",
+   "url": "https://yaml.org/spec/1.2.2/#41-production-syntax",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 4.2 Production Parameters (indentation n, context c, chomping t)",
+   "url": "https://yaml.org/spec/1.2.2/#42-production-parameters",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 5.1 Character Set",
+   "url": "https://yaml.org/spec/1.2.2/#51-character-set",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 5.2 Character Encodings",
+   "url": "https://yaml.org/spec/1.2.2/#52-character-encodings",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 5.3 Indicator Characters",
+   "url": "https://yaml.org/spec/1.2.2/#53-indicator-characters",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 5.4 Line Break Characters",
+   "url": "https://yaml.org/spec/1.2.2/#54-line-break-characters",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 5.5 White Space Characters",
+   "url": "https://yaml.org/spec/1.2.2/#55-white-space-characters",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 5.7 Escaped Characters",
+   "url": "https://yaml.org/spec/1.2.2/#57-escaped-characters",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.1 Indentation Spaces",
+   "url": "https://yaml.org/spec/1.2.2/#61-indentation-spaces",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.5 Line Folding",
+   "url": "https://yaml.org/spec/1.2.2/#65-line-folding",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "whitespace-layout",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.6 Comments",
+   "url": "https://yaml.org/spec/1.2.2/#66-comments",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.8 Directives (%YAML, %TAG)",
+   "url": "https://yaml.org/spec/1.2.2/#68-directives",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.8.2 TAG Directives, handles and prefixes",
+   "url": "https://yaml.org/spec/1.2.2/#682-tag-directives",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.9.1 Node Tags",
+   "url": "https://yaml.org/spec/1.2.2/#691-node-tags",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 6.9.2 Node Anchors",
+   "url": "https://yaml.org/spec/1.2.2/#692-node-anchors",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.1 Alias Nodes",
+   "url": "https://yaml.org/spec/1.2.2/#71-alias-nodes",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.2 Empty Nodes",
+   "url": "https://yaml.org/spec/1.2.2/#72-empty-nodes",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.3.1 Double-Quoted Style",
+   "url": "https://yaml.org/spec/1.2.2/#731-double-quoted-style",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.3.2 Single-Quoted Style",
+   "url": "https://yaml.org/spec/1.2.2/#732-single-quoted-style",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.3.3 Plain Style",
+   "url": "https://yaml.org/spec/1.2.2/#733-plain-style",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.4.1 Flow Sequences",
+   "url": "https://yaml.org/spec/1.2.2/#741-flow-sequences",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "lists",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 7.4.2 Flow Mappings",
+   "url": "https://yaml.org/spec/1.2.2/#742-flow-mappings",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 8.1.1 Block Scalar Headers (indentation and chomping indicators)",
+   "url": "https://yaml.org/spec/1.2.2/#811-block-scalar-headers",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "strings",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 8.1.2 Literal Style",
+   "url": "https://yaml.org/spec/1.2.2/#812-literal-style",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 8.1.3 Folded Style",
+   "url": "https://yaml.org/spec/1.2.2/#813-folded-style",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 8.2.1 Block Sequences",
+   "url": "https://yaml.org/spec/1.2.2/#821-block-sequences",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "lists",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 8.2.2 Block Mappings",
+   "url": "https://yaml.org/spec/1.2.2/#822-block-mappings",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 9.1 Documents (markers, bare/explicit/directives documents)",
+   "url": "https://yaml.org/spec/1.2.2/#91-documents",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 9.2 Streams",
+   "url": "https://yaml.org/spec/1.2.2/#92-streams",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.1 Failsafe Schema",
+   "url": "https://yaml.org/spec/1.2.2/#101-failsafe-schema",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.2 JSON Schema",
+   "url": "https://yaml.org/spec/1.2.2/#102-json-schema",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "primitive-types",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.2.1.1 Null",
+   "url": "https://yaml.org/spec/1.2.2/#10211-null",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.2.1.2 Boolean",
+   "url": "https://yaml.org/spec/1.2.2/#10212-boolean",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.2.1.3 Integer",
+   "url": "https://yaml.org/spec/1.2.2/#10213-integer",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.2.1.4 Floating Point",
+   "url": "https://yaml.org/spec/1.2.2/#10214-floating-point",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.3 Core Schema",
+   "url": "https://yaml.org/spec/1.2.2/#103-core-schema",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — 10.3.2 Core Schema Tag Resolution (implicit typing regexes)",
+   "url": "https://yaml.org/spec/1.2.2/#1032-tag-resolution",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "scalars",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "YAML Specification Changes — revision history 1.0 → 1.2.2",
+   "url": "https://yaml.org/spec/1.2.2/ext/changes/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "YAML Specification Changes — Changes in version 1.2 (JSON compatibility, reduced implicit typing)",
+   "url": "https://yaml.org/spec/1.2.2/ext/changes/#changes-in-version-12-revision-120-2009-07-21",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.2.2 spec — Glossary",
+   "url": "https://yaml.org/spec/1.2.2/ext/glossary/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "version": "1.2.2",
+   "year": 2021,
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 specification (final draft 2005-01-18)",
+   "url": "https://yaml.org/spec/1.1/",
+   "version": "1.1",
+   "year": 2005,
+   "authors": [
+    "Oren Ben-Kiki",
+    "Clark Evans",
+    "Brian Ingerson"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.0 specification (final draft 2004-01-29)",
+   "url": "https://yaml.org/spec/1.0/",
+   "version": "1.0",
+   "year": 2004,
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML specification index — all published versions and drafts",
+   "url": "https://yaml.org/spec/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Yet Another Markup Language (YAML) 1.0 — working draft of 26 May 2001",
+   "url": "https://yaml.org/spec/history/2001-05-26.html",
+   "version": "draft 2001-05-26",
+   "year": 2001,
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Language-Independent Types for YAML 1.1 — type repository",
+   "url": "https://yaml.org/type/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Merge Key (<<)",
+   "url": "https://yaml.org/type/merge.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Boolean (y/n/yes/no/on/off)",
+   "url": "https://yaml.org/type/bool.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Integer (incl. octal, binary, sexagesimal)",
+   "url": "https://yaml.org/type/int.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Floating point",
+   "url": "https://yaml.org/type/float.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Null",
+   "url": "https://yaml.org/type/null.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Timestamp",
+   "url": "https://yaml.org/type/timestamp.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Binary (base64)",
+   "url": "https://yaml.org/type/binary.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Set",
+   "url": "https://yaml.org/type/set.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "YAML 1.1 types — Ordered Mapping",
+   "url": "https://yaml.org/type/omap.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "official",
+   "version": "1.1",
+   "year": 2005,
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 9512 — YAML Media Type (application/yaml, +yaml)",
+   "url": "https://www.rfc-editor.org/rfc/rfc9512.html",
+   "authors": [
+    "R. Polli",
+    "E. Wilde",
+    "E. Aro"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "year": 2024,
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 9512 — 1.2 Fragment Identification (alias nodes as fragments)",
+   "url": "https://www.rfc-editor.org/rfc/rfc9512.html#name-fragment-identification",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "year": 2024,
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 9512 — 3.4 YAML and JSON",
+   "url": "https://www.rfc-editor.org/rfc/rfc9512.html#name-yaml-and-json",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "year": 2024,
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 9512 — 4 Security Considerations (code execution, resource exhaustion, booleans)",
+   "url": "https://www.rfc-editor.org/rfc/rfc9512.html#name-security-considerations",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "year": 2024,
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "yaml.info — Learn YAML (tutorial by a YAML core team member)",
+   "url": "https://www.yaml.info/learn/index.html",
+   "authors": [
+    "Tina Müller"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "yaml.info — YAML Quoting (plain, single, double, literal, folded, chomping)",
+   "url": "https://www.yaml.info/learn/quote.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "yaml.info — Flow Style Collections",
+   "url": "https://www.yaml.info/learn/flowstyle.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "lists",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "yaml.info — Document Headers, Footers and Directives",
+   "url": "https://www.yaml.info/learn/document.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "yaml.info — Schemas (Failsafe, JSON, Core, YAML 1.1) and how scalars resolve",
+   "url": "https://www.yaml.info/learn/schema.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-conversion",
+    "booleans"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "yaml.info — Best Practices",
+   "url": "https://www.yaml.info/learn/bestpractices.html",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "yaml-multiline.info — find the right syntax for multiline strings",
+   "url": "https://yaml-multiline.info/",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — YAML",
+   "url": "https://learnxinyminutes.com/yaml/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "scalars",
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyYAML Documentation",
+   "url": "https://pyyaml.org/wiki/PyYAMLDocumentation",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyYAML Documentation — YAML syntax: Documents",
+   "url": "https://pyyaml.org/wiki/PyYAMLDocumentation#documents",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyYAML Documentation — YAML syntax: Scalars",
+   "url": "https://pyyaml.org/wiki/PyYAMLDocumentation#scalars",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "strings"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyYAML Documentation — YAML syntax: Aliases",
+   "url": "https://pyyaml.org/wiki/PyYAMLDocumentation#aliases",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyYAML Documentation — YAML tags and Python types",
+   "url": "https://pyyaml.org/wiki/PyYAMLDocumentation#yaml-tags-and-python-types",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "PyYAML Documentation — Reference: tokens, events and nodes",
+   "url": "https://pyyaml.org/wiki/PyYAMLDocumentation#tokens",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ansible docs — YAML Syntax",
+   "url": "https://docs.ansible.com/projects/ansible/latest/reference_appendices/YAMLSyntax.html",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "scalars"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ansible docs — YAML Syntax: Gotchas (quoting colons, braces, booleans, floats)",
+   "url": "https://docs.ansible.com/projects/ansible/latest/reference_appendices/YAMLSyntax.html#gotchas",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings",
+    "booleans"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Symfony docs — The YAML Format: Scalars",
+   "url": "https://symfony.com/doc/current/reference/formats/yaml.html#scalars",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "strings",
+    "integers",
+    "booleans",
+    "date-time"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Symfony docs — The YAML Format: Collections",
+   "url": "https://symfony.com/doc/current/reference/formats/yaml.html#collections",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Symfony docs — The YAML Format: Comments",
+   "url": "https://symfony.com/doc/current/reference/formats/yaml.html#comments",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Helm docs — YAML Techniques (types, strings, anchors, embedding JSON)",
+   "url": "https://helm.sh/docs/chart_template_guide/yaml_techniques/",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "references-anchors",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Docker Compose file reference — Fragments (anchors, aliases and merge keys in practice)",
+   "url": "https://docs.docker.com/reference/compose-file/fragments/",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GitLab CI docs — Optimize YAML files (anchors, extends, !reference tags)",
+   "url": "https://docs.gitlab.com/ci/yaml/yaml_optimization/",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "yamllint — Rules",
+   "url": "https://yamllint.readthedocs.io/en/stable/rules.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "yamllint rules — truthy",
+   "url": "https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.truthy",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "yamllint rules — indentation",
+   "url": "https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.indentation",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "yamllint rules — octal-values",
+   "url": "https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.octal_values",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The yaml document from hell",
+   "url": "https://ruuda.nl/2023/the-yaml-document-from-hell",
+   "authors": [
+    "Ruud van Asseldonk"
+   ],
+   "year": 2023,
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The yaml document from hell — The Norway problem",
+   "url": "https://ruuda.nl/2023/the-yaml-document-from-hell#the-norway-problem",
+   "authors": [
+    "Ruud van Asseldonk"
+   ],
+   "year": 2023,
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The yaml document from hell — Sexagesimal numbers",
+   "url": "https://ruuda.nl/2023/the-yaml-document-from-hell#sexagesimal-numbers",
+   "authors": [
+    "Ruud van Asseldonk"
+   ],
+   "year": 2023,
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The yaml document from hell — Anchors, aliases, and tags",
+   "url": "https://ruuda.nl/2023/the-yaml-document-from-hell#anchors-aliases-and-tags",
+   "authors": [
+    "Ruud van Asseldonk"
+   ],
+   "year": 2023,
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "YAML: probably not so great after all",
+   "url": "https://www.arp242.net/yaml-config.html",
+   "authors": [
+    "Martin Tournoij"
+   ],
+   "year": 2016,
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "YAML: probably not so great after all — Insecure by default",
+   "url": "https://www.arp242.net/yaml-config.html#insecure-by-default",
+   "authors": [
+    "Martin Tournoij"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "YAML: probably not so great after all — Surprising behaviour",
+   "url": "https://www.arp242.net/yaml-config.html#surprising-behaviour",
+   "authors": [
+    "Martin Tournoij"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "StrictYAML — What is wrong with implicit typing?",
+   "url": "https://hitchdev.com/strictyaml/why/implicit-typing-removed/",
+   "scope": "section",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "booleans",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "noyaml.com — catalogue of YAML pitfalls",
+   "url": "https://noyaml.com/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Real Python — YAML: The Missing Battery in Python",
+   "url": "https://realpython.com/python-yaml/",
+   "year": 2022,
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Red Hat — What is YAML?",
+   "url": "https://www.redhat.com/en/topics/automation/what-is-yaml",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — YAML",
+   "url": "https://en.wikipedia.org/wiki/YAML",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "history",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Billion laughs attack (also applies to YAML aliases)",
+   "url": "https://en.wikipedia.org/wiki/Billion_laughs_attack",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "YAML Test Matrix — yaml-test-suite results for ~20 parsers",
+   "url": "https://matrix.yaml.info/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of data-serialization formats",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "yaml.org — project list of YAML frameworks and tools by language",
+   "url": "https://yaml.org/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — YAML",
+   "url": "https://pldb.io/concepts/yaml.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open"
+  }
+ ]
+}
