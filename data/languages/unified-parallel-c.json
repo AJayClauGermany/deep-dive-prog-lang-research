@@ -1,0 +1,35 @@
+{
+ "id": "unified-parallel-c",
+ "name": "UPC",
+ "aliases": ["Unified Parallel C"],
+ "categories": ["systems", "scientific"],
+ "paradigms": ["imperative", "parallel", "pgas", "spmd"],
+ "typing": ["static", "weak"],
+ "first_appeared": 1999,
+ "designers": ["William Carlson", "Jesse Draper", "David Culler", "Kathy Yelick", "Eugene Brooks", "Karen Warren"],
+ "summary": "Extension of ISO C for partitioned global address space (PGAS) parallel programming in SPMD style: THREADS/MYTHREAD, shared-qualified arrays with block-cyclic layout and affinity, pointers-to-shared, upc_forall, strict/relaxed memory consistency, locks, barriers and collectives.",
+ "status": "historical",
+ "defined_by": ["consortium-standard"],
+ "standards": ["UPC Language Specifications v1.3 (2013)"],
+ "file_extensions": [".upc"],
+ "homepage": "https://upc.lbl.gov/",
+ "influenced_by": ["c", "split-c", "ac"],
+ "related": [{"id": "c", "relation": "superset-of"}],
+ "level_notes": {"1": "Defined by the UPC Consortium's Language Specifications (v1.3, 2013, with separate required/optional library specs), hosted by Berkeley Lab after upc-lang.org was retired.", "0": "Implementations: Berkeley UPC (source-to-source upcc with the GASNet communication layer), GNU UPC / Clang UPC (Intrepid, now archived), Cray and HP UPC (proprietary). Berkeley Lab now recommends UPC++."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "Berkeley UPC runtime (berkeleylab/upc-runtime)", "url": "https://bitbucket.org/berkeleylab/upc-runtime", "implementation": "Berkeley UPC", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["runtime-system", "compiler-architecture"]},
+  {"level": 0, "kind": "implementation-repository", "title": "Intrepid/clang-upc — Clang UPC compiler", "url": "https://github.com/Intrepid/clang-upc", "implementation": "Clang UPC", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-repository", "title": "GASNet — communication layer used by Berkeley UPC", "url": "https://gasnet.lbl.gov/", "implementation": "Berkeley UPC", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["runtime-system", "parallelism"]}
+,
+  {"level": 1, "kind": "specification", "title": "UPC Language and Library Specifications, Version 1.3", "url": "https://upc.lbl.gov/publications/upc-spec-1.3.pdf", "scope": "whole", "authority": "standards-body", "authors": ["UPC Consortium"], "year": 2013, "version": "1.3", "format": "pdf", "access": "open", "concepts": ["parallelism", "memory-model", "pointers-references", "synchronization"]},
+  {"level": 1, "kind": "specification", "title": "UPC Language Specifications 1.3 (language only)", "url": "https://upc.lbl.gov/docs/user/upc-lang-spec-1.3.pdf", "scope": "whole", "authority": "standards-body", "authors": ["UPC Consortium"], "year": 2013, "version": "1.3", "format": "pdf", "access": "open", "concepts": ["memory-model", "parallelism"]},
+  {"level": 1, "kind": "library-reference", "title": "UPC Required Library Specifications 1.3 (collectives, I/O, atomics)", "url": "https://upc.lbl.gov/docs/user/upc-lib-required-spec-1.3.pdf", "scope": "whole", "authority": "standards-body", "authors": ["UPC Consortium"], "year": 2013, "version": "1.3", "format": "pdf", "access": "open", "concepts": ["standard-library", "atomics-memory-ordering"]}
+,
+  {"level": 2, "kind": "guide", "title": "Berkeley UPC — UPC language overview", "url": "https://upc.lbl.gov/lang-overview.shtml", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["parallelism"]},
+  {"level": 2, "kind": "guide", "title": "Berkeley UPC user's guide", "url": "https://upc.lbl.gov/docs/user/index.shtml", "implementation": "Berkeley UPC", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["tooling"]},
+  {"level": 2, "kind": "paper", "title": "R. Nishtala et al. — Scaling communication-intensive applications on BlueGene/P using one-sided communication and overlap (UPC)", "url": "https://upc.lbl.gov/publications/nishtala-upc-bgp-final.pdf", "scope": "whole", "authority": "community", "authors": ["Rajesh Nishtala", "Paul Hargrove", "Dan Bonachea", "Katherine Yelick"], "year": 2009, "format": "pdf", "access": "open", "concepts": ["performance", "parallelism"]}
+,
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Unified Parallel C", "url": "https://en.wikipedia.org/wiki/Unified_Parallel_C", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Unified Parallel C", "url": "https://pldb.io/concepts/unified-parallel-c.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "id": "hack",
+ "name": "Hack",
+ "aliases": [
+  "Hacklang"
+ ],
+ "categories": [
+  "general-purpose",
+  "scripting",
+  "object-oriented"
+ ],
+ "paradigms": [
+  "imperative",
+  "object-oriented",
+  "functional",
+  "asynchronous"
+ ],
+ "typing": [
+  "gradual",
+  "static",
+  "inferred",
+  "nominal",
+  "structural-shapes"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "Julien Verlaguet",
+  "Alok Menghrajani",
+  "Meta"
+ ],
+ "summary": "Meta's gradually typed derivative of PHP running on HHVM, adding a sound-ish static type checker, generics with reification, nullable and shape types, async/await, XHP and coeffects (contexts and capabilities); it is defined by the hh_client type checker and HHVM.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".hack",
+  ".php",
+  ".hhi"
+ ],
+ "homepage": "https://hacklang.org/",
+ "influenced_by": [
+  "php",
+  "ocaml",
+  "csharp",
+  "java"
+ ],
+ "related": [
+  {
+   "id": "php",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "HHVM (facebook/hhvm) contains both the runtime/JIT (hphp/runtime) and the Hack type checker and compiler (hphp/hack, written in OCaml and Rust).",
+  "1": "The hhvm/hack-langspec specification was written in 2015 and is no longer maintained; docs.hhvm.com is the current reference."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "facebook/hhvm — HHVM and the Hack toolchain", "url": "https://github.com/facebook/hhvm", "implementation": "HHVM", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "jit"]},
+  {"level": 0, "kind": "implementation-source", "title": "hphp/hack/src/parser/full_fidelity_parser.ml — full-fidelity parser", "url": "https://github.com/facebook/hhvm/blob/master/hphp/hack/src/parser/full_fidelity_parser.ml", "implementation": "HHVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "hphp/hack/src/typing/typing.ml — type checker core (expression and statement typing)", "url": "https://github.com/facebook/hhvm/blob/master/hphp/hack/src/typing/typing.ml", "implementation": "HHVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "type-inference"]},
+  {"level": 0, "kind": "implementation-source", "title": "hphp/hack/src/typing/typing_subtype.ml — subtyping relation", "url": "https://github.com/facebook/hhvm/blob/master/hphp/hack/src/typing/typing_subtype.ml", "implementation": "HHVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["subtyping"]},
+  {"level": 0, "kind": "implementation-source", "title": "hphp/doc/bytecode.specification — HHBC bytecode specification", "url": "https://github.com/facebook/hhvm/blob/master/hphp/doc/bytecode.specification", "implementation": "HHVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode", "virtual-machine"]},
+  {"level": 0, "kind": "standard-library-source", "title": "hhvm/hsl — Hack Standard Library", "url": "https://github.com/hhvm/hsl", "implementation": "HHVM", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Comments", "url": "https://docs.hhvm.com/hack/source-code-fundamentals/comments/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Built-in types", "url": "https://docs.hhvm.com/hack/built-in-types/introduction/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["primitive-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Shapes", "url": "https://docs.hhvm.com/hack/built-in-types/shape/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Enums", "url": "https://docs.hhvm.com/hack/built-in-types/enum/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["enums"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Nullable types", "url": "https://docs.hhvm.com/hack/types/nullable-types/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["null-optional"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Type refinement", "url": "https://docs.hhvm.com/hack/types/type-refinement/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Like types", "url": "https://docs.hhvm.com/hack/types/like-types/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["gradual-typing"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — if statements", "url": "https://docs.hhvm.com/hack/statements/if/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — foreach", "url": "https://docs.hhvm.com/hack/statements/foreach/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — try", "url": "https://docs.hhvm.com/hack/statements/try/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Anonymous functions (lambdas)", "url": "https://docs.hhvm.com/hack/functions/anonymous-functions/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Generics — variance", "url": "https://docs.hhvm.com/hack/generics/variance/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics", "variance"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Asynchronous operations", "url": "https://docs.hhvm.com/hack/asynchronous-operations/introduction/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["async-await"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Contexts and capabilities (coeffects)", "url": "https://docs.hhvm.com/hack/contexts-and-capabilities/introduction/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["effect-systems"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — Traits and interfaces", "url": "https://docs.hhvm.com/hack/traits-and-interfaces/introduction/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["mixins", "interfaces-protocols"]},
+  {"level": 1, "kind": "reference-manual", "title": "Hack documentation — XHP", "url": "https://docs.hhvm.com/hack/XHP/setup/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 1, "kind": "specification", "title": "Hack Language Specification (hhvm/hack-langspec, historical)", "url": "https://github.com/hhvm/hack-langspec/blob/master/spec/00-specification-for-hack.md", "scope": "whole", "authority": "official", "year": 2015, "format": "source-file", "access": "open", "concepts": ["grammar"]},
+  {"level": 2, "kind": "tutorial", "title": "Hack documentation — Quick start", "url": "https://docs.hhvm.com/hack/getting-started/quick-start/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Hack (programming language)", "url": "https://en.wikipedia.org/wiki/Hack_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Hack", "url": "https://pldb.io/concepts/hack.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

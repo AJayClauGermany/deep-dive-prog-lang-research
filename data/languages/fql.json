@@ -1,0 +1,260 @@
+{
+ "id": "fql",
+ "name": "Fauna FQL",
+ "aliases": [
+  "Fauna Query Language",
+  "FQL v10",
+  "FQL v4"
+ ],
+ "categories": [
+  "query",
+  "database-procedural",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "gradual",
+  "structural",
+  "inferred"
+ ],
+ "first_appeared": 2017,
+ "designers": [
+  "Fauna Inc."
+ ],
+ "summary": "Query language of the Fauna distributed document-relational database. FQL v4 was an S-expression-like functional API embedded in host-language drivers; FQL v10 (2023) is a TypeScript-inspired language with method chaining over sets (Collection.where(...).order(...).map(...)), projection, user-defined functions and optional static type checking.",
+ "status": "historical",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://github.com/fauna/faunadb",
+ "influenced_by": [
+  "typescript"
+ ],
+ "level_notes": {
+  "1": "The vendor reference (docs.fauna.com) is no longer reachable after the Fauna service shut down in 2025; no level-1 document could be linked. The open-sourced server README describes FQL and Fauna Schema Language.",
+  "0": "Fauna open-sourced its database core (fauna/faunadb, Scala): FQL v10 lexer/parser, AST, a type checker with structural/gradual types, and the interpreter and standard library. Official drivers (fauna-js, fauna-go, fauna-dotnet) show the wire protocol and query composition.",
+  "3": "No Wikipedia article for Fauna; PLDB's 'fql' is an unrelated language."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "fauna/faunadb — open-sourced Fauna database core (FQL v10 engine)",
+   "url": "https://github.com/fauna/faunadb",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — Tokens.scala — FQL tokens",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/shared/src/main/scala/parser/Tokens.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — ExprParser.scala — FQL expression parser",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/shared/src/main/scala/parser/ExprParser.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — SchemaItemParser.scala — Fauna Schema Language (FSL) parser",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/shared/src/main/scala/parser/SchemaItemParser.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — Syntax.scala — FQL abstract syntax",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/shared/src/main/scala/ast/Syntax.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — Typer.scala — static type checker",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/shared/src/main/scala/typer/Typer.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-inference",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — Type.scala — type representation (unions, structural records)",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/shared/src/main/scala/typer/Type.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "gradual-typing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — FQLInterpreter.scala — FQL v10 interpreter",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/model/src/main/scala/runtime/fql2/FQLInterpreter.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "faunadb — Sets.scala — Set methods (where, map, order, paginate)",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/model/src/main/scala/runtime/fql2/stdlib/Sets.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "faunadb — UserFunction.scala — user-defined functions",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/model/src/main/scala/runtime/fql2/UserFunction.scala",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "stored-procedures",
+    "functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "faunadb — ext/fql/analyzer (FQL completion library and language server)",
+   "url": "https://github.com/fauna/faunadb/blob/main/ext/fql/analyzer/README.md",
+   "implementation": "Fauna core (faunadb)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "fauna-js — official JavaScript driver (fql template tag, wire protocol)",
+   "url": "https://github.com/fauna/fauna-js",
+   "implementation": "fauna-js",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "fauna-js — src/wire-protocol.ts (query and value encoding)",
+   "url": "https://github.com/fauna/fauna-js/blob/main/src/wire-protocol.ts",
+   "implementation": "fauna-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "faunadb README — Fauna Query Language and Fauna Schema Language overview",
+   "url": "https://github.com/fauna/faunadb/blob/main/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Fauna Query Language tamed to appeal to developers (The Register, FQL v10 launch)",
+   "url": "https://www.theregister.com/2023/08/22/fauna_query_language/",
+   "scope": "whole",
+   "authority": "community",
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ]
+  }
+ ]
+}

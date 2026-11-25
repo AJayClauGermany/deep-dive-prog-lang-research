@@ -1,0 +1,381 @@
+{
+ "id": "rethinkdb-reql",
+ "name": "ReQL",
+ "aliases": [
+  "RethinkDB Query Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "RethinkDB team",
+  "Slava Akhmechet",
+  "Michael Glukhovsky"
+ ],
+ "summary": "RethinkDB's query language, embedded in host languages as chainable method calls (r.table('users').filter(...).orderBy(...)) that build a term tree serialised as JSON over the wire; queries are functional, composable and lazily evaluated on the server, with joins, map-reduce, grouping and real-time changefeeds.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "homepage": "https://rethinkdb.com/api/javascript/",
+ "level_notes": {
+  "1": "The per-language API references (JavaScript, Python, Ruby, Java) define the term set; ql2.proto is the normative term/wire definition used by all drivers. RethinkDB is now a Linux Foundation community project.",
+  "0": "rethinkdb/rethinkdb (C++) evaluates the term tree in src/rdb_protocol; drivers (e.g. rethinkdb-python's ast.py) build terms client-side."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "rethinkdb/rethinkdb — database server",
+   "url": "https://github.com/rethinkdb/rethinkdb",
+   "implementation": "RethinkDB",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "RethinkDB — ql2.proto (ReQL term types and wire protocol)",
+   "url": "https://github.com/rethinkdb/rethinkdb/blob/next/src/rdb_protocol/ql2.proto",
+   "implementation": "RethinkDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "encoding-wire-format",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RethinkDB — term.cc (term compilation and evaluation)",
+   "url": "https://github.com/rethinkdb/rethinkdb/blob/next/src/rdb_protocol/term.cc",
+   "implementation": "RethinkDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RethinkDB — terms/seq.cc (sequence terms: filter, orderBy, between ...)",
+   "url": "https://github.com/rethinkdb/rethinkdb/blob/next/src/rdb_protocol/terms/seq.cc",
+   "implementation": "RethinkDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RethinkDB — terms/control.cc (branch, do, forEach, error)",
+   "url": "https://github.com/rethinkdb/rethinkdb/blob/next/src/rdb_protocol/terms/control.cc",
+   "implementation": "RethinkDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RethinkDB — func.cc (ReQL lambda functions)",
+   "url": "https://github.com/rethinkdb/rethinkdb/blob/next/src/rdb_protocol/func.cc",
+   "implementation": "RethinkDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "closures"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RethinkDB — changefeed.cc (changefeeds)",
+   "url": "https://github.com/rethinkdb/rethinkdb/blob/next/src/rdb_protocol/changefeed.cc",
+   "implementation": "RethinkDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "time-series"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rethinkdb-python — ast.py (client-side term builder)",
+   "url": "https://github.com/rethinkdb/rethinkdb-python/blob/master/rethinkdb/ast.py",
+   "implementation": "rethinkdb-python",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL command reference (JavaScript)",
+   "url": "https://rethinkdb.com/api/javascript/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL command reference (Python)",
+   "url": "https://rethinkdb.com/api/python/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — filter",
+   "url": "https://rethinkdb.com/api/javascript/filter/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — eqJoin",
+   "url": "https://rethinkdb.com/api/javascript/eq_join/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — group",
+   "url": "https://rethinkdb.com/api/javascript/group/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — orderBy",
+   "url": "https://rethinkdb.com/api/javascript/order_by/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — branch",
+   "url": "https://rethinkdb.com/api/javascript/branch/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — do (binding values to functions)",
+   "url": "https://rethinkdb.com/api/javascript/do/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ReQL — changes (changefeeds)",
+   "url": "https://rethinkdb.com/api/javascript/changes/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Writing RethinkDB drivers (protocol and term serialisation)",
+   "url": "https://rethinkdb.com/docs/writing-drivers/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Introduction to ReQL",
+   "url": "https://rethinkdb.com/docs/introduction-to-reql/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "design-rationale",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RethinkDB data types",
+   "url": "https://rethinkdb.com/docs/data-types/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Table joins in RethinkDB",
+   "url": "https://rethinkdb.com/docs/table-joins/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Map-reduce in RethinkDB",
+   "url": "https://rethinkdb.com/docs/map-reduce/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "SQL to ReQL cheat sheet",
+   "url": "https://rethinkdb.com/docs/sql-to-reql/javascript/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Why RethinkDB failed (post-mortem by a co-founder)",
+   "url": "https://www.defmacro.org/2017/01/18/why-rethinkdb-failed.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Slava Akhmechet"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — RethinkDB",
+   "url": "https://en.wikipedia.org/wiki/RethinkDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

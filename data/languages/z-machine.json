@@ -1,0 +1,48 @@
+{
+ "id": "z-machine",
+ "name": "Z-machine",
+ "aliases": ["Z-code", "ZIP (Zork Implementation Program) VM"],
+ "categories": ["bytecode", "abstract-machine", "domain-specific", "historical"],
+ "paradigms": ["imperative", "stack-based"],
+ "typing": ["untyped"],
+ "first_appeared": 1979,
+ "designers": ["Joel Berez", "Marc Blank (Infocom)"],
+ "summary": "Virtual machine and story-file bytecode created by Infocom to run Zork and its other interactive-fiction games portably; it has a byte-addressed memory map, an object tree, a packed text encoding (ZSCII), a dictionary and opcodes for text I/O. Reverse-engineered and standardised by the Inform community, it remains a target of the Inform 6 compiler.",
+ "status": "maintained",
+ "defined_by": ["community-specification"],
+ "standards": ["Z-Machine Standards Document 1.1 (2014)"],
+ "file_extensions": [".z3", ".z5", ".z8", ".zblorb"],
+ "homepage": "https://inform-fiction.org/zmachine/standards/z1point1/index.html",
+ "influenced_by": [],
+ "related": [{"id": "inform", "relation": "compiles-to"}, {"id": "zil", "relation": "compiles-to"}],
+ "level_notes": {"0": "Infocom's original interpreters are lost or proprietary; modern interpreters (Frotz, Bocfel) and the Inform 6 compiler implement the community standard.", "1": "The Z-Machine Standards Document (Graham Nelson et al., v1.1) is the de facto specification, reconstructed from Infocom story files and interpreters; Quetzal standardises save files.", "3": "Wikipedia, IFWiki and PLDB."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "Frotz — portable Z-machine interpreter", "url": "https://gitlab.com/DavidGriffith/frotz", "implementation": "Frotz", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "Frotz — src/common/process.c — opcode dispatch loop", "url": "https://gitlab.com/DavidGriffith/frotz/-/raw/master/src/common/process.c", "implementation": "Frotz", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inform 6 compiler — asm.c — Z-code assembler", "url": "https://github.com/DavidKinder/Inform6/blob/master/asm.c", "implementation": "Inform 6", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend", "assembler-directives"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inform 6 compiler — header.h — Z-machine version and opcode definitions", "url": "https://github.com/DavidKinder/Inform6/blob/master/header.h", "implementation": "Inform 6", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set"]},
+
+  {"level": 1, "kind": "specification", "title": "The Z-Machine Standards Document 1.1", "url": "https://inform-fiction.org/zmachine/standards/z1point1/index.html", "scope": "whole", "authority": "community", "authors": ["Graham Nelson", "Andrew Plotkin", "David Kinder"], "year": 2014, "version": "1.1", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — Overview of Z-machine architecture", "url": "https://inform-fiction.org/zmachine/standards/z1point1/overview.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 1. The memory map", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect01.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["memory-management"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 2. Numbers and arithmetic", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect02.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["integers", "operators"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 3. How text and characters are encoded (ZSCII)", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect03.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["strings", "characters"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 4. How instructions are encoded", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect04.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["bytecode", "encoding-wire-format"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 5. How routines are encoded", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect05.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 6. The game state: storage and routine calls", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect06.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["variables", "calling-convention-abi"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 7. Output streams and file handling", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect07.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["input-output", "file-io"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 12. The object table", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect12.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["objects", "records-structs"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 13. The dictionary and lexical analysis", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect13.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["lexer", "maps-dictionaries"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 14. Complete table of opcodes (with Inform assembly syntax)", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect14.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — 15. Dictionary of opcodes", "url": "https://inform-fiction.org/zmachine/standards/z1point1/sect15.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["instruction-set", "conditionals"]},
+  {"level": 1, "kind": "specification", "title": "Z-Machine Standard — Appendix D: A short history of the Z-machine", "url": "https://inform-fiction.org/zmachine/standards/z1point1/appd.html", "scope": "section", "authority": "community", "version": "1.1", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 1, "kind": "specification", "title": "Quetzal — standard saved-game format for the Z-machine", "url": "https://inform-fiction.org/zmachine/standards/quetzal/index.html", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["serialization"]},
+
+  {"level": 2, "kind": "guide", "title": "Jared Reisinger — Z-machine standard (modern HTML rendering)", "url": "https://zspec.jaredreisinger.com/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 2, "kind": "guide", "title": "IF Archive — Infocom/Z-machine interpreters index", "url": "https://www.ifarchive.org/indexes/if-archive/infocom/interpreters/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Z-machine", "url": "https://en.wikipedia.org/wiki/Z-machine", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "wiki", "title": "IFWiki — Z-machine", "url": "https://www.ifwiki.org/Z-machine", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Z-machine", "url": "https://pldb.io/concepts/z-machine.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}
