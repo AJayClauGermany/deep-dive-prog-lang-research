@@ -54,14 +54,15 @@ Tagging rules:
 
 ## Depth tiers
 
-* **Tier A** (flagship languages named in your assignment): 50-100 resources; thorough concept deep links at levels 1 and 2,
+* **Tier A** (flagship languages named in your assignment): 60-150 resources (do not exceed ~150); thorough concept deep links at levels 1 and 2,
   10+ level-0 source files with concept tags, several implementations, the proposal process, formal semantics where they exist, history papers.
-* **Tier B** (everything else that is real and documented): 12-30 resources; all four levels where they exist, and deep links for at least the
+* **Tier B** (everything else that is real and documented): 12-25 resources; all four levels where they exist, and deep links for at least the
   core concepts the documentation has anchors/pages for.
-* **Tier C** (obscure/historical/esoteric/theoretical where little exists): 4-12 resources; whatever genuinely exists
+* **Tier C** (obscure/historical/esoteric/theoretical where little exists): 4-10 resources; whatever genuinely exists
   (original paper or manual scan, a surviving or reconstructed implementation, an encyclopedia/wiki entry).
 
-Breadth across the assigned list matters more than perfecting one language, but tier A must be genuinely deep.
+Breadth across the assigned list matters more than perfecting one language: finish every id of the batch before deepening any file.
+Tier A must still be genuinely deep, but stay inside the range.
 
 ## Field guidance
 
@@ -90,7 +91,7 @@ Breadth across the assigned list matters more than perfecting one language, but 
 ```
 cd tools
 python3 validate.py ../data/languages/<id>.json ...      # schema, concept ids, level/kind consistency, duplicates
-python3 check_links.py --workers 4 ../data/languages/<id>.json ...
+python3 check_links.py --workers 2 ../data/languages/<id>.json ...
 ```
 
 * `dead` → the URL is wrong or gone: find the correct URL (search the web / browse the site's table of contents with curl) or drop the entry.

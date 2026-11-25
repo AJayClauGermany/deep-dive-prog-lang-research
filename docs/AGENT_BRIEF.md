@@ -13,7 +13,7 @@ You are one of several researchers filling a JSON catalog of literature for **co
    For level 0, read the repo's README/tree via `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/<path>` to confirm real file paths.
    Use what you know to pick candidates, but every URL must survive the checker.
 4. After each handful of files run, from `tools/`: `python3 validate.py ../data/languages/<id>.json ...` and
-   `python3 check_links.py --workers 4 ../data/languages/<id>.json ...`; fix every `dead` and `anchor-missing`.
+   `python3 check_links.py --workers 2 ../data/languages/<id>.json ...`; fix every `dead` and `anchor-missing`.
 5. Work through the whole list: tier A first, then the rest in order. Write each file to disk as soon as it is researched and verified
    (never hold several finished languages in memory) - runs can be interrupted at any moment and only files on disk survive.
    If `data/languages/<id>.json` already exists and validates, an earlier interrupted run wrote it: leave it alone and move to the next id.
