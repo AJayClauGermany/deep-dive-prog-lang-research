@@ -1,0 +1,413 @@
+{
+ "id": "scribble",
+ "name": "Scribble (Racket)",
+ "aliases": [
+  "Scribble",
+  "@-expressions",
+  "at-exp"
+ ],
+ "categories": [
+  "markup",
+  "document-typesetting",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "markup as code"
+ ],
+ "typing": [
+  "dynamic (Racket)"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Matthew Flatt",
+  "Eli Barzilay",
+  "Robert Bruce Findler"
+ ],
+ "summary": "Racket's documentation and document-authoring language: the @-expression reader turns text with @command[datum]{body} escapes into ordinary Racket S-expressions, so documents are programs with full access to functions, modules and macros; used for all Racket documentation, papers and literate programs.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".scrbl"
+ ],
+ "homepage": "https://docs.racket-lang.org/scribble/",
+ "influenced_by": [
+  "racket",
+  "scheme",
+  "latex",
+  "scribe"
+ ],
+ "related": [
+  {
+   "id": "racket",
+   "relation": "embeds"
+  },
+  {
+   "id": "racket",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "latex",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "pod",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the Scribble manual and the ICFP 2009 paper; the @-reader syntax has its own reference section.",
+  "0": "The @-reader lives in racket/racket (at-exp-lib); the document model and renderers in racket/scribble."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble: The Racket Documentation Tool (manual)",
+   "url": "https://docs.racket-lang.org/scribble/index.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — @ Syntax (the Scribble reader)",
+   "url": "https://docs.racket-lang.org/scribble/reader.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — The command part",
+   "url": "https://docs.racket-lang.org/scribble/reader.html#%28part._.The_.Command_.Part%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — The datum part",
+   "url": "https://docs.racket-lang.org/scribble/reader.html#%28part._.The_.Datum_.Part%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — The body part",
+   "url": "https://docs.racket-lang.org/scribble/reader.html#%28part._.The_.Body_.Part%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — Racket expression escapes",
+   "url": "https://docs.racket-lang.org/scribble/reader.html#%28part._.Racket_.Expression_.Escapes%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — Comments (@; and @;{...})",
+   "url": "https://docs.racket-lang.org/scribble/reader.html#%28part._.Comments%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Scribble manual — @ syntax — Spaces, newlines and indentation",
+   "url": "https://docs.racket-lang.org/scribble/reader.html#%28part._.Spaces__.Newlines__and_.Indentation%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Scribble manual — scribble/base: document-structure functions (title, section, itemlist, elem ...)",
+   "url": "https://docs.racket-lang.org/scribble/base.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Scribble manual — Structures and processing (the core document model)",
+   "url": "https://docs.racket-lang.org/scribble/core.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Scribble manual — In-source documentation (scribble/srcdoc)",
+   "url": "https://docs.racket-lang.org/scribble/srcdoc.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Scribble manual — Literate programming (scribble/lp2)",
+   "url": "https://docs.racket-lang.org/scribble/lp.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Scribble: Closing the Book on Ad Hoc Documentation Tools (Flatt, Barzilay, Findler; ICFP 2009)",
+   "url": "https://www.cs.utah.edu/plt/publications/icfp09-fbf.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "year": 2009,
+   "authors": [
+    "Matthew Flatt",
+    "Eli Barzilay",
+    "Robert Bruce Findler"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Scribble manual — Getting started",
+   "url": "https://docs.racket-lang.org/scribble/getting-started.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Scribble manual — Getting started: text mode vs. Racket mode for arguments",
+   "url": "https://docs.racket-lang.org/scribble/getting-started.html#%28part._.Text_.Mode_vs__.Racket_.Mode_for_.Arguments%29",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Scribble manual — Writing Racket documentation (how-to)",
+   "url": "https://docs.racket-lang.org/scribble/how-to-doc.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "at-exp-lib — scribble/reader.rkt: the @-expression reader",
+   "url": "https://github.com/racket/racket/blob/master/pkgs/at-exp-lib/scribble/reader.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "at-exp-lib — at-exp/lang/reader.rkt: #lang at-exp meta-language",
+   "url": "https://github.com/racket/racket/blob/master/pkgs/at-exp-lib/at-exp/lang/reader.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "racket/scribble — Scribble libraries and renderers",
+   "url": "https://github.com/racket/scribble",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "scribble-lib — core.rkt: document structure types",
+   "url": "https://github.com/racket/scribble/blob/master/scribble-lib/scribble/core.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "scribble-lib — decode.rkt: decoding text into paragraphs and parts",
+   "url": "https://github.com/racket/scribble/blob/master/scribble-lib/scribble/decode.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "scribble-lib — html-render.rkt: HTML renderer",
+   "url": "https://github.com/racket/scribble/blob/master/scribble-lib/scribble/html-render.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "scribble-lib — latex-render.rkt: LaTeX renderer",
+   "url": "https://github.com/racket/scribble/blob/master/scribble-lib/scribble/latex-render.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "escaping"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "scribble-test — tests/scribble/reader.rkt: @-reader tests",
+   "url": "https://github.com/racket/scribble/blob/master/scribble-test/tests/scribble/reader.rkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ],
+   "implementation": "Racket"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Scribble",
+   "url": "https://pldb.io/concepts/scribble.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

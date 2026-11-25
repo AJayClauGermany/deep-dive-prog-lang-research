@@ -1,0 +1,253 @@
+{
+ "id": "clash",
+ "name": "Clash",
+ "aliases": [
+  "CλaSH",
+  "CAES Language for Synchronous Hardware"
+ ],
+ "categories": [
+  "hardware-description",
+  "functional"
+ ],
+ "paradigms": [
+  "functional",
+  "structural",
+  "dataflow"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "inferred",
+  "dependent-sizes"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Christiaan Baaij",
+  "University of Twente (CAES)",
+  "QBayLogic"
+ ],
+ "summary": "Functional hardware description language that compiles a subset of Haskell (via GHC Core) to VHDL, Verilog and SystemVerilog; synchronous circuits are modelled as functions over Signal streams with type-level sized vectors and clock domains.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".hs"
+ ],
+ "homepage": "https://clash-lang.org/",
+ "influenced_by": [
+  "haskell",
+  "lava-hdl"
+ ],
+ "related": [
+  {
+   "id": "haskell",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "vhdl",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "verilog",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard; the clash-prelude API documentation (Clash.Tutorial and module docs) and the compiler define the language, with Baaij's papers/thesis as the design basis.",
+  "3": "No Wikipedia article found (CλaSH)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Baaij et al. — CλaSH: Structural Descriptions of Synchronous Hardware Using Haskell (DSD 2010)",
+   "url": "https://doi.org/10.1109/DSD.2010.21",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Christiaan Baaij",
+    "Matthijs Kooijman",
+    "Jan Kuper",
+    "Arjan Boeijink",
+    "Marco Gerards"
+   ],
+   "year": 2010
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Baaij — Digital Circuits in CλaSH: Functional Specifications and Type-Directed Synthesis (PhD thesis, 2015)",
+   "url": "https://research.utwente.nl/files/5015471/thesis-baaij.pdf",
+   "concepts": [
+    "formal-semantics",
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Christiaan Baaij"
+   ],
+   "year": 2015
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "clash-prelude (Hackage API reference)",
+   "url": "https://hackage.haskell.org/package/clash-prelude",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "clash-lang/clash-compiler",
+   "url": "https://github.com/clash-lang/clash-compiler",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "clash-compiler Signal.hs — Signal and clock domains",
+   "url": "https://github.com/clash-lang/clash-compiler/blob/master/clash-prelude/src/Clash/Signal.hs",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "clash-compiler Signal.hs — explicit clocks/resets",
+   "url": "https://github.com/clash-lang/clash-compiler/blob/master/clash-prelude/src/Clash/Explicit/Signal.hs",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "clash-compiler Vector.hs — sized vectors (Vec n a)",
+   "url": "https://github.com/clash-lang/clash-compiler/blob/master/clash-prelude/src/Clash/Sized/Vector.hs",
+   "concepts": [
+    "arrays",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "clash-compiler Normalize.hs — normalisation of Core",
+   "url": "https://github.com/clash-lang/clash-compiler/blob/master/clash-lib/src/Clash/Normalize.hs",
+   "concepts": [
+    "intermediate-representation",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "clash-compiler Netlist.hs — netlist generation",
+   "url": "https://github.com/clash-lang/clash-compiler/blob/master/clash-lib/src/Clash/Netlist.hs",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "clash-compiler VHDL.hs — VHDL backend",
+   "url": "https://github.com/clash-lang/clash-compiler/blob/master/clash-lib/src/Clash/Backend/VHDL.hs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clash"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Clash.Tutorial (clash-prelude)",
+   "url": "https://hackage.haskell.org/package/clash-prelude/docs/Clash-Tutorial.html",
+   "concepts": [
+    "hello-world",
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Clash compiler user documentation",
+   "url": "https://clash-lang.readthedocs.io/en/latest/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Clash",
+   "url": "https://pldb.io/concepts/clash.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

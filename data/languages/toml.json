@@ -1,0 +1,1626 @@
+{
+ "id": "toml",
+ "name": "TOML",
+ "aliases": [
+  "Tom's Obvious, Minimal Language",
+  "Tom's Obvious Markup Language"
+ ],
+ "categories": [
+  "configuration",
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "self-describing",
+  "typed-scalars"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "Tom Preston-Werner",
+  "Pradyun Gedam"
+ ],
+ "summary": "Minimal configuration file format designed to map unambiguously to a hash table: INI-like [tables] and dotted keys, typed scalars (strings, integers, floats, booleans, first-class RFC 3339 date-times), arrays and inline tables. Used by Cargo, pyproject.toml, Hugo and many other tools.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "TOML v1.1.0 (2025)",
+  "TOML v1.0.0 (2021)"
+ ],
+ "file_extensions": [
+  ".toml"
+ ],
+ "homepage": "https://toml.io/",
+ "influenced_by": [
+  "ini",
+  "json",
+  "yaml"
+ ],
+ "related": [
+  {
+   "id": "ini",
+   "relation": "family"
+  },
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "yaml",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The versioned specification at toml.io (v1.1.0 current, v1.0.0 widely implemented) is normative, with an ABNF grammar (toml.abnf) kept in the toml-lang/toml repository alongside the in-development spec text and changelog. There is no standards-body version; the MIME type application/toml was registered with IANA.",
+  "0": "No reference implementation: toml-lang/toml-test is the official language-agnostic conformance suite (valid/invalid cases with JSON expected output for decoders and encoders). Level 0 samples many independent parsers (CPython tomllib/tomli, BurntSushi/toml, go-toml, toml-rs, toml++, toml11, tomlkit, smol-toml, Tomlyn, tomlj).",
+  "3": "No Rosetta Code category."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-lang/toml-test — official language-agnostic TOML conformance suite (decoders and encoders)",
+   "url": "https://github.com/toml-lang/toml-test",
+   "implementation": "toml-test",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test README — test protocol: JSON tagged-value encoding of expected output",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/README.md",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test json.go — comparing decoder JSON output with typed expectations",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/json.go",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/key/duplicate-keys-01.toml — defining a key twice is invalid",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/key/duplicate-keys-01.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/key/dotted-redefine-table-01.toml — dotted key may not redefine a table",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/key/dotted-redefine-table-01.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/inline-table/trailing-comma.toml — trailing comma in inline table (1.0 invalid)",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/inline-table/trailing-comma.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/encoding/bad-utf8-in-string.toml — invalid UTF-8 must be rejected",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/encoding/bad-utf8-in-string.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/control/bare-cr.toml — bare carriage return is not a newline",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/control/bare-cr.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/float/inf-capital.toml — inf/nan are lowercase only",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/float/inf-capital.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "toml-test tests/invalid/integer/capital-hex.toml — hex prefix must be lowercase 0x",
+   "url": "https://github.com/toml-lang/toml-test/blob/main/tests/invalid/integer/capital-hex.toml",
+   "implementation": "toml-test",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "CPython Lib/tomllib/_parser.py — hand-written TOML 1.0 parser (tables, keys, strings, arrays)",
+   "url": "https://github.com/python/cpython/blob/main/Lib/tomllib/_parser.py",
+   "implementation": "CPython tomllib",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "CPython Lib/tomllib/_re.py — regexes for numbers and RFC 3339 date-times",
+   "url": "https://github.com/python/cpython/blob/main/Lib/tomllib/_re.py",
+   "implementation": "CPython tomllib",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "hukkin/tomli — upstream of tomllib, fast TOML parser for Python",
+   "url": "https://github.com/hukkin/tomli",
+   "implementation": "tomli",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tomli-w _writer.py — TOML serializer (string escaping, tables, arrays of tables)",
+   "url": "https://github.com/hukkin/tomli-w/blob/master/src/tomli_w/_writer.py",
+   "implementation": "tomli-w",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BurntSushi/toml lex.go — state-function lexer for TOML",
+   "url": "https://github.com/BurntSushi/toml/blob/master/lex.go",
+   "implementation": "BurntSushi/toml (Go)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BurntSushi/toml parse.go — parser and key-redefinition checks",
+   "url": "https://github.com/BurntSushi/toml/blob/master/parse.go",
+   "implementation": "BurntSushi/toml (Go)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BurntSushi/toml decode.go — reflection-based decoding into Go structs",
+   "url": "https://github.com/BurntSushi/toml/blob/master/decode.go",
+   "implementation": "BurntSushi/toml (Go)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "reflection",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BurntSushi/toml encode.go — encoder (table ordering, quoting)",
+   "url": "https://github.com/BurntSushi/toml/blob/master/encode.go",
+   "implementation": "BurntSushi/toml (Go)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "go-toml v2 unstable/parser.go — zero-copy TOML parser producing an AST",
+   "url": "https://github.com/pelletier/go-toml/blob/v2/unstable/parser.go",
+   "implementation": "go-toml v2",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "go-toml v2 unmarshaler.go — decoding into Go values",
+   "url": "https://github.com/pelletier/go-toml/blob/v2/unmarshaler.go",
+   "implementation": "go-toml v2",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "go-toml v2 localtime.go — LocalDate/LocalTime/LocalDateTime types",
+   "url": "https://github.com/pelletier/go-toml/blob/v2/localtime.go",
+   "implementation": "go-toml v2",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml-rs toml_parser lexer/mod.rs — TOML lexer used by the Rust toml crates",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml_parser/src/lexer/mod.rs",
+   "implementation": "toml-rs (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml-rs toml_parser parser/document.rs — event-based document parser",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml_parser/src/parser/document.rs",
+   "implementation": "toml-rs (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml-rs toml_parser decoder/string.rs — decoding basic and literal strings and escapes",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml_parser/src/decoder/string.rs",
+   "implementation": "toml-rs (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml-rs toml_parser decoder/scalar.rs — integers, floats, booleans, date-times",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml_parser/src/decoder/scalar.rs",
+   "implementation": "toml-rs (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml-rs toml_datetime datetime.rs — TOML date-time model",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml_datetime/src/datetime.rs",
+   "implementation": "toml-rs (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml_edit document.rs — format-preserving TOML document model (keeps comments and whitespace)",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml_edit/src/document.rs",
+   "implementation": "toml_edit (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml crate de/mod.rs — serde Deserializer for TOML",
+   "url": "https://github.com/toml-rs/toml/blob/main/crates/toml/src/de/mod.rs",
+   "implementation": "toml-rs (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml++ impl/parser.inl — header-only C++17 TOML parser",
+   "url": "https://github.com/marzer/tomlplusplus/blob/master/include/toml++/impl/parser.inl",
+   "implementation": "toml++ (C++)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml++ impl/toml_formatter.inl — TOML serializer",
+   "url": "https://github.com/marzer/tomlplusplus/blob/master/include/toml++/impl/toml_formatter.inl",
+   "implementation": "toml++ (C++)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml11 syntax.hpp — TOML grammar as composable scanners (v1.0/v1.1 switchable)",
+   "url": "https://github.com/ToruNiina/toml11/blob/main/include/toml11/syntax.hpp",
+   "implementation": "toml11 (C++)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "toml11 comments.hpp — preserving comments attached to values",
+   "url": "https://github.com/ToruNiina/toml11/blob/main/include/toml11/comments.hpp",
+   "implementation": "toml11 (C++)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tomlkit parser.py — style- and comment-preserving TOML parser used by Poetry",
+   "url": "https://github.com/python-poetry/tomlkit/blob/master/tomlkit/parser.py",
+   "implementation": "tomlkit (Python)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "smol-toml src/parse.ts — small spec-compliant TOML parser for JavaScript",
+   "url": "https://github.com/squirrelchat/smol-toml/blob/mistress/src/parse.ts",
+   "implementation": "smol-toml (TypeScript)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "smol-toml src/date.ts — TomlDate: offset/local date-time representation in JS",
+   "url": "https://github.com/squirrelchat/smol-toml/blob/mistress/src/date.ts",
+   "implementation": "smol-toml (TypeScript)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tomlyn Parsing/Lexer.cs — .NET TOML lexer with full-fidelity syntax tree",
+   "url": "https://github.com/xoofx/Tomlyn/blob/main/src/Tomlyn/Parsing/Lexer.cs",
+   "implementation": "Tomlyn (.NET)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tomlj TomlParser.g4 — ANTLR grammar for TOML (Java)",
+   "url": "https://github.com/tomlj/tomlj/blob/main/src/main/antlr/org/tomlj/internal/TomlParser.g4",
+   "implementation": "tomlj (Java)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tomlj TomlLexer.g4 — ANTLR lexer grammar for TOML (Java)",
+   "url": "https://github.com/tomlj/tomlj/blob/main/src/main/antlr/org/tomlj/internal/TomlLexer.g4",
+   "implementation": "tomlj (Java)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "@iarna/toml lib/toml-parser.js — streaming state-machine TOML parser for Node.js",
+   "url": "https://github.com/iarna/iarna-toml/blob/latest/lib/toml-parser.js",
+   "implementation": "@iarna/toml (JavaScript)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 specification (toml.io)",
+   "url": "https://toml.io/en/v1.1.0",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Objectives: obvious semantics, unambiguous mapping to a hash table",
+   "url": "https://toml.io/en/v1.1.0#objectives",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Preliminaries: case sensitivity, UTF-8 encoding, whitespace and newline definitions",
+   "url": "https://toml.io/en/v1.1.0#preliminaries",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "source-encoding",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Comment: hash-mark comments and disallowed control characters",
+   "url": "https://toml.io/en/v1.1.0#comment",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Key/Value Pair: the basic building block",
+   "url": "https://toml.io/en/v1.1.0#keyvalue-pair",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Keys: bare, quoted and dotted keys; defining a key twice is invalid",
+   "url": "https://toml.io/en/v1.1.0#keys",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "maps-dictionaries",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — String: basic, multi-line basic, literal and multi-line literal strings; escapes incl. \\xHH and \\e",
+   "url": "https://toml.io/en/v1.1.0#string",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Integer: decimal, hex, octal, binary, underscores, 64-bit range",
+   "url": "https://toml.io/en/v1.1.0#integer",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Float: IEEE 754 binary64, exponent, inf and nan",
+   "url": "https://toml.io/en/v1.1.0#float",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "literals",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Boolean: true and false",
+   "url": "https://toml.io/en/v1.1.0#boolean",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Offset Date-Time: RFC 3339 timestamps with offset",
+   "url": "https://toml.io/en/v1.1.0#offset-date-time",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Local Date-Time",
+   "url": "https://toml.io/en/v1.1.0#local-date-time",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Local Date",
+   "url": "https://toml.io/en/v1.1.0#local-date",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Local Time (seconds optional in 1.1)",
+   "url": "https://toml.io/en/v1.1.0#local-time",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Array: heterogeneous values, multi-line arrays and trailing commas",
+   "url": "https://toml.io/en/v1.1.0#array",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Table: [header] tables, implicit super-tables, dotted-key tables and redefinition rules",
+   "url": "https://toml.io/en/v1.1.0#table",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "document-structure",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Inline Table: braces, newlines and trailing commas (new in 1.1), immutability",
+   "url": "https://toml.io/en/v1.1.0#inline-table",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Array of Tables: [[double-bracket]] headers",
+   "url": "https://toml.io/en/v1.1.0#array-of-tables",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "records-structs",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — Filename Extension: .toml",
+   "url": "https://toml.io/en/v1.1.0#filename-extension",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — MIME Type: application/toml",
+   "url": "https://toml.io/en/v1.1.0#mime-type",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.1.0 — ABNF Grammar",
+   "url": "https://toml.io/en/v1.1.0#abnf-grammar",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2025,
+   "version": "1.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 specification (toml.io)",
+   "url": "https://toml.io/en/v1.0.0",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 — Spec: case sensitivity, UTF-8, whitespace and newline",
+   "url": "https://toml.io/en/v1.0.0#spec",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 — Keys: bare, quoted and dotted keys",
+   "url": "https://toml.io/en/v1.0.0#keys",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 — String: four string kinds and escapes",
+   "url": "https://toml.io/en/v1.0.0#string",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 — Table: header syntax and definition rules",
+   "url": "https://toml.io/en/v1.0.0#table",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 — Inline Table: single-line only in 1.0",
+   "url": "https://toml.io/en/v1.0.0#inline-table",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0 — Array of Tables",
+   "url": "https://toml.io/en/v1.0.0#array-of-tables",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Tom Preston-Werner",
+    "Pradyun Gedam"
+   ],
+   "year": 2021,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v1.0.0-rc.1 (2020) release candidate",
+   "url": "https://toml.io/en/v1.0.0-rc.1",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2020,
+   "version": "1.0.0-rc.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v0.5.0 (2018): dotted keys and local dates/times introduced",
+   "url": "https://toml.io/en/v0.5.0",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2018,
+   "version": "0.5.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TOML v0.4.0 (2015)",
+   "url": "https://toml.io/en/v0.4.0",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2015,
+   "version": "0.4.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "toml.abnf — official ABNF grammar of TOML",
+   "url": "https://github.com/toml-lang/toml/blob/main/toml.abnf",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "toml.md — in-development specification text (toml-lang/toml)",
+   "url": "https://github.com/toml-lang/toml/blob/main/toml.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "TOML CHANGELOG — changes per spec version (1.1.0: multi-line inline tables, \\xHH, optional seconds)",
+   "url": "https://github.com/toml-lang/toml/blob/main/CHANGELOG.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "toml-lang/toml PR #904 — allow newlines and trailing commas in inline tables (TOML 1.1)",
+   "url": "https://github.com/toml-lang/toml/pull/904",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "toml-lang/toml PR #796 — \\xHH escapes in basic strings (TOML 1.1)",
+   "url": "https://github.com/toml-lang/toml/pull/796",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 680 — tomllib: support for parsing TOML in the Python standard library",
+   "url": "https://peps.python.org/pep-0680/",
+   "implementation": "CPython",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Taneli Hukkinen",
+    "Shantanu Jain"
+   ],
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 680 — Rationale (why read-only, why tomli)",
+   "url": "https://peps.python.org/pep-0680/#rationale",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Taneli Hukkinen",
+    "Shantanu Jain"
+   ],
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 680 — Security implications (no eval, recursion limits)",
+   "url": "https://peps.python.org/pep-0680/#security-implications",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 680 — Rejected ideas: including an API for writing TOML",
+   "url": "https://peps.python.org/pep-0680/#including-an-api-for-writing-toml",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 518 — Specifying minimum build system requirements (why pyproject.toml chose TOML over JSON/YAML/configparser)",
+   "url": "https://peps.python.org/pep-0518/",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Brett Cannon",
+    "Nathaniel Smith",
+    "Donald Stufft"
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python tomllib — TOML-to-Python conversion table",
+   "url": "https://docs.python.org/3/library/tomllib.html#conversion-table",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python tomllib — Parse TOML files (load/loads, parse_float)",
+   "url": "https://docs.python.org/3/library/tomllib.html",
+   "implementation": "CPython",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "pyproject.toml specification (PyPA) — tables and keys",
+   "url": "https://packaging.python.org/en/latest/specifications/pyproject-toml/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Cargo Book — The Manifest Format (Cargo.toml)",
+   "url": "https://doc.rust-lang.org/cargo/reference/manifest.html",
+   "implementation": "Cargo",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "toml.io — A config file format for humans (overview and example)",
+   "url": "https://toml.io/en/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — TOML",
+   "url": "https://learnxinyminutes.com/toml/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Real Python — Python and TOML: New Best Friends",
+   "url": "https://realpython.com/python-toml/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Geir Arne Hjelle"
+   ],
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Python Packaging User Guide — Writing your pyproject.toml",
+   "url": "https://packaging.python.org/en/latest/guides/writing-pyproject-toml/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "StrictYAML docs — What is wrong with TOML? (critique of table syntax and verbosity)",
+   "url": "https://hitchdev.com/strictyaml/why-not/toml/",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Colm O'Connor"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "An INI critique of TOML (libconfini wiki)",
+   "url": "https://github.com/madmurphy/libconfini/wiki/An-INI-critique-of-TOML",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Stefano Gioffré"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "toml-lang/toml wiki — list of implementations and their version compliance",
+   "url": "https://github.com/toml-lang/toml/wiki",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TOML",
+   "url": "https://en.wikipedia.org/wiki/TOML",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TOML: Syntax",
+   "url": "https://en.wikipedia.org/wiki/TOML#Syntax",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TOML: Notable uses",
+   "url": "https://en.wikipedia.org/wiki/TOML#Notable_uses",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — TOML",
+   "url": "https://pldb.io/concepts/toml.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of data-serialization formats",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  }
+ ]
+}

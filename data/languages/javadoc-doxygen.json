@@ -1,0 +1,445 @@
+{
+ "id": "javadoc-doxygen",
+ "name": "Javadoc / Doxygen comment languages",
+ "aliases": [
+  "Javadoc",
+  "Doxygen",
+  "doc comments"
+ ],
+ "categories": [
+  "markup",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "documentation comments",
+  "tagged markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1995,
+ "designers": [
+  "Sun Microsystems (Javadoc)",
+  "Dimitri van Heesch (Doxygen, 1997)"
+ ],
+ "summary": "Markup languages embedded in source-code comments (/** ... */, ///) that documentation generators turn into API references: Javadoc's block tags (@param, @return, @throws) and inline tags ({@link}, {@code}) with HTML or, since JDK 23, Markdown bodies; Doxygen's superset of Javadoc/Qt-style commands (\\brief, \\param, \\ref) across C, C++, Python and other languages.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".java",
+  ".h",
+  ".cpp",
+  ".dox"
+ ],
+ "homepage": "https://www.doxygen.nl/",
+ "related": [
+  {
+   "id": "java",
+   "relation": "embeds"
+  },
+  {
+   "id": "cpp",
+   "relation": "embeds"
+  },
+  {
+   "id": "pod",
+   "relation": "family"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Javadoc's doc-comment syntax is specified by the JDK's Documentation Comment Specification for the Standard Doclet plus JEPs (413 snippets, 467 Markdown comments); Doxygen's command set is defined only by its manual and implementation.",
+  "0": "javac parses doc comments itself (DocCommentParser) into the com.sun.source.doctree API; Doxygen's comment scanner and documentation parser are flex/C++ sources."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Documentation Comment Specification for the Standard Doclet (JDK 21)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "grammar"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Doc Comment Specification — General syntax (main description, block tags, inline tags, leading asterisks)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html#general-syntax",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "documentation-comments"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Doc Comment Specification — Escape sequences (@@, @*, @/)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html#escape-sequences",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Doc Comment Specification — References to program elements (module/package.Class#member)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html#references",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Doc Comment Specification — Comment inheritance ({@inheritDoc}, missing-text filling)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html#comment-inheritance",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Doc Comment Specification — {@link} inline tag",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html#link",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Doc Comment Specification — {@snippet} inline tag (inline, external and hybrid snippets, regions)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/doc-comment-spec.html#snippet",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ],
+   "version": "JDK 21"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 467: Markdown Documentation Comments (JDK 23)",
+   "url": "https://openjdk.org/jeps/467",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "documentation-comments"
+   ],
+   "year": 2024
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 413: Code Snippets in Java API Documentation (JDK 18)",
+   "url": "https://openjdk.org/jeps/413",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ],
+   "year": 2021
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen manual — Documenting the code (comment block styles)",
+   "url": "https://www.doxygen.nl/manual/docblocks.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "comments"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen manual — Documenting the code: structural commands",
+   "url": "https://www.doxygen.nl/manual/docblocks.html#structuralcommands",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen manual — Special commands (index)",
+   "url": "https://www.doxygen.nl/manual/commands.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen special commands — \\param",
+   "url": "https://www.doxygen.nl/manual/commands.html#cmdparam",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen special commands — \\ref",
+   "url": "https://www.doxygen.nl/manual/commands.html#cmdref",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen special commands — \\if (conditional sections)",
+   "url": "https://www.doxygen.nl/manual/commands.html#cmdif",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Doxygen manual — Markdown support",
+   "url": "https://www.doxygen.nl/manual/markdown.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "javac — JavadocTokenizer.java: extracting doc comments from the token stream",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/jdk.compiler/share/classes/com/sun/tools/javac/parser/JavadocTokenizer.java",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "comments"
+   ],
+   "implementation": "OpenJDK javac"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "javac — DocCommentParser.java: doc-comment parser",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/jdk.compiler/share/classes/com/sun/tools/javac/parser/DocCommentParser.java",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "documentation-comments"
+   ],
+   "implementation": "OpenJDK javac"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "javadoc doclint — Checker.java: doc-comment linting",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/jdk.javadoc/share/classes/jdk/javadoc/internal/doclint/Checker.java",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "error-handling"
+   ],
+   "implementation": "OpenJDK javadoc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Doxygen — commentscan.l: comment block scanner (special commands)",
+   "url": "https://github.com/doxygen/doxygen/blob/master/src/commentscan.l",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "documentation-comments"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Doxygen — docparser.cpp: documentation parser",
+   "url": "https://github.com/doxygen/doxygen/blob/master/src/docparser.cpp",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Doxygen — markdown.cpp: Markdown processing in comments",
+   "url": "https://github.com/doxygen/doxygen/blob/master/src/markdown.cpp",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "Doxygen"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "How to Write Doc Comments for the Javadoc Tool (Oracle)",
+   "url": "https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "JDK 21 Javadoc Guide",
+   "url": "https://docs.oracle.com/en/java/javase/21/javadoc/javadoc.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Javadoc",
+   "url": "https://en.wikipedia.org/wiki/Javadoc",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Doxygen",
+   "url": "https://en.wikipedia.org/wiki/Doxygen",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of documentation generators",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_documentation_generators",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,412 @@
+{
+ "id": "midl",
+ "name": "Microsoft MIDL (Microsoft Interface Definition Language)",
+ "aliases": [
+  "MIDL",
+  "Microsoft IDL",
+  "MIDL 3.0",
+  "ODL"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "nominal"
+ ],
+ "first_appeared": 1993,
+ "designers": [
+  "Microsoft"
+ ],
+ "summary": "Microsoft's interface definition language for RPC and COM, extending the DCE RPC IDL with COM interfaces, coclasses, type libraries and Automation attributes; the MIDL compiler generates C/C++ headers, proxy/stub marshalling code and type libraries. MIDL 3.0 is a simplified C#-like syntax for Windows Runtime (WinRT) types.",
+ "status": "maintained",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "DCE 1.1 RPC IDL (The Open Group C706) as base"
+ ],
+ "file_extensions": [
+  ".idl",
+  ".acf",
+  ".odl"
+ ],
+ "homepage": "https://learn.microsoft.com/en-us/windows/win32/midl/midl-start-page",
+ "influenced_by": [
+  "dce-idl",
+  "omg-idl",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "omg-idl",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by Microsoft's MIDL Language Reference (attribute- and keyword-per-page documentation, no grammar) and, for WinRT, the MIDL 3.0 reference; the underlying DCE RPC IDL is specified in The Open Group's DCE 1.1 RPC specification.",
+  "0": "Microsoft's midl.exe is closed source; Wine's widl is an open-source MIDL-compatible compiler (bison grammar)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL Language Reference (Win32)",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/midl-language-reference",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "keywords",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — MIDL Data Types",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/midl-data-types",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — interface attribute/keyword",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/interface",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — coclass",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/coclass",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — struct",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/struct",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — union (discriminated with switch_is)",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/union",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — enum",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/enum",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — typedef",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/typedef",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — size_is (conformant arrays)",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/size-is",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "pointers-references"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — Arrays",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/arrays-1",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — ptr, ref and unique pointer attributes",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/unique",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pointers-references",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — in / out parameter attributes",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/out-idl",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — import",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/import",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — library (type libraries)",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/library",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — cpp_quote",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/cpp-quote",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL — Reserved keywords",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/reserved-keywords",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MIDL Command-Line Reference",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/midl-command-line-reference",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Microsoft Interface Definition Language 3.0 (WinRT) reference",
+   "url": "https://learn.microsoft.com/en-us/uwp/midl-3/",
+   "scope": "whole",
+   "authority": "vendor",
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "DCE 1.1: Remote Procedure Call (The Open Group C706) — base of MIDL",
+   "url": "https://pubs.opengroup.org/onlinepubs/9629399/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 1997,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "DCE 1.1 RPC — Chapter 4: Interface Definition Language",
+   "url": "https://pubs.opengroup.org/onlinepubs/9629399/chap4.htm",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 1997,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Wine tools/widl/parser.y — open-source MIDL-compatible IDL grammar",
+   "url": "https://gitlab.winehq.org/wine/wine/-/blob/master/tools/widl/parser.y",
+   "scope": "section",
+   "implementation": "Wine widl",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Wine tools/widl/parser.l — widl lexer",
+   "url": "https://gitlab.winehq.org/wine/wine/-/blob/master/tools/widl/parser.l",
+   "scope": "section",
+   "implementation": "Wine widl",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MIDL 3.0 — Introduction to Microsoft Interface Definition Language 3.0",
+   "url": "https://learn.microsoft.com/en-us/uwp/midl-3/intro",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Win32 RPC — The IDL and ACF files",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/rpc/the-idl-and-acf-files",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Using the MIDL compiler",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/midl/using-the-midl-compiler-2",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Microsoft Interface Definition Language",
+   "url": "https://en.wikipedia.org/wiki/Microsoft_Interface_Definition_Language",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

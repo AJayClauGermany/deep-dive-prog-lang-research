@@ -1,0 +1,487 @@
+{
+ "id": "typespec",
+ "name": "TypeSpec",
+ "aliases": [
+  "Cadl"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "structural models",
+  "generic templates"
+ ],
+ "first_appeared": 2022,
+ "designers": [
+  "Microsoft (Azure API design team)",
+  "Brian Terlson"
+ ],
+ "summary": "TypeScript-inspired API description language from Microsoft for defining data models and service operations (models, scalars, enums, unions, interfaces, operations, templates, decorators, namespaces) that emitters compile to OpenAPI, JSON Schema, Protobuf, client and server code. Formerly called Cadl; 1.0 released in 2025.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "TypeSpec 1.0 (2025)"
+ ],
+ "file_extensions": [
+  ".tsp"
+ ],
+ "homepage": "https://typespec.io/",
+ "influenced_by": [
+  "typescript",
+  "openapi"
+ ],
+ "related": [
+  {
+   "id": "openapi",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "json-schema",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "smithy",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The 'Language basics' documentation on typespec.io is the de-facto language reference; a formal grammar lives in packages/spec (spec.emu.html, ecmarkup) of the microsoft/typespec repository.",
+  "0": "The TypeScript compiler in microsoft/typespec (packages/compiler: scanner, parser, checker) is the only implementation; emitters such as @typespec/openapi3 and @typespec/json-schema are separate packages.",
+  "3": "No Wikipedia or PLDB entry exists yet."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Language basics overview",
+   "url": "https://typespec.io/docs/language-basics/overview/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Built-in types",
+   "url": "https://typespec.io/docs/language-basics/built-in-types/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Identifiers",
+   "url": "https://typespec.io/docs/language-basics/identifiers/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Imports",
+   "url": "https://typespec.io/docs/language-basics/imports/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Namespaces",
+   "url": "https://typespec.io/docs/language-basics/namespaces/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Models (properties, spread, extends, is)",
+   "url": "https://typespec.io/docs/language-basics/models/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Scalars",
+   "url": "https://typespec.io/docs/language-basics/scalars/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "refinement-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Enums",
+   "url": "https://typespec.io/docs/language-basics/enums/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Unions",
+   "url": "https://typespec.io/docs/language-basics/unions/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Intersections",
+   "url": "https://typespec.io/docs/language-basics/intersections/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Operations",
+   "url": "https://typespec.io/docs/language-basics/operations/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Interfaces",
+   "url": "https://typespec.io/docs/language-basics/interfaces/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Templates",
+   "url": "https://typespec.io/docs/language-basics/templates/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Type relations (assignability)",
+   "url": "https://typespec.io/docs/language-basics/type-relations/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Alias",
+   "url": "https://typespec.io/docs/language-basics/alias/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Values",
+   "url": "https://typespec.io/docs/language-basics/values/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Decorators",
+   "url": "https://typespec.io/docs/language-basics/decorators/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Documentation (doc comments, @doc)",
+   "url": "https://typespec.io/docs/language-basics/documentation/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Directives (#suppress, #deprecated)",
+   "url": "https://typespec.io/docs/language-basics/directives/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TypeSpec — Visibility",
+   "url": "https://typespec.io/docs/language-basics/visibility/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "TypeSpec language specification — packages/spec/src/spec.emu.html (grammar)",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/spec/src/spec.emu.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "microsoft/typespec — compiler, standard library and emitters",
+   "url": "https://github.com/microsoft/typespec",
+   "scope": "whole",
+   "implementation": "TypeSpec compiler",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "compiler/src/core/scanner.ts — lexer",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/compiler/src/core/scanner.ts",
+   "scope": "section",
+   "implementation": "TypeSpec compiler",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "compiler/src/core/parser.ts — parser",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/compiler/src/core/parser.ts",
+   "scope": "section",
+   "implementation": "TypeSpec compiler",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "compiler/src/core/checker.ts — type checker",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/compiler/src/core/checker.ts",
+   "scope": "section",
+   "implementation": "TypeSpec compiler",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "compiler/lib/std/types.tsp — standard library types",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/compiler/lib/std/types.tsp",
+   "scope": "section",
+   "implementation": "TypeSpec compiler",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "compiler/lib/std/decorators.tsp — standard decorators",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/compiler/lib/std/decorators.tsp",
+   "scope": "section",
+   "implementation": "TypeSpec compiler",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "openapi3/src/openapi.ts — OpenAPI 3 emitter",
+   "url": "https://github.com/microsoft/typespec/blob/main/packages/openapi3/src/openapi.ts",
+   "scope": "section",
+   "implementation": "@typespec/openapi3",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "TypeSpec — Getting started with REST: basic syntax",
+   "url": "https://typespec.io/docs/getting-started/getting-started-rest/01-setup-basic-syntax/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "TypeSpec style guide",
+   "url": "https://typespec.io/docs/handbook/style-guide/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "TypeSpec FAQ",
+   "url": "https://typespec.io/docs/handbook/faq/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  }
+ ]
+}

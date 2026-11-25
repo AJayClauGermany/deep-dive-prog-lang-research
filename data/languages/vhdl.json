@@ -1,0 +1,2118 @@
+{
+ "id": "vhdl",
+ "name": "VHDL",
+ "aliases": [
+  "VHSIC Hardware Description Language",
+  "IEEE 1076"
+ ],
+ "categories": [
+  "hardware-description"
+ ],
+ "paradigms": [
+  "concurrent",
+  "event-driven",
+  "structural",
+  "dataflow",
+  "imperative"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "nominal"
+ ],
+ "first_appeared": 1987,
+ "designers": [
+  "US Department of Defense VHSIC programme (Intermetrics, IBM, Texas Instruments)",
+  "IEEE P1076 working group (VASG)"
+ ],
+ "summary": "Ada-derived hardware description language created for the US DoD VHSIC programme and standardised as IEEE 1076 (1987, 1993, 2000, 2002, 2008, 2019). Describes hardware as entities/architectures with concurrent processes communicating through signals under a delta-cycle simulation model, with strong typing, packages, generics and configurations.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "IEEE 1076-1987",
+  "IEEE 1076-1993",
+  "IEEE 1076-2008",
+  "IEEE 1076-2019",
+  "IEC 61691-1-1",
+  "IEEE 1076.6 (RTL synthesis)",
+  "IEEE 1164 (std_logic)"
+ ],
+ "file_extensions": [
+  ".vhd",
+  ".vhdl"
+ ],
+ "homepage": "https://ieee-p1076.gitlab.io/",
+ "influenced_by": [
+  "ada",
+  "pascal"
+ ],
+ "related": [
+  {
+   "id": "verilog",
+   "relation": "family"
+  },
+  {
+   "id": "psl",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "The Language Reference Manual (IEEE 1076-2019) is paywalled. Linked instead: the IEEE standard page, the P1076 working group site with the VHDL-2019 change list, the Hamburg BNF of VHDL-93 (derived from the LRM), and the open-source IEEE standard packages published by the working group.",
+  "0": "Open-source implementations: GHDL (Ada; LLVM/GCC/mcode back ends, also synthesis via ghdl-yosys-plugin) and nvc (C, LLVM JIT). The IEEE packages (std_logic_1164, numeric_std, textio...) are published by P1076 under Apache-2.0.",
+  "3": "Rosetta Code category is checker-blocked."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE 1076-2019 — IEEE Standard for VHDL Language Reference Manual",
+   "url": "https://standards.ieee.org/ieee/1076/5179/",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "paywalled",
+   "year": 2019,
+   "version": "VHDL-2019"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "IEEE P1076 Working Group (VASG) — home",
+   "url": "https://ieee-p1076.gitlab.io/",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "P1076 — VHDL-2019 modifications (LCS list)",
+   "url": "https://ieee-p1076.gitlab.io/VHDL-202X/Modifications.html",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "P1076 — Language change workflow",
+   "url": "https://ieee-p1076.gitlab.io/VHDL-202X/LanguageChangeWorkflow.html",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "P1076 — Prior standard revisions",
+   "url": "https://ieee-p1076.gitlab.io/Prior.html",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "IEEE-P1076 VHDL-Issues tracker",
+   "url": "https://gitlab.com/IEEE-P1076/VHDL-Issues",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF (Hamburg VHDL archive)",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — identifier",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#identifier",
+   "concepts": [
+    "identifiers"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — abstract literals",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#abstract_literal",
+   "concepts": [
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — entity declaration",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#entity_declaration",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — architecture body",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#architecture_body",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — package declaration",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#package_declaration",
+   "concepts": [
+    "modules",
+    "packages"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — use clause",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#use_clause",
+   "concepts": [
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — library clause",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#library_clause",
+   "concepts": [
+    "packages",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — component instantiation",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#component_instantiation_statement",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — generic clause",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#generic_clause",
+   "concepts": [
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — port clause",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#port_clause",
+   "concepts": [
+    "hdl-structure",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — enumeration types",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#enumeration_type_definition",
+   "concepts": [
+    "enums"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — integer types",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#integer_type_definition",
+   "concepts": [
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — floating types",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#floating_type_definition",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — array types",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#array_type_definition",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — record types",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#record_type_definition",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — access types",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#access_type_definition",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — subtype declaration",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#subtype_declaration",
+   "concepts": [
+    "subtyping",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — type conversion",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#type_conversion",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — constant declaration",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#constant_declaration",
+   "concepts": [
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — signal declaration",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#signal_declaration",
+   "concepts": [
+    "hdl-signals-timing",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — variable declaration",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#variable_declaration",
+   "concepts": [
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — expressions",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#expression",
+   "concepts": [
+    "expressions",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — process statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#process_statement",
+   "concepts": [
+    "hdl-signals-timing",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — sensitivity list",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#sensitivity_list",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — wait statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#wait_statement",
+   "concepts": [
+    "hdl-signals-timing",
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — signal assignment",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#signal_assignment_statement",
+   "concepts": [
+    "assignment",
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — delay mechanism (transport/inertial)",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#delay_mechanism",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — conditional signal assignment",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#conditional_signal_assignment",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — selected signal assignment",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#selected_signal_assignment",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — if statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#if_statement",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — case statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#case_statement",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — loop statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#loop_statement",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — exit statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#exit_statement",
+   "concepts": [
+    "loop-control"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — return statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#return_statement",
+   "concepts": [
+    "return"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — assertion statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#assertion_statement",
+   "concepts": [
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — subprogram body",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#subprogram_body",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — subprogram specification",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#subprogram_specification",
+   "concepts": [
+    "functions",
+    "parameters-arguments",
+    "purity"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — generate statement",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#generate_statement",
+   "concepts": [
+    "code-generation",
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "VHDL-93 BNF — design unit",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/tools/grammar/vhdl93-bnf.html#design_unit",
+   "concepts": [
+    "program-structure",
+    "separate-compilation"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "version": "VHDL-93"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GHDL manual — Implementation of VHDL",
+   "url": "https://ghdl.github.io/ghdl/using/ImplementationOfVHDL.html",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GHDL — VHDL standards supported",
+   "url": "https://ghdl.github.io/ghdl/using/ImplementationOfVHDL.html#vhdl-standards",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GHDL — PSL support",
+   "url": "https://ghdl.github.io/ghdl/using/ImplementationOfVHDL.html#psl-support",
+   "concepts": [
+    "assertions",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GHDL — Library database",
+   "url": "https://ghdl.github.io/ghdl/using/ImplementationOfVHDL.html#library-database",
+   "concepts": [
+    "separate-compilation",
+    "packages"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "nvc manual",
+   "url": "https://www.nickg.me.uk/nvc/manual.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Van Tassel — A formalisation of the VHDL simulation cycle (Cambridge TR-249)",
+   "url": "https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-249.pdf",
+   "concepts": [
+    "formal-semantics",
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "John Peter Van Tassel"
+   ],
+   "year": 1992
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE P1076 open-source standard packages (vasg/Packages)",
+   "url": "https://opensource.ieee.org/vasg/Packages",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — package STANDARD",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/std/standard.vhdl",
+   "concepts": [
+    "primitive-types",
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — package TEXTIO",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/std/textio.vhdl",
+   "concepts": [
+    "file-io",
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — package ENV",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/std/env.vhdl",
+   "concepts": [
+    "command-line",
+    "processes-system"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — package REFLECTION (VHDL-2019)",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/std/reflection.vhdl",
+   "concepts": [
+    "reflection"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — std_logic_1164 (9-valued logic)",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/ieee/std_logic_1164.vhdl",
+   "concepts": [
+    "hdl-signals-timing",
+    "enums"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — numeric_std (signed/unsigned arithmetic)",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/ieee/numeric_std.vhdl",
+   "concepts": [
+    "integers",
+    "operator-overloading"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — math_real",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/ieee/math_real.vhdl",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — fixed_generic_pkg (fixed-point)",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/ieee/fixed_generic_pkg.vhdl",
+   "concepts": [
+    "floating-point",
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "IEEE VHDL packages — float_generic_pkg",
+   "url": "https://opensource.ieee.org/vasg/Packages/-/blob/release/ieee/float_generic_pkg.vhdl",
+   "concepts": [
+    "floating-point",
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "GHDL — open-source VHDL analyzer, compiler, simulator and synthesizer",
+   "url": "https://github.com/ghdl/ghdl",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-scanner.adb — scanner",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-scanner.adb",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-parse.adb — parser",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-parse.adb",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-nodes.ads — AST node definitions",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-nodes.ads",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-sem.adb — semantic analysis",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-sem.adb",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-sem_expr.adb — expression analysis and overload resolution",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-sem_expr.adb",
+   "concepts": [
+    "semantic-analysis",
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-sem_types.adb — type analysis",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-sem_types.adb",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-sem_names.adb — name resolution",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-sem_names.adb",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-sem_stmts.adb — statement analysis",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-sem_stmts.adb",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-evaluation.adb — static expression evaluation",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-evaluation.adb",
+   "concepts": [
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-std_package.adb — construction of package STANDARD",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-std_package.adb",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-canon.adb — canonicalization of concurrent statements into processes",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-canon.adb",
+   "concepts": [
+    "intermediate-representation",
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/vhdl/vhdl-sem_psl.adb — PSL analysis",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/vhdl/vhdl-sem_psl.adb",
+   "concepts": [
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/grt/grt-processes.adb — runtime process scheduler (simulation cycle)",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/grt/grt-processes.adb",
+   "concepts": [
+    "hdl-signals-timing",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/grt/grt-signals.adb — runtime signals, drivers and resolution",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/grt/grt-signals.adb",
+   "concepts": [
+    "hdl-signals-timing",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/grt/grt-files.adb — runtime file I/O",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/grt/grt-files.adb",
+   "concepts": [
+    "file-io"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GHDL src/synth/synth-vhdl_stmts.adb — synthesis of VHDL statements",
+   "url": "https://github.com/ghdl/ghdl/blob/master/src/synth/synth-vhdl_stmts.adb",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "GHDL testsuite",
+   "url": "https://github.com/ghdl/ghdl/tree/master/testsuite",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "directory",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "nvc — VHDL compiler and simulator",
+   "url": "https://github.com/nickg/nvc",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/lexer.l — lexer",
+   "url": "https://github.com/nickg/nvc/blob/master/src/lexer.l",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/parse.c — parser",
+   "url": "https://github.com/nickg/nvc/blob/master/src/parse.c",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/names.c — name resolution and overloading",
+   "url": "https://github.com/nickg/nvc/blob/master/src/names.c",
+   "concepts": [
+    "scope",
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/sem.c — semantic checks",
+   "url": "https://github.com/nickg/nvc/blob/master/src/sem.c",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/elab.c — elaboration",
+   "url": "https://github.com/nickg/nvc/blob/master/src/elab.c",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/lower.c — lowering to vcode IR",
+   "url": "https://github.com/nickg/nvc/blob/master/src/lower.c",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nvc src/rt/model.c — simulation kernel (delta cycles, drivers)",
+   "url": "https://github.com/nickg/nvc/blob/master/src/rt/model.c",
+   "concepts": [
+    "hdl-signals-timing",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "nvc"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "rust_hdl — VHDL language server (VHDL-LS)",
+   "url": "https://github.com/VHDL-LS/rust_hdl",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "VUnit — unit testing framework for VHDL/SystemVerilog",
+   "url": "https://github.com/VUnit/vunit",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "OSVVM — Open Source VHDL Verification Methodology",
+   "url": "https://github.com/OSVVM/OSVVM",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "UVVM — Universal VHDL Verification Methodology",
+   "url": "https://github.com/UVVM/UVVM",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Ashenden — The VHDL Cookbook (free)",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/doc/cookbook/VHDL-Cookbook.pdf",
+   "concepts": [
+    "hello-world",
+    "type-system",
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Peter J. Ashenden"
+   ],
+   "year": 1990,
+   "version": "VHDL-87"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Free Range VHDL (open book, LaTeX sources)",
+   "url": "https://github.com/fabriziotappero/Free-Range-VHDL-book",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "authors": [
+    "Bryan Mealy",
+    "Fabrizio Tappero"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks — VHDL for FPGA Design",
+   "url": "https://en.wikibooks.org/wiki/VHDL_for_FPGA_Design",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "SynthWorks — VHDL-2008: Why it matters / end of verbosity (Jim Lewis)",
+   "url": "https://www.synthworks.com/papers/VHDL_2008_end_of_verbosity_2013.pdf",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Jim Lewis"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "SynthWorks papers",
+   "url": "https://www.synthworks.com/papers/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Doulos — VHDL KnowHow",
+   "url": "https://www.doulos.com/knowhow/vhdl/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — A brief history of VHDL",
+   "url": "https://www.doulos.com/knowhow/vhdl/a-brief-history-of-vhdl/",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — VHDL-2008",
+   "url": "https://www.doulos.com/knowhow/vhdl/vhdl-2008/",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — An example design entity",
+   "url": "https://www.doulos.com/knowhow/vhdl/an-example-design-entity/",
+   "concepts": [
+    "hello-world",
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Components and port maps",
+   "url": "https://www.doulos.com/knowhow/vhdl/components-and-port-maps/",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Processes",
+   "url": "https://www.doulos.com/knowhow/vhdl/processes/",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — if statement",
+   "url": "https://www.doulos.com/knowhow/vhdl/if-statement/",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Internal signals",
+   "url": "https://www.doulos.com/knowhow/vhdl/internal-signals/",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Configurations",
+   "url": "https://www.doulos.com/knowhow/vhdl/configurations-part-1/",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Synthesizing latches",
+   "url": "https://www.doulos.com/knowhow/vhdl/synthesizing-latches/",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — RTL coding",
+   "url": "https://www.doulos.com/knowhow/vhdl/rtl-coding/",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Test benches",
+   "url": "https://www.doulos.com/knowhow/vhdl/test-benches-part-1/",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Vector arithmetic using numeric_std",
+   "url": "https://www.doulos.com/knowhow/vhdl/vhdl-vector-arithmetic-using-numeric_std/",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Doulos VHDL — Order of analysis",
+   "url": "https://www.doulos.com/knowhow/vhdl/order-of-analysis/",
+   "concepts": [
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Doulos VHDL — VHDL FAQ",
+   "url": "https://www.doulos.com/knowhow/vhdl/vhdl-faq/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Basic VHDL tutorials",
+   "url": "https://vhdlwhiz.com/basic-vhdl-tutorials/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Hello World",
+   "url": "https://vhdlwhiz.com/hello-world/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — wait for",
+   "url": "https://vhdlwhiz.com/wait-for/",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — loop and exit",
+   "url": "https://vhdlwhiz.com/loop-and-exit/",
+   "concepts": [
+    "loops",
+    "loop-control"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — for loop",
+   "url": "https://vhdlwhiz.com/for-loop/",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — if-then-elsif-else",
+   "url": "https://vhdlwhiz.com/if-then-elsif-else/",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Sensitivity list",
+   "url": "https://vhdlwhiz.com/sensitivity-list/",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — case-when",
+   "url": "https://vhdlwhiz.com/case-when/",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Port map",
+   "url": "https://vhdlwhiz.com/port-map/",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Constants and generic map",
+   "url": "https://vhdlwhiz.com/constants-generic-map/",
+   "concepts": [
+    "constants",
+    "generics"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Clocked process",
+   "url": "https://vhdlwhiz.com/clocked-process/",
+   "concepts": [
+    "hdl-signals-timing",
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Functions",
+   "url": "https://vhdlwhiz.com/function/",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Impure functions",
+   "url": "https://vhdlwhiz.com/impure-function/",
+   "concepts": [
+    "purity",
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Procedures",
+   "url": "https://vhdlwhiz.com/procedure-in-process/",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Finite-state machine",
+   "url": "https://vhdlwhiz.com/finite-state-machine/",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Packages",
+   "url": "https://vhdlwhiz.com/packages/",
+   "concepts": [
+    "packages",
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Concurrent statements",
+   "url": "https://vhdlwhiz.com/concurrent-statement/",
+   "concepts": [
+    "concurrency",
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Delta cycles explained",
+   "url": "https://vhdlwhiz.com/delta-cycles-explained/",
+   "concepts": [
+    "hdl-signals-timing",
+    "evaluation-order"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "VHDLwhiz — Attributes",
+   "url": "https://vhdlwhiz.com/attributes/",
+   "concepts": [
+    "annotations-attributes",
+    "reflection"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "GHDL — Quick start guide",
+   "url": "https://ghdl.github.io/ghdl/quick_start/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GHDL — Synthesis",
+   "url": "https://ghdl.github.io/ghdl/using/Synthesis.html",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GHDL internals — AST",
+   "url": "https://ghdl.github.io/ghdl/internals/AST.html",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GHDL internals — Front-end",
+   "url": "https://ghdl.github.io/ghdl/internals/Frontend.html",
+   "concepts": [
+    "compiler-architecture",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "GHDL"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "fpgatutorial.com — VHDL tutorials",
+   "url": "https://fpgatutorial.com/vhdl/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Hamburg VHDL archive (tools, docs, models)",
+   "url": "https://tams.informatik.uni-hamburg.de/vhdl/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "EDA Playground (online VHDL simulators)",
+   "url": "https://www.edaplayground.com/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — VHDL",
+   "url": "https://en.wikipedia.org/wiki/VHDL",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia VHDL — History",
+   "url": "https://en.wikipedia.org/wiki/VHDL#History",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia VHDL — Standardization",
+   "url": "https://en.wikipedia.org/wiki/VHDL#Standardization",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia VHDL — Synthesizable constructs",
+   "url": "https://en.wikipedia.org/wiki/VHDL#Synthesizable_constructs_and_VHDL_templates",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia VHDL — VHDL-2008 features",
+   "url": "https://en.wikipedia.org/wiki/VHDL#VHDL-2008_features",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia VHDL — IEEE standard package",
+   "url": "https://en.wikipedia.org/wiki/VHDL#IEEE_Standard_Package",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia VHDL — VHDL simulators",
+   "url": "https://en.wikipedia.org/wiki/VHDL#VHDL_simulators",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — VHDL-AMS",
+   "url": "https://en.wikipedia.org/wiki/VHDL-AMS",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — VHDL",
+   "url": "https://pldb.io/concepts/vhdl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:VHDL",
+   "url": "https://rosettacode.org/wiki/Category:VHDL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,494 @@
+{
+ "id": "webidl",
+ "name": "Web IDL",
+ "aliases": [
+  "WebIDL",
+  "Web Interface Definition Language"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "nominal interfaces",
+  "structural dictionaries"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "Cameron McCormack",
+  "Boris Zbarsky",
+  "Tobie Langel",
+  "WHATWG"
+ ],
+ "summary": "Interface definition language used by web platform specifications to describe the APIs browsers expose to JavaScript: interfaces, mixins, namespaces, dictionaries, enums, callbacks and typedefs over a fixed set of IDL types, with a normative JavaScript binding that defines type conversions, overload resolution and object creation.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "WHATWG Web IDL Living Standard",
+  "W3C WebIDL Level 1 (2016, superseded)"
+ ],
+ "file_extensions": [
+  ".webidl",
+  ".idl"
+ ],
+ "homepage": "https://webidl.spec.whatwg.org/",
+ "influenced_by": [
+  "omg-idl"
+ ],
+ "related": [
+  {
+   "id": "omg-idl",
+   "relation": "family"
+  },
+  {
+   "id": "javascript",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "WHATWG Living Standard (since 2021; previously a W3C spec). The grammar is an LL(1) grammar in the spec; the 'JavaScript binding' section is normative for browser behaviour.",
+  "0": "webidl2.js is the standard JavaScript parser used by spec tooling and WPT; browsers have their own IDL compilers (Gecko's WebIDL.py, Blink's bindings generator); jsdom's webidl2js and webidl-conversions implement the JS binding."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL Standard (WHATWG Living Standard)",
+   "url": "https://webidl.spec.whatwg.org/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.2 Interfaces",
+   "url": "https://webidl.spec.whatwg.org/#idl-interfaces",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "classes",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.3 Interface mixins",
+   "url": "https://webidl.spec.whatwg.org/#idl-interface-mixins",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "mixins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.5.3 Operations",
+   "url": "https://webidl.spec.whatwg.org/#idl-operations",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.5.2 Attributes",
+   "url": "https://webidl.spec.whatwg.org/#idl-attributes",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.5.8 Overloading",
+   "url": "https://webidl.spec.whatwg.org/#idl-overloading",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.5.9 Iterable declarations",
+   "url": "https://webidl.spec.whatwg.org/#idl-iterable",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iterators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.6 Namespaces",
+   "url": "https://webidl.spec.whatwg.org/#idl-namespaces",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.7 Dictionaries",
+   "url": "https://webidl.spec.whatwg.org/#idl-dictionaries",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.8 Exceptions",
+   "url": "https://webidl.spec.whatwg.org/#idl-exceptions",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.9 Enumerations",
+   "url": "https://webidl.spec.whatwg.org/#idl-enums",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.10 Callback functions",
+   "url": "https://webidl.spec.whatwg.org/#idl-callback-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "function-types",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.11 Typedefs",
+   "url": "https://webidl.spec.whatwg.org/#idl-typedefs",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.13 Types",
+   "url": "https://webidl.spec.whatwg.org/#idl-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types",
+    "integers",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — Nullable types",
+   "url": "https://webidl.spec.whatwg.org/#idl-nullable-type",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — Union types",
+   "url": "https://webidl.spec.whatwg.org/#idl-union",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — Record types",
+   "url": "https://webidl.spec.whatwg.org/#idl-record",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 2.14 Extended attributes",
+   "url": "https://webidl.spec.whatwg.org/#idl-extended-attributes",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — 3.2 JavaScript type mapping (conversions)",
+   "url": "https://webidl.spec.whatwg.org/#js-type-mapping",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web IDL — Promise types (JS binding)",
+   "url": "https://webidl.spec.whatwg.org/#js-promise",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "async-await"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Web IDL — IDL grammar (LL(1))",
+   "url": "https://webidl.spec.whatwg.org/#idl-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "w3c/webidl2.js — Web IDL parser in JavaScript",
+   "url": "https://github.com/w3c/webidl2.js",
+   "scope": "whole",
+   "implementation": "webidl2.js",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "webidl2.js lib/tokeniser.js — tokenizer",
+   "url": "https://github.com/w3c/webidl2.js/blob/main/lib/tokeniser.js",
+   "scope": "section",
+   "implementation": "webidl2.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "webidl2.js lib/productions/interface.js — interface production",
+   "url": "https://github.com/w3c/webidl2.js/blob/main/lib/productions/interface.js",
+   "scope": "section",
+   "implementation": "webidl2.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "webidl2.js lib/productions/type.js — type grammar",
+   "url": "https://github.com/w3c/webidl2.js/blob/main/lib/productions/type.js",
+   "scope": "section",
+   "implementation": "webidl2.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "union-intersection-types",
+    "generics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsdom/webidl-conversions lib/index.js — JS↔IDL value conversions",
+   "url": "https://github.com/jsdom/webidl-conversions/blob/main/lib/index.js",
+   "scope": "section",
+   "implementation": "webidl-conversions",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "jsdom/webidl2js — generate JS wrapper classes from Web IDL",
+   "url": "https://github.com/jsdom/webidl2js",
+   "scope": "whole",
+   "implementation": "webidl2js",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Firefox source docs — Web IDL bindings",
+   "url": "https://firefox-source-docs.mozilla.org/dom/webIdlBindings/index.html",
+   "scope": "section",
+   "implementation": "Gecko",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "ffi"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Chromium — Blink IDL Extended Attributes",
+   "url": "https://chromium.googlesource.com/chromium/src/+/HEAD/third_party/blink/renderer/bindings/IDLExtendedAttributes.md",
+   "scope": "section",
+   "implementation": "Blink",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "MDN Glossary — WebIDL",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/WebIDL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Web IDL",
+   "url": "https://en.wikipedia.org/wiki/Web_IDL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Web IDL",
+   "url": "https://pldb.io/concepts/web-idl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

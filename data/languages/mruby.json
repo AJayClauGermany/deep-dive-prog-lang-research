@@ -1,0 +1,45 @@
+{
+ "id": "mruby",
+ "name": "mruby",
+ "categories": ["scripting", "general-purpose"],
+ "paradigms": ["object-oriented", "imperative", "functional"],
+ "typing": ["dynamic", "strong", "duck"],
+ "first_appeared": 2012,
+ "designers": ["Yukihiro Matsumoto"],
+ "summary": "Lightweight, embeddable implementation of Ruby targeting the ISO/IEC 30170 core with a register-based VM, precompilable bytecode (.mrb) and functionality composed from mrbgems; used in embedded systems and as an application scripting engine.",
+ "status": "active",
+ "defined_by": ["reference-implementation", "international-standard"],
+ "standards": ["ISO/IEC 30170:2012"],
+ "file_extensions": [".rb", ".mrb"],
+ "homepage": "https://mruby.org/",
+ "influenced_by": ["ruby"],
+ "related": [{"id": "ruby", "relation": "variant-of"}, {"id": "c", "relation": "implemented-in"}],
+ "level_notes": {"0": "mruby/mruby; since 2025-26 the mruby-compiler gem parses with Prism (shared with PicoRuby) instead of its former parse.y.", "1": "Aims at ISO Ruby (ISO/IEC 30170) plus selected Ruby 3.x features; doc/limitations.md lists deviations from CRuby."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "mruby/mruby — lightweight Ruby implementation", "url": "https://github.com/mruby/mruby", "implementation": "mruby", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby mrbgems/mruby-compiler/mrbgem.rake — compiler gem build spec (Prism-based front end)", "url": "https://github.com/mruby/mruby/blob/master/mrbgems/mruby-compiler/mrbgem.rake", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby mrbgems/mruby-compiler/src/codegen.c — code generator to mruby bytecode", "url": "https://github.com/mruby/mruby/blob/master/mrbgems/mruby-compiler/src/codegen.c", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode", "code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby include/mruby/ops.h — VM opcode list", "url": "https://github.com/mruby/mruby/blob/master/include/mruby/ops.h", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set", "bytecode"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby src/vm.c — register-based virtual machine", "url": "https://github.com/mruby/mruby/blob/master/src/vm.c", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["virtual-machine", "interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby src/gc.c — incremental/generational GC", "url": "https://github.com/mruby/mruby/blob/master/src/gc.c", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby src/class.c — classes and modules", "url": "https://github.com/mruby/mruby/blob/master/src/class.c", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["classes", "mixins"]},
+  {"level": 0, "kind": "implementation-source", "title": "mruby include/mruby.h — C embedding API", "url": "https://github.com/mruby/mruby/blob/master/include/mruby.h", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["ffi"]},
+  {"level": 0, "kind": "implementation-repository", "title": "PicoRuby — Ruby for microcontrollers (shares mruby-compiler)", "url": "https://github.com/picoruby/picoruby", "implementation": "PicoRuby", "scope": "whole", "authority": "community", "format": "repository", "access": "open"},
+
+  {"level": 1, "kind": "standard", "title": "ISO/IEC 30170:2012 — Programming languages — Ruby", "url": "https://www.iso.org/standard/59579.html", "implementation": "mruby", "scope": "whole", "authority": "standards-body", "year": 2012, "format": "html", "access": "paywalled", "concepts": ["standardization"]},
+  {"level": 1, "kind": "reference-manual", "title": "mruby — limitations and differences from CRuby", "url": "https://github.com/mruby/mruby/blob/master/doc/limitations.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["comparison", "versioning-compatibility"]},
+  {"level": 1, "kind": "reference-manual", "title": "mruby internals — opcode reference", "url": "https://github.com/mruby/mruby/blob/master/doc/internal/opcode.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode", "instruction-set"]},
+  {"level": 1, "kind": "reference-manual", "title": "mruby internals — value boxing", "url": "https://github.com/mruby/mruby/blob/master/doc/internal/boxing.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["runtime-system"]},
+  {"level": 1, "kind": "release-notes", "title": "mruby 3.4 release notes", "url": "https://github.com/mruby/mruby/blob/master/doc/mruby3.4.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["language-evolution"]},
+  {"level": 1, "kind": "library-reference", "title": "mruby API documentation", "url": "https://mruby.org/docs/api/", "implementation": "mruby", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library", "ffi"]},
+
+  {"level": 2, "kind": "guide", "title": "mruby guide — compiling and building", "url": "https://github.com/mruby/mruby/blob/master/doc/guides/compile.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["build-systems"]},
+  {"level": 2, "kind": "guide", "title": "mruby guide — mrbgems", "url": "https://github.com/mruby/mruby/blob/master/doc/guides/mrbgems.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["package-management", "modules"]},
+  {"level": 2, "kind": "guide", "title": "mruby guide — GC arena how-to", "url": "https://github.com/mruby/mruby/blob/master/doc/guides/gc-arena-howto.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection", "ffi"]},
+  {"level": 2, "kind": "guide", "title": "mruby guide — memory allocation", "url": "https://github.com/mruby/mruby/blob/master/doc/guides/memory.md", "implementation": "mruby", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["memory-management"]},
+  {"level": 2, "kind": "guide", "title": "mruby — about", "url": "https://mruby.org/about/", "implementation": "mruby", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "guide", "title": "mruby documentation index", "url": "https://mruby.org/docs/", "implementation": "mruby", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — mruby", "url": "https://en.wikipedia.org/wiki/Mruby", "implementation": "mruby", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

@@ -1,0 +1,1622 @@
+{
+  "id": "clojure",
+  "name": "Clojure",
+  "aliases": [
+    "Clojure JVM"
+  ],
+  "categories": [
+    "general-purpose",
+    "functional"
+  ],
+  "paradigms": [
+    "functional",
+    "concurrent",
+    "meta"
+  ],
+  "typing": [
+    "dynamic",
+    "strong",
+    "optional-hints"
+  ],
+  "first_appeared": 2007,
+  "designers": [
+    "Rich Hickey"
+  ],
+  "summary": "Hosted Lisp dialect for the JVM emphasising immutable persistent data structures, managed reference types (atoms, refs/STM, agents), protocols and multimethods, and seamless Java interop.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "vendor-specification"
+  ],
+  "file_extensions": [
+    ".clj",
+    ".cljc",
+    ".edn"
+  ],
+  "homepage": "https://clojure.org/",
+  "influenced_by": [
+    "lisp",
+    "common-lisp",
+    "scheme",
+    "haskell",
+    "java",
+    "erlang"
+  ],
+  "related": [
+    {
+      "id": "lisp",
+      "relation": "dialect-of"
+    },
+    {
+      "id": "clojurescript",
+      "relation": "family"
+    },
+    {
+      "id": "jvm-bytecode",
+      "relation": "compiles-to"
+    },
+    {
+      "id": "java",
+      "relation": "implemented-in"
+    }
+  ],
+  "level_notes": {
+    "1": "No formal standard. The clojure.org Reference pages and API docs plus the reference implementation define the language; changes go through Rich Hickey and the core team (JIRA tickets, no public RFC process). Hickey's HOPL IV paper is the defining retrospective.",
+    "0": "clojure/clojure (Java + Clojure) is the reference implementation; ClojureCLR, babashka/SCI and jank are alternatives. ClojureScript has its own entry."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader",
+      "url": "https://clojure.org/reference/reader",
+      "concepts": [
+        "grammar",
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: reader forms",
+      "url": "https://clojure.org/reference/reader#_reader_forms",
+      "concepts": [
+        "lexical-structure",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: literals",
+      "url": "https://clojure.org/reference/reader#_literals",
+      "concepts": [
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: maps and namespaced map syntax",
+      "url": "https://clojure.org/reference/reader#_maps",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: comment macro character",
+      "url": "https://clojure.org/reference/reader#_comment",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: syntax-quote",
+      "url": "https://clojure.org/reference/reader#syntax-quote",
+      "concepts": [
+        "quotation-homoiconicity",
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: tagged literals",
+      "url": "https://clojure.org/reference/reader#tagged_literals",
+      "concepts": [
+        "literals",
+        "serialization"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — The Reader: reader conditionals",
+      "url": "https://clojure.org/reference/reader#_reader_conditionals",
+      "concepts": [
+        "preprocessor"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Evaluation",
+      "url": "https://clojure.org/reference/evaluation",
+      "concepts": [
+        "evaluation-order",
+        "eval"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: if",
+      "url": "https://clojure.org/reference/special_forms#if",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: let",
+      "url": "https://clojure.org/reference/special_forms#let",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: def",
+      "url": "https://clojure.org/reference/special_forms#def",
+      "concepts": [
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: fn",
+      "url": "https://clojure.org/reference/special_forms#fn",
+      "concepts": [
+        "functions",
+        "closures"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: loop",
+      "url": "https://clojure.org/reference/special_forms#loop",
+      "concepts": [
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: recur (explicit tail recursion)",
+      "url": "https://clojure.org/reference/special_forms#recur",
+      "concepts": [
+        "tail-calls",
+        "recursion"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: try",
+      "url": "https://clojure.org/reference/special_forms#try",
+      "concepts": [
+        "exceptions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Special Forms: quote",
+      "url": "https://clojure.org/reference/special_forms#quote",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Binding forms (destructuring)",
+      "url": "https://clojure.org/reference/special_forms#binding-forms",
+      "concepts": [
+        "destructuring"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Macros",
+      "url": "https://clojure.org/reference/macros",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Other Functions: regex support",
+      "url": "https://clojure.org/reference/other_functions#regex",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: nil",
+      "url": "https://clojure.org/reference/data_structures#nil",
+      "concepts": [
+        "null-optional"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Numbers",
+      "url": "https://clojure.org/reference/data_structures#Numbers",
+      "concepts": [
+        "integers",
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Strings",
+      "url": "https://clojure.org/reference/data_structures#Strings",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Keywords",
+      "url": "https://clojure.org/reference/data_structures#Keywords",
+      "concepts": [
+        "primitive-types"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Lists",
+      "url": "https://clojure.org/reference/data_structures#Lists",
+      "concepts": [
+        "lists"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Vectors",
+      "url": "https://clojure.org/reference/data_structures#Vectors",
+      "concepts": [
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Maps",
+      "url": "https://clojure.org/reference/data_structures#Maps",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Data Structures: Sets",
+      "url": "https://clojure.org/reference/data_structures#Sets",
+      "concepts": [
+        "sets"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Sequences",
+      "url": "https://clojure.org/reference/sequences",
+      "concepts": [
+        "iterators",
+        "lazy-evaluation",
+        "collections"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Transient Data Structures",
+      "url": "https://clojure.org/reference/transients",
+      "concepts": [
+        "value-reference-semantics",
+        "performance"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Transducers",
+      "url": "https://clojure.org/reference/transducers",
+      "concepts": [
+        "higher-order-functions",
+        "pipelines"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Reducers",
+      "url": "https://clojure.org/reference/reducers",
+      "concepts": [
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Multimethods and Hierarchies",
+      "url": "https://clojure.org/reference/multimethods",
+      "concepts": [
+        "multiple-dispatch",
+        "polymorphism"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Protocols",
+      "url": "https://clojure.org/reference/protocols",
+      "concepts": [
+        "interfaces-protocols"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Datatypes: deftype, defrecord and reify",
+      "url": "https://clojure.org/reference/datatypes",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Metadata",
+      "url": "https://clojure.org/reference/metadata",
+      "concepts": [
+        "annotations-attributes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Namespaces",
+      "url": "https://clojure.org/reference/namespaces",
+      "concepts": [
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Libs (require/use, lib conventions)",
+      "url": "https://clojure.org/reference/libs",
+      "concepts": [
+        "modules",
+        "imports"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Vars and the Global Environment",
+      "url": "https://clojure.org/reference/vars",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Refs and Transactions (STM)",
+      "url": "https://clojure.org/reference/refs",
+      "concepts": [
+        "transactions-stm"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Agents and Asynchronous Actions",
+      "url": "https://clojure.org/reference/agents",
+      "concepts": [
+        "actors",
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Atoms",
+      "url": "https://clojure.org/reference/atoms",
+      "concepts": [
+        "atomics-memory-ordering",
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Java Interop",
+      "url": "https://clojure.org/reference/java_interop",
+      "concepts": [
+        "interoperability",
+        "ffi"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Java Interop: type hints",
+      "url": "https://clojure.org/reference/java_interop#typehints",
+      "concepts": [
+        "type-annotations"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Ahead-of-time Compilation and Class Generation",
+      "url": "https://clojure.org/reference/compilation",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — REPL and main entry points",
+      "url": "https://clojure.org/reference/repl_and_main",
+      "concepts": [
+        "command-line",
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Deps and CLI",
+      "url": "https://clojure.org/reference/deps_and_cli",
+      "concepts": [
+        "package-management",
+        "build-systems"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Clojure Reference — Differences with other Lisps",
+      "url": "https://clojure.org/reference/lisps",
+      "concepts": [
+        "comparison"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Clojure API documentation (clojure.core and namespaces)",
+      "url": "https://clojure.github.io/clojure/",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "clojure.core API reference",
+      "url": "https://clojure.github.io/clojure/clojure.core-api.html",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "core.async API reference",
+      "url": "https://clojure.github.io/core.async/",
+      "concepts": [
+        "channels-message-passing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "Clojure Rationale (Hickey)",
+      "url": "https://clojure.org/about/rationale",
+      "concepts": [
+        "design-rationale"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Rich Hickey"
+      ],
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "Values and Change: Clojure's approach to Identity and State",
+      "url": "https://clojure.org/about/state",
+      "concepts": [
+        "value-reference-semantics",
+        "concurrency",
+        "design-rationale"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Rich Hickey"
+      ],
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "Clojure core.async Channels (announcement and rationale)",
+      "url": "https://clojure.org/news/2013/06/28/clojure-clore-async-channels",
+      "concepts": [
+        "channels-message-passing"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Rich Hickey"
+      ],
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "Clojure release and dev changelog",
+      "url": "https://clojure.org/releases/devchangelog",
+      "concepts": [
+        "language-evolution",
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "A History of Clojure (Hickey, HOPL IV)",
+      "url": "https://dl.acm.org/doi/10.1145/3386321",
+      "concepts": [
+        "history",
+        "design-rationale"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Rich Hickey"
+      ],
+      "year": 2020,
+      "notes": "Open access on ACM DL.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal-index",
+      "title": "Contributing to Clojure (JIRA tickets / patch process)",
+      "url": "https://clojure.org/community/contributing",
+      "concepts": [
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Getting Started",
+      "url": "https://clojure.org/guides/getting_started",
+      "concepts": [
+        "hello-world",
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Learn Clojure — Syntax",
+      "url": "https://clojure.org/guides/learn/syntax",
+      "concepts": [
+        "lexical-structure",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Learn Clojure — Functions",
+      "url": "https://clojure.org/guides/learn/functions",
+      "concepts": [
+        "functions",
+        "parameters-arguments"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Learn Clojure — Flow Control",
+      "url": "https://clojure.org/guides/learn/flow",
+      "concepts": [
+        "conditionals",
+        "loops",
+        "exceptions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Learn Clojure — Sequential Collections",
+      "url": "https://clojure.org/guides/learn/sequential_colls",
+      "concepts": [
+        "lists",
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Learn Clojure — Hashed Collections",
+      "url": "https://clojure.org/guides/learn/hashed_colls",
+      "concepts": [
+        "maps-dictionaries",
+        "sets"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Learn Clojure — Namespaces",
+      "url": "https://clojure.org/guides/learn/namespaces",
+      "concepts": [
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Destructuring in Clojure",
+      "url": "https://clojure.org/guides/destructuring",
+      "concepts": [
+        "destructuring"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Threading Macros",
+      "url": "https://clojure.org/guides/threading_macros",
+      "concepts": [
+        "pipelines",
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Higher Order Functions",
+      "url": "https://clojure.org/guides/higher_order_functions",
+      "concepts": [
+        "higher-order-functions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Equality",
+      "url": "https://clojure.org/guides/equality",
+      "concepts": [
+        "type-equivalence"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — Weird Characters (reader syntax)",
+      "url": "https://clojure.org/guides/weird_characters",
+      "concepts": [
+        "lexical-structure",
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Clojure Guides — spec Guide",
+      "url": "https://clojure.org/guides/spec",
+      "concepts": [
+        "schema-validation"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "cheatsheet",
+      "title": "Clojure Cheatsheet",
+      "url": "https://clojure.org/api/cheatsheet",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True (Higginbotham) — online",
+      "url": "https://www.braveclojure.com/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — Do Things: A Clojure Crash Course",
+      "url": "https://www.braveclojure.com/do-things/",
+      "concepts": [
+        "functions",
+        "conditionals"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — Writing Macros",
+      "url": "https://www.braveclojure.com/writing-macros/",
+      "concepts": [
+        "macros"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — The Sacred Art of Concurrent and Parallel Programming",
+      "url": "https://www.braveclojure.com/concurrency/",
+      "concepts": [
+        "concurrency"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — Clojure Metaphysics: Atoms, Refs, Vars",
+      "url": "https://www.braveclojure.com/zombie-metaphysics/",
+      "concepts": [
+        "transactions-stm"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — Mastering Concurrent Processes with core.async",
+      "url": "https://www.braveclojure.com/core-async/",
+      "concepts": [
+        "channels-message-passing"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — Multimethods, Protocols, and Records",
+      "url": "https://www.braveclojure.com/multimethods-records-protocols/",
+      "concepts": [
+        "multiple-dispatch",
+        "interfaces-protocols",
+        "records-structs"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Clojure for the Brave and True — Java Interop",
+      "url": "https://www.braveclojure.com/java/",
+      "concepts": [
+        "interoperability"
+      ],
+      "authors": [
+        "Daniel Higginbotham"
+      ],
+      "year": 2015,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "cheatsheet",
+      "title": "Learn X in Y minutes — Clojure",
+      "url": "https://learnxinyminutes.com/clojure/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Learn X in Y minutes — Clojure macros",
+      "url": "https://learnxinyminutes.com/clojure-macros/",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "style-guide",
+      "title": "The Clojure Style Guide",
+      "url": "https://guide.clojure.style/",
+      "concepts": [
+        "style-conventions"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "video",
+      "title": "Simple Made Easy (Hickey, Strange Loop 2011)",
+      "url": "https://www.infoq.com/presentations/Simple-Made-Easy/",
+      "concepts": [
+        "design-rationale"
+      ],
+      "authors": [
+        "Rich Hickey"
+      ],
+      "year": 2011,
+      "authority": "designer",
+      "format": "video",
+      "scope": "section",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "Clojure history (clojure.org/about/history)",
+      "url": "https://clojure.org/about/history",
+      "concepts": [
+        "history"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "clojure/clojure — the Clojure language (JVM)",
+      "url": "https://github.com/clojure/clojure",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure LispReader.java — the reader",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/LispReader.java",
+      "concepts": [
+        "lexer",
+        "parser"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure Compiler.java — analyzer and JVM bytecode emitter (special forms, recur)",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Compiler.java",
+      "concepts": [
+        "compiler-architecture",
+        "code-generation-backend"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure core.clj — clojure.core (defn, defmacro, cond, ->, lazy seqs)",
+      "url": "https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj",
+      "concepts": [
+        "standard-library",
+        "macros"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure core_deftype.clj — deftype/defrecord/defprotocol",
+      "url": "https://github.com/clojure/clojure/blob/master/src/clj/clojure/core_deftype.clj",
+      "concepts": [
+        "records-structs",
+        "interfaces-protocols"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure core_proxy.clj — proxy and gen-class support",
+      "url": "https://github.com/clojure/clojure/blob/master/src/clj/clojure/core_proxy.clj",
+      "concepts": [
+        "inheritance",
+        "interoperability"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure PersistentVector.java — persistent vector (32-way trie)",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/PersistentVector.java",
+      "concepts": [
+        "arrays"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure PersistentHashMap.java — persistent hash map (HAMT)",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/PersistentHashMap.java",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure LazySeq.java — lazy sequences",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/LazySeq.java",
+      "concepts": [
+        "lazy-evaluation"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure LockingTransaction.java — MVCC software transactional memory",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/LockingTransaction.java",
+      "concepts": [
+        "transactions-stm"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure Agent.java — agents",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Agent.java",
+      "concepts": [
+        "actors"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure Atom.java — atoms (CAS)",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java",
+      "concepts": [
+        "atomics-memory-ordering"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure Var.java — vars and dynamic binding",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Var.java",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure MultiFn.java — multimethod dispatch",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/MultiFn.java",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure Namespace.java — namespaces",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Namespace.java",
+      "concepts": [
+        "namespaces"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure Numbers.java — numeric tower and arithmetic",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Numbers.java",
+      "concepts": [
+        "integers",
+        "operators"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clojure DynamicClassLoader.java — dynamic class loading for eval",
+      "url": "https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/DynamicClassLoader.java",
+      "concepts": [
+        "runtime-system",
+        "eval"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "Clojure test suite — test_clojure/special.clj (special forms)",
+      "url": "https://github.com/clojure/clojure/blob/master/test/clojure/test_clojure/special.clj",
+      "concepts": [
+        "testing"
+      ],
+      "implementation": "Clojure (JVM)",
+      "format": "source-file",
+      "scope": "section",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "core.async — async.clj (channels, go blocks)",
+      "url": "https://github.com/clojure/core.async/blob/master/src/main/clojure/clojure/core/async.clj",
+      "concepts": [
+        "channels-message-passing",
+        "coroutines"
+      ],
+      "implementation": "Clojure (JVM)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "clojure/clojure-clr — Clojure on the .NET CLR",
+      "url": "https://github.com/clojure/clojure-clr",
+      "concepts": [
+        "interoperability"
+      ],
+      "implementation": "ClojureCLR",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "babashka/babashka — native Clojure scripting runtime (SCI interpreter)",
+      "url": "https://github.com/babashka/babashka",
+      "concepts": [
+        "interpreter"
+      ],
+      "implementation": "babashka",
+      "authority": "community",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "jank-lang/jank — native Clojure dialect on LLVM",
+      "url": "https://github.com/jank-lang/jank",
+      "concepts": [
+        "jit"
+      ],
+      "implementation": "jank",
+      "authority": "community",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Clojure",
+      "url": "https://en.wikipedia.org/wiki/Clojure",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Clojure",
+      "url": "https://pldb.io/concepts/clojure.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Clojure",
+      "url": "https://rosettacode.org/wiki/Category:Clojure",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "ClojureDocs — community examples for clojure.core",
+      "url": "https://clojuredocs.org/",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "curated-list",
+      "title": "Awesome Clojure",
+      "url": "https://github.com/razum2um/awesome-clojure",
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open"
+    }
+  ]
+}

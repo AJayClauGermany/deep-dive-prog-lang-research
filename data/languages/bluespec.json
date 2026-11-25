@@ -1,0 +1,409 @@
+{
+ "id": "bluespec",
+ "name": "Bluespec",
+ "aliases": [
+  "BSV",
+  "Bluespec SystemVerilog",
+  "BH",
+  "Bluespec Haskell",
+  "Bluespec Classic"
+ ],
+ "categories": [
+  "hardware-description"
+ ],
+ "paradigms": [
+  "rule-based",
+  "term-rewriting",
+  "functional",
+  "structural"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "inferred",
+  "polymorphic"
+ ],
+ "first_appeared": 2003,
+ "designers": [
+  "Arvind",
+  "Rishiyur S. Nikhil",
+  "Lennart Augustsson",
+  "Bluespec Inc."
+ ],
+ "summary": "High-level hardware description language whose behaviour is expressed as atomic guarded rules (term rewriting) over modules with guarded method interfaces, with Haskell-style types and polymorphism. Two syntaxes: BSV (SystemVerilog-like) and BH/Bluespec Classic (Haskell-like); the bsc compiler was open-sourced in 2020.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".bsv",
+  ".bs"
+ ],
+ "homepage": "https://github.com/B-Lang-org/bsc",
+ "influenced_by": [
+  "haskell",
+  "systemverilog"
+ ],
+ "related": [
+  {
+   "id": "haskell",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "verilog",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The BSV Reference Guide and the Bluespec Classic (BH) reference are the language definitions (LaTeX sources in the bsc repo, PDFs in B-Lang-org/Documentation).",
+  "0": "bsc (Haskell) is the only full implementation; it generates Verilog or Bluesim C++."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BSV Language Reference Guide (PDF)",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Language_Spec/bsv-reference-guide.pdf",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bluespec Classic (BH) language specification (PDF)",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Language_Spec/Bluespec_Classic.pdf",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BSV reference guide — LaTeX source (bsc/doc)",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/doc/BSV_ref_guide/BSV_lang.tex",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BH reference guide — LaTeX source (bsc/doc)",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/doc/BH_ref_guide/BH_lang.tex",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Bluespec for High-Level Hardware Design (overview)",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Bluespec_for_High_Level_HW_Design.pdf",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Bluespec offer to donate BSV to IEEE P1800 (2010)",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf",
+   "concepts": [
+    "history",
+    "standardization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "year": 2010
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "B-Lang-org/bsc — Bluespec compiler",
+   "url": "https://github.com/B-Lang-org/bsc",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/Lex.hs — lexer",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/Lex.hs",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/Parser/BSV/CVParser.lhs — BSV parser",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/Parser/BSV/CVParser.lhs",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/Parser/Classic/CParser.hs — Bluespec Classic parser",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/Parser/Classic/CParser.hs",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/CSyntax.hs — concrete syntax tree",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/CSyntax.hs",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/TypeCheck.hs — type checker",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/TypeCheck.hs",
+   "concepts": [
+    "semantic-analysis",
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/ASyntax.hs — ATS intermediate form",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/ASyntax.hs",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/comp/ASchedule.hs — rule scheduler",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/comp/ASchedule.hs",
+   "concepts": [
+    "hdl-signals-timing",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/Libraries/Base1/Prelude.bs — Prelude library",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/Libraries/Base1/Prelude.bs",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bsc src/Libraries/Base1/FIFO.bs — FIFO library",
+   "url": "https://github.com/B-Lang-org/bsc/blob/main/src/Libraries/Base1/FIFO.bs",
+   "concepts": [
+    "standard-library",
+    "channels-message-passing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "bsc"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Nikhil & Czeck — BSV by Example (free PDF)",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Tutorials/BSV_by_Example_Book/bsv_by_example.pdf",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Rishiyur S. Nikhil",
+    "Kathy Czeck"
+   ],
+   "year": 2010
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Bluespec Classic training — rule semantics lecture",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Tutorials/Bluespec_Classic_Training/Reference/Lec03_Rule_Semantics.pdf",
+   "concepts": [
+    "hdl-signals-timing",
+    "concurrency",
+    "rewriting"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Bluespec Classic training — Hello World example",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Tutorials/Bluespec_Classic_Training/Examples/Eg02_HelloWorld.pdf",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Bluespec Classic training — interop with C",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Tutorials/Bluespec_Classic_Training/Reference/Lec11_Interop_C.pdf",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Bluespec Classic training — multiple clock domains",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Tutorials/Bluespec_Classic_Training/Reference/Lec12_Multiple_Clock_Domains.pdf",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Nikhil — Bluespec BSV Tutorial",
+   "url": "https://github.com/rsnikhil/Bluespec_BSV_Tutorial",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BSV User Guide (PDF)",
+   "url": "https://github.com/B-Lang-org/Documentation/blob/master/Language_Spec/bsv-user-guide.pdf",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Bluespec",
+   "url": "https://en.wikipedia.org/wiki/Bluespec",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Bluespec",
+   "url": "https://pldb.io/concepts/bluespec.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,423 @@
+{
+ "id": "p-lang",
+ "name": "P",
+ "aliases": [
+  "P language",
+  "P#",
+  "PObserve",
+  "PVerifier"
+ ],
+ "categories": [
+  "specification-modeling",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "actor",
+  "event-driven",
+  "state-machine"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "Ankush Desai",
+  "Shaz Qadeer",
+  "Vivek Gupta",
+  "Ethan Jackson",
+  "Sriram Rajamani"
+ ],
+ "summary": "A state-machine based language for modelling and checking asynchronous event-driven distributed systems: programs are collections of communicating state machines plus safety/liveness spec monitors, systematically tested by the P checker (and since 2025 proved with PVerifier). Originally from Microsoft Research (Windows USB driver stack), now developed at AWS.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".p",
+  ".pproj"
+ ],
+ "homepage": "https://p-org.github.io/P/",
+ "influenced_by": [
+  "actor-model",
+  "statecharts",
+  "csharp"
+ ],
+ "related": [
+  {
+   "id": "csharp",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "actor-model",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: the online P language manual and the PLDI 2013 paper define the language; the ANTLR grammar in the compiler is the precise syntax.",
+  "0": "p-org/P (C#) contains the compiler, which generates C# code checked by the systematic-testing engine (originally Coyote/PSharp lineage) plus the PVerifier back end."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — outline",
+   "url": "https://p-org.github.io/P/manualoutline/",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Data types (primitive, collections, tuples, named tuples, enums)",
+   "url": "https://p-org.github.io/P/manual/datatypes/",
+   "concepts": [
+    "primitive-types",
+    "tuples",
+    "maps-dictionaries",
+    "sets",
+    "enums"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Events",
+   "url": "https://p-org.github.io/P/manual/events/",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — State machines (states, entry/exit, handlers, defer/ignore)",
+   "url": "https://p-org.github.io/P/manual/statemachines/",
+   "concepts": [
+    "actors",
+    "automata"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — State machines — event handlers with goto",
+   "url": "https://p-org.github.io/P/manual/statemachines/#event-handler-with-goto",
+   "concepts": [
+    "actors",
+    "goto-labels"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Statements (assert, send, raise, goto, receive, loops, if)",
+   "url": "https://p-org.github.io/P/manual/statements/",
+   "concepts": [
+    "statements",
+    "conditionals",
+    "loops",
+    "assertions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Expressions",
+   "url": "https://p-org.github.io/P/manual/expressions/",
+   "concepts": [
+    "expressions",
+    "operators"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Functions",
+   "url": "https://p-org.github.io/P/manual/functions/",
+   "concepts": [
+    "functions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Foreign types and functions",
+   "url": "https://p-org.github.io/P/manual/foreigntypesfunctions/",
+   "concepts": [
+    "ffi"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Module system",
+   "url": "https://p-org.github.io/P/manual/modulesystem/",
+   "concepts": [
+    "modules"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Specification monitors",
+   "url": "https://p-org.github.io/P/manual/monitors/",
+   "concepts": [
+    "verification",
+    "assertions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Test cases",
+   "url": "https://p-org.github.io/P/manual/testcases/",
+   "concepts": [
+    "testing"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — Semantics of P programs",
+   "url": "https://p-org.github.io/P/advanced/psemantics/",
+   "concepts": [
+    "formal-semantics",
+    "concurrency"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "P language manual — PVerifier language extensions (invariants, proofs)",
+   "url": "https://p-org.github.io/P/advanced/PVerifierLanguageExtensions/outline/",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "P: Safe Asynchronous Event-Driven Programming (PLDI 2013)",
+   "url": "https://ankushdesai.github.io/assets/papers/p.pdf",
+   "concepts": [
+    "design-rationale",
+    "formal-semantics"
+   ],
+   "authors": [
+    "Ankush Desai",
+    "Vivek Gupta",
+    "Ethan Jackson",
+    "Shaz Qadeer",
+    "Sriram Rajamani",
+    "Damien Zufferey"
+   ],
+   "year": 2013,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Compositional Programming and Testing of Dynamic Distributed Systems (ModP, OOPSLA 2018)",
+   "url": "https://ankushdesai.github.io/assets/papers/modp.pdf",
+   "concepts": [
+    "modules",
+    "testing"
+   ],
+   "authors": [
+    "Ankush Desai",
+    "Amar Phanishayee",
+    "Shaz Qadeer",
+    "Sanjit A. Seshia"
+   ],
+   "year": 2018,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "p-org/P — P compiler and checker",
+   "url": "https://github.com/p-org/P",
+   "concepts": [
+    "compiler-architecture",
+    "verification"
+   ],
+   "implementation": "P compiler",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "P compiler — PLexer.g4 (ANTLR lexer)",
+   "url": "https://github.com/p-org/P/blob/master/Src/PCompiler/CompilerCore/Parser/PLexer.g4",
+   "concepts": [
+    "lexer",
+    "keywords"
+   ],
+   "implementation": "P compiler",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "P compiler — PParser.g4 (ANTLR grammar)",
+   "url": "https://github.com/p-org/P/blob/master/Src/PCompiler/CompilerCore/Parser/PParser.g4",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "P compiler",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "P tutorials — client/server, two-phase commit, Paxos ...",
+   "url": "https://p-org.github.io/P/tutsoutline/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "P tutorial — Two Phase Commit",
+   "url": "https://p-org.github.io/P/tutorial/twophasecommit/",
+   "concepts": [
+    "concurrency",
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "What is P?",
+   "url": "https://p-org.github.io/P/whatisP/",
+   "concepts": [
+    "design-rationale"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Using P (compile and check)",
+   "url": "https://p-org.github.io/P/getstarted/usingP/",
+   "concepts": [
+    "tooling"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Systems Correctness Practices at Amazon Web Services (CACM, uses of P)",
+   "url": "https://cacm.acm.org/practice/systems-correctness-practices-at-amazon-web-services/",
+   "concepts": [
+    "verification"
+   ],
+   "year": 2025,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "P publications",
+   "url": "https://p-org.github.io/P/publications/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

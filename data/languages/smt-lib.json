@@ -1,0 +1,2361 @@
+{
+ "id": "smt-lib",
+ "name": "SMT-LIB",
+ "aliases": [
+  "SMT-LIB 2",
+  "SMT-LIBv2",
+  "SMT2",
+  "SMT-LIB format"
+ ],
+ "categories": [
+  "specification-modeling",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "logic",
+  "command-language"
+ ],
+ "typing": [
+  "static",
+  "many-sorted",
+  "parametric-sorts (2.7 polymorphism)"
+ ],
+ "first_appeared": 2004,
+ "designers": [
+  "Clark Barrett",
+  "Aaron Stump",
+  "Cesare Tinelli",
+  "Pascal Fontaine",
+  "Silvio Ranise"
+ ],
+ "summary": "The common input and command language of satisfiability-modulo-theories (SMT) solvers: an S-expression syntax for many-sorted first-order formulas over standardised background theories (integers, reals, bit-vectors, arrays, floating point, strings, datatypes) plus a script language (declare-fun, assert, check-sat, get-model, push/pop) with an operational semantics for interacting with solvers.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "SMT-LIB Standard Version 2.7 (2025)",
+  "SMT-LIB Standard Version 2.6"
+ ],
+ "file_extensions": [
+  ".smt2",
+  ".smt"
+ ],
+ "homepage": "https://smt-lib.org/",
+ "influenced_by": [
+  "s-expressions",
+  "first-order-logic",
+  "tptp"
+ ],
+ "related": [
+  {
+   "id": "dimacs-cnf",
+   "relation": "family"
+  },
+  {
+   "id": "tptp",
+   "relation": "family"
+  },
+  {
+   "id": "sygus",
+   "relation": "host-of"
+  },
+  {
+   "id": "first-order-logic",
+   "relation": "formalizes"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the SMT-LIB Standard reference document (Barrett, Fontaine, Tinelli; v2.7 of 2025, v2.6 still the most widely implemented), plus the separate machine-readable theory and logic declarations on smt-lib.org. Section links use #page=N into the PDF (PDF page = printed page + 1). Solver manuals (cvc5, Z3) document non-standard theories (sequences, sets, bags, finite fields).",
+  "0": "No single reference implementation: Z3, cvc5, Yices 2, Bitwuzla, MathSAT and OpenSMT each implement their own SMT-LIB parser; Dolmen is a standalone parser/typechecker that tracks the standard closely.",
+  "3": "No PLDB entry was found for SMT-LIB."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard: Version 2.7 (full PDF)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf",
+   "concepts": [
+    "standardization",
+    "grammar",
+    "formal-semantics"
+   ],
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard: Version 2.6 (2024-09-20 release)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.6-r2024-09-20.pdf",
+   "concepts": [
+    "standardization"
+   ],
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2024,
+   "version": "2.6",
+   "authority": "standards-body",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard: Version 2.0 (2012-09-09 release)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.0-r12.09.09.pdf",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authors": [
+    "Clark Barrett",
+    "Aaron Stump",
+    "Cesare Tinelli"
+   ],
+   "year": 2010,
+   "version": "2.0",
+   "authority": "standards-body",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard: Version 1.2 (2006)",
+   "url": "https://smt-lib.org/papers/format-v1.2-r06.08.30.pdf",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ],
+   "authors": [
+    "Silvio Ranise",
+    "Cesare Tinelli"
+   ],
+   "year": 2006,
+   "version": "1.2",
+   "authority": "standards-body",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 1.1.2 Differences between Version 2.7 and Version 2.6 (polymorphism, maps)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=12",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility",
+    "generics"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 1.1.4 Differences between Version 2.6 and 2.5 (algebraic datatypes)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=13",
+   "concepts": [
+    "language-evolution",
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 1.2 Overview of SMT-LIB",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=15",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 2 Basic Assumptions and Structure (SMT, underlying logic, background theories)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=18",
+   "concepts": [
+    "logic-foundations",
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.1 Lexicon (comments, numerals, decimals, strings, symbols, keywords)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=23",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "literals",
+    "identifiers",
+    "keywords"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.2 S-expressions",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=26",
+   "concepts": [
+    "grammar",
+    "expressions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.3 Identifiers (indexed identifiers)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=27",
+   "concepts": [
+    "identifiers"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.5 Sorts",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=28",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.6 Terms and Formulas",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=29",
+   "concepts": [
+    "expressions",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.6.1 Variable Binders (let, forall, exists, match, lambda)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=30",
+   "concepts": [
+    "variables",
+    "pattern-matching",
+    "closures"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.6.2 Scoping of variables",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=33",
+   "concepts": [
+    "scope",
+    "substitution-binding"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.6.3 Well-sortedness requirements",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=34",
+   "concepts": [
+    "type-system",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.6.4 Annotations (named terms, patterns)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=35",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.7 Theory Declarations",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=36",
+   "concepts": [
+    "modules",
+    "standard-library"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.8 Core Theory (Bool, ite, =, distinct)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=42",
+   "concepts": [
+    "booleans",
+    "conditionals",
+    "operators"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.9 Higher-order Core Theory (maps, ->)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=45",
+   "concepts": [
+    "function-types",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.10 Logic Declarations",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=46",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.11 Scripts (command syntax)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=48",
+   "concepts": [
+    "program-structure",
+    "statements"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.11.1 Command responses",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=51",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 3.11.2 Example scripts",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=53",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4 Operational Semantics of SMT-LIB (execution modes, solver responses)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=56",
+   "concepts": [
+    "formal-semantics",
+    "interpreter"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.1.4 The assertion stack",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=59",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.1.7 Solver options",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=60",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.2.2 Modifying the assertion stack (push, pop, reset-assertions)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=64",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.2.3 Introducing new symbols (declare-fun, define-fun, declare-datatypes, define-fun-rec)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=65",
+   "concepts": [
+    "functions",
+    "constants",
+    "algebraic-data-types",
+    "recursion",
+    "type-aliases"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.2.4 Asserting and inspecting formulas",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=69",
+   "concepts": [
+    "assertions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.2.5 Checking for satisfiability (check-sat, check-sat-assuming)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=70",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.2.6 Inspecting models (get-model, get-value)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=71",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 4.2.7 Inspecting proofs (get-proof, unsat cores)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=74",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 5 Logical Semantics of SMT-LIB Formulas",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=77",
+   "concepts": [
+    "formal-semantics",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 5.2.2 Well-sorted terms",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=82",
+   "concepts": [
+    "type-system",
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 5.3 Structures and Satisfiability",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=85",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — 5.4 Theories (combined theories)",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=88",
+   "concepts": [
+    "formal-semantics",
+    "modules"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — Appendix B Concrete Syntax",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=102",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The SMT-LIB Standard v2.7 — Appendix C Abstract Syntax",
+   "url": "https://smt-lib.org/papers/smt-lib-reference-v2.7-r2025-02-05.pdf#page=109",
+   "concepts": [
+    "grammar",
+    "ast"
+   ],
+   "scope": "section",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "year": 2025,
+   "version": "2.7",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theories index",
+   "url": "https://smt-lib.org/theories.shtml",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — Core (Booleans, ite, equality)",
+   "url": "https://smt-lib.org/theories-Core.shtml",
+   "concepts": [
+    "booleans",
+    "conditionals"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — Ints (unbounded integers)",
+   "url": "https://smt-lib.org/theories-Ints.shtml",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — Reals",
+   "url": "https://smt-lib.org/theories-Reals.shtml",
+   "concepts": [
+    "floating-point",
+    "operators"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — Reals_Ints (mixed integer/real, to_real, to_int)",
+   "url": "https://smt-lib.org/theories-Reals_Ints.shtml",
+   "concepts": [
+    "type-conversion",
+    "integers"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — ArraysEx (functional arrays with extensionality)",
+   "url": "https://smt-lib.org/theories-ArraysEx.shtml",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — FixedSizeBitVectors",
+   "url": "https://smt-lib.org/theories-FixedSizeBitVectors.shtml",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — FloatingPoint (IEEE 754)",
+   "url": "https://smt-lib.org/theories-FloatingPoint.shtml",
+   "concepts": [
+    "floating-point"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — UnicodeStrings (strings and regular expressions)",
+   "url": "https://smt-lib.org/theories-UnicodeStrings.shtml",
+   "concepts": [
+    "strings",
+    "unicode",
+    "regular-expressions"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB theory declaration — HO-Core (higher-order core)",
+   "url": "https://smt-lib.org/theories-HO-Core.shtml",
+   "concepts": [
+    "higher-order-functions",
+    "function-types"
+   ],
+   "authority": "standards-body",
+   "authors": [
+    "Clark Barrett",
+    "Pascal Fontaine",
+    "Cesare Tinelli"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB logics (QF_LIA, QF_BV, AUFLIRA, ...)",
+   "url": "https://smt-lib.org/logics.shtml",
+   "concepts": [
+    "modules"
+   ],
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SMT-LIB logics — complete list with declarations",
+   "url": "https://smt-lib.org/logics-all.shtml",
+   "concepts": [
+    "modules"
+   ],
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SMT-LIB standard page (versions, change log)",
+   "url": "https://smt-lib.org/language.shtml",
+   "concepts": [
+    "standardization",
+    "language-evolution"
+   ],
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "SMT-LIB news (release announcements)",
+   "url": "https://smt-lib.org/news.shtml",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: strings (non-standard extensions)",
+   "url": "https://cvc5.github.io/docs/latest/theories/strings.html",
+   "concepts": [
+    "strings",
+    "regular-expressions"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: sequences",
+   "url": "https://cvc5.github.io/docs/latest/theories/sequences.html",
+   "concepts": [
+    "lists",
+    "arrays"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: datatypes (declare-datatypes, match)",
+   "url": "https://cvc5.github.io/docs/latest/theories/datatypes.html",
+   "concepts": [
+    "algebraic-data-types",
+    "pattern-matching"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: sets and relations",
+   "url": "https://cvc5.github.io/docs/latest/theories/sets-and-relations.html",
+   "concepts": [
+    "sets"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: bags (multisets)",
+   "url": "https://cvc5.github.io/docs/latest/theories/bags.html",
+   "concepts": [
+    "collections"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: finite fields",
+   "url": "https://cvc5.github.io/docs/latest/theories/finite_field.html",
+   "concepts": [
+    "integers"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: separation logic",
+   "url": "https://cvc5.github.io/docs/latest/theories/separation-logic.html",
+   "concepts": [
+    "logic-foundations",
+    "pointers-references"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cvc5 documentation — theory reference: transcendental functions",
+   "url": "https://cvc5.github.io/docs/latest/theories/transcendentals.html",
+   "concepts": [
+    "floating-point"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Z3Prover/z3 — Z3 theorem prover (Microsoft Research)",
+   "url": "https://github.com/Z3Prover/z3",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "implementation": "Z3",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — parsers/smt2/smt2scanner.cpp — SMT-LIB 2 tokenizer",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/parsers/smt2/smt2scanner.cpp",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — parsers/smt2/smt2parser.cpp — SMT-LIB 2 parser (terms, binders, commands)",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/parsers/smt2/smt2parser.cpp",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — cmd_context/cmd_context.cpp — command context (assertion stack, declarations)",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/cmd_context/cmd_context.cpp",
+   "concepts": [
+    "interpreter",
+    "scope"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — cmd_context/basic_cmds.cpp — basic SMT-LIB commands (get-model, get-value, set-option ...)",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/cmd_context/basic_cmds.cpp",
+   "concepts": [
+    "interpreter",
+    "statements"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/ast.cpp — term/sort AST with hash-consing",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/ast.cpp",
+   "concepts": [
+    "ast"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/arith_decl_plugin.cpp — Ints/Reals theory symbols",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/arith_decl_plugin.cpp",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/bv_decl_plugin.cpp — bit-vector theory symbols",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/bv_decl_plugin.cpp",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/array_decl_plugin.cpp — array theory symbols",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/array_decl_plugin.cpp",
+   "concepts": [
+    "arrays"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/datatype_decl_plugin.cpp — algebraic datatypes",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/datatype_decl_plugin.cpp",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/seq_decl_plugin.cpp — sequences, strings and regular expressions",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/seq_decl_plugin.cpp",
+   "concepts": [
+    "strings",
+    "regular-expressions",
+    "lists"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/fpa_decl_plugin.cpp — floating-point theory",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/fpa_decl_plugin.cpp",
+   "concepts": [
+    "floating-point"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — ast/ast_smt2_pp.cpp — pretty-printer back to SMT-LIB 2",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/ast/ast_smt2_pp.cpp",
+   "concepts": [
+    "serialization"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Z3 — smt/smt_context.cpp — core CDCL(T) SMT engine",
+   "url": "https://github.com/Z3Prover/z3/blob/master/src/smt/smt_context.cpp",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "implementation": "Z3",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "cvc5/cvc5 — cvc5 SMT solver",
+   "url": "https://github.com/cvc5/cvc5",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "implementation": "cvc5",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — parser/smt2/smt2_lexer.cpp — SMT-LIB 2 lexer",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/parser/smt2/smt2_lexer.cpp",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — parser/smt2/smt2_cmd_parser.cpp — command parser",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/parser/smt2/smt2_cmd_parser.cpp",
+   "concepts": [
+    "parser",
+    "statements"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — parser/smt2/smt2_term_parser.cpp — term parser (let, match, quantifiers, indexed symbols)",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/parser/smt2/smt2_term_parser.cpp",
+   "concepts": [
+    "parser",
+    "expressions",
+    "pattern-matching"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — parser/smt2/smt2_state.cpp — parser state: symbol tables, logic handling",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/parser/smt2/smt2_state.cpp",
+   "concepts": [
+    "semantic-analysis",
+    "scope"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — printer/smt2/smt2_printer.cpp — SMT-LIB 2 printer",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/printer/smt2/smt2_printer.cpp",
+   "concepts": [
+    "serialization"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — theory/strings/theory_strings.cpp — theory solver for strings",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/theory/strings/theory_strings.cpp",
+   "concepts": [
+    "strings"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cvc5 — theory/datatypes/theory_datatypes.cpp — theory solver for datatypes",
+   "url": "https://github.com/cvc5/cvc5/blob/main/src/theory/datatypes/theory_datatypes.cpp",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "implementation": "cvc5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "SRI-CSL/yices2 — Yices 2 SMT solver",
+   "url": "https://github.com/SRI-CSL/yices2",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Yices 2",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yices 2 — src/frontend/smt2/smt2_parser.c",
+   "url": "https://github.com/SRI-CSL/yices2/blob/master/src/frontend/smt2/smt2_parser.c",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "Yices 2",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yices 2 — src/frontend/smt2/smt2_lexer.c",
+   "url": "https://github.com/SRI-CSL/yices2/blob/master/src/frontend/smt2/smt2_lexer.c",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "Yices 2",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "bitwuzla/bitwuzla — Bitwuzla SMT solver (bit-vectors, floating point, arrays)",
+   "url": "https://github.com/bitwuzla/bitwuzla",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Bitwuzla",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bitwuzla — src/parser/smt2/parser.cpp",
+   "url": "https://github.com/bitwuzla/bitwuzla/blob/main/src/parser/smt2/parser.cpp",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "Bitwuzla",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bitwuzla — src/parser/smt2/lexer.cpp",
+   "url": "https://github.com/bitwuzla/bitwuzla/blob/main/src/parser/smt2/lexer.cpp",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "Bitwuzla",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "usi-verification-and-security/opensmt — OpenSMT",
+   "url": "https://github.com/usi-verification-and-security/opensmt",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "OpenSMT",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Gbury/dolmen — Dolmen parsers and typechecker for SMT-LIB, TPTP, DIMACS",
+   "url": "https://github.com/Gbury/dolmen",
+   "concepts": [
+    "parser",
+    "semantic-analysis"
+   ],
+   "implementation": "Dolmen",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Dolmen — SMT-LIB v2.6 Menhir grammar (parser.mly)",
+   "url": "https://github.com/Gbury/dolmen/blob/master/src/languages/smtlib2/v2.6/script/parser.mly",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "Dolmen",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Dolmen — SMT-LIB polymorphic (2.7 draft) Menhir grammar",
+   "url": "https://github.com/Gbury/dolmen/blob/master/src/languages/smtlib2/poly/parser.mly",
+   "concepts": [
+    "grammar",
+    "generics"
+   ],
+   "implementation": "Dolmen",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "pysmt/pysmt — solver-agnostic Python library with SMT-LIB parser/printer",
+   "url": "https://github.com/pysmt/pysmt",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "pySMT",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (David Cok, PDF)",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.1 Some logical concepts (satisfiability, many-sorted logic)",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=18",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.4 Tokens",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=22",
+   "concepts": [
+    "lexical-structure",
+    "literals"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.5 Sort and Function Declarations",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=26",
+   "concepts": [
+    "type-system",
+    "functions"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.7 Expressions",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=28",
+   "concepts": [
+    "expressions",
+    "variables"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.8 Namespaces and Scopes",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=34",
+   "concepts": [
+    "namespaces",
+    "scope"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.9 Commands and command output",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=35",
+   "concepts": [
+    "statements",
+    "input-output"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 3.9.9 Adding scope: push and pop",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=49",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 4.1 Theories",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=61",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The SMT-LIBv2 Language and Tools: A Tutorial (Cok) — 4.2 Logics",
+   "url": "http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf#page=64",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authors": [
+    "David R. Cok"
+   ],
+   "format": "pdf",
+   "version": "2.0",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide — online interactive Z3 tutorial (SMT-LIB syntax)",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/intro",
+   "concepts": [
+    "hello-world"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Basic commands",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/basiccommands",
+   "concepts": [
+    "statements",
+    "scope"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Propositional logic",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/propositional-logic",
+   "concepts": [
+    "booleans",
+    "logic-foundations"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Uninterpreted functions and constants",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/Uninterpreted-functions-and-constants",
+   "concepts": [
+    "functions",
+    "constants"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Quantifiers (patterns, E-matching)",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/Quantifiers",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Lambdas",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/Lambdas",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Recursive functions (define-fun-rec)",
+   "url": "https://microsoft.github.io/z3guide/docs/logic/Recursive%20Functions",
+   "concepts": [
+    "recursion"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Arithmetic",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Arithmetic",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Bitvectors",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Bitvectors",
+   "concepts": [
+    "integers"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Arrays",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Arrays",
+   "concepts": [
+    "arrays"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Datatypes",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Datatypes",
+   "concepts": [
+    "algebraic-data-types",
+    "records-structs"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — IEEE Floats",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/IEEE%20Floats",
+   "concepts": [
+    "floating-point"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Strings",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Strings",
+   "concepts": [
+    "strings"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Sequences",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Sequences",
+   "concepts": [
+    "lists"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Regular expressions",
+   "url": "https://microsoft.github.io/z3guide/docs/theories/Regular%20Expressions",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Optimization (minimize/maximize extensions)",
+   "url": "https://microsoft.github.io/z3guide/docs/optimization/intro",
+   "concepts": [
+    "constraints"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Z3 Guide (SMT-LIB input) — Tactics and strategies",
+   "url": "https://microsoft.github.io/z3guide/docs/strategies/intro",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Z3",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Programming Z3 (Bjørner, de Moura, Nachmanson, Wintersteiger)",
+   "url": "https://z3prover.github.io/papers/programmingz3.html",
+   "concepts": [
+    "logic-foundations",
+    "verification"
+   ],
+   "authors": [
+    "Nikolaj Bjørner",
+    "Leonardo de Moura",
+    "Lev Nachmanson",
+    "Christoph Wintersteiger"
+   ],
+   "implementation": "Z3",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "cvc5 documentation (binary, options, SMT-LIB support)",
+   "url": "https://cvc5.github.io/docs/latest/",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "cvc5 examples (SMT-LIB and API side by side)",
+   "url": "https://cvc5.github.io/docs/latest/examples/examples.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "cvc5 proofs (proof formats produced from SMT-LIB problems)",
+   "url": "https://cvc5.github.io/docs/latest/proofs/proofs.html",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "cvc5",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yices 2 home and manual",
+   "url": "https://yices.csl.sri.com/",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Yices 2",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bitwuzla documentation",
+   "url": "https://bitwuzla.github.io/",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Bitwuzla",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MathSAT 5 home",
+   "url": "https://mathsat.fbk.eu/",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "MathSAT",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Z3 rise4fun tutorial, preserved (Philip Zucker)",
+   "url": "https://www.philipzucker.com/z3-rise4fun/",
+   "concepts": [
+    "hello-world"
+   ],
+   "implementation": "Z3",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "SMT-LIB example scripts",
+   "url": "https://smt-lib.org/examples.shtml",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "About SMT-LIB (initiative history and goals)",
+   "url": "https://smt-lib.org/about.shtml",
+   "concepts": [
+    "history"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Satisfiability modulo theories",
+   "url": "https://en.wikipedia.org/wiki/Satisfiability_modulo_theories",
+   "concepts": [
+    "history",
+    "comparison"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "SMT-LIB benchmark library",
+   "url": "https://smt-lib.org/benchmarks.shtml",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "SMT-COMP — the annual SMT solver competition",
+   "url": "https://smt-comp.github.io/",
+   "concepts": [
+    "performance"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "SMT-LIB-compliant solvers list",
+   "url": "https://smt-lib.org/solvers.shtml",
+   "concepts": [
+    "tooling"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "SMT-LIB software and utilities",
+   "url": "https://smt-lib.org/software.shtml",
+   "concepts": [
+    "tooling"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "SMT-LIB utilities (parsers, converters)",
+   "url": "https://smt-lib.org/utilities.shtml",
+   "concepts": [
+    "tooling"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
