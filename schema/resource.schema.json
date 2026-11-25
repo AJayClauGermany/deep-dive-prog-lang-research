@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resource.schema.json",
+  "title": "Resource (a link to literature or source code)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["level", "kind", "title", "url"],
+  "properties": {
+    "level": {"enum": [0, 1, 2, 3], "description": "0 source code, 1 primary (specs/proposals/defining papers), 2 secondary (tutorials/books/guides/analysis), 3 tertiary (encyclopedias/catalogs/collections)"},
+    "kind": {"enum": [
+      "implementation-repository", "implementation-source", "reference-implementation", "standard-library-source", "grammar-source", "conformance-tests", "tooling-source",
+      "standard", "standard-draft", "specification", "reference-manual", "library-reference", "grammar", "proposal", "proposal-index", "formal-semantics", "original-paper", "design-document", "release-notes",
+      "tutorial", "book", "guide", "course", "by-example", "cheatsheet", "article", "paper", "history", "video", "style-guide", "faq", "interactive", "comparison-guide", "internals-guide",
+      "encyclopedia", "wiki", "catalog", "comparison-table", "curated-list", "bibliography", "benchmark", "code-collection", "index"
+    ]},
+    "title": {"type": "string", "minLength": 3},
+    "url": {"type": "string", "pattern": "^https?://"},
+    "concepts": {"type": "array", "uniqueItems": true, "items": {"type": "string"}, "description": "Concept ids from data/concepts.json that this exact URL substantively covers"},
+    "scope": {"enum": ["whole", "section"], "description": "whole = covers the language broadly; section = deep link to a specific part"},
+    "implementation": {"type": "string", "description": "Level 0 (and implementation-specific docs): which implementation, e.g. CPython, GCC, rustc"},
+    "authority": {"enum": ["standards-body", "official", "designer", "vendor", "academic", "community"]},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "year": {"type": ["integer", "null"]},
+    "version": {"type": "string", "description": "Language/spec version or edition the resource describes"},
+    "format": {"enum": ["html", "pdf", "repository", "source-file", "directory", "book", "video", "dataset", "interactive"]},
+    "access": {"enum": ["open", "paywalled", "registration", "partially-open"]},
+    "languages": {"type": "array", "items": {"type": "string"}, "description": "Only in data/general/*.json: language ids this cross-language resource covers"},
+    "notes": {"type": "string"}
+  }
+}
