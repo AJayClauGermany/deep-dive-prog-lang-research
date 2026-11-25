@@ -1,0 +1,2117 @@
+{
+ "id": "llvm-ir",
+ "name": "LLVM IR",
+ "aliases": [
+  "LLVM intermediate representation",
+  "LLVM assembly language",
+  "LLVM bitcode"
+ ],
+ "categories": [
+  "intermediate-representation"
+ ],
+ "paradigms": [
+  "imperative",
+  "ssa"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "explicit"
+ ],
+ "first_appeared": 2003,
+ "designers": [
+  "Chris Lattner",
+  "Vikram Adve"
+ ],
+ "summary": "The typed, SSA-based intermediate representation of the LLVM compiler infrastructure, with equivalent in-memory, human-readable assembly (.ll) and dense bitcode (.bc) forms; the target of Clang, rustc, Swift, Julia and many other front ends.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".ll",
+  ".bc"
+ ],
+ "homepage": "https://llvm.org/",
+ "influenced_by": [],
+ "related": [
+  {
+   "id": "mlir",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No external standard: the LLVM Language Reference Manual is normative but evolves with each release (no stability guarantee beyond the bitcode compatibility policy). Formal semantics come from academic work (Vellvm, the PLDI 2017 poison/undef model, Alive2).",
+  "0": "llvm-project is the single reference implementation; file links point at main. Vellvm and Alive2 are independent executable semantics; llvmlite and Inkwell are third-party IR builders."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference Manual (LangRef)",
+   "url": "https://llvm.org/docs/LangRef.html",
+   "concepts": [
+    "intermediate-representation",
+    "grammar",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Abstract",
+   "url": "https://llvm.org/docs/LangRef.html#abstract",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Well-Formedness (SSA dominance rules)",
+   "url": "https://llvm.org/docs/LangRef.html#well-formedness",
+   "concepts": [
+    "semantic-analysis",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Identifiers (global @ and local % names)",
+   "url": "https://llvm.org/docs/LangRef.html#identifiers",
+   "concepts": [
+    "identifiers",
+    "lexical-structure",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — String constants",
+   "url": "https://llvm.org/docs/LangRef.html#string-constants",
+   "concepts": [
+    "strings",
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Module structure",
+   "url": "https://llvm.org/docs/LangRef.html#module-structure",
+   "concepts": [
+    "program-structure",
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Linkage types",
+   "url": "https://llvm.org/docs/LangRef.html#linkage-types",
+   "concepts": [
+    "visibility",
+    "separate-compilation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Calling conventions (ccc, fastcc, coldcc, tailcc, ...)",
+   "url": "https://llvm.org/docs/LangRef.html#calling-conventions",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Thread-local storage models",
+   "url": "https://llvm.org/docs/LangRef.html#thread-local-storage-models",
+   "concepts": [
+    "storage-duration",
+    "threads"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Structure types (named/identified)",
+   "url": "https://llvm.org/docs/LangRef.html#structure-types",
+   "concepts": [
+    "records-structs",
+    "type-aliases"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Global variables",
+   "url": "https://llvm.org/docs/LangRef.html#global-variables",
+   "concepts": [
+    "variables",
+    "constants",
+    "storage-duration"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Functions (definitions and declarations)",
+   "url": "https://llvm.org/docs/LangRef.html#functions",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Parameter attributes",
+   "url": "https://llvm.org/docs/LangRef.html#parameter-attributes",
+   "concepts": [
+    "parameters-arguments",
+    "annotations-attributes",
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Garbage collector strategy names",
+   "url": "https://llvm.org/docs/LangRef.html#garbage-collector-strategy-names",
+   "concepts": [
+    "garbage-collection"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Personality function",
+   "url": "https://llvm.org/docs/LangRef.html#personality-function",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Function attributes",
+   "url": "https://llvm.org/docs/LangRef.html#function-attributes",
+   "concepts": [
+    "annotations-attributes",
+    "purity",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Module-level inline assembly",
+   "url": "https://llvm.org/docs/LangRef.html#module-level-inline-assembly",
+   "concepts": [
+    "ffi",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Data layout string",
+   "url": "https://llvm.org/docs/LangRef.html#data-layout",
+   "concepts": [
+    "primitive-types",
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Pointer aliasing rules",
+   "url": "https://llvm.org/docs/LangRef.html#pointer-aliasing-rules",
+   "concepts": [
+    "pointers-references",
+    "memory-model",
+    "undefined-behavior"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Memory model for concurrent operations",
+   "url": "https://llvm.org/docs/LangRef.html#memory-model-for-concurrent-operations",
+   "concepts": [
+    "memory-model",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Atomic memory ordering constraints",
+   "url": "https://llvm.org/docs/LangRef.html#atomic-memory-ordering-constraints",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Floating-point environment",
+   "url": "https://llvm.org/docs/LangRef.html#floating-point-environment",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Fast-math flags",
+   "url": "https://llvm.org/docs/LangRef.html#fast-math-flags",
+   "concepts": [
+    "floating-point",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Type system",
+   "url": "https://llvm.org/docs/LangRef.html#type-system",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Function type",
+   "url": "https://llvm.org/docs/LangRef.html#function-type",
+   "concepts": [
+    "function-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Integer type (iN)",
+   "url": "https://llvm.org/docs/LangRef.html#integer-type",
+   "concepts": [
+    "integers",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Floating-point types",
+   "url": "https://llvm.org/docs/LangRef.html#floating-point-types",
+   "concepts": [
+    "floating-point",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Pointer type (opaque ptr, address spaces)",
+   "url": "https://llvm.org/docs/LangRef.html#pointer-type",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Vector type (fixed and scalable SIMD)",
+   "url": "https://llvm.org/docs/LangRef.html#vector-type",
+   "concepts": [
+    "arrays",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Array type",
+   "url": "https://llvm.org/docs/LangRef.html#array-type",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Structure type",
+   "url": "https://llvm.org/docs/LangRef.html#structure-type",
+   "concepts": [
+    "records-structs",
+    "tuples"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Constants",
+   "url": "https://llvm.org/docs/LangRef.html#constants",
+   "concepts": [
+    "literals",
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Undefined values (undef)",
+   "url": "https://llvm.org/docs/LangRef.html#undefined-values",
+   "concepts": [
+    "undefined-behavior",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Poison values",
+   "url": "https://llvm.org/docs/LangRef.html#poison-values",
+   "concepts": [
+    "undefined-behavior",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Constant expressions",
+   "url": "https://llvm.org/docs/LangRef.html#constant-expressions",
+   "concepts": [
+    "compile-time-evaluation",
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Inline assembler expressions and constraints",
+   "url": "https://llvm.org/docs/LangRef.html#inline-assembler-expressions",
+   "concepts": [
+    "ffi",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Metadata",
+   "url": "https://llvm.org/docs/LangRef.html#metadata",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'llvm.loop' metadata",
+   "url": "https://llvm.org/docs/LangRef.html#llvm-loop",
+   "concepts": [
+    "loops",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Instruction reference",
+   "url": "https://llvm.org/docs/LangRef.html#instruction-reference",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Terminator instructions (ret, br, switch, invoke, ...)",
+   "url": "https://llvm.org/docs/LangRef.html#terminator-instructions",
+   "concepts": [
+    "goto-labels",
+    "return",
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'br' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#br-instruction",
+   "concepts": [
+    "conditionals",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'switch' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#switch-instruction",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'invoke' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#invoke-instruction",
+   "concepts": [
+    "exceptions",
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Binary operations (add, sub, mul, div, rem; nuw/nsw flags)",
+   "url": "https://llvm.org/docs/LangRef.html#binary-operations",
+   "concepts": [
+    "operators",
+    "integers",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Bitwise binary operations",
+   "url": "https://llvm.org/docs/LangRef.html#bitwise-binary-operations",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Vector operations (extractelement, shufflevector)",
+   "url": "https://llvm.org/docs/LangRef.html#vector-operations",
+   "concepts": [
+    "arrays",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Aggregate operations (extractvalue, insertvalue)",
+   "url": "https://llvm.org/docs/LangRef.html#aggregate-operations",
+   "concepts": [
+    "records-structs",
+    "tuples"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Memory access and addressing operations",
+   "url": "https://llvm.org/docs/LangRef.html#memory-access-and-addressing-operations",
+   "concepts": [
+    "memory-management",
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'alloca' instruction (stack allocation)",
+   "url": "https://llvm.org/docs/LangRef.html#alloca-instruction",
+   "concepts": [
+    "memory-management",
+    "storage-duration",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'cmpxchg' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#cmpxchg-instruction",
+   "concepts": [
+    "atomics-memory-ordering",
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'atomicrmw' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#atomicrmw-instruction",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'getelementptr' instruction (address computation)",
+   "url": "https://llvm.org/docs/LangRef.html#getelementptr-instruction",
+   "concepts": [
+    "pointers-references",
+    "arrays",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Conversion operations (trunc, zext, bitcast, ...)",
+   "url": "https://llvm.org/docs/LangRef.html#conversion-operations",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'icmp' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#icmp-instruction",
+   "concepts": [
+    "operators",
+    "booleans"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'phi' instruction (SSA merge)",
+   "url": "https://llvm.org/docs/LangRef.html#phi-instruction",
+   "concepts": [
+    "intermediate-representation",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'select' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#select-instruction",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'freeze' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#freeze-instruction",
+   "concepts": [
+    "undefined-behavior"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'call' instruction (tail/musttail)",
+   "url": "https://llvm.org/docs/LangRef.html#call-instruction",
+   "concepts": [
+    "functions",
+    "tail-calls"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — 'landingpad' instruction",
+   "url": "https://llvm.org/docs/LangRef.html#landingpad-instruction",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Variable argument handling intrinsics",
+   "url": "https://llvm.org/docs/LangRef.html#variable-argument-handling-intrinsics",
+   "concepts": [
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Accurate garbage collection intrinsics",
+   "url": "https://llvm.org/docs/LangRef.html#accurate-garbage-collection-intrinsics",
+   "concepts": [
+    "garbage-collection"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Standard C/C++ library intrinsics",
+   "url": "https://llvm.org/docs/LangRef.html#standard-c-c-library-intrinsics",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Arithmetic with overflow intrinsics",
+   "url": "https://llvm.org/docs/LangRef.html#arithmetic-with-overflow-intrinsics",
+   "concepts": [
+    "integers",
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Language Reference — Exception handling intrinsics",
+   "url": "https://llvm.org/docs/LangRef.html#exception-handling-intrinsics",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "LLVM Bitcode File Format",
+   "url": "https://llvm.org/docs/BitCodeFormat.html",
+   "concepts": [
+    "bytecode",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM Atomic Instructions and Concurrency Guide",
+   "url": "https://llvm.org/docs/Atomics.html",
+   "concepts": [
+    "atomics-memory-ordering",
+    "memory-model"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Exception Handling in LLVM",
+   "url": "https://llvm.org/docs/ExceptionHandling.html",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Garbage Collection with LLVM",
+   "url": "https://llvm.org/docs/GarbageCollection.html",
+   "concepts": [
+    "garbage-collection",
+    "runtime-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Garbage Collection Safepoints in LLVM (statepoints)",
+   "url": "https://llvm.org/docs/Statepoints.html",
+   "concepts": [
+    "garbage-collection"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Coroutines in LLVM",
+   "url": "https://llvm.org/docs/Coroutines.html",
+   "concepts": [
+    "coroutines"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LLVM IR Undefined Behavior (UB) Manual",
+   "url": "https://llvm.org/docs/UndefinedBehavior.html",
+   "concepts": [
+    "undefined-behavior",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Convergent Operation Semantics",
+   "url": "https://llvm.org/docs/ConvergentOperations.html",
+   "concepts": [
+    "parallelism",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Machine IR (MIR) Format Reference Manual",
+   "url": "https://llvm.org/docs/MIRLangRef.html",
+   "concepts": [
+    "intermediate-representation",
+    "code-generation-backend"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Opaque Pointers (migration design)",
+   "url": "https://llvm.org/docs/OpaquePointers.html",
+   "concepts": [
+    "pointers-references",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stack maps and patch points in LLVM",
+   "url": "https://llvm.org/docs/StackMaps.html",
+   "concepts": [
+    "jit",
+    "runtime-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Type Metadata",
+   "url": "https://llvm.org/docs/TypeMetadata.html",
+   "concepts": [
+    "annotations-attributes",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "LLVM Release Notes (current)",
+   "url": "https://llvm.org/docs/ReleaseNotes.html",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "LLVM Developer Policy (IR backwards compatibility)",
+   "url": "https://llvm.org/docs/DeveloperPolicy.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "LLVM RFC process",
+   "url": "https://llvm.org/docs/RFCProcess.html",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "llvm-as — the LLVM assembler",
+   "url": "https://llvm.org/docs/CommandGuide/llvm-as.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "lli — directly execute programs from LLVM bitcode",
+   "url": "https://llvm.org/docs/CommandGuide/lli.html",
+   "concepts": [
+    "interpreter",
+    "jit",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "opt — LLVM optimizer",
+   "url": "https://llvm.org/docs/CommandGuide/opt.html",
+   "concepts": [
+    "optimization",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "llc — LLVM static compiler",
+   "url": "https://llvm.org/docs/CommandGuide/llc.html",
+   "concepts": [
+    "code-generation-backend",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation (CGO 2004)",
+   "url": "https://llvm.org/pubs/2004-01-30-CGO-LLVM.html",
+   "concepts": [
+    "design-rationale",
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Chris Lattner",
+    "Vikram Adve"
+   ],
+   "year": 2004,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "LLVM: An Infrastructure for Multi-Stage Optimization (Lattner MS thesis)",
+   "url": "https://llvm.org/pubs/2002-12-LattnerMSThesis.html",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Chris Lattner"
+   ],
+   "year": 2002,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Formalizing the LLVM Intermediate Representation for Verified Program Transformations (Vellvm, POPL 2012)",
+   "url": "https://www.cis.upenn.edu/~stevez/papers/ZNMZ12.pdf",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Jianzhou Zhao",
+    "Santosh Nagarakatte",
+    "Milo M. K. Martin",
+    "Steve Zdancewic"
+   ],
+   "year": 2012,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Taming Undefined Behavior in LLVM (PLDI 2017)",
+   "url": "https://www.cs.utah.edu/~regehr/papers/undef-pldi17.pdf",
+   "concepts": [
+    "undefined-behavior",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Juneyoung Lee",
+    "Yoonseung Kim",
+    "Youngju Song",
+    "Chung-Kil Hur",
+    "Sanjoy Das",
+    "David Majnemer",
+    "John Regehr",
+    "Nuno P. Lopes"
+   ],
+   "year": 2017,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Reconciling High-Level Optimizations and Low-Level Code in LLVM (OOPSLA 2018)",
+   "url": "https://sf.snu.ac.kr/publications/llvmtwin.pdf",
+   "concepts": [
+    "pointers-references",
+    "memory-model",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Juneyoung Lee",
+    "Chung-Kil Hur",
+    "Ralf Jung",
+    "Zhengyang Liu",
+    "John Regehr",
+    "Nuno P. Lopes"
+   ],
+   "year": 2018,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Alive2: Bounded Translation Validation for LLVM (PLDI 2021)",
+   "url": "https://users.cs.utah.edu/~regehr/alive2-pldi21.pdf",
+   "concepts": [
+    "verification",
+    "formal-semantics",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Nuno P. Lopes",
+    "Juneyoung Lee",
+    "Chung-Kil Hur",
+    "Zhengyang Liu",
+    "John Regehr"
+   ],
+   "year": 2021,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope: My First Language Frontend with LLVM",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html",
+   "concepts": [
+    "hello-world",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 2 Implementing a Parser and AST",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html",
+   "concepts": [
+    "parser",
+    "ast"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 3 Code generation to LLVM IR",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl03.html",
+   "concepts": [
+    "code-generation",
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 4 Adding JIT and Optimizer Support",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl04.html",
+   "concepts": [
+    "jit",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 5 Extending the Language: Control Flow (phi nodes)",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl05.html",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 6 User-defined Operators",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl06.html",
+   "concepts": [
+    "operators",
+    "operator-overloading"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 7 Mutable Variables (alloca and mem2reg)",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl07.html",
+   "concepts": [
+    "variables",
+    "assignment"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 8 Compiling to Object Code",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl08.html",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Kaleidoscope — Ch. 9 Adding Debug Information",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl09.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Building a JIT: Starting out with KaleidoscopeJIT (ORC)",
+   "url": "https://llvm.org/docs/tutorial/BuildingAJIT1.html",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LLVM Programmer's Manual",
+   "url": "https://llvm.org/docs/ProgrammersManual.html",
+   "concepts": [
+    "standard-library",
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "The Often Misunderstood GEP Instruction",
+   "url": "https://llvm.org/docs/GetElementPtr.html",
+   "concepts": [
+    "pointers-references",
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Performance Tips for Frontend Authors",
+   "url": "https://llvm.org/docs/Frontend/PerformanceTips.html",
+   "concepts": [
+    "performance",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LLVM Alias Analysis Infrastructure",
+   "url": "https://llvm.org/docs/AliasAnalysis.html",
+   "concepts": [
+    "optimization",
+    "pointers-references"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LLVM Loop Terminology (and canonical forms)",
+   "url": "https://llvm.org/docs/LoopTerminology.html",
+   "concepts": [
+    "loops",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Source Level Debugging with LLVM",
+   "url": "https://llvm.org/docs/SourceLevelDebugging.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LLVM's Analysis and Transform Passes",
+   "url": "https://llvm.org/docs/Passes.html",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Using the New Pass Manager",
+   "url": "https://llvm.org/docs/NewPassManager.html",
+   "concepts": [
+    "optimization",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "The LLVM Target-Independent Code Generator",
+   "url": "https://llvm.org/docs/CodeGenerator.html",
+   "concepts": [
+    "code-generation-backend",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LLVM Testing Infrastructure Guide (lit and FileCheck)",
+   "url": "https://llvm.org/docs/TestingGuide.html",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "LLVM Lexicon",
+   "url": "https://llvm.org/docs/Lexicon.html",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The Architecture of Open Source Applications — LLVM (Chris Lattner)",
+   "url": "https://aosabook.org/en/v1/llvm.html",
+   "concepts": [
+    "design-rationale",
+    "compiler-architecture",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Chris Lattner"
+   ],
+   "year": 2011,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Mapping High Level Constructs to LLVM IR",
+   "url": "https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/",
+   "concepts": [
+    "comparison",
+    "code-generation",
+    "classes"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "llvm/llvm-project — LLVM core, Clang, MLIR and tools",
+   "url": "https://github.com/llvm/llvm-project",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project llvm/README.txt — LLVM core overview",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/README.txt",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project LLLexer.cpp — textual IR lexer",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/AsmParser/LLLexer.cpp",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project LLParser.cpp — textual IR (.ll) parser",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/AsmParser/LLParser.cpp",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project AsmWriter.cpp — IR pretty-printer",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/AsmWriter.cpp",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Verifier.cpp — IR well-formedness checker",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/Verifier.cpp",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Instruction.def — the list of IR opcodes",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/Instruction.def",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Instructions.h — instruction class hierarchy",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/Instructions.h",
+   "concepts": [
+    "instruction-set",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Instructions.cpp — instruction implementations",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/Instructions.cpp",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Type.cpp — IR type system",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/Type.cpp",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Constants.cpp — constants and constant expressions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/Constants.cpp",
+   "concepts": [
+    "constants",
+    "literals"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project DataLayout.cpp — data layout string parsing",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/DataLayout.cpp",
+   "concepts": [
+    "primitive-types",
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project CallingConv.h — calling convention ids",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/CallingConv.h",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Attributes.td — function/parameter attribute definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/Attributes.td",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Intrinsics.td — target-independent intrinsics",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/Intrinsics.td",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Metadata.cpp — metadata nodes",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/IR/Metadata.cpp",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project IRBuilder.h — programmatic IR construction API",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/IRBuilder.h",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project llvm-c/Core.h — stable C API to build IR",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm-c/Core.h",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project LLVMBitCodes.h — bitcode record codes",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/Bitcode/LLVMBitCodes.h",
+   "concepts": [
+    "bytecode",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project BitcodeReader.cpp — bitcode deserializer",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Bitcode/Reader/BitcodeReader.cpp",
+   "concepts": [
+    "bytecode",
+    "serialization"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project BitcodeWriter.cpp — bitcode serializer",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Bitcode/Writer/BitcodeWriter.cpp",
+   "concepts": [
+    "bytecode",
+    "serialization"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Interpreter/Execution.cpp — the lli IR interpreter",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/ExecutionEngine/Interpreter/Execution.cpp",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project Orc/LLJIT.cpp — ORC JIT",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/ExecutionEngine/Orc/LLJIT.cpp",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project PromoteMemoryToRegister.cpp — mem2reg SSA construction",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Transforms/Utils/PromoteMemoryToRegister.cpp",
+   "concepts": [
+    "optimization",
+    "variables"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project IRMover.cpp — module linking",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Linker/IRMover.cpp",
+   "concepts": [
+    "separate-compilation",
+    "modules"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "llvm/test/Assembler — textual IR round-trip tests",
+   "url": "https://github.com/llvm/llvm-project/tree/main/llvm/test/Assembler",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "directory",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Vellvm — verified LLVM IR semantics in Coq",
+   "url": "https://github.com/vellvm/vellvm",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "implementation": "Vellvm",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Alive2 — translation validation for LLVM IR",
+   "url": "https://github.com/AliveToolkit/alive2",
+   "concepts": [
+    "verification",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "implementation": "Alive2",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "llvmlite ir/instructions.py — pure-Python LLVM IR builder",
+   "url": "https://github.com/numba/llvmlite/blob/main/llvmlite/ir/instructions.py",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "llvmlite",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Inkwell — safe Rust wrapper for LLVM IR construction",
+   "url": "https://github.com/TheDan64/inkwell",
+   "concepts": [
+    "code-generation",
+    "ffi"
+   ],
+   "scope": "whole",
+   "implementation": "Inkwell",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — LLVM",
+   "url": "https://en.wikipedia.org/wiki/LLVM",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — LLVM IR",
+   "url": "https://pldb.io/concepts/llvmir.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "LLVM releases and per-version documentation",
+   "url": "https://releases.llvm.org/",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
