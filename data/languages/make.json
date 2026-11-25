@@ -1,0 +1,1822 @@
+{
+ "id": "make",
+ "name": "Make (POSIX and GNU)",
+ "aliases": [
+  "make",
+  "GNU Make",
+  "gmake",
+  "BSD make",
+  "bmake",
+  "Makefile"
+ ],
+ "categories": [
+  "build",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "rule-based",
+  "dependency-driven"
+ ],
+ "typing": [
+  "untyped-strings"
+ ],
+ "first_appeared": 1976,
+ "designers": [
+  "Stuart Feldman",
+  "Richard Stallman",
+  "Roland McGrath",
+  "Paul D. Smith"
+ ],
+ "summary": "Rule-based build language: a makefile declares targets, their prerequisites and shell recipes, and make rebuilds what is out of date. POSIX standardises a small core (target rules, macros, inference/suffix rules); GNU Make adds pattern rules, two variable flavours, conditionals, a functional macro language ($(foreach), $(call), $(eval)) and parallel builds; BSD make has its own extensions.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "reference-implementation"
+ ],
+ "standards": [
+  "POSIX.1-2024 (IEEE Std 1003.1-2024) XCU make utility"
+ ],
+ "file_extensions": [
+  "Makefile",
+  "makefile",
+  "GNUmakefile",
+  ".mk",
+  ".mak"
+ ],
+ "homepage": "https://www.gnu.org/software/make/",
+ "influenced_by": [],
+ "related": [
+  {
+   "id": "posix-sh",
+   "relation": "embeds"
+  },
+  {
+   "id": "autoconf",
+   "relation": "family"
+  },
+  {
+   "id": "just",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Implementations: GNU Make (git.savannah.gnu.org/cgit/make.git, the de facto reference for GNU extensions), NetBSD make/bmake (also FreeBSD), OpenBSD make, pdpmake (strict POSIX make), Google kati (GNU-make-compatible, used for Android). Savannah cgit sometimes returns 502 to automated clients.",
+  "1": "POSIX XCU 'make' defines the portable core; the GNU Make manual defines GNU Make; BSD make is defined by its make(1) page. Feldman's 1979 paper introduced the language.",
+  "2": "Books (Managing Projects with GNU Make, open), Paul Smith's papers, tutorials and the build-systems literature (Recursive/Non-recursive Make Considered Harmful, Build Systems a la Carte).",
+  "3": "Wikipedia, PLDB."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "make.git — GNU Make source repository (Savannah)",
+   "url": "https://git.savannah.gnu.org/cgit/make.git",
+   "concepts": [
+    "interpreter",
+    "build-systems"
+   ],
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/read.c — makefile reader and parser (rules, variable assignments, conditionals, include)",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/read.c",
+   "concepts": [
+    "parser",
+    "lexer",
+    "conditionals",
+    "imports"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/expand.c — variable reference expansion",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/expand.c",
+   "concepts": [
+    "variables",
+    "string-formatting",
+    "evaluation-order"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/variable.c — variable sets, flavours, target-/pattern-specific variables",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/variable.c",
+   "concepts": [
+    "variables",
+    "scope",
+    "assignment"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/function.c — built-in functions ($(subst), $(foreach), $(call), $(if), $(eval), $(shell) ...)",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/function.c",
+   "concepts": [
+    "functions",
+    "standard-library",
+    "higher-order-functions"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/rule.c — pattern and suffix rule management",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/rule.c",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/implicit.c — implicit-rule search",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/implicit.c",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/remake.c — update algorithm: deciding which targets are out of date",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/remake.c",
+   "concepts": [
+    "interpreter",
+    "build-systems"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/job.c — running recipes in shells, parallel jobs and the jobserver",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/job.c",
+   "concepts": [
+    "processes-system",
+    "parallelism",
+    "concurrency"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/main.c — command-line handling and the main build loop",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/main.c",
+   "concepts": [
+    "command-line",
+    "program-structure"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/file.c — file/target database",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/file.c",
+   "concepts": [
+    "data-model"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/dir.c — directory caching and wildcard expansion",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/dir.c",
+   "concepts": [
+    "file-io"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/guile.c — GNU Guile integration ($(guile ...))",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/guile.c",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/load.c — load directive for dynamically loaded C extensions",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/load.c",
+   "concepts": [
+    "ffi"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GNU make src/default.c — built-in default rules and variables",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/src/default.c",
+   "concepts": [
+    "standard-library"
+   ],
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "GNU make tests/scripts — Perl-driven regression suite (features/, functions/, variables/ ...)",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/tests/scripts",
+   "concepts": [
+    "testing"
+   ],
+   "format": "directory",
+   "access": "open",
+   "implementation": "GNU Make",
+   "authority": "official",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "NetBSD src usr.bin/make — BSD make (also packaged portably as bmake)",
+   "url": "https://github.com/NetBSD/src/tree/trunk/usr.bin/make",
+   "implementation": "NetBSD make (bmake)",
+   "authority": "community",
+   "format": "directory",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "NetBSD make parse.c — makefile parser",
+   "url": "https://github.com/NetBSD/src/blob/trunk/usr.bin/make/parse.c",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "NetBSD make (bmake)",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "NetBSD make cond.c — conditional directives (.if/.ifdef/.elif)",
+   "url": "https://github.com/NetBSD/src/blob/trunk/usr.bin/make/cond.c",
+   "concepts": [
+    "conditionals"
+   ],
+   "implementation": "NetBSD make (bmake)",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "NetBSD make var.c — variables and variable modifiers (:S, :M, :Q ...)",
+   "url": "https://github.com/NetBSD/src/blob/trunk/usr.bin/make/var.c",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ],
+   "implementation": "NetBSD make (bmake)",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "NetBSD make for.c — .for loops",
+   "url": "https://github.com/NetBSD/src/blob/trunk/usr.bin/make/for.c",
+   "concepts": [
+    "loops"
+   ],
+   "implementation": "NetBSD make (bmake)",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "NetBSD make job.c — parallel job control",
+   "url": "https://github.com/NetBSD/src/blob/trunk/usr.bin/make/job.c",
+   "concepts": [
+    "parallelism",
+    "processes-system"
+   ],
+   "implementation": "NetBSD make (bmake)",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "pdpmake — public-domain POSIX make (strict POSIX mode)",
+   "url": "https://github.com/rmyorston/pdpmake",
+   "implementation": "pdpmake",
+   "authority": "community",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "kati — GNU make clone used to convert Android makefiles to Ninja",
+   "url": "https://github.com/google/kati",
+   "implementation": "kati",
+   "authority": "vendor",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 — make utility (XCU)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html",
+   "concepts": [
+    "standardization"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Makefile Syntax",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_01",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "grammar"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Include Lines",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_02",
+   "concepts": [
+    "imports",
+    "modules"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Makefile Execution",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_03",
+   "concepts": [
+    "processes-system",
+    "evaluation-order"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Target Rules (special targets)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_04",
+   "concepts": [
+    "statements",
+    "build-systems"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Macros (definition, expansion, substitution)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_05",
+   "concepts": [
+    "variables",
+    "assignment",
+    "string-formatting"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Inference Rules (suffix rules)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_06",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Libraries (archive members)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_07",
+   "concepts": [
+    "file-io"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Internal Macros ($@, $<, $?, $*, $%)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_08",
+   "concepts": [
+    "variables"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Default Rules",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_13_09",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Options (-j, -k, -n, ...)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_04",
+   "concepts": [
+    "command-line"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Rationale",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_18",
+   "concepts": [
+    "design-rationale"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX make — Change History",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html#tag_20_76_21",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual (single HTML page)",
+   "url": "https://www.gnu.org/software/make/manual/make.html",
+   "scope": "whole",
+   "implementation": "GNU Make",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — A Simple Makefile",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — How make Processes a Makefile",
+   "url": "https://www.gnu.org/software/make/manual/html_node/How-Make-Works.html",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — What Makefiles Contain (comments, directives)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Makefile-Contents.html",
+   "concepts": [
+    "program-structure",
+    "comments"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Splitting Long Lines",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Splitting-Lines.html",
+   "concepts": [
+    "whitespace-layout",
+    "lexical-structure"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Including Other Makefiles",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Include.html",
+   "concepts": [
+    "imports",
+    "modules"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — How make Reads a Makefile (immediate vs deferred expansion)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Reading-Makefiles.html",
+   "concepts": [
+    "evaluation-order",
+    "lazy-evaluation"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Secondary Expansion",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Secondary-Expansion.html",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Rule Syntax",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Rule-Syntax.html",
+   "concepts": [
+    "grammar",
+    "statements"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Types of Prerequisites (order-only)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Prerequisite-Types.html",
+   "concepts": [
+    "build-systems"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Using Wildcard Characters in File Names",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Wildcards.html",
+   "concepts": [
+    "file-io",
+    "pattern-matching"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Searching Directories for Prerequisites (VPATH, vpath)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Directory-Search.html",
+   "concepts": [
+    "file-io"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Phony Targets",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html",
+   "concepts": [
+    "build-systems"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Special Built-in Target Names",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Special-Targets.html",
+   "concepts": [
+    "keywords"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Static Pattern Rules",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Static-Pattern.html",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Double-Colon Rules",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html",
+   "concepts": [
+    "statements"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Generating Prerequisites Automatically",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html",
+   "concepts": [
+    "build-systems",
+    "code-generation"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Recipe Syntax",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Recipe-Syntax.html",
+   "concepts": [
+    "grammar",
+    "whitespace-layout"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Recipe Execution (one shell per line)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Execution.html",
+   "concepts": [
+    "processes-system"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Using One Shell (.ONESHELL)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/One-Shell.html",
+   "concepts": [
+    "processes-system"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Parallel Execution (-j)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Parallel.html",
+   "concepts": [
+    "parallelism",
+    "concurrency"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Errors in Recipes",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Errors.html",
+   "concepts": [
+    "error-handling"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Recursive Use of make",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Recursion.html",
+   "concepts": [
+    "recursion",
+    "build-systems"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Defining Canned Recipes (define)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Canned-Recipes.html",
+   "concepts": [
+    "macros"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The Two Flavors of Variables (recursive = vs simple :=)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Flavors.html",
+   "concepts": [
+    "variables",
+    "lazy-evaluation",
+    "assignment"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Conditional Variable Assignment (?=)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Conditional-Assignment.html",
+   "concepts": [
+    "assignment",
+    "null-optional"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Substitution References",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Substitution-Refs.html",
+   "concepts": [
+    "string-formatting"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Computed Variable Names",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Computed-Names.html",
+   "concepts": [
+    "variables",
+    "pointers-references"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Appending More Text to Variables (+=)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Appending.html",
+   "concepts": [
+    "assignment"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The override Directive",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Override-Directive.html",
+   "concepts": [
+    "variables"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Defining Multi-Line Variables",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Multi_002dLine.html",
+   "concepts": [
+    "strings"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Variables from the Environment",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Environment.html",
+   "concepts": [
+    "variables",
+    "processes-system"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Target-specific Variable Values",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html",
+   "concepts": [
+    "scope",
+    "variables"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Other Special Variables",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Special-Variables.html",
+   "concepts": [
+    "variables"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Syntax of Conditionals (ifeq, ifneq, ifdef, ifndef)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Conditional-Syntax.html",
+   "concepts": [
+    "conditionals"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Function Call Syntax",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Syntax-of-Functions.html",
+   "concepts": [
+    "functions"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Functions for String Substitution and Analysis",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Text-Functions.html",
+   "concepts": [
+    "strings",
+    "standard-library"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Functions for File Names",
+   "url": "https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html",
+   "concepts": [
+    "file-io",
+    "standard-library"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Functions for Conditionals ($(if), $(or), $(and), $(intcmp))",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Conditional-Functions.html",
+   "concepts": [
+    "conditionals",
+    "short-circuit"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The let Function",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Let-Function.html",
+   "concepts": [
+    "scope",
+    "destructuring"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The foreach Function",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Foreach-Function.html",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The file Function",
+   "url": "https://www.gnu.org/software/make/manual/html_node/File-Function.html",
+   "concepts": [
+    "file-io"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The call Function (user-defined functions)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Call-Function.html",
+   "concepts": [
+    "functions",
+    "parameters-arguments",
+    "higher-order-functions"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The eval Function",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Eval-Function.html",
+   "concepts": [
+    "eval",
+    "code-generation"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The shell Function",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Shell-Function.html",
+   "concepts": [
+    "processes-system"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — The guile Function",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Guile-Function.html",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Functions That Control Make (error, warning, info)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Make-Control-Functions.html",
+   "concepts": [
+    "error-handling"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Summary of Options",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Options-Summary.html",
+   "concepts": [
+    "command-line"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Defining and Redefining Pattern Rules",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Pattern-Rules.html",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Automatic Variables",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html",
+   "concepts": [
+    "variables"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — How Patterns Match",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Pattern-Match.html",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Old-Fashioned Suffix Rules",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Suffix-Rules.html",
+   "concepts": [
+    "pattern-matching",
+    "versioning-compatibility"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Catalogue of Built-In Rules",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Catalogue-of-Rules.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Implicit Rule Search Algorithm",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Implicit-Rule-Search.html",
+   "concepts": [
+    "pattern-matching",
+    "semantic-analysis"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Loaded Object Interface (C extension API)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Loaded-Object-API.html",
+   "concepts": [
+    "ffi"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Sharing Job Slots with GNU make (jobserver protocol)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Job-Slots.html",
+   "concepts": [
+    "parallelism",
+    "interoperability"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Features of GNU make",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Features.html",
+   "concepts": [
+    "comparison",
+    "history"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Incompatibilities and Missing Features",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Missing.html",
+   "concepts": [
+    "comparison",
+    "versioning-compatibility"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Makefile Conventions (GNU coding standards)",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Makefile-Conventions.html",
+   "concepts": [
+    "style-conventions"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Make Manual — Quick Reference",
+   "url": "https://www.gnu.org/software/make/manual/html_node/Quick-Reference.html",
+   "concepts": [
+    "grammar"
+   ],
+   "implementation": "GNU Make",
+   "version": "GNU Make 4.4",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "GNU make NEWS — user-visible changes per release",
+   "url": "https://git.savannah.gnu.org/cgit/make.git/tree/NEWS",
+   "concepts": [
+    "language-evolution"
+   ],
+   "format": "source-file",
+   "scope": "whole",
+   "implementation": "GNU Make",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NetBSD make(1) manual page (BSD make language)",
+   "url": "https://man.netbsd.org/make.1",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "variables"
+   ],
+   "implementation": "NetBSD make (bmake)",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "OpenBSD make(1) manual page",
+   "url": "https://man.openbsd.org/make.1",
+   "implementation": "OpenBSD make",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "S. I. Feldman — Make: A Program for Maintaining Computer Programs (Bell Labs, 1978; SP&E 1979)",
+   "url": "https://www.st.cs.uni-saarland.de/edu/config-ss04/make.pdf",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Stuart I. Feldman"
+   ],
+   "year": 1979,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "S. I. Feldman — Make: A Program for Maintaining Computer Programs (Software: Practice and Experience 9(4), DOI)",
+   "url": "https://doi.org/10.1002/spe.4380090402",
+   "concepts": [
+    "history"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Stuart I. Feldman"
+   ],
+   "year": 1979,
+   "access": "paywalled",
+   "scope": "whole",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Managing Projects with GNU Make, 3rd ed. (Robert Mecklenburg, O'Reilly open book)",
+   "url": "https://www.oreilly.com/openbook/make3/book/index.csp",
+   "authors": [
+    "Robert Mecklenburg"
+   ],
+   "year": 2004,
+   "format": "book",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Paul D. Smith — Rules of Makefiles",
+   "url": "https://make.mad-scientist.net/papers/rules-of-makefiles/",
+   "concepts": [
+    "style-conventions"
+   ],
+   "authors": [
+    "Paul D. Smith"
+   ],
+   "authority": "designer",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Paul D. Smith — Auto-Dependency Generation",
+   "url": "https://make.mad-scientist.net/papers/advanced-auto-dependency-generation/",
+   "concepts": [
+    "build-systems",
+    "code-generation"
+   ],
+   "authors": [
+    "Paul D. Smith"
+   ],
+   "authority": "designer",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Makefile Tutorial by Example",
+   "url": "https://makefiletutorial.com/",
+   "concepts": [
+    "hello-world",
+    "variables",
+    "pattern-matching"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — Make",
+   "url": "https://learnxinyminutes.com/make/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Chris Wellons — A Tutorial on Portable Makefiles (POSIX make)",
+   "url": "https://nullprogram.com/blog/2017/08/20/",
+   "concepts": [
+    "versioning-compatibility",
+    "style-conventions"
+   ],
+   "authors": [
+    "Chris Wellons"
+   ],
+   "year": 2017,
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Memfault Interrupt — GNU Make Guidelines",
+   "url": "https://interrupt.memfault.com/blog/gnu-make-guidelines",
+   "concepts": [
+    "style-conventions"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Peter Miller — Recursive Make Considered Harmful (AUUGN 1997)",
+   "url": "https://aegis.sourceforge.net/auug97.pdf",
+   "concepts": [
+    "recursion",
+    "build-systems"
+   ],
+   "authors": [
+    "Peter Miller"
+   ],
+   "year": 1997,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Mokhov, Mitchell, Peyton Jones, Marlow — Non-recursive Make Considered Harmful (Haskell Symposium 2016)",
+   "url": "https://ndmitchell.com/downloads/paper-non_recursive_make_considered_harmful-22_sep_2016.pdf",
+   "concepts": [
+    "build-systems",
+    "comparison"
+   ],
+   "authors": [
+    "Andrey Mokhov",
+    "Neil Mitchell",
+    "Simon Peyton Jones",
+    "Simon Marlow"
+   ],
+   "year": 2016,
+   "authority": "academic",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Mokhov, Mitchell, Peyton Jones — Build Systems a la Carte (ICFP 2018)",
+   "url": "https://www.microsoft.com/en-us/research/uploads/prod/2018/03/build-systems.pdf",
+   "concepts": [
+    "build-systems",
+    "formal-semantics",
+    "comparison"
+   ],
+   "authors": [
+    "Andrey Mokhov",
+    "Neil Mitchell",
+    "Simon Peyton Jones"
+   ],
+   "year": 2018,
+   "authority": "academic",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Andrew Hume — Maintaining Files on Plan 9 with Mk (mk, a make successor)",
+   "url": "https://9p.io/sys/doc/mk.html",
+   "concepts": [
+    "comparison",
+    "build-systems"
+   ],
+   "authors": [
+    "Andrew G. Hume",
+    "Bob Flandrena"
+   ],
+   "authority": "academic",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Make (software)",
+   "url": "https://en.wikipedia.org/wiki/Make_(software)",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Make",
+   "url": "https://pldb.io/concepts/make.html",
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Make category",
+   "url": "https://rosettacode.org/wiki/Category:Make",
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  }
+ ]
+}

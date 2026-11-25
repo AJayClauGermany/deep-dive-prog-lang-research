@@ -1,0 +1,475 @@
+{
+ "id": "xdr",
+ "name": "XDR (RFC 4506)",
+ "aliases": [
+  "External Data Representation",
+  "Sun XDR"
+ ],
+ "categories": [
+  "data-serialization",
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "schema-required"
+ ],
+ "first_appeared": 1987,
+ "designers": [
+  "Sun Microsystems"
+ ],
+ "summary": "Sun's big-endian, 4-byte-aligned binary encoding and accompanying C-like data description language, used by ONC RPC, NFS and Stellar; data is not self-describing and must be decoded against the XDR type declarations.",
+ "status": "maintained",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "RFC 4506 (STD 67)",
+  "RFC 1832",
+  "RFC 1014"
+ ],
+ "file_extensions": [
+  ".x"
+ ],
+ "homepage": "https://www.rfc-editor.org/rfc/rfc4506.html",
+ "influenced_by": [
+  "c"
+ ],
+ "related": [
+  {
+   "id": "asn1",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "RFC 4506 (STD 67) defines both the encoding and the XDR language (Section 6); it supersedes RFC 1832 and RFC 1014. RFC 5531 (ONC RPC) extends the language with program/version/procedure definitions.",
+  "0": "The original Sun RPC code survives in glibc/libtirpc (xdr.c primitives) and the rpcgen compiler; other implementations include Python's former xdrlib and Go's go-xdr.",
+  "2": "Secondary literature is mostly ONC RPC / rpcgen programming guides in vendor manuals; the Python library reference is the closest maintained tutorial-style text."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "glibc sunrpc/xdr.c — Sun XDR primitive filters (xdr_int, xdr_string, xdr_union ...)",
+   "url": "https://github.com/bminor/glibc/blob/master/sunrpc/xdr.c",
+   "implementation": "Sun RPC (glibc)",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython 3.12 Lib/xdrlib.py — Packer/Unpacker (module removed in 3.13)",
+   "url": "https://github.com/python/cpython/blob/3.12/Lib/xdrlib.py",
+   "implementation": "CPython xdrlib",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "davecgh/go-xdr xdr2/decode.go — reflection-based Go XDR decoder",
+   "url": "https://github.com/davecgh/go-xdr/blob/master/xdr2/decode.go",
+   "implementation": "go-xdr",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "reflection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "stellar/go-xdr xdr3/decode.go — Stellar's fork with union and optional support",
+   "url": "https://github.com/stellar/go-xdr/blob/master/xdr3/decode.go",
+   "implementation": "stellar go-xdr",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 — XDR: External Data Representation Standard",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §3 — Basic Block Size (4-byte alignment)",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-3",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.1 — Integer",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.1",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.3 — Enumeration",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.3",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.6 — Floating-Point",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.6",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.11 — String",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.11",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.13 — Variable-Length Array",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.13",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.14 — Structure",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.14",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.15 — Discriminated Union",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.15",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types",
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.18 — Typedef",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.18",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §4.19 — Optional-Data",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-4.19",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "pointers-references",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §5 — Discussion (design rationale)",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-5",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §6.2 — Lexical Notes (comments, identifiers)",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-6.2",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §6.3 — XDR language syntax",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-6.3",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §7 — An Example of an XDR Data Description",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-7",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4506 §8 — Security Considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc4506.html#section-8",
+   "scope": "section",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 4506",
+   "year": 2006,
+   "authors": [
+    "Mike Eisler"
+   ],
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 1014 — XDR: External Data Representation Standard (original)",
+   "url": "https://www.rfc-editor.org/rfc/rfc1014.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 1014",
+   "year": 1987,
+   "authors": [
+    "Sun Microsystems"
+   ],
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5531 — RPC: Remote Procedure Call Protocol Specification Version 2 (RPC language)",
+   "url": "https://www.rfc-editor.org/rfc/rfc5531.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "RFC 5531",
+   "year": 2009,
+   "authors": [
+    "Robert Thurlow"
+   ],
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python 3.12 docs — xdrlib",
+   "url": "https://docs.python.org/3.12/library/xdrlib.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — External Data Representation",
+   "url": "https://en.wikipedia.org/wiki/External_Data_Representation",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — XDR",
+   "url": "https://pldb.io/concepts/xdr.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,735 @@
+{
+ "id": "rsl",
+ "name": "RAISE Specification Language",
+ "aliases": [
+  "RSL",
+  "RAISE"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "model-oriented",
+  "algebraic",
+  "functional",
+  "imperative",
+  "concurrent"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "subtypes"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "The RAISE Language Group",
+  "Chris George",
+  "Søren Prehn",
+  "Anne E. Haxthausen",
+  "Klaus Havelund"
+ ],
+ "summary": "The wide-spectrum formal specification language of the RAISE method (Rigorous Approach to Industrial Software Engineering), descended from VDM: it supports applicative and imperative, sequential and concurrent (CSP-style channel) specification styles, axiomatic and model-oriented definitions, and parameterised modules (schemes and objects).",
+ "status": "historical",
+ "defined_by": [
+  "vendor-specification",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".rsl"
+ ],
+ "homepage": "https://raisetools.github.io/",
+ "influenced_by": [
+  "vdm",
+  "csp",
+  "obj",
+  "standard-ml",
+  "larch"
+ ],
+ "related": [
+  {
+   "id": "vdm",
+   "relation": "successor-of"
+  },
+  {
+   "id": "csp",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the book 'The RAISE Specification Language' (Prentice Hall, 1992), whose CRI A/S edition is freely available; Part II is the syntax and semantics reference description. Section links use #page=N (PDF page = printed page + 20). A formal (denotational/axiomatic) semantics was produced in the RAISE project but is not online.",
+  "0": "rsltc, the RAISE tool developed at UNU-IIST by Chris George (type checker, pretty-printer, translators to SML/C++, PVS and SAL), is open source on GitHub."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (RAISE Language Group, 1992, full PDF)",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf",
+   "concepts": [
+    "grammar",
+    "formal-semantics"
+   ],
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 3 Some Basic Concepts (modules, type/value/axiom declarations, comments)",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=33",
+   "concepts": [
+    "modules",
+    "comments",
+    "hello-world"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 4 Built-in Types (Bool, Int, Nat, Real, Char, Text, Unit; precedence)",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=41",
+   "concepts": [
+    "primitive-types",
+    "booleans",
+    "integers",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 5 Products",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=52",
+   "concepts": [
+    "tuples"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 7 Functions (total/partial, higher-order, implicit and algebraic definitions)",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=59",
+   "concepts": [
+    "functions",
+    "higher-order-functions",
+    "currying"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 8 Sets",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=74",
+   "concepts": [
+    "sets"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 9 Lists",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=83",
+   "concepts": [
+    "lists"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 10 Maps",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=94",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 11 Subtypes",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=103",
+   "concepts": [
+    "subtyping",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 12 Variant Definitions",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=111",
+   "concepts": [
+    "algebraic-data-types",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 13 Case Expressions",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=128",
+   "concepts": [
+    "pattern-matching",
+    "switch-case"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 14 Let Expressions",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=136",
+   "concepts": [
+    "variables",
+    "destructuring"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 16 Under-specification and Non-determinism",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=149",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 17 Overloading and User-defined Operators",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=152",
+   "concepts": [
+    "overloading",
+    "operator-overloading"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 18 Variables and Sequencing",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=159",
+   "concepts": [
+    "variables",
+    "assignment",
+    "statements"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 20 Repetitive Expressions (while, until, for)",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=171",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 24 Channels and Communication",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=192",
+   "concepts": [
+    "channels-message-passing",
+    "concurrency",
+    "process-calculi"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 26 Comprehended Expressions",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=208",
+   "concepts": [
+    "comprehensions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 28 Modules",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=224",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 30 Parameterized Schemes",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=237",
+   "concepts": [
+    "generics",
+    "modules"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — 35 Declarative Constructs, Scope and Visibility Rules",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=281",
+   "concepts": [
+    "scope",
+    "visibility"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — Appendix A Syntax Summary",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=391",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The RAISE Specification Language (1992) — Appendix C Lexical Matters",
+   "url": "https://raisetools.github.io/material/documentation/raise-language.pdf#page=402",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authors": [
+    "Chris George",
+    "Peter Haff",
+    "Klaus Havelund",
+    "Anne E. Haxthausen",
+    "Robert Milne",
+    "Claus Bendix Nielsen",
+    "Søren Prehn",
+    "Kim Ritter Wagner"
+   ],
+   "year": 1992,
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "The RAISE Development Method (RAISE Method Group, PDF)",
+   "url": "https://raisetools.github.io/material/documentation/raise-method.pdf",
+   "concepts": [
+    "design-rationale",
+    "verification"
+   ],
+   "format": "pdf",
+   "year": 1995,
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "raisetools/rsltc — RAISE tool (type checker and translators)",
+   "url": "https://github.com/raisetools/rsltc",
+   "concepts": [
+    "semantic-analysis",
+    "tooling"
+   ],
+   "implementation": "rsltc",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "raisetools/rsltc — README",
+   "url": "https://github.com/raisetools/rsltc/blob/master/README",
+   "concepts": [
+    "build-systems"
+   ],
+   "implementation": "rsltc",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RAISE Tool User Guide (rsltc)",
+   "url": "https://raisetools.github.io/material/documentation/user_guide/ug.html",
+   "concepts": [
+    "tooling"
+   ],
+   "authors": [
+    "Chris George"
+   ],
+   "year": 2008,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Dines Bjørner on RAISE (overview paper, PDF)",
+   "url": "https://raisetools.github.io/material/papers/bjorner-raise-web.pdf",
+   "concepts": [
+    "history"
+   ],
+   "authors": [
+    "Dines Bjørner"
+   ],
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "RAISE books (DTU course page)",
+   "url": "https://www.imm.dtu.dk/~aeha/RAISEbooks.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — RAISE",
+   "url": "https://en.wikipedia.org/wiki/RAISE",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

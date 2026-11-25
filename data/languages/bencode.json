@@ -1,0 +1,201 @@
+{
+ "id": "bencode",
+ "name": "Bencode",
+ "aliases": [
+  "bencoding"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "Bram Cohen"
+ ],
+ "summary": "Minimal serialization format from the BitTorrent protocol with four types (byte strings, integers, lists and dictionaries with sorted keys); its canonical form makes the info-hash of .torrent files well defined.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "BEP 3"
+ ],
+ "file_extensions": [
+  ".torrent"
+ ],
+ "homepage": "https://www.bittorrent.org/beps/bep_0003.html",
+ "level_notes": {
+  "1": "Defined by a few paragraphs of BEP 3 (the BitTorrent protocol specification); the community wiki.theory.org specification spells out edge cases (no leading zeros, -0 forbidden, sorted raw-byte keys).",
+  "0": "libtorrent's bdecode.cpp is the most widely deployed decoder; many small libraries exist for every language.",
+  "2": "Secondary literature is limited to protocol write-ups and library documentation."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libtorrent src/bdecode.cpp — zero-allocation bdecode parser with depth/size limits",
+   "url": "https://github.com/arvidn/libtorrent/blob/RC_2_0/src/bdecode.cpp",
+   "implementation": "libtorrent (Rasterbar)",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libtorrent include/libtorrent/bencode.hpp — bencode encoder",
+   "url": "https://github.com/arvidn/libtorrent/blob/RC_2_0/include/libtorrent/bencode.hpp",
+   "implementation": "libtorrent (Rasterbar)",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "anacrolix/torrent bencode/decode.go — Go reflection-based decoder",
+   "url": "https://github.com/anacrolix/torrent/blob/master/bencode/decode.go",
+   "implementation": "anacrolix/torrent",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "BEP 3 — The BitTorrent Protocol Specification",
+   "url": "https://www.bittorrent.org/beps/bep_0003.html",
+   "authority": "designer",
+   "authors": [
+    "Bram Cohen"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "BEP 3 — bencoding (strings, integers, lists, dictionaries)",
+   "url": "https://www.bittorrent.org/beps/bep_0003.html#bencoding",
+   "authority": "designer",
+   "authors": [
+    "Bram Cohen"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "strings",
+    "integers",
+    "lists",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "BEP 3 — metainfo files (bencoded .torrent structure)",
+   "url": "https://www.bittorrent.org/beps/bep_0003.html#metainfo-files",
+   "authority": "designer",
+   "authors": [
+    "Bram Cohen"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BitTorrentSpecification wiki — Bencoding (detailed rules)",
+   "url": "https://wiki.theory.org/BitTorrentSpecification#Bencoding",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BitTorrentSpecification wiki — Bencoding: Integers (leading zeros, negative zero)",
+   "url": "https://wiki.theory.org/BitTorrentSpecification#Integers",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BitTorrentSpecification wiki — Bencoding: Dictionaries (sorted keys)",
+   "url": "https://wiki.theory.org/BitTorrentSpecification#Dictionaries",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "libtorrent reference — Bdecoding API",
+   "url": "https://www.libtorrent.org/reference-Bdecoding.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Bencode",
+   "url": "https://en.wikipedia.org/wiki/Bencode",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
