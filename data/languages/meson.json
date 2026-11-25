@@ -1,0 +1,45 @@
+{
+ "id": "meson",
+ "name": "Meson build language",
+ "aliases": ["Meson", "meson.build"],
+ "categories": ["build", "domain-specific"],
+ "paradigms": ["declarative", "imperative"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 2013,
+ "designers": ["Jussi Pakkanen"],
+ "summary": "The build-description DSL of the Meson build system: a deliberately non-Turing-complete, strongly typed language with Python-like syntax (if, foreach, immutable objects, methods on strings/arrays/dicts) but no user-defined functions, generating Ninja files.",
+ "status": "active",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "file_extensions": ["meson.build", "meson.options"],
+ "homepage": "https://mesonbuild.com/",
+ "influenced_by": ["python", "cmake", "scons"],
+ "related": [{"id": "python", "relation": "implemented-in"}, {"id": "ninja", "relation": "compiles-to"}],
+ "level_notes": {"1": "The Syntax page (with an EBNF grammar) and the generated Reference Manual are the official definition.", "0": "mesonbuild/meson (Python) is the reference implementation; muon is an independent C implementation."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "mesonbuild/meson — Meson source (Python)", "url": "https://github.com/mesonbuild/meson", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "mesonbuild/mparser.py — lexer and recursive-descent parser", "url": "https://github.com/mesonbuild/meson/blob/master/mesonbuild/mparser.py", "implementation": "Meson", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer", "parser", "ast"]},
+  {"level": 0, "kind": "implementation-source", "title": "mesonbuild/interpreterbase/interpreterbase.py — evaluator for statements and expressions", "url": "https://github.com/mesonbuild/meson/blob/master/mesonbuild/interpreterbase/interpreterbase.py", "implementation": "Meson", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "conditionals", "loops"]},
+  {"level": 0, "kind": "implementation-source", "title": "mesonbuild/interpreter/interpreter.py — builtin functions and build objects", "url": "https://github.com/mesonbuild/meson/blob/master/mesonbuild/interpreter/interpreter.py", "implementation": "Meson", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+  {"level": 0, "kind": "implementation-repository", "title": "muon — Meson implementation in C", "url": "https://muon.build/", "implementation": "muon", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["interpreter"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Meson — Syntax", "url": "https://mesonbuild.com/Syntax.html", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — Variables (immutable objects)", "url": "https://mesonbuild.com/Syntax.html#variables", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "value-reference-semantics"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — Strings and string formatting", "url": "https://mesonbuild.com/Syntax.html#strings", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — Arrays", "url": "https://mesonbuild.com/Syntax.html#arrays", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — Dictionaries", "url": "https://mesonbuild.com/Syntax.html#dictionaries", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — If statements", "url": "https://mesonbuild.com/Syntax.html#if-statements", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — Foreach statements", "url": "https://mesonbuild.com/Syntax.html#foreach-statements", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach", "loop-control"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — Function and method calls", "url": "https://mesonbuild.com/Syntax.html#function-calls", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "Meson syntax — No user-defined functions (rationale)", "url": "https://mesonbuild.com/Syntax.html#userdefined-functions-and-methods", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale", "turing-completeness"]},
+  {"level": 1, "kind": "grammar", "title": "Meson syntax — Grammar (EBNF)", "url": "https://mesonbuild.com/Syntax.html#grammar", "implementation": "Meson", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "formal-grammars"]},
+  {"level": 1, "kind": "library-reference", "title": "Meson Reference Manual — functions", "url": "https://mesonbuild.com/Reference-manual_functions.html", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "design-document", "title": "Meson design rationale", "url": "https://mesonbuild.com/Design-rationale.html", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 1, "kind": "release-notes", "title": "Meson release notes", "url": "https://mesonbuild.com/Release-notes.html", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Meson tutorial", "url": "https://mesonbuild.com/Tutorial.html", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world", "build-systems"]},
+  {"level": 2, "kind": "faq", "title": "Meson FAQ (incl. why the language is not Turing-complete)", "url": "https://mesonbuild.com/FAQ.html", "implementation": "Meson", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale", "comparison"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Meson (software)", "url": "https://en.wikipedia.org/wiki/Meson_(software)", "implementation": "Meson", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Meson", "url": "https://pldb.io/concepts/meson.html", "implementation": "Meson", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

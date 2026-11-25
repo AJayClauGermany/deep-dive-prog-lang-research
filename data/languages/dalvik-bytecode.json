@@ -1,0 +1,401 @@
+{
+ "id": "dalvik-bytecode",
+ "name": "Dalvik / DEX",
+ "aliases": [
+  "Dalvik bytecode",
+  "DEX",
+  "smali"
+ ],
+ "categories": [
+  "bytecode",
+  "abstract-machine"
+ ],
+ "paradigms": [
+  "imperative",
+  "register-based",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "verified"
+ ],
+ "first_appeared": 2008,
+ "designers": [
+  "Dan Bornstein",
+  "Google"
+ ],
+ "summary": "Register-based bytecode and Dalvik Executable (DEX) container format of Android, originally run by the Dalvik VM and since Android 5 compiled ahead-of-time and JIT-compiled by the Android Runtime (ART); produced from JVM class files by dx/D8.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".dex",
+  ".smali",
+  ".apk"
+ ],
+ "homepage": "https://source.android.com/docs/core/runtime",
+ "influenced_by": [
+  "jvm-bytecode"
+ ],
+ "related": [
+  {
+   "id": "jvm-bytecode",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The AOSP documents on source.android.com (bytecode, DEX format, instruction formats, constraints) are normative for implementers.",
+  "0": "ART in AOSP is the reference implementation; there is no official assembly syntax - smali is the community standard."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik bytecode format",
+   "url": "https://source.android.com/docs/core/runtime/dalvik-bytecode",
+   "concepts": [
+    "bytecode",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik bytecode — General design (register-based VM)",
+   "url": "https://source.android.com/docs/core/runtime/dalvik-bytecode#design",
+   "concepts": [
+    "virtual-machine",
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik bytecode — Instruction summary",
+   "url": "https://source.android.com/docs/core/runtime/dalvik-bytecode#instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik bytecode — packed-switch payload format",
+   "url": "https://source.android.com/docs/core/runtime/dalvik-bytecode#packed-switch",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik bytecode — fill-array-data payload format",
+   "url": "https://source.android.com/docs/core/runtime/dalvik-bytecode#fill-array",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik bytecode — Mathematical operation details",
+   "url": "https://source.android.com/docs/core/runtime/dalvik-bytecode#math",
+   "concepts": [
+    "operators",
+    "integers",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik Executable (DEX) format",
+   "url": "https://source.android.com/docs/core/runtime/dex-format",
+   "concepts": [
+    "encoding-wire-format",
+    "program-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — LEB128 encoding",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#leb128",
+   "concepts": [
+    "encoding-wire-format",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — access_flags definitions",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#access-flags",
+   "concepts": [
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — MUTF-8 string encoding",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#mutf-8",
+   "concepts": [
+    "strings",
+    "unicode"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — TypeDescriptor syntax",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#typedescriptor",
+   "concepts": [
+    "type-annotations",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — class_def_item",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#class-def-item",
+   "concepts": [
+    "classes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — code_item (registers, try/catch tables)",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#code-item",
+   "concepts": [
+    "bytecode",
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — call_site_id_item (invoke-custom)",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#call-site-id-item",
+   "concepts": [
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DEX format — System annotations (Signature, Throws, InnerClass)",
+   "url": "https://source.android.com/docs/core/runtime/dex-format#system-annotation",
+   "concepts": [
+    "annotations-attributes",
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dalvik executable instruction formats",
+   "url": "https://source.android.com/docs/core/runtime/instruction-formats",
+   "concepts": [
+    "encoding-wire-format",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Constraints (static/structural verification rules)",
+   "url": "https://source.android.com/docs/core/runtime/constraints",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Android Runtime (ART) and Dalvik overview",
+   "url": "https://source.android.com/docs/core/runtime/",
+   "concepts": [
+    "virtual-machine",
+    "jit",
+    "garbage-collection"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "d8 — DEX compiler (Android developers)",
+   "url": "https://developer.android.com/tools/d8",
+   "concepts": [
+    "code-generation",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ART libdexfile/dex/dex_instruction_list.h — Dalvik opcode list",
+   "url": "https://android.googlesource.com/platform/art/+/refs/heads/main/libdexfile/dex/dex_instruction_list.h",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "ART",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ART runtime/interpreter/interpreter_switch_impl-inl.h — switch interpreter",
+   "url": "https://android.googlesource.com/platform/art/+/refs/heads/main/runtime/interpreter/interpreter_switch_impl-inl.h",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "ART",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "R8/D8 — Java bytecode to DEX compiler and shrinker",
+   "url": "https://r8.googlesource.com/r8",
+   "concepts": [
+    "code-generation",
+    "optimization"
+   ],
+   "scope": "section",
+   "implementation": "D8/R8",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "smali/baksmali — DEX assembler/disassembler (smali syntax)",
+   "url": "https://github.com/google/smali",
+   "concepts": [
+    "assembler-directives",
+    "tooling"
+   ],
+   "scope": "whole",
+   "implementation": "smali",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Dalvik (software)",
+   "url": "https://en.wikipedia.org/wiki/Dalvik_(software)",
+   "concepts": [
+    "history",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Android Runtime",
+   "url": "https://en.wikipedia.org/wiki/Android_Runtime",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

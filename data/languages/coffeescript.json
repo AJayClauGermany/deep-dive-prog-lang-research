@@ -1,0 +1,79 @@
+{
+ "id": "coffeescript",
+ "name": "CoffeeScript",
+ "categories": [
+  "scripting",
+  "general-purpose"
+ ],
+ "paradigms": [
+  "functional",
+  "object-oriented",
+  "imperative",
+  "prototype-based"
+ ],
+ "typing": [
+  "dynamic",
+  "weak"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Jeremy Ashkenas"
+ ],
+ "summary": "Indentation-sensitive language that compiles one-to-one into readable JavaScript, adding significant whitespace, comprehensions, the existential operator, destructuring and class syntax years before ES2015; CoffeeScript 2 targets modern ES2015+ output.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".coffee",
+  ".litcoffee"
+ ],
+ "homepage": "https://coffeescript.org/",
+ "influenced_by": [
+  "javascript",
+  "ruby",
+  "python",
+  "haskell"
+ ],
+ "related": [
+  {
+   "id": "javascript",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "livescript",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "The compiler is self-hosted: Jison grammar (grammar.coffee), lexer and rewriter feed nodes.coffee, which emits JavaScript.",
+  "1": "There is no separate specification; the single-page coffeescript.org language reference and the compiler define the language."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "jashkenas/coffeescript — the CoffeeScript compiler", "url": "https://github.com/jashkenas/coffeescript", "implementation": "coffeescript", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/lexer.coffee — lexer (indentation tracking, string interpolation)", "url": "https://github.com/jashkenas/coffeescript/blob/main/src/lexer.coffee", "implementation": "coffeescript", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer", "whitespace-layout"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/rewriter.coffee — token rewriter: implicit parentheses, braces and indentation normalization", "url": "https://github.com/jashkenas/coffeescript/blob/main/src/rewriter.coffee", "implementation": "coffeescript", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexical-structure", "whitespace-layout"]},
+  {"level": 0, "kind": "grammar-source", "title": "src/grammar.coffee — Jison grammar", "url": "https://github.com/jashkenas/coffeescript/blob/main/src/grammar.coffee", "implementation": "coffeescript", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/nodes.coffee — AST node classes and JavaScript code generation", "url": "https://github.com/jashkenas/coffeescript/blob/main/src/nodes.coffee", "implementation": "coffeescript", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["ast", "code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/scope.litcoffee — lexical scope tracking (implicit variable declaration)", "url": "https://github.com/jashkenas/coffeescript/blob/main/src/scope.litcoffee", "implementation": "coffeescript", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Language reference", "url": "https://coffeescript.org/#language", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Functions", "url": "https://coffeescript.org/#functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Strings", "url": "https://coffeescript.org/#strings", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Lexical scoping and variable safety", "url": "https://coffeescript.org/#lexical-scope", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — If, else, unless and conditional assignment", "url": "https://coffeescript.org/#conditionals", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Loops and comprehensions", "url": "https://coffeescript.org/#loops", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "comprehensions"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — The existential operator", "url": "https://coffeescript.org/#existential-operator", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["null-optional"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Destructuring assignment", "url": "https://coffeescript.org/#destructuring", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["destructuring"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Bound (fat arrow) functions", "url": "https://coffeescript.org/#fat-arrow", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Classes", "url": "https://coffeescript.org/#classes", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes", "inheritance"]},
+  {"level": 1, "kind": "reference-manual", "title": "CoffeeScript language reference — Switch/when/else", "url": "https://coffeescript.org/#switch", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["switch-case"]},
+  {"level": 1, "kind": "release-notes", "title": "CoffeeScript language reference — Breaking changes from CoffeeScript 1.x to 2", "url": "https://coffeescript.org/#breaking-changes", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["versioning-compatibility"]},
+  {"level": 1, "kind": "release-notes", "title": "CoffeeScript language reference — Changelog", "url": "https://coffeescript.org/#changelog", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+  {"level": 2, "kind": "internals-guide", "title": "CoffeeScript annotated source", "url": "https://coffeescript.org/annotated-source/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 2, "kind": "book", "title": "The Little Book on CoffeeScript", "url": "https://arcturo.github.io/library/coffeescript/", "scope": "whole", "authority": "community", "authors": ["Alex MacCaw"], "year": 2012, "format": "html", "access": "open"},
+  {"level": 2, "kind": "cheatsheet", "title": "Learn X in Y minutes — CoffeeScript", "url": "https://learnxinyminutes.com/coffeescript/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — CoffeeScript", "url": "https://en.wikipedia.org/wiki/CoffeeScript", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — CoffeeScript", "url": "https://pldb.io/concepts/coffeescript.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:CoffeeScript", "url": "https://rosettacode.org/wiki/Category:CoffeeScript", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

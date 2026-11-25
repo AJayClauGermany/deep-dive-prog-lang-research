@@ -1,0 +1,2028 @@
+{
+ "id": "openapi",
+ "name": "OpenAPI Specification",
+ "aliases": [
+  "OpenAPI",
+  "OAS",
+  "Swagger"
+ ],
+ "categories": [
+  "schema-idl",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "structural",
+  "json-schema-based"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Tony Tam (Swagger)",
+  "OpenAPI Initiative Technical Steering Committee"
+ ],
+ "summary": "Vendor-neutral, JSON/YAML-encoded interface description language for HTTP APIs: an OpenAPI description declares servers, paths, operations, parameters, request/response bodies and security schemes, using (since 3.1) full JSON Schema 2020-12 for data models.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard",
+  "community-specification"
+ ],
+ "standards": [
+  "OpenAPI Specification 3.2.0 (2025)",
+  "OpenAPI Specification 3.1.1",
+  "OpenAPI Specification 3.0.4",
+  "Swagger/OpenAPI 2.0"
+ ],
+ "file_extensions": [
+  ".yaml",
+  ".yml",
+  ".json"
+ ],
+ "homepage": "https://www.openapis.org/",
+ "influenced_by": [
+  "json-schema",
+  "wsdl",
+  "raml"
+ ],
+ "related": [
+  {
+   "id": "json-schema",
+   "relation": "embeds"
+  },
+  {
+   "id": "asyncapi",
+   "relation": "family"
+  },
+  {
+   "id": "raml",
+   "relation": "family"
+  },
+  {
+   "id": "typespec",
+   "relation": "family"
+  },
+  {
+   "id": "smithy",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the OpenAPI Initiative (Linux Foundation) specification documents published at spec.openapis.org; the Markdown sources in OAI/OpenAPI-Specification are authoritative and the published JSON Schemas for each minor version are normative companions (non-authoritative for validation). Companion specs Arazzo (workflows) and Overlay (document transformation) are also OAI standards.",
+  "0": "No reference implementation. The OAI-published JSON Schemas validate OpenAPI documents; widely used parsers/validators are swagger-parser (Java), kin-openapi (Go), openapi-spec-validator (Python), Spectral (linting) and openapi-generator (code generation). oasdiff detects breaking changes between versions.",
+  "2": "learn.openapis.org is the official OAI tutorial site; swagger.io's 'OpenAPI Guide' is the long-standing vendor tutorial."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification v3.2.0",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 2.1 Versions and Deprecation",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x2-1-versions-and-deprecation",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 2.2 Undefined and Implementation-Defined Behavior",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x2-2-undefined-and-implementation-defined-behavior",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "undefined-behavior"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 3.1 JSON and YAML Compatibility",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x3-1-json-and-yaml-compatibility",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 3.2 Case Sensitivity",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x3-2-case-sensitivity",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 3.3 Rich Text Formatting (CommonMark)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x3-3-rich-text-formatting",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.1 OpenAPI Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-1-openapi-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.1.2 OpenAPI Description Structure (multi-document descriptions, parsing)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-1-2-openapi-description-structure",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.1.2.2 Relative References in API Description URIs",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-1-2-2-relative-references-in-api-description-uris",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.1.2.3 Resolving Implicit Connections",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-1-2-3-resolving-implicit-connections",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.2 Info Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-2-info-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.5 Server Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-5-server-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.6 Server Variable Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-6-server-variable-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.7 Components Object (reusable definitions)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-7-components-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "references-anchors",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.8 Paths Object and path templating",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-8-paths-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.8.2.1 Path Templating Matching",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-8-2-1-path-templating-matching",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.9 Path Item Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-9-path-item-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.10 Operation Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-10-operation-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.12 Parameter Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-12-parameter-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.12.3 Style Values (parameter serialization styles)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-12-3-style-values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.12.4 URL Percent-Encoding",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-12-4-url-percent-encoding",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.13 Request Body Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-13-request-body-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.14 Media Type Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-14-media-type-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.14.3 Complete vs Streaming Content (sequential media types)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-14-3-complete-vs-streaming-content",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "iterators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.15 Encoding Object (multipart and form encodings)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-15-encoding-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.16 Responses Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-16-responses-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "return",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.17 Response Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-17-response-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.18 Callback Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-18-callback-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "async-await",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.19 Example Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-19-example-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.20 Link Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-20-link-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.20.3 Runtime Expressions (ABNF grammar)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-20-3-runtime-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "grammar",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.21 Header Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-21-header-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.22 Tag Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-22-tag-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.23 Reference Object ($ref)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-23-reference-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24 Schema Object (JSON Schema 2020-12 superset)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-schema-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.3 Data Types and formats",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-3-data-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars",
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.4 Parsing and Serializing (JSON, non-JSON, binary data)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-4-parsing-and-serializing",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.5 Extended Validation with Annotations (readOnly/writeOnly)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-5-extended-validation-with-annotations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.6.1 Composition and Inheritance (Polymorphism)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-6-1-composition-and-inheritance-polymorphism",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "polymorphism",
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.6.2 Generic (Template) Data Structures",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-6-2-generic-template-data-structures",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.6.3 Annotated Enumerations",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-6-3-annotated-enumerations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.7 Specifying Schema Dialects",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-7-specifying-schema-dialects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.24.8.3 Model with Map/Dictionary Properties",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-24-8-3-model-with-map-dictionary-properties",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.25 Discriminator Object (tagged unions)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-25-discriminator-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types",
+    "union-intersection-types",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.26 XML Object (XML mapping)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-26-xml-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.26.5 Handling null Values in XML",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-26-5-handling-null-values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.27 Security Scheme Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-27-security-scheme-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 4.30 Security Requirement Object",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x4-30-security-requirement-object",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 5 Specification Extensions (x- fields)",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x5-specification-extensions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 6 Security Considerations",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x6-security-considerations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — 6.6 Handling Reference Cycles",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#x6-6-handling-reference-cycles",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursive-types",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — Appendix A: Revision History",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#a-appendix-a-revision-history",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — Appendix B: Data Type Conversion",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#b-appendix-b-data-type-conversion",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — Appendix C: Using RFC6570-Based Serialization",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#c-appendix-c-using-rfc6570-based-serialization",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — Appendix E: Percent-Encoding and Form Media Types",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#e-appendix-e-percent-encoding-and-form-media-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.2.0 — Appendix F: Base URI Determination and Reference Resolution examples",
+   "url": "https://spec.openapis.org/oas/v3.2.0.html#f-appendix-f-examples-of-base-uri-determination-and-reference-resolution",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "3.2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification v3.1.1",
+   "url": "https://spec.openapis.org/oas/v3.1.1.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "3.1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification 3.1.1 — 4.4 Data Types",
+   "url": "https://spec.openapis.org/oas/v3.1.1.html#x4-4-data-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "3.1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification v3.1.0 (adopts JSON Schema 2020-12, adds webhooks)",
+   "url": "https://spec.openapis.org/oas/v3.1.0.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2021,
+   "version": "3.1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Specification v3.0.4",
+   "url": "https://spec.openapis.org/oas/v3.0.4.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "3.0.4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI (Swagger) Specification v2.0",
+   "url": "https://spec.openapis.org/oas/v2.0.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "OAI/OpenAPI-Specification — proposals directory (feature proposals)",
+   "url": "https://github.com/OAI/OpenAPI-Specification/tree/main/proposals",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "Proposal: Webhooks (2019)",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/proposals/2019-07-17-Webhooks.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2019,
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "async-await"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "Proposal: Clarify Nullable (2019)",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/proposals/2019-10-31-Clarify-Nullable.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2019,
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "Proposal: Overlays (2019)",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/proposals/2019-12-24-Overlays.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2019,
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "Proposal: Tags Improvement (2024, adopted in 3.2)",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/proposals/2024-09-01-Tags-Improvement.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "OAI/OpenAPI-Specification — CONTRIBUTING.md (specification development process)",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/CONTRIBUTING.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "OAI/OpenAPI-Specification — GOVERNANCE.md",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/GOVERNANCE.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Arazzo Specification (OAI workflow description companion)",
+   "url": "https://spec.openapis.org/arazzo/latest.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenAPI Overlay Specification (document transformation)",
+   "url": "https://spec.openapis.org/overlay/latest.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "OpenAPI Format Registry (registered `format` values)",
+   "url": "https://spec.openapis.org/registry/format/index.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "OAS 3.2 JSON Schema for OpenAPI documents (schema/2025-09-17)",
+   "url": "https://spec.openapis.org/oas/3.2/schema/2025-09-17",
+   "scope": "section",
+   "implementation": "OAI schemas",
+   "authority": "standards-body",
+   "version": "3.2.0",
+   "format": "dataset",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "OAS 3.1 JSON Schema for OpenAPI documents (schema/2022-10-07)",
+   "url": "https://spec.openapis.org/oas/3.1/schema/2022-10-07",
+   "scope": "section",
+   "implementation": "OAI schemas",
+   "authority": "standards-body",
+   "version": "3.1",
+   "format": "dataset",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "OAS 3.0 JSON Schema for OpenAPI documents (schema/2021-09-28)",
+   "url": "https://spec.openapis.org/oas/3.0/schema/2021-09-28",
+   "scope": "section",
+   "implementation": "OAI schemas",
+   "authority": "standards-body",
+   "version": "3.0",
+   "format": "dataset",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "OAS 3.2 schema dialect meta-schema (dialect/2025-09-17)",
+   "url": "https://spec.openapis.org/oas/3.2/dialect/2025-09-17",
+   "scope": "section",
+   "implementation": "OAI schemas",
+   "authority": "standards-body",
+   "version": "3.2.0",
+   "format": "dataset",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "OAI/OpenAPI-Specification — specification sources (versions/*.md)",
+   "url": "https://github.com/OAI/OpenAPI-Specification",
+   "scope": "whole",
+   "implementation": "OAI",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "versions/3.2.0.md — Markdown source of OAS 3.2.0",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.2.0.md",
+   "scope": "section",
+   "implementation": "OAI",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "tests/schema/oas-schema.mjs — tests of the OAS JSON Schemas",
+   "url": "https://github.com/OAI/OpenAPI-Specification/blob/main/tests/schema/oas-schema.mjs",
+   "scope": "section",
+   "implementation": "OAI",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "getkin/kin-openapi — OpenAPI 3 parser, validator and request filter (Go)",
+   "url": "https://github.com/getkin/kin-openapi",
+   "scope": "whole",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3/loader.go — loading documents and resolving external refs",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3/loader.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3/schema.go — Schema Object model and validation",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3/schema.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-system",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3/discriminator.go — Discriminator Object",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3/discriminator.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3/parameter.go — Parameter Object and serialization styles",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3/parameter.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3/security_scheme.go — security schemes",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3/security_scheme.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3/internalize_refs.go — bundling/internalizing references",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3/internalize_refs.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "modules"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3filter/req_resp_decoder.go — decoding parameters/bodies by style",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3filter/req_resp_decoder.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kin-openapi openapi3filter/validate_request.go — validating HTTP requests against an OpenAPI description",
+   "url": "https://github.com/getkin/kin-openapi/blob/master/openapi3filter/validate_request.go",
+   "scope": "section",
+   "implementation": "kin-openapi",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "swagger-api/swagger-parser — OpenAPI/Swagger parser (Java)",
+   "url": "https://github.com/swagger-api/swagger-parser",
+   "scope": "whole",
+   "implementation": "swagger-parser",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "swagger-parser OpenAPIDeserializer.java — YAML/JSON to model deserializer",
+   "url": "https://github.com/swagger-api/swagger-parser/blob/master/modules/swagger-parser-v3/src/main/java/io/swagger/v3/parser/util/OpenAPIDeserializer.java",
+   "scope": "section",
+   "implementation": "swagger-parser",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "swagger-parser ResolverFully.java — full $ref resolution",
+   "url": "https://github.com/swagger-api/swagger-parser/blob/master/modules/swagger-parser-v3/src/main/java/io/swagger/v3/parser/util/ResolverFully.java",
+   "scope": "section",
+   "implementation": "swagger-parser",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "OpenAPITools/openapi-generator — client/server code generation from OpenAPI",
+   "url": "https://github.com/OpenAPITools/openapi-generator",
+   "scope": "whole",
+   "implementation": "openapi-generator",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "openapi-generator DefaultCodegen.java — mapping schemas to language models",
+   "url": "https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator/src/main/java/org/openapitools/codegen/DefaultCodegen.java",
+   "scope": "section",
+   "implementation": "openapi-generator",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "stoplightio/spectral — OpenAPI/AsyncAPI linter",
+   "url": "https://github.com/stoplightio/spectral",
+   "scope": "whole",
+   "implementation": "Spectral",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Spectral packages/rulesets/src/oas/index.ts — built-in OpenAPI ruleset",
+   "url": "https://github.com/stoplightio/spectral/blob/develop/packages/rulesets/src/oas/index.ts",
+   "scope": "section",
+   "implementation": "Spectral",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Spectral oasDiscriminator.ts — discriminator rule",
+   "url": "https://github.com/stoplightio/spectral/blob/develop/packages/rulesets/src/oas/functions/oasDiscriminator.ts",
+   "scope": "section",
+   "implementation": "Spectral",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "oasdiff/oasdiff — OpenAPI diff and breaking-change detection",
+   "url": "https://github.com/oasdiff/oasdiff",
+   "scope": "whole",
+   "implementation": "oasdiff",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "oasdiff checker/check_api_removed.go — breaking-change rule for removed operations",
+   "url": "https://github.com/oasdiff/oasdiff/blob/main/checker/check_api_removed.go",
+   "scope": "section",
+   "implementation": "oasdiff",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "python-openapi/openapi-spec-validator — OpenAPI document validator (Python)",
+   "url": "https://github.com/python-openapi/openapi-spec-validator",
+   "scope": "whole",
+   "implementation": "openapi-spec-validator",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Introduction (OAI)",
+   "url": "https://learn.openapis.org/introduction.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Structure of an OpenAPI Description",
+   "url": "https://learn.openapis.org/specification/structure.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — API Endpoints (paths)",
+   "url": "https://learn.openapis.org/specification/paths.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Parameter Serialization",
+   "url": "https://learn.openapis.org/specification/parameters.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Content of Message Bodies",
+   "url": "https://learn.openapis.org/specification/content.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Reusing Descriptions (components)",
+   "url": "https://learn.openapis.org/specification/components.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Callbacks",
+   "url": "https://learn.openapis.org/specification/callbacks.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "async-await"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Links",
+   "url": "https://learn.openapis.org/specification/links.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Security",
+   "url": "https://learn.openapis.org/specification/security.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Documentation (descriptions, examples)",
+   "url": "https://learn.openapis.org/specification/docs.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Webhooks",
+   "url": "https://learn.openapis.org/specification/webhooks.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "async-await"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — References overview (taxonomy of references)",
+   "url": "https://learn.openapis.org/referencing/overview.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn OpenAPI — Dynamic references",
+   "url": "https://learn.openapis.org/referencing/dynamic.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "generics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn OpenAPI — Best Practices",
+   "url": "https://learn.openapis.org/best-practices.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn OpenAPI — Upgrading from 3.0 to 3.1",
+   "url": "https://learn.openapis.org/upgrading/v3.0-to-v3.1.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn OpenAPI — Upgrading from 3.1 to 3.2",
+   "url": "https://learn.openapis.org/upgrading/v3.1-to-v3.2.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "OpenAPI Initiative — FAQ",
+   "url": "https://www.openapis.org/faq",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "OpenAPI Initiative blog — Migrating from OpenAPI 3.0 to 3.1.0",
+   "url": "https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — OpenAPI 3.0 Guide: About",
+   "url": "https://swagger.io/docs/specification/v3_0/about/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — Data Types",
+   "url": "https://swagger.io/docs/specification/v3_0/data-models/data-types/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "arrays",
+    "maps-dictionaries",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — Enums",
+   "url": "https://swagger.io/docs/specification/v3_0/data-models/enums/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — oneOf, anyOf, allOf, not",
+   "url": "https://swagger.io/docs/specification/v3_0/data-models/oneof-anyof-allof-not/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — Inheritance and Polymorphism",
+   "url": "https://swagger.io/docs/specification/v3_0/data-models/inheritance-and-polymorphism/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — Using $ref",
+   "url": "https://swagger.io/docs/specification/v3_0/using-ref/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — Describing Parameters",
+   "url": "https://swagger.io/docs/specification/v3_0/describing-parameters/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Swagger docs — Authentication",
+   "url": "https://swagger.io/docs/specification/v3_0/authentication/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Redocly — Learning OpenAPI",
+   "url": "https://redocly.com/learn/openapi/learning-openapi",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "APIs You Won't Hate — OpenAPI v3.1 and JSON Schema",
+   "url": "https://apisyouwonthate.com/blog/openapi-v3-1-and-json-schema/",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "openapi-generator — Customization guide",
+   "url": "https://openapi-generator.tech/docs/customization",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Spectral — OpenAPI rules reference",
+   "url": "https://docs.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — OpenAPI Specification",
+   "url": "https://en.wikipedia.org/wiki/OpenAPI_Specification",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Swagger / OpenAPI",
+   "url": "https://pldb.io/concepts/swagger.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "OpenAPI Initiative tooling registry (tools.openapis.org)",
+   "url": "https://tools.openapis.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "OpenAPI.Tools — community list of OpenAPI tooling",
+   "url": "https://openapi.tools/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Learn OpenAPI — Example API descriptions (3.0, 3.1, 3.2)",
+   "url": "https://learn.openapis.org/examples/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

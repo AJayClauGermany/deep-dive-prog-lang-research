@@ -1,0 +1,428 @@
+{
+ "id": "wasi",
+ "name": "WASI",
+ "aliases": [
+  "WebAssembly System Interface",
+  "WASI Preview 1",
+  "WASI 0.2"
+ ],
+ "categories": [
+  "schema-idl",
+  "protocol"
+ ],
+ "paradigms": [
+  "capability-based"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2019,
+ "designers": [
+  "Dan Gohman",
+  "Lin Clark",
+  "Bytecode Alliance / W3C WebAssembly CG WASI subgroup"
+ ],
+ "summary": "The WebAssembly System Interface: a capability-based set of APIs (filesystem, clocks, random, sockets, HTTP, CLI) for running WebAssembly outside the browser, defined since 0.2 as WIT interfaces and worlds over the Component Model's canonical ABI.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".wit",
+  ".wasm"
+ ],
+ "homepage": "https://wasi.dev/",
+ "influenced_by": [],
+ "related": [
+  {
+   "id": "webassembly",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "Developed by the W3C WebAssembly Community Group's WASI subgroup; the normative artefacts are WIT files and README/Overview documents in the WASI repo (preview1 used the older witx format and is no longer on main). WIT and the canonical ABI are specified by the Component Model repo.",
+  "0": "Wasmtime is the reference host; wasi-libc provides the guest C library."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "WASI repository README (phases, versions, proposals)",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/README.md",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "WASI proposals list (docs/Proposals.md)",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/docs/Proposals.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "WASI design principles (capability-based security, interposition)",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/docs/DesignPrinciples.md",
+   "concepts": [
+    "design-rationale",
+    "security-considerations"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "WASI capabilities",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/docs/Capabilities.md",
+   "concepts": [
+    "security-considerations"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "WASI high-level goals",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/docs/HighLevelGoals.md",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WASI 0.2.0 (Preview 2) overview",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/specifications/wasi-0.2.0/Overview.md",
+   "concepts": [
+    "standard-library",
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "0.2.0",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WASI 0.3.0 overview (native async)",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/specifications/wasi-0.3.0/Overview.md",
+   "concepts": [
+    "async-await",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "0.3.0",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "wasi:filesystem types.wit — filesystem interface",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/proposals/filesystem/wit/types.wit",
+   "concepts": [
+    "file-io"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "wasi:filesystem path resolution",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/proposals/filesystem/path-resolution.md",
+   "concepts": [
+    "file-io",
+    "security-considerations"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "wasi:cli command.wit — command world",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/proposals/cli/wit/command.wit",
+   "concepts": [
+    "command-line",
+    "program-structure"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "wasi:sockets TCP socket operational semantics",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/proposals/sockets/TcpSocketOperationalSemantics.md",
+   "concepts": [
+    "input-output",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "wasi:http proposal",
+   "url": "https://github.com/WebAssembly/WASI/blob/main/proposals/http/README.md",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Component Model — WIT (Wasm Interface Type) IDL",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md",
+   "concepts": [
+    "interfaces-protocols",
+    "grammar",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Component Model — Canonical ABI",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/CanonicalABI.md",
+   "concepts": [
+    "calling-convention-abi",
+    "ffi"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Component Model — Explainer",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/Explainer.md",
+   "concepts": [
+    "modules",
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Standardizing WASI: A system interface to run WebAssembly outside the web (Lin Clark, 2019)",
+   "url": "https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Lin Clark"
+   ],
+   "year": 2019,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The WebAssembly Component Model (Bytecode Alliance book)",
+   "url": "https://component-model.bytecodealliance.org/",
+   "concepts": [
+    "modules",
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Component Model book — An introduction to WIT",
+   "url": "https://component-model.bytecodealliance.org/design/wit.html",
+   "concepts": [
+    "interfaces-protocols"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Wasmtime WASI tutorial",
+   "url": "https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md",
+   "concepts": [
+    "hello-world",
+    "file-io"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "wasi.dev — WASI overview site",
+   "url": "https://wasi.dev/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Wasmtime crates/wasi/src/lib.rs — WASI host implementation",
+   "url": "https://github.com/bytecodealliance/wasmtime/blob/main/crates/wasi/src/lib.rs",
+   "concepts": [
+    "runtime-system",
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "Wasmtime",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Wasmtime crates/wasi/src/p1.rs — WASI preview1 compatibility",
+   "url": "https://github.com/bytecodealliance/wasmtime/blob/main/crates/wasi/src/p1.rs",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "implementation": "Wasmtime",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "wasi-libc — C standard library for WASI",
+   "url": "https://github.com/WebAssembly/wasi-libc",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "implementation": "wasi-libc",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "uvwasi — WASI syscall layer on libuv (used by Node.js)",
+   "url": "https://github.com/nodejs/uvwasi",
+   "concepts": [
+    "processes-system"
+   ],
+   "scope": "whole",
+   "implementation": "uvwasi",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "wit-bindgen — language bindings generator for WIT",
+   "url": "https://github.com/bytecodealliance/wit-bindgen",
+   "concepts": [
+    "code-generation",
+    "ffi"
+   ],
+   "scope": "whole",
+   "implementation": "wit-bindgen",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wasi-testsuite",
+   "url": "https://github.com/WebAssembly/wasi-testsuite",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "whole",
+   "implementation": "WASI SG",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — WebAssembly § WASI",
+   "url": "https://en.wikipedia.org/wiki/WebAssembly#WASI",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

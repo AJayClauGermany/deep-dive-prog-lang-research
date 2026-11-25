@@ -1,0 +1,2193 @@
+{
+ "id": "latex",
+ "name": "LaTeX",
+ "aliases": [
+  "LaTeX2e",
+  "LaTeX 2ε",
+  "LaTeX3 (expl3 programming layer)"
+ ],
+ "categories": [
+  "markup",
+  "document-typesetting",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative markup",
+  "macro",
+  "imperative"
+ ],
+ "typing": [
+  "untyped (token lists)",
+  "register-typed (counts, dimensions, skips, boxes)"
+ ],
+ "first_appeared": 1984,
+ "designers": [
+  "Leslie Lamport",
+  "Frank Mittelbach",
+  "Chris Rowley",
+  "Rainer Schöpf",
+  "LaTeX Project Team"
+ ],
+ "summary": "Document markup language and macro package built on TeX: authors describe logical structure (sections, environments, cross-references, floats) and document classes and packages turn it into typeset output. The current kernel is LaTeX2e (since 1994), maintained by the LaTeX Project, with the expl3 programming layer (LaTeX3) now loaded in the format.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "community-specification"
+ ],
+ "standards": [
+  "LaTeX2e kernel (dated releases, e.g. 2025-11-01)",
+  "LaTeX Project Public License (LPPL) 1.3c"
+ ],
+ "file_extensions": [
+  ".tex",
+  ".sty",
+  ".cls",
+  ".dtx",
+  ".ins",
+  ".ltx",
+  ".bib"
+ ],
+ "homepage": "https://www.latex-project.org/",
+ "influenced_by": [
+  "tex",
+  "scribe"
+ ],
+ "related": [
+  {
+   "id": "tex",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "tex",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "context",
+   "relation": "family"
+  },
+  {
+   "id": "bibtex",
+   "relation": "family"
+  },
+  {
+   "id": "texinfo",
+   "relation": "family"
+  },
+  {
+   "id": "scribe",
+   "relation": "family"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  },
+  {
+   "id": "typst",
+   "relation": "family"
+  },
+  {
+   "id": "pandoc-markdown",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "The definition is the kernel source itself: latex3/latex2e (base/*.dtx literate sources, built into latex.ltx) plus the expl3 kernel in latex3/latex3, run on a TeX engine (pdfTeX, XeTeX, LuaTeX; see the tex entry). The l3build regression suite (base/testfiles) is the de-facto conformance test. LaTeXML, plasTeX, LaTeX.js, Pandoc, KaTeX/MathJax and Tectonic are alternative (often partial) implementations or converters.",
+  "1": "There is no formal standard. Authoritative are Lamport's book (LaTeX: A Document Preparation System, paywalled), the LaTeX Project's guides (usrguide, clsguide, fntguide, lthooks-doc, interface3) and the documented sources (source2e). The LaTeX2e unofficial reference manual (latexref.xyz) is the most complete open reference and is used here for section-level deep links.",
+  "2": "learnlatex.org (by LaTeX Project members), the Wikibooks LaTeX book and Overleaf Learn are the main open tutorials; TUGboat/LaTeX Project papers cover design and history.",
+  "3": "Wikipedia, PLDB, CTAN and the TeX FAQ index the ecosystem."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "latex3/latex2e — the LaTeX2e kernel, required packages and l3build test files",
+   "url": "https://github.com/latex3/latex2e",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "standard-library"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "latex2e base/README.md — layout of the kernel sources and how latex.ltx is built",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/README.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "build-systems",
+    "program-structure"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltdefns.dtx: \\newcommand, \\renewcommand, \\providecommand, \\DeclareRobustCommand",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltdefns.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "functions",
+    "parameters-arguments"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltcmd.dtx: \\NewDocumentCommand argument-specification parser (formerly xparse)",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltcmd.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "parameters-arguments",
+    "parser"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltkeys.dtx: key–value option handling for classes and packages",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltkeys.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "maps-dictionaries"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — lthooks.dtx: the general hook management system",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/lthooks.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "higher-order-functions"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltcntrl.dtx: control structures (\\@for, \\@whilenum, \\@ifnextchar ...)",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltcntrl.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltclass.dtx: \\documentclass, \\usepackage, \\ProvidesPackage and option processing",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltclass.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports",
+    "packages"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltfiles.dtx: \\input, \\include, \\includeonly and auxiliary files",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltfiles.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "file-io",
+    "imports",
+    "separate-compilation"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltcounts.dtx: counters (\\newcounter, \\setcounter, \\stepcounter, \\value)",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltcounts.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "integers",
+    "assignment"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltsect.dtx: sectioning commands and \\@startsection",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltsect.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltxref.dtx: \\label, \\ref, \\pageref cross-referencing via the .aux file",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltxref.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltlists.dtx: list environments (itemize, enumerate, description, list)",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltlists.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "document-structure"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltoutenc.dtx: output encodings, \\DeclareTextCommand and text symbols",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltoutenc.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters",
+    "encoding-wire-format"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — utf8ienc.dtx: UTF-8 input handling (default input encoding since 2018)",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/utf8ienc.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltoutput.dtx: the output routine (page building, float placement)",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltoutput.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "evaluation-order"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltvers.dtx: format version and \\NeedsTeXFormat",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltvers.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — ltexpl.dtx: loading the expl3 programming layer into the LaTeX2e format",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/ltexpl.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "standard-library"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — classes.dtx: the standard article, report and book classes",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/classes.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "standard-library"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — doc.dtx: the doc package for literate .dtx documentation",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/doc.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeX2e kernel source — docstrip.dtx: DocStrip, the conditional-extraction preprocessor that builds .sty/.cls files",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/docstrip.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "code-generation"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "LaTeX2e kernel source — build.lua: l3build configuration of the kernel regression tests",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/build.lua",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "build-systems"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "latex2e base/testfiles — l3build regression tests for the kernel (.lvt/.tlg)",
+   "url": "https://github.com/latex3/latex2e/tree/main/base/testfiles",
+   "scope": "section",
+   "authority": "official",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "latex2e required/amsmath/amsmath.dtx — AMS mathematics package",
+   "url": "https://github.com/latex3/latex2e/blob/main/required/amsmath/amsmath.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "LaTeX2e kernel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "latex3/latex3 — the expl3 programming layer (l3kernel) and experimental LaTeX3 modules",
+   "url": "https://github.com/latex3/latex3",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — expl3.dtx: the expl3 loader and design overview",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/expl3.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "program-structure"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3basics.dtx: defining functions and the argument-signature convention",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3basics.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3names.dtx: naming scheme, primitives renamed into the expl3 namespace",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3names.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "identifiers"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3expan.dtx: argument expansion control (\\exp_args:N...)",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3expan.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "evaluation-order"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3prg.dtx: conditionals, booleans and predicate functions",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3prg.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "booleans"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3int.dtx: integers and integer expressions",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3int.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "expressions"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3fp.dtx: decimal floating-point arithmetic implemented in TeX macros",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3fp.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "expressions"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3tl.dtx: token lists",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3tl.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "strings"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3seq.dtx: sequences and stacks",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3seq.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "iteration-foreach"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3prop.dtx: property lists (key–value maps)",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3prop.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3keys.dtx: key–value interfaces",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3keys.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "expl3 kernel source — l3regex.dtx: regular expressions in TeX",
+   "url": "https://github.com/latex3/latex3/blob/main/l3kernel/l3regex.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "implementation": "expl3 / l3kernel"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "latex3/l3build — l3build.dtx, Lua-based build and regression-testing system for LaTeX code",
+   "url": "https://github.com/latex3/l3build/blob/main/l3build.dtx",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "build-systems"
+   ],
+   "implementation": "l3build"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Tectonic — modernised self-contained TeX/LaTeX engine (Rust + XeTeX)",
+   "url": "https://github.com/tectonic-typesetting/tectonic",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Tectonic"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeXML — Core/Mouth.pm: TeX tokenizer (catcodes) of a LaTeX-to-XML converter",
+   "url": "https://github.com/brucemiller/LaTeXML/blob/master/lib/LaTeXML/Core/Mouth.pm",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "implementation": "LaTeXML"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeXML — Core/Gullet.pm: macro expansion",
+   "url": "https://github.com/brucemiller/LaTeXML/blob/master/lib/LaTeXML/Core/Gullet.pm",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "evaluation-order"
+   ],
+   "implementation": "LaTeXML"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LaTeXML — Engine/LaTeX.pool.ltxml: re-implementation of the LaTeX kernel commands",
+   "url": "https://github.com/brucemiller/LaTeXML/blob/master/lib/LaTeXML/Engine/LaTeX.pool.ltxml",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "document-structure"
+   ],
+   "implementation": "LaTeXML"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "plasTeX — Tokenizer.py: a Python LaTeX tokenizer",
+   "url": "https://github.com/plastex/plastex/blob/master/plasTeX/Tokenizer.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "plasTeX"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "LaTeX.js — LaTeX to HTML5 translator in JavaScript (PEG parser)",
+   "url": "https://github.com/michael-brade/LaTeX.js",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "LaTeX.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc — Readers/LaTeX.hs: LaTeX reader with macro expansion",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/LaTeX.hs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "macros"
+   ],
+   "implementation": "Pandoc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "unified-latex — LaTeX parser and AST tools in TypeScript",
+   "url": "https://github.com/siefkenj/unified-latex",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ],
+   "implementation": "unified-latex"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-latex — grammar.js",
+   "url": "https://github.com/latex-lsp/tree-sitter-latex/blob/master/grammar.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "tree-sitter-latex"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "KaTeX — src/Parser.ts: parser for the LaTeX math subset",
+   "url": "https://github.com/KaTeX/KaTeX/blob/main/src/Parser.ts",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "KaTeX"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LaTeX2e unofficial reference manual (latexref.xyz)",
+   "url": "https://latexref.xyz/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LaTeX2e unofficial reference manual — single-page HTML",
+   "url": "https://latexref.xyz/dev/latex2e.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Overview of LaTeX (starting and ending, output files, engines, command syntax)",
+   "url": "https://latexref.xyz/Overview.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Starting and ending a document",
+   "url": "https://latexref.xyz/Starting-and-ending.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — LaTeX command syntax",
+   "url": "https://latexref.xyz/LaTeX-command-syntax.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Environment syntax",
+   "url": "https://latexref.xyz/Environment-syntax.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Special characters: \\ { } % $ & ~ _ ^ #",
+   "url": "https://latexref.xyz/Special-characters.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "comments",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Document classes",
+   "url": "https://latexref.xyz/Document-classes.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Class and package commands",
+   "url": "https://latexref.xyz/Class-and-package-commands.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\usepackage",
+   "url": "https://latexref.xyz/_005cusepackage.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Layout",
+   "url": "https://latexref.xyz/Layout.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Sectioning",
+   "url": "https://latexref.xyz/Sectioning.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Cross references (\\label, \\ref, \\pageref)",
+   "url": "https://latexref.xyz/Cross-references.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Environments",
+   "url": "https://latexref.xyz/Environments.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\verb",
+   "url": "https://latexref.xyz/_005cverb.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Definitions (\\newcommand, \\newenvironment, \\newtheorem ...)",
+   "url": "https://latexref.xyz/Definitions.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\newcommand & \\renewcommand",
+   "url": "https://latexref.xyz/_005cnewcommand-_0026-_005crenewcommand.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\newenvironment & \\renewenvironment",
+   "url": "https://latexref.xyz/_005cnewenvironment-_0026-_005crenewenvironment.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\DeclareRobustCommand",
+   "url": "https://latexref.xyz/_005cDeclareRobustCommand.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\protect: fragile and robust commands",
+   "url": "https://latexref.xyz/_005cprotect.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\makeatletter & \\makeatother: @ in internal command names",
+   "url": "https://latexref.xyz/_005cmakeatletter-_0026-_005cmakeatother.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Counters",
+   "url": "https://latexref.xyz/Counters.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Units of length",
+   "url": "https://latexref.xyz/Units-of-length.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Expressions (\\numexpr, \\dimexpr ...)",
+   "url": "https://latexref.xyz/Expressions.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Modes (paragraph, math, LR, vertical)",
+   "url": "https://latexref.xyz/Modes.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Spaces",
+   "url": "https://latexref.xyz/Spaces.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Boxes",
+   "url": "https://latexref.xyz/Boxes.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Splitting the input (\\input, \\include, \\endinput)",
+   "url": "https://latexref.xyz/Splitting-the-input.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "separate-compilation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Input/output (\\openin, \\read, \\write, \\message)",
+   "url": "https://latexref.xyz/Input_002foutput.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\write18: running shell commands",
+   "url": "https://latexref.xyz/_005cwrite18.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "processes-system",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — TeX engines (pdfTeX, XeTeX, LuaTeX ...)",
+   "url": "https://latexref.xyz/TeX-engines.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Input encodings",
+   "url": "https://latexref.xyz/Input-encodings.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — Recovering from errors",
+   "url": "https://latexref.xyz/Recovering-from-errors.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\ClassError, \\PackageError and other messages",
+   "url": "https://latexref.xyz/_005cClassError-and-_005cPackageError-and-other-messages.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexref.xyz — LaTeX2e unofficial reference manual — \\IfFileExists & \\InputIfFileExists",
+   "url": "https://latexref.xyz/_005cIfFileExists-_0026-_005cInputIfFileExists.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LaTeX for authors (current version) — usrguide: document commands, key–value, hooks, case changing",
+   "url": "https://www.latex-project.org/help/documentation/usrguide.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LaTeX for package and class authors (current version) — clsguide",
+   "url": "https://www.latex-project.org/help/documentation/clsguide.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LaTeX2e font selection — fntguide",
+   "url": "https://www.latex-project.org/help/documentation/fntguide.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LaTeX2e font encodings — encguide",
+   "url": "https://www.latex-project.org/help/documentation/encguide.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The LaTeX hook management system — lthooks-doc",
+   "url": "https://www.latex-project.org/help/documentation/lthooks-doc.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The LaTeX2e Sources (source2e) — the typeset, documented kernel",
+   "url": "https://www.latex-project.org/help/documentation/source2e.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "The LaTeX3 Interfaces (interface3) — reference for every expl3 function",
+   "url": "https://texdoc.org/serve/interface3/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "The expl3 package and LaTeX3 programming — design, naming conventions, argument signatures",
+   "url": "https://texdoc.org/serve/expl3/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "namespaces",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "The LaTeX3 Project coding style guide (l3styleguide)",
+   "url": "https://texdoc.org/serve/l3styleguide/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "expl3 syntax changes (l3syntax-changes)",
+   "url": "https://texdoc.org/serve/l3syntax-changes/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "LaTeX News (ltnews) — release notes of every kernel release",
+   "url": "https://texdoc.org/serve/ltnews/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "LaTeX Project — LaTeX2e news index",
+   "url": "https://www.latex-project.org/news/latex2e-news/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "latex2e base/changes.txt — kernel change log",
+   "url": "https://github.com/latex3/latex2e/blob/main/base/changes.txt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latexrelease — controlling the kernel release used by a document",
+   "url": "https://texdoc.org/serve/latexrelease/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The DocStrip program",
+   "url": "https://texdoc.org/serve/docstrip/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The l3build package: checking and building packages",
+   "url": "https://texdoc.org/serve/l3build/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "build-systems"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "latex-tagging — the LaTeX tagging project: accessible, structured PDF output",
+   "url": "https://texdoc.org/serve/latex-tagging/0",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "The LaTeX3 Programming Language — a syntax proposal for TeX macro programming (David Carlisle et al., TUGboat 1997)",
+   "url": "https://www.latex-project.org/publications/1997-DPC-TUB-tb18-4-expl3-proposal.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "macros"
+   ],
+   "year": 1997
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Key–value setting handling in the LaTeX kernel (Joseph Wright, TUGboat 2022)",
+   "url": "https://www.latex-project.org/publications/2022-JAW-TUB-tb134wright-keyval.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ],
+   "year": 2022,
+   "authors": [
+    "Joseph Wright"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "LaTeX's version rollback concept (Frank Mittelbach, TUGboat 2018)",
+   "url": "https://www.latex-project.org/publications/2018-FMi-TUB-tb122mitt-version-rollback.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "year": 2018,
+   "authors": [
+    "Frank Mittelbach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Learn LaTeX (interactive lessons by LaTeX Project members)",
+   "url": "https://www.learnlatex.org/en/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — What LaTeX is and how it works",
+   "url": "https://www.learnlatex.org/en/lesson-01",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Basic LaTeX document structure (commands, comments, special characters)",
+   "url": "https://www.learnlatex.org/en/lesson-03",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "comments",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Logical structure (sectioning, lists)",
+   "url": "https://www.learnlatex.org/en/lesson-04",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Extending LaTeX using packages and definitions",
+   "url": "https://www.learnlatex.org/en/lesson-06",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Cross-referencing",
+   "url": "https://www.learnlatex.org/en/lesson-09",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Citations and references",
+   "url": "https://www.learnlatex.org/en/lesson-12",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Structuring longer documents",
+   "url": "https://www.learnlatex.org/en/lesson-13",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "separate-compilation",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "learnlatex.org — Dealing with errors",
+   "url": "https://www.learnlatex.org/en/lesson-15",
+   "scope": "section",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks — LaTeX",
+   "url": "https://en.wikibooks.org/wiki/LaTeX",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Basics (input file structure, reserved characters, comments)",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Basics",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Document Structure",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Document_Structure",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Macros (\\newcommand, environments, \\ifthenelse, loops)",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Macros",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Plain TeX (catcodes, \\def, \\expandafter, registers)",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Plain_TeX",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "lexical-structure",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Counters",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Counters",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "integers"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Creating Packages",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Creating_Packages",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks LaTeX — Errors and Warnings",
+   "url": "https://en.wikibooks.org/wiki/LaTeX/Errors_and_Warnings",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Overleaf — Learn LaTeX in 30 minutes",
+   "url": "https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Overleaf Learn — Commands (defining new commands)",
+   "url": "https://www.overleaf.com/learn/latex/Commands",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Overleaf Learn — Cross referencing sections, equations and floats",
+   "url": "https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Overleaf Learn — Writing your own package",
+   "url": "https://www.overleaf.com/learn/latex/Writing_your_own_package",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Overleaf Learn — Multi-file LaTeX projects",
+   "url": "https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "separate-compilation",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The Not So Short Introduction to LaTeX (lshort, Oetiker et al.)",
+   "url": "https://texdoc.org/serve/lshort/0",
+   "scope": "whole",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Tobias Oetiker",
+    "Hubert Partl",
+    "Irene Hyna",
+    "Elisabeth Schlegl"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — LaTeX",
+   "url": "https://learnxinyminutes.com/latex/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "The TeX FAQ (texfaq.org)",
+   "url": "https://texfaq.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "NewDocumentCommand versus newcommand versus ... (Joseph Wright, TUGboat 2021)",
+   "url": "https://www.latex-project.org/publications/2021-JAW-TUB-tb130wright-newdoccmd.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "parameters-arguments",
+    "comparison"
+   ],
+   "year": 2021,
+   "authors": [
+    "Joseph Wright"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Exploring \\romannumeral and expansion (Joseph Wright, TUGboat 37:1)",
+   "url": "https://tug.org/TUGboat/tb37-1/tb115wright.pdf",
+   "scope": "whole",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "macros"
+   ],
+   "year": 2016,
+   "authors": [
+    "Joseph Wright"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "A regression test suite for LaTeX2e (Frank Mittelbach, TUGboat 1997)",
+   "url": "https://www.latex-project.org/publications/1997-FMi-TUB-regression-test-suite.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ],
+   "year": 1997,
+   "authors": [
+    "Frank Mittelbach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The LaTeX release workflow and the LaTeX dev formats (Frank Mittelbach, TUGboat 2019)",
+   "url": "https://www.latex-project.org/publications/2019-FMi-TUB-tb125mitt-dev-format.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "year": 2019,
+   "authors": [
+    "Frank Mittelbach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "The LaTeX legacy: 2.09 and all that (Chris Rowley, PODC 2001)",
+   "url": "https://www.latex-project.org/publications/2001-CAR-LaTeX-legacy.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "history"
+   ],
+   "year": 2001,
+   "authors": [
+    "Chris Rowley"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "With LaTeX into the nineties (Frank Mittelbach, TUGboat 1989)",
+   "url": "https://www.latex-project.org/publications/1989-FMi-TUB-tb26mitt-stanford.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ],
+   "year": 1989,
+   "authors": [
+    "Frank Mittelbach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "LaTeX Project — about LaTeX and the project's history",
+   "url": "https://www.latex-project.org/about/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LaTeX Project — the LaTeX3 programming layer (expl3) overview",
+   "url": "https://www.latex-project.org/latex3/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LaTeXML manual — converting LaTeX to XML/HTML/MathML",
+   "url": "https://math.nist.gov/~BMiller/LaTeXML/manual/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "LaTeXML"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "KaTeX — supported functions (the LaTeX math subset KaTeX implements)",
+   "url": "https://katex.org/docs/supported.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "KaTeX"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MathJax — TeX and LaTeX input processor",
+   "url": "https://docs.mathjax.org/en/latest/input/tex/index.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "MathJax"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Tectonic Typesetting System book",
+   "url": "https://tectonic-typesetting.github.io/book/latest/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Tectonic"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — LaTeX",
+   "url": "https://en.wikipedia.org/wiki/LaTeX",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — LaTeX: History and versions",
+   "url": "https://en.wikipedia.org/wiki/LaTeX#History",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — LaTeX",
+   "url": "https://pldb.io/concepts/latex.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "CTAN — Comprehensive TeX Archive Network",
+   "url": "https://www.ctan.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "package-management"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "CTAN — latex-base package page",
+   "url": "https://ctan.org/pkg/latex-base",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "LaTeX Project — publications by topic",
+   "url": "https://www.latex-project.org/publications/indexbytopic/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "LaTeX Project — books about LaTeX",
+   "url": "https://www.latex-project.org/help/books/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "TeX - LaTeX Stack Exchange",
+   "url": "https://tex.stackexchange.com/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
