@@ -1,0 +1,2271 @@
+{
+ "id": "css",
+ "name": "CSS",
+ "aliases": [
+  "Cascading Style Sheets",
+  "CSS3"
+ ],
+ "categories": [
+  "stylesheet",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "rule-based",
+  "constraint-based layout"
+ ],
+ "typing": [
+  "value grammar per property",
+  "dynamically checked at parse and computed-value time"
+ ],
+ "first_appeared": 1996,
+ "designers": [
+  "Håkon Wium Lie",
+  "Bert Bos",
+  "W3C CSS Working Group"
+ ],
+ "summary": "Declarative stylesheet language of the web: rules pair selectors (patterns over the document tree) with property declarations, and the cascade, inheritance and per-module layout algorithms turn them into presentation. Defined today as a large family of independently levelled W3C modules rather than one versioned specification.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "CSS Level 1 (W3C REC, 1996)",
+  "CSS 2.1 (W3C REC, 2011)",
+  "CSS Snapshot 2025 (W3C Group Note)",
+  "CSS Syntax Module Level 3",
+  "Selectors Level 4",
+  "CSS Cascading and Inheritance Level 5"
+ ],
+ "file_extensions": [
+  ".css"
+ ],
+ "homepage": "https://www.w3.org/Style/CSS/",
+ "influenced_by": [
+  "sgml",
+  "html"
+ ],
+ "related": [
+  {
+   "id": "html",
+   "relation": "family"
+  },
+  {
+   "id": "css-selectors",
+   "relation": "embeds"
+  },
+  {
+   "id": "sass",
+   "relation": "family"
+  },
+  {
+   "id": "less",
+   "relation": "family"
+  },
+  {
+   "id": "stylus",
+   "relation": "family"
+  },
+  {
+   "id": "svg",
+   "relation": "family"
+  },
+  {
+   "id": "xsl-fo",
+   "relation": "family"
+  },
+  {
+   "id": "qml",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "No reference implementation. The definition is exercised by the three browser style/layout engines (Blink, Gecko with Servo's Stylo, WebKit), by standalone parsers (rust-cssparser, PostCSS, CSSTree, Lightning CSS, tinycss2), layout libraries (Taffy) and by the shared web-platform-tests suite; the Bikeshed spec sources in w3c/csswg-drafts are listed as tooling. Chromium source is linked on chromium.googlesource.com because the GitHub mirror rate-limits raw fetches.",
+  "1": "There is no single \"CSS specification\" after CSS 2.1: the language is the set of modules listed in the current CSS Snapshot. Deep links point at the CSSWG editor's drafts (drafts.csswg.org / drafts.css-houdini.org), whose section anchors match the dated W3C TR publications; www.w3.org/TR links are the normative published versions.",
+  "2": "MDN is treated as secondary (explains the specs). Formal-semantics work on CSS layout is academic (Cassius, Meyerovich & Bodik) and listed here rather than at level 1 because it is not part of the definition.",
+  "3": "Rosetta Code has no meaningful CSS category; compatibility tables (caniuse, web-features) play the role of comparison tables."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "CSS Snapshot 2025 — the official definition of what \"CSS\" is",
+   "url": "https://drafts.csswg.org/css-2025/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "year": 2025
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "CSS Snapshot 2025 — classification of modules (official definition, reliable CRs, rough interoperability)",
+   "url": "https://drafts.csswg.org/css-2025/#module-classification",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification — W3C Recommendation",
+   "url": "https://www.w3.org/TR/CSS2/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "grammar",
+    "styling-layout"
+   ],
+   "year": 2011,
+   "version": "2.1"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Cascading Style Sheets, level 1 — W3C Recommendation",
+   "url": "https://www.w3.org/TR/CSS1/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ],
+   "year": 1996,
+   "version": "1",
+   "authors": [
+    "Håkon Wium Lie",
+    "Bert Bos"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Cascading HTML style sheets — a proposal (Håkon W. Lie, 1994)",
+   "url": "https://www.w3.org/People/howcome/p/cascade.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "year": 1994,
+   "authors": [
+    "Håkon Wium Lie"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS 2.2 (editor's draft of CSS 2) — Introduction to CSS 2 (tutorials, processing model)",
+   "url": "https://drafts.csswg.org/css2/#intro",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS 2.2 (editor's draft of CSS 2) — the CSS 2 processing model",
+   "url": "https://drafts.csswg.org/css2/#processing-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS 2.2 (editor's draft of CSS 2) — core syntax: tokenization, keywords, characters and case, statements, rule sets, declarations, comments",
+   "url": "https://drafts.csswg.org/css2/#syntax",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "keywords",
+    "statements",
+    "escaping",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Syntax Module Level 3",
+   "url": "https://drafts.csswg.org/css-syntax-3/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Syntax 3 — preprocessing the input stream (newline normalisation, NUL, surrogates)",
+   "url": "https://drafts.csswg.org/css-syntax-3/#input-preprocessing",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Syntax 3 — tokenizer algorithm: consume a numeric token (number, percentage, dimension)",
+   "url": "https://drafts.csswg.org/css-syntax-3/#consume-numeric-token",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "integers",
+    "floating-point",
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Syntax 3 — CSS rule/declaration tree data structures produced by the parser",
+   "url": "https://drafts.csswg.org/css-syntax-3/#css-tree",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units Module Level 4",
+   "url": "https://drafts.csswg.org/css-values-4/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "scalars",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 4 — value definition syntax (the grammar notation used by every property definition)",
+   "url": "https://drafts.csswg.org/css-values-4/#value-defs",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 4 — component value combinators (juxtaposition, &&, ||, |, brackets)",
+   "url": "https://drafts.csswg.org/css-values-4/#component-combinators",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 4 — numeric data types",
+   "url": "https://drafts.csswg.org/css-values-4/#numeric-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 4 — other quantities: angles, time, frequency, resolution",
+   "url": "https://drafts.csswg.org/css-values-4/#other-units",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 4 — functional notations",
+   "url": "https://drafts.csswg.org/css-values-4/#functional-notations",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 4 — computed value of math functions (simplification)",
+   "url": "https://drafts.csswg.org/css-values-4/#calc-computed-value",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compile-time-evaluation",
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 5 — boolean expression syntax: <boolean-expr>",
+   "url": "https://drafts.csswg.org/css-values-5/#boolean-logic",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "operators",
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Values and Units 5 — arbitrary substitution functions",
+   "url": "https://drafts.csswg.org/css-values-5/#arbitrary-substitution",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "variables",
+    "substitution-binding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Custom Properties for Cascading Variables Module Level 1",
+   "url": "https://drafts.csswg.org/css-variables-1/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Variables 1 — guaranteed-invalid values",
+   "url": "https://drafts.csswg.org/css-variables-1/#guaranteed-invalid",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Properties and Values API 1 — behaviour of registered custom properties (parse-time and computed-value-time checking)",
+   "url": "https://drafts.css-houdini.org/css-properties-values-api-1/#behavior-of-custom-properties",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Typed OM Level 1 — typed object representation of CSS values",
+   "url": "https://drafts.css-houdini.org/css-typed-om-1/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "reflection",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Painting API Level 1 — paint worklets and the paint() notation",
+   "url": "https://drafts.css-houdini.org/css-paint-api-1/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Layout API Level 1 — author-defined layout algorithms in worklets",
+   "url": "https://drafts.css-houdini.org/css-layout-api-1/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Cascading and Inheritance Level 5",
+   "url": "https://drafts.csswg.org/css-cascade-5/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "scope",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Cascade 5 — value processing: declared, cascaded, specified, computed, used and actual values",
+   "url": "https://drafts.csswg.org/css-cascade-5/#value-stages",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "evaluation-order",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Cascade 5 — important declarations: the !important annotation",
+   "url": "https://drafts.csswg.org/css-cascade-5/#importance",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Cascade 5 — cascade layers: @layer",
+   "url": "https://drafts.csswg.org/css-cascade-5/#layering",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "scope",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Cascade 6 — scoping styles: the @scope rule, scope proximity",
+   "url": "https://drafts.csswg.org/css-cascade-6/#scoped-styles",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "encapsulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors Level 4",
+   "url": "https://drafts.csswg.org/selectors-4/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors 4 — the relational pseudo-class :has()",
+   "url": "https://drafts.csswg.org/selectors-4/#relational",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors 4 — tree-structural pseudo-classes (:root, :empty, :nth-child())",
+   "url": "https://drafts.csswg.org/selectors-4/#structural-pseudos",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors 4 — API hooks: match a selector against a tree",
+   "url": "https://drafts.csswg.org/selectors-4/#match-against-tree",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Selectors 4 — privacy considerations of :visited",
+   "url": "https://drafts.csswg.org/selectors-4/#visited-privacy",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Pseudo-Elements 4 — tree-abiding pseudo-elements ::before, ::after, ::marker, ::placeholder",
+   "url": "https://drafts.csswg.org/css-pseudo-4/#treelike",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Namespaces 3 — declaring namespaces: the @namespace rule",
+   "url": "https://drafts.csswg.org/css-namespaces-3/#declaration",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Nesting 1 — nesting style rules",
+   "url": "https://drafts.csswg.org/css-nesting-1/#nesting",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "statements",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Conditional Rules Module Level 3",
+   "url": "https://drafts.csswg.org/css-conditional-3/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Conditional 3 — processing of conditional group rules",
+   "url": "https://drafts.csswg.org/css-conditional-3/#processing",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Conditional 5 — generalized conditional rules: the @when rule",
+   "url": "https://drafts.csswg.org/css-conditional-5/#when-rule",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Media Queries 4 — media types",
+   "url": "https://drafts.csswg.org/mediaqueries-4/#media-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Media Queries 5 — custom media queries: @custom-media",
+   "url": "https://drafts.csswg.org/mediaqueries-5/#custom-mq",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases",
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Functions and Mixins 1 — function parameters, types and default values",
+   "url": "https://drafts.csswg.org/css-mixins-1/#args",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Functions and Mixins 1 — the result descriptor (a function's return value)",
+   "url": "https://drafts.csswg.org/css-mixins-1/#the-result-descriptor",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Functions and Mixins 1 — defining mixins: the @mixin rule",
+   "url": "https://drafts.csswg.org/css-mixins-1/#defining-mixins",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "mixins",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Functions and Mixins 1 — the @contents rule (passing a block to a mixin)",
+   "url": "https://drafts.csswg.org/css-mixins-1/#contents-rule",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "mixins",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Extensions 1 — custom selectors: @custom-selector",
+   "url": "https://drafts.csswg.org/css-extensions-1/#custom-selectors",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Environment Variables 1 — environment variables",
+   "url": "https://drafts.csswg.org/css-env-1/#environment",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Display 4 — introduction: the box tree, formatting contexts and the element tree",
+   "url": "https://drafts.csswg.org/css-display-4/#intro",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Box Model 4 — the CSS box model (content, padding, border, margin)",
+   "url": "https://drafts.csswg.org/css-box-4/#box-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Box Sizing 3 — intrinsic size determination (min-content, max-content)",
+   "url": "https://drafts.csswg.org/css-sizing-3/#intrinsic",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "constraints"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Positioned Layout 3 — the position property (static, relative, sticky, absolute, fixed)",
+   "url": "https://drafts.csswg.org/css-position-3/#position-property",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Flexible Box Layout 1 — flex layout box model and terminology",
+   "url": "https://drafts.csswg.org/css-flexbox-1/#box-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Grid Layout 2 — core concepts (lines, tracks, areas)",
+   "url": "https://drafts.csswg.org/css-grid-2/#grid-concepts",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Containment 2 — types of containment (size, layout, style, paint)",
+   "url": "https://drafts.csswg.org/css-contain-2/#containment-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "optimization",
+    "encapsulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Text 4 — transforming text (text-transform)",
+   "url": "https://drafts.csswg.org/css-text-4/#transforming",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Fonts 4 — the @font-face rule",
+   "url": "https://drafts.csswg.org/css-fonts-4/#font-face-rule",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Fonts 4 — character range: the unicode-range descriptor",
+   "url": "https://drafts.csswg.org/css-fonts-4/#unicode-range-desc",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Color 5 — relative color syntax",
+   "url": "https://drafts.csswg.org/css-color-5/#relative-colors",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "destructuring"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Lists and Counters 3 — automatic numbering with counters",
+   "url": "https://drafts.csswg.org/css-lists-3/#auto-numbering",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "assignment",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Counter Styles 3 — defining custom counter styles: @counter-style",
+   "url": "https://drafts.csswg.org/css-counter-styles-3/#the-counter-style-rule",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Shadow 1 — exposing shadow tree parts: ::part()",
+   "url": "https://drafts.csswg.org/css-shadow-1/#exposing",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encapsulation",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Basic User Interface 4 — default style sheet additions for HTML",
+   "url": "https://drafts.csswg.org/css-ui-4/#default-style-sheet",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Will Change 1 — hinting at future changes: will-change",
+   "url": "https://drafts.csswg.org/css-will-change/#will-change",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization",
+    "performance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSS Object Model (CSSOM)",
+   "url": "https://drafts.csswg.org/cssom-1/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "CSSOM — CSS declaration blocks (parse and serialize)",
+   "url": "https://drafts.csswg.org/cssom-1/#css-declaration-blocks",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Fullscreen/Compat context — Compatibility Standard (WHATWG): -webkit- prefixed CSS that the web depends on",
+   "url": "https://compat.spec.whatwg.org/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Quirks Mode Standard (WHATWG) — CSS and selector quirks",
+   "url": "https://quirks.spec.whatwg.org/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "W3C CSS Working Group — current work and status of every module",
+   "url": "https://www.w3.org/Style/CSS/current-work",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "w3c/csswg-drafts — issue tracker and spec sources where CSS changes are proposed and resolved",
+   "url": "https://github.com/w3c/csswg-drafts",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "CSSWG wiki — incomplete list of mistakes in the design of CSS",
+   "url": "https://wiki.csswg.org/ideas/mistakes/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "CSSWG wiki — working group process, resolutions and planning",
+   "url": "https://wiki.csswg.org/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "servo/stylo — Servo/Firefox CSS style engine (Stylo)",
+   "url": "https://github.com/servo/stylo",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: rule_parser.rs — top-level and nested rule parser (at-rules and qualified rules)",
+   "url": "https://github.com/servo/stylo/blob/main/style/stylesheets/rule_parser.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "statements"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: declaration_block.rs — property declaration blocks, !important, parsing and serialization",
+   "url": "https://github.com/servo/stylo/blob/main/style/properties/declaration_block.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "assignment",
+    "serialization"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: cascade.rs — the cascade: applying declarations to compute style",
+   "url": "https://github.com/servo/stylo/blob/main/style/properties/cascade.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "inheritance",
+    "styling-layout"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: stylist.rs — Stylist: rule collection per origin, cascade data, selector maps",
+   "url": "https://github.com/servo/stylo/blob/main/style/stylist.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "pattern-matching",
+    "semantic-analysis"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: custom_properties.rs — custom properties, var() substitution and cycle detection",
+   "url": "https://github.com/servo/stylo/blob/main/style/custom_properties.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "substitution-binding"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: rule.rs — @property rule parsing",
+   "url": "https://github.com/servo/stylo/blob/main/style/properties_and_values/rule.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-annotations",
+    "variables"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: calc.rs — calc() and math function parsing and type checking",
+   "url": "https://github.com/servo/stylo/blob/main/style/values/specified/calc.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators",
+    "type-system"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: mod.rs — computed values and the ToComputedValue conversion",
+   "url": "https://github.com/servo/stylo/blob/main/style/values/computed/mod.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "data-model"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: color.rs — specified <color> parsing",
+   "url": "https://github.com/servo/stylo/blob/main/style/values/specified/color.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: condition.rs — query conditions (and/or/not, Kleene evaluation)",
+   "url": "https://github.com/servo/stylo/blob/main/style/queries/condition.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "conditionals"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: mod.rs — @counter-style rules",
+   "url": "https://github.com/servo/stylo/blob/main/style/counter_style/mod.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: parallel.rs — parallel style traversal with work stealing",
+   "url": "https://github.com/servo/stylo/blob/main/style/parallel.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parallelism",
+    "performance"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Stylo: matching.rs — selectors crate: right-to-left selector matching",
+   "url": "https://github.com/servo/stylo/blob/main/selectors/matching.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "interpreter"
+   ],
+   "implementation": "Stylo"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "servo/rust-cssparser — Rust implementation of CSS Syntax Level 3",
+   "url": "https://github.com/servo/rust-cssparser",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "implementation": "rust-cssparser"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rust-cssparser: tokenizer.rs — CSS Syntax 3 tokenizer",
+   "url": "https://github.com/servo/rust-cssparser/blob/main/src/tokenizer.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure",
+    "comments",
+    "escaping"
+   ],
+   "implementation": "rust-cssparser"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rust-cssparser: unicode_range.rs — unicode-range parsing",
+   "url": "https://github.com/servo/rust-cssparser/blob/main/src/unicode_range.rs",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "ranges"
+   ],
+   "implementation": "rust-cssparser"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "WebKit/WebKit — WebCore CSS and style engine",
+   "url": "https://github.com/WebKit/WebKit",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "WebKit"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit: SelectorCompiler.cpp — selector JIT compiler (selectors to machine code)",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/cssjit/SelectorCompiler.cpp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "jit",
+    "pattern-matching",
+    "optimization"
+   ],
+   "implementation": "WebKit"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit: CSSProperties.json — machine-readable table of every supported property",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/css/CSSProperties.json",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "code-generation"
+   ],
+   "implementation": "WebKit"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit: html.css — user-agent default style sheet for HTML",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/css/html.css",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "WebKit"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gecko: ServoStyleSet.cpp — Gecko side of the Stylo style set (style sheets, restyling entry points)",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/layout/style/ServoStyleSet.cpp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "ffi"
+   ],
+   "implementation": "Gecko"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gecko: nsGridContainerFrame.cpp — grid container layout and track sizing",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/layout/generic/nsGridContainerFrame.cpp",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "constraints"
+   ],
+   "implementation": "Gecko"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "postcss/postcss — JavaScript CSS parser and transformation framework",
+   "url": "https://github.com/postcss/postcss",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "ast"
+   ],
+   "implementation": "PostCSS"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PostCSS: stringifier.js — stringifier preserving original formatting (raws)",
+   "url": "https://github.com/postcss/postcss/blob/main/lib/stringifier.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "whitespace-layout"
+   ],
+   "implementation": "PostCSS"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "csstree/csstree — CSS parser, walker, generator and value-grammar lexer",
+   "url": "https://github.com/csstree/csstree",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "CSSTree"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CSSTree: match-graph.js — compiling value-definition syntax into a match graph",
+   "url": "https://github.com/csstree/csstree/blob/master/lib/lexer/match-graph.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "automata"
+   ],
+   "implementation": "CSSTree"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CSSTree: generic.js — generic value types (<length>, <integer>, <string>, <custom-ident>...)",
+   "url": "https://github.com/csstree/csstree/blob/master/lib/lexer/generic.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ],
+   "implementation": "CSSTree"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "parcel-bundler/lightningcss — CSS parser, transformer and minifier in Rust",
+   "url": "https://github.com/parcel-bundler/lightningcss",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "optimization"
+   ],
+   "implementation": "Lightning CSS"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lightning CSS: bundler.rs — bundler: inlining @import with layers, media and supports conditions",
+   "url": "https://github.com/parcel-bundler/lightningcss/blob/master/src/bundler.rs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules",
+    "build-systems"
+   ],
+   "implementation": "Lightning CSS"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "DioxusLabs/taffy — standalone flexbox, grid and block layout engine",
+   "url": "https://github.com/DioxusLabs/taffy",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ],
+   "implementation": "Taffy"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "facebook/yoga — embeddable flexbox layout engine (React Native)",
+   "url": "https://github.com/facebook/yoga",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ],
+   "implementation": "Yoga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Kozea/tinycss2 — low-level CSS Syntax 3 parser for Python",
+   "url": "https://github.com/Kozea/tinycss2",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "implementation": "tinycss2"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Kozea/WeasyPrint — CSS paged-media layout engine producing PDF",
+   "url": "https://github.com/Kozea/WeasyPrint",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ],
+   "implementation": "WeasyPrint"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "tabatkins/parse-css — \"standards-based\" CSS parser written by the CSS Syntax editor to match the spec text",
+   "url": "https://github.com/tabatkins/parse-css",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "implementation": "parse-css"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "web-platform-tests/wpt — css/ test suite README (the CSSWG test suites)",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/css/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ],
+   "implementation": "web-platform-tests"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "wpt.fyi — live cross-browser results for the css/ test suites",
+   "url": "https://wpt.fyi/results/css",
+   "scope": "whole",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ],
+   "implementation": "web-platform-tests"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "w3c/css-validator — the W3C CSS Validation Service (Java)",
+   "url": "https://github.com/w3c/css-validator",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "schema-validation"
+   ],
+   "implementation": "W3C CSS Validator"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "w3c/webref — CSS definitions extracted from the specs (properties, at-rules, value grammars)",
+   "url": "https://github.com/w3c/webref",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-model"
+   ],
+   "implementation": "webref"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "stylelint/stylelint — CSS linter",
+   "url": "https://github.com/stylelint/stylelint",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "style-conventions"
+   ],
+   "implementation": "stylelint"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS: Cascading Style Sheets (documentation hub)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Handling conflicts: cascade, specificity and inheritance",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "evaluation-order",
+    "scope"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Cascade layers",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "scope"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — CSS values and units",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Debugging CSS",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Debugging_CSS",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — At-rules",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/At-rules",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "keywords"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS error handling",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/Error_handling",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Property value processing (specified, computed, used, actual values)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS selectors and combinators",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selectors_and_combinators",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "operators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Privacy and the :visited selector",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Privacy_and_:visited",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS scoping (@scope, shadow DOM)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scoping",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "encapsulation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Using feature queries (@supports)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Conditional_rules/Using_feature_queries",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS data types",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Using CSS math functions",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Values_and_units/Using_math_functions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <string> (quoting and escaping)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/string",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — @property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@property",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — CSS Object Model (CSSOM)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev — Learn CSS (course)",
+   "url": "https://web.dev/learn/css",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Every Layout — algorithmic layout design with CSS (Heydon Pickering, Andy Bell)",
+   "url": "https://every-layout.dev/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "partially-open",
+   "concepts": [
+    "styling-layout"
+   ],
+   "authors": [
+    "Heydon Pickering",
+    "Andy Bell"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "CSS: The Definitive Guide, 5th edition (Eric Meyer, Estelle Weyl; O'Reilly)",
+   "url": "https://www.oreilly.com/library/view/css-the-definitive/9781098117603/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "book",
+   "access": "paywalled",
+   "concepts": [
+    "styling-layout"
+   ],
+   "year": 2023,
+   "authors": [
+    "Eric A. Meyer",
+    "Estelle Weyl"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — CSS",
+   "url": "https://learnxinyminutes.com/css/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google HTML/CSS Style Guide",
+   "url": "https://google.github.io/styleguide/htmlcssguide.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "CSS Guidelines — high-level advice for writing sane, manageable, scalable CSS (Harry Roberts)",
+   "url": "https://cssguidelin.es/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ],
+   "authors": [
+    "Harry Roberts"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "W3C — A brief history of CSS until 2016 (Bert Bos)",
+   "url": "https://www.w3.org/Style/CSS20/history.html",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ],
+   "authors": [
+    "Bert Bos"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Cascading Style Sheets — PhD thesis (Håkon Wium Lie, University of Oslo, 2005): design, history and comparison with other style sheet languages",
+   "url": "https://www.wiumlie.no/2006/phd/",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale",
+    "comparison"
+   ],
+   "year": 2005,
+   "authors": [
+    "Håkon Wium Lie"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "W3C — Understanding the CSS specifications (how to read them)",
+   "url": "https://www.w3.org/Style/CSS/read",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Mozilla Hacks — Inside a super fast CSS engine: Quantum CSS (aka Stylo)",
+   "url": "https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parallelism",
+    "optimization",
+    "compiler-architecture"
+   ],
+   "year": 2017,
+   "authors": [
+    "Lin Clark"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Cassius: Automated Reasoning for Web Page Layout (Panchekha & Torlak, OOPSLA 2016) — a mechanised formalisation of CSS 2.1 layout",
+   "url": "https://dl.acm.org/doi/10.1145/2983990.2984010",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "verification",
+    "styling-layout"
+   ],
+   "year": 2016,
+   "authors": [
+    "Pavel Panchekha",
+    "Emina Torlak"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — CSS",
+   "url": "https://en.wikipedia.org/wiki/CSS",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CSS",
+   "url": "https://pldb.io/concepts/css.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Can I use — browser support tables for CSS features",
+   "url": "https://caniuse.com/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "CSS-Tricks Almanac — index of selectors, properties, functions and at-rules",
+   "url": "https://css-tricks.com/almanac/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "cssdb — index of CSS features and their position in the standardisation process",
+   "url": "https://cssdb.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "CSS Reference (cssreference.io) — visual guide to properties",
+   "url": "https://cssreference.io/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "CSS Zen Garden — one HTML document, hundreds of stylesheets",
+   "url": "https://www.csszengarden.com/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-css — curated list of CSS resources",
+   "url": "https://github.com/awesome-css-group/awesome-css",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  }
+ ]
+}

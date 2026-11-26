@@ -1,0 +1,502 @@
+{
+ "id": "vdm",
+ "name": "VDM-SL / VDM++",
+ "aliases": [
+  "Vienna Development Method",
+  "VDM-SL",
+  "VDM++",
+  "VDM-RT",
+  "VDM-10",
+  "Meta-IV"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "model-based",
+  "functional",
+  "imperative",
+  "object-oriented (VDM++)"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "invariant-constrained types"
+ ],
+ "first_appeared": 1976,
+ "designers": [
+  "Dines Bjørner",
+  "Cliff Jones",
+  "Peter Lucas",
+  "IBM Vienna Laboratory"
+ ],
+ "summary": "The Vienna Development Method's specification languages: VDM-SL (ISO/IEC 13817-1) for model-based specification with types, invariants, pre/postconditions and executable subsets, extended by VDM++ with classes and concurrency and by VDM-RT for real-time distributed systems.",
+ "status": "maintained",
+ "defined_by": [
+  "international-standard",
+  "community-specification"
+ ],
+ "standards": [
+  "ISO/IEC 13817-1:1996"
+ ],
+ "file_extensions": [
+  ".vdmsl",
+  ".vdmpp",
+  ".vdmrt"
+ ],
+ "homepage": "https://www.overturetool.org/",
+ "influenced_by": [],
+ "related": [
+  {
+   "id": "z-notation",
+   "relation": "family"
+  },
+  {
+   "id": "b-method",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "VDM-SL is ISO/IEC 13817-1:1996 (paywalled). The Overture community's VDM-10 Language Manual (free PDF) is the working definition of VDM-SL, VDM++ and VDM-RT as implemented by Overture/VDMJ; section links use #page=N via jsDelivr.",
+  "0": "Overture (Eclipse-based, Java) and VDMJ (Nick Battle's command-line interpreter/type checker, which Overture's core derives from) are the main open implementations; the VDM VSCode extension uses VDMJ."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 13817-1:1996 — Vienna Development Method — Specification Language — Part 1: Base language",
+   "url": "https://www.iso.org/standard/22988.html",
+   "concepts": [
+    "standardization",
+    "formal-semantics"
+   ],
+   "authority": "standards-body",
+   "year": 1996,
+   "version": "ISO/IEC 13817-1:1996",
+   "access": "paywalled",
+   "scope": "whole",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture Technical Report TR-001) — full PDF",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "version": "VDM-10",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 3.1 Basic Data Types (bool, numeric, char, quote, token)",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=14",
+   "concepts": [
+    "primitive-types",
+    "booleans",
+    "integers",
+    "characters"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 3.2.1 Set Types; 3.2.2 Sequence Types",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=22",
+   "concepts": [
+    "sets",
+    "lists"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 3.2.3 Map Types",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=27",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 3.2.5 Composite Types (records)",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=32",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 3.2.6 Union and Optional Types",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=35",
+   "concepts": [
+    "union-intersection-types",
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 3.3 Invariants",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=40",
+   "concepts": [
+    "refinement-types",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 5 Function Definitions (pre/postconditions)",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=50",
+   "concepts": [
+    "functions",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 5.1 Polymorphic Functions; 5.2 Higher Order Functions",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=56",
+   "concepts": [
+    "generics",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 6.4 Conditional Expressions (if, cases)",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=65",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 6.16 The Lambda Expression",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=81",
+   "concepts": [
+    "closures"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 7 Patterns",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=94",
+   "concepts": [
+    "pattern-matching",
+    "destructuring"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 11 Operation Definitions",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=110",
+   "concepts": [
+    "functions",
+    "methods"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 12.4 The Assignment Statement",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=122",
+   "concepts": [
+    "assignment",
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 12.6 For-Loop Statements; 12.7 The While-Loop Statement",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=128",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 12.11 Exception Handling Statements",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=136",
+   "concepts": [
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 13 Top-level Specification (modules in VDM-SL, classes in VDM++)",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=148",
+   "concepts": [
+    "modules",
+    "classes",
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — 15 Threads (VDM++ and VDM-RT)",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=178",
+   "concepts": [
+    "threads",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — A The Syntax of the VDM Languages",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=194",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — B Lexical Specification",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=220",
+   "concepts": [
+    "lexical-structure",
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VDM-10 Language Manual (Overture) — C Operator Precedence",
+   "url": "https://cdn.jsdelivr.net/gh/overturetool/documentation@editing/documentation/VDM10LangMan/VDM10_lang_man.pdf#page=226",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "version": "VDM-10",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "overturetool/overture — Overture tool platform for VDM",
+   "url": "https://github.com/overturetool/overture",
+   "concepts": [
+    "tooling",
+    "interpreter"
+   ],
+   "implementation": "Overture",
+   "authority": "community",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Overture — parser/lex/LexTokenReader.java: lexer",
+   "url": "https://github.com/overturetool/overture/blob/development/core/parser/src/main/java/org/overture/parser/lex/LexTokenReader.java",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "Overture",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Overture — parser/syntax/ExpressionReader.java: expression parser",
+   "url": "https://github.com/overturetool/overture/blob/development/core/parser/src/main/java/org/overture/parser/syntax/ExpressionReader.java",
+   "concepts": [
+    "parser",
+    "expressions"
+   ],
+   "implementation": "Overture",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Overture — parser/syntax/StatementReader.java: statement parser",
+   "url": "https://github.com/overturetool/overture/blob/development/core/parser/src/main/java/org/overture/parser/syntax/StatementReader.java",
+   "concepts": [
+    "parser",
+    "statements"
+   ],
+   "implementation": "Overture",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "nickbattle/vdmj — VDMJ command-line VDM tool (parser, type checker, interpreter)",
+   "url": "https://github.com/nickbattle/vdmj",
+   "concepts": [
+    "interpreter",
+    "semantic-analysis"
+   ],
+   "implementation": "VDMJ",
+   "authority": "community",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Overture documentation — manuals and tutorials",
+   "url": "https://www.overturetool.org/documentation/manuals.html",
+   "concepts": [
+    "tooling"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Vienna Development Method",
+   "url": "https://en.wikipedia.org/wiki/Vienna_Development_Method",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — VDM-SL",
+   "url": "https://pldb.io/concepts/vdm-sl.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

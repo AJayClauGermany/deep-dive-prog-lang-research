@@ -1,0 +1,48 @@
+{
+ "id": "cmake",
+ "name": "CMake language",
+ "aliases": ["CMake", "CMakeLists.txt"],
+ "categories": ["build", "scripting", "domain-specific"],
+ "paradigms": ["imperative", "declarative-build"],
+ "typing": ["untyped", "string-lists"],
+ "first_appeared": 2000,
+ "designers": ["Bill Hoffman", "Ken Martin", "Brad King (Kitware)"],
+ "summary": "The scripting language of the CMake meta-build system: CMakeLists.txt files are sequences of command invocations whose arguments are strings and semicolon-separated lists, with if/foreach/while blocks, function and macro definitions, directory/function/block scopes and generator expressions evaluated at build-system generation time.",
+ "status": "active",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "file_extensions": ["CMakeLists.txt", ".cmake"],
+ "homepage": "https://cmake.org/",
+ "influenced_by": [],
+ "related": [{"id": "cpp", "relation": "implemented-in"}, {"id": "make", "relation": "compiles-to"}, {"id": "ninja", "relation": "compiles-to"}],
+ "level_notes": {"1": "cmake-language(7) is the official language reference (with a grammar in a BNF-like notation); command semantics are in cmake-commands(7); behaviour changes are versioned through policies (cmake-policies(7)).", "0": "Kitware/CMake (C++): the list-file lexer is generated from a flex grammar; commands are C++ classes."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "Kitware/CMake — CMake source (GitHub mirror of gitlab.kitware.com)", "url": "https://github.com/Kitware/CMake", "implementation": "CMake", "scope": "whole", "authority": "vendor", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "grammar-source", "title": "Source/LexerParser/cmListFileLexer.in.l — flex lexer for CMake list files", "url": "https://github.com/Kitware/CMake/blob/master/Source/LexerParser/cmListFileLexer.in.l", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "source-file", "access": "open", "concepts": ["lexer", "lexical-structure"]},
+  {"level": 0, "kind": "implementation-source", "title": "Source/cmListFileCache.cxx — parsing list files into command invocations", "url": "https://github.com/Kitware/CMake/blob/master/Source/cmListFileCache.cxx", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Source/cmConditionEvaluator.cxx — if() condition evaluation", "url": "https://github.com/Kitware/CMake/blob/master/Source/cmConditionEvaluator.cxx", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "source-file", "access": "open", "concepts": ["conditionals", "booleans", "operator-precedence"]},
+  {"level": 0, "kind": "implementation-source", "title": "Source/cmForEachCommand.cxx — foreach()", "url": "https://github.com/Kitware/CMake/blob/master/Source/cmForEachCommand.cxx", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "source-file", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 0, "kind": "implementation-source", "title": "Source/cmGeneratorExpressionNode.cxx — generator expression evaluation", "url": "https://github.com/Kitware/CMake/blob/master/Source/cmGeneratorExpressionNode.cxx", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "source-file", "access": "open", "concepts": ["lazy-evaluation", "expressions"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7)", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html", "implementation": "CMake", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["grammar", "program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Syntax: command invocations and arguments", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#syntax", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["grammar", "lexical-structure", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Bracket, quoted and unquoted arguments", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#command-arguments", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["strings", "literals", "escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Variable references", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#variable-references", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["variables", "string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Control structures", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#control-structures", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["conditionals", "loops"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Command definitions (macro, function)", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#command-definitions", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["functions", "macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Variables and scopes", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#variables", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["variables", "scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-language(7) — Lists", "url": "https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#lists", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["lists", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "if() command", "url": "https://cmake.org/cmake/help/latest/command/if.html", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["conditionals", "booleans", "operator-precedence"]},
+  {"level": 1, "kind": "reference-manual", "title": "foreach() command", "url": "https://cmake.org/cmake/help/latest/command/foreach.html", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "function() command", "url": "https://cmake.org/cmake/help/latest/command/function.html", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "string() command", "url": "https://cmake.org/cmake/help/latest/command/string.html", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["strings", "regular-expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-generator-expressions(7)", "url": "https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["lazy-evaluation", "expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "cmake-policies(7) — versioned behaviour changes", "url": "https://cmake.org/cmake/help/latest/manual/cmake-policies.7.html", "implementation": "CMake", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["versioning-compatibility"]},
+
+  {"level": 2, "kind": "tutorial", "title": "CMake Tutorial (official)", "url": "https://cmake.org/cmake/help/latest/guide/tutorial/index.html", "implementation": "CMake", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["hello-world", "build-systems"]},
+  {"level": 2, "kind": "book", "title": "An Introduction to Modern CMake", "url": "https://cliutils.gitlab.io/modern-cmake/", "implementation": "CMake", "scope": "whole", "authority": "community", "authors": ["Henry Schreiner"], "format": "html", "access": "open", "concepts": ["style-conventions", "build-systems"]},
+  {"level": 2, "kind": "book", "title": "Professional CMake: A Practical Guide", "url": "https://crascit.com/professional-cmake/", "implementation": "CMake", "scope": "whole", "authority": "community", "authors": ["Craig Scott"], "format": "book", "access": "paywalled", "concepts": ["build-systems"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — CMake", "url": "https://en.wikipedia.org/wiki/CMake", "implementation": "CMake", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — CMake", "url": "https://pldb.io/concepts/cmake.html", "implementation": "CMake", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

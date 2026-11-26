@@ -1,0 +1,643 @@
+{
+ "id": "owl",
+ "name": "OWL 2 Web Ontology Language",
+ "aliases": [
+  "OWL",
+  "OWL 2",
+  "OWL DL",
+  "OWL 2 EL/QL/RL"
+ ],
+ "categories": [
+  "schema-idl",
+  "logic"
+ ],
+ "paradigms": [
+  "declarative",
+  "logic-based (description logic)"
+ ],
+ "typing": [
+  "open-world",
+  "description-logic classes"
+ ],
+ "first_appeared": 2004,
+ "designers": [
+  "Ian Horrocks",
+  "Peter F. Patel-Schneider",
+  "Boris Motik",
+  "Bijan Parsia",
+  "Frank van Harmelen",
+  "W3C OWL Working Group"
+ ],
+ "summary": "W3C ontology language for the Semantic Web based on the description logic SROIQ(D): classes, object/data properties, individuals, class expressions (intersection, union, complement, existential/universal/cardinality restrictions) and axioms with a direct (model-theoretic) and an RDF-based semantics, several syntaxes (RDF, Functional, Manchester, OWL/XML) and tractable profiles EL, QL and RL.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C OWL 2 (Second Edition, 2012)",
+  "W3C OWL Web Ontology Language (2004)"
+ ],
+ "file_extensions": [
+  ".owl",
+  ".ofn",
+  ".omn",
+  ".owx",
+  ".ttl"
+ ],
+ "homepage": "https://www.w3.org/TR/owl2-overview/",
+ "influenced_by": [
+  "rdfs"
+ ],
+ "related": [
+  {
+   "id": "rdfs",
+   "relation": "superset-of"
+  },
+  {
+   "id": "rdf",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "OWL 2 is a 13-document W3C Recommendation suite; the Structural Specification and Functional-Style Syntax defines the language, with separate Direct Semantics, RDF-Based Semantics, Mapping to RDF, Profiles and Conformance documents.",
+  "0": "The OWL API (Java) is the standard parser/serializer library; reasoners include HermiT, Pellet/Openllet, ELK (OWL 2 EL) and the Python owlready2/OWL-RL packages. Official test cases are described in the Conformance document."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Web Ontology Language Document Overview",
+   "url": "https://www.w3.org/TR/owl2-overview/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Structural Specification and Functional-Style Syntax",
+   "url": "https://www.w3.org/TR/owl2-syntax/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Boris Motik",
+    "Peter F. Patel-Schneider",
+    "Bijan Parsia"
+   ],
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 3 Ontologies (IRIs, versioning, imports)",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Ontologies",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 3.4 Imports",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Imports",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 4 Datatype Maps",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Datatype_Maps",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 5.8 Entity Declarations and Typing / 5.9 Metamodeling (punning)",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Metamodeling",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "metaclasses"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 7 Data Ranges (datatype restrictions)",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Data_Ranges",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "refinement-types",
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 8.1 Propositional Connectives and Enumeration of Individuals",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Propositional_Connectives_and_Enumeration_of_Individuals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 8.2 Object Property Restrictions (existential, universal)",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Object_Property_Restrictions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints",
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 8.3 Object Property Cardinality Restrictions",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Object_Property_Cardinality_Restrictions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 9.1.1 Subclass Axioms",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Subclass_Axioms",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 9.1.2 Equivalent Classes",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Equivalent_Classes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 9.2 Object Property Axioms (functional, transitive, ...)",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Object_Property_Axioms",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 9.5 Keys",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Keys",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints-integrity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Syntax — 10 Annotations",
+   "url": "https://www.w3.org/TR/owl2-syntax/#Annotations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "OWL 2 Direct Semantics",
+   "url": "https://www.w3.org/TR/owl2-direct-semantics/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Boris Motik",
+    "Peter F. Patel-Schneider",
+    "Bernardo Cuenca Grau"
+   ],
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "OWL 2 RDF-Based Semantics",
+   "url": "https://www.w3.org/TR/owl2-rdf-based-semantics/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Michael Schneider"
+   ],
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Mapping to RDF Graphs",
+   "url": "https://www.w3.org/TR/owl2-mapping-to-rdf/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Manchester Syntax",
+   "url": "https://www.w3.org/TR/owl2-manchester-syntax/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Profiles — OWL 2 EL",
+   "url": "https://www.w3.org/TR/owl2-profiles/#OWL_2_EL",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "complexity",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Profiles — OWL 2 RL (rule-based reasoning)",
+   "url": "https://www.w3.org/TR/owl2-profiles/#OWL_2_RL",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "complexity",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL 2 Conformance (test cases and conformance)",
+   "url": "https://www.w3.org/TR/owl2-conformance/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "OWL 2 New Features and Rationale",
+   "url": "https://www.w3.org/TR/owl2-new-features/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OWL Web Ontology Language Reference (OWL 1, 2004)",
+   "url": "https://www.w3.org/TR/owl-ref/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2004,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Horrocks, Patel-Schneider, van Harmelen — From SHIQ and RDF to OWL: The Making of a Web Ontology Language",
+   "url": "https://www.cs.ox.ac.uk/people/ian.horrocks/Publications/download/2003/HoPH03a.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Ian Horrocks",
+    "Peter F. Patel-Schneider",
+    "Frank van Harmelen"
+   ],
+   "year": 2003,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "owlcs/owlapi — OWL API (Java)",
+   "url": "https://github.com/owlcs/owlapi",
+   "scope": "whole",
+   "implementation": "OWL API",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OWL API OWLOntology.java — ontology model interface",
+   "url": "https://github.com/owlcs/owlapi/blob/version5/api/src/main/java/org/semanticweb/owlapi/model/OWLOntology.java",
+   "scope": "section",
+   "implementation": "OWL API",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OWL API ManchesterOWLSyntaxParserImpl.java — Manchester syntax parser",
+   "url": "https://github.com/owlcs/owlapi/blob/version5/parsers/src/main/java/org/semanticweb/owlapi/manchestersyntax/parser/ManchesterOWLSyntaxParserImpl.java",
+   "scope": "section",
+   "implementation": "OWL API",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "liveontologies/elk-reasoner — ELK OWL 2 EL reasoner",
+   "url": "https://github.com/liveontologies/elk-reasoner",
+   "scope": "whole",
+   "implementation": "ELK",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "type-inference"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RDFLib OWL-RL owlrl/OWLRL.py — OWL 2 RL rule closure",
+   "url": "https://github.com/RDFLib/OWL-RL/blob/master/owlrl/OWLRL.py",
+   "scope": "section",
+   "implementation": "OWL-RL (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "fixed-points"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "OWL 2 Web Ontology Language Primer",
+   "url": "https://www.w3.org/TR/owl2-primer/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "OWL 2 Primer — Class Hierarchies",
+   "url": "https://www.w3.org/TR/owl2-primer/#Class_Hierarchies",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "OWL 2 Primer — Complex Classes",
+   "url": "https://www.w3.org/TR/owl2-primer/#Complex_Classes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "OWL 2 Quick Reference Guide",
+   "url": "https://www.w3.org/TR/owl2-quick-reference/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "2 (Second Edition)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Owlready2 documentation (ontology-oriented programming in Python)",
+   "url": "https://owlready2.readthedocs.io/en/latest/",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Web Ontology Language",
+   "url": "https://en.wikipedia.org/wiki/Web_Ontology_Language",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — OWL",
+   "url": "https://pldb.io/concepts/owl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

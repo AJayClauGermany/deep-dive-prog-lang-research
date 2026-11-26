@@ -1,0 +1,336 @@
+{
+ "id": "terraform-language",
+ "name": "Terraform language",
+ "aliases": [
+  "Terraform configuration language",
+  "HCL for Terraform",
+  "OpenTofu language"
+ ],
+ "categories": [
+  "configuration",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "structural",
+  "type-annotations-optional"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "HashiCorp"
+ ],
+ "summary": "Terraform's infrastructure-as-code language: HCL syntax plus Terraform-defined block types (resource, data, variable, output, module, locals), meta-arguments (count, for_each, depends_on), a built-in function library and a plan/apply evaluation model over a dependency graph and state. OpenTofu is a community fork.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".tf",
+  ".tf.json",
+  ".tfvars"
+ ],
+ "homepage": "https://developer.hashicorp.com/terraform/language",
+ "related": [
+  {
+   "id": "hcl",
+   "relation": "dialect-of"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal spec; the Terraform Language documentation is the normative reference. OpenTofu publishes an equivalent language reference.",
+  "0": "hashicorp/terraform (BUSL since 1.6) and opentofu/opentofu (MPL) are the implementations."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "hashicorp/terraform — Terraform CLI and core",
+   "url": "https://github.com/hashicorp/terraform",
+   "implementation": "Terraform",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "internal/configs/parser_config.go — loading .tf files",
+   "url": "https://github.com/hashicorp/terraform/blob/main/internal/configs/parser_config.go",
+   "implementation": "Terraform",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "internal/lang/functions.go — built-in function table",
+   "url": "https://github.com/hashicorp/terraform/blob/main/internal/lang/functions.go",
+   "implementation": "Terraform",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "opentofu/opentofu — open-source Terraform fork",
+   "url": "https://github.com/opentofu/opentofu",
+   "implementation": "OpenTofu",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform Language Documentation",
+   "url": "https://developer.hashicorp.com/terraform/language",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Configuration syntax (arguments, blocks, identifiers, comments)",
+   "url": "https://developer.hashicorp.com/terraform/language/syntax/configuration",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "comments",
+    "identifiers",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Expressions overview",
+   "url": "https://developer.hashicorp.com/terraform/language/expressions",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Types and values",
+   "url": "https://developer.hashicorp.com/terraform/language/expressions/types",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "scalars",
+    "collections",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — for expressions",
+   "url": "https://developer.hashicorp.com/terraform/language/expressions/for",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — dynamic blocks",
+   "url": "https://developer.hashicorp.com/terraform/language/expressions/dynamic-blocks",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Built-in functions",
+   "url": "https://developer.hashicorp.com/terraform/language/functions",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Modules",
+   "url": "https://developer.hashicorp.com/terraform/language/modules",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Input variables (type constraints and validation)",
+   "url": "https://developer.hashicorp.com/terraform/language/values/variables",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "type-annotations",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — Resources",
+   "url": "https://developer.hashicorp.com/terraform/language/resources",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — for_each meta-argument",
+   "url": "https://developer.hashicorp.com/terraform/language/meta-arguments/for_each",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Terraform language — State",
+   "url": "https://developer.hashicorp.com/terraform/language/state",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "OpenTofu language documentation",
+   "url": "https://opentofu.org/docs/language/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "HashiCorp tutorials — Get started with Terraform",
+   "url": "https://developer.hashicorp.com/terraform/tutorials",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Terraform style guide",
+   "url": "https://developer.hashicorp.com/terraform/language/style",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Terraform (software)",
+   "url": "https://en.wikipedia.org/wiki/Terraform_(software)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Terraform/HCL",
+   "url": "https://pldb.io/concepts/hcl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,693 @@
+{
+ "id": "restructuredtext",
+ "name": "reStructuredText",
+ "aliases": [
+  "reST",
+  "RST",
+  "ReStructuredText"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2002,
+ "designers": [
+  "David Goodger"
+ ],
+ "summary": "An extensible plain-text markup language from the Python Docutils project, with indentation-based structure, explicit markup for directives, roles, hyperlink targets, footnotes and substitutions; the markup of Python documentation and Sphinx.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".rst",
+  ".rest",
+  ".txt"
+ ],
+ "homepage": "https://www.docutils.org/rst.html",
+ "influenced_by": [
+  "setext",
+  "python"
+ ],
+ "related": [
+  {
+   "id": "python",
+   "relation": "family"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  },
+  {
+   "id": "asciidoc",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Docutils (Python) is the reference implementation (canonical repository on SourceForge; the GitHub mirror is linked because SourceForge blocks automated clients). Sphinx extends it.",
+  "1": "The Markup Specification on docutils.org is normative; docutils.sourceforge.io serves the same pages but answers automated clients with 403."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "docutils/docutils — the reference reStructuredText parser and writers (GitHub mirror of the SourceForge repository)",
+   "url": "https://github.com/docutils/docutils",
+   "authority": "official",
+   "implementation": "Docutils",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Docutils parsers/rst/states.py — the reST parser as a state machine (body, sections, inline markup)",
+   "url": "https://github.com/docutils/docutils/blob/master/docutils/docutils/parsers/rst/states.py",
+   "authority": "official",
+   "implementation": "Docutils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Docutils parsers/rst/directives/__init__.py — directive registry",
+   "url": "https://github.com/docutils/docutils/blob/master/docutils/docutils/parsers/rst/directives/__init__.py",
+   "authority": "official",
+   "implementation": "Docutils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Docutils parsers/rst/roles.py — interpreted-text roles",
+   "url": "https://github.com/docutils/docutils/blob/master/docutils/docutils/parsers/rst/roles.py",
+   "authority": "official",
+   "implementation": "Docutils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Docutils nodes.py — the Docutils document tree node classes",
+   "url": "https://github.com/docutils/docutils/blob/master/docutils/docutils/nodes.py",
+   "authority": "official",
+   "implementation": "Docutils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Docutils transforms/references.py — resolving hyperlink targets, footnotes, substitutions",
+   "url": "https://github.com/docutils/docutils/blob/master/docutils/docutils/transforms/references.py",
+   "authority": "official",
+   "implementation": "Docutils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Sphinx sphinx/directives/code.py — Sphinx's code-block/literalinclude directives",
+   "url": "https://github.com/sphinx-doc/sphinx/blob/master/sphinx/directives/code.py",
+   "authority": "community",
+   "implementation": "Sphinx",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reStructuredText Markup Specification",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Whitespace and indentation",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#whitespace",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Escaping mechanism",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#escaping-mechanism",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Reference names",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#reference-names",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Document structure",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#document-structure",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Sections (adornment styles)",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#sections",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Bullet lists",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#bullet-lists",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Field lists and bibliographic fields",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#field-lists",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Literal blocks",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#literal-blocks",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Tables (grid and simple)",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#tables",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Footnotes",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#footnotes",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Hyperlink targets",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#hyperlink-targets",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Directives (explicit-markup extension mechanism)",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#directives",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Substitution definitions",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#substitution-definitions",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Comments",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#comments",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Inline markup recognition rules",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#inline-markup-recognition-rules",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Interpreted text and roles",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#interpreted-text",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "reST spec — Error handling",
+   "url": "https://www.docutils.org/docs/ref/rst/restructuredtext.html#error-handling",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "reStructuredText Directives (standard directive set)",
+   "url": "https://www.docutils.org/docs/ref/rst/directives.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "reStructuredText Interpreted Text Roles",
+   "url": "https://www.docutils.org/docs/ref/rst/roles.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Docutils Document Tree (doctree element reference)",
+   "url": "https://www.docutils.org/docs/ref/doctree.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "docutils.dtd — the Docutils Generic DTD (XML form of the doctree)",
+   "url": "https://www.docutils.org/docs/ref/docutils.dtd",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 287 — reStructuredText Docstring Format",
+   "url": "https://peps.python.org/pep-0287/",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "year": 2002,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 258 — Docutils Design Specification",
+   "url": "https://peps.python.org/pep-0258/",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "year": 2001,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "A ReStructuredText Primer (Docutils)",
+   "url": "https://www.docutils.org/docs/user/rst/quickstart.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Quick reStructuredText (Docutils quick reference)",
+   "url": "https://www.docutils.org/docs/user/rst/quickref.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Creating reStructuredText Directives (Docutils how-to)",
+   "url": "https://www.docutils.org/docs/howto/rst-directives.html",
+   "authority": "designer",
+   "authors": [
+    "David Goodger"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Sphinx — reStructuredText Primer",
+   "url": "https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Sphinx primer — Explicit markup and directives",
+   "url": "https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#directives",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Sphinx — Directives (Sphinx-specific reST extensions)",
+   "url": "https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Sphinx — Roles",
+   "url": "https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Sphinx — Domains (language-specific object description markup)",
+   "url": "https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — reStructuredText",
+   "url": "https://learnxinyminutes.com/rst/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — reStructuredText",
+   "url": "https://en.wikipedia.org/wiki/ReStructuredText",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — reStructuredText",
+   "url": "https://pldb.io/concepts/restructuredtext.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

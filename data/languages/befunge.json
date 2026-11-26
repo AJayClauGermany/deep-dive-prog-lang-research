@@ -1,0 +1,1783 @@
+{
+ "id": "befunge",
+ "name": "Befunge / Funge-98",
+ "categories": [
+  "esoteric",
+  "visual",
+  "concatenative"
+ ],
+ "aliases": [
+  "Befunge-93",
+  "Befunge-98",
+  "Funge-98",
+  "Unefunge",
+  "Trefunge"
+ ],
+ "paradigms": [
+  "two-dimensional",
+  "stack-based",
+  "self-modifying",
+  "concurrent"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1993,
+ "designers": [
+  "Chris Pressey"
+ ],
+ "summary": "Two-dimensional stack-based language created by Chris Pressey in 1993 to be hard to compile: the instruction pointer moves across a toroidal grid and programs can rewrite themselves with g/p. Funge-98 generalises it to 1-3 dimensions with unbounded space, a stack of stacks, concurrency and fingerprint extensions.",
+ "status": "esoteric",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".bf",
+  ".b93",
+  ".b98"
+ ],
+ "homepage": "https://github.com/catseye/Befunge-93",
+ "influenced_by": [
+  "forth",
+  "false"
+ ],
+ "related": [
+  {
+   "id": "seed",
+   "relation": "host-of"
+  },
+  {
+   "id": "snusp",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Befunge-93 is defined by Pressey's documentation; Funge-98 by the 1998 Final Specification (authored by Pressey with the Befunge mailing list) plus the Cat's Eye fingerprint library. No formal semantics.",
+  "0": "bef.c is the Befunge-93 reference; for Funge-98 cfunge and CCBI are the most conforming implementations, with Mycology as the de-facto conformance suite.",
+  "2": "Little tutorial literature beyond the specs; write-ups and IDEs listed.",
+  "3": "Esolangs, Wikipedia, PLDB, Rosetta Code."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification (Chris Pressey et al.)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown",
+   "concepts": [
+    "design-rationale",
+    "program-structure"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — What is a Funge?",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#what-is-a-funge",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Code and Data",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#code-and-data",
+   "concepts": [
+    "quotation-homoiconicity",
+    "program-structure"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Funge-Space",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#funge-space",
+   "concepts": [
+    "memory-model",
+    "arrays"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Stack Stack",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#stack-stack",
+   "concepts": [
+    "scope",
+    "memory-model"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Funge Source File Format",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#funge-source-file-format",
+   "concepts": [
+    "source-encoding",
+    "whitespace-layout",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Instruction Pointer",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#instruction-pointer",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Instructions",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Direction Changing",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#direction-changing",
+   "concepts": [
+    "goto-labels",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Wrapping (Lahey-space wrap)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#wrapping",
+   "concepts": [
+    "evaluation-order",
+    "memory-model"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Flow Control",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#flow-control",
+   "concepts": [
+    "loops",
+    "loop-control",
+    "comments"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Decision Making",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#decision-making",
+   "concepts": [
+    "conditionals",
+    "booleans"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Integers",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#integers",
+   "concepts": [
+    "integers",
+    "literals"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Strings (stringmode)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#strings",
+   "concepts": [
+    "strings",
+    "literals"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Stack Manipulation",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#stack-manipulation",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Stack Stack Manipulation ({, }, u)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#stack-stack-manipulation",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Funge-Space Storage (get/put, self-modification)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#funge-space-storage",
+   "concepts": [
+    "reflection",
+    "eval"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Standard Input/Output",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#standard-input-output",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — File Input/Output",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#file-input-output",
+   "concepts": [
+    "file-io"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — System Execution",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#system-execution",
+   "concepts": [
+    "processes-system"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — System Information Retrieval (y)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#system-information-retrieval",
+   "concepts": [
+    "reflection",
+    "command-line"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Handprints",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#handprints",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Fingerprints (extension mechanism)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#fingerprints",
+   "concepts": [
+    "modules",
+    "imports",
+    "ffi"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Funge Central Registry",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#funge-central-registry",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Instruction Quick Reference",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#instruction-quick-reference",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Concurrent Funge-98 (t instruction)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#concurrent-funge-98",
+   "concepts": [
+    "concurrency",
+    "threads"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Lahey-Space",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#lahey-space",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Funge-98 Final Specification — Other Topologies (Unefunge, Trefunge)",
+   "url": "https://catseye.tc/view/Funge-98/doc/funge98.markdown#other-topologies",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1998,
+   "version": "Funge-98",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Funge-98 ERRATA",
+   "url": "https://github.com/catseye/Funge-98/blob/master/doc/ERRATA.markdown",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file",
+   "version": "Funge-98"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — TOYS fingerprint",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/TOYS.markdown",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — MODU fingerprint (modular arithmetic)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/MODU.markdown",
+   "concepts": [
+    "operators",
+    "integers"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — ROMA fingerprint (Roman numerals)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/ROMA.markdown",
+   "concepts": [
+    "literals"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — TURT fingerprint (turtle graphics)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/TURT.markdown",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — HRTI fingerprint (high-resolution timer)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/HRTI.markdown",
+   "concepts": [
+    "date-time"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — REFC fingerprint (references)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/REFC.markdown",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — PERL fingerprint (embedded Perl)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/PERL.markdown",
+   "concepts": [
+    "interoperability",
+    "eval"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — MODE fingerprint (hover, invert, queue, switch modes)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/MODE.markdown",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Funge-98 library — ORTH fingerprint (Orthogonal compatibility)",
+   "url": "https://github.com/catseye/Funge-98/blob/master/library/ORTH.markdown",
+   "concepts": [
+    "comparison",
+    "operators"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation (Chris Pressey)",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown",
+   "concepts": [
+    "hello-world",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — The Basics of Befunge-93",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#the-basics-of-befunge-93",
+   "concepts": [
+    "program-structure",
+    "hello-world"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — The Stack",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#the-stack",
+   "concepts": [
+    "memory-model",
+    "operators"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — The Program Counter in Detail",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#the-program-counter-in-detail",
+   "concepts": [
+    "evaluation-order",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — Decision Making",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#decision-making",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — Input",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#input",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — Output",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#output",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — Special Commands",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#special-commands",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — Self-Modification (g and p)",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#self-modification",
+   "concepts": [
+    "reflection",
+    "quotation-homoiconicity"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Befunge-93 Documentation — Appendix A: Command Summary",
+   "url": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown#appendix-a-command-summary",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "version": "Befunge-93",
+   "format": "html"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "catseye/Befunge-93 — reference distribution",
+   "url": "https://github.com/catseye/Befunge-93",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "bef",
+   "authority": "designer",
+   "version": "Befunge-93"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Befunge-93 src/bef.c — reference interpreter",
+   "url": "https://github.com/catseye/Befunge-93/blob/master/src/bef.c",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "bef",
+   "authority": "designer",
+   "version": "Befunge-93"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Befunge-93 src/bef2c.c — Befunge-to-C compiler",
+   "url": "https://github.com/catseye/Befunge-93/blob/master/src/bef2c.c",
+   "concepts": [
+    "code-generation-backend",
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "bef2c",
+   "authority": "designer",
+   "version": "Befunge-93"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Befunge-93 src/befprof.c — profiler",
+   "url": "https://github.com/catseye/Befunge-93/blob/master/src/befprof.c",
+   "concepts": [
+    "tooling",
+    "performance"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "befprof",
+   "authority": "designer",
+   "version": "Befunge-93"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Befunge-93 doc/bef.markdown — usage of the bef interpreter",
+   "url": "https://github.com/catseye/Befunge-93/blob/master/doc/bef.markdown",
+   "concepts": [
+    "command-line",
+    "tooling"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file",
+   "version": "Befunge-93"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Befunge-93 historic/README.md — release history",
+   "url": "https://github.com/catseye/Befunge-93/blob/master/historic/README.md",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "format": "source-file"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Befunge-93 historic/prehistoric/befunge.doc — original 1993 documentation",
+   "url": "https://github.com/catseye/Befunge-93/blob/master/historic/prehistoric/befunge.doc",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "authors": [
+    "Chris Pressey"
+   ],
+   "year": 1993,
+   "format": "source-file"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Befunge-93 example programs (eg/)",
+   "url": "https://github.com/catseye/Befunge-93/tree/master/eg",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "format": "directory"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Cat's Eye Technologies — Languages: Befunge-93 entry",
+   "url": "https://catseye.tc/article/Languages#befunge-93",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer",
+   "format": "html"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "VorpalBlade/cfunge — fast standards-conforming Befunge-98 interpreter (C)",
+   "url": "https://github.com/VorpalBlade/cfunge",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge interpreter.c — main execution loop and instruction dispatch",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/interpreter.c",
+   "concepts": [
+    "interpreter",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge stack.c — stack and stack-stack",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/stack.c",
+   "concepts": [
+    "memory-model",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge funge-space/funge-space.c — sparse Funge-space storage",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/funge-space/funge-space.c",
+   "concepts": [
+    "memory-management",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge ip.c — instruction pointer and IP list",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/ip.c",
+   "concepts": [
+    "concurrency",
+    "threads"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge instructions/sysinfo.c — y instruction (system info)",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/instructions/sysinfo.c",
+   "concepts": [
+    "reflection"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge instructions/io.c — file I/O instructions i and o",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/instructions/io.c",
+   "concepts": [
+    "file-io"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge instructions/execute.c — = system execution",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/instructions/execute.c",
+   "concepts": [
+    "processes-system"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge instructions/iterate.c — k iterate",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/instructions/iterate.c",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge input.c — input handling",
+   "url": "https://github.com/VorpalBlade/cfunge/blob/master/src/input.c",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cfunge src/fingerprints/ — fingerprint implementations",
+   "url": "https://github.com/VorpalBlade/cfunge/tree/master/src/fingerprints",
+   "concepts": [
+    "standard-library",
+    "ffi"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "directory",
+   "implementation": "cfunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Deewiant/CCBI — Conforming Concurrent Befunge-98 Interpreter (D)",
+   "url": "https://github.com/Deewiant/CCBI",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CCBI instructions/std.d — standard instruction set",
+   "url": "https://github.com/Deewiant/CCBI/blob/master/src/ccbi/instructions/std.d",
+   "concepts": [
+    "instruction-set",
+    "interpreter"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CCBI space/space.d — Funge-space with AABB bounding boxes",
+   "url": "https://github.com/Deewiant/CCBI/blob/master/src/ccbi/space/space.d",
+   "concepts": [
+    "memory-management",
+    "optimization"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CCBI ip.d — instruction pointer state",
+   "url": "https://github.com/Deewiant/CCBI/blob/master/src/ccbi/ip.d",
+   "concepts": [
+    "concurrency"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CCBI fingerprint.d — fingerprint loading mechanism",
+   "url": "https://github.com/Deewiant/CCBI/blob/master/src/ccbi/fingerprint.d",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CCBI fungemachine.d — Funge machine and IP scheduling",
+   "url": "https://github.com/Deewiant/CCBI/blob/master/src/ccbi/fungemachine.d",
+   "concepts": [
+    "concurrency",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CCBI tracer.d — interactive tracer/debugger",
+   "url": "https://github.com/Deewiant/CCBI/blob/master/src/ccbi/tracer.d",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "CCBI",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Deewiant/Mycology — Befunge-98 conformance test suite",
+   "url": "https://github.com/Deewiant/Mycology",
+   "concepts": [
+    "testing",
+    "standardization"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "Mycology",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Mycology mycology.b98 — main test program",
+   "url": "https://github.com/Deewiant/Mycology/blob/master/mycology.b98",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "source-file",
+   "implementation": "Mycology",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "VorpalBlade/efunge — Befunge-98 in Erlang",
+   "url": "https://github.com/VorpalBlade/efunge",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "efunge",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "palfrey/clostridium — Befunge-98 in Clojure",
+   "url": "https://github.com/palfrey/clostridium",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "Clostridium",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "tngreene/BefungeSharp — Befunge-98 IDE in C#",
+   "url": "https://github.com/tngreene/BefungeSharp",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "BefungeSharp",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "kronosta/rcfunge — RC/Funge-98 interpreter (mirror)",
+   "url": "https://github.com/kronosta/rcfunge",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "repository",
+   "implementation": "RC/Funge-98",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyFunge documentation",
+   "url": "https://pythonhosted.org/PyFunge/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "implementation": "PyFunge",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Fungi — Funge-98 interpreter in Haskell (Hackage)",
+   "url": "https://hackage.haskell.org/package/Fungi",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "implementation": "Fungi",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "jsFunge-98 — browser Befunge-98 IDE",
+   "url": "https://purkka.codes/jsfunge-98/befunge98.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "interactive"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Befunge-93 interpreter in JavaScript (quirkster)",
+   "url": "http://www.quirkster.com/iano/js/befunge.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "interactive"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge",
+   "url": "https://esolangs.org/wiki/Befunge",
+   "concepts": [
+    "history",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Language overview",
+   "url": "https://esolangs.org/wiki/Befunge#Language_overview",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: History",
+   "url": "https://esolangs.org/wiki/Befunge#History",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Instructions",
+   "url": "https://esolangs.org/wiki/Befunge#Instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Computational class",
+   "url": "https://esolangs.org/wiki/Befunge#Computational_class",
+   "concepts": [
+    "turing-completeness"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Compilation",
+   "url": "https://esolangs.org/wiki/Befunge#Compilation",
+   "concepts": [
+    "compiler-architecture",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Befunge-93 and Befunge-98",
+   "url": "https://esolangs.org/wiki/Befunge#Befunge-93_and_Befunge-98",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Hello, World!",
+   "url": "https://esolangs.org/wiki/Befunge#Hello,_World!",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Quine",
+   "url": "https://esolangs.org/wiki/Befunge#Quine",
+   "concepts": [
+    "quotation-homoiconicity"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Befunge: Interpreters",
+   "url": "https://esolangs.org/wiki/Befunge#Interpreters",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98",
+   "url": "https://esolangs.org/wiki/Funge-98",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: Concurrency",
+   "url": "https://esolangs.org/wiki/Funge-98#Concurrency",
+   "concepts": [
+    "concurrency",
+    "threads"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: Stack Stack",
+   "url": "https://esolangs.org/wiki/Funge-98#Stack_Stack",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: FungeSpace",
+   "url": "https://esolangs.org/wiki/Funge-98#FungeSpace",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: Fingerprints",
+   "url": "https://esolangs.org/wiki/Funge-98#Fingerprints",
+   "concepts": [
+    "modules",
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: Some well known fingerprints",
+   "url": "https://esolangs.org/wiki/Funge-98#Some_well_known_fingerprints",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: OS Integration",
+   "url": "https://esolangs.org/wiki/Funge-98#OS_Integration",
+   "concepts": [
+    "processes-system",
+    "file-io"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Funge-98: Implementations",
+   "url": "https://esolangs.org/wiki/Funge-98#Implementations",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Befunge",
+   "url": "https://en.wikipedia.org/wiki/Befunge",
+   "concepts": [
+    "history",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Befunge: History",
+   "url": "https://en.wikipedia.org/wiki/Befunge#History",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Befunge: Compilation",
+   "url": "https://en.wikipedia.org/wiki/Befunge#Compilation",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Befunge: Befunge-93 instruction list",
+   "url": "https://en.wikipedia.org/wiki/Befunge#Befunge-93_instruction_list",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Befunge: Sample Befunge-93 code",
+   "url": "https://en.wikipedia.org/wiki/Befunge#Sample_Befunge-93_code",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — befunge",
+   "url": "https://pldb.io/concepts/befunge.html",
+   "concepts": [],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:Befunge",
+   "url": "https://rosettacode.org/wiki/Category:Befunge",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Category: Two-dimensional languages",
+   "url": "https://esolangs.org/wiki/Category:Two-dimensional_languages",
+   "concepts": [
+    "comparison"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  }
+ ]
+}

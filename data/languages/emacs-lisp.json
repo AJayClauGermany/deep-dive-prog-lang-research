@@ -1,0 +1,1603 @@
+{
+  "id": "emacs-lisp",
+  "name": "Emacs Lisp",
+  "aliases": [
+    "Elisp",
+    "ELisp"
+  ],
+  "categories": [
+    "scripting",
+    "domain-specific",
+    "functional"
+  ],
+  "paradigms": [
+    "functional",
+    "imperative",
+    "meta"
+  ],
+  "typing": [
+    "dynamic",
+    "strong"
+  ],
+  "first_appeared": 1985,
+  "designers": [
+    "Richard Stallman",
+    "Guy L. Steele Jr."
+  ],
+  "summary": "The extension language of GNU Emacs: a MacLisp-derived Lisp with dynamic and (since Emacs 24) lexical binding, buffer-local variables, a bytecode compiler and (since Emacs 28) native compilation via libgccjit.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "vendor-specification"
+  ],
+  "file_extensions": [
+    ".el",
+    ".elc",
+    ".eln"
+  ],
+  "homepage": "https://www.gnu.org/software/emacs/",
+  "influenced_by": [
+    "maclisp",
+    "common-lisp",
+    "lisp"
+  ],
+  "related": [
+    {
+      "id": "lisp",
+      "relation": "dialect-of"
+    },
+    {
+      "id": "common-lisp",
+      "relation": "family"
+    },
+    {
+      "id": "c",
+      "relation": "implemented-in"
+    }
+  ],
+  "level_notes": {
+    "1": "No standard; the GNU Emacs Lisp Reference Manual (per-node pages linked) and the GNU Emacs implementation define the language. Release notes in etc/NEWS track language changes; the HOPL IV paper by the maintainers is the authoritative history.",
+    "0": "The only implementation of note is GNU Emacs (C core in src/, Lisp in lisp/); links use the emacs-mirror/emacs GitHub mirror of savannah emacs.git.",
+    "2": "www.gnu.org intermittently drops connections from the research sandbox; manual node names were taken from the manual's own index page."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Lisp History",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Lisp-History.html",
+      "concepts": [
+        "history"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Printed Representation and Read Syntax",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Printed-Representation.html",
+      "concepts": [
+        "lexical-structure",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Comments",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Comments.html",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Integer Type",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Integer-Type.html",
+      "concepts": [
+        "integers"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Floating-Point Type",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Floating_002dPoint-Type.html",
+      "concepts": [
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Character Type",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Character-Type.html",
+      "concepts": [
+        "characters"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Symbol Type",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Type.html",
+      "concepts": [
+        "primitive-types",
+        "identifiers"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Type Hierarchy",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Type-Hierarchy.html",
+      "concepts": [
+        "type-system",
+        "subtyping"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Type Predicates",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Type-Predicates.html",
+      "concepts": [
+        "dynamic-typing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Equality Predicates",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Equality-Predicates.html",
+      "concepts": [
+        "type-equivalence"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Mutability",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html",
+      "concepts": [
+        "value-reference-semantics"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Numeric Conversions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Numeric-Conversions.html",
+      "concepts": [
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Arithmetic Operations",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Arithmetic-Operations.html",
+      "concepts": [
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — String Basics",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/String-Basics.html",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Formatting Strings",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Formatting-Strings.html",
+      "concepts": [
+        "string-formatting"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Lists",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Lists.html",
+      "concepts": [
+        "lists"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Association Lists",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Property Lists",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Property-Lists.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Sequences, Arrays, and Vectors",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Sequences-Arrays-Vectors.html",
+      "concepts": [
+        "arrays",
+        "collections"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Records",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Records.html",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Hash Tables",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Hash-Tables.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Symbols (obarrays, property lists)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Symbols.html",
+      "concepts": [
+        "identifiers",
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Shorthands (symbol prefixes)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Shorthands.html",
+      "concepts": [
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Evaluation",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Evaluation.html",
+      "concepts": [
+        "evaluation-order",
+        "expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Special Forms",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Special-Forms.html",
+      "concepts": [
+        "expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Quoting",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Quoting.html",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Backquote",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Backquote.html",
+      "concepts": [
+        "quotation-homoiconicity",
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Eval",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Eval.html",
+      "concepts": [
+        "eval"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Conditionals (if, when, unless, cond)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Conditionals.html",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Constructs for Combining Conditions (and, or)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Combining-Conditions.html",
+      "concepts": [
+        "short-circuit"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — The pcase macro",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/pcase-Macro.html",
+      "concepts": [
+        "pattern-matching",
+        "switch-case"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Destructuring with pcase Patterns",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Destructuring-with-pcase-Patterns.html",
+      "concepts": [
+        "destructuring"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Iteration (while, dolist, dotimes)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Iteration.html",
+      "concepts": [
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Generators",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Generators.html",
+      "concepts": [
+        "generators",
+        "iterators"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Catch and Throw (nonlocal exits)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Catch-and-Throw.html",
+      "concepts": [
+        "loop-control"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Errors",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Errors.html",
+      "concepts": [
+        "exceptions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Writing Code to Handle Errors (condition-case)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Handling-Errors.html",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Cleaning Up from Nonlocal Exits (unwind-protect)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Cleanups.html",
+      "concepts": [
+        "resource-management"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Conditional Compilation",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Conditional-Compilation.html",
+      "concepts": [
+        "preprocessor",
+        "compile-time-evaluation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Local Variables (let, let*)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Local-Variables.html",
+      "concepts": [
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Variables that Never Change",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Constant-Variables.html",
+      "concepts": [
+        "constants"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Scoping Rules for Variable Bindings",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Variable-Scoping.html",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Lexical Binding",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html",
+      "concepts": [
+        "scope",
+        "closures"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Dynamic Binding",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Binding.html",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Buffer-Local Variables",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Buffer_002dLocal-Variables.html",
+      "concepts": [
+        "variables",
+        "storage-duration"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Generalized Variables (setf)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Generalized-Variables.html",
+      "concepts": [
+        "assignment"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Lambda Expressions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html",
+      "concepts": [
+        "functions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Features of Argument Lists (&optional, &rest)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html",
+      "concepts": [
+        "parameters-arguments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Mapping Functions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Mapping-Functions.html",
+      "concepts": [
+        "higher-order-functions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Generic Functions (cl-defgeneric/cl-defmethod)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Generic-Functions.html",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Closures",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Closures.html",
+      "concepts": [
+        "closures"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Open Closures",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/OClosures.html",
+      "concepts": [
+        "closures",
+        "objects"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Advising Emacs Lisp Functions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Advising-Functions.html",
+      "concepts": [
+        "reflection"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Inline Functions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Inline-Functions.html",
+      "concepts": [
+        "optimization"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — The declare Form",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Declare-Form.html",
+      "concepts": [
+        "annotations-attributes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Macros",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Expansion of a Macro Call",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Expansion.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Common Problems Using Macros (hygiene)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Problems-with-Macros.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Loading",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Loading.html",
+      "concepts": [
+        "modules"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Features (provide/require)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Named-Features.html",
+      "concepts": [
+        "imports",
+        "modules"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Autoload",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Autoload.html",
+      "concepts": [
+        "imports"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Emacs Dynamic Modules",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html",
+      "concepts": [
+        "ffi"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Byte Compilation",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Byte-Compilation.html",
+      "concepts": [
+        "bytecode",
+        "compiler-architecture"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Disassembled Byte-Code",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Disassembly.html",
+      "concepts": [
+        "bytecode"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Compilation of Lisp to Native Code",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Native-Compilation.html",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Debugging Lisp Programs",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Debugging.html",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Reading and Printing Lisp Objects",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Read-and-Print.html",
+      "concepts": [
+        "input-output"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Files",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Files.html",
+      "concepts": [
+        "file-io"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Regular Expressions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Threads",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Threads.html",
+      "concepts": [
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Mutexes",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutexes.html",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Processes",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Processes.html",
+      "concepts": [
+        "processes-system"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Timers",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Timers.html",
+      "concepts": [
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Parsing and generating JSON values",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Parsing-JSON.html",
+      "concepts": [
+        "serialization"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Preparing Lisp code for distribution",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Packaging.html",
+      "concepts": [
+        "package-management"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Emacs Lisp Coding Conventions",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Coding-Conventions.html",
+      "concepts": [
+        "style-conventions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "GNU Emacs Lisp Reference Manual — Tips for Documentation Strings",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Documentation-Tips.html",
+      "concepts": [
+        "documentation-comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "GNU Emacs etc/NEWS — release notes (incl. Lisp changes)",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS",
+      "concepts": [
+        "language-evolution"
+      ],
+      "implementation": "GNU Emacs",
+      "format": "source-file",
+      "scope": "section",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "Evolution of Emacs Lisp (Monnier & Sperber, HOPL IV)",
+      "url": "https://dl.acm.org/doi/10.1145/3386324",
+      "concepts": [
+        "history",
+        "design-rationale"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Stefan Monnier",
+        "Michael Sperber"
+      ],
+      "year": 2020,
+      "notes": "Open access on ACM DL; maintainer-authored history and design account.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "An Introduction to Programming in Emacs Lisp (Chassell)",
+      "url": "https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "authors": [
+        "Robert J. Chassell"
+      ],
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "cheatsheet",
+      "title": "Learn X in Y minutes — Emacs Lisp",
+      "url": "https://learnxinyminutes.com/elisp/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "GNU Emacs source (GitHub mirror emacs-mirror/emacs)",
+      "url": "https://github.com/emacs-mirror/emacs",
+      "concepts": [
+        "interpreter"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/eval.c — evaluator: eval, funcall, special forms, condition-case, specbind",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/eval.c",
+      "concepts": [
+        "interpreter",
+        "evaluation-order",
+        "exceptions"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/lread.c — Lisp reader and load",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/lread.c",
+      "concepts": [
+        "lexer",
+        "parser"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/print.c — Lisp printer",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/print.c",
+      "concepts": [
+        "input-output"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/lisp.h — object representation (tagged Lisp_Object)",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/lisp.h",
+      "concepts": [
+        "runtime-system"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/alloc.c — allocation and mark-sweep garbage collector",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/alloc.c",
+      "concepts": [
+        "garbage-collection",
+        "memory-management"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/data.c — primitive data operations, symbols and variable lookup",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/data.c",
+      "concepts": [
+        "primitive-types",
+        "variables"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/fns.c — miscellaneous primitives incl. hash tables, sequences",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/fns.c",
+      "concepts": [
+        "maps-dictionaries",
+        "lists"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/bytecode.c — bytecode interpreter",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/bytecode.c",
+      "concepts": [
+        "bytecode",
+        "virtual-machine"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/comp.c — native compiler back end via libgccjit",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/comp.c",
+      "concepts": [
+        "code-generation-backend",
+        "jit"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/thread.c — cooperative Lisp threads",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/thread.c",
+      "concepts": [
+        "threads"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs src/emacs-module.c — dynamic module (C) API",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/src/emacs-module.c",
+      "concepts": [
+        "ffi"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/bytecomp.el — byte compiler",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/bytecomp.el",
+      "concepts": [
+        "compiler-architecture",
+        "bytecode"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/byte-opt.el — byte-code optimizer",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/byte-opt.el",
+      "concepts": [
+        "optimization"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/cconv.el — closure conversion for lexical binding",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/cconv.el",
+      "concepts": [
+        "closures"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/macroexp.el — macro expansion utilities",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/macroexp.el",
+      "concepts": [
+        "macros"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/backquote.el — backquote implementation",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/backquote.el",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/pcase.el — pcase pattern matching",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/pcase.el",
+      "concepts": [
+        "pattern-matching"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/cl-generic.el — CLOS-style generic functions",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/cl-generic.el",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/eieio.el — EIEIO object system (CLOS subset)",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/eieio.el",
+      "concepts": [
+        "classes"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/gv.el — generalized variables (setf)",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/gv.el",
+      "concepts": [
+        "assignment"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/generator.el — generators via CPS transform",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/generator.el",
+      "concepts": [
+        "generators",
+        "continuations"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/cl-macs.el — Common Lisp macros (cl-loop, cl-defstruct)",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/cl-macs.el",
+      "concepts": [
+        "loops",
+        "records-structs"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/emacs-lisp/comp.el — native compiler front end",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/comp.el",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GNU Emacs lisp/subr.el — basic Lisp subroutines (when, unless, dolist, ...)",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/subr.el",
+      "concepts": [
+        "standard-library"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "GNU Emacs lisp/emacs-lisp/ert.el — Emacs Lisp Regression Testing",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/ert.el",
+      "concepts": [
+        "testing"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "GNU Emacs lisp/emacs-lisp/package.el — package manager",
+      "url": "https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el",
+      "concepts": [
+        "package-management"
+      ],
+      "implementation": "GNU Emacs",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Emacs Lisp",
+      "url": "https://en.wikipedia.org/wiki/Emacs_Lisp",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Emacs Lisp",
+      "url": "https://pldb.io/concepts/emacs-lisp.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Emacs Lisp",
+      "url": "https://rosettacode.org/wiki/Category:Emacs_Lisp",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "EmacsWiki — Emacs Lisp",
+      "url": "https://www.emacswiki.org/emacs/EmacsLisp",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "index",
+      "title": "GNU ELPA — Emacs Lisp Package Archive",
+      "url": "https://elpa.gnu.org/",
+      "concepts": [
+        "package-management"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

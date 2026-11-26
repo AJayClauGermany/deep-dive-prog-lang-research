@@ -1,0 +1,320 @@
+{
+ "id": "starlark",
+ "name": "Starlark",
+ "aliases": [
+  "Skylark"
+ ],
+ "categories": [
+  "configuration",
+  "scripting",
+  "build"
+ ],
+ "paradigms": [
+  "imperative",
+  "functional"
+ ],
+ "typing": [
+  "dynamic",
+  "strong"
+ ],
+ "first_appeared": 2015,
+ "designers": [
+  "Google (Bazel team)",
+  "Laurent Le Brun",
+  "Alan Donovan"
+ ],
+ "summary": "Deterministic, hermetic dialect of Python designed for configuration, chiefly Bazel BUILD/.bzl files (also Buck2, Tilt, Copybara). Removes recursion (by default), while loops at top level, classes and exceptions, and freezes module values after loading.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".star",
+  ".bzl",
+  "BUILD",
+  ".bazel"
+ ],
+ "homepage": "https://github.com/bazelbuild/starlark",
+ "related": [
+  {
+   "id": "python",
+   "relation": "dialect-of"
+  }
+ ],
+ "influenced_by": [
+  "python"
+ ],
+ "level_notes": {
+  "1": "bazelbuild/starlark/spec.md is the language specification shared by the Java, Go and Rust implementations.",
+  "0": "Java (in Bazel), starlark-go and starlark-rust implementations.",
+  "2": "Learning material is Bazel-specific (rules tutorials); the design.md rationale is listed at level 1."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "bazelbuild/starlark — spec, design docs and test suite",
+   "url": "https://github.com/bazelbuild/starlark",
+   "implementation": "spec",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "google/starlark-go — Go implementation",
+   "url": "https://github.com/google/starlark-go",
+   "implementation": "starlark-go",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "syntax/scan.go — scanner",
+   "url": "https://github.com/google/starlark-go/blob/master/syntax/scan.go",
+   "implementation": "starlark-go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "syntax/parse.go — parser",
+   "url": "https://github.com/google/starlark-go/blob/master/syntax/parse.go",
+   "implementation": "starlark-go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "starlark/eval.go — interpreter core",
+   "url": "https://github.com/google/starlark-go/blob/master/starlark/eval.go",
+   "implementation": "starlark-go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "facebook/starlark-rust — Rust implementation (Buck2)",
+   "url": "https://github.com/facebook/starlark-rust",
+   "implementation": "starlark-rust",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark Language Specification",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Lexical elements",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#lexical-elements",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — String literals",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#string-literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Data types",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#data-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Integers",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#integers",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Dictionaries",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#dictionaries",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Functions",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Name binding and variables",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#name-binding-and-variables",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Freezing a value",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#freezing-a-value",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Comprehensions",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#comprehensions",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Starlark spec — Binary operators",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md#binary-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bazel — The Starlark language",
+   "url": "https://bazel.build/rules/language",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Starlark design.md — design principles",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/design.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Starlark",
+   "url": "https://pldb.io/concepts/starlark.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

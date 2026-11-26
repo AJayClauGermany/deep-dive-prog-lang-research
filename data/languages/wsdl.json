@@ -1,0 +1,586 @@
+{
+ "id": "wsdl",
+ "name": "WSDL (Web Services Description Language)",
+ "aliases": [
+  "WSDL 1.1",
+  "WSDL 2.0"
+ ],
+ "categories": [
+  "schema-idl",
+  "protocol"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "xml-schema-based"
+ ],
+ "first_appeared": 2000,
+ "designers": [
+  "Erik Christensen",
+  "Francisco Curbera",
+  "Greg Meredith",
+  "Sanjiva Weerawarana",
+  "Roberto Chinnici",
+  "Jean-Jacques Moreau",
+  "Arthur Ryman"
+ ],
+ "summary": "XML-based interface definition language for SOAP/HTTP web services: abstract interfaces (portTypes) made of operations exchanging messages typed with XML Schema, bound to concrete protocols and endpoints. WSDL 1.1 (2001 W3C Note, from IBM/Microsoft/Ariba) dominated in practice; WSDL 2.0 became a W3C Recommendation in 2007.",
+ "status": "historical",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C Note WSDL 1.1 (2001)",
+  "W3C Recommendation WSDL 2.0 (2007)"
+ ],
+ "file_extensions": [
+  ".wsdl"
+ ],
+ "homepage": "https://www.w3.org/TR/wsdl20/",
+ "influenced_by": [
+  "xml-schema",
+  "omg-idl"
+ ],
+ "related": [
+  {
+   "id": "xml-schema",
+   "relation": "embeds"
+  },
+  {
+   "id": "openapi",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "WSDL 1.1 is only a W3C Note (submission) but is what SOAP toolkits implement (with WS-I Basic Profile clarifications); WSDL 2.0 Core/Adjuncts are W3C Recommendations with a Z-notation formalisation of the component model.",
+  "0": "Implemented by SOAP stacks: Apache CXF (wsdl2java), WSDL4J, Apache Woden (WSDL 2.0), Python zeep."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Web Services Description Language (WSDL) Version 2.0 Part 1: Core Language",
+   "url": "https://www.w3.org/TR/wsdl20/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 1.4.8 Z Notation (formal component model)",
+   "url": "https://www.w3.org/TR/wsdl20/#znotation",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2 Component Model",
+   "url": "https://www.w3.org/TR/wsdl20/#component_model",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.2 Interface (with interface inheritance)",
+   "url": "https://www.w3.org/TR/wsdl20/#Interface",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.4 Interface Operation",
+   "url": "https://www.w3.org/TR/wsdl20/#InterfaceOperation",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.3 Interface Fault",
+   "url": "https://www.w3.org/TR/wsdl20/#InterfaceFault",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.7 Binding",
+   "url": "https://www.w3.org/TR/wsdl20/#Binding",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.12 Service and 2.13 Endpoint",
+   "url": "https://www.w3.org/TR/wsdl20/#Service",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.15 Equivalence of Components",
+   "url": "https://www.w3.org/TR/wsdl20/#compequiv",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 2.17 QName resolution",
+   "url": "https://www.w3.org/TR/wsdl20/#qnameres",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 3 Types (XML Schema and other type systems)",
+   "url": "https://www.w3.org/TR/wsdl20/#eii-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 4 Modularizing WSDL descriptions (include, import)",
+   "url": "https://www.w3.org/TR/wsdl20/#modularize",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Core — 6.1 Element based Extensibility",
+   "url": "https://www.w3.org/TR/wsdl20/#eii-extensibility",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Part 2: Adjuncts — message exchange patterns",
+   "url": "https://www.w3.org/TR/wsdl20-adjuncts/#meps",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "channels-message-passing",
+    "async-await"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "WSDL 2.0 Part 2: Adjuncts — SOAP binding",
+   "url": "https://www.w3.org/TR/wsdl20-adjuncts/#soap-binding",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Roberto Chinnici",
+    "Jean-Jacques Moreau",
+    "Arthur Ryman",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Web Services Description Language (WSDL) 1.1 (W3C Note)",
+   "url": "https://www.w3.org/TR/2001/NOTE-wsdl-20010315",
+   "scope": "whole",
+   "authority": "vendor",
+   "authors": [
+    "Erik Christensen",
+    "Francisco Curbera",
+    "Greg Meredith",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2001,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WSDL 1.1 — 2.2 Types",
+   "url": "https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_types",
+   "scope": "section",
+   "authority": "vendor",
+   "authors": [
+    "Erik Christensen",
+    "Francisco Curbera",
+    "Greg Meredith",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2001,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WSDL 1.1 — 2.4 Port Types (one-way, request-response, solicit-response, notification)",
+   "url": "https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_porttypes",
+   "scope": "section",
+   "authority": "vendor",
+   "authors": [
+    "Erik Christensen",
+    "Francisco Curbera",
+    "Greg Meredith",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2001,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "channels-message-passing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WSDL 1.1 — 3 SOAP Binding",
+   "url": "https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap-b",
+   "scope": "section",
+   "authority": "vendor",
+   "authors": [
+    "Erik Christensen",
+    "Francisco Curbera",
+    "Greg Meredith",
+    "Sanjiva Weerawarana"
+   ],
+   "year": 2001,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-zeep src/zeep/wsdl/wsdl.py — WSDL document loading",
+   "url": "https://github.com/mvantellingen/python-zeep/blob/main/src/zeep/wsdl/wsdl.py",
+   "scope": "section",
+   "implementation": "zeep",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "imports"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-zeep src/zeep/wsdl/bindings/soap.py — SOAP binding",
+   "url": "https://github.com/mvantellingen/python-zeep/blob/main/src/zeep/wsdl/bindings/soap.py",
+   "scope": "section",
+   "implementation": "zeep",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apache/cxf — Apache CXF services framework (WSDL-first tooling)",
+   "url": "https://github.com/apache/cxf",
+   "scope": "whole",
+   "implementation": "Apache CXF",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WSDL Version 2.0 Part 0: Primer",
+   "url": "https://www.w3.org/TR/wsdl20-primer/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "David Booth",
+    "Canyang Kevin Liu"
+   ],
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WSDL 2.0 Primer — 5.2 Versioning",
+   "url": "https://www.w3.org/TR/wsdl20-primer/#adv-versioning",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2007,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apache CXF — WSDL to Java",
+   "url": "https://cxf.apache.org/docs/wsdl-to-java.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Web Services Description Language",
+   "url": "https://en.wikipedia.org/wiki/Web_Services_Description_Language",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — WSDL",
+   "url": "https://pldb.io/concepts/wsdl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

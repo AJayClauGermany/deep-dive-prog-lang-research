@@ -1,0 +1,43 @@
+{
+ "id": "clarity",
+ "name": "Clarity",
+ "categories": ["smart-contract", "functional"],
+ "paradigms": ["functional", "declarative"],
+ "typing": ["static", "strong"],
+ "first_appeared": 2020,
+ "designers": ["Blockstack PBC (Aaron Blankstein, Ludo Galabru)", "Algorand"],
+ "summary": "Decidable, interpreted (not compiled) Lisp-syntax smart-contract language for the Stacks blockchain (settling on Bitcoin): no recursion or unbounded loops, explicit response types for error handling, post-conditions and traits.",
+ "status": "active",
+ "defined_by": ["community-specification", "reference-implementation"],
+ "file_extensions": [".clar"],
+ "homepage": "https://clarity-lang.org/",
+ "influenced_by": ["lisp"],
+ "level_notes": {"1": "SIP-002 specifies the language; the Stacks docs' Clarity reference lists all functions, keywords and types.", "0": "The interpreter is the clarity crate inside stacks-network/stacks-core (Rust); clarity-wasm compiles Clarity to WebAssembly."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "stacks-network/stacks-core — Stacks node incl. Clarity VM", "url": "https://github.com/stacks-network/stacks-core", "implementation": "stacks-core", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "clarity src/vm/mod.rs — Clarity VM entry (evaluation)", "url": "https://github.com/stacks-network/stacks-core/blob/master/clarity/src/vm/mod.rs", "implementation": "stacks-core", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "clarity src/vm/ast/parser/v2/mod.rs — parser", "url": "https://github.com/stacks-network/stacks-core/blob/master/clarity/src/vm/ast/parser/v2/mod.rs", "implementation": "stacks-core", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "clarity src/vm/analysis/type_checker/v2_1/mod.rs — type checker", "url": "https://github.com/stacks-network/stacks-core/blob/master/clarity/src/vm/analysis/type_checker/v2_1/mod.rs", "implementation": "stacks-core", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "type-system"]},
+  {"level": 0, "kind": "implementation-repository", "title": "clarity-wasm — Clarity to WebAssembly compiler", "url": "https://github.com/stacks-network/clarity-wasm", "implementation": "clarity-wasm", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["code-generation-backend"]},
+
+  {"level": 1, "kind": "specification", "title": "SIP-002 — The Clarity smart contract language", "url": "https://github.com/stacksgov/sips/blob/main/sips/sip-002/sip-002-smart-contract-language.md", "scope": "whole", "authority": "official", "year": 2019, "format": "source-file", "access": "open", "concepts": ["design-rationale", "type-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "Stacks docs — Clarity reference", "url": "https://docs.stacks.co/reference/clarity", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library", "keywords"]},
+
+  {"level": 2, "kind": "guide", "title": "Stacks docs — Clarity overview", "url": "https://docs.stacks.co/clarity/overview", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 2, "kind": "book", "title": "Clarity of Mind (Clarity book)", "url": "https://book.clarity-lang.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Clarity book — Clarity basics", "url": "https://book.clarity-lang.org/ch01-02-clarity-basics.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world", "expressions"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Primitive types", "url": "https://book.clarity-lang.org/ch02-01-primitive-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["primitive-types"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Sequence types", "url": "https://book.clarity-lang.org/ch02-02-sequence-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lists", "strings"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Composite types", "url": "https://book.clarity-lang.org/ch02-03-composite-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["tuples", "null-optional"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Keywords", "url": "https://book.clarity-lang.org/ch03-00-keywords.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["keywords"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Constants", "url": "https://book.clarity-lang.org/ch04-01-constants.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["constants"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Variables", "url": "https://book.clarity-lang.org/ch04-02-variables.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Maps", "url": "https://book.clarity-lang.org/ch04-03-maps.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Functions", "url": "https://book.clarity-lang.org/ch05-00-functions.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "visibility"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Control flow", "url": "https://book.clarity-lang.org/ch06-00-control-flow.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "error-handling"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Traits", "url": "https://book.clarity-lang.org/ch09-00-traits.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["traits-typeclasses", "interfaces-protocols"]},
+  {"level": 2, "kind": "book", "title": "Clarity book — Runtime cost analysis", "url": "https://book.clarity-lang.org/ch12-00-runtime-cost-analysis.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["performance", "blockchain-execution"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Clarity", "url": "https://pldb.io/concepts/clarity.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+ ]
+}

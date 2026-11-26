@@ -1,0 +1,526 @@
+{
+ "id": "ispc",
+ "name": "ISPC",
+ "aliases": [
+  "Intel Implicit SPMD Program Compiler",
+  "Implicit SPMD Program Compiler"
+ ],
+ "categories": [
+  "shader-gpu",
+  "systems"
+ ],
+ "paradigms": [
+  "imperative",
+  "spmd",
+  "data-parallel"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Matt Pharr",
+  "Intel"
+ ],
+ "summary": "C-based SPMD language and LLVM compiler from Intel that maps \"gangs\" of program instances onto CPU SIMD lanes (SSE/AVX/AVX-512, NEON) and Intel GPUs, with uniform/varying type qualifiers and foreach/launch constructs.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".ispc",
+  ".isph"
+ ],
+ "homepage": "https://ispc.github.io/",
+ "influenced_by": [
+  "c",
+  "cuda"
+ ],
+ "related": [
+  {
+   "id": "c",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The ISPC User's Guide is the language reference; the compiler is the definition.",
+  "3": "No Wikipedia or PLDB entry found."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Intel ISPC User's Guide",
+   "url": "https://ispc.github.io/ispc.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Parallel execution model",
+   "url": "https://ispc.github.io/ispc.html#the-ispc-parallel-execution-model",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Uniform data",
+   "url": "https://ispc.github.io/ispc.html#uniform-data",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Lexical structure",
+   "url": "https://ispc.github.io/ispc.html#lexical-structure",
+   "concepts": [
+    "lexical-structure",
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Types",
+   "url": "https://ispc.github.io/ispc.html#types",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — uniform and varying qualifiers",
+   "url": "https://ispc.github.io/ispc.html#uniform-and-varying-qualifiers",
+   "concepts": [
+    "type-annotations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Pointer types",
+   "url": "https://ispc.github.io/ispc.html#pointer-types",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Struct types",
+   "url": "https://ispc.github.io/ispc.html#struct-types",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Array types",
+   "url": "https://ispc.github.io/ispc.html#array-types",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Enumeration types",
+   "url": "https://ispc.github.io/ispc.html#enumeration-types",
+   "concepts": [
+    "enums"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Structure-of-array types",
+   "url": "https://ispc.github.io/ispc.html#structure-of-array-types",
+   "concepts": [
+    "records-structs",
+    "memory-model"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Expressions",
+   "url": "https://ispc.github.io/ispc.html#expressions",
+   "concepts": [
+    "expressions",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Type casting",
+   "url": "https://ispc.github.io/ispc.html#type-casting",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — if statements",
+   "url": "https://ispc.github.io/ispc.html#conditional-statements-if",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — switch",
+   "url": "https://ispc.github.io/ispc.html#conditional-statements-switch",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — for/while/do",
+   "url": "https://ispc.github.io/ispc.html#basic-iteration-statements-for-while-and-do",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — foreach",
+   "url": "https://ispc.github.io/ispc.html#parallel-iteration-statements-foreach-and-foreach-tiled",
+   "concepts": [
+    "iteration-foreach",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Functions",
+   "url": "https://ispc.github.io/ispc.html#functions-and-function-calls",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Overloading",
+   "url": "https://ispc.github.io/ispc.html#function-overloading",
+   "concepts": [
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Function templates",
+   "url": "https://ispc.github.io/ispc.html#function-templates",
+   "concepts": [
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — launch and sync",
+   "url": "https://ispc.github.io/ispc.html#task-parallelism-launch-and-sync-statements",
+   "concepts": [
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Preprocessor",
+   "url": "https://ispc.github.io/ispc.html#the-preprocessor",
+   "concepts": [
+    "preprocessor"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Standard library",
+   "url": "https://ispc.github.io/ispc.html#the-ispc-standard-library",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Atomics and fences",
+   "url": "https://ispc.github.io/ispc.html#atomic-operations-and-memory-fences",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Interoperability",
+   "url": "https://ispc.github.io/ispc.html#interoperability-with-the-application",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ISPC User's Guide — Assertions",
+   "url": "https://ispc.github.io/ispc.html#assertions",
+   "concepts": [
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ispc/ispc",
+   "url": "https://github.com/ispc/ispc",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "ispc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ispc src/lex.ll — lexer",
+   "url": "https://github.com/ispc/ispc/blob/main/src/lex.ll",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ispc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ispc src/parse.yy — grammar",
+   "url": "https://github.com/ispc/ispc/blob/main/src/parse.yy",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ispc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ispc src/type.cpp — types",
+   "url": "https://github.com/ispc/ispc/blob/main/src/type.cpp",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ispc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ispc src/ctx.cpp — execution mask/codegen context",
+   "url": "https://github.com/ispc/ispc/blob/main/src/ctx.cpp",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ispc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ispc src/stmt.cpp — statements",
+   "url": "https://github.com/ispc/ispc/blob/main/src/stmt.cpp",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ispc"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Pharr & Mark — ispc: A SPMD compiler for high-performance CPU programming (InPar 2012)",
+   "url": "https://doi.org/10.1109/InPar.2012.6339601",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "paywalled",
+   "authors": [
+    "Matt Pharr",
+    "William R. Mark"
+   ],
+   "year": 2012
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Matt Pharr — The story of ispc",
+   "url": "https://pharr.org/matt/blog/2018/04/30/ispc-all",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ISPC Performance Guide",
+   "url": "https://ispc.github.io/perfguide.html",
+   "concepts": [
+    "performance"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "tal-uxn",
+ "name": "Uxntal (Uxn)",
+ "aliases": ["Uxntal", "Tal", "Uxn assembly"],
+ "categories": ["assembly", "concatenative", "esoteric"],
+ "paradigms": ["concatenative", "stack-based", "imperative"],
+ "typing": ["untyped"],
+ "first_appeared": 2021,
+ "designers": ["Devine Lu Linvega", "Hundred Rabbits"],
+ "summary": "Assembly language for Uxn, a tiny 8-bit stack machine with 16-bit addressing, two stacks and 32 opcodes with short/return/keep modes; Uxntal uses Forth-like postfix notation with runes for labels, literals and macros. Programs run on the Varvara virtual computer (screen, audio, file and controller devices) across many emulators.",
+ "status": "active",
+ "defined_by": ["reference-implementation", "informal"],
+ "file_extensions": [".tal", ".rom"],
+ "homepage": "https://wiki.xxiivv.com/site/uxntal.html",
+ "influenced_by": ["forth", "6502-assembly"],
+ "related": [{"id": "chip-8", "relation": "family"}, {"id": "forth", "relation": "family"}],
+ "level_notes": {"0": "The reference assembler and emulator are on SourceHut (git.sr.ht/~rabbits/uxn), which returned 502 through the sandbox proxy and is not linked; GitHub-hosted alternative emulators are listed instead.", "1": "The XXIIVV wiki pages by the designer (Uxn, Uxntal, opcode reference, Varvara) are the specification.", "3": "Wikipedia and esolangs.org."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "uxn32 — Uxn/Varvara emulator for Windows", "url": "https://github.com/randrew/uxn32", "implementation": "uxn32", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 0, "kind": "implementation-repository", "title": "zuxn — Uxn/Varvara implementation in Zig", "url": "https://github.com/chmod222/zuxn", "implementation": "zuxn", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["virtual-machine", "interpreter"]},
+  {"level": 0, "kind": "implementation-repository", "title": "buxn — Uxn implementation in C", "url": "https://github.com/bullno1/buxn", "implementation": "buxn", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["virtual-machine"]},
+
+  {"level": 1, "kind": "specification", "title": "XXIIVV — Uxn (virtual machine)", "url": "https://wiki.xxiivv.com/site/uxn.html", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 1, "kind": "reference-manual", "title": "XXIIVV — Uxntal (assembly language)", "url": "https://wiki.xxiivv.com/site/uxntal.html", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["grammar", "hello-world"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Notation (runes)", "url": "https://wiki.xxiivv.com/site/uxntal_notation.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["lexical-structure", "grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Opcodes", "url": "https://wiki.xxiivv.com/site/uxntal_opcodes.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Opcode reference", "url": "https://wiki.xxiivv.com/site/uxntal_reference.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["instruction-set", "operators"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Stacks", "url": "https://wiki.xxiivv.com/site/uxntal_stacks.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Labels", "url": "https://wiki.xxiivv.com/site/uxntal_labels.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["goto-labels", "scope", "identifiers"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Macros", "url": "https://wiki.xxiivv.com/site/uxntal_macros.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Numbers", "url": "https://wiki.xxiivv.com/site/uxntal_numbers.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["literals", "integers"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Strings", "url": "https://wiki.xxiivv.com/site/uxntal_strings.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Memory", "url": "https://wiki.xxiivv.com/site/uxntal_memory.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["memory-management"]},
+  {"level": 1, "kind": "reference-manual", "title": "Uxntal — Devices", "url": "https://wiki.xxiivv.com/site/uxntal_devices.html", "scope": "section", "authority": "designer", "format": "html", "access": "open", "concepts": ["input-output"]},
+  {"level": 1, "kind": "specification", "title": "XXIIVV — Varvara (the virtual computer and its devices)", "url": "https://wiki.xxiivv.com/site/varvara.html", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["input-output"]},
+
+  {"level": 2, "kind": "tutorial", "title": "compudanzas — Uxn tutorial", "url": "https://compudanzas.net/uxn_tutorial.html", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "Hundred Rabbits — Uxn project page", "url": "https://100r.co/site/uxn.html", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["history", "design-rationale"]},
+
+  {"level": 3, "kind": "curated-list", "title": "awesome-uxn", "url": "https://github.com/hundredrabbits/awesome-uxn", "scope": "whole", "authority": "community", "format": "repository", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Uxn", "url": "https://en.wikipedia.org/wiki/Uxn", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "wiki", "title": "Esolang wiki — Uxntal", "url": "https://esolangs.org/wiki/Uxntal", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

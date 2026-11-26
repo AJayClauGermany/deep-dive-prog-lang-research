@@ -1,0 +1,359 @@
+{
+ "id": "dtrace-d",
+ "name": "DTrace D",
+ "aliases": [
+  "D (DTrace)",
+  "DTrace scripting language"
+ ],
+ "categories": [
+  "domain-specific",
+  "scripting"
+ ],
+ "paradigms": [
+  "event-driven",
+  "imperative"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2003,
+ "designers": [
+  "Bryan Cantrill",
+  "Mike Shapiro",
+  "Adam Leventhal"
+ ],
+ "summary": "C-like, awk-inspired language for DTrace dynamic tracing: programs are probe clauses (provider:module:function:name /predicate/ { actions }) with C types and operators, thread-local and clause-local variables, associative arrays and aggregations, compiled to safe DIF bytecode executed in the kernel. No loops by design.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".d"
+ ],
+ "homepage": "https://dtrace.org/",
+ "influenced_by": [
+  "awk",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "bpftrace",
+   "relation": "family"
+  },
+  {
+   "id": "systemtap",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "illumos libdtrace (compiler) and the kernel DIF virtual machine; also Oracle's DTrace for Linux and FreeBSD/macOS ports.",
+  "1": "The Dynamic Tracing Guide (Sun, now hosted by illumos) is the de facto language reference; the USENIX 2004 paper is the defining paper.",
+  "2": "Brendan Gregg's books.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "illumos-gate — illumos (DTrace origin)",
+   "url": "https://github.com/illumos/illumos-gate",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "illumos DTrace",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libdtrace dt_lex.l — D lexer",
+   "url": "https://github.com/illumos/illumos-gate/blob/master/usr/src/lib/libdtrace/common/dt_lex.l",
+   "concepts": [
+    "lexer"
+   ],
+   "access": "open",
+   "implementation": "illumos DTrace",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libdtrace dt_grammar.y — D grammar",
+   "url": "https://github.com/illumos/illumos-gate/blob/master/usr/src/lib/libdtrace/common/dt_grammar.y",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "access": "open",
+   "implementation": "illumos DTrace",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libdtrace dt_cg.c — D to DIF code generator",
+   "url": "https://github.com/illumos/illumos-gate/blob/master/usr/src/lib/libdtrace/common/dt_cg.c",
+   "concepts": [
+    "code-generation-backend",
+    "bytecode"
+   ],
+   "access": "open",
+   "implementation": "illumos DTrace",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "uts dtrace.c — in-kernel DTrace framework and DIF interpreter",
+   "url": "https://github.com/illumos/illumos-gate/blob/master/usr/src/uts/common/dtrace/dtrace.c",
+   "concepts": [
+    "virtual-machine",
+    "runtime-system"
+   ],
+   "access": "open",
+   "implementation": "illumos DTrace",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "oracle/dtrace-utils — DTrace for Linux (eBPF-based)",
+   "url": "https://github.com/oracle/dtrace-utils",
+   "implementation": "DTrace for Linux",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Cantrill, Shapiro, Leventhal — Dynamic Instrumentation of Production Systems (USENIX 2004)",
+   "url": "https://www.usenix.org/legacy/event/usenix04/tech/general/full_papers/cantrill/cantrill.pdf",
+   "concepts": [
+    "design-rationale"
+   ],
+   "authority": "designer",
+   "format": "pdf",
+   "year": 2004,
+   "authors": [
+    "Bryan Cantrill",
+    "Michael W. Shapiro",
+    "Adam H. Leventhal"
+   ],
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide (illumos)",
+   "url": "https://illumos.org/books/dtrace/bookinfo.html",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Types, Operators, and Expressions",
+   "url": "https://illumos.org/books/dtrace/chp-typeopexpr.html",
+   "concepts": [
+    "primitive-types",
+    "operators",
+    "expressions",
+    "identifiers",
+    "keywords"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Variables (global, thread-local, clause-local)",
+   "url": "https://illumos.org/books/dtrace/chp-variables.html",
+   "concepts": [
+    "variables",
+    "scope"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Program Structure (probe clauses, predicates)",
+   "url": "https://illumos.org/books/dtrace/chp-prog.html",
+   "concepts": [
+    "program-structure",
+    "conditionals"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Pointers and Arrays",
+   "url": "https://illumos.org/books/dtrace/chp-pointers.html",
+   "concepts": [
+    "pointers-references",
+    "arrays"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Strings",
+   "url": "https://illumos.org/books/dtrace/chp-strings.html",
+   "concepts": [
+    "strings"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Structs and Unions",
+   "url": "https://illumos.org/books/dtrace/chp-structs.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Aggregations",
+   "url": "https://illumos.org/books/dtrace/chp-aggs.html",
+   "concepts": [
+    "aggregation",
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Actions and Subroutines",
+   "url": "https://illumos.org/books/dtrace/chp-actsub.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Output Formatting",
+   "url": "https://illumos.org/books/dtrace/chp-fmt.html",
+   "concepts": [
+    "string-formatting"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Speculative Tracing",
+   "url": "https://illumos.org/books/dtrace/chp-spec.html",
+   "concepts": [
+    "transactions"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Scripting",
+   "url": "https://illumos.org/books/dtrace/chp-script.html",
+   "concepts": [
+    "command-line"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dynamic Tracing Guide — Translators",
+   "url": "https://illumos.org/books/dtrace/chp-xlate.html",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Brendan Gregg, Jim Mauro — DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD",
+   "url": "https://www.brendangregg.com/dtracebook/index.html",
+   "access": "paywalled",
+   "year": 2011,
+   "authors": [
+    "Brendan Gregg",
+    "Jim Mauro"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — DTrace",
+   "url": "https://en.wikipedia.org/wiki/DTrace",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

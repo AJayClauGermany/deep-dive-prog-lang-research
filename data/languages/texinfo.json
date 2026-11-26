@@ -1,0 +1,412 @@
+{
+ "id": "texinfo",
+ "name": "Texinfo",
+ "aliases": [
+  "GNU Texinfo",
+  ".texi"
+ ],
+ "categories": [
+  "document-typesetting",
+  "markup"
+ ],
+ "paradigms": [
+  "macro",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1986,
+ "designers": [
+  "Richard Stallman",
+  "Robert J. Chassell"
+ ],
+ "summary": "The GNU documentation format: an @-command markup language with nodes, menus, sectioning, cross references, indices, definition commands, conditionals and macros, from which Info, HTML, PDF (via TeX) and other outputs are generated.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".texi",
+  ".texinfo",
+  ".txi"
+ ],
+ "homepage": "https://www.gnu.org/software/texinfo/",
+ "influenced_by": [
+  "tex",
+  "scribe"
+ ],
+ "related": [
+  {
+   "id": "tex",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "html",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "0": "texi2any (Perl with an optional C parser) and texinfo.tex (TeX macros) implement the language; the canonical repository is on Savannah, linked here through an unofficial GitHub mirror.",
+  "1": "The GNU Texinfo manual is the definition.",
+  "2": "Little secondary literature beyond the manual.",
+  "3": "PLDB has no entry."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "GNU Texinfo source (unofficial GitHub mirror of the Savannah repository)",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "texi2any tp/Texinfo/ParserNonXS.pm — the pure-Perl Texinfo parser",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo/blob/master/tp/Texinfo/ParserNonXS.pm",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "macros",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "texi2any tp/Texinfo/XS/parsetexi/parser.c — the C (XS) Texinfo parser",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo/blob/master/tp/Texinfo/XS/parsetexi/parser.c",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "texi2any tp/Texinfo/Convert/HTML.pm — HTML converter",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo/blob/master/tp/Texinfo/Convert/HTML.pm",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "doc/texinfo.tex — TeX macro implementation for printed output",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo/blob/master/doc/texinfo.tex",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "info/info.c — the stand-alone Info reader",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo/blob/master/info/info.c",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "tp/t/README — texi2any test suite",
+   "url": "https://github.com/gnu-mirror-unofficial/texinfo/blob/master/tp/t/README",
+   "authority": "official",
+   "implementation": "GNU Texinfo (texi2any / texinfo.tex)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Texinfo manual",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/index.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Overview of Texinfo",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Overview.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — History",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/History.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — General syntactic conventions",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Conventions.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Comments",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Comments.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Nodes",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Nodes.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Chapter structuring",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Chapter-Structuring.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Cross references",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Cross-References.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Marking text (semantic highlighting)",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Marking-Text.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Lists and tables",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Lists-and-Tables.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Special characters (@@, @{, @})",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Special-Characters.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Definition commands (@deffn ...)",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Definition-Commands.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Indices",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Indices.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Conditionals (@ifset, @ifinfo, @iftex ...)",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Conditionals.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Defining macros",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Defining-Macros.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — Include files",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Include-Files.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Texinfo manual — texi2any (makeinfo)",
+   "url": "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Generic-Translator-texi2any.html",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Texinfo project page",
+   "url": "https://www.gnu.org/software/texinfo/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "CTAN — texinfo",
+   "url": "https://ctan.org/pkg/texinfo",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Texinfo",
+   "url": "https://en.wikipedia.org/wiki/Texinfo",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

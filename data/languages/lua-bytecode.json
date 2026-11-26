@@ -1,0 +1,322 @@
+{
+ "id": "lua-bytecode",
+ "name": "Lua bytecode",
+ "aliases": [
+  "Lua VM instructions",
+  "luac bytecode",
+  "LuaJIT bytecode"
+ ],
+ "categories": [
+  "bytecode",
+  "abstract-machine"
+ ],
+ "paradigms": [
+  "register-based"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2003,
+ "designers": [
+  "Roberto Ierusalimschy",
+  "Luiz Henrique de Figueiredo",
+  "Waldemar Celes"
+ ],
+ "summary": "The 32-bit-instruction register-based bytecode of the reference Lua interpreter (since Lua 5.0), produced by luac and the single-pass compiler and executed by lvm.c; version-specific and unchecked, with LuaJIT defining its own different bytecode.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".luac",
+  ".out"
+ ],
+ "homepage": "https://www.lua.org/",
+ "related": [
+  {
+   "id": "lua",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "Not specified: the reference manual leaves bytecode undocumented and incompatible between versions; the 5.0 implementation paper and the commented lopcodes.h are the closest to a definition.",
+  "3": "No dedicated encyclopedia entry; see the lua entry."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Implementation of Lua 5.0 (J.UCS 2005) — register-based VM design",
+   "url": "https://www.lua.org/doc/jucs05.pdf",
+   "concepts": [
+    "virtual-machine",
+    "design-rationale",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Roberto Ierusalimschy",
+    "Luiz Henrique de Figueiredo",
+    "Waldemar Celes"
+   ],
+   "year": 2005,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "luac — Lua compiler (bytecode listing with -l), Lua 5.4",
+   "url": "https://www.lua.org/manual/5.4/luac.html",
+   "concepts": [
+    "tooling",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "5.4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Lua 5.4 lopcodes.h (browsable source) — instruction formats and opcode semantics comments",
+   "url": "https://www.lua.org/source/5.4/lopcodes.h.html",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "5.4",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Lua 5.1 lopcodes.h (browsable source)",
+   "url": "https://www.lua.org/source/5.1/lopcodes.h.html",
+   "concepts": [
+    "instruction-set",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "version": "5.1",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "The Evolution of Lua (HOPL III, 2007)",
+   "url": "https://www.lua.org/doc/hopl.pdf",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Roberto Ierusalimschy",
+    "Luiz Henrique de Figueiredo",
+    "Waldemar Celes"
+   ],
+   "year": 2007,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Lua 5.3 bytecode reference (Ravi documentation)",
+   "url": "https://the-ravi-programming-language.readthedocs.io/en/latest/lua_bytecode_reference.html",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Dibyendu Majumdar"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Lua 5.3 bytecode notes (poga)",
+   "url": "https://poga.github.io/lua53-notes/introduction.html",
+   "concepts": [
+    "bytecode",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LuaJIT 2.0 bytecode instructions (LuaJIT wiki)",
+   "url": "http://wiki.luajit.org/Bytecode-2.0",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "implementation": "LuaJIT",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua lopcodes.h — opcode definitions and instruction formats",
+   "url": "https://github.com/lua/lua/blob/master/lopcodes.h",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua lopcodes.c — opcode modes table",
+   "url": "https://github.com/lua/lua/blob/master/lopcodes.c",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua lvm.c — the virtual machine dispatch loop",
+   "url": "https://github.com/lua/lua/blob/master/lvm.c",
+   "concepts": [
+    "interpreter",
+    "virtual-machine"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua lcode.c — code generator (register allocation, jumps)",
+   "url": "https://github.com/lua/lua/blob/master/lcode.c",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua lparser.c — single-pass parser emitting bytecode",
+   "url": "https://github.com/lua/lua/blob/master/lparser.c",
+   "concepts": [
+    "parser",
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua ldump.c — precompiled chunk writer",
+   "url": "https://github.com/lua/lua/blob/master/ldump.c",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua lundump.c — precompiled chunk loader",
+   "url": "https://github.com/lua/lua/blob/master/lundump.c",
+   "concepts": [
+    "serialization"
+   ],
+   "scope": "section",
+   "implementation": "PUC-Rio Lua",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaJIT src/lj_bc.h — LuaJIT bytecode definitions",
+   "url": "https://github.com/LuaJIT/LuaJIT/blob/v2.1/src/lj_bc.h",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "LuaJIT",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LuaJIT src/lj_bcdump.h — LuaJIT bytecode dump format",
+   "url": "https://github.com/LuaJIT/LuaJIT/blob/v2.1/src/lj_bcdump.h",
+   "concepts": [
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "LuaJIT",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Lua (programming language)",
+   "url": "https://en.wikipedia.org/wiki/Lua_(programming_language)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

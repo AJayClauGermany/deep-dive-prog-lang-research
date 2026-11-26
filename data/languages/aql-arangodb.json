@@ -1,0 +1,506 @@
+{
+ "id": "aql-arangodb",
+ "name": "ArangoDB AQL",
+ "aliases": [
+  "AQL",
+  "ArangoDB Query Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "ArangoDB GmbH"
+ ],
+ "summary": "Declarative query language of the multi-model ArangoDB database: FOR/FILTER/SORT/COLLECT/RETURN loops over document collections, plus graph traversals, shortest paths, joins and data-modification operations in one language.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".aql"
+ ],
+ "homepage": "https://docs.arango.ai/arangodb/stable/aql/",
+ "influenced_by": [
+  "sql"
+ ],
+ "level_notes": {
+  "1": "Defined only by the vendor documentation."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "arangodb/arangodb — ArangoDB server",
+   "url": "https://github.com/arangodb/arangodb",
+   "implementation": "ArangoDB",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Aql/Ast.cpp — AQL abstract syntax tree",
+   "url": "https://github.com/arangodb/arangodb/blob/devel/arangod/Aql/Ast.cpp",
+   "implementation": "ArangoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Aql/ExecutionPlan.cpp — building execution plans",
+   "url": "https://github.com/arangodb/arangodb/blob/devel/arangod/Aql/ExecutionPlan.cpp",
+   "implementation": "ArangoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Aql/Optimizer.cpp — rule-based query optimizer",
+   "url": "https://github.com/arangodb/arangodb/blob/devel/arangod/Aql/Optimizer.cpp",
+   "implementation": "ArangoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Aql/Functions.cpp — built-in AQL functions",
+   "url": "https://github.com/arangodb/arangodb/blob/devel/arangod/Aql/Functions.cpp",
+   "implementation": "ArangoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ArangoDB Query Language (AQL) documentation",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Syntax (comments, keywords, names)",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/fundamentals/syntax/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "keywords",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Data types",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/fundamentals/data-types/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Type and value order",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/fundamentals/type-and-value-order/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Bind parameters",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/fundamentals/bind-parameters/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Subqueries",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/fundamentals/subqueries/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — FOR",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/for/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — FILTER",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/filter/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — SORT",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/sort/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — LIMIT",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/limit/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — LET",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/let/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — COLLECT",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/collect/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — WINDOW",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/window/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "window-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — INSERT",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/insert/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — UPDATE",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/update/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — UPSERT",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/upsert/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — REMOVE",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/high-level-operations/remove/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Graph traversals",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/graph-queries/traversals/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Shortest path",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/graph-queries/shortest-path/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Operators",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/operators/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Functions",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/functions/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — String functions",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/functions/string/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Array functions",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/functions/array/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Date functions",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/functions/date/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Type check and cast functions",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/functions/type-check-and-cast/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Query optimization",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/execution-and-performance/query-optimization/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — Joins",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/examples-and-query-patterns/joins/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AQL docs — User-defined functions",
+   "url": "https://docs.arango.ai/arangodb/stable/aql/user-defined-functions/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ArangoDB — Start using AQL",
+   "url": "https://docs.arango.ai/arangodb/stable/get-started/start-using-aql/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — ArangoDB",
+   "url": "https://en.wikipedia.org/wiki/ArangoDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "id": "holy-c",
+ "name": "HolyC",
+ "aliases": ["Holy C", "C+", "HC"],
+ "categories": ["systems", "scripting"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["static", "weak"],
+ "first_appeared": 2005,
+ "designers": ["Terry A. Davis"],
+ "summary": "Terry A. Davis's C dialect for TempleOS, used both as the system language and as the interactive shell: JIT-compiled at the command line, with C++-like single inheritance for classes, default arguments, no main(), bare string statements as print, U0/I64/F64 type names and #exe compile-time execution.",
+ "status": "historical",
+ "defined_by": ["reference-implementation", "informal"],
+ "file_extensions": [".HC", ".HH", ".HC.Z"],
+ "homepage": "https://templeos.org/",
+ "influenced_by": ["c", "cpp"],
+ "related": [{"id": "c", "relation": "variant-of"}],
+ "level_notes": {"1": "No specification: TempleOS's own document Doc/HolyC.DD (in DolDoc format) is the only description, together with the compiler source. templeos.org returns its home page for every URL, so the source-repository copy is linked.", "0": "The compiler (Compiler/*.HC) is part of TempleOS itself and is written in HolyC; the cia-foundation/TempleOS GitHub repository preserves the final release. holyc-lang is an independent compiler for Linux/macOS written in C; ZealOS continues TempleOS."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "cia-foundation/TempleOS — TempleOS and its HolyC compiler (archived release)", "url": "https://github.com/cia-foundation/TempleOS", "implementation": "TempleOS", "scope": "whole", "authority": "designer", "authors": ["Terry A. Davis"], "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "TempleOS Compiler/Lex.HC — HolyC lexer", "url": "https://github.com/cia-foundation/TempleOS/blob/archive/Compiler/Lex.HC", "implementation": "TempleOS", "scope": "section", "authority": "designer", "authors": ["Terry A. Davis"], "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "TempleOS Compiler/PrsExp.HC — expression parser", "url": "https://github.com/cia-foundation/TempleOS/blob/archive/Compiler/PrsExp.HC", "implementation": "TempleOS", "scope": "section", "authority": "designer", "authors": ["Terry A. Davis"], "format": "source-file", "access": "open", "concepts": ["parser", "expressions"]},
+  {"level": 0, "kind": "implementation-source", "title": "TempleOS Compiler/PrsStmt.HC — statement parser", "url": "https://github.com/cia-foundation/TempleOS/blob/archive/Compiler/PrsStmt.HC", "implementation": "TempleOS", "scope": "section", "authority": "designer", "authors": ["Terry A. Davis"], "format": "source-file", "access": "open", "concepts": ["parser", "statements"]},
+  {"level": 0, "kind": "implementation-source", "title": "TempleOS Compiler/BackA.HC — x86-64 code generation back end", "url": "https://github.com/cia-foundation/TempleOS/blob/archive/Compiler/BackA.HC", "implementation": "TempleOS", "scope": "section", "authority": "designer", "authors": ["Terry A. Davis"], "format": "source-file", "access": "open", "concepts": ["code-generation-backend", "jit"]}
+,
+  {"level": 1, "kind": "reference-manual", "title": "TempleOS Doc/HolyC.DD — the HolyC language description (DolDoc source)", "url": "https://github.com/cia-foundation/TempleOS/blob/archive/Doc/HolyC.DD", "implementation": "TempleOS", "scope": "whole", "authority": "designer", "authors": ["Terry A. Davis"], "format": "source-file", "access": "open", "concepts": ["grammar", "type-system", "hello-world"]}
+,
+  {"level": 0, "kind": "implementation-repository", "title": "Jamesbarford/holyc-lang — HolyC compiler for Linux/macOS", "url": "https://github.com/Jamesbarford/holyc-lang", "implementation": "holyc-lang", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]}
+,
+  {"level": 2, "kind": "guide", "title": "holyc-lang documentation site", "url": "https://holyc-lang.com/", "implementation": "holyc-lang", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+,
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — TempleOS (includes HolyC)", "url": "https://en.wikipedia.org/wiki/TempleOS", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — HolyC", "url": "https://pldb.io/concepts/holyc.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

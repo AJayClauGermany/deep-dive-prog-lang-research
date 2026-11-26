@@ -1,0 +1,1298 @@
+{
+ "id": "brainfuck",
+ "name": "Brainfuck",
+ "aliases": [
+  "BF",
+  "Brainf***"
+ ],
+ "categories": [
+  "esoteric"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1993,
+ "designers": [
+  "Urban Müller"
+ ],
+ "summary": "Urban Müller's 1993 minimalist language with eight single-character commands over a byte array and data pointer; the archetypal Turing tarpit and the most implemented esoteric language.",
+ "status": "esoteric",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".b",
+  ".bf"
+ ],
+ "influenced_by": [
+  "false"
+ ],
+ "homepage": "http://brainfuck.org/",
+ "level_notes": {
+  "1": "No formal standard; Müller's README in the brainfuck-2 archive is the original definition, with Cristofani's reference and the Epistle documenting de facto portability conventions (cell size, EOF).",
+  "0": "Countless implementations; Müller's original Amiga compiler, Cristofani's C interpreters and rdebath's optimizing Tritium are linked.",
+  "2": "Most worked examples are Cristofani's annotated programs on brainfuck.org (listed as by-example)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Urban Müller — brainfuck-2 (original 1993 Amiga distribution with compiler, interpreter and README) on Aminet",
+   "url": "https://aminet.net/package/dev/lang/brainfuck-2",
+   "concepts": [
+    "history",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open",
+   "authors": [
+    "Urban Müller"
+   ],
+   "year": 1993,
+   "implementation": "Müller brainfuck-2"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Daniel Cristofani — Yet another brainfuck reference (the language definition)",
+   "url": "http://brainfuck.org/brainfuck.html",
+   "concepts": [
+    "instruction-set",
+    "program-structure",
+    "loops",
+    "input-output"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Yet another brainfuck reference — Turing completeness",
+   "url": "http://brainfuck.org/brainfuck.html#turing",
+   "concepts": [
+    "turing-completeness"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "The Epistle to the Implementors — portability conventions (cell size, EOF, array size)",
+   "url": "http://brainfuck.org/epistle.html",
+   "concepts": [
+    "versioning-compatibility",
+    "integers",
+    "memory-model",
+    "input-output"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Brian Raiter — Brainfuck portability standards",
+   "url": "https://www.muppetlabs.com/~breadbox/bf/standards.html",
+   "concepts": [
+    "versioning-compatibility",
+    "integers",
+    "input-output"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Brian Raiter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Brian Raiter — Brainfuck: an eight-instruction Turing-complete programming language",
+   "url": "https://www.muppetlabs.com/~breadbox/bf/",
+   "concepts": [
+    "history",
+    "turing-completeness",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Brian Raiter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "get good at brainfuck (Daniel Cristofani)",
+   "url": "http://brainfuck.org/ggab.html",
+   "concepts": [
+    "loops",
+    "variables",
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Frans Faase — Brainf*** (BF is Turing-complete: translation from a Turing-complete language)",
+   "url": "http://www.iwriteiam.nl/Ha_BF.html",
+   "concepts": [
+    "turing-completeness",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Frans Faase"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn X in Y minutes — brainfuck",
+   "url": "https://learnxinyminutes.com/docs/brainfuck/",
+   "concepts": [
+    "hello-world",
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — utm.b — universal Turing machine simulator (Turing-completeness by construction)",
+   "url": "http://brainfuck.org/utm.b",
+   "concepts": [
+    "turing-completeness",
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "brainfuck.org (Daniel Cristofani) — dbfi.b — brainfuck self-interpreter",
+   "url": "http://brainfuck.org/dbfi.b",
+   "concepts": [
+    "interpreter",
+    "eval"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ],
+   "implementation": "dbfi (Cristofani)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "brainfuck.org (Daniel Cristofani) — dbf2c.b — brainfuck-to-C compiler written in brainfuck",
+   "url": "http://brainfuck.org/dbf2c.b",
+   "concepts": [
+    "code-generation-backend",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ],
+   "implementation": "dbf2c (Cristofani)"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "brainfuck.org (Daniel Cristofani) — notes on the data layouts of the example programs",
+   "url": "http://brainfuck.org/notes_on_brainfuck_progs.txt",
+   "concepts": [
+    "memory-model",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "brainfuck.org (Daniel Cristofani) — Rule 30 random-number generator notes",
+   "url": "http://brainfuck.org/random.txt",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "brainfuck.org (Daniel Cristofani) — logical-expression evaluator contest write-up",
+   "url": "http://brainfuck.org/logical.txt",
+   "concepts": [
+    "expressions",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "brainfuck.org (Daniel Cristofani) — brainfuck component competition",
+   "url": "http://brainfuck.org/bfcc1.txt",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "brainfuck.org (Daniel Cristofani) — canonical non-context-free language golf thread",
+   "url": "http://brainfuck.org/golf3.html",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "brainfuck.org (Daniel Cristofani) — tests.b — interpreter conformance tests",
+   "url": "http://brainfuck.org/tests.b",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — factorial.b — arbitrary-precision factorials",
+   "url": "http://brainfuck.org/factorial.b",
+   "concepts": [
+    "integers",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — fib.b — Fibonacci numbers",
+   "url": "http://brainfuck.org/fib.b",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — collatz.b — Collatz sequence",
+   "url": "http://brainfuck.org/collatz.b",
+   "concepts": [
+    "loops",
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — rot13.b — ROT13 filter",
+   "url": "http://brainfuck.org/rot13.b",
+   "concepts": [
+    "characters",
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — wc.b — word count",
+   "url": "http://brainfuck.org/wc.b",
+   "concepts": [
+    "input-output",
+    "strings"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — qsort.b — quicksort",
+   "url": "http://brainfuck.org/qsort.b",
+   "concepts": [
+    "arrays",
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — bsort.b — bubble sort",
+   "url": "http://brainfuck.org/bsort.b",
+   "concepts": [
+    "arrays",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — isort.b — insertion sort",
+   "url": "http://brainfuck.org/isort.b",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — life.b — Conway's Game of Life",
+   "url": "http://brainfuck.org/life.b",
+   "concepts": [
+    "arrays",
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — e.b — digits of e",
+   "url": "http://brainfuck.org/e.b",
+   "concepts": [
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — golden.b — golden ratio digits",
+   "url": "http://brainfuck.org/golden.b",
+   "concepts": [
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — squares.b — perfect squares",
+   "url": "http://brainfuck.org/squares.b",
+   "concepts": [
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — sierpinski.b — Sierpinski triangle",
+   "url": "http://brainfuck.org/sierpinski.b",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — tictactoe.b — tic-tac-toe player",
+   "url": "http://brainfuck.org/tictactoe.b",
+   "concepts": [
+    "conditionals",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — thuemorse.b — Thue-Morse sequence",
+   "url": "http://brainfuck.org/thuemorse.b",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — 392quine.b — 392-byte quine",
+   "url": "http://brainfuck.org/392quine.b",
+   "concepts": [
+    "quotation-homoiconicity"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — dquine.b — quine",
+   "url": "http://brainfuck.org/dquine.b",
+   "concepts": [
+    "quotation-homoiconicity"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — numwarp.b — large-digit display",
+   "url": "http://brainfuck.org/numwarp.b",
+   "concepts": [
+    "strings"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "brainfuck.org (Daniel Cristofani) — xmastree.b — Christmas tree",
+   "url": "http://brainfuck.org/xmastree.b",
+   "concepts": [
+    "string-formatting"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "brainfuck.org (Daniel Cristofani) — sbi.c — simple brainfuck interpreter in C",
+   "url": "http://brainfuck.org/sbi.c",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ],
+   "implementation": "sbi (Cristofani)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "brainfuck.org (Daniel Cristofani) — qdb.c — quick brainfuck interpreter in C",
+   "url": "http://brainfuck.org/qdb.c",
+   "concepts": [
+    "interpreter",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ],
+   "implementation": "qdb (Cristofani)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "brainfuck.org (Daniel Cristofani) — dbc.c — brainfuck-to-C compiler",
+   "url": "http://brainfuck.org/dbc.c",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ],
+   "implementation": "dbc (Cristofani)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "brainfuck.org (Daniel Cristofani) — bcci.c — interpreter used for the BFCC contest",
+   "url": "http://brainfuck.org/bcci.c",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ],
+   "implementation": "bcci"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "rdebath/Brainfuck — Tritium optimizing interpreter/JIT, bf2any translators and tests",
+   "url": "https://github.com/rdebath/Brainfuck",
+   "concepts": [
+    "interpreter",
+    "optimization",
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck README.md — command semantics table and tool overview",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/README.md",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck bitwidth.b — bitwidth.b — cell-size torture test",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/bitwidth.b",
+   "concepts": [
+    "testing",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck bf.vim — Vim syntax highlighting",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/bf.vim",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/README.md — Tritium interpreter overview",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/README.md",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/bfi.c — Tritium main: parser to tree and peephole optimizer",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/bfi.c",
+   "concepts": [
+    "parser",
+    "optimization",
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/bfi.tree.h — Tritium intermediate tree nodes",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/bfi.tree.h",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/bfi.runarray.c — Tritium array-code runner",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/bfi.runarray.c",
+   "concepts": [
+    "virtual-machine",
+    "bytecode"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/bfi.nasm.c — Tritium NASM assembly back end",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/bfi.nasm.c",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/bfi.gnulit.c — Tritium GNU lightning JIT back end",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/bfi.gnulit.c",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck tritium/bfi.ccode.c — Tritium C-code back end",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/tritium/bfi.ccode.c",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck bf2any/bf2any.c — bf2any — translate BF to many languages",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/bf2any/bf2any.c",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdebath/Brainfuck bf2any/bf2py.c — bf2any Python back end",
+   "url": "https://github.com/rdebath/Brainfuck/blob/master/bf2any/bf2py.c",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tritium (rdebath)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "fabianishere/brainfuck — C interpreter with REPL",
+   "url": "https://github.com/fabianishere/brainfuck",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "fabianishere/brainfuck"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fabianishere/brainfuck src/brainfuck.c — parser and executor",
+   "url": "https://github.com/fabianishere/brainfuck/blob/master/src/brainfuck.c",
+   "concepts": [
+    "parser",
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "fabianishere/brainfuck"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fabianishere/brainfuck include/brainfuck.h — instruction/context API",
+   "url": "https://github.com/fabianishere/brainfuck/blob/master/include/brainfuck.h",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "fabianishere/brainfuck"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apankrat/bff — moderately optimizing brainfuck interpreter",
+   "url": "https://github.com/apankrat/bff",
+   "concepts": [
+    "interpreter",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "bff"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "esoteric.sange.fi brainfuck archive (implementations, sources, golf results)",
+   "url": "http://esoteric.sange.fi/brainfuck/",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "brainfuck.org — Daniel Cristofani's program collection",
+   "url": "http://brainfuck.org/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Daniel B. Cristofani"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck",
+   "url": "https://esolangs.org/wiki/Brainfuck",
+   "concepts": [
+    "history",
+    "turing-completeness"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: language overview",
+   "url": "https://esolangs.org/wiki/Brainfuck#Language_overview",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: history",
+   "url": "https://esolangs.org/wiki/Brainfuck#History",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: examples",
+   "url": "https://esolangs.org/wiki/Brainfuck#Examples",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: self-interpreters",
+   "url": "https://esolangs.org/wiki/Brainfuck#Self-interpreters",
+   "concepts": [
+    "interpreter",
+    "eval"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: computational class",
+   "url": "https://esolangs.org/wiki/Brainfuck#Computational_class",
+   "concepts": [
+    "turing-completeness"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: algebraic structure",
+   "url": "https://esolangs.org/wiki/Brainfuck#Algebraic_structure",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: extensions",
+   "url": "https://esolangs.org/wiki/Brainfuck#Extensions",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: conventions: memory",
+   "url": "https://esolangs.org/wiki/Brainfuck#Memory",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: conventions: EOF",
+   "url": "https://esolangs.org/wiki/Brainfuck#EOF",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: cell size",
+   "url": "https://esolangs.org/wiki/Brainfuck#Cell_size",
+   "concepts": [
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: implementation issues",
+   "url": "https://esolangs.org/wiki/Brainfuck#Implementation_issues",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: related languages",
+   "url": "https://esolangs.org/wiki/Brainfuck#Related_languages",
+   "concepts": [
+    "comparison"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: notable implementations",
+   "url": "https://esolangs.org/wiki/Brainfuck#Notable_implementations",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: JIT interpreters",
+   "url": "https://esolangs.org/wiki/Brainfuck#JIT_Interpreters",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — Brainfuck: hardware implementations",
+   "url": "https://esolangs.org/wiki/Brainfuck#Hardware_implementations",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Brainfuck",
+   "url": "https://en.wikipedia.org/wiki/Brainfuck",
+   "concepts": [
+    "history",
+    "turing-completeness"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Brainfuck: language design",
+   "url": "https://en.wikipedia.org/wiki/Brainfuck#Language_design",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Brainfuck: examples",
+   "url": "https://en.wikipedia.org/wiki/Brainfuck#Examples",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — P′′ (Böhm's 1964 language that Brainfuck essentially is)",
+   "url": "https://en.wikipedia.org/wiki/P%E2%80%B2%E2%80%B2",
+   "concepts": [
+    "turing-completeness",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Brainfuck",
+   "url": "https://pldb.io/concepts/brainfuck.html",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:Brainf***",
+   "url": "https://rosettacode.org/wiki/Category:Brainf***",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "notes": "rosettacode.org reports blocked from the sandbox."
+  }
+ ]
+}

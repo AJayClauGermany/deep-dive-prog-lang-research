@@ -1,0 +1,39 @@
+{
+ "id": "scons",
+ "name": "SCons (SConstruct files)",
+ "aliases": ["SCons", "SConstruct", "SConscript"],
+ "categories": ["build", "domain-specific"],
+ "paradigms": ["imperative", "declarative-build"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 2000,
+ "designers": ["Steven Knight"],
+ "summary": "Build tool whose build files (SConstruct/SConscript) are ordinary Python scripts using an embedded DSL of construction environments, builders and nodes; SCons evaluates them to a dependency graph and rebuilds by content signatures. Grew out of the ScCons design that won the 2000 Software Carpentry build-tool competition.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": ["SConstruct", "SConscript"],
+ "homepage": "https://scons.org/",
+ "influenced_by": ["python", "make"],
+ "related": [{"id": "python", "relation": "implemented-in"}, {"id": "python", "relation": "host-of"}],
+ "level_notes": {"1": "No separate language spec: build files are Python; the scons(1) man page and User Guide document the DSL (environments, builders, variable substitution).", "0": "SCons/scons (Python) is the only implementation.", "2": "Secondary literature is sparse beyond the official User Guide."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "SCons/scons — SCons source (Python)", "url": "https://github.com/SCons/scons", "implementation": "SCons", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter", "build-systems"]},
+  {"level": 0, "kind": "implementation-source", "title": "SCons/Script/SConscript.py — executing SConscript files as Python", "url": "https://github.com/SCons/scons/blob/master/SCons/Script/SConscript.py", "implementation": "SCons", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "eval"]},
+  {"level": 0, "kind": "implementation-source", "title": "SCons/Environment.py — construction environments", "url": "https://github.com/SCons/scons/blob/master/SCons/Environment.py", "implementation": "SCons", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["scope", "variables"]},
+  {"level": 0, "kind": "implementation-source", "title": "SCons/Subst.py — $VARIABLE substitution", "url": "https://github.com/SCons/scons/blob/master/SCons/Subst.py", "implementation": "SCons", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["string-formatting", "variables"]},
+  {"level": 0, "kind": "implementation-source", "title": "SCons/Taskmaster/__init__.py — dependency-graph walker and parallel build scheduler", "url": "https://github.com/SCons/scons/blob/master/SCons/Taskmaster/__init__.py", "implementation": "SCons", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["build-systems", "parallelism"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "scons(1) man page", "url": "https://scons.org/doc/production/HTML/scons-man.html", "implementation": "SCons", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["build-systems", "command-line"]},
+  {"level": 1, "kind": "reference-manual", "title": "scons(1) — SConscript files", "url": "https://scons.org/doc/production/HTML/scons-man.html#sconscript_files", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["program-structure", "modules"]},
+  {"level": 1, "kind": "reference-manual", "title": "scons(1) — Construction environments", "url": "https://scons.org/doc/production/HTML/scons-man.html#construction_environments", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "scons(1) — Builder methods", "url": "https://scons.org/doc/production/HTML/scons-man.html#builder_methods", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "scons(1) — Variable substitution", "url": "https://scons.org/doc/production/HTML/scons-man.html#variable_substitution", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "scons(1) — Python code substitution", "url": "https://scons.org/doc/production/HTML/scons-man.html#python_code_substitution", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["eval", "interoperability"]},
+
+  {"level": 2, "kind": "guide", "title": "SCons User Guide", "url": "https://scons.org/doc/production/HTML/scons-user/index.html", "implementation": "SCons", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["build-systems"]},
+  {"level": 2, "kind": "tutorial", "title": "SCons User Guide — Simple builds", "url": "https://scons.org/doc/production/HTML/scons-user/ch02.html", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "SCons User Guide — Environments", "url": "https://scons.org/doc/production/HTML/scons-user/ch07.html", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "scope"]},
+  {"level": 2, "kind": "guide", "title": "SCons User Guide — Hierarchical builds (SConscript)", "url": "https://scons.org/doc/production/HTML/scons-user/ch14.html", "implementation": "SCons", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — SCons", "url": "https://en.wikipedia.org/wiki/SCons", "implementation": "SCons", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

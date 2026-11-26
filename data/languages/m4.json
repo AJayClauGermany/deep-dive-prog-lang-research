@@ -1,0 +1,47 @@
+{
+ "id": "m4",
+ "name": "m4",
+ "aliases": ["m4 macro processor", "GNU m4"],
+ "categories": ["template", "domain-specific"],
+ "paradigms": ["macro", "text-rewriting"],
+ "typing": ["untyped"],
+ "first_appeared": 1977,
+ "designers": ["Brian W. Kernighan", "Dennis M. Ritchie"],
+ "summary": "General-purpose macro processor from Unix V7: input text is copied to output while macros defined with define() are expanded recursively, with quoting, conditionals (ifelse, ifdef), recursion, arithmetic (eval) and diversions. Standardised in POSIX; best known as the engine of GNU Autoconf and sendmail.cf.",
+ "status": "maintained",
+ "defined_by": ["international-standard", "reference-implementation"],
+ "standards": ["POSIX.1-2024 XCU m4"],
+ "file_extensions": [".m4"],
+ "homepage": "https://www.gnu.org/software/m4/",
+ "influenced_by": [],
+ "related": [{"id": "autoconf", "relation": "host-of"}],
+ "level_notes": {"1": "POSIX specifies m4; Kernighan & Ritchie's 1977 paper is the original definition; the GNU m4 manual documents GNU behaviour and extensions.", "0": "GNU m4 (savannah git; releases come from branch-1.4, master is nearly empty) and the BSD m4 (OpenBSD/FreeBSD usr.bin/m4) are the main implementations."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "GNU m4 src/macro.c — macro expansion engine", "url": "https://git.savannah.gnu.org/cgit/m4.git/tree/src/macro.c?h=branch-1.4", "implementation": "GNU m4", "scope": "whole", "authority": "official", "format": "directory", "access": "open", "concepts": ["macros", "interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "GNU m4 src/builtin.c — builtin macros (define, ifelse, eval...)", "url": "https://git.savannah.gnu.org/cgit/m4.git/tree/src/builtin.c?h=branch-1.4", "implementation": "GNU m4", "scope": "whole", "authority": "official", "format": "directory", "access": "open", "concepts": ["standard-library", "conditionals"]},
+  {"level": 0, "kind": "implementation-source", "title": "GNU m4 src/input.c — tokenizer and quoting", "url": "https://git.savannah.gnu.org/cgit/m4.git/tree/src/input.c?h=branch-1.4", "implementation": "GNU m4", "scope": "whole", "authority": "official", "format": "directory", "access": "open", "concepts": ["lexer", "quotation-homoiconicity"]},
+  {"level": 0, "kind": "implementation-source", "title": "OpenBSD usr.bin/m4/eval.c — builtin evaluation", "url": "https://github.com/openbsd/src/blob/master/usr.bin/m4/eval.c", "implementation": "BSD m4", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "OpenBSD usr.bin/m4/main.c — main expansion loop", "url": "https://github.com/openbsd/src/blob/master/usr.bin/m4/main.c", "implementation": "BSD m4", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["macros"]},
+
+  {"level": 1, "kind": "standard", "title": "POSIX m4 utility", "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/m4.html", "implementation": "GNU m4", "scope": "whole", "authority": "standards-body", "year": 2024, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["macros", "standardization"]},
+  {"level": 1, "kind": "standard", "title": "POSIX m4 — Extended description (builtin macros)", "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/m4.html#tag_20_74_13", "implementation": "GNU m4", "scope": "section", "authority": "standards-body", "year": 2024, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["macros", "standard-library"]},
+  {"level": 1, "kind": "original-paper", "title": "The M4 Macro Processor (Unix 7th Edition, Vol. 2)", "url": "https://wolfram.schneider.org/bsd/7thEdManVol2/m4/m4.pdf", "implementation": "GNU m4", "scope": "whole", "authority": "designer", "authors": ["Brian W. Kernighan", "Dennis M. Ritchie"], "year": 1977, "format": "pdf", "access": "open", "concepts": ["design-rationale", "macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 manual", "url": "https://www.gnu.org/software/m4/manual/m4.html", "implementation": "GNU m4", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Macro arguments", "url": "https://www.gnu.org/software/m4/manual/html_node/Macro-Arguments.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Quoting input (changequote)", "url": "https://www.gnu.org/software/m4/manual/html_node/Changequote.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["quotation-homoiconicity", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Define: defining a new macro", "url": "https://www.gnu.org/software/m4/manual/html_node/Define.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros", "functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Ifelse: conditionals", "url": "https://www.gnu.org/software/m4/manual/html_node/Ifelse.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Forloop: iteration by recursion", "url": "https://www.gnu.org/software/m4/manual/html_node/Forloop.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "recursion"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Eval: integer arithmetic", "url": "https://www.gnu.org/software/m4/manual/html_node/Eval.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators", "integers"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Diversions", "url": "https://www.gnu.org/software/m4/manual/html_node/Diversions.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["input-output"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU M4 — Comments", "url": "https://www.gnu.org/software/m4/manual/html_node/Comments.html", "implementation": "GNU m4", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Notes on the M4 Macro Language (Michael Breen)", "url": "https://mbreen.com/m4.html", "scope": "whole", "authority": "community", "authors": ["Michael Breen"], "format": "html", "access": "open", "concepts": ["hello-world", "macros"]},
+  {"level": 2, "kind": "guide", "title": "Autoconf manual — M4 quotation", "url": "https://www.gnu.org/software/autoconf/manual/autoconf-2.72/html_node/M4-Quotation.html", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["quotation-homoiconicity"]},
+  {"level": 2, "kind": "history", "title": "GNU M4 — History of m4", "url": "https://www.gnu.org/software/m4/manual/html_node/History.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — m4 (computer language)", "url": "https://en.wikipedia.org/wiki/M4_(computer_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — m4", "url": "https://pldb.io/concepts/m4.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:M4", "url": "https://rosettacode.org/wiki/Category:M4", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

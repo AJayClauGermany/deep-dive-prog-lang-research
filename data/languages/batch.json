@@ -1,0 +1,48 @@
+{
+ "id": "batch",
+ "name": "Windows Batch (cmd.exe)",
+ "aliases": ["batch file", ".bat", ".cmd", "cmd.exe", "COMMAND.COM batch", "DOS batch"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative"],
+ "typing": ["untyped", "string-based"],
+ "first_appeared": 1981,
+ "designers": ["Microsoft", "Tim Paterson (86-DOS COMMAND.COM)"],
+ "summary": "The command language of MS-DOS COMMAND.COM and Windows cmd.exe: line-oriented scripts using labels and GOTO, IF/FOR commands, %variable% expansion (and delayed !variable! expansion), CALL for subroutines and SETLOCAL for scoping.",
+ "status": "maintained",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "file_extensions": [".bat", ".cmd"],
+ "homepage": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd",
+ "influenced_by": ["posix-sh"],
+ "related": [{"id": "powershell", "relation": "family"}],
+ "level_notes": {"1": "No language specification; Microsoft documents individual commands (cmd, if, for, set, call, goto, setlocal). The parsing rules are only known from reverse-engineering (see the level-2 analysis).", "0": "cmd.exe is closed source; ReactOS cmd and FreeDOS FreeCOM are independent open-source reimplementations."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "ReactOS cmd/parser.c — command-line parser", "url": "https://github.com/reactos/reactos/blob/master/base/shell/cmd/parser.c", "implementation": "ReactOS cmd", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "ReactOS cmd/batch.c — batch file execution", "url": "https://github.com/reactos/reactos/blob/master/base/shell/cmd/batch.c", "implementation": "ReactOS cmd", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "ReactOS cmd/if.c — IF command", "url": "https://github.com/reactos/reactos/blob/master/base/shell/cmd/if.c", "implementation": "ReactOS cmd", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["conditionals"]},
+  {"level": 0, "kind": "implementation-source", "title": "ReactOS cmd/for.c — FOR command", "url": "https://github.com/reactos/reactos/blob/master/base/shell/cmd/for.c", "implementation": "ReactOS cmd", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 0, "kind": "implementation-source", "title": "ReactOS cmd/set.c — SET and SET /A arithmetic", "url": "https://github.com/reactos/reactos/blob/master/base/shell/cmd/set.c", "implementation": "ReactOS cmd", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["variables", "operators"]},
+  {"level": 0, "kind": "implementation-repository", "title": "FreeCOM — FreeDOS command interpreter", "url": "https://github.com/FDOS/freecom", "implementation": "FreeCOM", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "cmd — Windows command interpreter (options, delayed expansion)", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd", "implementation": "cmd.exe", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["command-line", "hello-world"]},
+  {"level": 1, "kind": "reference-manual", "title": "if — conditional processing in batch programs", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/if", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["conditionals", "booleans"]},
+  {"level": 1, "kind": "reference-manual", "title": "for — loops over sets, files and command output", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "set — environment variables, /A arithmetic and string substitution", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["variables", "operators", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "call — calling batch programs and labels (subroutines)", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/call", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "goto — jumping to labels", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/goto", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["goto-labels"]},
+  {"level": 1, "kind": "reference-manual", "title": "setlocal — localising environment changes", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/setlocal", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "rem — comments", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/rem", "implementation": "cmd.exe", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "library-reference", "title": "Windows commands index", "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands", "implementation": "cmd.exe", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "guide", "title": "SS64 — CMD syntax overview", "url": "https://ss64.com/nt/syntax.html", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 2, "kind": "guide", "title": "SS64 — Delayed expansion", "url": "https://ss64.com/nt/delayedexpansion.html", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["variables", "evaluation-order"]},
+  {"level": 2, "kind": "guide", "title": "SS64 — Command line arguments (%1, %~dp0 ...)", "url": "https://ss64.com/nt/syntax-args.html", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["command-line", "parameters-arguments"]},
+  {"level": 2, "kind": "book", "title": "Wikibooks — Windows Batch Scripting", "url": "https://en.wikibooks.org/wiki/Windows_Batch_Scripting", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "Rob van der Woude — Batch files", "url": "https://www.robvanderwoude.com/batchfiles.php", "scope": "whole", "authority": "community", "authors": ["Rob van der Woude"], "format": "html", "access": "open"},
+  {"level": 2, "kind": "internals-guide", "title": "How does the Windows Command Interpreter (CMD.EXE) parse scripts? (Stack Overflow)", "url": "https://stackoverflow.com/questions/4094699/how-does-the-windows-command-interpreter-cmd-exe-parse-scripts", "scope": "whole", "authority": "community", "authors": ["jeb", "dbenham"], "format": "html", "access": "open", "concepts": ["parser", "evaluation-order", "grammar"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Batch file", "url": "https://en.wikipedia.org/wiki/Batch_file", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — cmd.exe", "url": "https://en.wikipedia.org/wiki/Cmd.exe", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Batch", "url": "https://pldb.io/concepts/batch.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Batch File", "url": "https://rosettacode.org/wiki/Category:Batch_File", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "id": "soql",
+ "name": "Salesforce SOQL",
+ "aliases": ["SOQL", "Salesforce Object Query Language", "SOSL"],
+ "categories": ["query", "domain-specific"],
+ "paradigms": ["declarative"],
+ "typing": ["static"],
+ "first_appeared": 2004,
+ "designers": ["Salesforce"],
+ "summary": "SOQL (Salesforce Object Query Language) is a read-only SQL-like language for querying Salesforce sObjects, with relationship (parent-to-child/child-to-parent) queries instead of arbitrary joins, aggregate functions and date literals; SOSL is its full-text search companion, both embedded in Apex.",
+ "status": "active",
+ "defined_by": ["vendor-specification"],
+ "homepage": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/",
+ "influenced_by": ["sql"],
+ "related": [{"id": "apex", "relation": "embeds"}, {"id": "sql", "relation": "family"}],
+ "level_notes": {
+  "0": "Proprietary; no public implementation source.",
+  "1": "The SOQL and SOSL Reference (developer.salesforce.com, reports 403 to the link checker but the URLs are the canonical pages).",
+  "3": "No standalone Wikipedia article; PLDB entry."
+ },
+ "resources": [
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — SOQL", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm", "scope": "whole", "authority": "vendor", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — SELECT syntax", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["selection-projection", "grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — Condition expression (WHERE)", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_conditionexpression.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["selection-projection"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — Comparison operators", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_comparisonoperators.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["operators"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — Relationship queries", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_relationships.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["joins", "subqueries"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — GROUP BY", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_groupby.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["aggregation"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — Aggregate functions", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_agg_functions.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["aggregation"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — ORDER BY", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_orderby.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["sorting-limiting"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — LIMIT", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_limit.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["sorting-limiting"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — Date formats and date literals", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["date-time", "literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — Quoted string escape sequences", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_quotedstringescapes.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["strings", "escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "SOQL and SOSL Reference — SOSL", "url": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl.htm", "scope": "whole", "authority": "vendor", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Apex Developer Guide — SOQL and SOSL queries in Apex", "url": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_SOQL.htm", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["interoperability"]},
+  {"level": 2, "kind": "course", "title": "Trailhead — Write SOQL queries", "url": "https://trailhead.salesforce.com/content/learn/modules/apex_database/apex_database_soql", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — SOQL", "url": "https://pldb.io/concepts/soql.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

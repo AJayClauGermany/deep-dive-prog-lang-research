@@ -1,0 +1,423 @@
+{
+ "id": "regex-posix",
+ "name": "POSIX regular expressions (BRE/ERE)",
+ "aliases": [
+  "BRE",
+  "ERE",
+  "POSIX regex"
+ ],
+ "categories": [
+  "pattern-matching",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "IEEE POSIX working group",
+  "Henry Spencer"
+ ],
+ "summary": "The Basic and Extended Regular Expression notations standardised in POSIX (XBD chapter 9) and used by grep, sed, awk, ed and the regcomp()/regexec() C API; specifies bracket expressions with character classes, collating elements and equivalence classes, and leftmost-longest match semantics.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "IEEE Std 1003.1-2024 (POSIX.1-2024), XBD Chapter 9",
+  "ISO/IEC 9945"
+ ],
+ "homepage": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html",
+ "related": [
+  {
+   "id": "pcre",
+   "relation": "family"
+  },
+  {
+   "id": "regex-ecmascript",
+   "relation": "family"
+  },
+  {
+   "id": "re2",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "POSIX.1-2024 (The Open Group Base Specifications Issue 8) is freely readable online; chapter 9 defines BRE/ERE syntax and a yacc-style grammar, regcomp() the C interface.",
+  "0": "Implementations: Henry Spencer's library (basis of the BSD libc regex), glibc's posix/regcomp.c, and TRE (approximate matching, used by musl)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "glibc — posix/regcomp.c (BRE/ERE compiler)",
+   "url": "https://github.com/bminor/glibc/blob/master/posix/regcomp.c",
+   "implementation": "glibc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "glibc — posix/regexec.c (DFA/backtracking matcher)",
+   "url": "https://github.com/bminor/glibc/blob/master/posix/regexec.c",
+   "implementation": "glibc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FreeBSD libc — regex/regcomp.c (Henry Spencer derived)",
+   "url": "https://github.com/freebsd/freebsd-src/blob/main/lib/libc/regex/regcomp.c",
+   "implementation": "FreeBSD libc (Spencer)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FreeBSD libc — regex/engine.c (matching engine)",
+   "url": "https://github.com/freebsd/freebsd-src/blob/main/lib/libc/regex/engine.c",
+   "implementation": "FreeBSD libc (Spencer)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Henry Spencer's regex library (alpha3.8)",
+   "url": "https://github.com/garyhouston/regex",
+   "implementation": "Spencer regex",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TRE — tre-parse.c",
+   "url": "https://github.com/laurikari/tre/blob/master/lib/tre-parse.c",
+   "implementation": "TRE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TRE — tre-match-parallel.c (tagged NFA matcher)",
+   "url": "https://github.com/laurikari/tre/blob/master/lib/tre-match-parallel.c",
+   "implementation": "TRE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 Base Definitions, Chapter 9: Regular Expressions",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.1 Regular Expression Definitions (leftmost-longest matching)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_01",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.3 Basic Regular Expressions",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_03",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.3.5 RE Bracket Expression (character classes, collating elements)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_03_05",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.3.6 BREs Matching Multiple Characters (back-references, intervals)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_03_06",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.3.7 BRE Precedence",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_03_07",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.4 Extended Regular Expressions",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_04",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.4.7 ERE Alternation",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_04_07",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.4.8 ERE Precedence",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_04_08",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 XBD 9 — 9.5 Regular Expression Grammar",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap09.html#tag_09_05",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2024,
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "POSIX.1-2024 — regcomp, regexec, regerror, regfree",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/functions/regcomp.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "POSIX.1-2024 — grep utility (-E/-F, BRE vs ERE)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/grep.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "command-line"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "regex(7) — Linux manual page (POSIX.2 regular expressions)",
+   "url": "https://man7.org/linux/man-pages/man7/regex.7.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GNU grep manual — Basic vs Extended Regular Expressions",
+   "url": "https://www.gnu.org/software/grep/manual/html_node/Basic-vs-Extended.html",
+   "implementation": "GNU grep",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Regular-Expressions.info — POSIX Basic and Extended",
+   "url": "https://www.regular-expressions.info/posix.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Jan Goyvaerts"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Regular-Expressions.info — POSIX bracket expressions",
+   "url": "https://www.regular-expressions.info/posixbrackets.html",
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Jan Goyvaerts"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "characters"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Regular Expression Matching Can Be Simple And Fast (Thompson NFA vs backtracking)",
+   "url": "https://swtch.com/~rsc/regexp/regexp1.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2007,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "performance"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Regular expression: POSIX basic and extended",
+   "url": "https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

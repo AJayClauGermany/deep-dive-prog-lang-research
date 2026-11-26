@@ -1,0 +1,27 @@
+{
+ "id": "huff",
+ "name": "Huff",
+ "categories": ["smart-contract", "assembly"],
+ "paradigms": ["imperative", "macro-assembly"],
+ "typing": ["untyped"],
+ "first_appeared": 2019,
+ "designers": ["Zac Williamson (Aztec)"],
+ "summary": "Low-level EVM assembly language with macros, jump labels, constants and jump tables, giving direct control over the stack for gas-optimal contracts; originally written for Aztec's Weierstrudel, now maintained as huff-rs.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".huff"],
+ "homepage": "https://github.com/huff-language",
+ "level_notes": {"1": "No specification; the compiler's README and docs are the reference (the former docs.huff.sh domain no longer hosts Huff documentation).", "2": "Secondary literature is mostly blog posts; the huffmate library serves as by-example material.", "3": "No encyclopedia entry.", "0": "huff-rs (Rust) is the maintained compiler: lexer, parser, codegen crates."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "huff-language/huff-rs — Huff compiler in Rust", "url": "https://github.com/huff-language/huff-rs", "implementation": "huff-rs", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "huff-rs huff_lexer/src/lib.rs — lexer", "url": "https://github.com/huff-language/huff-rs/blob/main/huff_lexer/src/lib.rs", "implementation": "huff-rs", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "huff-rs huff_parser/src/lib.rs — parser", "url": "https://github.com/huff-language/huff-rs/blob/main/huff_parser/src/lib.rs", "implementation": "huff-rs", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "macros"]},
+  {"level": 0, "kind": "implementation-source", "title": "huff-rs huff_codegen/src/lib.rs — bytecode generation", "url": "https://github.com/huff-language/huff-rs/blob/main/huff_codegen/src/lib.rs", "implementation": "huff-rs", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend", "instruction-set"]},
+  {"level": 0, "kind": "standard-library-source", "title": "huffmate — library of Huff contracts", "url": "https://github.com/huff-language/huffmate", "implementation": "huff-rs", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "huff-rs README — usage and language overview", "url": "https://github.com/huff-language/huff-rs/blob/main/README.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["tooling"]},
+  {"level": 1, "kind": "specification", "title": "Ethereum Yellow Paper — EVM instruction semantics (Huff target)", "url": "https://ethereum.github.io/yellowpaper/paper.pdf", "scope": "whole", "authority": "official", "authors": ["Gavin Wood"], "format": "pdf", "access": "open", "concepts": ["instruction-set", "virtual-machine"]},
+
+  {"level": 2, "kind": "internals-guide", "title": "evm.codes — EVM opcode reference used when writing Huff", "url": "https://www.evm.codes/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["instruction-set"]}
+ ]
+}

@@ -1,0 +1,1228 @@
+{
+ "id": "qsharp",
+ "name": "Q#",
+ "aliases": [
+  "Q Sharp",
+  "QSharp"
+ ],
+ "categories": [
+  "quantum",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "imperative",
+  "functional"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "inferred"
+ ],
+ "first_appeared": 2017,
+ "designers": [
+  "Microsoft Quantum",
+  "Krysta Svore",
+  "Alan Geller",
+  "Bettina Heim",
+  "Martin Roetteler"
+ ],
+ "summary": "Microsoft's domain-specific language for quantum algorithms: operations and functions with automatically generated adjoint/controlled specializations, qubit allocation with use/borrow, conjugations (within/apply), compiled to QIR by the Rust-based Modern QDK.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".qs"
+ ],
+ "homepage": "https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview",
+ "influenced_by": [
+  "csharp",
+  "fsharp",
+  "python"
+ ],
+ "related": [
+  {
+   "id": "qir",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "Language specification in microsoft/qsharp-language (Specifications/Language) with an ANTLR grammar and an approved-proposal process; the Azure Quantum user guide mirrors it. Version 1.x Modern QDK changed some syntax (struct, namespaces optional).",
+  "0": "Modern QDK compiler/evaluator in Rust (microsoft/qdk, formerly microsoft/qsharp); the older C#-based Q# compiler and simulators are archived."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "microsoft/qdk — Modern Quantum Development Kit (Q# compiler, evaluator, tools)",
+   "url": "https://github.com/microsoft/qdk",
+   "implementation": "Modern QDK",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK lex.rs — lexer",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_parse/src/lex.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK raw.rs — raw lexer",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_parse/src/lex/raw.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK expr.rs — expression parser",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_parse/src/expr.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "expressions",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK item.rs — item parser",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_parse/src/item.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK stmt.rs — statement parser",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_parse/src/stmt.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "statements"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK ast.rs — AST",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_ast/src/ast.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK resolve.rs — name resolution",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_frontend/src/resolve.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK typeck.rs — type checker",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_frontend/src/typeck.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK infer.rs — type inference",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_frontend/src/typeck/infer.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-inference"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK closure.rs — closure lifting",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_frontend/src/closure.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "closures"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK hir.rs — HIR",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_hir/src/hir.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK fir.rs — FIR",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_fir/src/fir.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK spec_gen.rs — functor specialization generation",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_passes/src/spec_gen.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK conjugate_invert.rs — within/apply conjugation inversion",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_passes/src/conjugate_invert.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK borrowck.rs — mutability / borrow checks",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_passes/src/borrowck.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK loop_unification.rs — loop unification",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_passes/src/loop_unification.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK lib.rs — evaluator",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_eval/src/lib.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK lib.rs — runtime capabilities analysis",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_rca/src/lib.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK lib.rs — partial evaluation",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_partial_eval/src/lib.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compile-time-evaluation",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK qir.rs — QIR code generation",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/compiler/qsc_codegen/src/qir.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Modern QDK lib.rs — language service",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/language_service/src/lib.rs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library Std.Arrays",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/std/src/Std/Arrays.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library Std.Math",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/std/src/Std/Math.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library Std.Intrinsic gates",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/std/src/Std/Intrinsic.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library Std.Measurement",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/std/src/Std/Measurement.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library Std.Canon",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/std/src/Std/Canon.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library Std.Diagnostics",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/std/src/Std/Diagnostics.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "assertions",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Q# library core QIR intrinsics",
+   "url": "https://github.com/microsoft/qdk/blob/main/library/core/qir.qs",
+   "implementation": "Modern QDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Azure Quantum resource estimator",
+   "url": "https://github.com/microsoft/qdk/blob/main/source/resource_estimator/README.md",
+   "implementation": "Modern QDK",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "performance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# language specification",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Program structure",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/README.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Namespaces",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/1_Namespaces.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Type declarations",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/2_TypeDeclarations.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Callable declarations",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/3_CallableDeclarations.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Specialization declarations",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/4_SpecializationDeclarations.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations",
+    "overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Attributes",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/5_Attributes.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Access modifiers",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/6_AccessModifiers.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Comments",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/1_ProgramStructure/7_Comments.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Quantum memory management",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/2_Statements/QuantumMemoryManagement.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations",
+    "memory-management",
+    "resource-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Variable declarations and reassignments",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/2_Statements/VariableDeclarationsAndReassignments.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Binding scopes",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/2_Statements/BindingScopes.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Precedence and associativity",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/PrecedenceAndAssociativity.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Copy-and-update expressions",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/CopyAndUpdateExpressions.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Conditional expressions",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/ConditionalExpressions.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Arithmetic expressions",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/ArithmeticExpressions.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Functor application",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/FunctorApplication.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Conditional branching",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/ConditionalBranching.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Conditional loops",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/ConditionalLoops.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Iterations",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/Iterations.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Conjugations",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/Conjugations.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Returns and termination",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/ReturnsAndTermination.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "return",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Value literals",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/ValueLiterals.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Closures",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/Closures.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "currying"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Identifiers",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/3_Expressions/Identifiers.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Operations and functions",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/4_TypeSystem/OperationsAndFunctions.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "function-types",
+    "purity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Quantum data types",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/4_TypeSystem/QuantumDataTypes.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "quantum-operations",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Immutability",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/4_TypeSystem/Immutability.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Subtyping and variance",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/4_TypeSystem/SubtypingAndVariance.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "subtyping",
+    "variance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Type parameterizations",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/4_TypeSystem/TypeParameterizations.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Q# spec — Type inference",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/4_TypeSystem/TypeInference.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-inference"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Q# ANTLR parser grammar",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/5_Grammar/QSharpParser.g4",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Q# ANTLR lexer grammar",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/5_Grammar/QSharpLexer.g4",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "Q# language proposals — approved",
+   "url": "https://github.com/microsoft/qsharp-language/blob/main/Approved/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Quantum data types",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/typesystem/quantumdatatypes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Quantum memory management",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/statements/quantummemorymanagement",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "memory-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Conjugations",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/expressions/conjugations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Functor application",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/expressions/functorapplication",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Closures",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/expressions/closures",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Callable declarations",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/programstructure/callabledeclarations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Operations and functions",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/typesystem/operationsandfunctions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "function-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Iterations",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/expressions/iterations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Type parameterizations",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/typesystem/typeparameterizations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Q# user guide — Value literals",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/expressions/valueliterals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Q# standard library API reference",
+   "url": "https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Q#: Enabling scalable quantum computing and development with a high-level domain-specific language (RWDSL 2018)",
+   "url": "https://arxiv.org/abs/1803.00652",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Krysta M. Svore",
+    "Alan Geller",
+    "Matthias Troyer",
+    "John Azariah",
+    "Christopher Granade",
+    "Bettina Heim",
+    "Vadym Kliuchnikov",
+    "Mariia Mykhailova",
+    "Andres Paz",
+    "Martin Roetteler"
+   ],
+   "year": 2018,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Introduction to Q# (overview)",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Q# quickstart",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/qsharp-quickstart",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Working with Q# projects",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/how-to-work-with-qsharp-projects",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Calling Q# callables from Python",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/how-to-use-qsharp-callables-python",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ways to work with Q#",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/qsharp-ways-to-work",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Microsoft Learn — Create your first Q# program",
+   "url": "https://learn.microsoft.com/en-us/training/modules/qsharp-create-first-quantum-development-kit/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Understanding quantum computing (Azure Quantum)",
+   "url": "https://learn.microsoft.com/en-us/azure/quantum/overview-understanding-quantum-computing",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quantum-operations"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Q Sharp",
+   "url": "https://en.wikipedia.org/wiki/Q_Sharp",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Quantum programming",
+   "url": "https://en.wikipedia.org/wiki/Quantum_programming",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

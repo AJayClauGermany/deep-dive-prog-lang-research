@@ -1,0 +1,2125 @@
+{
+ "id": "bash",
+ "name": "Bash",
+ "aliases": [
+  "Bourne-Again SHell",
+  "GNU Bash"
+ ],
+ "categories": [
+  "shell",
+  "scripting"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural",
+  "command-oriented"
+ ],
+ "typing": [
+  "untyped-strings",
+  "dynamic"
+ ],
+ "first_appeared": 1989,
+ "designers": [
+  "Brian Fox",
+  "Chet Ramey"
+ ],
+ "summary": "The GNU project's Bourne-compatible Unix shell and command language: a superset of the POSIX Shell Command Language adding indexed and associative arrays, [[ ]] conditional expressions, extended globbing, brace expansion, process substitution, coprocesses, namerefs and programmable completion. Default interactive shell on most Linux distributions.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "standards": [
+  "POSIX.1-2024 Shell Command Language (XCU chapter 2) - Bash in POSIX mode targets it"
+ ],
+ "file_extensions": [
+  ".sh",
+  ".bash"
+ ],
+ "homepage": "https://www.gnu.org/software/bash/",
+ "influenced_by": [
+  "posix-sh",
+  "thompson-shell",
+  "ksh",
+  "csh"
+ ],
+ "related": [
+  {
+   "id": "posix-sh",
+   "relation": "superset-of"
+  },
+  {
+   "id": "ksh",
+   "relation": "family"
+  },
+  {
+   "id": "zsh",
+   "relation": "family"
+  },
+  {
+   "id": "ysh",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "GNU Bash (maintained by Chet Ramey on git.savannah.gnu.org) is the only complete implementation and the de facto definition of everything beyond POSIX. Bash-compatible re-implementations: Oils OSH (Python/C++), brush (Rust), mvdan/sh (Go parser and interpreter). Savannah cgit sometimes answers 502 to automated clients; links follow its stable /cgit/bash.git/tree/<path> scheme.",
+  "1": "No standard for Bash itself. The Bash Reference Manual (Texinfo, also bash(1)) is the official reference; POSIX XCU chapter 2 defines the subset Bash follows in POSIX mode (see the posix-sh entry). The NEWS/CHANGES files and the POSIX/COMPAT notes document semantics changes per release.",
+  "2": "Greg Wooledge's wiki (BashGuide, BashFAQ, BashPitfalls), the Bash Hackers Wiki (archived copy), the Advanced Bash-Scripting Guide (dated, use with care) and Chet Ramey's AOSA chapter on the implementation.",
+  "3": "Wikipedia, PLDB, Hyperpolyglot shell comparison; Rosetta Code files Bash under the UNIX Shell category."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "bash.git — GNU Bash source repository (Savannah)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git",
+   "concepts": [
+    "compiler-architecture",
+    "interpreter"
+   ],
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash parse.y — yacc grammar and hand-written lexer (read_token, here-documents, alias expansion)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/parse.y",
+   "concepts": [
+    "parser",
+    "lexer",
+    "grammar"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash command.h — command tree data structures (COMMAND, WORD_DESC, REDIRECT)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/command.h",
+   "concepts": [
+    "ast"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash print_cmd.c — pretty-printer that turns command trees back into source (used by declare -f)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/print_cmd.c",
+   "concepts": [
+    "ast"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash execute_cmd.c — command execution: pipelines, subshells, compound commands, function calls",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/execute_cmd.c",
+   "concepts": [
+    "interpreter",
+    "processes-system",
+    "pipelines",
+    "conditionals",
+    "loops",
+    "functions"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash subst.c — word expansions: parameter, command and arithmetic substitution, word splitting, quote removal",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/subst.c",
+   "concepts": [
+    "string-formatting",
+    "strings",
+    "interpreter"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash expr.c — arithmetic expression evaluator for $(( )), let and (( ))",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/expr.c",
+   "concepts": [
+    "operators",
+    "operator-precedence",
+    "integers",
+    "expressions"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash variables.c — shell variables, scopes, dynamic variables and the environment",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/variables.c",
+   "concepts": [
+    "variables",
+    "scope"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash arrayfunc.c — array assignment and subscript handling",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/arrayfunc.c",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash array.c — indexed arrays (sparse doubly linked list)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/array.c",
+   "concepts": [
+    "arrays"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash assoc.c — associative arrays on top of the hash library",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/assoc.c",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash braces.c — brace expansion",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/braces.c",
+   "concepts": [
+    "string-formatting",
+    "ranges"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash pathexp.c — pathname (glob) expansion driver and GLOBIGNORE",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/pathexp.c",
+   "concepts": [
+    "regular-expressions",
+    "file-io"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash lib/glob/strmatch.c — fnmatch-style pattern matcher used by case, [[ == ]] and ${var#pat}",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/lib/glob/strmatch.c",
+   "concepts": [
+    "pattern-matching",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash lib/glob/sm_loop.c — pattern-matching inner loop including extglob ?(...) *(...) +(...) @(...) !(...)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/lib/glob/sm_loop.c",
+   "concepts": [
+    "pattern-matching",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash redir.c — redirections and here-documents",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/redir.c",
+   "concepts": [
+    "file-io",
+    "input-output"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash jobs.c — job control: process groups, wait, SIGCHLD handling",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/jobs.c",
+   "concepts": [
+    "processes-system",
+    "concurrency"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash trap.c — trap builtin support and signal-handler dispatch",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/trap.c",
+   "concepts": [
+    "processes-system",
+    "exceptions"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash shell.c — main(): invocation options, startup files, interactive vs non-interactive mode",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/shell.c",
+   "concepts": [
+    "program-structure",
+    "command-line"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash eval.c — read-eval loop (reader_loop, parse_command)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/eval.c",
+   "concepts": [
+    "interpreter",
+    "eval"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash test.c — test / [ conditional-expression evaluator",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/test.c",
+   "concepts": [
+    "conditionals",
+    "booleans"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash pcomplete.c — programmable completion engine",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/pcomplete.c",
+   "concepts": [
+    "tooling"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/declare.def — declare/typeset/local builtin (attributes, namerefs)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/declare.def",
+   "concepts": [
+    "variables",
+    "type-annotations",
+    "scope"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/read.def — read builtin",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/read.def",
+   "concepts": [
+    "input-output",
+    "strings"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/printf.def — printf builtin (format strings, %q, -v)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/printf.def",
+   "concepts": [
+    "string-formatting",
+    "input-output"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/mapfile.def — mapfile/readarray builtin",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/mapfile.def",
+   "concepts": [
+    "arrays",
+    "file-io"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/set.def — set and unset builtins (shell options such as errexit, nounset, pipefail)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/set.def",
+   "concepts": [
+    "error-handling",
+    "variables"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/shopt.def — shopt builtin (extglob, globstar, nullglob, compat levels)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/shopt.def",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash builtins/trap.def — trap builtin",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/builtins/trap.def",
+   "concepts": [
+    "exceptions",
+    "processes-system"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bash examples/loadables — loadable builtins: C extensions loaded with enable -f",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/examples/loadables",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "bash tests/ — the Bash regression test suite (*.tests with expected *.right output)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/tests",
+   "concepts": [
+    "testing"
+   ],
+   "format": "directory",
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "bash tests/case.tests — regression tests for case, ;& and ;;& fallthrough",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/tests/case.tests",
+   "concepts": [
+    "switch-case",
+    "pattern-matching"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "bash tests/cond.tests — regression tests for [[ ]] including =~ regex matching",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/tests/cond.tests",
+   "concepts": [
+    "conditionals",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "implementation": "GNU Bash",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Oils (OSH) — bash-compatible shell implemented in Python and translated to C++",
+   "url": "https://github.com/oils-for-unix/oils",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Oils OSH",
+   "authority": "community",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Oils spec/array-assoc.test.sh — cross-shell spec tests for associative arrays (bash, zsh, mksh, OSH)",
+   "url": "https://github.com/oils-for-unix/oils/blob/master/spec/array-assoc.test.sh",
+   "concepts": [
+    "maps-dictionaries",
+    "testing"
+   ],
+   "implementation": "Oils OSH",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Oils spec/dbracket.test.sh — cross-shell spec tests for [[ ]]",
+   "url": "https://github.com/oils-for-unix/oils/blob/master/spec/dbracket.test.sh",
+   "concepts": [
+    "conditionals",
+    "testing"
+   ],
+   "implementation": "Oils OSH",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "brush — bash-compatible shell written in Rust",
+   "url": "https://github.com/reubeno/brush",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "brush",
+   "authority": "community",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mvdan/sh syntax/parser.go — Go parser for POSIX sh, Bash and mksh (used by shfmt)",
+   "url": "https://github.com/mvdan/sh/blob/master/syntax/parser.go",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "mvdan/sh",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mvdan/sh interp/runner.go — Go interpreter for Bash-like scripts",
+   "url": "https://github.com/mvdan/sh/blob/master/interp/runner.go",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "mvdan/sh",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-bash grammar.js — Bash grammar for tree-sitter",
+   "url": "https://github.com/tree-sitter/tree-sitter-bash/blob/master/grammar.js",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "tree-sitter-bash",
+   "authority": "community",
+   "access": "open",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "ShellCheck — static analysis tool for sh/bash scripts (Haskell)",
+   "url": "https://github.com/koalaman/shellcheck",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "ShellCheck",
+   "authority": "community",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "bats-core — Bash Automated Testing System",
+   "url": "https://github.com/bats-core/bats-core",
+   "concepts": [
+    "testing"
+   ],
+   "implementation": "bats-core",
+   "authority": "community",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual (single HTML page)",
+   "url": "https://www.gnu.org/software/bash/manual/bash.html",
+   "concepts": [
+    "standard-library",
+    "grammar"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — table of contents (one page per node)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/index.html",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — What is Bash?",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/What-is-Bash_003f.html",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Definitions (blank, word, token, metacharacter, ...)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Definitions.html",
+   "concepts": [
+    "lexical-structure",
+    "identifiers"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Operation (read, tokenize, expand, redirect, execute)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Operation.html",
+   "concepts": [
+    "program-structure",
+    "interpreter"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Quoting",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Quoting.html",
+   "concepts": [
+    "strings",
+    "escaping"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — ANSI-C Quoting ($'...')",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/ANSI_002dC-Quoting.html",
+   "concepts": [
+    "strings",
+    "literals",
+    "escaping"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Comments",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Comments.html",
+   "concepts": [
+    "comments"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Pipelines (|, |&, time, !)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Pipelines.html",
+   "concepts": [
+    "pipelines",
+    "processes-system"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Lists of Commands (;, &, &&, ||)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Lists.html",
+   "concepts": [
+    "short-circuit",
+    "statements"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Looping Constructs (until, while, for, arithmetic for)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Looping-Constructs.html",
+   "concepts": [
+    "loops",
+    "iteration-foreach",
+    "loop-control"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Conditional Constructs (if, case, select, (( )), [[ ]])",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html",
+   "concepts": [
+    "conditionals",
+    "switch-case",
+    "pattern-matching",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Grouping Commands ({ } and subshells)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Command-Grouping.html",
+   "concepts": [
+    "statements",
+    "scope",
+    "processes-system"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Coprocesses",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Coprocesses.html",
+   "concepts": [
+    "concurrency",
+    "processes-system",
+    "channels-message-passing"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Functions (local variables, dynamic scoping, return)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Functions.html",
+   "concepts": [
+    "functions",
+    "scope",
+    "return",
+    "recursion"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Parameters (variables, attributes, namerefs)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html",
+   "concepts": [
+    "variables",
+    "assignment",
+    "pointers-references"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Positional Parameters",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Positional-Parameters.html",
+   "concepts": [
+    "parameters-arguments",
+    "command-line"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Expansions (order of expansion)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Expansions.html",
+   "concepts": [
+    "evaluation-order",
+    "string-formatting"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Brace Expansion",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html",
+   "concepts": [
+    "string-formatting",
+    "ranges"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Parameter Expansion (${var:-default}, ${var#pat}, ${var/pat/rep}, ${var@Q})",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html",
+   "concepts": [
+    "strings",
+    "string-formatting",
+    "null-optional"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Command Substitution",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html",
+   "concepts": [
+    "processes-system",
+    "string-formatting"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Arithmetic Expansion",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html",
+   "concepts": [
+    "integers",
+    "expressions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Process Substitution (<(...) and >(...))",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Process-Substitution.html",
+   "concepts": [
+    "processes-system",
+    "pipelines",
+    "file-io"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Word Splitting (IFS)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Word-Splitting.html",
+   "concepts": [
+    "strings",
+    "lexical-structure"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Filename Expansion (globbing)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html",
+   "concepts": [
+    "file-io",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Pattern Matching (glob syntax, extglob)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html",
+   "concepts": [
+    "pattern-matching",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Redirections (here-documents, here-strings, fd duplication)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Redirections.html",
+   "concepts": [
+    "file-io",
+    "input-output"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Command Search and Execution",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Command-Search-and-Execution.html",
+   "concepts": [
+    "processes-system",
+    "namespaces"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Command Execution Environment (subshells)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Command-Execution-Environment.html",
+   "concepts": [
+    "processes-system",
+    "scope"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Environment",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Environment.html",
+   "concepts": [
+    "variables",
+    "processes-system"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Exit Status",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Exit-Status.html",
+   "concepts": [
+    "error-handling",
+    "return",
+    "booleans"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Signals",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Signals.html",
+   "concepts": [
+    "processes-system",
+    "exceptions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Bourne Shell Builtins",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Bash Builtin Commands (declare, local, mapfile, printf, read, ...)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html",
+   "concepts": [
+    "standard-library",
+    "string-formatting",
+    "input-output"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — The Set Builtin (errexit, nounset, pipefail, ...)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html",
+   "concepts": [
+    "error-handling"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — The Shopt Builtin",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Invoking Bash",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Invoking-Bash.html",
+   "concepts": [
+    "command-line"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Bash Conditional Expressions (test, [ ], [[ ]])",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html",
+   "concepts": [
+    "conditionals",
+    "booleans",
+    "operators"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Arithmetic (operators and precedence)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html",
+   "concepts": [
+    "operators",
+    "operator-precedence",
+    "integers"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Aliases",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Aliases.html",
+   "concepts": [
+    "macros"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Arrays (indexed and associative)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Arrays.html",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Bash and POSIX (POSIX mode differences)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Bash-POSIX-Mode.html",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Shell Compatibility Mode (BASH_COMPAT, compat levels)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Shell-Compatibility-Mode.html",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Programmable Completion",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html",
+   "concepts": [
+    "tooling"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Major Differences From The Bourne Shell",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Major-Differences-From-The-Bourne-Shell.html",
+   "concepts": [
+    "comparison",
+    "history"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bash(1) manual page (doc/bash.1 source)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/doc/bash.1",
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "bash NEWS — feature changes per release",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/NEWS",
+   "concepts": [
+    "language-evolution"
+   ],
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "bash CHANGES — detailed change log per release",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/CHANGES",
+   "concepts": [
+    "language-evolution"
+   ],
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "bash POSIX — list of behaviour changes in POSIX mode",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/POSIX",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "bash COMPAT — incompatibilities between Bash versions",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/COMPAT",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Bash FAQ (Chet Ramey, distributed with Bash)",
+   "url": "https://tiswww.case.edu/php/chet/bash/FAQ",
+   "concepts": [
+    "comparison",
+    "history"
+   ],
+   "authority": "designer",
+   "format": "html",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Chet Ramey — Bash, the Bourne-Again Shell (doc/article.txt, 1994)",
+   "url": "https://git.savannah.gnu.org/cgit/bash.git/tree/doc/article.txt",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Chet Ramey"
+   ],
+   "year": 1994,
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "The Architecture of Open Source Applications — The Bourne-Again Shell (Chet Ramey)",
+   "url": "https://aosabook.org/en/v1/bash.html",
+   "concepts": [
+    "compiler-architecture",
+    "parser",
+    "interpreter"
+   ],
+   "authors": [
+    "Chet Ramey"
+   ],
+   "year": 2011,
+   "authority": "designer",
+   "scope": "whole",
+   "format": "book",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Greg's Wiki — BashGuide",
+   "url": "https://mywiki.wooledge.org/BashGuide",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Greg Wooledge",
+    "Maarten Billemont"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Commands and Arguments",
+   "url": "https://mywiki.wooledge.org/BashGuide/CommandsAndArguments",
+   "concepts": [
+    "statements",
+    "parameters-arguments"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Special Characters",
+   "url": "https://mywiki.wooledge.org/BashGuide/SpecialCharacters",
+   "concepts": [
+    "lexical-structure",
+    "escaping"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Parameters (variables, parameter expansion)",
+   "url": "https://mywiki.wooledge.org/BashGuide/Parameters",
+   "concepts": [
+    "variables",
+    "strings",
+    "string-formatting"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Patterns (globs, extended globs, regular expressions, brace expansion)",
+   "url": "https://mywiki.wooledge.org/BashGuide/Patterns",
+   "concepts": [
+    "pattern-matching",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Tests and Conditionals",
+   "url": "https://mywiki.wooledge.org/BashGuide/TestsAndConditionals",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "switch-case"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Arrays",
+   "url": "https://mywiki.wooledge.org/BashGuide/Arrays",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Input and Output (redirection, here-docs, pipes)",
+   "url": "https://mywiki.wooledge.org/BashGuide/InputAndOutput",
+   "concepts": [
+    "input-output",
+    "file-io",
+    "pipelines"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Compound Commands (subshells, grouping, functions, aliases)",
+   "url": "https://mywiki.wooledge.org/BashGuide/CompoundCommands",
+   "concepts": [
+    "functions",
+    "scope"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BashGuide — Practices",
+   "url": "https://mywiki.wooledge.org/BashGuide/Practices",
+   "concepts": [
+    "style-conventions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Greg's Wiki — BashFAQ",
+   "url": "https://mywiki.wooledge.org/BashFAQ",
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "BashFAQ 005 — How can I use array variables?",
+   "url": "https://mywiki.wooledge.org/BashFAQ/005",
+   "concepts": [
+    "arrays"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "BashFAQ 105 — Why doesn't set -e do what I expected?",
+   "url": "https://mywiki.wooledge.org/BashFAQ/105",
+   "concepts": [
+    "error-handling"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Greg's Wiki — BashPitfalls",
+   "url": "https://mywiki.wooledge.org/BashPitfalls",
+   "concepts": [
+    "style-conventions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Greg's Wiki — WordSplitting",
+   "url": "https://mywiki.wooledge.org/WordSplitting",
+   "concepts": [
+    "strings",
+    "lexical-structure"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Greg's Wiki — glob",
+   "url": "https://mywiki.wooledge.org/glob",
+   "concepts": [
+    "pattern-matching",
+    "file-io"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Greg's Wiki — ProcessManagement",
+   "url": "https://mywiki.wooledge.org/ProcessManagement",
+   "concepts": [
+    "processes-system",
+    "concurrency"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Bash Hackers Wiki (archived community copy)",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/",
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — Basic grammar rules",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/basicgrammar/",
+   "concepts": [
+    "grammar",
+    "statements"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Bash Hackers Wiki — Parser and execution",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/grammar/parser_exec/",
+   "concepts": [
+    "parser",
+    "evaluation-order"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — Parameter expansion",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/pe/",
+   "concepts": [
+    "strings",
+    "string-formatting"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — Arrays",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/arrays/",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — Patterns and pattern matching",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/pattern/",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — Redirection",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/redirection/",
+   "concepts": [
+    "file-io",
+    "input-output"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — The if clause",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/ccmd/if_clause/",
+   "concepts": [
+    "conditionals"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — The case statement",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/ccmd/case/",
+   "concepts": [
+    "switch-case",
+    "pattern-matching"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — The conditional expression [[ ]]",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/ccmd/conditional_expression/",
+   "concepts": [
+    "conditionals",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — Process substitution",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/expansion/proc_subst/",
+   "concepts": [
+    "processes-system",
+    "pipelines"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — The coproc keyword",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/syntax/keywords/coproc/",
+   "concepts": [
+    "concurrency",
+    "processes-system"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Bash Hackers Wiki — The printf command",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/commands/builtin/printf/",
+   "concepts": [
+    "string-formatting"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Bash Hackers Wiki — Small getopts tutorial",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/howto/getopts_tutorial/",
+   "concepts": [
+    "command-line"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Bash Hackers Wiki — Bash changes (feature table by version)",
+   "url": "https://flokoe.github.io/bash-hackers-wiki/scripting/bashchanges/",
+   "concepts": [
+    "language-evolution"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced Bash-Scripting Guide (Mendel Cooper, TLDP)",
+   "url": "https://tldp.org/LDP/abs/html/index.html",
+   "authors": [
+    "Mendel Cooper"
+   ],
+   "scope": "whole",
+   "format": "book",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced Bash-Scripting Guide — Manipulating Strings",
+   "url": "https://tldp.org/LDP/abs/html/string-manipulation.html",
+   "concepts": [
+    "strings"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced Bash-Scripting Guide — Loops and Branches",
+   "url": "https://tldp.org/LDP/abs/html/loops.html",
+   "concepts": [
+    "loops",
+    "conditionals",
+    "switch-case"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced Bash-Scripting Guide — Functions",
+   "url": "https://tldp.org/LDP/abs/html/functions.html",
+   "concepts": [
+    "functions",
+    "recursion"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced Bash-Scripting Guide — Arrays",
+   "url": "https://tldp.org/LDP/abs/html/arrays.html",
+   "concepts": [
+    "arrays"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Advanced Bash-Scripting Guide — Here Documents",
+   "url": "https://tldp.org/LDP/abs/html/here-docs.html",
+   "concepts": [
+    "strings",
+    "input-output"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google Shell Style Guide",
+   "url": "https://google.github.io/styleguide/shellguide.html",
+   "concepts": [
+    "style-conventions"
+   ],
+   "authority": "vendor",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google Shell Style Guide — Arrays",
+   "url": "https://google.github.io/styleguide/shellguide.html#arrays",
+   "concepts": [
+    "arrays",
+    "style-conventions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "bash.academy — The Bash Guide (Maarten Billemont)",
+   "url": "https://guide.bash.academy/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Maarten Billemont"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The Linux Command Line (William Shotts) — free book",
+   "url": "https://linuxcommand.org/tlcl.php",
+   "authors": [
+    "William Shotts"
+   ],
+   "scope": "whole",
+   "format": "book",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "pure bash bible — pure-Bash alternatives to external processes",
+   "url": "https://github.com/dylanaraps/pure-bash-bible/blob/master/README.md",
+   "concepts": [
+    "strings",
+    "arrays"
+   ],
+   "authors": [
+    "Dylan Araps"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — Bash",
+   "url": "https://learnxinyminutes.com/bash/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ShellCheck wiki — explanations of common shell script defects",
+   "url": "https://www.shellcheck.net/wiki/",
+   "concepts": [
+    "style-conventions",
+    "tooling"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Bash (Unix shell)",
+   "url": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Bash",
+   "url": "https://pldb.io/concepts/bash.html",
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of command shells",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_command_shells",
+   "concepts": [
+    "comparison"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Hyperpolyglot — Unix shells (bash, fish, ksh, tcsh, zsh side by side)",
+   "url": "https://hyperpolyglot.org/unix-shells",
+   "concepts": [
+    "comparison"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — UNIX Shell category",
+   "url": "https://rosettacode.org/wiki/Category:UNIX_Shell",
+   "access": "open",
+   "format": "html",
+   "authority": "community",
+   "scope": "whole"
+  }
+ ]
+}

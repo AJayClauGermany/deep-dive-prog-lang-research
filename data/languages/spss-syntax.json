@@ -1,0 +1,375 @@
+{
+ "id": "spss-syntax",
+ "name": "SPSS command syntax",
+ "aliases": [
+  "SPSS syntax"
+ ],
+ "categories": [
+  "scientific",
+  "domain-specific",
+  "scripting"
+ ],
+ "paradigms": [
+  "command",
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 1968,
+ "designers": [
+  "Norman H. Nie",
+  "C. Hadlai Hull",
+  "Dale H. Bent"
+ ],
+ "summary": "Command language of IBM SPSS Statistics: period-terminated commands transforming a case-by-variable dataset, with DO IF/LOOP control, a DEFINE macro facility and an embedded MATRIX language.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".sps"
+ ],
+ "homepage": "https://www.ibm.com/products/spss-statistics",
+ "level_notes": {
+  "0": "IBM SPSS is closed source; GNU PSPP is an independent free implementation of the syntax (level 0 and its manual are PSPP, not IBM).",
+  "1": "IBM's Command Syntax Reference (ibm.com blocks the checker) is authoritative; the PSPP manual documents the compatible subset."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "GNU PSPP source (Savannah git) — free SPSS-syntax-compatible implementation",
+   "url": "https://git.savannah.gnu.org/cgit/pspp.git",
+   "scope": "whole",
+   "implementation": "GNU PSPP",
+   "format": "repository",
+   "notes": "savannah.gnu.org was intermittently unreachable from the checker.",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "IBM SPSS Statistics Command Syntax Reference",
+   "url": "https://www.ibm.com/docs/en/spss-statistics/30.0.0?topic=reference-command-syntax",
+   "scope": "whole",
+   "authority": "vendor",
+   "implementation": "IBM SPSS Statistics",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual",
+   "url": "https://pspp.benpfaff.org/manual/",
+   "scope": "whole",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Tokens",
+   "url": "https://pspp.benpfaff.org/manual/language/basics/tokens.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Commands and command terminators",
+   "url": "https://pspp.benpfaff.org/manual/language/basics/commands.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Interactive vs. batch syntax",
+   "url": "https://pspp.benpfaff.org/manual/language/basics/syntax-variants.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Missing values",
+   "url": "https://pspp.benpfaff.org/manual/language/basics/missing-values.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Variables",
+   "url": "https://pspp.benpfaff.org/manual/language/datasets/variables.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Scratch variables",
+   "url": "https://pspp.benpfaff.org/manual/language/datasets/scratch-variables.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "storage-duration"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Input and output formats",
+   "url": "https://pspp.benpfaff.org/manual/language/datasets/formats/index.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — Expression operators",
+   "url": "https://pspp.benpfaff.org/manual/language/expressions/operators.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — String functions",
+   "url": "https://pspp.benpfaff.org/manual/language/expressions/functions/string.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — DO IF",
+   "url": "https://pspp.benpfaff.org/manual/commands/do-if.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — LOOP",
+   "url": "https://pspp.benpfaff.org/manual/commands/loop.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — DO REPEAT (textual repetition)",
+   "url": "https://pspp.benpfaff.org/manual/commands/do-repeat.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — DEFINE (macro facility)",
+   "url": "https://pspp.benpfaff.org/manual/commands/define.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — COMPUTE",
+   "url": "https://pspp.benpfaff.org/manual/commands/compute.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — VECTOR",
+   "url": "https://pspp.benpfaff.org/manual/commands/vector.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — MATRIX language",
+   "url": "https://pspp.benpfaff.org/manual/commands/matrix.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — COMMENT",
+   "url": "https://pspp.benpfaff.org/manual/commands/comment.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU PSPP manual — INCLUDE / INSERT",
+   "url": "https://pspp.benpfaff.org/manual/commands/include.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "GNU PSPP manual — Using PSPP (tutorial)",
+   "url": "https://pspp.benpfaff.org/manual/language/tutorial/index.html",
+   "scope": "section",
+   "implementation": "GNU PSPP",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SPSS",
+   "url": "https://en.wikipedia.org/wiki/SPSS",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — SPSS",
+   "url": "https://pldb.io/concepts/spss.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

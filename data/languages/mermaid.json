@@ -1,0 +1,1805 @@
+{
+  "id": "mermaid",
+  "name": "Mermaid",
+  "categories": [
+    "diagram",
+    "markup"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 2014,
+  "designers": [
+    "Knut Sveidqvist"
+  ],
+  "summary": "Markdown-inspired text language for diagrams (flowcharts, sequence, class, state, ER, Gantt, git graphs, mindmaps and more), each diagram type with its own sub-grammar, rendered to SVG by the mermaid.js library.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "vendor-specification"
+  ],
+  "file_extensions": [
+    ".mmd",
+    ".mermaid"
+  ],
+  "homepage": "https://mermaid.js.org/",
+  "influenced_by": [
+    "markdown",
+    "dot",
+    "plantuml"
+  ],
+  "related": [
+    {
+      "id": "plantuml",
+      "relation": "family"
+    },
+    {
+      "id": "d2",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "No formal specification; the official per-diagram syntax pages on mermaid.js.org are the reference.",
+    "0": "mermaid.js is the sole reference implementation and its Jison (older diagrams) and Langium (@mermaid-js/parser, newer diagrams) grammars are the de facto formal grammar."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — About Mermaid (introduction)",
+      "url": "https://mermaid.js.org/intro/",
+      "concepts": [
+        "hello-world",
+        "design-rationale"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — Diagram syntax reference (structure, frontmatter, directives)",
+      "url": "https://mermaid.js.org/intro/syntax-reference.html",
+      "concepts": [
+        "program-structure",
+        "grammar"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Syntax structure",
+      "url": "https://mermaid.js.org/intro/syntax-reference.html#syntax-structure",
+      "concepts": [
+        "program-structure",
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Diagram breaking (reserved words and characters)",
+      "url": "https://mermaid.js.org/intro/syntax-reference.html#diagram-breaking",
+      "concepts": [
+        "keywords",
+        "escaping"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Frontmatter for diagram code",
+      "url": "https://mermaid.js.org/intro/syntax-reference.html#frontmatter-for-diagram-code",
+      "concepts": [
+        "annotations-attributes",
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Theme manipulation",
+      "url": "https://mermaid.js.org/intro/syntax-reference.html#theme-manipulation",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Layout and look",
+      "url": "https://mermaid.js.org/intro/syntax-reference.html#layout-and-look",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Mermaid — Getting started",
+      "url": "https://mermaid.js.org/intro/getting-started.html",
+      "concepts": [
+        "hello-world",
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart",
+      "url": "https://mermaid.js.org/syntax/flowchart.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Direction",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#direction",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Node shapes",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#node-shapes",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Expanded node shapes (v11.3.0)",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#expanded-node-shapes-in-mermaid-flowcharts-v11-3-0",
+      "concepts": [
+        "document-structure",
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Links between nodes",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#links-between-nodes",
+      "concepts": [
+        "graph-patterns",
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Chaining of links",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#chaining-of-links",
+      "concepts": [
+        "expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Special characters that break syntax",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#special-characters-that-break-syntax",
+      "concepts": [
+        "escaping"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Entity codes to escape characters",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#entity-codes-to-escape-characters",
+      "concepts": [
+        "escaping",
+        "characters"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Subgraphs",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#subgraphs",
+      "concepts": [
+        "scope",
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Markdown strings",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#markdown-strings",
+      "concepts": [
+        "strings",
+        "string-formatting"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Interaction (click callbacks)",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#interaction",
+      "concepts": [
+        "functions",
+        "security-considerations"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Comments",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Styling and classes",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#styling-and-classes",
+      "concepts": [
+        "styling-layout",
+        "classes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Flowchart — Configuration (renderer)",
+      "url": "https://mermaid.js.org/syntax/flowchart.html#configuration",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Participants",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#participants",
+      "concepts": [
+        "variables",
+        "identifiers"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Aliases",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#aliases",
+      "concepts": [
+        "identifiers"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Messages",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#messages",
+      "concepts": [
+        "channels-message-passing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Activations",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#activations",
+      "concepts": [
+        "program-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Loops",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#loops",
+      "concepts": [
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Alt / opt",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#alt",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Parallel",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#parallel",
+      "concepts": [
+        "parallelism",
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Critical region",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#critical-region",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Break",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#break",
+      "concepts": [
+        "loop-control"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Comments",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sequence diagram — Entity codes to escape characters",
+      "url": "https://mermaid.js.org/syntax/sequenceDiagram.html#entity-codes-to-escape-characters",
+      "concepts": [
+        "escaping"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html",
+      "concepts": [
+        "classes",
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram — Defining members of a class",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html#defining-members-of-a-class",
+      "concepts": [
+        "methods",
+        "properties",
+        "visibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram — Defining relationships",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html#defining-relationship",
+      "concepts": [
+        "inheritance",
+        "classes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram — Lollipop interfaces",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html#lollipop-interfaces",
+      "concepts": [
+        "interfaces-protocols"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram — Define namespace",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html#define-namespace",
+      "concepts": [
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram — Annotations on classes",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html#annotations-on-classes",
+      "concepts": [
+        "annotations-attributes",
+        "abstract-classes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Class diagram — Comments",
+      "url": "https://mermaid.js.org/syntax/classDiagram.html#comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — State diagram",
+      "url": "https://mermaid.js.org/syntax/stateDiagram.html",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — State diagram — Composite states",
+      "url": "https://mermaid.js.org/syntax/stateDiagram.html#composite-states",
+      "concepts": [
+        "automata",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — State diagram — Choice",
+      "url": "https://mermaid.js.org/syntax/stateDiagram.html#choice",
+      "concepts": [
+        "conditionals",
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — State diagram — Forks",
+      "url": "https://mermaid.js.org/syntax/stateDiagram.html#forks",
+      "concepts": [
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — State diagram — Concurrency",
+      "url": "https://mermaid.js.org/syntax/stateDiagram.html#concurrency",
+      "concepts": [
+        "concurrency",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Entity relationship diagram",
+      "url": "https://mermaid.js.org/syntax/entityRelationshipDiagram.html",
+      "concepts": [
+        "data-definition",
+        "relational-model"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — ER diagram — Relationship syntax",
+      "url": "https://mermaid.js.org/syntax/entityRelationshipDiagram.html#relationship-syntax",
+      "concepts": [
+        "relational-model",
+        "constraints-integrity"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — ER diagram — Attributes",
+      "url": "https://mermaid.js.org/syntax/entityRelationshipDiagram.html#attributes",
+      "concepts": [
+        "data-definition",
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Gantt",
+      "url": "https://mermaid.js.org/syntax/gantt.html",
+      "concepts": [
+        "date-time",
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Gantt — Setting dates",
+      "url": "https://mermaid.js.org/syntax/gantt.html#setting-dates",
+      "concepts": [
+        "date-time",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Gantt — Comments",
+      "url": "https://mermaid.js.org/syntax/gantt.html#comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — GitGraph diagram",
+      "url": "https://mermaid.js.org/syntax/gitgraph.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Mindmap (indentation-based)",
+      "url": "https://mermaid.js.org/syntax/mindmap.html",
+      "concepts": [
+        "whitespace-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Timeline",
+      "url": "https://mermaid.js.org/syntax/timeline.html",
+      "concepts": [
+        "date-time"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — C4 diagram",
+      "url": "https://mermaid.js.org/syntax/c4.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Pie chart",
+      "url": "https://mermaid.js.org/syntax/pie.html",
+      "concepts": [
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Requirement diagram",
+      "url": "https://mermaid.js.org/syntax/requirementDiagram.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Sankey (CSV-like data)",
+      "url": "https://mermaid.js.org/syntax/sankey.html",
+      "concepts": [
+        "data-model"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — XY chart",
+      "url": "https://mermaid.js.org/syntax/xyChart.html",
+      "concepts": [
+        "data-model"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Block diagram",
+      "url": "https://mermaid.js.org/syntax/block.html",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — Architecture diagram",
+      "url": "https://mermaid.js.org/syntax/architecture.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid syntax — ZenUML sequence diagrams",
+      "url": "https://mermaid.js.org/syntax/zenuml.html",
+      "concepts": [
+        "document-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — Examples of all diagram types",
+      "url": "https://mermaid.js.org/syntax/all-examples.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid configuration — Directives",
+      "url": "https://mermaid.js.org/config/directives.html",
+      "concepts": [
+        "annotations-attributes",
+        "preprocessor"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid configuration — Directives: types of directive options",
+      "url": "https://mermaid.js.org/config/directives.html#types-of-directives-options",
+      "concepts": [
+        "annotations-attributes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid configuration — Theming",
+      "url": "https://mermaid.js.org/config/theming.html",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid configuration — Theme variables",
+      "url": "https://mermaid.js.org/config/theming.html#theme-variables",
+      "concepts": [
+        "styling-layout",
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid configuration — Configuration overview",
+      "url": "https://mermaid.js.org/config/configuration.html",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid configuration — Configuration options schema",
+      "url": "https://mermaid.js.org/config/schema-docs/config.html",
+      "concepts": [
+        "schema-validation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Mermaid — API usage",
+      "url": "https://mermaid.js.org/config/usage.html",
+      "concepts": [
+        "interoperability"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — Math (KaTeX in labels)",
+      "url": "https://mermaid.js.org/config/math.html",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — Accessibility (accTitle/accDescr)",
+      "url": "https://mermaid.js.org/config/accessibility.html",
+      "concepts": [
+        "annotations-attributes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — Layouts",
+      "url": "https://mermaid.js.org/config/layouts.html",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Mermaid — Security (securityLevel, sandboxing)",
+      "url": "https://mermaid.js.org/community/security.html",
+      "concepts": [
+        "security-considerations"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Mermaid — Adding a new diagram/chart type",
+      "url": "https://mermaid.js.org/community/new-diagram.html",
+      "concepts": [
+        "parser",
+        "compiler-architecture"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Mermaid — Contributing to Mermaid",
+      "url": "https://mermaid.js.org/community/contributing.html",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "faq",
+      "title": "Mermaid — FAQ",
+      "url": "https://mermaid.js.org/config/faq.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Mermaid — Tutorials (curated list of videos and articles)",
+      "url": "https://mermaid.js.org/ecosystem/tutorials.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Mermaid CLI documentation",
+      "url": "https://mermaid.js.org/config/mermaidCLI.html",
+      "concepts": [
+        "command-line",
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "mermaid-js/mermaid — reference implementation (JavaScript/TypeScript)",
+      "url": "https://github.com/mermaid-js/mermaid",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "whole",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Flowchart grammar (flow.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/flowchart/parser/flow.jison",
+      "concepts": [
+        "grammar",
+        "parser",
+        "lexer"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Sequence diagram grammar (sequenceDiagram.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/sequence/parser/sequenceDiagram.jison",
+      "concepts": [
+        "grammar",
+        "parser",
+        "lexer"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Class diagram grammar (classDiagram.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/class/parser/classDiagram.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — State diagram grammar (stateDiagram.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/state/parser/stateDiagram.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — ER diagram grammar (erDiagram.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/er/parser/erDiagram.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Gantt grammar (gantt.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/gantt/parser/gantt.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Mindmap grammar (mindmap.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/mindmap/parser/mindmap.jison",
+      "concepts": [
+        "grammar",
+        "parser",
+        "whitespace-layout"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Timeline grammar (timeline.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/timeline/parser/timeline.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — C4 grammar (c4Diagram.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/c4/parser/c4Diagram.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — User journey grammar (journey.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/user-journey/parser/journey.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Requirement diagram grammar (requirementDiagram.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/requirement/parser/requirementDiagram.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Sankey grammar (sankey.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/sankey/parser/sankey.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — XY chart grammar (xychart.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/xychart/parser/xychart.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Quadrant chart grammar (quadrant.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/quadrant-chart/parser/quadrant.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Block diagram grammar (block.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/block/parser/block.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Kanban grammar (kanban.jison)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/kanban/parser/kanban.jison",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Pie Langium grammar (pie.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/pie/pie.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — GitGraph Langium grammar (gitGraph.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/gitGraph/gitGraph.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Packet Langium grammar (packet.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/packet/packet.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Info Langium grammar (info.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/info/info.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Architecture Langium grammar (architecture.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/architecture/architecture.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Radar Langium grammar (radar.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/radar/radar.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — Treemap Langium grammar (treemap.langium)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/treemap/treemap.langium",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "mermaid — @mermaid-js/parser common.langium (shared terminals: comments, accessibility, titles)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/parser/src/language/common/common.langium",
+      "concepts": [
+        "lexer",
+        "comments",
+        "grammar"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagram-api/detectType.ts (diagram type detection from header keyword)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagram-api/detectType.ts",
+      "concepts": [
+        "parser",
+        "program-structure"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagram-api/diagram-orchestration.ts (diagram registry)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagram-api/diagram-orchestration.ts",
+      "concepts": [
+        "compiler-architecture",
+        "modules"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagram-api/frontmatter.ts (YAML frontmatter extraction)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagram-api/frontmatter.ts",
+      "concepts": [
+        "annotations-attributes",
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — preprocess.ts (directives and frontmatter preprocessing)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/preprocess.ts",
+      "concepts": [
+        "preprocessor"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — mermaidAPI.ts (parse/render pipeline, sanitisation)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/mermaidAPI.ts",
+      "concepts": [
+        "compiler-architecture",
+        "security-considerations"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — mermaid.ts (public entry point)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/mermaid.ts",
+      "concepts": [
+        "interoperability"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagrams/common/common.ts (text sanitisation, line breaks)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/common/common.ts",
+      "concepts": [
+        "escaping",
+        "security-considerations"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — config.ts (configuration merging, secure keys)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/config.ts",
+      "concepts": [
+        "security-considerations"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — schemas/config.schema.yaml (JSON Schema of all config options)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/schemas/config.schema.yaml",
+      "concepts": [
+        "schema-validation"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagrams/flowchart/flowDb.ts (flowchart semantic model)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/flowchart/flowDb.ts",
+      "concepts": [
+        "semantic-analysis",
+        "ast"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagrams/sequence/sequenceDb.ts (sequence semantic model)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/sequence/sequenceDb.ts",
+      "concepts": [
+        "semantic-analysis"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — diagrams/class/classDb.ts (class diagram model)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/diagrams/class/classDb.ts",
+      "concepts": [
+        "semantic-analysis",
+        "classes"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — rendering-util/render.ts (layout/render dispatch)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/rendering-util/render.ts",
+      "concepts": [
+        "code-generation-backend",
+        "styling-layout"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mermaid — themes/theme-default.js (theme variables)",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/src/themes/theme-default.js",
+      "concepts": [
+        "styling-layout"
+      ],
+      "scope": "section",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "mermaid — packages/mermaid/CHANGELOG.md",
+      "url": "https://github.com/mermaid-js/mermaid/blob/develop/packages/mermaid/CHANGELOG.md",
+      "concepts": [
+        "language-evolution"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "mermaid-cli — src/index.js (mmdc command-line renderer)",
+      "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/src/index.js",
+      "concepts": [
+        "command-line",
+        "tooling"
+      ],
+      "scope": "section",
+      "implementation": "mermaid-cli",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "mermaid-js/mermaid-live-editor — online editor",
+      "url": "https://github.com/mermaid-js/mermaid-live-editor",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "implementation": "mermaid.js",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "interactive",
+      "title": "Mermaid Live Editor",
+      "url": "https://mermaid.live/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "format": "interactive",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "GitHub Docs — Creating Mermaid diagrams",
+      "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams",
+      "concepts": [
+        "interoperability"
+      ],
+      "scope": "section",
+      "authority": "vendor",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Mermaid (software)",
+      "url": "https://en.wikipedia.org/wiki/Mermaid_(software)",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Mermaid",
+      "url": "https://pldb.io/concepts/mermaid.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "Mermaid — Community integrations",
+      "url": "https://mermaid.js.org/ecosystem/integrations-community.html",
+      "concepts": [
+        "interoperability"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

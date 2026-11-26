@@ -1,0 +1,428 @@
+{
+ "id": "antlr-grammar",
+ "name": "ANTLR grammar language",
+ "aliases": [
+  "ANTLR",
+  ".g4"
+ ],
+ "categories": [
+  "grammar-notation",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "Terence Parr"
+ ],
+ "summary": "Grammar language of the ANTLR parser generator: combined lexer/parser grammars with EBNF operators, lexer modes and commands, semantic predicates and actions, direct left recursion, compiled to ALL(*) parsers for many target languages.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".g4",
+  ".g"
+ ],
+ "homepage": "https://www.antlr.org/",
+ "influenced_by": [
+  "ebnf",
+  "yacc"
+ ],
+ "related": [
+  {
+   "id": "ebnf",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The doc/ markdown files in the antlr4 repository are the official reference; ANTLR itself is the definition."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation index",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/index.md",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Grammar Structure (imports, grammar kinds)",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/grammars.md",
+   "concepts": [
+    "program-structure",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Grammar Lexicon (comments, identifiers, literals, keywords)",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/lexicon.md",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "keywords",
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Lexer Rules (modes, commands, fragments)",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/lexer-rules.md",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Parser Rules (alternatives, labels, rule elements)",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/parser-rules.md",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Left-recursive rules",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/left-recursion.md",
+   "concepts": [
+    "recursion",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Actions and Attributes",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/actions.md",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Semantic Predicates",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/predicates.md",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Options",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/options.md",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Wildcard Operator and Nongreedy Subrules",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/wildcard.md",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Parse Tree Listeners and Visitors",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/listeners.md",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ANTLR 4 Documentation — Runtime Libraries and Code Generation Targets",
+   "url": "https://github.com/antlr/antlr4/blob/master/doc/targets.md",
+   "concepts": [
+    "interoperability"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "implementation": "ANTLR 4",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Parr, Harwell, Fisher: Adaptive LL(*) Parsing — The Power of Dynamic Analysis (OOPSLA 2014, tech report)",
+   "url": "https://www.antlr.org/papers/allstar-techreport.pdf",
+   "concepts": [
+    "parser",
+    "formal-grammars"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Terence Parr",
+    "Sam Harwell",
+    "Kathleen Fisher"
+   ],
+   "year": 2014,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Parr, Fisher: LL(*) — The Foundation of the ANTLR Parser Generator (PLDI 2011)",
+   "url": "https://www.antlr.org/papers/LL-star-PLDI11.pdf",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Terence Parr",
+    "Kathleen Fisher"
+   ],
+   "year": 2011,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "antlr/antlr4 — tool and runtimes",
+   "url": "https://github.com/antlr/antlr4",
+   "concepts": [
+    "parser",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "implementation": "ANTLR 4",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "ANTLR tool ANTLRParser.g — grammar of ANTLR grammars",
+   "url": "https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/parse/ANTLRParser.g",
+   "concepts": [
+    "grammar",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "ANTLR 4",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ANTLR Tool.java — tool driver",
+   "url": "https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/Tool.java",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "implementation": "ANTLR 4",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ANTLR CodeGenerator.java",
+   "url": "https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/codegen/CodeGenerator.java",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "ANTLR 4",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ANTLR runtime ParserATNSimulator.java — ALL(*) prediction",
+   "url": "https://github.com/antlr/antlr4/blob/master/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java",
+   "concepts": [
+    "parser",
+    "automata"
+   ],
+   "scope": "section",
+   "implementation": "ANTLR 4",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ANTLR runtime LexerATNSimulator.java",
+   "url": "https://github.com/antlr/antlr4/blob/master/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java",
+   "concepts": [
+    "lexer",
+    "automata"
+   ],
+   "scope": "section",
+   "implementation": "ANTLR 4",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "grammars-v4 — ANTLRv4Parser.g4 (ANTLR 4 grammar in ANTLR 4)",
+   "url": "https://github.com/antlr/grammars-v4/blob/master/antlr/antlr4/ANTLRv4Parser.g4",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "ANTLR 4",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "antlr/grammars-v4 — community grammar collection",
+   "url": "https://github.com/antlr/grammars-v4",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Terence Parr: The Definitive ANTLR 4 Reference (Pragmatic, 2013)",
+   "url": "https://pragprog.com/titles/tpantlr2/the-definitive-antlr-4-reference/",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Terence Parr"
+   ],
+   "year": 2013,
+   "access": "paywalled",
+   "authority": "designer",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ANTLR home page (getting started, tools)",
+   "url": "https://www.antlr.org/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: ANTLR",
+   "url": "https://en.wikipedia.org/wiki/ANTLR",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: ANTLR",
+   "url": "https://pldb.io/concepts/antlr.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

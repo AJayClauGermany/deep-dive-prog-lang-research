@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "general.schema.json",
+  "title": "Collection of cross-language resources",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "resources"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "resources": {"type": "array", "items": {"$ref": "resource.schema.json"}}
+  }
+}

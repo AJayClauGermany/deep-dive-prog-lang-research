@@ -1,0 +1,282 @@
+{
+ "id": "slang-shader",
+ "name": "Slang",
+ "aliases": [
+  "Slang shading language"
+ ],
+ "categories": [
+  "shader-gpu"
+ ],
+ "paradigms": [
+  "imperative",
+  "generic",
+  "modular"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Yong He",
+  "Kayvon Fatahalian",
+  "Tim Foley",
+  "NVIDIA",
+  "Khronos Group"
+ ],
+ "summary": "HLSL-compatible shading language with modules, interfaces and constrained generics, capabilities and automatic differentiation, compiled by slangc to SPIR-V, DXIL, MSL, WGSL, CUDA and C++; hosted by Khronos since 2024.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".slang"
+ ],
+ "homepage": "https://shader-slang.org/",
+ "influenced_by": [
+  "hlsl"
+ ],
+ "related": [
+  {
+   "id": "hlsl",
+   "relation": "superset-of"
+  },
+  {
+   "id": "wgsl",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The user guide and core-module reference are the language definition alongside the compiler.",
+  "2": "Little independent secondary literature yet; tutorials live in the official docs."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/index.html",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Getting started",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/01-get-started.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Conventional language features",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/02-conventional-features.html",
+   "concepts": [
+    "primitive-types",
+    "functions",
+    "records-structs"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Convenience features",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/03-convenience-features.html",
+   "concepts": [
+    "type-inference",
+    "operator-overloading",
+    "properties"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Modules and access control",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/04-modules-and-access-control.html",
+   "concepts": [
+    "modules",
+    "visibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Capabilities",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/05-capabilities.html",
+   "concepts": [
+    "effect-systems",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Interfaces and generics",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/06-interfaces-generics.html",
+   "concepts": [
+    "interfaces-protocols",
+    "generics"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Automatic differentiation",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/07-autodiff.html",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Compiling code with Slang",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/08-compiling.html",
+   "concepts": [
+    "tooling",
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Slang User's Guide — Reflection API",
+   "url": "https://docs.shader-slang.org/en/latest/external/slang/docs/user-guide/09-reflection.html",
+   "concepts": [
+    "reflection"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Slang core module reference",
+   "url": "https://docs.shader-slang.org/en/latest/external/core-module-reference/index.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "He, Fatahalian, Foley — Slang: language mechanisms for extensible real-time shading systems (SIGGRAPH 2018)",
+   "url": "https://doi.org/10.1145/3197517.3201380",
+   "concepts": [
+    "design-rationale",
+    "generics"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Yong He",
+    "Kayvon Fatahalian",
+    "Tim Foley"
+   ],
+   "year": 2018
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "shader-slang/slang",
+   "url": "https://github.com/shader-slang/slang",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "slangc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "slang source/compiler-core/slang-lexer.cpp — lexer",
+   "url": "https://github.com/shader-slang/slang/blob/master/source/compiler-core/slang-lexer.cpp",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "slangc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "slang source/slang/parser/slang-parser.cpp — parser",
+   "url": "https://github.com/shader-slang/slang/blob/master/source/slang/parser/slang-parser.cpp",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "slangc"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — High-Level Shader Language: Derived languages (Slang)",
+   "url": "https://en.wikipedia.org/wiki/High-Level_Shader_Language#Derived_languages",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,446 @@
+{
+ "id": "gremlin",
+ "name": "Gremlin",
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "imperative",
+  "dataflow"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Marko A. Rodriguez"
+ ],
+ "summary": "Apache TinkerPop graph traversal language: a fluent chain of steps (out, has, repeat, group, select...) run by the Gremlin traversal machine, embedded in many host languages and supported by many graph databases.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "homepage": "https://tinkerpop.apache.org/gremlin.html",
+ "level_notes": {
+  "1": "No formal standard; the TinkerPop reference documentation and the Gremlin.g4 grammar define the language.",
+  "0": "Apache TinkerPop is the reference implementation; Gherkin feature files are the provider conformance suite."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Apache TinkerPop — Gremlin reference implementation",
+   "url": "https://github.com/apache/tinkerpop",
+   "implementation": "Apache TinkerPop",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "gremlin-language Gremlin.g4 — ANTLR grammar of the Gremlin language",
+   "url": "https://github.com/apache/tinkerpop/blob/master/gremlin-language/src/main/antlr4/Gremlin.g4",
+   "implementation": "Apache TinkerPop",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GraphTraversal.java — the Gremlin step API",
+   "url": "https://github.com/apache/tinkerpop/blob/master/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/process/traversal/dsl/graph/GraphTraversal.java",
+   "implementation": "Apache TinkerPop",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pipelines",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Gremlin feature tests — Select.feature (Gherkin conformance suite)",
+   "url": "https://github.com/apache/tinkerpop/blob/master/gremlin-test/src/main/resources/org/apache/tinkerpop/gremlin/test/features/map/Select.feature",
+   "implementation": "Apache TinkerPop",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference Documentation (Gremlin)",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Gremlin Graph Traversal Machine and Language (Marko A. Rodriguez)",
+   "url": "https://arxiv.org/abs/1508.03843",
+   "authors": [
+    "Marko A. Rodriguez"
+   ],
+   "year": 2015,
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "virtual-machine",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — Graph traversal steps",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — has() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#has-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — select() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#select-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — where() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#where-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — repeat() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#repeat-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "recursive-queries",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — path() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#path-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — shortestPath() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#shortestpath-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — group() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#group-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — count() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#count-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — order() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#order-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — limit() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#limit-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — choose() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#choose-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — union() step",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#union-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — match() step (declarative patterns)",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#match-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — A note on lambdas",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — A note on types",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#a-note-on-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — Traversal transactions",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#transactions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — Traversal strategies",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#traversalstrategy",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — Domain specific languages",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#dsl",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "TinkerPop Reference — Gremlin-Python variant",
+   "url": "https://tinkerpop.apache.org/docs/current/reference/#gremlin-python",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with TinkerPop",
+   "url": "https://tinkerpop.apache.org/docs/current/tutorials/getting-started/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "PRACTICAL GREMLIN: An Apache TinkerPop Tutorial (Kelvin Lawrence)",
+   "url": "https://kelvinlawrence.net/book/Gremlin-Graph-Guide.html",
+   "authors": [
+    "Kelvin Lawrence"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "book",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The Gremlin Graph Traversal Language (TinkerPop overview page)",
+   "url": "https://tinkerpop.apache.org/gremlin.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Gremlin (query language)",
+   "url": "https://en.wikipedia.org/wiki/Gremlin_(query_language)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Gremlin",
+   "url": "https://pldb.io/concepts/gremlin.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

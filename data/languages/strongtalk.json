@@ -1,0 +1,31 @@
+{
+ "id": "strongtalk",
+ "name": "Strongtalk",
+ "categories": ["general-purpose", "object-oriented", "historical"],
+ "paradigms": ["object-oriented", "message-passing", "reflective"],
+ "typing": ["dynamic", "optional-static", "structural", "pluggable"],
+ "first_appeared": 1994,
+ "designers": ["Gilad Bracha", "David Griswold", "Lars Bak", "Urs Hölzle", "Animorphic Systems"],
+ "summary": "Smalltalk dialect with an optional, structural static type system (protocols, parametric types) that does not affect run-time semantics, paired with a high-performance VM using type-feedback adaptive optimisation that later informed Java's HotSpot.",
+ "status": "historical",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".st", ".dlt"],
+ "homepage": "https://strongtalk.org/",
+ "influenced_by": ["smalltalk", "self"],
+ "related": [{"id": "smalltalk", "relation": "dialect-of"}],
+ "level_notes": {"1": "No language specification; the OOPSLA 1993 type-system paper is the defining document.", "0": "The Strongtalk VM and image were open-sourced by Sun in 2006 (talksmall/Strongtalk)."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "talksmall/Strongtalk — Strongtalk VM and Smalltalk image sources", "url": "https://github.com/talksmall/Strongtalk", "implementation": "Strongtalk VM", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["virtual-machine", "jit"]},
+  {"level": 0, "kind": "implementation-source", "title": "vm/interpreter/bytecodes.cpp — bytecode set", "url": "https://github.com/talksmall/Strongtalk/blob/master/vm/interpreter/bytecodes.cpp", "implementation": "Strongtalk VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode", "instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "vm/interpreter/interpreter.cpp — bytecode interpreter", "url": "https://github.com/talksmall/Strongtalk/blob/master/vm/interpreter/interpreter.cpp", "implementation": "Strongtalk VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "vm/recompiler/recompiler.cpp — adaptive recompilation driven by type feedback", "url": "https://github.com/talksmall/Strongtalk/blob/master/vm/recompiler/recompiler.cpp", "implementation": "Strongtalk VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["jit", "optimization"]},
+  {"level": 0, "kind": "implementation-source", "title": "vm/compiler/inliner.cpp — message inlining in the optimising compiler", "url": "https://github.com/talksmall/Strongtalk/blob/master/vm/compiler/inliner.cpp", "implementation": "Strongtalk VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["optimization", "jit"]},
+  {"level": 1, "kind": "original-paper", "title": "Strongtalk: Typechecking Smalltalk in a Production Environment (OOPSLA 1993)", "url": "http://bracha.org/oopsla93.pdf", "scope": "whole", "authority": "designer", "authors": ["Gilad Bracha", "David Griswold"], "year": 1993, "format": "pdf", "access": "open", "concepts": ["type-system", "gradual-typing", "design-rationale"]},
+  {"level": 1, "kind": "reference-manual", "title": "Strongtalk bytecode table (PDF)", "url": "https://strongtalk.org/wp-content/uploads/2026/06/bctable.pdf", "scope": "section", "authority": "official", "format": "pdf", "access": "open", "concepts": ["bytecode"]},
+  {"level": 2, "kind": "paper", "title": "Optimizing Dynamically-Dispatched Calls with Run-Time Type Feedback (PLDI 1994)", "url": "https://bibliography.selflanguage.org/_static/type-feedback.pdf", "scope": "whole", "authority": "academic", "authors": ["Urs Hölzle", "David Ungar"], "year": 1994, "format": "pdf", "access": "open", "concepts": ["jit", "optimization"]},
+  {"level": 2, "kind": "history", "title": "Strongtalk — History", "url": "https://strongtalk.org/history/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "faq", "title": "Strongtalk — FAQ", "url": "https://strongtalk.org/faq/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Strongtalk", "url": "https://en.wikipedia.org/wiki/Strongtalk", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Strongtalk", "url": "https://pldb.io/concepts/strongtalk.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

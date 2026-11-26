@@ -1,0 +1,266 @@
+{
+ "id": "cql-library",
+ "name": "Contextual Query Language (CQL/SRU)",
+ "aliases": [
+  "CQL",
+  "Common Query Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2002,
+ "designers": [
+  "ZING / SRU Editorial Board",
+  "Library of Congress",
+  "OASIS Search Web Services TC"
+ ],
+ "summary": "Formal query language for information-retrieval systems (library catalogues, digital libraries) used by the SRU and SRW search/retrieve protocols: search clauses of index, relation and term joined by boolean and proximity operators, with modifiers, prefix-qualified context sets and sorting.",
+ "status": "maintained",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "OASIS searchRetrieve Version 1.0 Part 5: CQL (2013)",
+  "CQL 1.2 (Library of Congress)"
+ ],
+ "homepage": "https://www.loc.gov/standards/sru/cql/",
+ "level_notes": {
+  "1": "CQL 1.2 is maintained by the Library of Congress (SRU site); CQL 2.0 is OASIS searchRetrieve Part 5. Context sets (e.g. the CQL context set, Dublin Core) define indexes and relations.",
+  "0": "Index Data's cql-java, cql-js and the YAZ toolkit's bison grammar are the commonly used parsers."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "cql-java — CQL parser for Java (Index Data)",
+   "url": "https://github.com/indexdata/cql-java",
+   "implementation": "cql-java",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cql-java — CQLLexer.java",
+   "url": "https://github.com/indexdata/cql-java/blob/master/src/main/java/org/z3950/zing/cql/CQLLexer.java",
+   "implementation": "cql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cql-java — CQLParser.java (recursive descent, boolean/proximity precedence)",
+   "url": "https://github.com/indexdata/cql-java/blob/master/src/main/java/org/z3950/zing/cql/CQLParser.java",
+   "implementation": "cql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "YAZ — cql.y bison grammar for CQL",
+   "url": "https://github.com/indexdata/yaz/blob/master/src/cql.y",
+   "implementation": "YAZ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cql-js — CQL parser in JavaScript",
+   "url": "https://github.com/indexdata/cql-js/blob/master/cql.js",
+   "implementation": "cql-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CQL: The Contextual Query Language — Specification (LoC, v1.2)",
+   "url": "https://www.loc.gov/standards/sru/cql/spec.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CQL Specification — Query Syntax (search clauses, booleans, proximity, modifiers)",
+   "url": "https://www.loc.gov/standards/sru/cql/spec.html#rules",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CQL Specification — Sorting",
+   "url": "https://www.loc.gov/standards/sru/cql/spec.html#sorting",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "CQL Specification — BNF",
+   "url": "https://www.loc.gov/standards/sru/cql/spec.html#bnf",
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The CQL Context Set (indexes, relations, modifiers)",
+   "url": "https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CQL context sets registry",
+   "url": "https://www.loc.gov/standards/sru/cql/contextSets/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "searchRetrieve Version 1.0 Part 5: CQL — The Contextual Query Language (OASIS Standard)",
+   "url": "https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part5-cql/searchRetrieve-v1.0-os-part5-cql.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2013,
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SRU: Search/Retrieve via URL (host protocol)",
+   "url": "https://www.loc.gov/standards/sru/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "A Gentle Introduction to CQL",
+   "url": "https://zing.z3950.org/cql/intro.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Mike Taylor"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "YAZ manual — query syntax and conversion tools (CQL to RPN)",
+   "url": "https://software.indexdata.com/yaz/doc/tools.html",
+   "implementation": "YAZ",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Contextual Query Language",
+   "url": "https://en.wikipedia.org/wiki/Contextual_Query_Language",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

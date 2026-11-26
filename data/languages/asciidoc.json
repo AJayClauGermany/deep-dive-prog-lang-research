@@ -1,0 +1,542 @@
+{
+ "id": "asciidoc",
+ "name": "AsciiDoc",
+ "aliases": [
+  "Asciidoctor"
+ ],
+ "categories": [
+  "markup",
+  "document-typesetting"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2002,
+ "designers": [
+  "Stuart Rackham",
+  "Dan Allen (Asciidoctor)"
+ ],
+ "summary": "A plain-text markup language for technical documentation, semantically equivalent to DocBook: sections, delimited blocks, tables, cross references, document attributes (variables), macros and a preprocessor with include and conditional directives. Being standardised by the Eclipse AsciiDoc Working Group.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".adoc",
+  ".asciidoc",
+  ".asc"
+ ],
+ "homepage": "https://asciidoc.org/",
+ "influenced_by": [
+  "docbook",
+  "setext"
+ ],
+ "related": [
+  {
+   "id": "docbook",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "html",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  },
+  {
+   "id": "restructuredtext",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Asciidoctor (Ruby, also transpiled to JavaScript and run on the JVM) is the de facto reference; the original Python AsciiDoc is maintained as asciidoc-py.",
+  "1": "The AsciiDoc Language documentation is the reference; a formal specification is being written by the Eclipse AsciiDoc Language project (GitLab)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "asciidoctor/asciidoctor — Ruby implementation, the de facto reference processor",
+   "url": "https://github.com/asciidoctor/asciidoctor",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Asciidoctor parser.rb — block parser (sections, lists, delimited blocks, tables)",
+   "url": "https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/parser.rb",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Asciidoctor reader.rb — line reader with preprocessor directives (include::, ifdef::, ifeval::)",
+   "url": "https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/reader.rb",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "imports",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Asciidoctor substitutors.rb — inline substitution passes (special chars, quotes, attributes, macros)",
+   "url": "https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/substitutors.rb",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "variables",
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Asciidoctor rx.rb — the regular expressions that define the inline/block syntax",
+   "url": "https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/rx.rb",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Asciidoctor document.rb — document model and attribute handling",
+   "url": "https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/document.rb",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "variables"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Asciidoctor converter/html5.rb — HTML5 converter",
+   "url": "https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/converter/html5.rb",
+   "authority": "community",
+   "implementation": "Asciidoctor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "asciidoc-py asciidoc.py — the original Python AsciiDoc processor (Stuart Rackham)",
+   "url": "https://github.com/asciidoc-py/asciidoc-py/blob/main/asciidoc/asciidoc.py",
+   "authority": "designer",
+   "implementation": "AsciiDoc.py",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language Documentation",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Key concepts (elements, attributes, macros, preprocessor)",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/key-concepts/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Document structure",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/document-structure/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Document header",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/document/header/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Document attributes",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Attribute entries (defining/unsetting)",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/attributes/attribute-entries/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Referencing attributes",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/attributes/reference-attributes/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Section titles and levels",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Delimited blocks",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/blocks/delimited/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Unordered lists",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/lists/unordered/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Tables",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Links (URL macros)",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/macros/links/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Cross references",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/macros/xref/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Substitutions (types and order)",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/subs/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Special character substitution",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/subs/special-characters/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Passthrough macros",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/pass/pass-macro/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Comments",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/comments/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — Include directive",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/directives/include/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "preprocessor"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — ifdef and ifndef directives",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "preprocessor"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "AsciiDoc Language — ifeval directive",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/directives/ifeval/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Eclipse AsciiDoc Language project (specification in progress)",
+   "url": "https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-lang",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Eclipse project page — AsciiDoc Language",
+   "url": "https://projects.eclipse.org/projects/asciidoc.asciidoc-lang",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "AsciiDoc Syntax Quick Reference",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Compare AsciiDoc to Markdown",
+   "url": "https://docs.asciidoctor.org/asciidoc/latest/asciidoc-vs-markdown/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — AsciiDoc",
+   "url": "https://learnxinyminutes.com/asciidoc/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "AsciiDoc.py user guide (legacy Python processor)",
+   "url": "https://asciidoc-py.github.io/",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — AsciiDoc",
+   "url": "https://en.wikipedia.org/wiki/AsciiDoc",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — AsciiDoc",
+   "url": "https://pldb.io/concepts/asciidoc.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

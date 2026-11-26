@@ -1,0 +1,495 @@
+{
+ "id": "quint",
+ "name": "Quint",
+ "aliases": [
+  "TNT"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional",
+  "temporal-logic",
+  "state-machine"
+ ],
+ "typing": [
+  "static",
+  "inferred",
+  "effect-system"
+ ],
+ "first_appeared": 2022,
+ "designers": [
+  "Igor Konnov",
+  "Gabriela Moreira",
+  "Shon Feder",
+  "Informal Systems"
+ ],
+ "summary": "A modern specification language based on the Temporal Logic of Actions (TLA) with a programmer-friendly syntax, a static type and effect system (modes for pure, action and temporal definitions), a REPL and random simulator, and model checking through Apalache/TLC; specifications translate to TLA+.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".qnt"
+ ],
+ "homepage": "https://quint.sh/",
+ "influenced_by": [
+  "tla-plus",
+  "typescript",
+  "scala"
+ ],
+ "related": [
+  {
+   "id": "tla-plus",
+   "relation": "variant-of"
+  },
+  {
+   "id": "tla-plus",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: the Quint language manual (quint-lang.org/docs/lang), the builtin operator reference and the project's ADRs/RFCs define the language; the ANTLR grammar in the repository is the precise syntax.",
+  "3": "No Wikipedia article yet; PLDB lists it.",
+  "0": "informalsystems/quint (TypeScript) contains parser, type/effect checker, simulator and REPL; model checking delegates to Apalache (Scala)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual",
+   "url": "https://quint.sh/docs/lang",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Types",
+   "url": "https://quint.sh/docs/lang#types",
+   "concepts": [
+    "type-system"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Modes (pure, state, action, temporal)",
+   "url": "https://quint.sh/docs/lang#modes",
+   "concepts": [
+    "effect-systems"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Module-level constructs (const, var, def, val, action)",
+   "url": "https://quint.sh/docs/lang#module-level-constructs",
+   "concepts": [
+    "program-structure",
+    "constants",
+    "variables"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Namespaces and imports",
+   "url": "https://quint.sh/docs/lang#namespaces-and-imports",
+   "concepts": [
+    "namespaces",
+    "imports",
+    "modules"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Lambdas (anonymous operators)",
+   "url": "https://quint.sh/docs/lang#lambdas-aka-anonymous-operators",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Flow operators (if-else, match)",
+   "url": "https://quint.sh/docs/lang#flow-operators",
+   "concepts": [
+    "conditionals",
+    "pattern-matching"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Sets",
+   "url": "https://quint.sh/docs/lang#sets",
+   "concepts": [
+    "sets"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Maps (aka functions)",
+   "url": "https://quint.sh/docs/lang#maps-aka-functions",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Records",
+   "url": "https://quint.sh/docs/lang#records",
+   "concepts": [
+    "records-structs"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Sum types",
+   "url": "https://quint.sh/docs/lang#sum-types",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Lists (aka sequences)",
+   "url": "https://quint.sh/docs/lang#lists-aka-sequences",
+   "concepts": [
+    "lists"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Operators on actions (delayed assignment, nondet, runs)",
+   "url": "https://quint.sh/docs/lang#operators-on-actions",
+   "concepts": [
+    "assignment",
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Temporal operators (always, eventually, fairness)",
+   "url": "https://quint.sh/docs/lang#temporal-operators",
+   "concepts": [
+    "verification",
+    "logic-foundations"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Quint language manual — Instances (parameterised modules)",
+   "url": "https://quint.sh/docs/lang#instances",
+   "concepts": [
+    "modules",
+    "generics"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Quint builtin operators reference",
+   "url": "https://quint.sh/docs/builtin",
+   "concepts": [
+    "standard-library",
+    "operators"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Quint design principles",
+   "url": "https://quint.sh/docs/design-principles",
+   "concepts": [
+    "design-rationale"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "ADR 004 — effect system",
+   "url": "https://quint.sh/docs/development-docs/architecture-decision-records/adr004-effect-system",
+   "concepts": [
+    "effect-systems"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "ADR 005 — type system",
+   "url": "https://quint.sh/docs/development-docs/architecture-decision-records/adr005-type-system",
+   "concepts": [
+    "type-system",
+    "type-inference"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "informalsystems/quint — Quint tools (TypeScript)",
+   "url": "https://github.com/informalsystems/quint",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Quint",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Quint — generated/Quint.g4 — ANTLR grammar",
+   "url": "https://github.com/informalsystems/quint/blob/main/quint/src/generated/Quint.g4",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "Quint",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Quint — parsing/ToIrListener.ts — parse tree to IR",
+   "url": "https://github.com/informalsystems/quint/blob/main/quint/src/parsing/ToIrListener.ts",
+   "concepts": [
+    "ast",
+    "parser"
+   ],
+   "implementation": "Quint",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Quint — ir/quintIr.ts — intermediate representation",
+   "url": "https://github.com/informalsystems/quint/blob/main/quint/src/ir/quintIr.ts",
+   "concepts": [
+    "intermediate-representation",
+    "ast"
+   ],
+   "implementation": "Quint",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Quint — types/inferrer.ts — type inference",
+   "url": "https://github.com/informalsystems/quint/blob/main/quint/src/types/inferrer.ts",
+   "concepts": [
+    "type-inference"
+   ],
+   "implementation": "Quint",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Quint — effects/inferrer.ts — effect inference",
+   "url": "https://github.com/informalsystems/quint/blob/main/quint/src/effects/inferrer.ts",
+   "concepts": [
+    "effect-systems"
+   ],
+   "implementation": "Quint",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Quint — runtime/impl/evaluator.ts — simulator/REPL evaluator",
+   "url": "https://github.com/informalsystems/quint/blob/main/quint/src/runtime/impl/evaluator.ts",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Quint",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Quint lessons — hello",
+   "url": "https://quint.sh/docs/lessons/hello",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Quint lessons — sets",
+   "url": "https://quint.sh/docs/lessons/sets",
+   "concepts": [
+    "sets"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Language basics (Quint for TLA+ users)",
+   "url": "https://quint.sh/docs/language-basics",
+   "concepts": [
+    "comparison"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Why Quint?",
+   "url": "https://quint.sh/docs/why",
+   "concepts": [
+    "design-rationale"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Model checkers (Apalache and TLC)",
+   "url": "https://quint.sh/docs/model-checkers",
+   "concepts": [
+    "verification",
+    "tooling"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Quint",
+   "url": "https://pldb.io/concepts/quint.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

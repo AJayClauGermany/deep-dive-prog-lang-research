@@ -1,0 +1,441 @@
+{
+ "id": "docbook",
+ "name": "DocBook",
+ "categories": [
+  "markup",
+  "document-typesetting",
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative markup",
+  "semantic markup"
+ ],
+ "typing": [
+  "schema-validated (RELAX NG + Schematron)"
+ ],
+ "first_appeared": 1991,
+ "designers": [
+  "HaL Computer Systems",
+  "O'Reilly & Associates",
+  "Davenport Group",
+  "OASIS DocBook Technical Committee",
+  "Norman Walsh"
+ ],
+ "summary": "Semantic XML (originally SGML) vocabulary for technical documentation — books, articles, reference pages — defined by an OASIS-standardised RELAX NG schema with Schematron rules; presentation is left to separate stylesheets (DocBook XSL, xslTNG).",
+ "status": "maintained",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "OASIS DocBook 5.1 (2016)",
+  "OASIS DocBook 5.2 (2024)"
+ ],
+ "file_extensions": [
+  ".xml",
+  ".dbk"
+ ],
+ "homepage": "https://docbook.org/",
+ "influenced_by": [
+  "sgml",
+  "xml"
+ ],
+ "related": [
+  {
+   "id": "xml",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "sgml",
+   "relation": "family"
+  },
+  {
+   "id": "dita",
+   "relation": "family"
+  },
+  {
+   "id": "tei",
+   "relation": "family"
+  },
+  {
+   "id": "xsl-fo",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "asciidoc",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "The schema sources (RELAX NG compact) and the xslTNG stylesheets moved from GitHub to Codeberg in 2025; links point at Codeberg.",
+  "1": "The OASIS specification is short and normatively points at the RELAX NG schema; element-level semantics are documented in DocBook: The Definitive Guide (tdg.docbook.org), which is treated as the reference manual."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "DocBook schema sources (Codeberg) — DocBook/docbook repository",
+   "url": "https://codeberg.org/DocBook/docbook",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ],
+   "implementation": "DocBook RELAX NG schema"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "DocBook RELAX NG — docbook.rnc: schema driver",
+   "url": "https://codeberg.org/DocBook/docbook/src/branch/main/schemas/docbook/src/main/docbook/docbook.rnc",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "modules"
+   ],
+   "implementation": "DocBook RELAX NG schema"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "DocBook RELAX NG — hier.rnc: hierarchy (book, part, chapter, section)",
+   "url": "https://codeberg.org/DocBook/docbook/src/branch/main/schemas/docbook/src/main/docbook/hier.rnc",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "DocBook RELAX NG schema"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "DocBook RELAX NG — programming.rnc: programlisting, code, synopsis elements",
+   "url": "https://codeberg.org/DocBook/docbook/src/branch/main/schemas/docbook/src/main/docbook/programming.rnc",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "DocBook RELAX NG schema"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "DocBook RELAX NG — core.rnc: common attributes and linking (xml:id, linkend, xlink)",
+   "url": "https://codeberg.org/DocBook/docbook/src/branch/main/schemas/docbook/src/main/docbook/core.rnc",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "implementation": "DocBook RELAX NG schema"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "DocBook xslTNG — XSLT 3.0 stylesheets for DocBook (Norman Walsh)",
+   "url": "https://codeberg.org/DocBook/xslTNG",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ],
+   "implementation": "xslTNG"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xslTNG — sections.xsl: rendering of sectioning",
+   "url": "https://codeberg.org/DocBook/xslTNG/src/branch/main/src/main/xslt/modules/sections.xsl",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "implementation": "xslTNG"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xslTNG — xref.xsl: cross-reference generation",
+   "url": "https://codeberg.org/DocBook/xslTNG/src/branch/main/src/main/xslt/modules/xref.xsl",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "implementation": "xslTNG"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "DocBook XSL 1.0 stylesheets (xslt10-stylesheets)",
+   "url": "https://github.com/docbook/xslt10-stylesheets",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ],
+   "implementation": "DocBook XSL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc — Readers/DocBook.hs: DocBook reader",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/DocBook.hs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interoperability"
+   ],
+   "implementation": "Pandoc"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "The DocBook Schema Version 5.1 — OASIS Standard",
+   "url": "https://docs.oasis-open.org/docbook/docbook/v5.1/os/docbook-v5.1-os.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "schema-validation"
+   ],
+   "year": 2016,
+   "version": "5.1"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "DocBook 5.1 (OASIS) — The DocBook schema (RELAX NG + Schematron)",
+   "url": "https://docs.oasis-open.org/docbook/docbook/v5.1/os/docbook-v5.1-os.html#s.docbook",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "DocBook 5.1 (OASIS) — DocBook assemblies (topic-based authoring)",
+   "url": "https://docs.oasis-open.org/docbook/docbook/v5.1/os/docbook-v5.1-os.html#s.assembly",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "DocBook 5.1 (OASIS) — Changes in 5.1",
+   "url": "https://docs.oasis-open.org/docbook/docbook/v5.1/os/docbook-v5.1-os.html#changes",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide, 5.2 (Norman Walsh)",
+   "url": "https://tdg.docbook.org/tdg/5.2/",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "version": "5.2",
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide — Chapter 2: Creating DocBook documents",
+   "url": "https://tdg.docbook.org/tdg/5.2/ch02.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "program-structure"
+   ],
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide — Chapter 3: Validating DocBook documents",
+   "url": "https://tdg.docbook.org/tdg/5.2/ch03.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ],
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide — Chapter 5: Customizing DocBook (schema customization layers)",
+   "url": "https://tdg.docbook.org/tdg/5.2/ch05.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "modules"
+   ],
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide — section element",
+   "url": "https://tdg.docbook.org/tdg/5.2/section.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide — xref element",
+   "url": "https://tdg.docbook.org/tdg/5.2/xref.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DocBook: The Definitive Guide — programlisting element (verbatim)",
+   "url": "https://tdg.docbook.org/tdg/5.2/programlisting.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "whitespace-layout"
+   ],
+   "authors": [
+    "Norman Walsh"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "DocBook: The Definitive Guide — Chapter 1: Getting started with DocBook",
+   "url": "https://tdg.docbook.org/tdg/5.2/ch01.html",
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "DocBook xslTNG reference guide",
+   "url": "https://xsltng.docbook.org/guide/",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "code-generation"
+   ],
+   "implementation": "xslTNG"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "docbook.org — DocBook home: schemas, tools and documentation",
+   "url": "https://docbook.org/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — DocBook",
+   "url": "https://en.wikipedia.org/wiki/DocBook",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

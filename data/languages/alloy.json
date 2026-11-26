@@ -1,0 +1,2239 @@
+{
+ "id": "alloy",
+ "name": "Alloy",
+ "aliases": [
+  "Alloy 4",
+  "Alloy 6",
+  "Electrum"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "declarative",
+  "relational-logic",
+  "first-order-logic",
+  "linear-temporal-logic"
+ ],
+ "typing": [
+  "static",
+  "relational-arity-types",
+  "subtyping"
+ ],
+ "first_appeared": 1997,
+ "designers": [
+  "Daniel Jackson"
+ ],
+ "summary": "Daniel Jackson's lightweight formal specification language based on first-order relational logic with transitive closure ('everything is a relation'); the Alloy Analyzer finds instances and counterexamples within bounded scopes by translating models to SAT through Kodkod. Alloy 6 (2021) adds mutable signatures/fields and linear temporal logic from Electrum.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper",
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".als"
+ ],
+ "homepage": "https://alloytools.org/",
+ "influenced_by": [
+  "z-notation",
+  "ocl",
+  "first-order-logic",
+  "temporal-logic"
+ ],
+ "related": [
+  {
+   "id": "z-notation",
+   "relation": "family"
+  },
+  {
+   "id": "b-method",
+   "relation": "family"
+  },
+  {
+   "id": "tla-plus",
+   "relation": "family"
+  },
+  {
+   "id": "dimacs-cnf",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "first-order-logic",
+   "relation": "formalizes"
+  }
+ ],
+ "level_notes": {
+  "1": "No external standard. The online Alloy Language Reference (alloytools.org/spec.html, derived from Appendix B of Software Abstractions) together with the CUP grammar in the Analyzer repository define the language; Jackson's TOSEM 2002 paper defines the original (Alloy 2) semantics. Alloy 6 temporal extensions are documented on alloytools.org/alloy6.html.",
+  "0": "The Alloy Analyzer (Java, AlloyTools/org.alloytools.alloy) is the reference implementation: JFlex/CUP front end, AST in edu.mit.csail.sdg.ast, translation to the Kodkod relational model finder, which emits SAT problems. Forge (Brown) and Electrum are derived implementations.",
+  "2": "Software Abstractions (MIT Press, 2006/2012) is paywalled; the free online books Formal Software Design with Alloy 6 and Practical Alloy, plus Hillel Wayne's community docs, are linked section by section."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference (alloytools.org)",
+   "url": "https://alloytools.org/spec.html",
+   "concepts": [
+    "grammar",
+    "formal-semantics"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Lexical Issues (comments, identifiers, reserved words)",
+   "url": "https://alloytools.org/spec.html#lexical-issues",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "identifiers",
+    "keywords"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Namespaces",
+   "url": "https://alloytools.org/spec.html#namespaces",
+   "concepts": [
+    "namespaces",
+    "scope"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Grammar",
+   "url": "https://alloytools.org/spec.html#grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Precedence and Associativity",
+   "url": "https://alloytools.org/spec.html#precedence-and-associativity",
+   "concepts": [
+    "operator-precedence",
+    "operators"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Semantic Basis",
+   "url": "https://alloytools.org/spec.html#semantic-basis",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Instances and Meaning",
+   "url": "https://alloytools.org/spec.html#instances-and-meaning",
+   "concepts": [
+    "formal-semantics",
+    "constraints"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Relational Logic",
+   "url": "https://alloytools.org/spec.html#relational-logic",
+   "concepts": [
+    "logic-foundations",
+    "sets"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Types and Overloading",
+   "url": "https://alloytools.org/spec.html#types-and-overloading",
+   "concepts": [
+    "type-system",
+    "overloading"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Type Errors",
+   "url": "https://alloytools.org/spec.html#type-errors",
+   "concepts": [
+    "type-system",
+    "semantic-analysis"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Field Overloading",
+   "url": "https://alloytools.org/spec.html#field-overloading",
+   "concepts": [
+    "overloading",
+    "records-structs"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Subtypes",
+   "url": "https://alloytools.org/spec.html#subtypes",
+   "concepts": [
+    "subtyping"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Functions and Predicates (typing)",
+   "url": "https://alloytools.org/spec.html#functions-and-predicates",
+   "concepts": [
+    "functions",
+    "function-types"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Multiplicity Keywords",
+   "url": "https://alloytools.org/spec.html#multiplicity-keywords",
+   "concepts": [
+    "constraints"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Module Structure (module, open, parametric modules)",
+   "url": "https://alloytools.org/spec.html#module-structure",
+   "concepts": [
+    "modules",
+    "imports",
+    "program-structure",
+    "generics"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Signature Declarations (sig, extends, in, abstract)",
+   "url": "https://alloytools.org/spec.html#signature-declarations",
+   "concepts": [
+    "records-structs",
+    "subtyping",
+    "abstract-classes"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Declarations",
+   "url": "https://alloytools.org/spec.html#declarations",
+   "concepts": [
+    "variables",
+    "type-annotations"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Multiplicities",
+   "url": "https://alloytools.org/spec.html#multiplicities",
+   "concepts": [
+    "constraints"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Expression Paragraphs (fact, pred, fun, assert)",
+   "url": "https://alloytools.org/spec.html#expression-paragraphs",
+   "concepts": [
+    "functions",
+    "assertions"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Commands (run, check, scopes)",
+   "url": "https://alloytools.org/spec.html#commands",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Expressions",
+   "url": "https://alloytools.org/spec.html#expressions",
+   "concepts": [
+    "expressions"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Relational Expressions (join, product, closure, override)",
+   "url": "https://alloytools.org/spec.html#relational-expressions",
+   "concepts": [
+    "operators",
+    "sets",
+    "expressions"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Integer Expressions",
+   "url": "https://alloytools.org/spec.html#integer-expressions",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy Language Reference — Boolean Expressions (quantifiers, let, implies/else)",
+   "url": "https://alloytools.org/spec.html#boolean-expressions",
+   "concepts": [
+    "booleans",
+    "conditionals",
+    "logic-foundations"
+   ],
+   "authority": "official",
+   "version": "Alloy 4/6",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Alloy.cup — CUP grammar of the Alloy language (linked from the docs as the normative grammar)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/parser/Alloy.cup",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Alloy.lex — JFlex lexical specification",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/parser/Alloy.lex",
+   "concepts": [
+    "lexical-structure",
+    "lexer",
+    "keywords"
+   ],
+   "format": "source-file",
+   "authority": "official",
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Alloy 6 — new features (mutable signatures and fields, temporal logic, Electrum integration)",
+   "url": "https://alloytools.org/alloy6.html",
+   "concepts": [
+    "language-evolution",
+    "verification"
+   ],
+   "authority": "official",
+   "version": "Alloy 6",
+   "year": 2021,
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Alloy: A Lightweight Object Modelling Notation (ACM TOSEM 11(2), 2002)",
+   "url": "https://people.csail.mit.edu/dnj/publications/alloy-journal.pdf",
+   "concepts": [
+    "formal-semantics",
+    "design-rationale"
+   ],
+   "authors": [
+    "Daniel Jackson"
+   ],
+   "year": 2002,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Alloy 4 language reference (PDF, Appendix B of Software Abstractions)",
+   "url": "https://alloytools.org/download/alloy-language-reference.pdf",
+   "concepts": [
+    "grammar",
+    "formal-semantics"
+   ],
+   "authors": [
+    "Daniel Jackson"
+   ],
+   "version": "Alloy 4",
+   "format": "pdf",
+   "authority": "designer",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Alloy API documentation (Javadoc of the Analyzer)",
+   "url": "https://alloytools.org/documentation/alloy-api/index.html",
+   "concepts": [
+    "tooling"
+   ],
+   "authority": "official",
+   "implementation": "Alloy Analyzer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Software Abstractions: Logic, Language, and Analysis (revised edition, MIT Press 2012)",
+   "url": "https://mitpress.mit.edu/9780262528900/software-abstractions/",
+   "concepts": [
+    "design-rationale",
+    "formal-semantics"
+   ],
+   "authors": [
+    "Daniel Jackson"
+   ],
+   "year": 2012,
+   "access": "paywalled",
+   "format": "book",
+   "scope": "whole",
+   "authority": "designer"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "AlloyTools/org.alloytools.alloy — Alloy Analyzer (Java)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy",
+   "concepts": [
+    "tooling",
+    "verification"
+   ],
+   "implementation": "Alloy Analyzer",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — README (build, modules, CLI)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/README.md",
+   "concepts": [
+    "build-systems"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — parser/CompModule.java — module resolution, name lookup and typechecking of paragraphs",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/parser/CompModule.java",
+   "concepts": [
+    "modules",
+    "namespaces",
+    "semantic-analysis",
+    "scope"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — parser/CompUtil.java — parsing entry points and module loading",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/parser/CompUtil.java",
+   "concepts": [
+    "parser",
+    "imports"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — parser/Macro.java — let-macros (undocumented macro feature)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/parser/Macro.java",
+   "concepts": [
+    "macros"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/Sig.java — signatures, subsigs/subsets and fields",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/Sig.java",
+   "concepts": [
+    "records-structs",
+    "subtyping",
+    "ast"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/ExprBinary.java — binary operators (join, product, override, domain/range restriction)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/ExprBinary.java",
+   "concepts": [
+    "operators",
+    "ast"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/ExprUnary.java — unary operators (closure, transpose, cardinality, temporal operators)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/ExprUnary.java",
+   "concepts": [
+    "operators",
+    "ast"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/ExprQt.java — quantifiers and set comprehension",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/ExprQt.java",
+   "concepts": [
+    "logic-foundations",
+    "comprehensions",
+    "ast"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/ExprITE.java — if-then-else (implies/else) expressions",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/ExprITE.java",
+   "concepts": [
+    "conditionals",
+    "ast"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/ExprLet.java — let bindings",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/ExprLet.java",
+   "concepts": [
+    "variables",
+    "scope"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/ExprCall.java — predicate and function calls",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/ExprCall.java",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/Func.java — predicates and functions",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/Func.java",
+   "concepts": [
+    "functions"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/Decl.java — variable/field declarations with multiplicities",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/Decl.java",
+   "concepts": [
+    "variables",
+    "constraints"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/Type.java — relational type system (union of products of basic types)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/Type.java",
+   "concepts": [
+    "type-system",
+    "type-inference"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/Command.java — run/check commands and scopes",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/Command.java",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — ast/Assert.java — internal assertion helper",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/ast/Assert.java",
+   "concepts": [
+    "assertions"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — translator/TranslateAlloyToKodkod.java — translation of Alloy to Kodkod relational formulas",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/translator/TranslateAlloyToKodkod.java",
+   "concepts": [
+    "code-generation-backend",
+    "intermediate-representation",
+    "constraints"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — translator/ScopeComputer.java — computing bounds from command scopes",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/translator/ScopeComputer.java",
+   "concepts": [
+    "constraints",
+    "semantic-analysis"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — translator/BoundsComputer.java — Kodkod upper/lower bounds for signatures and fields",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/translator/BoundsComputer.java",
+   "concepts": [
+    "constraints"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — translator/A4Solution.java — solutions/instances and evaluation",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/translator/A4Solution.java",
+   "concepts": [
+    "verification",
+    "interpreter"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Alloy Analyzer — translator/A4Options.java — solver selection (SAT4J, MiniSat, Glucose, ...)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/java/edu/mit/csail/sdg/translator/A4Options.java",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Alloy standard library util/ordering — total orders over a signature",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/resources/models/util/ordering.als",
+   "concepts": [
+    "standard-library",
+    "generics"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Alloy standard library util/integer — integer functions",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/resources/models/util/integer.als",
+   "concepts": [
+    "standard-library",
+    "integers"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Alloy standard library util/relation — properties of binary relations",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/resources/models/util/relation.als",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Alloy standard library util/boolean — boolean signature",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/resources/models/util/boolean.als",
+   "concepts": [
+    "standard-library",
+    "booleans"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Alloy standard library util/sequniv — sequences (seq) as Int->univ relations",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/resources/models/util/sequniv.als",
+   "concepts": [
+    "standard-library",
+    "lists"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Alloy standard library util/graph — graph predicates (acyclic, rooted, ...)",
+   "url": "https://github.com/AlloyTools/org.alloytools.alloy/blob/master/org.alloytools.alloy.core/src/main/resources/models/util/graph.als",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "Alloy Analyzer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "emina/kodkod — Kodkod, the relational model finder used by Alloy",
+   "url": "https://github.com/emina/kodkod",
+   "concepts": [
+    "constraints",
+    "verification"
+   ],
+   "implementation": "Kodkod",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "haslab/Electrum — Electrum Analyzer (temporal Alloy, merged into Alloy 6)",
+   "url": "https://github.com/haslab/Electrum",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Electrum",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "tnelson/Forge — Forge, an Alloy-derived pedagogic modeling language in Racket",
+   "url": "https://github.com/tnelson/Forge",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Forge",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — community reference",
+   "url": "https://alloy.readthedocs.io/en/latest/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Introduction",
+   "url": "https://alloy.readthedocs.io/en/latest/intro.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Signatures (multiplicity, subtypes, extends/in)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/signatures.html",
+   "concepts": [
+    "records-structs",
+    "subtyping",
+    "constraints"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Sets and Relations (set operators, join, iden)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/sets-and-relations.html",
+   "concepts": [
+    "sets",
+    "operators"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Sets and Relations — Integers",
+   "url": "https://alloy.readthedocs.io/en/latest/language/sets-and-relations.html#integers",
+   "concepts": [
+    "integers"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Expressions and Constraints (let, implies-else, quantifiers)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/expressions-and-constraints.html",
+   "concepts": [
+    "expressions",
+    "conditionals",
+    "constraints"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Expressions and Constraints — Quantifiers",
+   "url": "https://alloy.readthedocs.io/en/latest/language/expressions-and-constraints.html#quantifiers",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Expressions and Constraints — let",
+   "url": "https://alloy.readthedocs.io/en/latest/language/expressions-and-constraints.html#let",
+   "concepts": [
+    "variables",
+    "scope"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Predicates and Functions (parameters, receiver syntax, facts)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/predicates-and-functions.html",
+   "concepts": [
+    "functions",
+    "parameters-arguments",
+    "methods"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Commands (run, check, scopes, steps)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/commands.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Modules (namespaces, parameterized modules, private)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/modules.html",
+   "concepts": [
+    "modules",
+    "imports",
+    "generics",
+    "visibility"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Time (Alloy 6 variables and temporal operators)",
+   "url": "https://alloy.readthedocs.io/en/latest/language/time.html",
+   "concepts": [
+    "verification",
+    "variables"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — util/ordering module",
+   "url": "https://alloy.readthedocs.io/en/latest/modules/ordering.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — util/integer module",
+   "url": "https://alloy.readthedocs.io/en/latest/modules/integer.html",
+   "concepts": [
+    "standard-library",
+    "integers"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — util/boolean module",
+   "url": "https://alloy.readthedocs.io/en/latest/modules/boolean.html",
+   "concepts": [
+    "standard-library",
+    "booleans"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Dynamic models (modelling change over time)",
+   "url": "https://alloy.readthedocs.io/en/latest/techniques/dynamics.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — The Alloy Analyzer",
+   "url": "https://alloy.readthedocs.io/en/latest/tooling/analyzer.html",
+   "concepts": [
+    "tooling"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — The Visualizer",
+   "url": "https://alloy.readthedocs.io/en/latest/tooling/visualizer.html",
+   "concepts": [
+    "tooling"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy Documentation (alloy.readthedocs.io) — Markdown (literate .md models)",
+   "url": "https://alloy.readthedocs.io/en/latest/tooling/markdown.html",
+   "concepts": [
+    "documentation-comments"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 (online book)",
+   "url": "https://haslab.github.io/formal-software-design/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — An overview of Alloy",
+   "url": "https://haslab.github.io/formal-software-design/overview/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Structural design: signature declaration",
+   "url": "https://haslab.github.io/formal-software-design/structural-design/index.html#signature-declaration",
+   "concepts": [
+    "records-structs"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Structural design: field declaration",
+   "url": "https://haslab.github.io/formal-software-design/structural-design/index.html#field-declaration",
+   "concepts": [
+    "records-structs",
+    "constraints"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Structural design: assertion verification",
+   "url": "https://haslab.github.io/formal-software-design/structural-design/index.html#assertion-verification",
+   "concepts": [
+    "assertions",
+    "verification"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Structural design: higher-arity relations",
+   "url": "https://haslab.github.io/formal-software-design/structural-design/index.html#using-higher-arity-relations",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Protocol design: using modules",
+   "url": "https://haslab.github.io/formal-software-design/protocol-design/index.html#using-modules-to-structure-a-specification",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Protocol design: specifying dynamics with mutable fields",
+   "url": "https://haslab.github.io/formal-software-design/protocol-design/index.html#specifying-the-protocol-dynamics",
+   "concepts": [
+    "verification",
+    "automata"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — A relational logic primer: first-order logic in a nutshell",
+   "url": "https://haslab.github.io/formal-software-design/relational-logic/index.html#first-order-logic-in-a-nutshell",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — A relational logic primer: relational operators",
+   "url": "https://haslab.github.io/formal-software-design/relational-logic/index.html#relational-operators",
+   "concepts": [
+    "operators",
+    "sets"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — A relational logic primer: transitive closures",
+   "url": "https://haslab.github.io/formal-software-design/relational-logic/index.html#closures",
+   "concepts": [
+    "operators",
+    "recursion"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — A relational logic primer: set comprehension",
+   "url": "https://haslab.github.io/formal-software-design/relational-logic/index.html#set-comprehension",
+   "concepts": [
+    "comprehensions"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — A relational logic primer: a type system for relational specifications",
+   "url": "https://haslab.github.io/formal-software-design/relational-logic/index.html#a-type-system-for-relational-specifications",
+   "concepts": [
+    "type-system"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — A temporal logic primer",
+   "url": "https://haslab.github.io/formal-software-design/temporal-logic/index.html",
+   "concepts": [
+    "verification",
+    "logic-foundations"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Formal Software Design with Alloy 6 — Modelling tips: using the evaluator",
+   "url": "https://haslab.github.io/formal-software-design/modelling-tips/index.html#using-the-evaluator-to-debug-specifications",
+   "concepts": [
+    "tooling",
+    "testing"
+   ],
+   "authors": [
+    "Julien Brunel",
+    "David Chemouil",
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "year": 2021,
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy (online book)",
+   "url": "https://practicalalloy.github.io/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Structural modeling",
+   "url": "https://practicalalloy.github.io/chapters/structural-modeling/index.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Behavioral modeling",
+   "url": "https://practicalalloy.github.io/chapters/behavioral-modeling/index.html",
+   "concepts": [
+    "verification",
+    "automata"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Type system",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/type-system/index.html",
+   "concepts": [
+    "type-system"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Integers",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/integers/index.html",
+   "concepts": [
+    "integers"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Enumerations",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/enumerations/index.html",
+   "concepts": [
+    "enums"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Modules",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/modules/index.html",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Recursion",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/recursion/index.html",
+   "concepts": [
+    "recursion"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Subset signatures",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/subset-signatures/index.html",
+   "concepts": [
+    "subtyping",
+    "sets"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Relational logic",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/relational-logic/index.html",
+   "concepts": [
+    "logic-foundations",
+    "operators"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Commands and scopes",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/commands/index.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Testing instances",
+   "url": "https://practicalalloy.github.io/chapters/structural-topics/topics/testing-instances/index.html",
+   "concepts": [
+    "testing"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Temporal logic",
+   "url": "https://practicalalloy.github.io/chapters/behavioral-topics/topics/temporal-logic/index.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Macros",
+   "url": "https://practicalalloy.github.io/chapters/behavioral-topics/topics/macros/index.html",
+   "concepts": [
+    "macros"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Sequences",
+   "url": "https://practicalalloy.github.io/chapters/behavioral-topics/topics/sequences/index.html",
+   "concepts": [
+    "lists"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical Alloy — Fairness",
+   "url": "https://practicalalloy.github.io/chapters/behavioral-topics/topics/fairness/index.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Alcino Cunha",
+    "Nuno Macedo"
+   ],
+   "version": "Alloy 6",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Sequences",
+   "url": "https://alloytools.org/quickguide/seq.html",
+   "concepts": [
+    "lists"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Macros",
+   "url": "https://alloytools.org/quickguide/macro.html",
+   "concepts": [
+    "macros"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Private declarations",
+   "url": "https://alloytools.org/quickguide/private.html",
+   "concepts": [
+    "visibility"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Utility modules",
+   "url": "https://alloytools.org/quickguide/util.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Unsat cores",
+   "url": "https://alloytools.org/quickguide/unsat.html",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Skolemization",
+   "url": "https://alloytools.org/quickguide/skolem.html",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Alloy quick guide — Meta capability",
+   "url": "https://alloytools.org/quickguide/meta.html",
+   "concepts": [
+    "reflection"
+   ],
+   "authority": "official",
+   "version": "Alloy 4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Alloy online tutorial (alloytools.org)",
+   "url": "https://alloytools.org/tutorials/online/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Alloy day course — session 2: language (slides)",
+   "url": "https://alloytools.org/tutorials/day-course/s2_language.pdf",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Alloy day course — session 1: logic (slides)",
+   "url": "https://alloytools.org/tutorials/day-course/s1_logic.pdf",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Alloy day course — session 4: dynamic modelling (slides)",
+   "url": "https://alloytools.org/tutorials/day-course/s4_dynamic.pdf",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Alloy compared with Z, VDM, OCL and other notations (comparisons.pdf)",
+   "url": "https://alloytools.org/download/comparisons.pdf",
+   "concepts": [
+    "comparison"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Alloy 6: it's about time (Hillel Wayne)",
+   "url": "https://www.hillelwayne.com/post/alloy6/",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "year": 2021,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Alloy FAQ",
+   "url": "https://alloytools.org/faq/faq.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Alloy4Fun — online Alloy editor and exercises",
+   "url": "http://alloy4fun.inesctec.pt/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Forge documentation (Alloy-like language for teaching)",
+   "url": "https://forge-fm.org/",
+   "concepts": [
+    "comparison"
+   ],
+   "implementation": "Forge",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Kodkod — relational model finder (homepage and docs)",
+   "url": "https://emina.github.io/kodkod/",
+   "concepts": [
+    "constraints"
+   ],
+   "implementation": "Kodkod",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Software Abstractions companion site (softwareabstractions.org)",
+   "url": "http://softwareabstractions.org/",
+   "authors": [
+    "Daniel Jackson"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Alloy (specification language)",
+   "url": "https://en.wikipedia.org/wiki/Alloy_(specification_language)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Alloy",
+   "url": "https://pldb.io/concepts/alloy.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Alloy sample models (alloytools.org/models)",
+   "url": "https://alloytools.org/models.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "Alloy case studies and citations",
+   "url": "https://alloytools.org/citations/case-studies.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "Alloy applications list",
+   "url": "https://alloytools.org/applications.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

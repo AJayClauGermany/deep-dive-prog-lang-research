@@ -1,0 +1,47 @@
+{
+ "id": "micropython",
+ "name": "MicroPython",
+ "categories": ["scripting", "general-purpose", "systems"],
+ "paradigms": ["imperative", "object-oriented", "functional"],
+ "typing": ["dynamic", "strong", "duck"],
+ "first_appeared": 2014,
+ "designers": ["Damien George"],
+ "summary": "Lean reimplementation of Python 3 for microcontrollers and constrained systems, with its own compiler, bytecode VM, native/Viper code emitters, inline assembler and a subset of the standard library; documented deviations from CPython.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".py", ".mpy"],
+ "homepage": "https://micropython.org/",
+ "influenced_by": ["python"],
+ "related": [{"id": "python", "relation": "variant-of"}, {"id": "c", "relation": "implemented-in"}],
+ "level_notes": {"0": "micropython/micropython (core in py/); CircuitPython is Adafruit's fork.", "1": "MicroPython follows the Python Language Reference (mostly 3.4 plus selected later features); its own docs list the differences from CPython."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "micropython/micropython — the MicroPython implementation", "url": "https://github.com/micropython/micropython", "implementation": "MicroPython", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/lexer.c — lexer", "url": "https://github.com/micropython/micropython/blob/master/py/lexer.c", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/grammar.h — grammar rules", "url": "https://github.com/micropython/micropython/blob/master/py/grammar.h", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/parse.c — parser", "url": "https://github.com/micropython/micropython/blob/master/py/parse.c", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/compile.c — compiler (scope analysis and code emission)", "url": "https://github.com/micropython/micropython/blob/master/py/compile.c", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture", "scope"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/vm.c — bytecode virtual machine", "url": "https://github.com/micropython/micropython/blob/master/py/vm.c", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["virtual-machine", "interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/emitnative.c — native and Viper machine-code emitters", "url": "https://github.com/micropython/micropython/blob/master/py/emitnative.c", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "MicroPython py/gc.c — conservative mark-sweep garbage collector", "url": "https://github.com/micropython/micropython/blob/master/py/gc.c", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+  {"level": 0, "kind": "conformance-tests", "title": "MicroPython tests/run-tests.py — test-suite runner (compares against CPython)", "url": "https://github.com/micropython/micropython/blob/master/tests/run-tests.py", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["testing"]},
+  {"level": 0, "kind": "implementation-repository", "title": "CircuitPython — Adafruit fork of MicroPython", "url": "https://github.com/adafruit/circuitpython", "implementation": "CircuitPython", "scope": "whole", "authority": "community", "format": "repository", "access": "open"},
+
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython documentation", "url": "https://docs.micropython.org/en/latest/", "implementation": "MicroPython", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython language and implementation reference", "url": "https://docs.micropython.org/en/latest/reference/index.html", "implementation": "MicroPython", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython differences from CPython — core language", "url": "https://docs.micropython.org/en/latest/genrst/core_language.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison", "versioning-compatibility"]},
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython differences from CPython — builtin types", "url": "https://docs.micropython.org/en/latest/genrst/builtin_types.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["primitive-types", "comparison"]},
+  {"level": 1, "kind": "library-reference", "title": "MicroPython libraries", "url": "https://docs.micropython.org/en/latest/library/index.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "library-reference", "title": "MicroPython — asyncio", "url": "https://docs.micropython.org/en/latest/library/asyncio.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["async-await", "coroutines"]},
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython — inline assembler for Thumb2", "url": "https://docs.micropython.org/en/latest/reference/asm_thumb2_index.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["unsafe"]},
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython — writing interrupt handlers", "url": "https://docs.micropython.org/en/latest/reference/isr_rules.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["concurrency"]},
+  {"level": 1, "kind": "reference-manual", "title": "MicroPython — .mpy files", "url": "https://docs.micropython.org/en/latest/reference/mpyfiles.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["bytecode", "versioning-compatibility"]},
+
+  {"level": 2, "kind": "guide", "title": "MicroPython on microcontrollers — memory-constrained programming", "url": "https://docs.micropython.org/en/latest/reference/constrained.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management"]},
+  {"level": 2, "kind": "guide", "title": "Maximising MicroPython speed (native, viper)", "url": "https://docs.micropython.org/en/latest/reference/speed_python.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["performance"]},
+  {"level": 2, "kind": "internals-guide", "title": "MicroPython internals — the compiler", "url": "https://docs.micropython.org/en/latest/develop/compiler.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 2, "kind": "internals-guide", "title": "MicroPython internals — memory management", "url": "https://docs.micropython.org/en/latest/develop/memorymgt.html", "implementation": "MicroPython", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — MicroPython", "url": "https://en.wikipedia.org/wiki/MicroPython", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — MicroPython", "url": "https://pldb.io/concepts/micropython.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

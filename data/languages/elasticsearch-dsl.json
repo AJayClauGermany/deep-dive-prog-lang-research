@@ -1,0 +1,355 @@
+{
+ "id": "elasticsearch-dsl",
+ "name": "Elasticsearch Query DSL",
+ "aliases": [
+  "Query DSL"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Shay Banon",
+  "Elastic"
+ ],
+ "summary": "JSON-based query language of Elasticsearch (and OpenSearch): nested query clauses (bool, match, term, range, nested...) in query or filter context, combined with a separate JSON aggregation framework.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://www.elastic.co/docs/reference/query-languages/querydsl",
+ "related": [
+  {
+   "id": "lucene-query",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by Elastic's reference documentation; OpenSearch maintains a compatible fork."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "elastic/elasticsearch",
+   "url": "https://github.com/elastic/elasticsearch",
+   "implementation": "Elasticsearch",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BoolQueryBuilder.java — bool query parsing and rewriting",
+   "url": "https://github.com/elastic/elasticsearch/blob/main/server/src/main/java/org/elasticsearch/index/query/BoolQueryBuilder.java",
+   "implementation": "Elasticsearch",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MatchQueryBuilder.java — match query",
+   "url": "https://github.com/elastic/elasticsearch/blob/main/server/src/main/java/org/elasticsearch/index/query/MatchQueryBuilder.java",
+   "implementation": "Elasticsearch",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TermsAggregationBuilder.java — terms aggregation",
+   "url": "https://github.com/elastic/elasticsearch/blob/main/server/src/main/java/org/elasticsearch/search/aggregations/bucket/terms/TermsAggregationBuilder.java",
+   "implementation": "Elasticsearch",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "OpenSearch — Apache-2.0 fork with compatible Query DSL",
+   "url": "https://github.com/opensearch-project/OpenSearch",
+   "implementation": "OpenSearch",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Elasticsearch Query DSL reference",
+   "url": "https://www.elastic.co/docs/reference/query-languages/querydsl",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — Query and filter context",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-filter-context",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — Compound queries",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/compound-queries",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — bool query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-bool-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — Full-text queries",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/full-text-queries",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — match query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-match-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — term query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-term-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — range query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-range-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — regexp query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-regexp-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — Joining queries",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/joining-queries",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — nested query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-nested-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — function_score query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-function-score-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — script query",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-script-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Query DSL — query_string query (Lucene syntax)",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-query-string-query",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Elasticsearch aggregations reference",
+   "url": "https://www.elastic.co/docs/reference/aggregations/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Aggregations — terms aggregation",
+   "url": "https://www.elastic.co/docs/reference/aggregations/search-aggregations-bucket-terms-aggregation",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Aggregations — date_histogram aggregation",
+   "url": "https://www.elastic.co/docs/reference/aggregations/search-aggregations-bucket-datehistogram-aggregation",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "time-series"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Elastic — Query DSL guide (explore and analyze)",
+   "url": "https://www.elastic.co/docs/explore-analyze/query-filter/languages/querydsl",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Elasticsearch",
+   "url": "https://en.wikipedia.org/wiki/Elasticsearch",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

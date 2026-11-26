@@ -1,0 +1,1222 @@
+{
+ "id": "agda",
+ "name": "Agda",
+ "categories": [
+  "functional",
+  "proof-assistant"
+ ],
+ "paradigms": [
+  "functional",
+  "dependently-typed"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "dependent",
+  "inferred"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "Ulf Norell"
+ ],
+ "summary": "Dependently typed total functional programming language and proof assistant based on Martin-Löf type theory, with dependent pattern matching, mixfix operators, interactive hole-driven development, and extensions such as cubical type theory and sized types.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".agda",
+  ".lagda",
+  ".lagda.md"
+ ],
+ "homepage": "https://wiki.portal.chalmers.se/agda/",
+ "influenced_by": [
+  "haskell",
+  "epigram",
+  "cayenne",
+  "rocq"
+ ],
+ "related": [
+  {
+   "id": "haskell",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "haskell",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "cubical-agda",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal specification; the Agda documentation's language reference and Norell's 2007 thesis describe the language. Agda 2 is a complete redesign of the earlier Agda/Alfa systems.",
+  "0": "The Haskell implementation agda/agda is the definition; the type checker lives under src/full/Agda/TypeChecking, the MAlonzo (GHC) and JS backends under Agda/Compiler."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "agda/agda — Agda type checker, compilers and Emacs mode",
+   "url": "https://github.com/agda/agda",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Syntax/Parser/Parser.y — Happy grammar",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Syntax/Parser/Parser.y",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Syntax/Parser/Lexer.x — Alex lexer (layout)",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Syntax/Parser/Lexer.x",
+   "concepts": [
+    "lexer",
+    "whitespace-layout"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Syntax/Concrete/Operators.hs — mixfix operator parsing",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Syntax/Concrete/Operators.hs",
+   "concepts": [
+    "operators",
+    "operator-precedence",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Syntax/Scope/Monad.hs — scope checking",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Syntax/Scope/Monad.hs",
+   "concepts": [
+    "scope",
+    "modules"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Syntax/Internal.hs — internal core syntax",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Syntax/Internal.hs",
+   "concepts": [
+    "ast",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Rules/Term.hs — bidirectional checking of terms",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Rules/Term.hs",
+   "concepts": [
+    "type-inference",
+    "dependent-types",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Rules/LHS.hs — dependent pattern matching (unification of left-hand sides)",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Rules/LHS.hs",
+   "concepts": [
+    "pattern-matching",
+    "unification"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Rules/Data.hs — data type declarations",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Rules/Data.hs",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Rules/Record.hs — record declarations",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Rules/Record.hs",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Conversion.hs — definitional equality",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Conversion.hs",
+   "concepts": [
+    "type-equivalence",
+    "reduction"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Reduce.hs — evaluation/normalisation",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Reduce.hs",
+   "concepts": [
+    "reduction",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/MetaVars.hs — metavariables and implicit argument solving",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/MetaVars.hs",
+   "concepts": [
+    "type-inference",
+    "unification"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/InstanceArguments.hs — instance search",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/InstanceArguments.hs",
+   "concepts": [
+    "traits-typeclasses"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Coverage.hs — coverage checking",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Coverage.hs",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Positivity.hs — positivity checker",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Positivity.hs",
+   "concepts": [
+    "recursive-types",
+    "type-soundness"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Termination/TermCheck.hs — size-change termination checker",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Termination/TermCheck.hs",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TypeChecking/Unquote.hs — reflection / macros",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/TypeChecking/Unquote.hs",
+   "concepts": [
+    "reflection",
+    "macros"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Compiler/MAlonzo/Compiler.hs — GHC backend",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Compiler/MAlonzo/Compiler.hs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Compiler/JS/Compiler.hs — JavaScript backend",
+   "url": "https://github.com/agda/agda/blob/master/src/full/Agda/Compiler/JS/Compiler.hs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Agda (agda/agda)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "agda/agda-stdlib — the Agda standard library",
+   "url": "https://github.com/agda/agda-stdlib",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "agda-stdlib",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "agda-stdlib Data/List/Base.agda — lists",
+   "url": "https://github.com/agda/agda-stdlib/blob/master/src/Data/List/Base.agda",
+   "concepts": [
+    "lists",
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "agda-stdlib",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda documentation — Language reference",
+   "url": "https://agda.readthedocs.io/en/latest/language/index.html",
+   "concepts": [
+    "type-system",
+    "dependent-types"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Lexical structure",
+   "url": "https://agda.readthedocs.io/en/latest/language/lexical-structure.html",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "identifiers",
+    "keywords",
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Core language",
+   "url": "https://agda.readthedocs.io/en/latest/language/core-language.html",
+   "concepts": [
+    "formal-semantics",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Built-ins",
+   "url": "https://agda.readthedocs.io/en/latest/language/built-ins.html",
+   "concepts": [
+    "primitive-types",
+    "strings",
+    "integers",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Data types",
+   "url": "https://agda.readthedocs.io/en/latest/language/data-types.html",
+   "concepts": [
+    "algebraic-data-types",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Record types",
+   "url": "https://agda.readthedocs.io/en/latest/language/record-types.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Function definitions (pattern matching)",
+   "url": "https://agda.readthedocs.io/en/latest/language/function-definitions.html",
+   "concepts": [
+    "functions",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Function types",
+   "url": "https://agda.readthedocs.io/en/latest/language/function-types.html",
+   "concepts": [
+    "function-types",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Lambda abstraction",
+   "url": "https://agda.readthedocs.io/en/latest/language/lambda-abstraction.html",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Let and where",
+   "url": "https://agda.readthedocs.io/en/latest/language/let-and-where.html",
+   "concepts": [
+    "variables",
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Implicit arguments",
+   "url": "https://agda.readthedocs.io/en/latest/language/implicit-arguments.html",
+   "concepts": [
+    "type-inference",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Instance arguments",
+   "url": "https://agda.readthedocs.io/en/latest/language/instance-arguments.html",
+   "concepts": [
+    "traits-typeclasses"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — With-abstraction",
+   "url": "https://agda.readthedocs.io/en/latest/language/with-abstraction.html",
+   "concepts": [
+    "pattern-matching",
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Copatterns",
+   "url": "https://agda.readthedocs.io/en/latest/language/copatterns.html",
+   "concepts": [
+    "pattern-matching",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Coinduction",
+   "url": "https://agda.readthedocs.io/en/latest/language/coinduction.html",
+   "concepts": [
+    "lazy-evaluation",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Coverage checking",
+   "url": "https://agda.readthedocs.io/en/latest/language/coverage-checking.html",
+   "concepts": [
+    "pattern-matching",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Termination checking",
+   "url": "https://agda.readthedocs.io/en/latest/language/termination-checking.html",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Positivity checking",
+   "url": "https://agda.readthedocs.io/en/latest/language/positivity-checking.html",
+   "concepts": [
+    "type-soundness",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Mutual recursion",
+   "url": "https://agda.readthedocs.io/en/latest/language/mutual-recursion.html",
+   "concepts": [
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Module system",
+   "url": "https://agda.readthedocs.io/en/latest/language/module-system.html",
+   "concepts": [
+    "modules",
+    "imports",
+    "namespaces",
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Mixfix operators",
+   "url": "https://agda.readthedocs.io/en/latest/language/mixfix-operators.html",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Syntax declarations",
+   "url": "https://agda.readthedocs.io/en/latest/language/syntax-declarations.html",
+   "concepts": [
+    "macros"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Pattern synonyms",
+   "url": "https://agda.readthedocs.io/en/latest/language/pattern-synonyms.html",
+   "concepts": [
+    "pattern-matching",
+    "macros"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Universe levels",
+   "url": "https://agda.readthedocs.io/en/latest/language/universe-levels.html",
+   "concepts": [
+    "type-system",
+    "generics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Sort system",
+   "url": "https://agda.readthedocs.io/en/latest/language/sort-system.html",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Prop",
+   "url": "https://agda.readthedocs.io/en/latest/language/prop.html",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Postulates",
+   "url": "https://agda.readthedocs.io/en/latest/language/postulates.html",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Abstract definitions",
+   "url": "https://agda.readthedocs.io/en/latest/language/abstract-definitions.html",
+   "concepts": [
+    "encapsulation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Opaque definitions",
+   "url": "https://agda.readthedocs.io/en/latest/language/opaque-definitions.html",
+   "concepts": [
+    "encapsulation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Reflection",
+   "url": "https://agda.readthedocs.io/en/latest/language/reflection.html",
+   "concepts": [
+    "reflection",
+    "macros",
+    "quotation-homoiconicity"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Rewriting",
+   "url": "https://agda.readthedocs.io/en/latest/language/rewriting.html",
+   "concepts": [
+    "rewriting"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Sized types",
+   "url": "https://agda.readthedocs.io/en/latest/language/sized-types.html",
+   "concepts": [
+    "recursion",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Without K",
+   "url": "https://agda.readthedocs.io/en/latest/language/without-k.html",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Cubical",
+   "url": "https://agda.readthedocs.io/en/latest/language/cubical.html",
+   "concepts": [
+    "logic-foundations",
+    "type-equivalence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Irrelevance",
+   "url": "https://agda.readthedocs.io/en/latest/language/irrelevance.html",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Run-time irrelevance",
+   "url": "https://agda.readthedocs.io/en/latest/language/runtime-irrelevance.html",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Foreign function interface",
+   "url": "https://agda.readthedocs.io/en/latest/language/foreign-function-interface.html",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Pragmas",
+   "url": "https://agda.readthedocs.io/en/latest/language/pragmas.html",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Safe Agda",
+   "url": "https://agda.readthedocs.io/en/latest/language/safe-agda.html",
+   "concepts": [
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Syntactic sugar (do-notation, idiom brackets)",
+   "url": "https://agda.readthedocs.io/en/latest/language/syntactic-sugar.html",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Literal overloading",
+   "url": "https://agda.readthedocs.io/en/latest/language/literal-overloading.html",
+   "concepts": [
+    "literals",
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Generalization of declared variables",
+   "url": "https://agda.readthedocs.io/en/latest/language/generalization-of-declared-variables.html",
+   "concepts": [
+    "generics",
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Telescopes",
+   "url": "https://agda.readthedocs.io/en/latest/language/telescopes.html",
+   "concepts": [
+    "parameters-arguments",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Modalities",
+   "url": "https://agda.readthedocs.io/en/latest/language/modalities.html",
+   "concepts": [
+    "effect-systems",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda language reference — Guarded Cubical",
+   "url": "https://agda.readthedocs.io/en/latest/language/guarded.html",
+   "concepts": [
+    "recursion",
+    "fixed-points"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Agda documentation — Compilers (GHC, JS backends)",
+   "url": "https://agda.readthedocs.io/en/latest/tools/compilers.html",
+   "concepts": [
+    "code-generation-backend",
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Agda CHANGELOG",
+   "url": "https://github.com/agda/agda/blob/master/CHANGELOG.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Agda standard library (browsable HTML)",
+   "url": "https://agda.github.io/agda-stdlib/master/",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Towards a practical programming language based on dependent type theory (PhD thesis)",
+   "url": "https://www.cse.chalmers.se/~ulfn/papers/thesis.pdf",
+   "concepts": [
+    "design-rationale",
+    "pattern-matching",
+    "dependent-types"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Ulf Norell"
+   ],
+   "year": 2007,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Agda documentation — Hello world",
+   "url": "https://agda.readthedocs.io/en/latest/getting-started/hello-world.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dependently Typed Programming in Agda (AFP 2008 lecture notes)",
+   "url": "https://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf",
+   "concepts": [
+    "dependent-types",
+    "pattern-matching"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Ulf Norell"
+   ],
+   "year": 2008,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Programming Language Foundations in Agda (PLFA)",
+   "url": "https://plfa.github.io/",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Philip Wadler",
+    "Wen Kokke",
+    "Jeremy G. Siek"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "PLFA — Naturals",
+   "url": "https://plfa.github.io/Naturals/",
+   "concepts": [
+    "integers",
+    "recursion",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "PLFA — Induction",
+   "url": "https://plfa.github.io/Induction/",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "PLFA — Relations",
+   "url": "https://plfa.github.io/Relations/",
+   "concepts": [
+    "dependent-types",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "PLFA — Lists",
+   "url": "https://plfa.github.io/Lists/",
+   "concepts": [
+    "lists",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "PLFA — Lambda (formalising the lambda calculus)",
+   "url": "https://plfa.github.io/Lambda/",
+   "concepts": [
+    "formal-semantics",
+    "substitution-binding"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn Agda in Y minutes",
+   "url": "https://learnxinyminutes.com/agda/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Agda (programming language) — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Agda_(programming_language)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Agda — PLDB",
+   "url": "https://pldb.io/concepts/agda.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

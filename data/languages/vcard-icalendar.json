@@ -1,0 +1,632 @@
+{
+ "id": "vcard-icalendar",
+ "name": "iCalendar / vCard",
+ "aliases": [
+  "iCal",
+  "ICS",
+  "VCF",
+  "RFC 5545",
+  "RFC 6350"
+ ],
+ "categories": [
+  "data-serialization",
+  "protocol"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "typed values"
+ ],
+ "first_appeared": 1995,
+ "designers": [
+  "Versit Consortium",
+  "IETF calsify / vcarddav working groups"
+ ],
+ "summary": "Line-oriented text formats for calendar data (iCalendar, RFC 5545) and contact data (vCard, RFC 6350): nested BEGIN/END components containing NAME;PARAM=value:VALUE content lines with folding, backslash escaping and typed values (DATE-TIME, RECUR rules, URIs). Shared descendants of the Versit vCalendar/vCard formats, with JSON (jCal/jCard) and XML (xCal/xCard) mappings.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "file_extensions": [
+  ".ics",
+  ".ifb",
+  ".vcf",
+  ".vcard"
+ ],
+ "homepage": "https://icalendar.org/",
+ "level_notes": {
+  "1": "IETF RFCs: 5545 (iCalendar core), 5546 (iTIP), 7986 (new properties), 6350 (vCard 4.0), 2426 (vCard 3.0), plus JSON/XML mappings 7265/7095/6321/6351."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.1 Content lines (folding)",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar",
+    "whitespace-layout"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.1.1 List and field separators",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.1.3 Binary content",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.1.3",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.2 Property parameters",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.2",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.3 Property value data types",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.3",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "data-model"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.3.5 DATE-TIME",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.3.5",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.3.10 RECUR (recurrence rules)",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.3.10",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.3.11 TEXT (escaping)",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.3.11",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.4 iCalendar object",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.4",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.6 Calendar components",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.6",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "records-structs"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.8.4 Component properties: relationship (UID, RELATED-TO)",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.8.4",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 3.8.8 Miscellaneous / non-standard (X-) and IANA properties",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-3.8.8",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 4 iCalendar object examples",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-4",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5545 iCalendar — 7 Security considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc5545.html#section-7",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ],
+   "year": 2009,
+   "authors": [
+    "B. Desruisseaux"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 3.3 ABNF format definition",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-3.3",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 3.4 Property value escaping",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-3.4",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 4 Property value data types",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-4",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 5 Property parameters",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-5",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 6 vCard properties",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-6",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "data-model"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 6.1.4 KIND (individual, group, org, location)",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-6.1.4",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 8 Example: author of this document",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-8",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6350 vCard 4.0 — 9 Security considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc6350.html#section-9",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ],
+   "year": 2011,
+   "authors": [
+    "S. Perreault"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5546 — iTIP — iCalendar Transport-Independent Interoperability Protocol",
+   "url": "https://www.rfc-editor.org/rfc/rfc5546.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "processes-system"
+   ],
+   "year": 2009
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7986 — New Properties for iCalendar",
+   "url": "https://www.rfc-editor.org/rfc/rfc7986.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ],
+   "year": 2016
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 2426 — vCard MIME Directory Profile (vCard 3.0)",
+   "url": "https://www.rfc-editor.org/rfc/rfc2426.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "history"
+   ],
+   "year": 1998
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7265 — jCal: the JSON format for iCalendar",
+   "url": "https://www.rfc-editor.org/rfc/rfc7265.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ],
+   "year": 2014
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7095 — jCard: the JSON format for vCard",
+   "url": "https://www.rfc-editor.org/rfc/rfc7095.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ],
+   "year": 2014
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6321 — xCal: the XML format for iCalendar",
+   "url": "https://www.rfc-editor.org/rfc/rfc6321.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ],
+   "year": 2011
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4791 — CalDAV — calendaring extensions to WebDAV",
+   "url": "https://www.rfc-editor.org/rfc/rfc4791.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "year": 2007
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "libical — reference C library for iCalendar",
+   "url": "https://github.com/libical/libical",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "libical"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libical — icalparser.c",
+   "url": "https://github.com/libical/libical/blob/master/src/libical/icalparser.c",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "implementation": "libical"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ical.js (Mozilla) — lib/ical/parse.js (jCal-producing parser)",
+   "url": "https://github.com/kewisch/ical.js/blob/main/lib/ical/parse.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ],
+   "implementation": "ical.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ical4j — Java iCalendar/vCard library",
+   "url": "https://github.com/ical4j/ical4j",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "ical4j"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "collective/icalendar — Python iCalendar library",
+   "url": "https://github.com/collective/icalendar",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "icalendar (Python)"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "icalendar.org — iCalendar specification browser and validator",
+   "url": "https://icalendar.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — iCalendar",
+   "url": "https://en.wikipedia.org/wiki/ICalendar",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — vCard",
+   "url": "https://en.wikipedia.org/wiki/VCard",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

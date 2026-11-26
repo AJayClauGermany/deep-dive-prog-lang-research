@@ -1,0 +1,263 @@
+{
+ "id": "aiger",
+ "name": "AIGER",
+ "aliases": [
+  "AIG format",
+  ".aag/.aig"
+ ],
+ "categories": [
+  "specification-modeling",
+  "data-serialization",
+  "hardware-description"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2006,
+ "designers": [
+  "Armin Biere"
+ ],
+ "summary": "A compact ASCII (.aag) and binary (.aig) format for And-Inverter Graphs: literal-numbered inputs, latches, outputs and AND gates, extended in AIGER 1.9 with bad-state, invariant constraint, justice and fairness sections; the standard input format of the Hardware Model Checking Competition and of synthesis tools such as ABC.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".aag",
+  ".aig"
+ ],
+ "homepage": "https://fmv.jku.at/aiger/",
+ "level_notes": {
+  "1": "The FORMAT document and the FMV technical reports define the format.",
+  "0": "The aiger reference library and utilities by Armin Biere.",
+  "2": "Little secondary literature beyond competition reports and tool papers; the defining papers double as tutorials."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The AIGER And-Inverter Graph (AIG) Format (FORMAT)",
+   "url": "https://fmv.jku.at/aiger/FORMAT",
+   "concepts": [
+    "grammar",
+    "encoding-wire-format"
+   ],
+   "authority": "official",
+   "authors": [
+    "Armin Biere"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "AIGER homepage",
+   "url": "https://fmv.jku.at/aiger/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Biere — The AIGER And-Inverter Graph (AIG) Format Version 20071012 (FMV TR 07/1)",
+   "url": "https://fmv.jku.at/papers/Biere-FMV-TR-07-1.pdf",
+   "concepts": [
+    "grammar"
+   ],
+   "authors": [
+    "Armin Biere"
+   ],
+   "year": 2007,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Biere, Heljanko, Wieringa — AIGER 1.9 and Beyond (FMV TR 11/2)",
+   "url": "https://fmv.jku.at/papers/BiereHeljankoWieringa-FMV-TR-11-2.pdf",
+   "concepts": [
+    "language-evolution",
+    "verification"
+   ],
+   "authors": [
+    "Armin Biere",
+    "Keijo Heljanko",
+    "Siert Wieringa"
+   ],
+   "year": 2011,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "AIGER NEWS",
+   "url": "https://fmv.jku.at/aiger/NEWS",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "arminbiere/aiger — reference library and tools",
+   "url": "https://github.com/arminbiere/aiger",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AIGER library — aiger.h (API and data model)",
+   "url": "https://github.com/arminbiere/aiger/blob/master/aiger.h",
+   "concepts": [
+    "data-model"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AIGER library — aiger.c (reader/writer, ASCII and binary)",
+   "url": "https://github.com/arminbiere/aiger/blob/master/aiger.c",
+   "concepts": [
+    "parser",
+    "serialization",
+    "encoding-wire-format"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AIGER library — aigtoaig.c (format conversion)",
+   "url": "https://github.com/arminbiere/aiger/blob/master/aigtoaig.c",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AIGER library — aigsim.c (simulator)",
+   "url": "https://github.com/arminbiere/aiger/blob/master/aigsim.c",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AIGER library — aigtocnf.c (Tseitin CNF encoding)",
+   "url": "https://github.com/arminbiere/aiger/blob/master/aigtocnf.c",
+   "concepts": [
+    "encodings"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AIGER library — aigtosmv.c (translation to SMV)",
+   "url": "https://github.com/arminbiere/aiger/blob/master/aigtosmv.c",
+   "concepts": [
+    "code-generation"
+   ],
+   "implementation": "AIGER (reference)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ABC — system for sequential synthesis and verification",
+   "url": "https://github.com/berkeley-abc/abc",
+   "concepts": [
+    "synthesis",
+    "verification"
+   ],
+   "implementation": "ABC",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "Hardware Model Checking Competition 2020",
+   "url": "https://fmv.jku.at/hwmcc20/",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — And-inverter graph",
+   "url": "https://en.wikipedia.org/wiki/And-inverter_graph",
+   "concepts": [
+    "history",
+    "data-model"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

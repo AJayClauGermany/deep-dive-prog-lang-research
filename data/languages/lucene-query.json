@@ -1,0 +1,373 @@
+{
+ "id": "lucene-query",
+ "name": "Lucene query syntax",
+ "aliases": [
+  "Lucene classic query parser syntax"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "Doug Cutting",
+  "Apache Lucene project"
+ ],
+ "summary": "Compact full-text search syntax of Apache Lucene's classic query parser: field:term clauses, +/- and AND/OR/NOT, phrases, wildcards, regexes, fuzzy and proximity operators, ranges and boosts; reused by Solr, Elasticsearch query_string and Kibana.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "homepage": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html",
+ "level_notes": {
+  "1": "Defined by the Lucene query parser documentation and the JavaCC grammar; Solr and Elasticsearch extend it."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apache/lucene — Lucene search library",
+   "url": "https://github.com/apache/lucene",
+   "implementation": "Apache Lucene",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "classic/QueryParser.jj — JavaCC grammar of the classic query syntax",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParser.jj",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "classic/QueryParserBase.java — building Query objects from parsed syntax",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "flexible/standard StandardSyntaxParser.jj — flexible query parser grammar",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/queryparser/src/java/org/apache/lucene/queryparser/flexible/standard/parser/StandardSyntaxParser.jj",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "search/BooleanQuery.java — boolean clause combination",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/core/src/java/org/apache/lucene/search/BooleanQuery.java",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "set-operations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "search/WildcardQuery.java",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/core/src/java/org/apache/lucene/search/WildcardQuery.java",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "search/FuzzyQuery.java — Levenshtein automata",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/core/src/java/org/apache/lucene/search/FuzzyQuery.java",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "util/automaton/RegExp.java — Lucene regular-expression syntax",
+   "url": "https://github.com/apache/lucene/blob/main/lucene/core/src/java/org/apache/lucene/util/automaton/RegExp.java",
+   "implementation": "Apache Lucene",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "automata"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene classic query parser syntax",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html",
+   "version": "10.3",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Terms",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Terms",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Fields",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Fields",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Wildcard searches",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Wildcard_Searches",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Regular expression searches",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Regexp_Searches",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Fuzzy searches",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Fuzzy_Searches",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Proximity searches",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Proximity_Searches",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Range searches",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Range_Searches",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Boosting a term",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Boosting_a_Term",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Boolean operators",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Boolean_operators",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Grouping",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Grouping",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene query syntax — Escaping special characters",
+   "url": "https://lucene.apache.org/core/10_3_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Escaping_Special_Characters",
+   "version": "10.3",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Lucene 2.9 Query Parser Syntax (historical page)",
+   "url": "https://lucene.apache.org/core/2_9_4/queryparsersyntax.html",
+   "version": "2.9",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apache Solr Reference Guide — Standard Query Parser",
+   "url": "https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html",
+   "implementation": "Solr",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Elasticsearch — query_string query syntax",
+   "url": "https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-query-string-query",
+   "implementation": "Elasticsearch",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Apache Lucene",
+   "url": "https://en.wikipedia.org/wiki/Apache_Lucene",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

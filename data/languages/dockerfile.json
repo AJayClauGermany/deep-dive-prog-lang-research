@@ -1,0 +1,421 @@
+{
+ "id": "dockerfile",
+ "name": "Dockerfile",
+ "aliases": [
+  "Dockerfile",
+  "Containerfile"
+ ],
+ "categories": [
+  "build",
+  "domain-specific",
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative",
+  "imperative"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "Solomon Hykes",
+  "Docker, Inc."
+ ],
+ "summary": "Instruction-per-line language for describing container image builds (FROM, RUN, COPY, ENV, ARG, CMD ...), interpreted by Docker/BuildKit and compatible builders such as Buildah/Podman; RUN bodies are shell commands, and the frontend supports parser directives, variable substitution, heredocs and multi-stage builds.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  "Dockerfile",
+  "Containerfile",
+  ".dockerfile"
+ ],
+ "homepage": "https://docs.docker.com/reference/dockerfile/",
+ "related": [
+  {
+   "id": "posix-sh",
+   "relation": "embeds"
+  },
+  {
+   "id": "make",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "BuildKit's Dockerfile frontend (moby/buildkit frontend/dockerfile) is the reference implementation; Buildah implements the same language for Containerfiles.",
+  "1": "The Dockerfile reference on docs.docker.com is the definition; no independent standard (the OCI image spec covers the output, not the language).",
+  "2": "Docker's build guides and best-practice pages.",
+  "3": "Wikipedia, PLDB."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "moby/buildkit — BuildKit (Dockerfile frontend)",
+   "url": "https://github.com/moby/buildkit",
+   "concepts": [
+    "interpreter"
+   ],
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "BuildKit",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BuildKit parser/parser.go — Dockerfile line parser",
+   "url": "https://github.com/moby/buildkit/blob/master/frontend/dockerfile/parser/parser.go",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "access": "open",
+   "implementation": "BuildKit",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BuildKit instructions/parse.go — instruction parsing into commands",
+   "url": "https://github.com/moby/buildkit/blob/master/frontend/dockerfile/instructions/parse.go",
+   "concepts": [
+    "parser",
+    "ast"
+   ],
+   "access": "open",
+   "implementation": "BuildKit",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BuildKit shell/lex.go — variable substitution / word expansion",
+   "url": "https://github.com/moby/buildkit/blob/master/frontend/dockerfile/shell/lex.go",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ],
+   "access": "open",
+   "implementation": "BuildKit",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BuildKit dockerfile2llb/convert.go — compilation to LLB build graph",
+   "url": "https://github.com/moby/buildkit/blob/master/frontend/dockerfile/dockerfile2llb/convert.go",
+   "concepts": [
+    "code-generation-backend",
+    "intermediate-representation"
+   ],
+   "access": "open",
+   "implementation": "BuildKit",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "containers/buildah — alternative Containerfile builder",
+   "url": "https://github.com/containers/buildah",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Buildah",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference",
+   "url": "https://docs.docker.com/reference/dockerfile/",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "vendor",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — Format",
+   "url": "https://docs.docker.com/reference/dockerfile/#format",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "program-structure"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — Parser directives",
+   "url": "https://docs.docker.com/reference/dockerfile/#parser-directives",
+   "concepts": [
+    "preprocessor",
+    "annotations-attributes"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — escape directive",
+   "url": "https://docs.docker.com/reference/dockerfile/#escape",
+   "concepts": [
+    "escaping",
+    "lexical-structure"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — Environment replacement",
+   "url": "https://docs.docker.com/reference/dockerfile/#environment-replacement",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — Shell and exec form",
+   "url": "https://docs.docker.com/reference/dockerfile/#shell-and-exec-form",
+   "concepts": [
+    "processes-system",
+    "command-line"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — FROM (stages)",
+   "url": "https://docs.docker.com/reference/dockerfile/#from",
+   "concepts": [
+    "imports",
+    "program-structure"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — RUN",
+   "url": "https://docs.docker.com/reference/dockerfile/#run",
+   "concepts": [
+    "processes-system"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — RUN --mount",
+   "url": "https://docs.docker.com/reference/dockerfile/#run---mount",
+   "concepts": [
+    "file-io",
+    "resource-management"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — ENV",
+   "url": "https://docs.docker.com/reference/dockerfile/#env",
+   "concepts": [
+    "variables"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — ARG",
+   "url": "https://docs.docker.com/reference/dockerfile/#arg",
+   "concepts": [
+    "variables",
+    "parameters-arguments"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — ARG scope",
+   "url": "https://docs.docker.com/reference/dockerfile/#scope",
+   "concepts": [
+    "scope"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — COPY",
+   "url": "https://docs.docker.com/reference/dockerfile/#copy",
+   "concepts": [
+    "file-io"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — CMD and ENTRYPOINT interaction",
+   "url": "https://docs.docker.com/reference/dockerfile/#understand-how-cmd-and-entrypoint-interact",
+   "concepts": [
+    "command-line"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — Here-documents",
+   "url": "https://docs.docker.com/reference/dockerfile/#here-documents",
+   "concepts": [
+    "strings",
+    "literals"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dockerfile reference — ONBUILD",
+   "url": "https://docs.docker.com/reference/dockerfile/#onbuild",
+   "concepts": [
+    "macros"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Docker docs — Multi-stage builds",
+   "url": "https://docs.docker.com/build/building/multi-stage/",
+   "concepts": [
+    "program-structure",
+    "build-systems"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "vendor",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Docker docs — Building best practices",
+   "url": "https://docs.docker.com/build/building/best-practices/",
+   "concepts": [
+    "style-conventions"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "vendor",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Docker docs — Build cache",
+   "url": "https://docs.docker.com/build/cache/",
+   "concepts": [
+    "performance"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "vendor",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Docker (software)",
+   "url": "https://en.wikipedia.org/wiki/Docker_(software)",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Dockerfile",
+   "url": "https://pldb.io/concepts/dockerfile.html",
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

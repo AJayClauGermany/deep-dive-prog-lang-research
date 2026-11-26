@@ -1,0 +1,323 @@
+{
+ "id": "msbuild",
+ "name": "MSBuild",
+ "aliases": [
+  "MSBuild project files",
+  ".csproj/.vbproj/.props/.targets"
+ ],
+ "categories": [
+  "build",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "dependency-driven"
+ ],
+ "first_appeared": 2005,
+ "designers": [
+  "Microsoft"
+ ],
+ "summary": "Microsoft's XML build language: project files declare properties, items (with metadata), targets with dependencies and tasks, evaluated in passes with a string-based condition language, property and item functions, transforms and batching; the basis of .NET SDK-style projects.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".proj",
+  ".csproj",
+  ".vbproj",
+  ".fsproj",
+  ".props",
+  ".targets"
+ ],
+ "homepage": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild",
+ "influenced_by": [
+  "ant"
+ ],
+ "related": [
+  {
+   "id": "xml",
+   "relation": "embeds"
+  },
+  {
+   "id": "ant",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "dotnet/msbuild (C#, open source since 2015).",
+  "1": "MSBuild reference on Microsoft Learn.",
+  "2": "Microsoft walkthroughs.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dotnet/msbuild — source repository",
+   "url": "https://github.com/dotnet/msbuild",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "MSBuild",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MSBuild Evaluation/Evaluator.cs — multi-pass project evaluation",
+   "url": "https://github.com/dotnet/msbuild/blob/main/src/Build/Evaluation/Evaluator.cs",
+   "concepts": [
+    "evaluation-order",
+    "interpreter"
+   ],
+   "access": "open",
+   "implementation": "MSBuild",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MSBuild Evaluation/Expander.cs — property/item/metadata expansion",
+   "url": "https://github.com/dotnet/msbuild/blob/main/src/Build/Evaluation/Expander.cs",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ],
+   "access": "open",
+   "implementation": "MSBuild",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MSBuild Evaluation/Conditionals/Parser.cs — condition expression parser",
+   "url": "https://github.com/dotnet/msbuild/blob/main/src/Build/Evaluation/Conditionals/Parser.cs",
+   "concepts": [
+    "parser",
+    "conditionals"
+   ],
+   "access": "open",
+   "implementation": "MSBuild",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild reference",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-reference",
+   "scope": "whole",
+   "access": "open",
+   "authority": "vendor",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Project file schema reference",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference",
+   "concepts": [
+    "program-structure",
+    "grammar"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Properties",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-properties",
+   "concepts": [
+    "variables"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Items",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-items",
+   "concepts": [
+    "lists",
+    "collections"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Targets",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets",
+   "concepts": [
+    "functions",
+    "build-systems"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Tasks",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-tasks",
+   "concepts": [
+    "statements",
+    "standard-library"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Conditions",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-conditions",
+   "concepts": [
+    "conditionals",
+    "operators"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Choose element",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/choose-element-msbuild",
+   "concepts": [
+    "switch-case"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Property functions",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/property-functions",
+   "concepts": [
+    "standard-library",
+    "interoperability"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Item functions",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/item-functions",
+   "concepts": [
+    "higher-order-functions"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Transforms",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-transforms",
+   "concepts": [
+    "string-formatting"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Batching",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-batching",
+   "concepts": [
+    "loops"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Special characters",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-special-characters",
+   "concepts": [
+    "escaping"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MSBuild docs — Import element",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/import-element-msbuild",
+   "concepts": [
+    "imports"
+   ],
+   "access": "open",
+   "authority": "vendor",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Walkthrough: Create an MSBuild project file from scratch",
+   "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/walkthrough-creating-an-msbuild-project-file-from-scratch",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "vendor",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MSBuild",
+   "url": "https://en.wikipedia.org/wiki/MSBuild",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

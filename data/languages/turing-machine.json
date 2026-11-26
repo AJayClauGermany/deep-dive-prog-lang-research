@@ -1,0 +1,1529 @@
+{
+  "id": "turing-machine",
+  "name": "Turing machine",
+  "aliases": [
+    "a-machine",
+    "automatic machine",
+    "TM",
+    "universal Turing machine"
+  ],
+  "categories": [
+    "theoretical-model",
+    "abstract-machine"
+  ],
+  "paradigms": [
+    "imperative",
+    "state-machine"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 1936,
+  "designers": [
+    "Alan Turing"
+  ],
+  "summary": "Turing's 1936 abstract machine: a finite control reading and writing symbols on an unbounded tape. It defines computability (with the Church-Turing thesis), the universal machine and the halting problem, and the standard cost model for time and space complexity.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "homepage": "https://plato.stanford.edu/entries/turing-machine/",
+  "influenced_by": [],
+  "related": [
+    {
+      "id": "post-canonical-system",
+      "relation": "family"
+    },
+    {
+      "id": "lambda-calculus",
+      "relation": "family"
+    },
+    {
+      "id": "mu-recursive-functions",
+      "relation": "family"
+    },
+    {
+      "id": "linear-bounded-automata",
+      "relation": "family"
+    },
+    {
+      "id": "busy-beaver",
+      "relation": "family"
+    },
+    {
+      "id": "register-machine",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "0": "Theoretical model - level 0 lists mechanisations (Coq library of undecidability, Lean mathlib, Isabelle AFP, the Coq BB(5) proof) and simulator source code; no implementation defines the model.",
+    "1": "Defined by Turing's 1936 paper (with its 1937 correction); Post's independent 1936 formulation and later papers fixing variants and complexity measures are listed as original papers. Several are behind publisher paywalls (doi links report 'blocked').",
+    "2": "Textbooks, lecture notes, SEP articles and web-based interactive simulators."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Turing (1936) — On Computable Numbers, with an Application to the Entscheidungsproblem (scan)",
+      "url": "https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf",
+      "concepts": [
+        "history",
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Alan M. Turing"
+      ],
+      "year": 1936,
+      "notes": "Proc. London Math. Soc. s2-42; defines a-machines, the universal machine and the undecidability of the Entscheidungsproblem."
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Turing (1936) — On Computable Numbers (publisher version, Proc. LMS)",
+      "url": "https://doi.org/10.1112/plms/s2-42.1.230",
+      "concepts": [
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Alan M. Turing"
+      ],
+      "year": 1936
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Turing (1937) — On Computable Numbers: A Correction",
+      "url": "https://doi.org/10.1112/plms/s2-43.6.544",
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Alan M. Turing"
+      ],
+      "year": 1937
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Turing (1937) — Computability and λ-definability (equivalence with lambda calculus)",
+      "url": "https://doi.org/10.2307/2268280",
+      "concepts": [
+        "turing-completeness",
+        "encodings"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Alan M. Turing"
+      ],
+      "year": 1937
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Post (1936) — Finite Combinatory Processes, Formulation 1",
+      "url": "https://doi.org/10.2307/2269031",
+      "concepts": [
+        "automata",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Emil L. Post"
+      ],
+      "year": 1936,
+      "notes": "Independent worker-and-boxes formulation equivalent to Turing machines."
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Shannon (1956) — A Universal Turing Machine with Two Internal States",
+      "url": "https://doi.org/10.1515/9781400882618-007",
+      "concepts": [
+        "turing-completeness",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Claude E. Shannon"
+      ],
+      "year": 1956
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Wang (1957) — A Variant to Turing's Theory of Computing Machines (B-machine)",
+      "url": "https://doi.org/10.1145/320856.320867",
+      "concepts": [
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Hao Wang"
+      ],
+      "year": 1957
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Rado (1962) — On Non-Computable Functions (Bell System Technical Journal, busy beaver)",
+      "url": "https://archive.org/details/bstj41-3-877",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Tibor Radó"
+      ],
+      "year": 1962
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Hartmanis & Stearns (1965) — On the Computational Complexity of Algorithms (multitape TM time classes)",
+      "url": "https://www.ams.org/journals/tran/1965-117-00/S0002-9947-1965-0170805-7/S0002-9947-1965-0170805-7.pdf",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Juris Hartmanis",
+        "Richard E. Stearns"
+      ],
+      "year": 1965
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Hennie & Stearns (1966) — Two-Tape Simulation of Multitape Turing Machines",
+      "url": "https://doi.org/10.1145/321356.321362",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "F. C. Hennie",
+        "R. E. Stearns"
+      ],
+      "year": 1966
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Rogozhin (1996) — Small Universal Turing Machines",
+      "url": "https://doi.org/10.1016/S0304-3975(96)00077-1",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Yurii Rogozhin"
+      ],
+      "year": 1996
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Smith (2007) — Universality of Wolfram's 2,3 Turing Machine (prize proof)",
+      "url": "https://www.wolframscience.com/prizes/tm23/TM23Proof.pdf",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Alex Smith"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "bbchallenge Collaboration (2025) — Determination of the fifth Busy Beaver value",
+      "url": "https://arxiv.org/abs/2509.12337",
+      "concepts": [
+        "turing-completeness",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "year": 2025
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Coq Library of Undecidability Proofs (uds-psl) — mechanised Turing machines and reductions",
+      "url": "https://github.com/uds-psl/coq-library-undecidability",
+      "concepts": [
+        "turing-completeness",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/TM.v — multi-tape Turing machine definition",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/TM.v",
+      "concepts": [
+        "automata",
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/SBTM.v — single-tape binary Turing machines",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/SBTM.v",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/TM_undec.v — undecidability of TM halting",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/TM_undec.v",
+      "concepts": [
+        "turing-completeness",
+        "verification"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/UTM.v — universal Turing machine",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/UTM.v",
+      "concepts": [
+        "turing-completeness",
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/Reductions/mTM_to_TM.v — multi-tape to single-tape simulation",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/Reductions/mTM_to_TM.v",
+      "concepts": [
+        "encodings",
+        "complexity"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/Combinators/While.v — structured TM programming: while combinator",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/Combinators/While.v",
+      "concepts": [
+        "loops",
+        "combinators"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/TM/Combinators/If.v — conditional composition of machines",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/Combinators/If.v",
+      "concepts": [
+        "conditionals",
+        "combinators"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/L/TM/TMinL.v — simulating Turing machines in the call-by-value lambda calculus L",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/L/TM/TMinL.v",
+      "concepts": [
+        "encodings",
+        "turing-completeness",
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability theories/StringRewriting/Reductions/HaltTM_1_to_SR.v — TM halting to string rewriting",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/StringRewriting/Reductions/HaltTM_1_to_SR.v",
+      "concepts": [
+        "rewriting",
+        "encodings"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/TuringMachine/PostTuringMachine.lean (TM0/TM1 models and their equivalence)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/TuringMachine/PostTuringMachine.lean",
+      "concepts": [
+        "automata",
+        "formal-semantics",
+        "encodings"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/TuringMachine/StackTuringMachine.lean (TM2 multi-stack machines)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/TuringMachine/StackTuringMachine.lean",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/TuringMachine/Tape.lean (bidirectional tapes)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/TuringMachine/Tape.lean",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/TuringMachine/Config.lean",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/TuringMachine/Config.lean",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/TuringMachine/ToPartrec.lean (partial recursive functions run on TMs)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/TuringMachine/ToPartrec.lean",
+      "concepts": [
+        "turing-completeness",
+        "encodings"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/TuringMachine/Computable.lean (TM-computable functions, polytime)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/TuringMachine/Computable.lean",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Lean mathlib — Computability/Halting.lean (halting problem, Rice's theorem)",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Computability/Halting.lean",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Lean 4 mathlib"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — Universal Turing Machine (Xu, Zhang, Urban, Joosten)",
+      "url": "https://www.isa-afp.org/entries/Universal_Turing_Machine.html",
+      "concepts": [
+        "turing-completeness",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — The Cook-Levin theorem (multitape TMs, NP-completeness of SAT)",
+      "url": "https://www.isa-afp.org/entries/Cook_Levin.html",
+      "concepts": [
+        "complexity",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Coq-BB5 — Coq proof that BB(5) = 47,176,870",
+      "url": "https://github.com/ccz181078/Coq-BB5",
+      "concepts": [
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Coq-BB5 CoqBB5/BB5/TM.v — Turing machine semantics used for the BB(5) proof",
+      "url": "https://github.com/ccz181078/Coq-BB5/blob/main/CoqBB5/BB5/TM.v",
+      "concepts": [
+        "formal-semantics",
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Coq-BB5 CoqBB5/BB5/BB5_Statement.v — statement of the BB(5) theorem",
+      "url": "https://github.com/ccz181078/Coq-BB5/blob/main/CoqBB5/BB5/BB5_Statement.v",
+      "concepts": [
+        "verification"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "turing-machine-viz — source of the turingmachine.io visual simulator",
+      "url": "https://github.com/aepsilon/turing-machine-viz",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open",
+      "implementation": "turingmachine.io (JavaScript)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "turing-machine-viz src/TuringMachine.js — machine step semantics",
+      "url": "https://github.com/aepsilon/turing-machine-viz/blob/master/src/TuringMachine.js",
+      "concepts": [
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "turingmachine.io (JavaScript)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "turing-machine-viz src/parser.js — YAML transition-table format parser",
+      "url": "https://github.com/aepsilon/turing-machine-viz/blob/master/src/parser.js",
+      "concepts": [
+        "parser",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "turingmachine.io (JavaScript)"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Stanford Encyclopedia of Philosophy — Turing Machines",
+      "url": "https://plato.stanford.edu/entries/turing-machine/",
+      "concepts": [
+        "history",
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Liesbeth De Mol"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 1.1 Turing's Definition",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#TuriDefi",
+      "concepts": [
+        "automata",
+        "history"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 1.2 Post's Definition",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#PostDefi",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 1.3 The Definition Formalized",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#DefiForm",
+      "concepts": [
+        "automata",
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 2.1 Some (Simple) Examples",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#SomeSimpExam",
+      "concepts": [
+        "hello-world",
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 2.3 Turing's Universal Machine",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#TuriUnivMach",
+      "concepts": [
+        "turing-completeness",
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 2.4 The Halting Problem and the Entscheidungsproblem",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#HaltProbEnts",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 2.5 Variations on the Turing machine",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#VariTuriMach",
+      "concepts": [
+        "automata",
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 4. Alternative Historical Models of Computability",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#AlteHistModeComp",
+      "concepts": [
+        "comparison",
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "SEP Turing Machines — 5. Impact of Turing Machines on Computer Science",
+      "url": "https://plato.stanford.edu/entries/turing-machine/#ImpaTuriMachCompScie",
+      "concepts": [
+        "history"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Stanford Encyclopedia of Philosophy — The Church-Turing Thesis",
+      "url": "https://plato.stanford.edu/entries/church-turing/",
+      "concepts": [
+        "turing-completeness",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "B. Jack Copeland"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Stanford Encyclopedia of Philosophy — Computability and Complexity",
+      "url": "https://plato.stanford.edu/entries/computability/",
+      "concepts": [
+        "turing-completeness",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "Stanford Encyclopedia of Philosophy — Alan Turing",
+      "url": "https://plato.stanford.edu/entries/turing/",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "Erickson — Models of Computation: Turing Machines (lecture notes)",
+      "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/models/06-turing-machines.pdf",
+      "concepts": [
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Jeff Erickson"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to Theoretical Computer Science, ch. 7 Loops and infinity: Turing machines",
+      "url": "https://introtcs.org/public/lec_06_loops.html#turing-machines",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Turing machines as programming languages",
+      "url": "https://introtcs.org/public/lec_06_loops.html#turing-machines-as-programming-languages",
+      "concepts": [
+        "automata",
+        "comparison"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Turing equivalence (RAM machines, cellular automata, lambda calculus)",
+      "url": "https://introtcs.org/public/lec_07_other_models.html#turing-equivalence-discussion",
+      "concepts": [
+        "turing-completeness",
+        "comparison"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Universality and the halting problem",
+      "url": "https://introtcs.org/public/lec_08_uncomputability.html#haltingsec",
+      "concepts": [
+        "turing-completeness",
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Barak — Introduction to TCS: Formally defining running time",
+      "url": "https://introtcs.org/public/lec_11_running_time.html#formally-defining-running-time",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Boaz Barak"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Arora & Barak — Computational Complexity: A Modern Approach (draft, ch. 1 The computational model)",
+      "url": "https://theory.cs.princeton.edu/complexity/book.pdf",
+      "concepts": [
+        "complexity",
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Sanjeev Arora",
+        "Boaz Barak"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Open Logic Project — Turing Machines (chapter of Sets, Logic, Computation)",
+      "url": "https://builds.openlogicproject.org/content/turing-machines/turing-machines.pdf",
+      "concepts": [
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Minsky (1967) — Computation: Finite and Infinite Machines (Internet Archive)",
+      "url": "https://archive.org/details/computationfinit0000mins",
+      "concepts": [
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "registration",
+      "authors": [
+        "Marvin Minsky"
+      ],
+      "year": 1967
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Evans — Introduction to Computing, ch. 12 Computability / Machines (Turing machines)",
+      "url": "https://computingbook.org/Machines.pdf",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "David Evans"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Hefferon — Theory of Computation: Making Connections (free textbook)",
+      "url": "https://hefferon.net/computation/",
+      "concepts": [
+        "automata",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Jim Hefferon"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Petzold — The Annotated Turing (companion site)",
+      "url": "https://www.charlespetzold.com/AnnotatedTuring/",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Charles Petzold"
+      ],
+      "year": 2008
+    },
+    {
+      "level": 2,
+      "kind": "course",
+      "title": "MIT OCW 18.404J Theory of Computation (Sipser, Fall 2020)",
+      "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/",
+      "concepts": [
+        "automata",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Michael Sipser"
+      ],
+      "year": 2020
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Aaronson (2020) — The Busy Beaver Frontier",
+      "url": "https://www.scottaaronson.com/papers/bb.pdf",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Scott Aaronson"
+      ],
+      "year": 2020
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Michel — The Busy Beaver Competition: a historical survey",
+      "url": "https://arxiv.org/abs/0906.3749",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Pascal Michel"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Woods & Neary — The complexity of small universal Turing machines: a survey",
+      "url": "https://arxiv.org/abs/1110.2230",
+      "concepts": [
+        "turing-completeness",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Damien Woods",
+        "Turlough Neary"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Wolfram — A New Kind of Science: Turing Machines (p. 78)",
+      "url": "https://www.wolframscience.com/nks/p78--turing-machines/",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Stephen Wolfram"
+      ],
+      "year": 2002
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "Hodges — The Alan Turing Home Page",
+      "url": "https://www.turing.org.uk/turing/",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Andrew Hodges"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "interactive",
+      "title": "turingmachine.io — visual Turing machine simulator",
+      "url": "https://turingmachine.io/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "interactive",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "interactive",
+      "title": "Morphett — Turing machine simulator",
+      "url": "https://morphett.info/turing/turing.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "interactive",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "interactive",
+      "title": "Ugarte — Turing Machine Simulator",
+      "url": "https://turingmachinesimulator.com/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "interactive",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "bbchallenge — The Busy Beaver Challenge: story of the BB(5) collaboration",
+      "url": "https://bbchallenge.org/story",
+      "concepts": [
+        "history",
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine: Formal definition",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine#Formal_definition",
+      "concepts": [
+        "automata",
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine: Equivalent models",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine#Equivalent_models",
+      "concepts": [
+        "turing-completeness",
+        "comparison"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine: Choice c-machines, oracle o-machines",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine#Choice_c-machines,_oracle_o-machines",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine: History",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine#History",
+      "concepts": [
+        "history"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Universal Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Universal_Turing_machine",
+      "concepts": [
+        "turing-completeness",
+        "interpreter"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine equivalents",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine_equivalents",
+      "concepts": [
+        "comparison",
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Multitape Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Multitape_Turing_machine",
+      "concepts": [
+        "automata",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Nondeterministic Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine",
+      "concepts": [
+        "automata",
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Probabilistic Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Probabilistic_Turing_machine",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Alternating Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Alternating_Turing_machine",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Oracle machine",
+      "url": "https://en.wikipedia.org/wiki/Oracle_machine",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Post-Turing machine",
+      "url": "https://en.wikipedia.org/wiki/Post%E2%80%93Turing_machine",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Wang B-machine",
+      "url": "https://en.wikipedia.org/wiki/Wang_B-machine",
+      "concepts": [
+        "automata"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing machine examples",
+      "url": "https://en.wikipedia.org/wiki/Turing_machine_examples",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Description number (encoding machines as numbers)",
+      "url": "https://en.wikipedia.org/wiki/Description_number",
+      "concepts": [
+        "encodings"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing's proof",
+      "url": "https://en.wikipedia.org/wiki/Turing%27s_proof",
+      "concepts": [
+        "turing-completeness",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Halting problem",
+      "url": "https://en.wikipedia.org/wiki/Halting_problem",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Church-Turing thesis",
+      "url": "https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Turing completeness",
+      "url": "https://en.wikipedia.org/wiki/Turing_completeness",
+      "concepts": [
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "esolangs.org — Turing machine",
+      "url": "https://esolangs.org/wiki/Turing_machine",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "nLab — Turing machine",
+      "url": "https://ncatlab.org/nlab/show/Turing+machine",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wolfram MathWorld — Turing Machine",
+      "url": "https://mathworld.wolfram.com/TuringMachine.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "Complexity Zoo — complexity classes defined by Turing machine resources",
+      "url": "https://complexityzoo.net/Complexity_Zoo",
+      "concepts": [
+        "complexity"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Universal Turing machine (task, implementations in many languages)",
+      "url": "https://rosettacode.org/wiki/Universal_Turing_machine",
+      "concepts": [
+        "interpreter"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "bbchallenge.org — Busy Beaver Challenge database of 5-state machines",
+      "url": "https://bbchallenge.org/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

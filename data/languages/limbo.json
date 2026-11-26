@@ -1,0 +1,38 @@
+{
+ "id": "limbo",
+ "name": "Limbo",
+ "aliases": ["Inferno Limbo"],
+ "categories": ["general-purpose", "systems", "historical"],
+ "paradigms": ["imperative", "concurrent", "modular"],
+ "typing": ["static", "strong"],
+ "first_appeared": 1995,
+ "designers": ["Sean Dorward", "Phil Winterbottom", "Rob Pike"],
+ "summary": "Bell Labs' language for the Inferno operating system: C-like syntax compiled to the Dis virtual machine, with typed channels and alt for CSP-style concurrency, dynamically loaded modules, abstract data types with pick (tagged variants), tuples, lists, strings and reference-counting plus GC memory management. A direct ancestor of Go.",
+ "status": "historical",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "file_extensions": [".b", ".m", ".dis"],
+ "homepage": "https://www.vitanuova.com/inferno/limbo.html",
+ "influenced_by": ["c", "csp", "newsqueak", "alef", "pascal"],
+ "related": [{"id": "go", "relation": "family"}],
+ "level_notes": {"1": "Defined by Dennis Ritchie's 'The Limbo Programming Language' (part of the Inferno documentation, Vita Nuova) and the Dis VM specification; the HTML papers have no section anchors.", "0": "The Inferno distribution (inferno-os/inferno-os, MIT-licensed) contains the C-hosted limbo compiler (limbo/), a Limbo-hosted compiler (appl/cmd/limbo), and the Dis interpreter/JIT (libinterp)."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "inferno-os/inferno-os — Inferno OS, Limbo compiler and Dis VM", "url": "https://github.com/inferno-os/inferno-os", "implementation": "Inferno limbo", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inferno limbo/lex.c — lexer", "url": "https://github.com/inferno-os/inferno-os/blob/master/limbo/lex.c", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer", "keywords"]},
+  {"level": 0, "kind": "grammar-source", "title": "Inferno limbo/limbo.y — yacc grammar", "url": "https://github.com/inferno-os/inferno-os/blob/master/limbo/limbo.y", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inferno limbo/typecheck.c — type checker", "url": "https://github.com/inferno-os/inferno-os/blob/master/limbo/typecheck.c", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "type-system"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inferno limbo/gen.c — Dis code generation", "url": "https://github.com/inferno-os/inferno-os/blob/master/limbo/gen.c", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode", "code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inferno libinterp/xec.c — Dis virtual machine instruction execution", "url": "https://github.com/inferno-os/inferno-os/blob/master/libinterp/xec.c", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["virtual-machine", "interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inferno libinterp/alt.c — channel communication and alt", "url": "https://github.com/inferno-os/inferno-os/blob/master/libinterp/alt.c", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["channels-message-passing"]},
+  {"level": 0, "kind": "implementation-source", "title": "Inferno libinterp/gc.c — garbage collector (complements reference counting)", "url": "https://github.com/inferno-os/inferno-os/blob/master/libinterp/gc.c", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+  {"level": 0, "kind": "standard-library-source", "title": "Inferno module/sys.m — Sys module interface (system calls, I/O, print)", "url": "https://github.com/inferno-os/inferno-os/blob/master/module/sys.m", "implementation": "Inferno limbo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library", "input-output"]}
+,
+  {"level": 1, "kind": "reference-manual", "title": "D. M. Ritchie — The Limbo Programming Language", "url": "https://www.vitanuova.com/inferno/papers/limbo.html", "scope": "whole", "authority": "designer", "authors": ["Dennis M. Ritchie"], "format": "html", "access": "open", "concepts": ["grammar", "channels-message-passing", "modules", "algebraic-data-types"]},
+  {"level": 1, "kind": "specification", "title": "Dis Virtual Machine Specification", "url": "https://www.vitanuova.com/inferno/papers/dis.html", "scope": "whole", "authority": "designer", "authors": ["Lucent Technologies"], "format": "html", "access": "open", "concepts": ["virtual-machine", "bytecode", "instruction-set"]}
+,
+  {"level": 2, "kind": "tutorial", "title": "B. W. Kernighan — A Descent into Limbo", "url": "https://www.vitanuova.com/inferno/papers/descent.html", "scope": "whole", "authority": "designer", "authors": ["Brian W. Kernighan"], "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "Vita Nuova — Limbo overview page", "url": "https://www.vitanuova.com/inferno/limbo.html", "scope": "whole", "authority": "vendor", "format": "html", "access": "open"}
+,
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Limbo (programming language)", "url": "https://en.wikipedia.org/wiki/Limbo_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Limbo", "url": "https://pldb.io/concepts/limbo.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

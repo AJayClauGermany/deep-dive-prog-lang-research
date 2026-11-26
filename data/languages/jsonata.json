@@ -1,0 +1,446 @@
+{
+ "id": "jsonata",
+ "name": "JSONata",
+ "categories": [
+  "query",
+  "functional",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2016,
+ "designers": [
+  "Andrew Coleman"
+ ],
+ "summary": "Lightweight functional query and transformation language for JSON from IBM, with XPath-like location paths, predicates, object construction, lambdas, closures and an XPath-3.1-inspired function library.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "homepage": "https://jsonata.org/",
+ "influenced_by": [
+  "xpath"
+ ],
+ "level_notes": {
+  "1": "No formal specification; the official documentation and the jsonata-js implementation define the language.",
+  "3": "No Wikipedia or PLDB entry exists."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "jsonata-js/jsonata — reference implementation (JavaScript)",
+   "url": "https://github.com/jsonata-js/jsonata",
+   "implementation": "jsonata-js",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonata-js parser.js — Pratt parser and AST post-processing",
+   "url": "https://github.com/jsonata-js/jsonata/blob/master/src/parser.js",
+   "implementation": "jsonata-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonata-js jsonata.js — evaluator",
+   "url": "https://github.com/jsonata-js/jsonata/blob/master/src/jsonata.js",
+   "implementation": "jsonata-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonata-js functions.js — built-in function library",
+   "url": "https://github.com/jsonata-js/jsonata/blob/master/src/functions.js",
+   "implementation": "jsonata-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonata-js datetime.js — date/time formatting and parsing",
+   "url": "https://github.com/jsonata-js/jsonata/blob/master/src/datetime.js",
+   "implementation": "jsonata-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonata-js signature.js — function signature type checking",
+   "url": "https://github.com/jsonata-js/jsonata/blob/master/src/signature.js",
+   "implementation": "jsonata-js",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "JSONata4Java — Java implementation (IBM)",
+   "url": "https://github.com/IBM/JSONata4Java",
+   "implementation": "JSONata4Java",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "jsonata-go — Go implementation",
+   "url": "https://github.com/jsonata-go/jsonata",
+   "implementation": "jsonata-go",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata documentation — overview",
+   "url": "https://docs.jsonata.org/overview",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Simple queries",
+   "url": "https://docs.jsonata.org/simple",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Predicate queries",
+   "url": "https://docs.jsonata.org/predicate",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Result structures",
+   "url": "https://docs.jsonata.org/construction",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Sorting, grouping and aggregation",
+   "url": "https://docs.jsonata.org/sorting-grouping",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Composition (function chaining)",
+   "url": "https://docs.jsonata.org/composition",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Processing model",
+   "url": "https://docs.jsonata.org/processing",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Expressions",
+   "url": "https://docs.jsonata.org/expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Path operators",
+   "url": "https://docs.jsonata.org/path-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Comparison operators",
+   "url": "https://docs.jsonata.org/comparison-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Boolean operators",
+   "url": "https://docs.jsonata.org/boolean-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Other operators (conditional, chain, range)",
+   "url": "https://docs.jsonata.org/other-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Programming constructs (variables, functions, recursion)",
+   "url": "https://docs.jsonata.org/programming",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "functions",
+    "recursion",
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Higher-order functions",
+   "url": "https://docs.jsonata.org/higher-order-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Regular expressions",
+   "url": "https://docs.jsonata.org/regex",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Date/time processing",
+   "url": "https://docs.jsonata.org/date-time",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — String functions",
+   "url": "https://docs.jsonata.org/string-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Numeric functions",
+   "url": "https://docs.jsonata.org/numeric-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Array functions",
+   "url": "https://docs.jsonata.org/array-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Object functions",
+   "url": "https://docs.jsonata.org/object-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "JSONata docs — Embedding and extending JSONata",
+   "url": "https://docs.jsonata.org/embedding-extending",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "JSONata Exerciser (try.jsonata.org)",
+   "url": "https://try.jsonata.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "jsonata.org home page",
+   "url": "https://jsonata.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

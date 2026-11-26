@@ -1,0 +1,557 @@
+{
+ "id": "mongodb-mql",
+ "name": "MongoDB Query Language and aggregation pipeline",
+ "aliases": [
+  "MQL",
+  "MongoDB aggregation framework"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "dataflow"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "MongoDB Inc."
+ ],
+ "summary": "JSON/BSON-document query language of MongoDB: filter documents with $-prefixed operators and transform them through aggregation pipelines of stages ($match, $group, $lookup, $setWindowFields...), with queries themselves written as documents.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://www.mongodb.com/docs/manual/reference/mql/",
+ "level_notes": {
+  "1": "No standard; the MongoDB manual is the definition. FerretDB, Amazon DocumentDB and Azure Cosmos DB implement compatible subsets."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "mongodb/mongo — MongoDB server",
+   "url": "https://github.com/mongodb/mongo",
+   "implementation": "MongoDB",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pipeline.cpp — aggregation pipeline construction",
+   "url": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/pipeline/pipeline.cpp",
+   "implementation": "MongoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "expression.cpp — aggregation expression operators",
+   "url": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/pipeline/expression.cpp",
+   "implementation": "MongoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "document_source_group.cpp — $group stage",
+   "url": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/pipeline/document_source_group.cpp",
+   "implementation": "MongoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "document_source_lookup.cpp — $lookup stage",
+   "url": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/pipeline/document_source_lookup.cpp",
+   "implementation": "MongoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "document_source_graph_lookup.cpp — $graphLookup stage",
+   "url": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/pipeline/document_source_graph_lookup.cpp",
+   "implementation": "MongoDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "recursive-queries",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "FerretDB — open-source MongoDB-compatible proxy on PostgreSQL",
+   "url": "https://github.com/FerretDB/FerretDB",
+   "implementation": "FerretDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Query Language (MQL) reference",
+   "url": "https://www.mongodb.com/docs/manual/reference/mql/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Query and projection operators",
+   "url": "https://www.mongodb.com/docs/manual/reference/mql/query-predicates/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Query documents",
+   "url": "https://www.mongodb.com/docs/manual/tutorial/query-documents/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Aggregation stages",
+   "url": "https://www.mongodb.com/docs/manual/reference/mql/aggregation-stages/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Aggregation expression operators",
+   "url": "https://www.mongodb.com/docs/manual/reference/mql/expressions/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Aggregation pipeline",
+   "url": "https://www.mongodb.com/docs/manual/core/aggregation-pipeline/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $match",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/match/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $project",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $group",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/group/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $sort",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/sort/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $lookup",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins",
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $graphLookup",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/graphlookup/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursive-queries",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $unwind",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/unwind/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $unionWith",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/unionwith/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $setWindowFields",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/setwindowfields/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "window-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $cond",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/cond/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $switch",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/switch/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $let",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/let/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $map",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/map/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $filter",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/filter/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $convert",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/aggregation/convert/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — $regex",
+   "url": "https://www.mongodb.com/docs/manual/reference/operator/query/regex/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Update operators",
+   "url": "https://www.mongodb.com/docs/manual/reference/mql/update/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — BSON types",
+   "url": "https://www.mongodb.com/docs/manual/reference/bson-types/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Time series collections",
+   "url": "https://www.mongodb.com/docs/manual/core/timeseries-collections/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Indexes",
+   "url": "https://www.mongodb.com/docs/manual/indexes/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Transactions",
+   "url": "https://www.mongodb.com/docs/manual/core/transactions/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MongoDB Manual — Schema validation",
+   "url": "https://www.mongodb.com/docs/manual/core/schema-validation/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints-integrity",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical MongoDB Aggregations (Paul Done)",
+   "url": "https://www.practical-mongodb-aggregations.com/",
+   "authors": [
+    "Paul Done"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "book",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "MongoDB University",
+   "url": "https://learn.mongodb.com/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MongoDB",
+   "url": "https://en.wikipedia.org/wiki/MongoDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MongoDB",
+   "url": "https://pldb.io/concepts/mongodb.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,338 @@
+{
+ "id": "rtf",
+ "name": "Rich Text Format",
+ "aliases": [
+  "RTF"
+ ],
+ "categories": [
+  "markup",
+  "document-typesetting",
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative markup"
+ ],
+ "typing": [
+  "untyped (control words with optional integer parameters)"
+ ],
+ "first_appeared": 1987,
+ "designers": [
+  "Microsoft",
+  "Richard Brodie",
+  "Charles Simonyi",
+  "David Luebbert"
+ ],
+ "summary": "Microsoft's text-based document interchange format: plain 7-bit text made of control words (\\b, \\par, \\fs24), control symbols and {groups} that scope formatting state, with \"destinations\" for header tables, fields, pictures and embedded objects.",
+ "status": "maintained",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "standards": [
+  "Microsoft RTF Specification 1.9.1 (2008)"
+ ],
+ "file_extensions": [
+  ".rtf"
+ ],
+ "homepage": "https://en.wikipedia.org/wiki/Rich_Text_Format",
+ "related": [
+  {
+   "id": "pdf",
+   "relation": "family"
+  },
+  {
+   "id": "troff",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The final Microsoft specification (1.9.1, Word 2007) is no longer on microsoft.com; the RTF 1.5 specification mirrored by Biblioscape is the most complete open HTML copy and is used for deep links. Microsoft's Open Specifications still document the compressed-RTF and RTF-extensions protocols used in Exchange.",
+  "0": "No reference implementation; Word is the de-facto definition. LibreOffice's rtftok, rtf.js and striprtf are open readers."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Rich Text Format (RTF) Specification, version 1.5 (Microsoft, 1997) — HTML copy",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "document-structure"
+   ],
+   "version": "1.5",
+   "year": 1997
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Special characters (escaped \\{ \\} \\\\, \\'hh hex escapes, \\u Unicode)",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#spec",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Document variables (\\docvar)",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#_Toc335399102",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Bookmarks (\\bkmkstart / \\bkmkend)",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#book",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Comments (annotations)",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#_Toc380819815",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Fields (\\field, \\fldinst, \\fldrslt)",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#field",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "expressions"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Pictures",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#pict",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RTF 1.5 specification — Bidirectional language support",
+   "url": "https://www.biblioscape.com/rtf15_spec.htm#bidi",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "styling-layout"
+   ],
+   "version": "1.5"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "[MS-OXRTFCP]: Rich Text Format (RTF) Compression Algorithm",
+   "url": "https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxrtfcp/85c0b884-a960-4d1a-874e-53eeee527ca6",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "[MS-OXRTFEX]: Rich Text Format (RTF) Extensions Algorithm (HTML encapsulated in RTF)",
+   "url": "https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxrtfex/411d0d58-49f7-496c-b8c3-5859b045f6cf",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LibreOffice — rtftokenizer.cxx: RTF tokenizer (control words, groups)",
+   "url": "https://github.com/LibreOffice/core/blob/master/sw/source/writerfilter/rtftok/rtftokenizer.cxx",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "LibreOffice Writer"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LibreOffice — rtfdocumentimpl.cxx: RTF import (destinations and state stack)",
+   "url": "https://github.com/LibreOffice/core/blob/master/sw/source/writerfilter/rtftok/rtfdocumentimpl.cxx",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "data-model"
+   ],
+   "implementation": "LibreOffice Writer"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rtf.js — Parser.ts: RTF parser rendering to HTML in JavaScript",
+   "url": "https://github.com/tbluemel/rtf.js/blob/master/src/rtfjs/parser/Parser.ts",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "rtf.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "striprtf — striprtf.py: regex-based RTF to plain-text converter",
+   "url": "https://github.com/joshy/striprtf/blob/master/striprtf/striprtf.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "escaping"
+   ],
+   "implementation": "striprtf"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc — Readers/RTF.hs: RTF reader",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/RTF.hs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "Pandoc"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc — Writers/RTF.hs: RTF writer",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Writers/RTF.hs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "escaping"
+   ],
+   "implementation": "Pandoc"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Sean M. Burke — RTF Pocket Guide companion site and examples",
+   "url": "https://interglacial.com/rtf/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Sean M. Burke"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Library of Congress — Sustainability of Digital Formats: Rich Text Format (RTF) family",
+   "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000473.shtml",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Rich Text Format",
+   "url": "https://en.wikipedia.org/wiki/Rich_Text_Format",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Rich Text Format",
+   "url": "https://pldb.io/concepts/rtf.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

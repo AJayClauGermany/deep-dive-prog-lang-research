@@ -1,0 +1,409 @@
+{
+ "id": "ion",
+ "name": "Amazon Ion",
+ "aliases": [
+  "Ion"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing",
+  "annotated"
+ ],
+ "first_appeared": 2016,
+ "designers": [
+  "Amazon"
+ ],
+ "summary": "Richly typed, self-describing data format from Amazon with interchangeable text (a JSON superset) and binary encodings; adds arbitrary-precision decimals, timestamps, symbols with symbol tables, blobs/clobs, S-expressions and type annotations.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "standards": [
+  "Ion 1.0 specification",
+  "Ion 1.1 (draft)"
+ ],
+ "file_extensions": [
+  ".ion",
+  ".10n"
+ ],
+ "homepage": "https://amazon-ion.github.io/ion-docs/",
+ "influenced_by": [
+  "json",
+  "s-expressions"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "superset-of"
+  },
+  {
+   "id": "partiql",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The Ion 1.0 specification pages on amazon-ion.github.io (data model, text and binary encodings, symbols) are normative; Ion 1.1 (macros, modules) is published as a separate book and is still a draft. Ion Schema is a companion spec.",
+  "0": "ion-java is the original implementation; ion-c, ion-python, ion-rust and others follow. amazon-ion/ion-tests is the shared good/bad/equivalence and conformance corpus."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "amazon-ion/ion-tests — shared good/bad/equivalent test data for all Ion implementations",
+   "url": "https://github.com/amazon-ion/ion-tests",
+   "implementation": "ion-tests",
+   "scope": "whole",
+   "format": "repository",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "ion-tests conformance/README.md — the Ion conformance DSL",
+   "url": "https://github.com/amazon-ion/ion-tests/blob/main/conformance/README.md",
+   "implementation": "ion-tests",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "ion-tests conformance/data_model/decimal.ion — decimal data-model conformance cases",
+   "url": "https://github.com/amazon-ion/ion-tests/blob/main/conformance/data_model/decimal.ion",
+   "implementation": "ion-tests",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "amazon-ion/ion-java — reference Java implementation",
+   "url": "https://github.com/amazon-ion/ion-java",
+   "implementation": "ion-java",
+   "scope": "whole",
+   "format": "repository",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ion-c ionc/ion_scanner.c — text tokenizer",
+   "url": "https://github.com/amazon-ion/ion-c/blob/master/ionc/ion_scanner.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "ion-c",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ion-c ionc/ion_binary.c — binary encoding primitives (VarUInt, VarInt, type descriptors)",
+   "url": "https://github.com/amazon-ion/ion-c/blob/master/ionc/ion_binary.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "ion-c",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ion-c ionc/ion_symbol_table.c — local and shared symbol tables",
+   "url": "https://github.com/amazon-ion/ion-c/blob/master/ionc/ion_symbol_table.c",
+   "scope": "section",
+   "format": "source-file",
+   "authority": "vendor",
+   "implementation": "ion-c",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — data model",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Null Values (typed nulls)",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#null",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Real Numbers (decimal and float)",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#real-numbers",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Timestamps",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#timestamp",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Strings and Escape Characters",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#string",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Symbols",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#symbol",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Container Types (struct, list, sexp)",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#container",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "records-structs",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Specification — Type Annotations",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/spec.html#annot",
+   "scope": "section",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Binary Encoding",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/binary.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Symbols — symbol tables, version markers and system symbols",
+   "url": "https://amazon-ion.github.io/ion-docs/docs/symbols.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Ion Text Encoding — ANTLR grammar (IonText.g4)",
+   "url": "https://amazon-ion.github.io/ion-docs/grammar/IonText.g4.txt",
+   "format": "html",
+   "scope": "whole",
+   "authority": "vendor",
+   "version": "1.0",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion 1.1 specification book (draft) — macros, modules, new binary encoding",
+   "url": "https://amazon-ion.github.io/ion-docs/books/ion-1-1/",
+   "version": "1.1",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ion Schema Specification 2.0",
+   "url": "https://amazon-ion.github.io/ion-schema/docs/isl-2-0/spec",
+   "version": "ISL 2.0",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ion Cookbook — common tasks across ion-java, ion-c, ion-python, ion-js",
+   "url": "https://amazon-ion.github.io/ion-docs/guides/cookbook.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Why Ion? — design rationale",
+   "url": "https://amazon-ion.github.io/ion-docs/guides/why.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "Ion libraries and tools",
+   "url": "https://amazon-ion.github.io/ion-docs/libs.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "vendor",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Ion (serialization format)",
+   "url": "https://en.wikipedia.org/wiki/Ion_(serialization_format)",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Ion",
+   "url": "https://pldb.io/concepts/ion.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open"
+  }
+ ]
+}

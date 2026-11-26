@@ -1,0 +1,315 @@
+{
+ "id": "firrtl",
+ "name": "FIRRTL",
+ "aliases": [
+  "Flexible Intermediate Representation for RTL"
+ ],
+ "categories": [
+  "hardware-description",
+  "intermediate-representation"
+ ],
+ "paradigms": [
+  "structural",
+  "dataflow"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "width-inferred"
+ ],
+ "first_appeared": 2016,
+ "designers": [
+  "Adam Izraelevitz",
+  "Patrick Li",
+  "Jonathan Bachrach",
+  "UC Berkeley"
+ ],
+ "summary": "Intermediate representation for synchronous digital circuits produced by Chisel and other generators; a textual language of circuits, modules, typed ground/aggregate signals, last-connect semantics and conditionals that compilers (the Scala FIRRTL compiler, now CIRCT firtool) lower to Verilog.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".fir"
+ ],
+ "homepage": "https://github.com/chipsalliance/firrtl-spec",
+ "influenced_by": [
+  "verilog",
+  "llvm-ir"
+ ],
+ "related": [
+  {
+   "id": "chisel",
+   "relation": "family"
+  },
+  {
+   "id": "verilog",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The FIRRTL specification (chipsalliance/firrtl-spec, versioned releases) is normative; the 2016 Berkeley tech report is the original specification.",
+  "2": "Little secondary literature targets FIRRTL directly; tutorials teach it through Chisel (see chisel).",
+  "0": "The original Scala compiler (chipsalliance/firrtl) is deprecated; CIRCT (llvm/circt) firtool is the current implementation."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FIRRTL Specification (spec.md)",
+   "url": "https://github.com/chipsalliance/firrtl-spec/blob/main/spec.md",
+   "concepts": [
+    "grammar",
+    "type-system",
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FIRRTL ABI specification (abi.md)",
+   "url": "https://github.com/chipsalliance/firrtl-spec/blob/main/abi.md",
+   "concepts": [
+    "calling-convention-abi",
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "chipsalliance/firrtl-spec repository",
+   "url": "https://github.com/chipsalliance/firrtl-spec",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Izraelevitz et al. — Specification for the FIRRTL Language (UCB/EECS-2016-9)",
+   "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-9.pdf",
+   "concepts": [
+    "history",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Patrick S. Li",
+    "Adam M. Izraelevitz",
+    "Jonathan Bachrach"
+   ],
+   "year": 2016
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CIRCT — FIRRTL dialect",
+   "url": "https://circt.llvm.org/docs/Dialects/FIRRTL/",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "CIRCT — FIRRTL dialect rationale",
+   "url": "https://circt.llvm.org/docs/Dialects/FIRRTL/RationaleFIRRTL/",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CIRCT — FIRRTL annotations",
+   "url": "https://circt.llvm.org/docs/Dialects/FIRRTL/FIRRTLAnnotations/",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CIRCT — FIRRTL intrinsics",
+   "url": "https://circt.llvm.org/docs/Dialects/FIRRTL/FIRRTLIntrinsics/",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "llvm/circt — firtool FIRRTL compiler",
+   "url": "https://github.com/llvm/circt",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CIRCT FIRLexer.cpp — FIRRTL lexer",
+   "url": "https://github.com/llvm/circt/blob/main/lib/Dialect/FIRRTL/Import/FIRLexer.cpp",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CIRCT FIRParser.cpp — FIRRTL parser",
+   "url": "https://github.com/llvm/circt/blob/main/lib/Dialect/FIRRTL/Import/FIRParser.cpp",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CIRCT InferWidths.cpp — width inference",
+   "url": "https://github.com/llvm/circt/blob/main/lib/Dialect/FIRRTL/Transforms/InferWidths.cpp",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CIRCT ExpandWhens.cpp — expand when-conditionals (last connect semantics)",
+   "url": "https://github.com/llvm/circt/blob/main/lib/Dialect/FIRRTL/Transforms/ExpandWhens.cpp",
+   "concepts": [
+    "conditionals",
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CIRCT LowerTypes.cpp — lower aggregate types",
+   "url": "https://github.com/llvm/circt/blob/main/lib/Dialect/FIRRTL/Transforms/LowerTypes.cpp",
+   "concepts": [
+    "records-structs",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CIRCT InferResets.cpp — reset inference",
+   "url": "https://github.com/llvm/circt/blob/main/lib/Dialect/FIRRTL/Transforms/InferResets.cpp",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "CIRCT"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "chipsalliance/firrtl — original Scala FIRRTL compiler (deprecated)",
+   "url": "https://github.com/chipsalliance/firrtl",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Scala FIRRTL compiler"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — FIRRTL",
+   "url": "https://pldb.io/concepts/firrtl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Izraelevitz et al. - Reusability is FIRRTL Ground: Hardware Construction Languages, Compiler Frameworks, and Transformations (ICCAD 2017)",
+   "url": "https://doi.org/10.1109/ICCAD.2017.8203780",
+   "concepts": [
+    "design-rationale",
+    "intermediate-representation",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "paywalled",
+   "year": 2017
+  }
+ ]
+}

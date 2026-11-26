@@ -1,0 +1,39 @@
+{
+ "id": "ink-contract",
+ "name": "ink! (Rust eDSL)",
+ "aliases": ["ink!", "ink"],
+ "categories": ["smart-contract", "domain-specific"],
+ "paradigms": ["imperative", "embedded-dsl"],
+ "typing": ["static", "strong"],
+ "first_appeared": 2019,
+ "designers": ["Parity Technologies"],
+ "summary": "Rust embedded DSL for Polkadot/Substrate smart contracts: ordinary Rust annotated with attribute macros (#[ink::contract], #[ink(storage)], #[ink(message)], #[ink(event)]); ink! v6 targets PolkaVM (RISC-V) via pallet-revive and supports the Solidity ABI.",
+ "status": "active",
+ "defined_by": ["reference-implementation", "informal"],
+ "file_extensions": [".rs"],
+ "homepage": "https://use.ink/",
+ "influenced_by": ["rust"],
+ "related": [{"id": "rust", "relation": "embeds"}],
+ "level_notes": {"1": "No specification; the use.ink documentation and the macro crate's rustdoc are the reference.", "3": "No encyclopedia entry.", "0": "use-ink/ink contains the procedural macros, storage abstractions and environment API."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "use-ink/ink — ink! eDSL crates", "url": "https://github.com/use-ink/ink", "implementation": "ink", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["macros"]},
+  {"level": 0, "kind": "implementation-source", "title": "ink crates/ink/macro/src/lib.rs — attribute macros (#[ink::contract] etc.)", "url": "https://github.com/use-ink/ink/blob/master/crates/ink/macro/src/lib.rs", "implementation": "ink", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros", "annotations-attributes", "code-generation"]},
+  {"level": 0, "kind": "implementation-source", "title": "ink crates/storage/src/lazy/mapping.rs — storage Mapping", "url": "https://github.com/use-ink/ink/blob/master/crates/storage/src/lazy/mapping.rs", "implementation": "ink", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["maps-dictionaries", "blockchain-execution"]},
+  {"level": 0, "kind": "implementation-source", "title": "ink crates/env/src/api.rs — environment API (caller, transfer, events)", "url": "https://github.com/use-ink/ink/blob/master/crates/env/src/api.rs", "implementation": "ink", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library", "blockchain-execution"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "ink! documentation (v6)", "url": "https://use.ink/docs/v6/", "scope": "whole", "authority": "official", "version": "6", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Macros and attributes", "url": "https://use.ink/docs/v6/macros-attributes", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["annotations-attributes", "macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Contract template", "url": "https://use.ink/docs/v6/basics/contract-template", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["program-structure", "hello-world"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Storing values", "url": "https://use.ink/docs/v6/basics/storing-values", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["blockchain-execution", "variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Mapping", "url": "https://use.ink/docs/v6/datastructures/mapping", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Events", "url": "https://use.ink/docs/v6/basics/events", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Selectors", "url": "https://use.ink/docs/v6/basics/selectors", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["calling-convention-abi"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Cross-contract calling", "url": "https://use.ink/docs/v6/basics/cross-contract-calling", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["interoperability"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Calling Solidity contracts", "url": "https://use.ink/docs/v6/solidity-interop/calling-solidity-contracts", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["interoperability"]},
+  {"level": 1, "kind": "reference-manual", "title": "ink! docs — Contract testing", "url": "https://use.ink/docs/v6/contract-testing/overview", "scope": "section", "authority": "official", "version": "6", "format": "html", "access": "open", "concepts": ["testing"]},
+
+  {"level": 2, "kind": "article", "title": "ink! docs — Why RISC-V and PolkaVM for smart contracts", "url": "https://use.ink/docs/v6/background/why-riscv-and-polkavm-for-smart-contracts", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 2, "kind": "faq", "title": "ink! FAQ", "url": "https://use.ink/docs/v6/faq", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 2, "kind": "tutorial", "title": "ink! tutorials", "url": "https://use.ink/tutorials", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]}
+ ]
+}

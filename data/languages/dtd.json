@@ -1,0 +1,598 @@
+{
+ "id": "dtd",
+ "name": "XML DTD (Document Type Definition)",
+ "aliases": [
+  "DTD",
+  "Document Type Declaration",
+  "SGML DTD"
+ ],
+ "categories": [
+  "schema-idl",
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "grammar-based"
+ ],
+ "typing": [
+  "untyped (character data)",
+  "structural content models"
+ ],
+ "first_appeared": 1986,
+ "designers": [
+  "Charles Goldfarb (SGML)",
+  "W3C XML Working Group (Tim Bray, Jean Paoli, C. M. Sperberg-McQueen)"
+ ],
+ "summary": "Grammar-based schema notation inherited from SGML and built into XML 1.0: markup declarations in the document type declaration define element content models (regular expressions over child elements), attribute lists with a handful of attribute types and defaults, entities (macro-like text substitution) and notations.",
+ "status": "maintained",
+ "defined_by": [
+  "consortium-standard",
+  "international-standard"
+ ],
+ "standards": [
+  "W3C XML 1.0 (Fifth Edition) §2.8, §3, §4",
+  "ISO 8879:1986 (SGML)"
+ ],
+ "file_extensions": [
+  ".dtd",
+  ".ent",
+  ".mod"
+ ],
+ "homepage": "https://www.w3.org/TR/xml/",
+ "influenced_by": [
+  "sgml"
+ ],
+ "related": [
+  {
+   "id": "xml",
+   "relation": "family"
+  },
+  {
+   "id": "sgml",
+   "relation": "subset-of"
+  },
+  {
+   "id": "relax-ng",
+   "relation": "family"
+  },
+  {
+   "id": "xml-schema",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "XML DTDs are defined inside the W3C XML 1.0 Recommendation (Fifth Edition, 2008) — there is no separate DTD specification. The SGML original, ISO 8879:1986, is paywalled.",
+  "0": "Every validating XML parser implements DTDs: libxml2 (valid.c), Apache Xerces (XMLDTDScannerImpl), and expat (non-validating, but parses the internal subset and entities). The W3C XML Conformance Test Suite covers DTD validity.",
+  "3": "Entity expansion is the root of the 'billion laughs' denial-of-service attack; see the Wikipedia entry."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "Extensible Markup Language (XML) 1.0 (Fifth Edition) — defines DTD syntax and validity",
+   "url": "https://www.w3.org/TR/xml/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 2.8 Prolog and Document Type Declaration",
+   "url": "https://www.w3.org/TR/xml/#sec-prolog-dtd",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 2.9 Standalone Document Declaration",
+   "url": "https://www.w3.org/TR/xml/#sec-rmd",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "separate-compilation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.2 Element Type Declarations",
+   "url": "https://www.w3.org/TR/xml/#elemdecls",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.2.1 Element Content (content models)",
+   "url": "https://www.w3.org/TR/xml/#sec-element-content",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.2.2 Mixed Content",
+   "url": "https://www.w3.org/TR/xml/#sec-mixed-content",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.3 Attribute-List Declarations",
+   "url": "https://www.w3.org/TR/xml/#attdecls",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.3.1 Attribute Types (CDATA, ID, IDREF, ENTITY, NMTOKEN, enumerations)",
+   "url": "https://www.w3.org/TR/xml/#sec-attribute-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "enums",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.3.2 Attribute Defaults",
+   "url": "https://www.w3.org/TR/xml/#sec-attr-defaults",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 3.4 Conditional Sections (INCLUDE/IGNORE)",
+   "url": "https://www.w3.org/TR/xml/#sec-condition-sect",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 4.2 Entity Declarations",
+   "url": "https://www.w3.org/TR/xml/#sec-entity-decl",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 4.2.2 External Entities",
+   "url": "https://www.w3.org/TR/xml/#sec-external-ent",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 4.4 XML Processor Treatment of Entities and References",
+   "url": "https://www.w3.org/TR/xml/#entproc",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 4.7 Notation Declarations",
+   "url": "https://www.w3.org/TR/xml/#Notations",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — Appendix D Expansion of Entity and Character References",
+   "url": "https://www.w3.org/TR/xml/#sec-entexpand",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — Appendix E Deterministic Content Models",
+   "url": "https://www.w3.org/TR/xml/#determinism",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML 1.0 — 5 Conformance (validating vs non-validating processors)",
+   "url": "https://www.w3.org/TR/xml/#sec-conformance",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Tim Bray",
+    "Jean Paoli",
+    "C. M. Sperberg-McQueen",
+    "Eve Maler",
+    "François Yergeau"
+   ],
+   "year": 2008,
+   "version": "XML 1.0 Fifth Edition",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — On SGML and HTML: How to read the HTML DTD",
+   "url": "https://www.w3.org/TR/REC-html40/sgml/dtd.html",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "HTML 4.01",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "W3C XML Conformance Test Suites (includes DTD validity tests)",
+   "url": "https://www.w3.org/XML/Test/",
+   "scope": "whole",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 valid.c — DTD validation",
+   "url": "https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/valid.c",
+   "scope": "section",
+   "implementation": "libxml2",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache Xerces2-J XMLDTDScannerImpl.java — DTD scanner",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/XMLDTDScannerImpl.java",
+   "scope": "section",
+   "implementation": "Xerces2-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "expat lib/xmlparse.c — parser including internal DTD subset and entity handling",
+   "url": "https://github.com/libexpat/libexpat/blob/master/expat/lib/xmlparse.c",
+   "scope": "section",
+   "implementation": "expat",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Ray Toal (LMU) — DTDs course notes",
+   "url": "https://cs.lmu.edu/~ray/notes/dtds/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Ray Toal"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Python docs — XML vulnerabilities (billion laughs, external entity expansion)",
+   "url": "https://docs.python.org/3/library/xml.html#xml-vulnerabilities",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Document type definition",
+   "url": "https://en.wikipedia.org/wiki/Document_type_definition",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Billion laughs attack",
+   "url": "https://en.wikipedia.org/wiki/Billion_laughs_attack",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — DTD",
+   "url": "https://pldb.io/concepts/dtd.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

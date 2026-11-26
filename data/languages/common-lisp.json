@@ -1,0 +1,2220 @@
+{
+  "id": "common-lisp",
+  "name": "Common Lisp",
+  "aliases": [
+    "CL",
+    "ANSI Common Lisp"
+  ],
+  "categories": [
+    "general-purpose",
+    "functional",
+    "object-oriented"
+  ],
+  "paradigms": [
+    "multi-paradigm",
+    "functional",
+    "object-oriented",
+    "imperative",
+    "meta"
+  ],
+  "typing": [
+    "dynamic",
+    "strong",
+    "optional-declarations"
+  ],
+  "first_appeared": 1984,
+  "designers": [
+    "Guy L. Steele Jr.",
+    "Scott Fahlman",
+    "Richard P. Gabriel",
+    "David A. Moon",
+    "Daniel Weinreb",
+    "Kent M. Pitman"
+  ],
+  "summary": "ANSI-standardized Lisp dialect unifying MacLisp descendants, with CLOS multiple dispatch and a metaobject protocol, a restartable condition system, packages, and powerful non-hygienic macros.",
+  "status": "active",
+  "defined_by": [
+    "international-standard"
+  ],
+  "standards": [
+    "ANSI X3.226-1994 (INCITS 226-1994)"
+  ],
+  "file_extensions": [
+    ".lisp",
+    ".lsp",
+    ".cl",
+    ".asd",
+    ".fasl"
+  ],
+  "homepage": "https://common-lisp.net/",
+  "influenced_by": [
+    "maclisp",
+    "zetalisp",
+    "interlisp",
+    "scheme",
+    "lisp",
+    "smalltalk"
+  ],
+  "related": [
+    {
+      "id": "lisp",
+      "relation": "dialect-of"
+    },
+    {
+      "id": "maclisp",
+      "relation": "successor-of"
+    },
+    {
+      "id": "zetalisp",
+      "relation": "successor-of"
+    },
+    {
+      "id": "islisp",
+      "relation": "family"
+    },
+    {
+      "id": "eulisp",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "The ANSI standard (X3.226-1994, reaffirmed as INCITS 226) is paywalled; the CLHS (LispWorks HTML rendering derived from the final draft) and dpANS3 PDF are the free authoritative texts and are tagged standard-draft. The MOP (AMOP ch. 5-6) is a de-facto standard; CLtL2 is the pre-standard reference. No standard successor process exists; CDRs are community extensions.",
+    "0": "Multiple conforming implementations: SBCL (linked in depth), Clozure CL, ECL, CLISP, ABCL (JVM), Clasp (LLVM); ansi-test is the shared conformance suite."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp draft proposed ANSI standard (dpANS3, Franz PDF with sidebar)",
+      "url": "https://franz.com/support/documentation/cl-ansi-standard-draft-w-sidebar.pdf",
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "dpANS3",
+      "year": 1994,
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Contents",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Front/Contents.htm",
+      "concepts": [
+        "standard-library",
+        "grammar"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "authors": [
+        "Kent M. Pitman"
+      ],
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.1 Character Syntax (readtables)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm",
+      "concepts": [
+        "lexical-structure"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.2 Reader Algorithm",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_b.htm",
+      "concepts": [
+        "parser",
+        "lexical-structure"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.3 Interpretation of Tokens (numbers, symbols)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_c.htm",
+      "concepts": [
+        "literals",
+        "identifiers"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.4.3 Single-Quote",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_dc.htm",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.4.4 Semicolon (comments)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_dd.htm",
+      "concepts": [
+        "comments"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.4.6 Backquote",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_df.htm",
+      "concepts": [
+        "quotation-homoiconicity",
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 2.4.8 Sharpsign (#-syntax, read-time conditionals)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_dh.htm",
+      "concepts": [
+        "literals",
+        "preprocessor"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.1.2 The Evaluation Model",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_ab.htm",
+      "concepts": [
+        "evaluation-order",
+        "expressions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.1.2.1.2.2 Macro Forms",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_ababb.htm",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.2.2 Compilation Semantics",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_bb.htm",
+      "concepts": [
+        "compile-time-evaluation"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.2.3 File Compilation",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_bc.htm",
+      "concepts": [
+        "separate-compilation"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.3 Declarations",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_c.htm",
+      "concepts": [
+        "type-annotations"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.4.1 Ordinary Lambda Lists (&optional, &rest, &key)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_da.htm",
+      "concepts": [
+        "parameters-arguments",
+        "functions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 3.4.4 Macro Lambda Lists",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_dd.htm",
+      "concepts": [
+        "macros",
+        "destructuring"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 4.2 Types",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/04_b.htm",
+      "concepts": [
+        "type-system",
+        "subtyping"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 4.3 Classes",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/04_c.htm",
+      "concepts": [
+        "classes",
+        "metaclasses"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 4.3.5 Determining the Class Precedence List",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/04_ce.htm",
+      "concepts": [
+        "inheritance",
+        "mixins"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 4.3.6 Redefining Classes",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/04_cf.htm",
+      "concepts": [
+        "classes",
+        "reflection"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 5.1 Generalized Reference (places, setf)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/05_a.htm",
+      "concepts": [
+        "assignment"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 5.2 Transfer of Control to an Exit Point",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/05_b.htm",
+      "concepts": [
+        "loop-control",
+        "exceptions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 6.1 The LOOP Facility",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/06_a.htm",
+      "concepts": [
+        "loops",
+        "iteration-foreach",
+        "comprehensions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 7.1 Object Creation and Initialization",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/07_a.htm",
+      "concepts": [
+        "constructors",
+        "objects"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 7.6 Generic Functions and Methods",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/07_f.htm",
+      "concepts": [
+        "multiple-dispatch",
+        "methods",
+        "polymorphism"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 7.6.6.2 Standard Method Combination (:before/:after/:around)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/07_ffb.htm",
+      "concepts": [
+        "multiple-dispatch",
+        "inheritance"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 9.1 Condition System Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/09_a.htm",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 9.1.4 Signaling and Handling Conditions",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/09_ad.htm",
+      "concepts": [
+        "exceptions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 11.1 Package Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/11_a.htm",
+      "concepts": [
+        "packages",
+        "namespaces"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 12.1 Number Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/12_a.htm",
+      "concepts": [
+        "integers",
+        "floating-point"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 13.1 Character Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/13_a.htm",
+      "concepts": [
+        "characters"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 14.1 Cons Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/14_a.htm",
+      "concepts": [
+        "lists"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 15.1 Array Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/15_a.htm",
+      "concepts": [
+        "arrays"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 16.1 String Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/16_a.htm",
+      "concepts": [
+        "strings"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 17.1 Sequence Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/17_a.htm",
+      "concepts": [
+        "collections"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 18.1 Hash Table Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/18_a.htm",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 21.1 Stream Concepts",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/21_a.htm",
+      "concepts": [
+        "input-output"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 22.3 Formatted Output (FORMAT directives)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
+      "concepts": [
+        "string-formatting"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — 24.1 System Construction Concepts (load, features)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/24_a.htm",
+      "concepts": [
+        "program-structure"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFMACRO",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defmac.htm",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Function MACROEXPAND, MACROEXPAND-1",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/f_mexp_.htm",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator IF",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_if.htm",
+      "concepts": [
+        "conditionals"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro COND",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_cond.htm",
+      "concepts": [
+        "conditionals"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator LET, LET*",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_let_l.htm",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFUN",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defun.htm",
+      "concepts": [
+        "functions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator FLET, LABELS, MACROLET",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_flet_.htm",
+      "concepts": [
+        "functions",
+        "scope"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator FUNCTION (closures, #')",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_fn.htm",
+      "concepts": [
+        "closures",
+        "higher-order-functions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro HANDLER-CASE",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_hand_1.htm",
+      "concepts": [
+        "exceptions"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro RESTART-CASE (restarts)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_rst_ca.htm",
+      "concepts": [
+        "error-handling"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator UNWIND-PROTECT",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_unwind.htm",
+      "concepts": [
+        "resource-management"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator TAGBODY",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_tagbod.htm",
+      "concepts": [
+        "goto-labels"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFCLASS",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defcla.htm",
+      "concepts": [
+        "classes",
+        "properties"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFGENERIC",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defgen.htm",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFSTRUCT",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defstr.htm",
+      "concepts": [
+        "records-structs"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFPACKAGE",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defpkg.htm",
+      "concepts": [
+        "packages",
+        "imports",
+        "visibility"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Function EVAL",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/f_eval.htm",
+      "concepts": [
+        "eval"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Special Operator EVAL-WHEN",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/s_eval_w.htm",
+      "concepts": [
+        "compile-time-evaluation"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFTYPE",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_deftp.htm",
+      "concepts": [
+        "type-aliases"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Function COERCE",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/f_coerce.htm",
+      "concepts": [
+        "type-conversion"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro MULTIPLE-VALUE-BIND",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_multip.htm",
+      "concepts": [
+        "return",
+        "destructuring"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro DEFCONSTANT",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_defcon.htm",
+      "concepts": [
+        "constants"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard-draft",
+      "title": "Common Lisp HyperSpec — Macro WITH-OPEN-FILE",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Body/m_w_open.htm",
+      "concepts": [
+        "file-io",
+        "resource-management"
+      ],
+      "authority": "standards-body",
+      "version": "ANSI X3.226-1994",
+      "notes": "CLHS is LispWorks' HTML rendering of the ANSI standard text.",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal-index",
+      "title": "X3J13 cleanup issues (CLHS issue index)",
+      "url": "https://www.lispworks.com/documentation/HyperSpec/Issues/I_Alpha.htm",
+      "concepts": [
+        "standardization",
+        "design-rationale"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal-index",
+      "title": "Common Lisp Document Repository (CDR)",
+      "url": "https://cdr.common-lisp.dev/",
+      "concepts": [
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "The Common Lisp Object System MetaObject Protocol (AMOP ch. 5-6, HTML)",
+      "url": "http://metamodular.com/CLOS-MOP/",
+      "concepts": [
+        "metaclasses",
+        "reflection"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Gregor Kiczales",
+        "Jim des Rivières",
+        "Daniel G. Bobrow"
+      ],
+      "year": 1991,
+      "authority": "designer",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Common Lisp the Language, 2nd edition (Steele) — HTML",
+      "url": "https://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Guy L. Steele Jr."
+      ],
+      "year": 1990,
+      "authority": "designer",
+      "notes": "Pre-standard definition (CLtL2); superseded by ANSI but widely cited.",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Tail Call",
+      "url": "https://www.sbcl.org/manual/index.html#Tail-Call",
+      "concepts": [
+        "tail-calls"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Generic Function Dispatch",
+      "url": "https://www.sbcl.org/manual/index.html#Generic-Function-Dispatch",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Metaobject Protocol",
+      "url": "https://www.sbcl.org/manual/index.html#Metaobject-Protocol",
+      "concepts": [
+        "metaclasses"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Foreign Function Interface",
+      "url": "https://www.sbcl.org/manual/index.html#Foreign-Function-Interface",
+      "concepts": [
+        "ffi"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Threading",
+      "url": "https://www.sbcl.org/manual/index.html#Threading",
+      "concepts": [
+        "threads",
+        "synchronization"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Atomic Operations",
+      "url": "https://www.sbcl.org/manual/index.html#Atomic-Operations",
+      "concepts": [
+        "atomics-memory-ordering"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "SBCL User Manual — Gray Streams",
+      "url": "https://www.sbcl.org/manual/index.html#Gray-Streams",
+      "concepts": [
+        "input-output"
+      ],
+      "implementation": "SBCL",
+      "authority": "vendor",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — full text",
+      "url": "https://gigamonkeys.com/book/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Syntax and Semantics",
+      "url": "https://gigamonkeys.com/book/syntax-and-semantics",
+      "concepts": [
+        "lexical-structure",
+        "expressions"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Functions",
+      "url": "https://gigamonkeys.com/book/functions",
+      "concepts": [
+        "functions",
+        "parameters-arguments",
+        "higher-order-functions"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Variables (lexical and dynamic)",
+      "url": "https://gigamonkeys.com/book/variables",
+      "concepts": [
+        "variables",
+        "scope",
+        "closures"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Macros: Standard Control Constructs",
+      "url": "https://gigamonkeys.com/book/macros-standard-control-constructs",
+      "concepts": [
+        "conditionals",
+        "loops"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Macros: Defining Your Own",
+      "url": "https://gigamonkeys.com/book/macros-defining-your-own",
+      "concepts": [
+        "macros"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Collections (vectors, hash tables)",
+      "url": "https://gigamonkeys.com/book/collections",
+      "concepts": [
+        "arrays",
+        "maps-dictionaries"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — List Processing",
+      "url": "https://gigamonkeys.com/book/they-called-it-lisp-for-a-reason-list-processing",
+      "concepts": [
+        "lists"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Files and File I/O",
+      "url": "https://gigamonkeys.com/book/files-and-file-io",
+      "concepts": [
+        "file-io"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Object Reorientation: Generic Functions",
+      "url": "https://gigamonkeys.com/book/object-reorientation-generic-functions",
+      "concepts": [
+        "multiple-dispatch",
+        "methods"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Object Reorientation: Classes",
+      "url": "https://gigamonkeys.com/book/object-reorientation-classes",
+      "concepts": [
+        "classes",
+        "inheritance"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — A Few FORMAT Recipes",
+      "url": "https://gigamonkeys.com/book/a-few-format-recipes",
+      "concepts": [
+        "string-formatting"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Conditions and Restarts",
+      "url": "https://gigamonkeys.com/book/beyond-exception-handling-conditions-and-restarts",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — Packages and Symbols",
+      "url": "https://gigamonkeys.com/book/programming-in-the-large-packages-and-symbols",
+      "concepts": [
+        "packages",
+        "namespaces"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Practical Common Lisp (Seibel) — LOOP for Black Belts",
+      "url": "https://gigamonkeys.com/book/loop-for-black-belts",
+      "concepts": [
+        "loops"
+      ],
+      "authors": [
+        "Peter Seibel"
+      ],
+      "year": 2005,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "The Common Lisp Cookbook",
+      "url": "https://lispcookbook.github.io/cl-cookbook/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Getting started",
+      "url": "https://lispcookbook.github.io/cl-cookbook/getting-started.html",
+      "concepts": [
+        "hello-world",
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Macros",
+      "url": "https://lispcookbook.github.io/cl-cookbook/macros.html",
+      "concepts": [
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Fundamentals of CLOS",
+      "url": "https://lispcookbook.github.io/cl-cookbook/clos.html",
+      "concepts": [
+        "classes",
+        "multiple-dispatch",
+        "metaclasses"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Error and exception handling",
+      "url": "https://lispcookbook.github.io/cl-cookbook/error_handling.html",
+      "concepts": [
+        "exceptions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Loop, iteration, mapping",
+      "url": "https://lispcookbook.github.io/cl-cookbook/iteration.html",
+      "concepts": [
+        "loops",
+        "iteration-foreach"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Data structures",
+      "url": "https://lispcookbook.github.io/cl-cookbook/data-structures.html",
+      "concepts": [
+        "lists",
+        "maps-dictionaries",
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Strings",
+      "url": "https://lispcookbook.github.io/cl-cookbook/strings.html",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Type system",
+      "url": "https://lispcookbook.github.io/cl-cookbook/type.html",
+      "concepts": [
+        "type-system",
+        "type-annotations"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Defining systems (ASDF)",
+      "url": "https://lispcookbook.github.io/cl-cookbook/systems.html",
+      "concepts": [
+        "build-systems"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Packages",
+      "url": "https://lispcookbook.github.io/cl-cookbook/packages.html",
+      "concepts": [
+        "packages"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Threads, concurrency, parallelism",
+      "url": "https://lispcookbook.github.io/cl-cookbook/process.html",
+      "concepts": [
+        "threads",
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Foreign Function Interfaces (CFFI)",
+      "url": "https://lispcookbook.github.io/cl-cookbook/ffi.html",
+      "concepts": [
+        "ffi"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Common Lisp Cookbook — Performance tuning",
+      "url": "https://lispcookbook.github.io/cl-cookbook/performance.html",
+      "concepts": [
+        "performance"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "On Lisp (Graham) — free edition",
+      "url": "https://www.paulgraham.com/onlisp.html",
+      "concepts": [
+        "macros",
+        "closures"
+      ],
+      "authors": [
+        "Paul Graham"
+      ],
+      "year": 1993,
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Common Lisp: A Gentle Introduction to Symbolic Computation (Touretzky)",
+      "url": "https://www.cs.cmu.edu/~dst/LispBook/",
+      "concepts": [
+        "hello-world"
+      ],
+      "authors": [
+        "David S. Touretzky"
+      ],
+      "year": 1990,
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "CLOS: Integrating Object-Oriented and Functional Programming (Gabriel, White, Bobrow)",
+      "url": "https://dreamsongs.com/CLOS.html",
+      "concepts": [
+        "multiple-dispatch",
+        "classes"
+      ],
+      "authors": [
+        "Richard P. Gabriel",
+        "Jon L White",
+        "Daniel G. Bobrow"
+      ],
+      "year": 1991,
+      "authority": "academic",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Condition Handling in the Lisp Language Family (Pitman)",
+      "url": "https://www.nhplace.com/kent/Papers/Condition-Handling-2001.html",
+      "concepts": [
+        "exceptions",
+        "error-handling",
+        "history"
+      ],
+      "authors": [
+        "Kent M. Pitman"
+      ],
+      "year": 2001,
+      "authority": "designer",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "The Evolution of Lisp (Steele & Gabriel, HOPL II)",
+      "url": "https://www.dreamsongs.com/Files/HOPL2-Uncut.pdf",
+      "concepts": [
+        "history",
+        "standardization"
+      ],
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Richard P. Gabriel"
+      ],
+      "year": 1993,
+      "authority": "academic",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "cheatsheet",
+      "title": "Learn X in Y minutes — Common Lisp",
+      "url": "https://learnxinyminutes.com/common-lisp/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "index",
+      "title": "lisp-lang.org — Common Lisp portal and learning resources",
+      "url": "https://lisp-lang.org/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "sbcl/sbcl — Steel Bank Common Lisp",
+      "url": "https://github.com/sbcl/sbcl",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "SBCL",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/reader.lisp — the Lisp reader",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/reader.lisp",
+      "concepts": [
+        "lexer",
+        "parser"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/backq.lisp — backquote implementation",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/backq.lisp",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/defmacro.lisp — DEFMACRO and macro lambda-list parsing",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/defmacro.lisp",
+      "concepts": [
+        "macros"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/main.lisp — compiler driver (compile-file)",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/main.lisp",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/ir1tran.lisp — IR1 conversion from source forms",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/ir1tran.lisp",
+      "concepts": [
+        "intermediate-representation",
+        "ast"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/ir1-translators.lisp — IR1 translators for special operators (if, let, block, tagbody)",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/ir1-translators.lisp",
+      "concepts": [
+        "conditionals",
+        "semantic-analysis"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/ir1opt.lisp — IR1 optimizer",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/ir1opt.lisp",
+      "concepts": [
+        "optimization"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/constraint.lisp — constraint propagation (type inference)",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/constraint.lisp",
+      "concepts": [
+        "type-inference"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/ir2tran.lisp — IR2 (virtual-machine level) translation",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/ir2tran.lisp",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/compiler/x86-64/call.lisp — x86-64 call/return VOPs (full calls, tail calls)",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/compiler/x86-64/call.lisp",
+      "concepts": [
+        "calling-convention-abi",
+        "tail-calls"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/loop.lisp — LOOP macro implementation",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/loop.lisp",
+      "concepts": [
+        "loops",
+        "macros"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/target-error.lisp — condition system runtime (signal, handlers, restarts)",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/target-error.lisp",
+      "concepts": [
+        "exceptions"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/pcl/boot.lisp — PCL (CLOS) bootstrap: defgeneric/defmethod",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/pcl/boot.lisp",
+      "concepts": [
+        "multiple-dispatch",
+        "bootstrapping"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/pcl/dfun.lisp — PCL discriminating functions (dispatch caches)",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/pcl/dfun.lisp",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/pcl/std-class.lisp — standard-class and the metaobject protocol",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/pcl/std-class.lisp",
+      "concepts": [
+        "metaclasses",
+        "classes"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/pcl/combin.lisp — method combination",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/pcl/combin.lisp",
+      "concepts": [
+        "multiple-dispatch"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/target-hash-table.lisp — hash tables",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/target-hash-table.lisp",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/target-thread.lisp — threads, mutexes, condition variables",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/target-thread.lisp",
+      "concepts": [
+        "threads",
+        "synchronization"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/runtime/gencgc.c — generational conservative GC",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/runtime/gencgc.c",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SBCL src/code/target-alieneval.lisp — alien (FFI) evaluation",
+      "url": "https://github.com/sbcl/sbcl/blob/master/src/code/target-alieneval.lisp",
+      "concepts": [
+        "ffi"
+      ],
+      "implementation": "SBCL",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Clozure/ccl — Clozure Common Lisp",
+      "url": "https://github.com/Clozure/ccl",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "Clozure CL",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Embeddable Common Lisp (ECL) — GitLab",
+      "url": "https://gitlab.com/embeddable-common-lisp/ecl",
+      "concepts": [
+        "compiler-architecture",
+        "ffi"
+      ],
+      "implementation": "ECL",
+      "format": "repository",
+      "scope": "whole",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "GNU CLISP — GitLab",
+      "url": "https://gitlab.com/gnu-clisp/clisp",
+      "concepts": [
+        "bytecode"
+      ],
+      "implementation": "CLISP",
+      "format": "repository",
+      "scope": "whole",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "armedbear/abcl — Armed Bear Common Lisp (JVM)",
+      "url": "https://github.com/armedbear/abcl",
+      "concepts": [
+        "interoperability"
+      ],
+      "implementation": "ABCL",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "clasp-developers/clasp — Common Lisp on LLVM with C++ interop",
+      "url": "https://github.com/clasp-developers/clasp",
+      "concepts": [
+        "interoperability"
+      ],
+      "implementation": "Clasp",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "ansi-test — ANSI Common Lisp conformance test suite",
+      "url": "https://gitlab.common-lisp.net/ansi-test/ansi-test",
+      "concepts": [
+        "testing"
+      ],
+      "scope": "whole",
+      "format": "repository",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Common Lisp",
+      "url": "https://en.wikipedia.org/wiki/Common_Lisp",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Common Lisp",
+      "url": "https://pldb.io/concepts/common-lisp.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Common Lisp",
+      "url": "https://rosettacode.org/wiki/Category:Common_Lisp",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "curated-list",
+      "title": "Awesome Common Lisp (CL-Foundation)",
+      "url": "https://github.com/CodyReichert/awesome-cl",
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "index",
+      "title": "common-lisp.net — community hosting and project index",
+      "url": "https://common-lisp.net/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

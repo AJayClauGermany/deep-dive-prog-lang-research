@@ -1,0 +1,280 @@
+{
+ "id": "ubjson",
+ "name": "UBJSON",
+ "aliases": [
+  "Universal Binary JSON"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "data"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Riyad Kalla"
+ ],
+ "summary": "Binary encoding that maps 1:1 onto the JSON data model using single-byte type markers, big-endian fixed-size numbers and optional typed/counted ('optimized') containers; never progressed past Draft 12 and was extended as BJData.",
+ "status": "maintained",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "UBJSON Draft 12"
+ ],
+ "file_extensions": [
+  ".ubj"
+ ],
+ "homepage": "https://ubjson.org/",
+ "influenced_by": [
+  "json"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "cbor",
+   "relation": "family"
+  },
+  {
+   "id": "messagepack",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The ubjson.org pages (Draft 12) are the only specification; the NeuroJSON BJData spec is a compatible successor that adds packed N-D arrays.",
+  "0": "No reference implementation; py-ubjson and nlohmann/json's binary_reader are well-maintained implementations.",
+  "2": "Little secondary literature beyond library documentation."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "py-ubjson ubjson/decoder.py — Python UBJSON decoder",
+   "url": "https://github.com/Iotic-Labs/py-ubjson/blob/master/ubjson/decoder.py",
+   "implementation": "py-ubjson",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "py-ubjson ubjson/encoder.py — Python UBJSON encoder",
+   "url": "https://github.com/Iotic-Labs/py-ubjson/blob/master/ubjson/encoder.py",
+   "implementation": "py-ubjson",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nlohmann/json binary_reader.hpp — CBOR/MessagePack/UBJSON/BJData readers",
+   "url": "https://github.com/nlohmann/json/blob/develop/include/nlohmann/detail/input/binary_reader.hpp",
+   "implementation": "nlohmann/json",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Specification — overview, goals and data format",
+   "url": "https://ubjson.org/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Specification — Why (vs JSON+gzip)",
+   "url": "https://ubjson.org/#why",
+   "scope": "section",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Type Reference — Value Types",
+   "url": "https://ubjson.org/type-reference/value-types/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "scalars",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Value Types — Numeric Types (int8..float64, high-precision)",
+   "url": "https://ubjson.org/type-reference/value-types/#numeric",
+   "scope": "section",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Value Types — String Type",
+   "url": "https://ubjson.org/type-reference/value-types/#string",
+   "scope": "section",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Value Types — Null and No-Op",
+   "url": "https://ubjson.org/type-reference/value-types/#null",
+   "scope": "section",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Type Reference — Container Types (array, object)",
+   "url": "https://ubjson.org/type-reference/container-types/",
+   "scope": "whole",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "collections",
+    "arrays",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "UBJSON Container Types — Optimized Format (typed and counted containers)",
+   "url": "https://ubjson.org/type-reference/container-types/#optimized-format",
+   "scope": "section",
+   "format": "html",
+   "authority": "designer",
+   "version": "Draft 12",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "performance"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "UBJSON — Libraries",
+   "url": "https://ubjson.org/libraries/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "BJData (Binary JData) Specification — UBJSON-derived successor",
+   "url": "https://github.com/NeuroJSON/bjdata/blob/master/Binary_JData_Specification.md",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "nlohmann/json docs — UBJSON binary format mapping",
+   "url": "https://json.nlohmann.me/features/binary_formats/ubjson/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — UBJSON",
+   "url": "https://en.wikipedia.org/wiki/UBJSON",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — UBJSON",
+   "url": "https://pldb.io/concepts/ubjson.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

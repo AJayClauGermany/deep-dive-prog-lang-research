@@ -1,0 +1,371 @@
+{
+  "id": "hindley-milner",
+  "name": "Hindley-Milner / Damas-Milner type system",
+  "aliases": [
+    "HM",
+    "Damas-Milner",
+    "Algorithm W",
+    "let-polymorphism",
+    "ML polymorphism"
+  ],
+  "categories": [
+    "theoretical-model",
+    "calculus"
+  ],
+  "paradigms": [
+    "functional"
+  ],
+  "typing": [
+    "static",
+    "inferred",
+    "parametric-polymorphism"
+  ],
+  "first_appeared": 1969,
+  "designers": [
+    "J. Roger Hindley",
+    "Robin Milner",
+    "Luis Damas"
+  ],
+  "summary": "The let-polymorphic type system of ML: a predicative rank-1 fragment of System F in which every typable term has a principal type scheme computable by unification (Algorithm W). It is the core of type inference in ML, OCaml, Haskell, F#, Elm and many other languages.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [
+    "simply-typed-lambda-calculus",
+    "combinatory-logic"
+  ],
+  "related": [
+    {
+      "id": "system-f",
+      "relation": "subset-of"
+    },
+    {
+      "id": "standard-ml",
+      "relation": "family"
+    },
+    {
+      "id": "ocaml",
+      "relation": "family"
+    },
+    {
+      "id": "haskell",
+      "relation": "family"
+    },
+    {
+      "id": "ml-lcf",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "0": "Reference implementations of Algorithm W in teaching code (TAPL recon, PL Zoo) and the production type checkers of OCaml and other ML-family compilers."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Hindley (1969) — The Principal Type-Scheme of an Object in Combinatory Logic",
+      "url": "https://doi.org/10.2307/1995158",
+      "concepts": [
+        "type-inference",
+        "combinators"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "J. Roger Hindley"
+      ],
+      "year": 1969
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Milner (1978) — A Theory of Type Polymorphism in Programming (JCSS)",
+      "url": "https://doi.org/10.1016/0022-0000(78)90014-4",
+      "concepts": [
+        "type-inference",
+        "generics",
+        "type-soundness"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Robin Milner"
+      ],
+      "year": 1978
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Damas & Milner (1982) — Principal Type-Schemes for Functional Programs (POPL)",
+      "url": "https://doi.org/10.1145/582153.582176",
+      "concepts": [
+        "type-inference",
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Luis Damas",
+        "Robin Milner"
+      ],
+      "year": 1982
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Robinson (1965) — A Machine-Oriented Logic Based on the Resolution Principle (unification algorithm)",
+      "url": "https://doi.org/10.1145/321250.321253",
+      "concepts": [
+        "unification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "J. A. Robinson"
+      ],
+      "year": 1965
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "TAPL checkers — recon (constraint-based type reconstruction with let-polymorphism)",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/recon/",
+      "concepts": [
+        "type-inference",
+        "unification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "directory",
+      "access": "open",
+      "implementation": "TAPL recon (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL fullrecon core.ml — constraint generation and unification",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullrecon/core.ml",
+      "concepts": [
+        "type-inference",
+        "unification"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL fullrecon (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "PL Zoo — poly/type_infer.ml (Hindley-Milner inference for a small ML)",
+      "url": "https://github.com/andrejbauer/plzoo/blob/master/src/poly/type_infer.ml",
+      "concepts": [
+        "type-inference",
+        "unification",
+        "generics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "PL Zoo poly (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "PL Zoo — Andrej Bauer's collection of small language implementations",
+      "url": "https://github.com/andrejbauer/plzoo",
+      "concepts": [
+        "interpreter"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "repository",
+      "access": "open",
+      "implementation": "PL Zoo"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml typing/ctype.ml — unification, generalisation (levels) and instantiation",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/typing/ctype.ml",
+      "concepts": [
+        "unification",
+        "type-inference"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml typing/typecore.ml — type inference for core expressions",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/typing/typecore.ml",
+      "concepts": [
+        "type-inference",
+        "semantic-analysis"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Cardelli (1987) — Basic Polymorphic Typechecking (with Modula-2 implementation)",
+      "url": "https://lucacardelli.name/Papers/BasicTypechecking.pdf",
+      "concepts": [
+        "type-inference",
+        "unification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Luca Cardelli"
+      ],
+      "year": 1987
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Kiselyov — How OCaml type checker works, or what polymorphism and garbage collection have in common (efficient generalization with levels)",
+      "url": "https://okmij.org/ftp/ML/generalization.html",
+      "concepts": [
+        "type-inference",
+        "performance"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Oleg Kiselyov"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Pierce — Types and Programming Languages, ch. 22 Type Reconstruction",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/",
+      "concepts": [
+        "type-inference",
+        "unification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Benjamin C. Pierce"
+      ],
+      "year": 2002
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner type system",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner: Let-polymorphism",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system#Let-polymorphism",
+      "concepts": [
+        "generics",
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner: Typing rules",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system#Typing_rules",
+      "concepts": [
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner: Algorithm W",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system#Algorithm_W",
+      "concepts": [
+        "type-inference",
+        "unification"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner: Algorithm J",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system#Algorithm_J",
+      "concepts": [
+        "type-inference"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner: Recursive definitions",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system#Recursive_definitions",
+      "concepts": [
+        "recursion"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Hindley-Milner: Extensions (overloading, higher-order types, subtyping)",
+      "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system#Extensions",
+      "concepts": [
+        "comparison"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

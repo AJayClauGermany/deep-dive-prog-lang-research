@@ -1,0 +1,48 @@
+{
+ "id": "sed",
+ "name": "sed (stream editor)",
+ "aliases": ["sed", "GNU sed", "stream editor"],
+ "categories": ["scripting", "pattern-matching", "domain-specific"],
+ "paradigms": ["imperative", "stream-processing"],
+ "typing": ["untyped"],
+ "first_appeared": 1974,
+ "designers": ["Lee E. McMahon"],
+ "summary": "Non-interactive stream editor derived from ed: a script of address-selected one-letter commands (s, d, p, y, b, t, h/g/x...) applied to each input line, with a pattern space and hold space; Turing-complete via branching. Standardised in POSIX.",
+ "status": "active",
+ "defined_by": ["international-standard", "reference-implementation"],
+ "standards": ["POSIX.1-2024 XCU sed"],
+ "file_extensions": [".sed"],
+ "homepage": "https://www.gnu.org/software/sed/",
+ "influenced_by": [],
+ "related": [{"id": "awk", "relation": "family"}],
+ "level_notes": {"1": "POSIX specifies sed; McMahon's 1978 paper is the original description; the GNU sed manual documents GNU extensions.", "0": "GNU sed, FreeBSD/macOS sed and BusyBox sed are the main implementations."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "GNU sed sed/execute.c — executing scripts on the pattern space", "url": "https://git.savannah.gnu.org/cgit/sed.git/tree/sed/execute.c", "implementation": "GNU sed", "scope": "whole", "authority": "official", "format": "directory", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "GNU sed sed/compile.c — script compiler", "url": "https://git.savannah.gnu.org/cgit/sed.git/tree/sed/compile.c", "implementation": "GNU sed", "scope": "whole", "authority": "official", "format": "directory", "access": "open", "concepts": ["parser", "compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "FreeBSD usr.bin/sed/compile.c — BSD sed script parser", "url": "https://github.com/freebsd/freebsd-src/blob/main/usr.bin/sed/compile.c", "implementation": "BSD sed", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "FreeBSD usr.bin/sed/process.c — BSD sed execution", "url": "https://github.com/freebsd/freebsd-src/blob/main/usr.bin/sed/process.c", "implementation": "BSD sed", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter", "regular-expressions"]},
+  {"level": 0, "kind": "implementation-source", "title": "BusyBox editors/sed.c — compact sed implementation", "url": "https://github.com/mirror/busybox/blob/master/editors/sed.c", "implementation": "BusyBox sed", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+
+  {"level": 1, "kind": "standard", "title": "POSIX sed utility", "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sed.html", "scope": "whole", "authority": "standards-body", "year": 2024, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["grammar", "standardization"]},
+  {"level": 1, "kind": "standard", "title": "POSIX sed — Addresses", "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sed.html#tag_20_109_13_01", "scope": "section", "authority": "standards-body", "year": 2024, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["pattern-matching", "conditionals"]},
+  {"level": 1, "kind": "standard", "title": "POSIX sed — Regular expressions in sed", "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sed.html#tag_20_109_13_02", "scope": "section", "authority": "standards-body", "year": 2024, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["regular-expressions"]},
+  {"level": 1, "kind": "standard", "title": "POSIX sed — Editing commands (incl. branches b/t and labels)", "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sed.html#tag_20_109_13_03", "scope": "section", "authority": "standards-body", "year": 2024, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["statements", "goto-labels", "strings"]},
+  {"level": 1, "kind": "original-paper", "title": "SED — A Non-interactive Text Editor (Unix 7th Edition, Vol. 2)", "url": "https://wolfram.schneider.org/bsd/7thEdManVol2/sed/sed.pdf", "scope": "whole", "authority": "designer", "authors": ["Lee E. McMahon"], "year": 1978, "version": "POSIX.1-2024", "format": "pdf", "access": "open", "concepts": ["design-rationale", "history"]},
+  {"level": 1, "kind": "reference-manual", "title": "sed(1) — Unix 7th Edition manual", "url": "http://man.cat-v.org/unix_7th/1/sed", "implementation": "V7 sed", "scope": "whole", "authority": "designer", "year": 1979, "version": "POSIX.1-2024", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU sed manual", "url": "https://www.gnu.org/software/sed/manual/sed.html", "implementation": "GNU sed", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU sed — Addresses: selecting lines", "url": "https://www.gnu.org/software/sed/manual/html_node/Addresses.html", "implementation": "GNU sed", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU sed — The s command", "url": "https://www.gnu.org/software/sed/manual/html_node/The-_0022s_0022-Command.html", "implementation": "GNU sed", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["regular-expressions", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU sed — Hold and pattern buffers", "url": "https://www.gnu.org/software/sed/manual/html_node/Hold-and-Pattern-Buffers.html", "implementation": "GNU sed", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU sed — Branching and flow control", "url": "https://www.gnu.org/software/sed/manual/html_node/Branching-and-flow-control.html", "implementation": "GNU sed", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["goto-labels", "loops", "conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "GNU sed — Regular expressions (BRE/ERE)", "url": "https://www.gnu.org/software/sed/manual/html_node/sed-regular-expressions.html", "implementation": "GNU sed", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["regular-expressions"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Grymoire — Sed: an introduction and tutorial", "url": "https://www.grymoire.com/Unix/Sed.html", "scope": "whole", "authority": "community", "authors": ["Bruce Barnett"], "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "cheatsheet", "title": "Useful one-line scripts for sed (Eric Pement)", "url": "https://www.pement.org/sed/sed1line.txt", "scope": "whole", "authority": "community", "authors": ["Eric Pement"], "format": "html", "access": "open"},
+  {"level": 2, "kind": "by-example", "title": "Sed One-Liners Explained, Part I", "url": "https://catonmat.net/sed-one-liners-explained-part-one", "scope": "whole", "authority": "community", "authors": ["Peteris Krumins"], "format": "html", "access": "open"},
+  {"level": 2, "kind": "cheatsheet", "title": "Learn X in Y minutes — sed", "url": "https://learnxinyminutes.com/sed/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — sed", "url": "https://en.wikipedia.org/wiki/Sed", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history", "turing-completeness"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — sed", "url": "https://pldb.io/concepts/sed.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Sed", "url": "https://rosettacode.org/wiki/Category:Sed", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

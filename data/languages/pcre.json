@@ -1,0 +1,392 @@
+{
+ "id": "pcre",
+ "name": "PCRE / Perl-compatible regex",
+ "aliases": [
+  "PCRE2",
+  "Perl Compatible Regular Expressions",
+  "Perl regex"
+ ],
+ "categories": [
+  "pattern-matching",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1997,
+ "designers": [
+  "Philip Hazel",
+  "Larry Wall"
+ ],
+ "summary": "The Perl regular-expression dialect and the PCRE/PCRE2 C library that re-implements it: backtracking matching with lazy and possessive quantifiers, atomic groups, lookahead/lookbehind, named groups, recursion and subroutine calls, conditionals, backtracking-control verbs and Unicode properties; the de-facto syntax of many languages' regex engines.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "homepage": "https://www.pcre.org/",
+ "influenced_by": [
+  "regex-posix",
+  "perl"
+ ],
+ "related": [
+  {
+   "id": "perl",
+   "relation": "embeds"
+  },
+  {
+   "id": "regex-posix",
+   "relation": "family"
+  },
+  {
+   "id": "re2",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: Perl's perlre is the original definition and PCRE2's pcre2pattern/pcre2syntax man pages document the library dialect (pcre2compat lists the differences). Deep links use the man pages' named anchors where present.",
+  "0": "PCRE2 (C; interpretive backtracking matcher, alternative DFA matcher and an SLJIT-based JIT) and Perl's own regcomp.c/regexec.c."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "PCRE2 — source repository",
+   "url": "https://github.com/PCRE2Project/pcre2",
+   "implementation": "PCRE2",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PCRE2 — pcre2_compile.c (pattern parser and compiler)",
+   "url": "https://github.com/PCRE2Project/pcre2/blob/master/src/pcre2_compile.c",
+   "implementation": "PCRE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PCRE2 — pcre2_match.c (backtracking matcher)",
+   "url": "https://github.com/PCRE2Project/pcre2/blob/master/src/pcre2_match.c",
+   "implementation": "PCRE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PCRE2 — pcre2_dfa_match.c (alternative DFA matcher)",
+   "url": "https://github.com/PCRE2Project/pcre2/blob/master/src/pcre2_dfa_match.c",
+   "implementation": "PCRE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PCRE2 — pcre2_jit_compile.c (SLJIT just-in-time compiler)",
+   "url": "https://github.com/PCRE2Project/pcre2/blob/master/src/pcre2_jit_compile.c",
+   "implementation": "PCRE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "PCRE2 — testdata/testinput1 (Perl-compatible behaviour tests)",
+   "url": "https://github.com/PCRE2Project/pcre2/blob/master/testdata/testinput1",
+   "implementation": "PCRE2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Perl 5 — regcomp.c (Perl regex compiler)",
+   "url": "https://github.com/Perl/perl5/blob/blead/regcomp.c",
+   "implementation": "perl5",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — syntax and semantics of PCRE2 regular expressions",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Square brackets and character classes",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#characterclass",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Groups (capturing, non-capturing)",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#group",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Atomic grouping and possessive quantifiers",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#atomicgroup",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Backreferences",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#backreferences",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Assertions (lookahead, lookbehind)",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#bigassertions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Conditional groups",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#conditions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Recursive patterns",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#recursion",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2pattern — Backtracking control verbs",
+   "url": "https://www.pcre.org/current/doc/html/pcre2pattern.html#backtrackcontrol",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2syntax — syntax quick reference",
+   "url": "https://www.pcre.org/current/doc/html/pcre2syntax.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2compat — differences between PCRE2 and Perl",
+   "url": "https://www.pcre.org/current/doc/html/pcre2compat.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2matching — the two matching algorithms (backtracking vs DFA)",
+   "url": "https://www.pcre.org/current/doc/html/pcre2matching.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "pcre2unicode — Unicode and UTF support",
+   "url": "https://www.pcre.org/current/doc/html/pcre2unicode.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "perlre — Perl regular expressions",
+   "url": "https://perldoc.perl.org/perlre",
+   "implementation": "perl5",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "perlretut — Perl regular expressions tutorial",
+   "url": "https://perldoc.perl.org/perlretut",
+   "implementation": "perl5",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "perlreref — Perl regular expressions reference",
+   "url": "https://perldoc.perl.org/perlreref",
+   "implementation": "perl5",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Regular-Expressions.info — PCRE",
+   "url": "https://www.regular-expressions.info/pcre.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Jan Goyvaerts"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Perl Compatible Regular Expressions",
+   "url": "https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

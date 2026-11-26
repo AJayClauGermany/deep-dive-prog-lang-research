@@ -1,0 +1,415 @@
+{
+ "id": "amaranth",
+ "name": "Amaranth HDL",
+ "aliases": [
+  "nMigen"
+ ],
+ "categories": [
+  "hardware-description",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "generator",
+  "structural",
+  "imperative"
+ ],
+ "typing": [
+  "dynamic-host",
+  "width-typed-values"
+ ],
+ "first_appeared": 2019,
+ "designers": [
+  "whitequark",
+  "M-Labs (nMigen)"
+ ],
+ "summary": "Python-embedded hardware description language (formerly nMigen, successor of Migen): Python code builds a netlist of shaped values, signals, combinational/synchronous domains and FSMs, emitted as RTLIL/Verilog via Yosys and simulated by a built-in Python simulator.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".py"
+ ],
+ "homepage": "https://amaranth-lang.org/",
+ "influenced_by": [
+  "python"
+ ],
+ "related": [
+  {
+   "id": "python",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "verilog",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The language guide and reference on amaranth-lang.org are the definition (no separate spec); language changes go through Amaranth RFCs.",
+  "3": "No Wikipedia or PLDB entry found."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth language guide",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth language reference",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/reference.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Shapes",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#shapes",
+   "concepts": [
+    "type-system",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Constants",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#constants",
+   "concepts": [
+    "literals",
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Signals",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#signals",
+   "concepts": [
+    "hdl-signals-timing",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Operators",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#operators",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Arrays",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#arrays",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Data structures",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#data-structures",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Modules",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#modules",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Control domains",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#control-domains",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — If/Elif/Else",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#if-elif-else-control-blocks",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Switch/Case",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#switch-case-control-blocks",
+   "concepts": [
+    "switch-case",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — FSM blocks",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#fsm-state-control-blocks",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Assertions",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#assertions",
+   "concepts": [
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Clock domains",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#clock-domains",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Amaranth guide — Elaboration",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/guide.html#elaboration",
+   "concepts": [
+    "hdl-structure",
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Amaranth standard library",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/stdlib.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Amaranth changelog",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/changes.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "amaranth-lang/amaranth",
+   "url": "https://github.com/amaranth-lang/amaranth",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Amaranth"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Amaranth hdl/_ast.py — AST of values and statements",
+   "url": "https://github.com/amaranth-lang/amaranth/blob/main/amaranth/hdl/_ast.py",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Amaranth"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Amaranth hdl/_dsl.py — Module DSL (If/Switch/FSM)",
+   "url": "https://github.com/amaranth-lang/amaranth/blob/main/amaranth/hdl/_dsl.py",
+   "concepts": [
+    "conditionals",
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Amaranth"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Amaranth hdl/_ir.py — netlist IR",
+   "url": "https://github.com/amaranth-lang/amaranth/blob/main/amaranth/hdl/_ir.py",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Amaranth"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Amaranth back/rtlil.py — RTLIL backend",
+   "url": "https://github.com/amaranth-lang/amaranth/blob/main/amaranth/back/rtlil.py",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Amaranth"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Amaranth sim/pysim.py — Python simulator",
+   "url": "https://github.com/amaranth-lang/amaranth/blob/main/amaranth/sim/pysim.py",
+   "concepts": [
+    "interpreter",
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Amaranth"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Amaranth tutorials",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/tutorial.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Amaranth — Getting started",
+   "url": "https://amaranth-lang.org/docs/amaranth/latest/start.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "m-labs/migen — predecessor Python HDL",
+   "url": "https://github.com/m-labs/migen",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Migen"
+  }
+ ]
+}

@@ -1,0 +1,655 @@
+{
+ "id": "yang",
+ "name": "YANG (RFC 7950)",
+ "aliases": [
+  "YANG 1.1"
+ ],
+ "categories": [
+  "schema-idl",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "IETF NETMOD WG",
+  "Martin Björklund"
+ ],
+ "summary": "IETF data modeling language for configuration and state data, RPCs and notifications of network devices (NETCONF/RESTCONF): modules of containers, leaves, lists and choices with typedefs, groupings, augment, identities and XPath constraints.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "RFC 7950",
+  "RFC 6020"
+ ],
+ "file_extensions": [
+  ".yang",
+  ".yin"
+ ],
+ "homepage": "https://www.rfc-editor.org/rfc/rfc7950.html",
+ "influenced_by": [
+  "mib-smi",
+  "xml-schema"
+ ],
+ "related": [
+  {
+   "id": "mib-smi",
+   "relation": "successor-of"
+  }
+ ],
+ "level_notes": {
+  "2": "Secondary material is mostly vendor training and RFC 8407 guidelines (listed at level 1)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7950: The YANG 1.1 Data Modeling Language",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html",
+   "concepts": [
+    "data-model",
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2016,
+   "authors": [
+    "Martin Björklund (ed.)"
+   ],
+   "version": "RFC 7950",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §5.1 Modules and Submodules",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-5.1",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §5.1.1 Import and Include by Revision",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-5.1.1",
+   "concepts": [
+    "imports",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §5.6.3 Deviations",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-5.6.3",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §6.1 Lexical Tokenization",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-6.1",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §6.1.1 Comments",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-6.1.1",
+   "concepts": [
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §6.3.1 Language Extensions",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-6.3.1",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §6.4 XPath Evaluations",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-6.4",
+   "concepts": [
+    "path-expressions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.3 The \"typedef\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.3",
+   "concepts": [
+    "type-aliases"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.5 The \"container\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.5",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.5.3 The \"must\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.5.3",
+   "concepts": [
+    "constraints",
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.7 The \"leaf-list\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.7",
+   "concepts": [
+    "lists"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.8 The \"list\" Statement (keyed lists)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.8",
+   "concepts": [
+    "lists",
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.9 The \"choice\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.9",
+   "concepts": [
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.12 The \"grouping\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.12",
+   "concepts": [
+    "mixins"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.14 The \"rpc\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.14",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.16 The \"notification\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.16",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.17 The \"augment\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.17",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.18 The \"identity\" Statement",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.18",
+   "concepts": [
+    "enums",
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §7.20 Conformance-Related Statements (feature, if-feature, deviation)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-7.20",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §8 Constraints",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-8",
+   "concepts": [
+    "constraints-integrity"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §9 Built-In Types",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-9",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §9.9 The leafref Built-In Type",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-9.9",
+   "concepts": [
+    "references-anchors"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §9.12 The union Built-In Type",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-9.12",
+   "concepts": [
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §10 XPath Functions",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-10",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §11 Updating a Module",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-11",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 7950 — §14 YANG ABNF Grammar",
+   "url": "https://www.rfc-editor.org/rfc/rfc7950.html#section-14",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6020: YANG — A Data Modeling Language for NETCONF (YANG 1.0)",
+   "url": "https://www.rfc-editor.org/rfc/rfc6020.html",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2010,
+   "authors": [
+    "Martin Björklund (ed.)"
+   ],
+   "version": "RFC 6020",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7951: JSON Encoding of Data Modeled with YANG",
+   "url": "https://www.rfc-editor.org/rfc/rfc7951.html",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2016,
+   "authors": [
+    "Ladislav Lhotka"
+   ],
+   "version": "RFC 7951",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 8340: YANG Tree Diagrams",
+   "url": "https://www.rfc-editor.org/rfc/rfc8340.html",
+   "concepts": [
+    "documentation-comments"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2018,
+   "authors": [
+    "Martin Björklund",
+    "Lou Berger"
+   ],
+   "version": "RFC 8340",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RFC 8407: Guidelines for Authors and Reviewers of Documents Containing YANG Data Models",
+   "url": "https://www.rfc-editor.org/rfc/rfc8407.html",
+   "concepts": [
+    "style-conventions"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2018,
+   "authors": [
+    "Andy Bierman"
+   ],
+   "version": "RFC 8407",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "libyang — YANG parser/validator in C",
+   "url": "https://github.com/CESNET/libyang",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "implementation": "libyang",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyang parser_yang.c — YANG syntax parser",
+   "url": "https://github.com/CESNET/libyang/blob/master/src/parser_yang.c",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "libyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyang tree_schema.c — compiled schema tree",
+   "url": "https://github.com/CESNET/libyang/blob/master/src/tree_schema.c",
+   "concepts": [
+    "semantic-analysis",
+    "data-model"
+   ],
+   "scope": "section",
+   "implementation": "libyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyang validation.c — data validation (must/when/unique)",
+   "url": "https://github.com/CESNET/libyang/blob/master/src/validation.c",
+   "concepts": [
+    "schema-validation",
+    "constraints"
+   ],
+   "scope": "section",
+   "implementation": "libyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libyang plugins_types/union.c — union type plugin",
+   "url": "https://github.com/CESNET/libyang/blob/master/src/plugins_types/union.c",
+   "concepts": [
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "implementation": "libyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "pyang — YANG validator, transformator and code generator (Python)",
+   "url": "https://github.com/mbj4668/pyang",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "implementation": "pyang",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pyang syntax.py — lexical syntax",
+   "url": "https://github.com/mbj4668/pyang/blob/master/pyang/syntax.py",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "pyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pyang grammar.py — statement grammar",
+   "url": "https://github.com/mbj4668/pyang/blob/master/pyang/grammar.py",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "pyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pyang statements.py — semantic checks",
+   "url": "https://github.com/mbj4668/pyang/blob/master/pyang/statements.py",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "pyang",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: YANG",
+   "url": "https://en.wikipedia.org/wiki/YANG",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: YANG",
+   "url": "https://pldb.io/concepts/yang.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RFC 6244: An Architecture for Network Management Using NETCONF and YANG",
+   "url": "https://www.rfc-editor.org/rfc/rfc6244.html",
+   "concepts": [
+    "design-rationale",
+    "data-model"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2011,
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

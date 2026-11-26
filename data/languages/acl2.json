@@ -1,0 +1,49 @@
+{
+ "id": "acl2",
+ "name": "ACL2",
+ "aliases": ["A Computational Logic for Applicative Common Lisp"],
+ "categories": ["proof-assistant", "functional"],
+ "paradigms": ["functional", "applicative"],
+ "typing": ["dynamic", "untyped-first-order"],
+ "first_appeared": 1990,
+ "designers": ["Matt Kaufmann", "J Strother Moore"],
+ "summary": "Applicative subset of Common Lisp together with a first-order logic of total recursive functions and an automated induction-and-rewriting theorem prover, successor to the Boyer–Moore prover Nqthm and used for industrial hardware verification.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".lisp", ".acl2"],
+ "homepage": "https://www.cs.utexas.edu/~moore/acl2/",
+ "influenced_by": ["common-lisp"],
+ "related": [
+  {"id": "common-lisp", "relation": "subset-of"},
+  {"id": "common-lisp", "relation": "implemented-in"}
+ ],
+ "level_notes": {
+  "1": "The ACL2 documentation (XDOC combined manual) is the reference; acl2.org mirrors refuse automated clients, so the UT Austin copy is linked.",
+  "0": "acl2/acl2 on GitHub; the system is written in ACL2/Common Lisp itself."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "acl2/acl2 — ACL2 system and community books", "url": "https://github.com/acl2/acl2", "concepts": ["verification"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "axioms.lisp — the ground-zero logical theory and primitives", "url": "https://github.com/acl2/acl2/blob/master/axioms.lisp", "concepts": ["logic-foundations", "standard-library"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "translate.lisp — translation of user syntax to internal form", "url": "https://github.com/acl2/acl2/blob/master/translate.lisp", "concepts": ["parser", "macros"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "defuns.lisp — function definition and admission (termination)", "url": "https://github.com/acl2/acl2/blob/master/defuns.lisp", "concepts": ["functions", "recursion"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "rewrite.lisp — the rewriter", "url": "https://github.com/acl2/acl2/blob/master/rewrite.lisp", "concepts": ["rewriting"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "induct.lisp — induction heuristics", "url": "https://github.com/acl2/acl2/blob/master/induct.lisp", "concepts": ["recursion", "verification"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "prove.lisp — the waterfall prover", "url": "https://github.com/acl2/acl2/blob/master/prove.lisp", "concepts": ["verification"], "scope": "section", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "README.md", "url": "https://github.com/acl2/acl2/blob/master/README.md", "concepts": ["tooling"], "scope": "whole", "implementation": "ACL2", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 combined manual (documentation)", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html", "concepts": ["standard-library", "verification"], "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — DEFUN", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____DEFUN", "concepts": ["functions", "recursion"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — DEFTHM", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____DEFTHM", "concepts": ["verification"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — DEFMACRO", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____DEFMACRO", "concepts": ["macros"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — Guards", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____GUARD", "concepts": ["type-annotations", "assertions"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — Packages (DEFPKG)", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____DEFPKG", "concepts": ["packages", "namespaces"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — Books (modules)", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____BOOKS", "concepts": ["modules", "imports"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — Single-threaded objects (stobj)", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____STOBJ", "concepts": ["memory-management", "linear-types"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ACL2 manual — Programming", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____PROGRAMMING", "concepts": ["standard-library"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "original-paper", "title": "ACL2 papers and publications (Kaufmann & Moore)", "url": "https://www.cs.utexas.edu/~moore/publications/acl2-papers.html", "concepts": ["design-rationale"], "scope": "whole", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "history", "title": "Nqthm, the Boyer-Moore prover (best ideas page)", "url": "https://www.cs.utexas.edu/~moore/best-ideas/nqthm/index.html", "concepts": ["history"], "scope": "whole", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "tutorial", "title": "ACL2 manual — Introduction to ACL2", "url": "https://www.cs.utexas.edu/~moore/acl2/current/combined-manual/index.html?topic=ACL2____ACL2-TUTORIAL", "concepts": ["hello-world"], "scope": "section", "authority": "official", "format": "html", "access": "open"},
+  {"level": 2, "kind": "guide", "title": "ACL2 home page", "url": "https://www.cs.utexas.edu/~moore/acl2/", "concepts": ["tooling"], "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "ACL2 — Wikipedia", "url": "https://en.wikipedia.org/wiki/ACL2", "concepts": ["history"], "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "catalog", "title": "ACL2 — PLDB", "url": "https://pldb.io/concepts/acl2.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

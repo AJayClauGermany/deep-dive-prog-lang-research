@@ -1,0 +1,289 @@
+{
+ "id": "powerpc-assembly",
+ "name": "PowerPC assembly",
+ "aliases": [
+  "Power ISA assembly",
+  "POWER assembly",
+  "ppc64le"
+ ],
+ "categories": [
+  "assembly"
+ ],
+ "paradigms": [
+  "imperative",
+  "load-store"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "IBM",
+  "Motorola",
+  "Apple (AIM alliance)"
+ ],
+ "summary": "Assembly language of the PowerPC / Power ISA RISC architecture (AIM alliance, now stewarded by the OpenPOWER Foundation), used in IBM POWER servers, older Macs, game consoles and embedded systems; notable for its weakly ordered memory model.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".s",
+  ".S"
+ ],
+ "homepage": "https://openpowerfoundation.org/",
+ "level_notes": {
+  "1": "The Power ISA book (OpenPOWER Foundation, free with click-through license) is normative; the ELFv1/ELFv2 ABIs define calling conventions. The POWER memory model was formalised by the Cambridge/INRIA herd work.",
+  "0": "No reference implementation; GNU as, LLVM, IBM's AIX assembler and QEMU are the main implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Power ISA specifications (OpenPOWER Foundation; Power ISA v3.1)",
+   "url": "https://openpowerfoundation.org/specifications/isa/",
+   "concepts": [
+    "instruction-set",
+    "memory-model"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "64-Bit ELF V2 ABI Specification: Power Architecture (OpenPOWER)",
+   "url": "https://openpowerfoundation.org/specifications/64bitelfabi/",
+   "concepts": [
+    "calling-convention-abi",
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "64-bit PowerPC ELF Application Binary Interface Supplement 1.9 (ELFv1)",
+   "url": "https://refspecs.linuxfoundation.org/ELF/ppc64/PPC-elf64abi.html",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "System V ABI PowerPC Processor Supplement (32-bit)",
+   "url": "https://refspecs.linuxfoundation.org/elf/elfspec_ppc.pdf",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Introducing Power Architecture's Assembly Language (OpenPOWER Lab, Unicamp)",
+   "url": "https://openpower.ic.unicamp.br/post/assembly_introduction/",
+   "concepts": [
+    "hello-world",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Balance of Power: Introducing PowerPC Assembly Language (Apple develop, 1995)",
+   "url": "https://gferrara.github.io/apple-develop-articles/1995/march_95_balance_of_power_introducing_powerpc_assembly_language.html",
+   "concepts": [
+    "instruction-set",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Dave Evans"
+   ],
+   "year": 1995,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "gcc PowerPC Assembly Quick Reference (UAF CS 301)",
+   "url": "https://www.cs.uaf.edu/2011/fall/cs301/support/ppc/index.html",
+   "concepts": [
+    "instruction-set",
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "IBM AIX 7.3 — Assembler Language Reference",
+   "url": "https://www.ibm.com/docs/en/aix/7.3?topic=aix-assembler-language-reference",
+   "concepts": [
+    "assembler-directives",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "implementation": "AIX as",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — PowerPC Dependent Features",
+   "url": "https://sourceware.org/binutils/docs/as/PPC_002dDependent.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Understanding POWER Multiprocessors (PLDI 2011)",
+   "url": "https://www.cl.cam.ac.uk/~pes20/ppc-supplemental/pldi105-sarkar.pdf",
+   "concepts": [
+    "memory-model",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Susmit Sarkar",
+    "Peter Sewell",
+    "Jade Alglave",
+    "Luc Maranget",
+    "Derek Williams"
+   ],
+   "year": 2011,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "herdtools7 ppc.cat — Power memory model",
+   "url": "https://github.com/herd/herdtools7/blob/master/herd/libdir/ppc.cat",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "section",
+   "implementation": "herd7",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM PPCInstrInfo.td — PowerPC instruction definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/PowerPC/PPCInstrInfo.td",
+   "concepts": [
+    "instruction-set",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/ppc/insn32.decode — Power 32-bit instruction decoder",
+   "url": "https://github.com/qemu/qemu/blob/master/target/ppc/insn32.decode",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/ppc/insn64.decode — Power ISA 3.1 prefixed instructions",
+   "url": "https://github.com/qemu/qemu/blob/master/target/ppc/insn64.decode",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — PowerPC",
+   "url": "https://en.wikipedia.org/wiki/PowerPC",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Power ISA",
+   "url": "https://en.wikipedia.org/wiki/Power_ISA",
+   "concepts": [
+    "instruction-set",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — PowerPC",
+   "url": "https://pldb.io/concepts/powerpc.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

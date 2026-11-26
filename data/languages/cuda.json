@@ -1,0 +1,454 @@
+{
+ "id": "cuda",
+ "name": "CUDA C++",
+ "aliases": [
+  "CUDA",
+  "CUDA C"
+ ],
+ "categories": [
+  "shader-gpu",
+  "systems"
+ ],
+ "paradigms": [
+  "imperative",
+  "object-oriented",
+  "spmd",
+  "data-parallel"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "NVIDIA",
+  "Ian Buck"
+ ],
+ "summary": "NVIDIA's C++ dialect for GPU computing: __global__/__device__ kernels launched over grids of thread blocks, explicit memory spaces (global, shared, constant), warp-level and cooperative-group synchronization, compiled by nvcc (or Clang) to PTX.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".cu",
+  ".cuh"
+ ],
+ "homepage": "https://developer.nvidia.com/cuda-toolkit",
+ "influenced_by": [
+  "cpp",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "cpp",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "opencl-c",
+   "relation": "family"
+  },
+  {
+   "id": "hlsl",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "nvcc is proprietary; Clang's CUDA support and ZLUDA-type projects are the open implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/index.html",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Programming model",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Intro to CUDA C++",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Writing CUDA kernels",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/writing-cuda-kernels.html",
+   "concepts": [
+    "functions",
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Understanding memory",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/understanding-memory.html",
+   "concepts": [
+    "memory-management"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Asynchronous execution (streams)",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html",
+   "concepts": [
+    "async-await",
+    "concurrency"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — nvcc",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/nvcc.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Cooperative groups",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cooperative-groups.html",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Unified memory",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/unified-memory.html",
+   "concepts": [
+    "memory-management"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Dynamic parallelism",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/dynamic-parallelism.html",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — CUDA graphs",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html",
+   "concepts": [
+    "concurrency"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — C++ language extensions",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html",
+   "concepts": [
+    "annotations-attributes",
+    "keywords"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — C++ language support",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-support.html",
+   "concepts": [
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — CUDA C++ memory model",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cuda-cpp-memory-model.html",
+   "concepts": [
+    "memory-model",
+    "atomics-memory-ordering"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Execution model",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cuda-cpp-execution-model.html",
+   "concepts": [
+    "concurrency"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Mathematical functions",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/mathematical-functions.html",
+   "concepts": [
+    "standard-library",
+    "floating-point"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CUDA Programming Guide — Compute capabilities",
+   "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/compute-capabilities.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PTX ISA reference",
+   "url": "https://docs.nvidia.com/cuda/parallel-thread-execution/index.html",
+   "concepts": [
+    "intermediate-representation",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "NVCC compiler driver documentation",
+   "url": "https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html",
+   "concepts": [
+    "tooling",
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "CUDA C++ Core Libraries (libcu++, Thrust, CUB) documentation",
+   "url": "https://nvidia.github.io/cccl/",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "NVIDIA/cccl — Thrust, CUB, libcudacxx",
+   "url": "https://github.com/NVIDIA/cccl",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "NVIDIA CCCL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Clang lib/Sema/SemaCUDA.cpp — CUDA host/device semantics",
+   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Sema/SemaCUDA.cpp",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Clang lib/CodeGen/CGCUDANV.cpp — CUDA kernel launch codegen",
+   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/CodeGen/CGCUDANV.cpp",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Clang — Compiling CUDA with clang",
+   "url": "https://llvm.org/docs/CompileCudaWithLLVM.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "NVIDIA Developer Blog — An Even Easier Introduction to CUDA",
+   "url": "https://developer.nvidia.com/blog/even-easier-introduction-cuda/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Nickolls, Buck, Garland, Skadron — Scalable Parallel Programming with CUDA (ACM Queue 2008)",
+   "url": "https://queue.acm.org/detail.cfm?id=1365500",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "John Nickolls",
+    "Ian Buck",
+    "Michael Garland",
+    "Kevin Skadron"
+   ],
+   "year": 2008
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "CUDA C++ Best Practices Guide",
+   "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+   "concepts": [
+    "performance"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — CUDA",
+   "url": "https://en.wikipedia.org/wiki/CUDA",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CUDA",
+   "url": "https://pldb.io/concepts/cuda.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

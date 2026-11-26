@@ -1,0 +1,2066 @@
+{
+ "id": "wgsl",
+ "name": "WGSL",
+ "aliases": [
+  "WebGPU Shading Language"
+ ],
+ "categories": [
+  "shader-gpu",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "imperative",
+  "structured"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "explicit",
+  "inferred-local"
+ ],
+ "first_appeared": 2021,
+ "designers": [
+  "W3C GPU for the Web Working Group (editors: Alan Baker, Mehmet Oguz Derin, David Neto)"
+ ],
+ "summary": "The shading language of WebGPU, specified by the W3C GPU for the Web group: a Rust-flavoured, statically typed language for vertex, fragment and compute shaders with explicit address spaces, a uniformity analysis and a tightly defined behaviour for portability across Vulkan, Metal and Direct3D 12.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C WebGPU Shading Language (Candidate Recommendation)"
+ ],
+ "file_extensions": [
+  ".wgsl"
+ ],
+ "homepage": "https://www.w3.org/TR/WGSL/",
+ "influenced_by": [
+  "spir-v",
+  "glsl",
+  "hlsl",
+  "rust",
+  "metal-shading-language"
+ ],
+ "related": [
+  {
+   "id": "spir-v",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "glsl",
+   "relation": "family"
+  },
+  {
+   "id": "hlsl",
+   "relation": "family"
+  },
+  {
+   "id": "metal-shading-language",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The W3C WGSL specification is normative; deep links point at the editor's draft (gpuweb.github.io/gpuweb/wgsl/), whose section ids match the TR snapshot (www.w3.org/TR/ reports 403 to automated checkers). Language changes go through WebGPU extension proposals in gpuweb/gpuweb.",
+  "0": "Two major independent implementations: Tint (Google Dawn, Chromium) and naga (wgpu, Firefox). Both translate WGSL to SPIR-V, MSL, HLSL and GLSL. The WebGPU CTS contains the shader conformance tests."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WebGPU Shading Language (W3C)",
+   "url": "https://www.w3.org/TR/WGSL/",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "notes": "TR snapshot; reports 403 to automated clients."
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL — Editor's Draft",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Introduction",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#intro",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Shader Lifecycle",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#shader-lifecycle",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Errors",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#errors",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Diagnostics",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#diagnostics",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Parsing",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#parsing",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Blankspace and Line Breaks",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#blankspace-and-line-breaks",
+   "concepts": [
+    "whitespace-layout"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Comments",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#comments",
+   "concepts": [
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Tokens",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#tokens",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Literals",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#literals",
+   "concepts": [
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Numeric Literals",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#numeric-literals",
+   "concepts": [
+    "literals",
+    "integers",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Keywords",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#keywords",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Identifiers",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#identifiers",
+   "concepts": [
+    "identifiers",
+    "unicode"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Template Lists",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#template-lists-sec",
+   "concepts": [
+    "generics",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Directives",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#directives",
+   "concepts": [
+    "preprocessor"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Extensions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#extensions",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Declaration and Scope",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#declaration-and-scope",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Type Checking",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#type-checking-section",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Conversion Rank",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#conversion-rank",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Overload Resolution",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#overload-resolution-section",
+   "concepts": [
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Abstract Numeric Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#abstract-types",
+   "concepts": [
+    "type-inference",
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Boolean Type",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#bool-type",
+   "concepts": [
+    "booleans"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Integer Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#integer-types",
+   "concepts": [
+    "integers",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Floating Point Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#floating-point-types",
+   "concepts": [
+    "floating-point",
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Vector Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#vector-types",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Matrix Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#matrix-types",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Atomic Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#atomic-types",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Array Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#array-types",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Structure Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#struct-types",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Memory Views",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#memory-views",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Reference and Pointer Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#ref-ptr-types",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Comparison with References and Pointers in Other Languages",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#pointers-other-languages",
+   "concepts": [
+    "pointers-references",
+    "comparison"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Texture and Sampler Types",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#texture-sampler-types",
+   "concepts": [
+    "shader-pipeline"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Type Aliases",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#type-aliases",
+   "concepts": [
+    "type-aliases"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Variables vs Values",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#var-vs-value",
+   "concepts": [
+    "variables",
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — const Declarations",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#const-decls",
+   "concepts": [
+    "constants",
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — var Declarations",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#var-decls",
+   "concepts": [
+    "variables",
+    "storage-duration"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Early Evaluation Expressions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#early-eval-exprs",
+   "concepts": [
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Indeterminate values",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#indeterminate-values",
+   "concepts": [
+    "undefined-behavior"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Logical Expressions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#logical-expr",
+   "concepts": [
+    "operators",
+    "short-circuit",
+    "booleans"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Arithmetic Expressions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#arithmetic-expr",
+   "concepts": [
+    "operators",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Function Call Expression",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#function-call-expr",
+   "concepts": [
+    "functions",
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Operator Precedence and Associativity",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#operator-precedence-associativity",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Statements",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#statements",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Assignment Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#assignment",
+   "concepts": [
+    "assignment"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — If Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#if-statement",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Switch Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#switch-statement",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Loop Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#loop-statement",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — For Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#for-statement",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Break Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#break-statement",
+   "concepts": [
+    "loop-control"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Return Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#return-statement",
+   "concepts": [
+    "return"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Discard Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#discard-statement",
+   "concepts": [
+    "shader-pipeline"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Statements Behavior Analysis",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#behaviors",
+   "concepts": [
+    "semantic-analysis",
+    "return"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Const Assertion Statement",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#const-assert-statement",
+   "concepts": [
+    "assertions",
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Declaring a User-defined Function",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#function-declaration-sec",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Restrictions on Functions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#function-restriction",
+   "concepts": [
+    "recursion",
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Attributes",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#attributes",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — builtin attribute",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#builtin-attr",
+   "concepts": [
+    "shader-pipeline",
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — workgroup_size attribute",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#workgroup-size-attr",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Entry Points",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#entry-points",
+   "concepts": [
+    "program-structure",
+    "shader-pipeline"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Shader Stages",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#shader-stages-sec",
+   "concepts": [
+    "shader-pipeline"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Shader Interface",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#shader-interface",
+   "concepts": [
+    "shader-pipeline",
+    "interoperability"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Address Spaces",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#address-space",
+   "concepts": [
+    "memory-model",
+    "storage-duration"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Memory Layout",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#memory-layouts",
+   "concepts": [
+    "memory-model",
+    "calling-convention-abi"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Memory Model",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#memory-model",
+   "concepts": [
+    "memory-model",
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Uniformity",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#uniformity",
+   "concepts": [
+    "parallelism",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Compute Shaders and Workgroups",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#compute-shader-workgroups",
+   "concepts": [
+    "parallelism",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Collective Operations",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#collective-operations",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Floating Point Evaluation",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#floating-point-evaluation",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Keyword Summary",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#keyword-summary",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Built-in Functions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#builtin-functions",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — bitcast",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#bitcast-builtin",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Numeric Built-in Functions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#numeric-builtin-functions",
+   "concepts": [
+    "standard-library",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Texture Built-in Functions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#texture-builtin-functions",
+   "concepts": [
+    "shader-pipeline",
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Atomic Built-in Functions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#atomic-builtin-functions",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Synchronization Built-in Functions",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#sync-builtin-functions",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WGSL spec — Grammar for Recursive Descent Parsing",
+   "url": "https://gpuweb.github.io/gpuweb/wgsl/#grammar-recursive-descent",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "gpuweb wgsl/syntax.bnf — generated WGSL grammar",
+   "url": "https://github.com/gpuweb/gpuweb/blob/main/wgsl/syntax.bnf",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "WebGPU/WGSL extension proposals index",
+   "url": "https://github.com/gpuweb/gpuweb/blob/main/proposals/README.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "WGSL proposal — subgroups",
+   "url": "https://github.com/gpuweb/gpuweb/blob/main/proposals/subgroups.md",
+   "concepts": [
+    "parallelism",
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "WGSL proposal — enums",
+   "url": "https://github.com/gpuweb/gpuweb/blob/main/proposals/enums.md",
+   "concepts": [
+    "enums",
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "WGSL proposal — namespaces",
+   "url": "https://github.com/gpuweb/gpuweb/blob/main/proposals/namespaces.md",
+   "concepts": [
+    "namespaces",
+    "modules",
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WebGPU API specification (host side of WGSL)",
+   "url": "https://gpuweb.github.io/gpuweb/",
+   "concepts": [
+    "shader-pipeline",
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "gfx-rs/wgpu — includes naga, WGSL front end used by Firefox",
+   "url": "https://github.com/gfx-rs/wgpu",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga README",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/README.md",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga front/wgsl/parse/lexer.rs — WGSL lexer",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/wgsl/parse/lexer.rs",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga front/wgsl/parse/mod.rs — WGSL parser",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/wgsl/parse/mod.rs",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga front/wgsl/parse/ast.rs — WGSL AST",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/wgsl/parse/ast.rs",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga front/wgsl/lower/mod.rs — lowering WGSL AST to naga IR",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/wgsl/lower/mod.rs",
+   "concepts": [
+    "intermediate-representation",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga front/wgsl/lower/conversion.rs — automatic conversions of abstract types",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/wgsl/lower/conversion.rs",
+   "concepts": [
+    "type-conversion",
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga proc/constant_evaluator.rs — const-expression evaluator",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/proc/constant_evaluator.rs",
+   "concepts": [
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga proc/layouter.rs — memory layout computation",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/proc/layouter.rs",
+   "concepts": [
+    "memory-model"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga valid/analyzer.rs — uniformity analysis",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/valid/analyzer.rs",
+   "concepts": [
+    "semantic-analysis",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga valid/function.rs — function validation",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/valid/function.rs",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga lib.rs — naga IR definition",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/lib.rs",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga back/spv/mod.rs — SPIR-V backend",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/back/spv/mod.rs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "naga back/msl/mod.rs — Metal Shading Language backend",
+   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/back/msl/mod.rs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "google/dawn — Dawn WebGPU and the Tint shader compiler (Chromium)",
+   "url": "https://github.com/google/dawn",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint architecture overview (docs/tint/arch.md)",
+   "url": "https://github.com/google/dawn/blob/main/docs/tint/arch.md",
+   "concepts": [
+    "compiler-architecture",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint wgsl/reader/parser/lexer.cc — WGSL lexer",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/lang/wgsl/reader/parser/lexer.cc",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint wgsl/reader/parser/parser.cc — WGSL parser",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/lang/wgsl/reader/parser/parser.cc",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint wgsl/resolver/resolver.cc — resolver (type checking)",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/lang/wgsl/resolver/resolver.cc",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint wgsl/resolver/uniformity.cc — uniformity analysis",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/lang/wgsl/resolver/uniformity.cc",
+   "concepts": [
+    "semantic-analysis",
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint wgsl/wgsl.def — WGSL builtin/intrinsic table",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/lang/wgsl/wgsl.def",
+   "concepts": [
+    "standard-library",
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint core/core.def — core IR intrinsic definitions",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/lang/core/core.def",
+   "concepts": [
+    "intermediate-representation",
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tint command-line driver (src/tint/cmd/tint/main.cc)",
+   "url": "https://github.com/google/dawn/blob/main/src/tint/cmd/tint/main.cc",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Tint"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "WebGPU Conformance Test Suite (gpuweb/cts)",
+   "url": "https://github.com/gpuweb/cts",
+   "concepts": [
+    "testing",
+    "standardization"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "gpuweb/cts — shader tests directory",
+   "url": "https://github.com/gpuweb/cts/tree/main/src/webgpu/shader",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "directory",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "gpuweb/gpuweb wgsl/index.bs — spec source (Bikeshed)",
+   "url": "https://github.com/gpuweb/gpuweb/blob/main/wgsl/index.bs",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-wgsl grammar",
+   "url": "https://github.com/szebniok/tree-sitter-wgsl",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "wgsl-analyzer language server",
+   "url": "https://github.com/wgsl-analyzer/wgsl-analyzer",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL (Google)",
+   "url": "https://google.github.io/tour-of-wgsl/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Variables",
+   "url": "https://google.github.io/tour-of-wgsl/variables/",
+   "concepts": [
+    "variables"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — const",
+   "url": "https://google.github.io/tour-of-wgsl/variables/const/",
+   "concepts": [
+    "constants"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Shadowing",
+   "url": "https://google.github.io/tour-of-wgsl/variables/shadowing/",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Basic scalar types",
+   "url": "https://google.github.io/tour-of-wgsl/types/basic-scalars/",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Abstract numerics",
+   "url": "https://google.github.io/tour-of-wgsl/types/abstract-numerics/",
+   "concepts": [
+    "type-inference",
+    "literals"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Vectors",
+   "url": "https://google.github.io/tour-of-wgsl/types/vectors/",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Structures",
+   "url": "https://google.github.io/tour-of-wgsl/types/structures/",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Pointers",
+   "url": "https://google.github.io/tour-of-wgsl/types/pointers/",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Atomics overview",
+   "url": "https://google.github.io/tour-of-wgsl/types/atomics/overview/",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — if statements",
+   "url": "https://google.github.io/tour-of-wgsl/control-flow/if-statements/",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — switch statements",
+   "url": "https://google.github.io/tour-of-wgsl/control-flow/switch-statements/",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — for statements",
+   "url": "https://google.github.io/tour-of-wgsl/control-flow/for-statements/",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Function syntax",
+   "url": "https://google.github.io/tour-of-wgsl/functions/syntax/",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Entry points",
+   "url": "https://google.github.io/tour-of-wgsl/functions/entry-points/",
+   "concepts": [
+    "program-structure",
+    "shader-pipeline"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Operators",
+   "url": "https://google.github.io/tour-of-wgsl/expressions/operators/",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Evaluation stages",
+   "url": "https://google.github.io/tour-of-wgsl/expressions/evaluation-stage/overview/",
+   "concepts": [
+    "compile-time-evaluation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tour of WGSL — Uniformity analysis",
+   "url": "https://google.github.io/tour-of-wgsl/uniformity-analysis/",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals — WGSL",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-wgsl.html",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals WGSL — type conversion",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-wgsl.html#type-conversion",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals WGSL — let/var/const vs JavaScript",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-wgsl.html#let-var-and-const-mean-different-things-in-wgsl-vs-javascript",
+   "concepts": [
+    "variables",
+    "constants",
+    "comparison"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals WGSL — flow control",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-wgsl.html#flow-control",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals WGSL — differences with other languages",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-wgsl.html#differences-with-other-languages",
+   "concepts": [
+    "comparison"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals — Fundamentals (first shaders)",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-fundamentals.html",
+   "concepts": [
+    "hello-world",
+    "shader-pipeline"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals — Inter-stage variables",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-inter-stage-variables.html",
+   "concepts": [
+    "shader-pipeline"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "WebGPU Fundamentals — Compute shader basics",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-compute-shaders.html",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "WebGPU Fundamentals — Memory layout",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-memory-layout.html",
+   "concepts": [
+    "memory-model",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "WebGPU Fundamentals — WGSL function reference",
+   "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-wgsl-function-reference.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Chrome for Developers — From WebGL to WebGPU (GLSL vs WGSL)",
+   "url": "https://developer.chrome.com/docs/web-platform/webgpu/from-webgl-to-webgpu",
+   "concepts": [
+    "comparison"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Chrome for Developers — WebGPU overview",
+   "url": "https://developer.chrome.com/docs/web-platform/webgpu/overview",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — WebGPU API",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API",
+   "concepts": [
+    "shader-pipeline"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "naga crate documentation (docs.rs)",
+   "url": "https://docs.rs/naga/latest/naga/",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "implementation": "naga"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "WebGPU Samples",
+   "url": "https://webgpu.github.io/webgpu-samples/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — WebGPU Shading Language",
+   "url": "https://en.wikipedia.org/wiki/WebGPU_Shading_Language",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — WGSL",
+   "url": "https://pldb.io/concepts/wgsl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "Awesome WebGPU",
+   "url": "https://github.com/mikbry/awesome-webgpu",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  }
+ ]
+}

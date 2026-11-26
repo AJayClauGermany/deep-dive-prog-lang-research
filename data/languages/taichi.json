@@ -1,0 +1,443 @@
+{
+  "id": "taichi",
+  "name": "Taichi",
+  "aliases": [
+    "Taichi Lang"
+  ],
+  "categories": [
+    "domain-specific",
+    "scientific",
+    "shader-gpu"
+  ],
+  "paradigms": [
+    "imperative",
+    "data-parallel",
+    "data-oriented",
+    "differentiable"
+  ],
+  "typing": [
+    "static (kernels)",
+    "inferred",
+    "annotated"
+  ],
+  "first_appeared": 2019,
+  "designers": [
+    "Yuanming Hu",
+    "Tzu-Mao Li",
+    "Luke Anderson",
+    "Jonathan Ragan-Kelley",
+    "Frédo Durand"
+  ],
+  "summary": "Domain-specific language embedded in Python for high-performance parallel computing: functions decorated with @ti.kernel are JIT-compiled (via LLVM, CUDA, Vulkan/SPIR-V, Metal) and their outermost loops parallelised; features spatially sparse data structures and automatic differentiation.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "academic-paper"
+  ],
+  "file_extensions": [
+    ".py"
+  ],
+  "homepage": "https://www.taichi-lang.org/",
+  "influenced_by": [
+    "python",
+    "halide",
+    "cuda"
+  ],
+  "related": [
+    {
+      "id": "python",
+      "relation": "embeds"
+    }
+  ],
+  "level_notes": {
+    "1": "No separate specification; the Language Reference in the official docs plus the SIGGRAPH Asia 2019 paper define the language.",
+    "0": "Single implementation (taichi-dev/taichi): Python front end transforming the Python AST into the CHI IR, C++ compiler with LLVM/SPIR-V/Metal back ends.",
+    "2": "The topic pages of the official docs (kernels, fields, types, metaprogramming, compilation) are user guides, filed at level 2."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference",
+      "url": "https://docs.taichi-lang.org/docs/language_reference",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — Values and types",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#values-and-types",
+      "concepts": [
+        "type-system",
+        "primitive-types"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — Variables and scope",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#variables-and-scope",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — Static expressions (ti.static)",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#static-expressions",
+      "concepts": [
+        "compile-time-evaluation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — Expressions",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#expressions",
+      "concepts": [
+        "expressions",
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — The if statement",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#the-if-statement",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — The for statement (parallel range-for and struct-for)",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#the-for-statement",
+      "concepts": [
+        "loops",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Taichi Language Reference — The assert statement",
+      "url": "https://docs.taichi-lang.org/docs/language_reference#the-assert-statement",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Hu et al. — Taichi: a language for high-performance computation on spatially sparse data structures (SIGGRAPH Asia 2019)",
+      "url": "https://yuanming.taichi.graphics/publication/2019-taichi/taichi-lang.pdf",
+      "concepts": [
+        "design-rationale",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Yuanming Hu",
+        "Tzu-Mao Li",
+        "Luke Anderson",
+        "Jonathan Ragan-Kelley",
+        "Frédo Durand"
+      ],
+      "year": 2019
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Hu et al. — DiffTaichi: Differentiable Programming for Physical Simulation (ICLR 2020)",
+      "url": "https://arxiv.org/abs/1910.00935",
+      "concepts": [
+        "design-rationale"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Yuanming Hu",
+        "Luke Anderson",
+        "Tzu-Mao Li",
+        "Qi Sun",
+        "Nathan Carr",
+        "Jonathan Ragan-Kelley",
+        "Frédo Durand"
+      ],
+      "year": 2020
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Kernels and functions",
+      "url": "https://docs.taichi-lang.org/docs/kernel_function",
+      "concepts": [
+        "functions",
+        "program-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Type system",
+      "url": "https://docs.taichi-lang.org/docs/type",
+      "concepts": [
+        "type-system",
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Fields",
+      "url": "https://docs.taichi-lang.org/docs/field",
+      "concepts": [
+        "arrays",
+        "memory-management"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Spatially sparse data structures",
+      "url": "https://docs.taichi-lang.org/docs/sparse",
+      "concepts": [
+        "data-model",
+        "memory-management"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Compound types (dataclasses)",
+      "url": "https://docs.taichi-lang.org/docs/dataclass",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Data-oriented classes",
+      "url": "https://docs.taichi-lang.org/docs/data_oriented_class",
+      "concepts": [
+        "classes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Differentiable programming",
+      "url": "https://docs.taichi-lang.org/docs/differentiable_programming",
+      "concepts": [
+        "code-generation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Metaprogramming",
+      "url": "https://docs.taichi-lang.org/docs/meta",
+      "concepts": [
+        "macros",
+        "compile-time-evaluation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Taichi docs — Life of a Taichi kernel (compilation)",
+      "url": "https://docs.taichi-lang.org/docs/compilation",
+      "concepts": [
+        "compiler-architecture",
+        "jit"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Taichi docs — Math module",
+      "url": "https://docs.taichi-lang.org/docs/math_module",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "taichi-dev/taichi",
+      "url": "https://github.com/taichi-dev/taichi",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Taichi"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "python/taichi/lang/ast/ast_transformer.py — Python AST to Taichi IR",
+      "url": "https://github.com/taichi-dev/taichi/blob/master/python/taichi/lang/ast/ast_transformer.py",
+      "concepts": [
+        "parser",
+        "ast"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Taichi"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "python/taichi/lang/kernel_impl.py — @ti.kernel / @ti.func decorators",
+      "url": "https://github.com/taichi-dev/taichi/blob/master/python/taichi/lang/kernel_impl.py",
+      "concepts": [
+        "functions",
+        "jit"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Taichi"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "taichi/ir/ir.h — CHI intermediate representation",
+      "url": "https://github.com/taichi-dev/taichi/blob/master/taichi/ir/ir.h",
+      "concepts": [
+        "intermediate-representation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Taichi"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "taichi/codegen/llvm/codegen_llvm.cpp — LLVM code generation",
+      "url": "https://github.com/taichi-dev/taichi/blob/master/taichi/codegen/llvm/codegen_llvm.cpp",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Taichi"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Taichi docs — Hello, World!",
+      "url": "https://docs.taichi-lang.org/docs/hello_world",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Taichi",
+      "url": "https://pldb.io/concepts/taichi.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

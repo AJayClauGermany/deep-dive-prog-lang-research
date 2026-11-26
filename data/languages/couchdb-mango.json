@@ -1,0 +1,370 @@
+{
+ "id": "couchdb-mango",
+ "name": "CouchDB Mango",
+ "aliases": [
+  "Mango Query",
+  "CouchDB _find",
+  "Cloudant Query"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "Cloudant",
+  "Apache CouchDB project"
+ ],
+ "summary": "MongoDB-inspired declarative JSON query language of Apache CouchDB (POST /db/_find): a selector object with implicit equality and $-prefixed condition and combination operators ($and, $or, $elemMatch, $regex ...), plus fields projection, sort, limit/skip, bookmarks, and JSON/text index definitions.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://docs.couchdb.org/en/stable/ddocs/mango.html",
+ "influenced_by": [
+  "mongodb-mql"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the Apache CouchDB documentation (Mango selectors in ddocs/mango.html; the /db/_find, /_index and /_explain endpoints in api/database/find.html). IBM Cloudant Query and PouchDB-find implement the same syntax.",
+  "0": "Originated as Cloudant's mango (Erlang) and merged into CouchDB as src/mango; PouchDB contains an independent JavaScript selector matcher.",
+  "3": "No dedicated encyclopedia entry; the CouchDB Wikipedia article covers it only in passing."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Apache CouchDB — src/mango README",
+   "url": "https://github.com/apache/couchdb/blob/main/src/mango/README.md",
+   "implementation": "Apache CouchDB mango",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CouchDB mango — mango_selector.erl (selector normalisation and matching)",
+   "url": "https://github.com/apache/couchdb/blob/main/src/mango/src/mango_selector.erl",
+   "implementation": "Apache CouchDB mango",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CouchDB mango — mango_fields.erl (field projection)",
+   "url": "https://github.com/apache/couchdb/blob/main/src/mango/src/mango_fields.erl",
+   "implementation": "Apache CouchDB mango",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CouchDB mango — mango_sort.erl",
+   "url": "https://github.com/apache/couchdb/blob/main/src/mango/src/mango_sort.erl",
+   "implementation": "Apache CouchDB mango",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CouchDB mango — mango_idx.erl (index selection)",
+   "url": "https://github.com/apache/couchdb/blob/main/src/mango/src/mango_idx.erl",
+   "implementation": "Apache CouchDB mango",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CouchDB mango — mango_cursor_view.erl (execution over view indexes)",
+   "url": "https://github.com/apache/couchdb/blob/main/src/mango/src/mango_cursor_view.erl",
+   "implementation": "Apache CouchDB mango",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "cloudant/mango — original Cloudant implementation",
+   "url": "https://github.com/cloudant/mango",
+   "implementation": "Cloudant mango",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PouchDB — pouchdb-selector-core/matches-selector.js (JavaScript selector matcher)",
+   "url": "https://github.com/pouchdb/pouchdb/blob/master/packages/node_modules/pouchdb-selector-core/src/matches-selector.js",
+   "implementation": "PouchDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Selector basics",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#selector-basics",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Subfields (dot paths)",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#subfields",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Implicit operators",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#implicit-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Combination operators ($and, $or, $not, $nor, $all, $elemMatch)",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#combination-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Condition operators ($eq, $in, $regex, $exists, $type ...)",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#condition-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Creating selector expressions",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#creating-selector-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "performance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB docs — Mango Queries — Indexes (JSON, partial, text)",
+   "url": "https://docs.couchdb.org/en/stable/ddocs/mango.html#indexes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB API — POST /{db}/_find",
+   "url": "https://docs.couchdb.org/en/stable/api/database/find.html#api-db-find",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB API — _find sort syntax",
+   "url": "https://docs.couchdb.org/en/stable/api/database/find.html#sort-syntax",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB API — _find filtering fields",
+   "url": "https://docs.couchdb.org/en/stable/api/database/find.html#filtering-fields",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB API — _find pagination (bookmarks)",
+   "url": "https://docs.couchdb.org/en/stable/api/database/find.html#pagination",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CouchDB API — /{db}/_explain and index selection",
+   "url": "https://docs.couchdb.org/en/stable/api/database/find.html#index-selection",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PouchDB guide — Mango queries",
+   "url": "https://pouchdb.com/guides/mango-queries.html",
+   "implementation": "PouchDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "CouchDB blog — Feature: Mango Query (CouchDB 2.0)",
+   "url": "https://blog.couchdb.org/2016/08/03/feature-mango-query/",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2016,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Apache CouchDB",
+   "url": "https://en.wikipedia.org/wiki/Apache_CouchDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

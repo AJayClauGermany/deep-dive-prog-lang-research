@@ -1,0 +1,44 @@
+{
+ "id": "hare",
+ "name": "Hare",
+ "categories": ["general-purpose", "systems"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["static", "strong", "inferred-local", "nominal"],
+ "first_appeared": 2022,
+ "designers": ["Drew DeVault"],
+ "summary": "Small, stable systems language in the spirit of C: manual memory management with defer, tagged unions and error types handled with match and the ? / ! operators, slices, no generics, compiled via the QBE back end to Unix-like targets.",
+ "status": "active",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "file_extensions": [".ha"],
+ "homepage": "https://harelang.org/",
+ "influenced_by": ["c", "go", "zig", "rust"],
+ "level_notes": {"1": "The Hare specification (PDF, harelang.org/specification) is the language definition; it is intended to be frozen at 1.0.", "0": "harec (bootstrap compiler in C, emitting QBE IL) and the hare build driver plus standard library are hosted on SourceHut (git.sr.ht), which was not reachable from the verification sandbox (HTTP 502 via proxy); those links report 'error' but are the canonical repositories."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "harec — the Hare bootstrap compiler (C, QBE back end)", "url": "https://git.sr.ht/~sircmpwn/harec", "implementation": "harec", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-repository", "title": "hare — build driver and standard library", "url": "https://git.sr.ht/~sircmpwn/hare", "implementation": "hare", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 0, "kind": "implementation-repository", "title": "QBE — the compiler back end used by harec", "url": "https://c9x.me/compile/", "implementation": "QBE", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["code-generation-backend"]},
+
+  {"level": 1, "kind": "specification", "title": "Hare Specification", "url": "https://harelang.org/specification/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "library-reference", "title": "Hare standard library reference (docs.harelang.org)", "url": "https://docs.harelang.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "tutorial", "title": "An introduction to the Hare programming language", "url": "https://harelang.org/tutorials/introduction/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Functions & parameters", "url": "https://harelang.org/tutorials/introduction/#functions--parameters", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — const & let", "url": "https://harelang.org/tutorials/introduction/#using-const--let-to-define-variables", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "constants"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Struct and tuple types", "url": "https://harelang.org/tutorials/introduction/#struct-and-tuple-types", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs", "tuples"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Slices", "url": "https://harelang.org/tutorials/introduction/#slices", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Pointers", "url": "https://harelang.org/tutorials/introduction/#pointers", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pointers-references"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Memory management", "url": "https://harelang.org/tutorials/introduction/#memory-management", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Dynamic allocation & defer", "url": "https://harelang.org/tutorials/introduction/#dynamic-memory-allocation--defer", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["resource-management"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Handling errors", "url": "https://harelang.org/tutorials/introduction/#handling-errors", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["error-handling"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — if & switch statements", "url": "https://harelang.org/tutorials/introduction/#if--switch-statements", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "switch-case"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — for loops", "url": "https://harelang.org/tutorials/introduction/#for-loops", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Tagged unions", "url": "https://harelang.org/tutorials/introduction/#tagged-unions-in-depth", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["algebraic-data-types", "union-intersection-types"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Casting & type assertions", "url": "https://harelang.org/tutorials/introduction/#casting--type-assertions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-conversion"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare introduction — Modules", "url": "https://harelang.org/tutorials/introduction/#modules", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules"]},
+  {"level": 2, "kind": "tutorial", "title": "Hare standard library tutorial", "url": "https://harelang.org/tutorials/stdlib/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 2, "kind": "faq", "title": "Hare FAQ — why Hare has no generics", "url": "https://harelang.org/documentation/faq.html#why-doesn-t-hare-have-generics", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics", "design-rationale"]},
+  {"level": 2, "kind": "faq", "title": "Hare FAQ — why QBE instead of LLVM", "url": "https://harelang.org/documentation/faq.html#why-qbe-instead-of-llvm", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["code-generation-backend", "design-rationale"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Hare", "url": "https://pldb.io/concepts/hare.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

@@ -1,0 +1,549 @@
+{
+  "id": "janet",
+  "name": "Janet",
+  "categories": [
+    "scripting",
+    "functional",
+    "general-purpose"
+  ],
+  "paradigms": [
+    "functional",
+    "imperative",
+    "meta"
+  ],
+  "typing": [
+    "dynamic",
+    "strong"
+  ],
+  "first_appeared": 2018,
+  "designers": [
+    "Calvin Rose"
+  ],
+  "summary": "A small embeddable Lisp-like language with a bytecode VM, fibers, PEG parsing, immutable and mutable data structures and a C API.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".janet"
+  ],
+  "homepage": "https://janet-lang.org/",
+  "influenced_by": [
+    "clojure",
+    "lua",
+    "lisp"
+  ],
+  "related": [
+    {
+      "id": "lisp",
+      "relation": "family"
+    },
+    {
+      "id": "c",
+      "relation": "implemented-in"
+    }
+  ],
+  "level_notes": {
+    "1": "No standard; the official documentation and the single C implementation define the language."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation",
+      "url": "https://janet-lang.org/docs/index.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Syntax and the Parser",
+      "url": "https://janet-lang.org/docs/syntax.html",
+      "concepts": [
+        "lexical-structure",
+        "literals",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Special Forms",
+      "url": "https://janet-lang.org/docs/specials.html",
+      "concepts": [
+        "expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Bindings (def and var)",
+      "url": "https://janet-lang.org/docs/bindings.html",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Flow (if, cond, case)",
+      "url": "https://janet-lang.org/docs/flow.html",
+      "concepts": [
+        "conditionals",
+        "switch-case"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Looping",
+      "url": "https://janet-lang.org/docs/loop.html",
+      "concepts": [
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Functions",
+      "url": "https://janet-lang.org/docs/functions.html",
+      "concepts": [
+        "functions",
+        "closures"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Strings, Keywords, and Symbols",
+      "url": "https://janet-lang.org/docs/strings.html",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Numbers and Arithmetic",
+      "url": "https://janet-lang.org/docs/numbers.html",
+      "concepts": [
+        "integers",
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Arrays",
+      "url": "https://janet-lang.org/docs/data_structures/arrays.html",
+      "concepts": [
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Tables",
+      "url": "https://janet-lang.org/docs/data_structures/tables.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Structs",
+      "url": "https://janet-lang.org/docs/data_structures/structs.html",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Tuples",
+      "url": "https://janet-lang.org/docs/data_structures/tuples.html",
+      "concepts": [
+        "tuples"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Destructuring",
+      "url": "https://janet-lang.org/docs/destructuring.html",
+      "concepts": [
+        "destructuring",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Fibers",
+      "url": "https://janet-lang.org/docs/fibers/index.html",
+      "concepts": [
+        "coroutines"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Error Handling",
+      "url": "https://janet-lang.org/docs/fibers/error_handling.html",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Dynamic Bindings",
+      "url": "https://janet-lang.org/docs/fibers/dynamic_bindings.html",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Macros",
+      "url": "https://janet-lang.org/docs/macros.html",
+      "concepts": [
+        "macros",
+        "quotation-homoiconicity"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Modules",
+      "url": "https://janet-lang.org/docs/modules.html",
+      "concepts": [
+        "modules",
+        "imports"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Prototypes",
+      "url": "https://janet-lang.org/docs/prototypes.html",
+      "concepts": [
+        "prototypes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Parsing Expression Grammars",
+      "url": "https://janet-lang.org/docs/peg.html",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — The Event Loop",
+      "url": "https://janet-lang.org/docs/event_loop.html",
+      "concepts": [
+        "async-await",
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Threads",
+      "url": "https://janet-lang.org/docs/threads.html",
+      "concepts": [
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Foreign Function Interface",
+      "url": "https://janet-lang.org/docs/ffi.html",
+      "concepts": [
+        "ffi"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — The Janet Abstract Machine",
+      "url": "https://janet-lang.org/docs/abstract_machine.html",
+      "concepts": [
+        "virtual-machine",
+        "bytecode"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Janet repository",
+      "url": "https://github.com/janet-lang/janet",
+      "implementation": "Janet",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/parse.c — parser",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/parse.c",
+      "concepts": [
+        "parser"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/compile.c — compiler",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/compile.c",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/specials.c — special forms compiler",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/specials.c",
+      "concepts": [
+        "expressions"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/vm.c — bytecode VM",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/vm.c",
+      "concepts": [
+        "virtual-machine",
+        "interpreter"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/gc.c — garbage collector",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/gc.c",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/fiber.c — fibers",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/fiber.c",
+      "concepts": [
+        "coroutines"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/core/peg.c — PEG engine",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/core/peg.c",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Janet src/boot/boot.janet — core library bootstrapping (macros)",
+      "url": "https://github.com/janet-lang/janet/blob/master/src/boot/boot.janet",
+      "concepts": [
+        "standard-library",
+        "macros",
+        "bootstrapping"
+      ],
+      "implementation": "Janet",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Janet for Mortals",
+      "url": "https://janet.guide/",
+      "scope": "whole",
+      "authors": [
+        "Ian Henry"
+      ],
+      "year": 2023,
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Janet Documentation — Comparison Operators",
+      "url": "https://janet-lang.org/docs/comparison.html",
+      "concepts": [
+        "operators",
+        "polymorphism"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Janet",
+      "url": "https://pldb.io/concepts/janet.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

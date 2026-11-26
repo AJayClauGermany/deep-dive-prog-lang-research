@@ -1,0 +1,367 @@
+{
+ "id": "tree-sitter-grammar",
+ "name": "tree-sitter grammar DSL",
+ "aliases": [
+  "grammar.js"
+ ],
+ "categories": [
+  "grammar-notation",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "embedded-dsl"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Max Brunsfeld"
+ ],
+ "summary": "JavaScript-embedded DSL (grammar.js) for tree-sitter: rules built from seq/choice/repeat/optional/prec/token/field combinators, compiled to an incremental GLR parser in C, with optional external scanners.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".js"
+ ],
+ "homepage": "https://tree-sitter.github.io/tree-sitter/",
+ "influenced_by": [
+  "javascript"
+ ],
+ "related": [],
+ "level_notes": {
+  "1": "The official documentation is the only specification; dsl.js defines the available functions.",
+  "2": "Little secondary literature beyond the official site."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter — Creating Parsers",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/index.html",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter — The Grammar DSL (seq, choice, repeat, prec, token, field, alias...)",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/2-the-grammar-dsl.html",
+   "concepts": [
+    "grammar",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter — Writing the Grammar",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Using precedence",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#using-precedence",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Using associativity",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#using-associativity",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Using conflicts (GLR)",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#using-conflicts",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Using fields",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#using-fields",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Using extras (whitespace, comments)",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#using-extras",
+   "concepts": [
+    "whitespace-layout",
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Using supertypes",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#using-supertypes",
+   "concepts": [
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Lexical analysis",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#lexical-analysis",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter Writing the Grammar — Keyword extraction",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#keyword-extraction",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter — External Scanners",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/4-external-scanners.html",
+   "concepts": [
+    "lexer",
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter — Writing Tests",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/5-writing-tests.html",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tree-sitter — Query Syntax",
+   "url": "https://tree-sitter.github.io/tree-sitter/using-parsers/queries/index.html",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "tree-sitter/tree-sitter",
+   "url": "https://github.com/tree-sitter/tree-sitter",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tree-sitter generate dsl.js — the grammar DSL functions",
+   "url": "https://github.com/tree-sitter/tree-sitter/blob/master/crates/generate/src/dsl.js",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tree-sitter generate parse_grammar.rs",
+   "url": "https://github.com/tree-sitter/tree-sitter/blob/master/crates/generate/src/parse_grammar.rs",
+   "concepts": [
+    "parser",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tree-sitter build_parse_table.rs — LR(1) table construction",
+   "url": "https://github.com/tree-sitter/tree-sitter/blob/master/crates/generate/src/build_tables/build_parse_table.rs",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tree-sitter render.rs — emits parser.c",
+   "url": "https://github.com/tree-sitter/tree-sitter/blob/master/crates/generate/src/render.rs",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tree-sitter lib/src/parser.c — incremental GLR runtime",
+   "url": "https://github.com/tree-sitter/tree-sitter/blob/master/lib/src/parser.c",
+   "concepts": [
+    "parser",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-json grammar.js — small example grammar",
+   "url": "https://github.com/tree-sitter/tree-sitter-json/blob/master/grammar.js",
+   "concepts": [
+    "hello-world",
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-javascript grammar.js",
+   "url": "https://github.com/tree-sitter/tree-sitter-javascript/blob/master/grammar.js",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "tree-sitter",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tree-sitter documentation home",
+   "url": "https://tree-sitter.github.io/tree-sitter/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Tree-sitter (parser generator)",
+   "url": "https://en.wikipedia.org/wiki/Tree-sitter_(parser_generator)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,479 @@
+{
+ "id": "drools-drl",
+ "name": "Drools DRL",
+ "aliases": [
+  "Drools Rule Language",
+  "DRL"
+ ],
+ "categories": [
+  "logic",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "rule-based",
+  "production-system",
+  "declarative",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "dynamic"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "Bob McWhirter",
+  "Mark Proctor",
+  "JBoss / Red Hat",
+  "Apache KIE"
+ ],
+ "summary": "The rule language of the Drools business-rules engine (now Apache KIE): packages of rules with when/then sections whose conditions are patterns and constraints over Java facts (with OOPath and operators like matches, memberOf, contains), queries, type declarations, rule attributes such as salience and agenda-group, rule units, plus DSL and spreadsheet decision-table front-ends; executed by the Phreak (Rete-derived) algorithm.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".drl",
+  ".dsl",
+  ".dslr"
+ ],
+ "homepage": "https://www.drools.org/",
+ "level_notes": {
+  "1": "No standard; the Drools documentation's DRL language reference is the definition, with the ANTLR grammar as precise syntax.",
+  "0": "apache/incubator-kie-drools contains the parser and engine."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — Rule Language Reference",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Packages",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-packages_drl-rules",
+   "concepts": [
+    "packages",
+    "namespaces"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Rule units",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-rule-units_drl-rules",
+   "concepts": [
+    "modules"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Imports",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-imports_drl-rules",
+   "concepts": [
+    "imports"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Type declarations",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-declarations_drl-rules",
+   "concepts": [
+    "records-structs",
+    "type-annotations"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Enumerative type declarations",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-declarations-enumerative_drl-rules",
+   "concepts": [
+    "enums"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Extended type declarations",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-declarations-extended_drl-rules",
+   "concepts": [
+    "inheritance"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Metadata tags",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#ref-drl-declarations-metadata-tags_drl-rules",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Queries",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-queries_drl-rules",
+   "concepts": [
+    "selection-projection"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Rule attributes",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#ref-rules-attributes_drl-rules",
+   "concepts": [
+    "annotations-attributes",
+    "evaluation-order"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Timers and calendars",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-timers-calendars_drl-rules",
+   "concepts": [
+    "date-time"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Rule conditions (WHEN)",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-rules-conditions_drl-rules",
+   "concepts": [
+    "pattern-matching",
+    "constraints"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: OOPath expressions and constraints",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#_oopath_expressions_and_constraints",
+   "concepts": [
+    "path-expressions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Bound variables in patterns",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#_bound_variables_in_patterns_and_constraints",
+   "concepts": [
+    "variables",
+    "destructuring"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Date literals in constraints",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#_date_literal_in_constraints",
+   "concepts": [
+    "literals",
+    "date-time"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Auto-boxing and primitive types",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#_auto_boxing_and_primitive_types",
+   "concepts": [
+    "primitive-types",
+    "type-conversion"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Supported operators",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#ref-drl-operators_drl-rules",
+   "concepts": [
+    "operators"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Operator precedence",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#ref-drl-operator-precedence_drl-rules",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Condition elements (exists, not, forall, from, accumulate ...)",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#ref-drl-rules-conditions-elements_drl-rules",
+   "concepts": [
+    "pattern-matching",
+    "aggregation"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Rule actions (THEN)",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-rules-actions_drl-rules",
+   "concepts": [
+    "statements"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Comments",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#con-drl-rules-comments_drl-rules",
+   "concepts": [
+    "comments"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Error messages",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#ref-drl-rules-errors_drl-rules",
+   "concepts": [
+    "error-handling"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Domain-specific languages (DSL/DSLR)",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#_domain_specific_languages",
+   "concepts": [
+    "macros",
+    "templating"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Drools Documentation — DRL: Spreadsheet decision tables",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/language-reference/index.html#decision-tables-con_decision-tables",
+   "concepts": [
+    "code-generation"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Drools release notes",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/release-notes/index.html",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Drools Documentation — Getting started",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/getting-started/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Drools Documentation — Rule engine (Phreak algorithm, inference)",
+   "url": "https://docs.drools.org/latest/drools-docs/drools/rule-engine/index.html",
+   "concepts": [
+    "runtime-system",
+    "performance"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apache/incubator-kie-drools",
+   "url": "https://github.com/apache/incubator-kie-drools",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Drools",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Drools — DRL10Parser.g4 (ANTLR 4 DRL grammar)",
+   "url": "https://github.com/apache/incubator-kie-drools/blob/main/drools-drl/drools-drl-parser/src/main/antlr4/org/drools/drl/parser/antlr4/DRL10Parser.g4",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "Drools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Drools — DRL10Lexer.g4",
+   "url": "https://github.com/apache/incubator-kie-drools/blob/main/drools-drl/drools-drl-parser/src/main/antlr4/org/drools/drl/parser/antlr4/DRL10Lexer.g4",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "implementation": "Drools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Drools — DRL6Expressions.g (legacy expression grammar)",
+   "url": "https://github.com/apache/incubator-kie-drools/blob/main/drools-drl/drools-drl-parser/src/main/resources/org/drools/drl/parser/DRL6Expressions.g",
+   "concepts": [
+    "expressions"
+   ],
+   "implementation": "Drools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Drools",
+   "url": "https://en.wikipedia.org/wiki/Drools",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

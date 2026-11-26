@@ -1,0 +1,33 @@
+{
+ "id": "nemerle",
+ "name": "Nemerle",
+ "categories": ["general-purpose", "functional", "object-oriented"],
+ "paradigms": ["functional", "object-oriented", "imperative", "metaprogramming"],
+ "typing": ["static", "strong", "inferred", "nominal"],
+ "first_appeared": 2003,
+ "designers": ["Kamil Skalski", "Michał Moskal", "Paweł Olszta"],
+ "summary": "Statically typed hybrid functional/object-oriented language for .NET from the University of Wrocław, with C#-like syntax, global type inference, variants with pattern matching and powerful hygienic syntactic macros that can extend the grammar; later maintained by the RSDN community.",
+ "status": "historical",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".n"],
+ "homepage": "http://nemerle.org/About",
+ "influenced_by": ["csharp", "standard-ml", "lisp", "haskell"],
+ "related": [{"id": "cil", "relation": "compiles-to"}, {"id": "csharp", "relation": "family"}],
+ "level_notes": {"1": "No specification; the self-hosted compiler (ncc) and the project wiki define the language.", "2": "Documentation lives mostly on the GitHub wiki."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "rsdn/nemerle — ncc compiler, macro libraries and tools", "url": "https://github.com/rsdn/nemerle", "implementation": "ncc", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "bootstrapping"]},
+  {"level": 0, "kind": "implementation-source", "title": "Lexer.n — lexer", "url": "https://github.com/rsdn/nemerle/blob/master/ncc/parsing/Lexer.n", "implementation": "ncc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "MainParser.n — parser", "url": "https://github.com/rsdn/nemerle/blob/master/ncc/parsing/MainParser.n", "implementation": "ncc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Typer.n — typer: type inference and checking", "url": "https://github.com/rsdn/nemerle/blob/master/ncc/typing/Typer.n", "implementation": "ncc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["type-inference", "semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "Macros.n — macro expansion infrastructure", "url": "https://github.com/rsdn/nemerle/blob/master/ncc/typing/Macros.n", "implementation": "ncc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros"]},
+  {"level": 0, "kind": "implementation-source", "title": "core.n — core macros (if, while, for, foreach … defined as macros)", "url": "https://github.com/rsdn/nemerle/blob/master/macros/core.n", "implementation": "ncc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros", "conditionals", "loops"]},
+  {"level": 0, "kind": "implementation-source", "title": "ILEmitter.n — CIL emitter", "url": "https://github.com/rsdn/nemerle/blob/master/ncc/generation/ILEmitter.n", "implementation": "ncc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend", "bytecode"]},
+
+  {"level": 2, "kind": "guide", "title": "Nemerle — About (key features: type inference, metaprogramming, OOP, FP)", "url": "http://nemerle.org/About", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["type-inference", "macros"]},
+  {"level": 2, "kind": "guide", "title": "Nemerle wiki (language documentation)", "url": "https://github.com/rsdn/nemerle/wiki", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Nemerle", "url": "https://en.wikipedia.org/wiki/Nemerle", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Nemerle", "url": "https://pldb.io/concepts/nemerle.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Nemerle", "url": "https://rosettacode.org/wiki/Category:Nemerle", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

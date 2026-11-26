@@ -1,0 +1,696 @@
+{
+ "id": "json-ld",
+ "name": "JSON-LD",
+ "aliases": [
+  "JSON for Linking Data",
+  "JSON-LD 1.1"
+ ],
+ "categories": [
+  "data-serialization",
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "rdf-based",
+  "type coercion via @context"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Manu Sporny",
+  "Gregg Kellogg",
+  "Markus Lanthaler",
+  "Dave Longley",
+  "Niklas Lindström"
+ ],
+ "summary": "JSON-based serialization of RDF/Linked Data: an @context maps JSON keys to IRIs and declares type coercion, containers (lists, sets, language/index/id/type maps) and scoping, so ordinary JSON documents can be expanded, compacted, flattened and framed by standard algorithms and converted to/from RDF datasets.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C JSON-LD 1.1 (2020)",
+  "W3C JSON-LD 1.1 Processing Algorithms and API",
+  "W3C JSON-LD 1.1 Framing",
+  "W3C JSON-LD 1.0 (2014)"
+ ],
+ "file_extensions": [
+  ".jsonld"
+ ],
+ "homepage": "https://json-ld.org/",
+ "influenced_by": [
+  "json",
+  "rdf",
+  "turtle"
+ ],
+ "related": [
+  {
+   "id": "rdf",
+   "relation": "family"
+  },
+  {
+   "id": "json",
+   "relation": "superset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "Three W3C Recommendations (syntax, processing algorithms/API, framing). The API document defines expansion/compaction/flattening/RDF conversion as step-by-step algorithms.",
+  "0": "The json-ld-api repository holds the official test manifests; jsonld.js (JavaScript) and pyld (Python) by Digital Bazaar are the most complete implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — A JSON-based Serialization for Linked Data",
+   "url": "https://www.w3.org/TR/json-ld11/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Gregg Kellogg",
+    "Pierre-Antoine Champin",
+    "Dave Longley"
+   ],
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 1.5 Design Goals and Rationale",
+   "url": "https://www.w3.org/TR/json-ld11/#design-goals-and-rationale",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 1.7 Syntax Tokens and Keywords",
+   "url": "https://www.w3.org/TR/json-ld11/#syntax-tokens-and-keywords",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 3.1 The Context",
+   "url": "https://www.w3.org/TR/json-ld11/#the-context",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 3.3 Node Identifiers",
+   "url": "https://www.w3.org/TR/json-ld11/#node-identifiers",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 3.5 Specifying the Type",
+   "url": "https://www.w3.org/TR/json-ld11/#specifying-the-type",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.1.5 Compact IRIs",
+   "url": "https://www.w3.org/TR/json-ld11/#compact-iris",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.1.6 Aliasing Keywords",
+   "url": "https://www.w3.org/TR/json-ld11/#aliasing-keywords",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.1.8 Scoped Contexts",
+   "url": "https://www.w3.org/TR/json-ld11/#scoped-contexts",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.1.10 Imported Contexts",
+   "url": "https://www.w3.org/TR/json-ld11/#imported-contexts",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.1.11 Protected Term Definitions",
+   "url": "https://www.w3.org/TR/json-ld11/#protected-term-definitions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.2.1 Typed Values",
+   "url": "https://www.w3.org/TR/json-ld11/#typed-values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.2.3 Type Coercion",
+   "url": "https://www.w3.org/TR/json-ld11/#type-coercion",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.2.4 String Internationalization",
+   "url": "https://www.w3.org/TR/json-ld11/#string-internationalization",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.3 Value Ordering (lists and sets)",
+   "url": "https://www.w3.org/TR/json-ld11/#sets-and-lists",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.5 Embedding",
+   "url": "https://www.w3.org/TR/json-ld11/#embedding",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.6 Indexed Values (data, language, id, type maps)",
+   "url": "https://www.w3.org/TR/json-ld11/#indexed-values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 4.9 Named Graphs",
+   "url": "https://www.w3.org/TR/json-ld11/#named-graphs",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 5 Forms of JSON-LD (expanded, compacted, flattened, framed)",
+   "url": "https://www.w3.org/TR/json-ld11/#forms-of-json-ld",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 7 Embedding JSON-LD in HTML Documents",
+   "url": "https://www.w3.org/TR/json-ld11/#embedding-json-ld-in-html-documents",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "JSON-LD 1.1 — 9 JSON-LD Grammar",
+   "url": "https://www.w3.org/TR/json-ld11/#json-ld-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 10 Relationship to RDF",
+   "url": "https://www.w3.org/TR/json-ld11/#relationship-to-rdf",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 — 11 Security Considerations",
+   "url": "https://www.w3.org/TR/json-ld11/#security",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 Processing Algorithms and API",
+   "url": "https://www.w3.org/TR/json-ld11-api/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Gregg Kellogg",
+    "Dave Longley",
+    "Pierre-Antoine Champin"
+   ],
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 API — 4.1 Context Processing Algorithm",
+   "url": "https://www.w3.org/TR/json-ld11-api/#context-processing-algorithm",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 API — 5.1 Expansion Algorithm",
+   "url": "https://www.w3.org/TR/json-ld11-api/#expansion-algorithm",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 API — 4.4 Term Selection",
+   "url": "https://www.w3.org/TR/json-ld11-api/#term-selection",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.1 Framing",
+   "url": "https://www.w3.org/TR/json-ld11-framing/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2020,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "JSON-LD 1.0 (W3C Recommendation 2014)",
+   "url": "https://www.w3.org/TR/2014/REC-json-ld-20140116/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "w3c/json-ld-api tests — official JSON-LD test suite",
+   "url": "https://github.com/w3c/json-ld-api/tree/main/tests",
+   "scope": "whole",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "json-ld-api tests/expand-manifest.jsonld — expansion tests",
+   "url": "https://github.com/w3c/json-ld-api/blob/main/tests/expand-manifest.jsonld",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "digitalbazaar/jsonld.js — JSON-LD processor (JavaScript)",
+   "url": "https://github.com/digitalbazaar/jsonld.js",
+   "scope": "whole",
+   "implementation": "jsonld.js",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonld.js lib/context.js — context processing",
+   "url": "https://github.com/digitalbazaar/jsonld.js/blob/main/lib/context.js",
+   "scope": "section",
+   "implementation": "jsonld.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonld.js lib/expand.js — expansion algorithm",
+   "url": "https://github.com/digitalbazaar/jsonld.js/blob/main/lib/expand.js",
+   "scope": "section",
+   "implementation": "jsonld.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "rewriting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonld.js lib/compact.js — compaction algorithm",
+   "url": "https://github.com/digitalbazaar/jsonld.js/blob/main/lib/compact.js",
+   "scope": "section",
+   "implementation": "jsonld.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "rewriting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonld.js lib/frame.js — framing",
+   "url": "https://github.com/digitalbazaar/jsonld.js/blob/main/lib/frame.js",
+   "scope": "section",
+   "implementation": "jsonld.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pyld lib/pyld/jsonld.py — JSON-LD processor (Python)",
+   "url": "https://github.com/digitalbazaar/pyld/blob/master/lib/pyld/jsonld.py",
+   "scope": "section",
+   "implementation": "pyld",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "rewriting"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "json-ld.org — Learn JSON-LD",
+   "url": "https://json-ld.org/learn/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "JSON-LD Playground",
+   "url": "https://json-ld.org/playground/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Google Search Central — Intro to structured data (JSON-LD with schema.org)",
+   "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON-LD",
+   "url": "https://en.wikipedia.org/wiki/JSON-LD",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — JSON-LD",
+   "url": "https://pldb.io/concepts/json-ld.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

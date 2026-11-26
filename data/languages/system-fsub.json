@@ -1,0 +1,315 @@
+{
+  "id": "system-fsub",
+  "name": "System F<:",
+  "aliases": [
+    "F-sub",
+    "System F-sub",
+    "F<:",
+    "bounded quantification"
+  ],
+  "categories": [
+    "theoretical-model",
+    "calculus"
+  ],
+  "paradigms": [
+    "functional"
+  ],
+  "typing": [
+    "static",
+    "subtyping",
+    "parametric-polymorphism"
+  ],
+  "first_appeared": 1991,
+  "designers": [
+    "Luca Cardelli",
+    "Simone Martini",
+    "John C. Mitchell",
+    "Andre Scedrov"
+  ],
+  "summary": "System F extended with subtyping and bounded universal quantification (forall X <: T), the core calculus for combining polymorphism with subtyping in object-oriented languages. Subtyping in the full system is undecidable (Pierce 1992), and its metatheory is the POPLmark challenge benchmark.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [
+    "system-f"
+  ],
+  "related": [
+    {
+      "id": "system-f",
+      "relation": "superset-of"
+    },
+    {
+      "id": "object-calculi",
+      "relation": "family"
+    },
+    {
+      "id": "dot-calculus",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "0": "Pierce's TAPL checkers (purefsub, fullfsub) and POPLmark solutions in Coq and Isabelle."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Cardelli & Wegner (1985) — On Understanding Types, Data Abstraction, and Polymorphism (language Fun: bounded quantification)",
+      "url": "https://lucacardelli.name/Papers/OnUnderstanding.A4.pdf",
+      "concepts": [
+        "subtyping",
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Luca Cardelli",
+        "Peter Wegner"
+      ],
+      "year": 1985
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Cardelli, Martini, Mitchell & Scedrov (1994) — An Extension of System F with Subtyping",
+      "url": "https://doi.org/10.1006/inco.1994.1013",
+      "concepts": [
+        "subtyping",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Luca Cardelli",
+        "Simone Martini",
+        "John C. Mitchell",
+        "Andre Scedrov"
+      ],
+      "year": 1994
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Pierce (1994) — Bounded Quantification Is Undecidable",
+      "url": "https://doi.org/10.1006/inco.1994.1055",
+      "concepts": [
+        "subtyping",
+        "turing-completeness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Benjamin C. Pierce"
+      ],
+      "year": 1994
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Aydemir et al. (2005) — Mechanized Metatheory for the Masses: The POPLmark Challenge",
+      "url": "https://doi.org/10.1007/11541868_4",
+      "concepts": [
+        "verification",
+        "substitution-binding"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Brian E. Aydemir",
+        "Aaron Bohannon",
+        "Matthew Fairbairn",
+        "J. Nathan Foster",
+        "Benjamin C. Pierce",
+        "Peter Sewell",
+        "Dimitrios Vytiniotis",
+        "Geoffrey Washburn",
+        "Stephanie Weirich",
+        "Steve Zdancewic"
+      ],
+      "year": 2005
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "TAPL checkers — purefsub (pure System F<:)",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/purefsub/",
+      "concepts": [
+        "subtyping",
+        "semantic-analysis"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "directory",
+      "access": "open",
+      "implementation": "TAPL purefsub (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL purefsub core.ml — subtyping algorithm and type checker",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/purefsub/core.ml",
+      "concepts": [
+        "subtyping",
+        "semantic-analysis"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL purefsub (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "TAPL fullfsub core.ml — F<: with records, references and base types",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/checkers/fullfsub/core.ml",
+      "concepts": [
+        "subtyping",
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "TAPL fullfsub (OCaml)"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Autosubst examples/ssr/POPLmark.v — POPLmark challenge parts 1A/2A in Coq",
+      "url": "https://github.com/uds-psl/autosubst/blob/master/examples/ssr/POPLmark.v",
+      "concepts": [
+        "type-soundness",
+        "verification"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Isabelle AFP — POPLmark Challenge via de Bruijn indices",
+      "url": "https://www.isa-afp.org/entries/POPLmark-deBruijn.html",
+      "concepts": [
+        "type-soundness",
+        "substitution-binding"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "PL Zoo — sub/type_check.ml (subtyping type checker for a small language)",
+      "url": "https://github.com/andrejbauer/plzoo/blob/master/src/sub/type_check.ml",
+      "concepts": [
+        "subtyping"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "PL Zoo sub (OCaml)"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Pierce — Types and Programming Languages, ch. 26 Bounded Quantification, ch. 28 Metatheory of Bounded Quantification",
+      "url": "https://www.cis.upenn.edu/~bcpierce/tapl/",
+      "concepts": [
+        "subtyping",
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Benjamin C. Pierce"
+      ],
+      "year": 2002
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Software Foundations vol. 2 — Sub: subtyping (Coq)",
+      "url": "https://softwarefoundations.cis.upenn.edu/plf-current/Sub.html",
+      "concepts": [
+        "subtyping",
+        "type-soundness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Benjamin C. Pierce et al."
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "POPLmark Challenge — website with solutions",
+      "url": "https://www.seas.upenn.edu/~plclub/poplmark/",
+      "concepts": [
+        "verification"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Bounded quantification",
+      "url": "https://en.wikipedia.org/wiki/Bounded_quantification",
+      "concepts": [
+        "subtyping",
+        "generics"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Subtyping",
+      "url": "https://en.wikipedia.org/wiki/Subtyping",
+      "concepts": [
+        "subtyping"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — System F (section on System F<:)",
+      "url": "https://en.wikipedia.org/wiki/System_F",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

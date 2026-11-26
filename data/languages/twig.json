@@ -1,0 +1,78 @@
+{
+ "id": "twig",
+ "name": "Twig",
+ "categories": [
+  "template"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Armin Ronacher",
+  "Fabien Potencier"
+ ],
+ "summary": "PHP template language of the Symfony ecosystem modelled on Jinja/Django: {{ }} output, {% %} tags, filters, macros, template inheritance, auto-escaping and a sandbox mode; compiled to PHP classes.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".twig"
+ ],
+ "homepage": "https://twig.symfony.com/",
+ "influenced_by": [
+  "jinja",
+  "django-templates"
+ ],
+ "related": [
+  {
+   "id": "php",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "jinja",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "twigphp/Twig: Lexer -> Parser -> Node tree -> Compiler to PHP.",
+  "1": "'Twig for Template Designers' plus per-tag/filter pages.",
+  "2": "Symfony templating guide.",
+  "3": "Wikipedia, PLDB."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "twigphp/Twig", "url": "https://github.com/twigphp/Twig", "implementation": "Twig", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": []},
+  {"level": 0, "kind": "implementation-source", "title": "src/Lexer.php", "url": "https://github.com/twigphp/Twig/blob/3.x/src/Lexer.php", "implementation": "Twig", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/Parser.php", "url": "https://github.com/twigphp/Twig/blob/3.x/src/Parser.php", "implementation": "Twig", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/ExpressionParser.php", "url": "https://github.com/twigphp/Twig/blob/3.x/src/ExpressionParser.php", "implementation": "Twig", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["expressions", "operator-precedence"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/Compiler.php — compile to PHP", "url": "https://github.com/twigphp/Twig/blob/3.x/src/Compiler.php", "implementation": "Twig", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/Extension/EscaperExtension.php", "url": "https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php", "implementation": "Twig", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig for Template Designers", "url": "https://twig.symfony.com/doc/3.x/templates.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig for Template Designers — Variables", "url": "https://twig.symfony.com/doc/3.x/templates.html#variables", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Setting variables", "url": "https://twig.symfony.com/doc/3.x/templates.html#setting-variables", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["assignment"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Filters", "url": "https://twig.symfony.com/doc/3.x/templates.html#filters", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "pipelines"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Control structure", "url": "https://twig.symfony.com/doc/3.x/templates.html#control-structure", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Comments", "url": "https://twig.symfony.com/doc/3.x/templates.html#comments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Including other templates", "url": "https://twig.symfony.com/doc/3.x/templates.html#including-other-templates", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["imports"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Template inheritance", "url": "https://twig.symfony.com/doc/3.x/templates.html#template-inheritance", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["inheritance"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — HTML escaping", "url": "https://twig.symfony.com/doc/3.x/templates.html#html-escaping", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Macros", "url": "https://twig.symfony.com/doc/3.x/templates.html#macros", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros", "functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Expressions / literals", "url": "https://twig.symfony.com/doc/3.x/templates.html#literals", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Operators", "url": "https://twig.symfony.com/doc/3.x/templates.html#operators", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — String interpolation", "url": "https://twig.symfony.com/doc/3.x/templates.html#string-interpolation", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Whitespace control", "url": "https://twig.symfony.com/doc/3.x/templates.html#whitespace-control", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["whitespace-layout"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig tags — for", "url": "https://twig.symfony.com/doc/3.x/tags/for.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig tags — if", "url": "https://twig.symfony.com/doc/3.x/tags/if.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Twig — Sandbox extension", "url": "https://twig.symfony.com/doc/3.x/sandbox.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["security-considerations"]},
+  {"level": 2, "kind": "internals-guide", "title": "Twig internals", "url": "https://twig.symfony.com/doc/3.x/internals.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 2, "kind": "style-guide", "title": "Twig coding standards", "url": "https://twig.symfony.com/doc/3.x/coding_standards.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["style-conventions"]},
+  {"level": 2, "kind": "guide", "title": "Symfony — Creating and using templates", "url": "https://symfony.com/doc/current/templates.html", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Twig (template engine)", "url": "https://en.wikipedia.org/wiki/Twig_(template_engine)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Twig", "url": "https://pldb.io/concepts/twig.html", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": []}
+ ]
+}

@@ -1,0 +1,459 @@
+{
+ "id": "opencl-c",
+ "name": "OpenCL C",
+ "aliases": [
+  "OpenCL C language",
+  "C for OpenCL"
+ ],
+ "categories": [
+  "shader-gpu",
+  "systems"
+ ],
+ "paradigms": [
+  "imperative",
+  "data-parallel"
+ ],
+ "typing": [
+  "static",
+  "weak"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Khronos Group",
+  "Apple"
+ ],
+ "summary": "C99-based kernel language of the Khronos OpenCL standard for heterogeneous devices (GPUs, CPUs, FPGAs, DSPs): __kernel functions over NDRanges of work-items, address-space qualifiers, vector types and a large built-in function library.",
+ "status": "maintained",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "OpenCL C 3.0 (Khronos)"
+ ],
+ "file_extensions": [
+  ".cl"
+ ],
+ "homepage": "https://www.khronos.org/opencl/",
+ "influenced_by": [
+  "c"
+ ],
+ "related": [
+  {
+   "id": "c",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "cuda",
+   "relation": "family"
+  },
+  {
+   "id": "sycl",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Khronos registry pages sit behind a bot challenge from this sandbox (report blocked); anchors were taken from the AsciiDoc source in KhronosGroup/OpenCL-Docs."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The OpenCL C Specification (3.0, unified)",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Supported data types",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#supported-data-types",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Vector data types",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#built-in-vector-data-types",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Vector literals",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#vector-literals",
+   "concepts": [
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Keywords",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#keywords",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Conversions and type casting",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#conversions-and-type-casting",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Operators",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#operators",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Address space qualifiers",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#address-space-qualifiers",
+   "concepts": [
+    "memory-model",
+    "type-annotations"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Function qualifiers (__kernel)",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#function-qualifiers",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Storage-class specifiers",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#storage-class-specifiers",
+   "concepts": [
+    "storage-duration"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Preprocessor directives and macros",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#preprocessor-directives-and-macros",
+   "concepts": [
+    "preprocessor",
+    "macros"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Attribute qualifiers",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#attribute-qualifiers",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Blocks",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#blocks",
+   "concepts": [
+    "closures"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Control flow",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#control-flow",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Built-in functions",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#built-in-functions",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Work-item functions",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#work-item-functions",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Math functions",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#math-functions",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Synchronization functions",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#synchronization-functions",
+   "concepts": [
+    "synchronization"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — Atomic functions",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#atomic-functions",
+   "concepts": [
+    "atomics-memory-ordering"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenCL C Specification — printf",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html#printf",
+   "concepts": [
+    "string-formatting",
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The OpenCL Specification (API, 3.0)",
+   "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_API.html",
+   "concepts": [
+    "memory-model",
+    "concurrency"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "KhronosGroup/OpenCL-Docs OpenCL_C.txt — spec source",
+   "url": "https://github.com/KhronosGroup/OpenCL-Docs/blob/main/OpenCL_C.txt",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "OpenCL-Docs"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Clang lib/Headers/opencl-c-base.h — OpenCL C built-in declarations",
+   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Headers/opencl-c-base.h",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Clang lib/Sema/OpenCLBuiltins.td — OpenCL built-in function table",
+   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Sema/OpenCLBuiltins.td",
+   "concepts": [
+    "standard-library",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "KhronosGroup/OpenCL-CTS",
+   "url": "https://github.com/KhronosGroup/OpenCL-CTS",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "OpenCL CTS"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "pocl — Portable Computing Language",
+   "url": "https://github.com/pocl/pocl",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "pocl"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Clang — OpenCL support",
+   "url": "https://clang.llvm.org/docs/OpenCLSupport.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Clang"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Khronos OpenCL Guide",
+   "url": "https://github.com/KhronosGroup/OpenCL-Guide",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — OpenCL",
+   "url": "https://en.wikipedia.org/wiki/OpenCL",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — OpenCL",
+   "url": "https://pldb.io/concepts/opencl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

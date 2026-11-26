@@ -1,0 +1,422 @@
+{
+ "id": "beam-bytecode",
+ "name": "BEAM (Erlang VM)",
+ "aliases": [
+  "BEAM bytecode",
+  "BEAM assembly",
+  ".beam"
+ ],
+ "categories": [
+  "bytecode",
+  "abstract-machine"
+ ],
+ "paradigms": [
+  "register-based",
+  "functional",
+  "actor"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 1993,
+ "designers": [
+  "Bogumil Hausman",
+  "Joe Armstrong",
+  "Björn Gustavsson"
+ ],
+ "summary": "The register-based virtual machine and bytecode format of the Erlang/OTP runtime (Bogdan/Björn's Erlang Abstract Machine), executing Erlang, Elixir, Gleam and other BEAM languages with lightweight processes, message passing and hot code loading; JIT-compiled by BeamAsm since OTP 24.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".beam",
+  ".S"
+ ],
+ "homepage": "https://www.erlang.org/",
+ "related": [
+  {
+   "id": "erlang",
+   "relation": "host-of"
+  },
+  {
+   "id": "elixir",
+   "relation": "host-of"
+  }
+ ],
+ "level_notes": {
+  "1": "There is no official specification; the generic instruction set is defined by genop.tab in OTP and the loader-specific forms by ops.tab files. The 1997 instruction-set note is historical.",
+  "0": "ERTS in erlang/otp is the only production implementation."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OTP lib/compiler/src/genop.tab — the generic BEAM instruction set (authoritative opcode list)",
+   "url": "https://github.com/erlang/otp/blob/master/lib/compiler/src/genop.tab",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ERTS internal doc — beam_makeops: loader transformations and specific instructions",
+   "url": "https://github.com/erlang/otp/blob/master/erts/emulator/internal_doc/beam_makeops.md",
+   "concepts": [
+    "instruction-set",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ERTS internal doc — BeamAsm, the Erlang JIT",
+   "url": "https://github.com/erlang/otp/blob/master/erts/emulator/internal_doc/BeamAsm.md",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ERTS User's Guide — BeamAsm, the Erlang JIT",
+   "url": "https://www.erlang.org/doc/apps/erts/beamasm.html",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "beam_lib — interface to the BEAM file format (chunks)",
+   "url": "https://www.erlang.org/doc/apps/stdlib/beam_lib.html",
+   "concepts": [
+    "encoding-wire-format",
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "compile — Erlang compiler options (including 'S' assembly output)",
+   "url": "https://www.erlang.org/doc/apps/compiler/compile.html",
+   "concepts": [
+    "tooling",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Abstract Format (Erlang AST used by the compiler)",
+   "url": "https://www.erlang.org/doc/apps/erts/absform.html",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The BEAM instruction set (historical, Bogumil Hausman, 1997)",
+   "url": "http://www.cs-lab.org/historical_beam_instruction_set.html",
+   "concepts": [
+    "instruction-set",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Bogumil Hausman"
+   ],
+   "year": 1997,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The BEAM Book: Understanding the Erlang Runtime System (Erik Stenman)",
+   "url": "https://blog.stenmans.org/theBeamBook/",
+   "concepts": [
+    "virtual-machine",
+    "runtime-system"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Erik Stenman"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The BEAM Book — The Erlang Virtual Machine: BEAM",
+   "url": "https://blog.stenmans.org/theBeamBook/#CH-BEAM",
+   "concepts": [
+    "virtual-machine",
+    "interpreter"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Erik Stenman"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The BEAM Book — Modules and the BEAM file format",
+   "url": "https://blog.stenmans.org/theBeamBook/#CH-beam_modules",
+   "concepts": [
+    "modules",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Erik Stenman"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The BEAM Book — Generic BEAM instructions",
+   "url": "https://blog.stenmans.org/theBeamBook/#CH-Instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Erik Stenman"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The BEAM Book — Different types of calls, linking and hot code loading",
+   "url": "https://blog.stenmans.org/theBeamBook/#CH-Calls",
+   "concepts": [
+    "functions",
+    "tail-calls"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Erik Stenman"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The BEAM Book — Appendix: BEAM instructions reference",
+   "url": "https://blog.stenmans.org/theBeamBook/#AP-Instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "authors": [
+    "Erik Stenman"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "A brief BEAM primer (erlang.org blog)",
+   "url": "https://www.erlang.org/blog/a-brief-beam-primer/",
+   "concepts": [
+    "virtual-machine",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "A first look at the JIT (erlang.org blog)",
+   "url": "https://www.erlang.org/blog/a-first-look-at-the-jit/",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "SSA history — the Erlang compiler's SSA-based intermediate format (erlang.org blog)",
+   "url": "https://www.erlang.org/blog/ssa-history/",
+   "concepts": [
+    "intermediate-representation",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "erts/emulator/beam/emu/ops.tab — interpreter-specific instructions",
+   "url": "https://github.com/erlang/otp/blob/master/erts/emulator/beam/emu/ops.tab",
+   "concepts": [
+    "interpreter",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "BEAM (ERTS)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "erts/emulator/beam/jit/x86/ops.tab — BeamAsm x86 instruction mapping",
+   "url": "https://github.com/erlang/otp/blob/master/erts/emulator/beam/jit/x86/ops.tab",
+   "concepts": [
+    "jit"
+   ],
+   "scope": "section",
+   "implementation": "BEAM (ERTS)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "erts/emulator/beam/beam_load.c — BEAM file loader",
+   "url": "https://github.com/erlang/otp/blob/master/erts/emulator/beam/beam_load.c",
+   "concepts": [
+    "bytecode",
+    "modules"
+   ],
+   "scope": "section",
+   "implementation": "BEAM (ERTS)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "lib/compiler/src/beam_asm.erl — BEAM assembler",
+   "url": "https://github.com/erlang/otp/blob/master/lib/compiler/src/beam_asm.erl",
+   "concepts": [
+    "code-generation",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "OTP compiler",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "lib/compiler/src/beam_disasm.erl — BEAM disassembler",
+   "url": "https://github.com/erlang/otp/blob/master/lib/compiler/src/beam_disasm.erl",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "implementation": "OTP compiler",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "lib/compiler/src/beam_ssa.erl — SSA intermediate representation",
+   "url": "https://github.com/erlang/otp/blob/master/lib/compiler/src/beam_ssa.erl",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "OTP compiler",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ErlangRT — alternative BEAM VM in Rust",
+   "url": "https://github.com/kvakvs/ErlangRT",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "ErlangRT",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — BEAM (Erlang virtual machine)",
+   "url": "https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)",
+   "concepts": [
+    "history",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

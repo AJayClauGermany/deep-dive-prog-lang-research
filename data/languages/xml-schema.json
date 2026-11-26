@@ -1,0 +1,1673 @@
+{
+ "id": "xml-schema",
+ "name": "XML Schema (XSD)",
+ "aliases": [
+  "XSD",
+  "W3C XML Schema",
+  "WXS"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "W3C XML Schema Working Group"
+ ],
+ "summary": "W3C language for describing the structure and datatypes of XML documents: element/attribute declarations, complex types with derivation by extension/restriction, a library of built-in datatypes with facets, identity constraints, and (in 1.1) assertions and conditional type assignment.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C XSD 1.0 (2001, 2nd ed. 2004)",
+  "W3C XSD 1.1 (2012)"
+ ],
+ "file_extensions": [
+  ".xsd"
+ ],
+ "homepage": "https://www.w3.org/XML/Schema",
+ "influenced_by": [
+  "xml",
+  "sgml"
+ ],
+ "related": [
+  {
+   "id": "relax-ng",
+   "relation": "family"
+  },
+  {
+   "id": "schematron",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Normative: XSD 1.1 Parts 1 and 2 (2012); XSD 1.0 2nd edition still widely implemented. The Primer (Part 0) is non-normative and listed at level 2.",
+  "0": "Validators (Xerces-J supports 1.1; libxml2 only 1.0) and the W3C test suite; none is normative."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures",
+   "url": "https://www.w3.org/TR/xmlschema11-1/",
+   "concepts": [
+    "schema-validation",
+    "data-model"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "1.1",
+   "year": 2012,
+   "authors": [
+    "Shudi (Sandy) Gao",
+    "C. M. Sperberg-McQueen",
+    "Henry S. Thompson",
+    "Noah Mendelsohn",
+    "David Beech",
+    "Murray Maloney"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes",
+   "url": "https://www.w3.org/TR/xmlschema11-2/",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "1.1",
+   "year": 2012,
+   "authors": [
+    "David Peterson",
+    "Shudi (Sandy) Gao",
+    "Ashok Malhotra",
+    "C. M. Sperberg-McQueen",
+    "Henry S. Thompson"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XML Schema Part 1: Structures Second Edition (XSD 1.0)",
+   "url": "https://www.w3.org/TR/xmlschema-1/",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "1.0 2nd ed.",
+   "year": 2004,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XML Schema Part 2: Datatypes Second Edition (XSD 1.0)",
+   "url": "https://www.w3.org/TR/xmlschema-2/",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "1.0 2nd ed.",
+   "year": 2004,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "XML Schema Requirements (W3C Note 1999)",
+   "url": "https://www.w3.org/TR/NOTE-xml-schema-req",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 1999,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Requirements for XML Schema 1.1",
+   "url": "https://www.w3.org/TR/xmlschema-11-req/",
+   "concepts": [
+    "design-rationale",
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2003,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "XML Schema Versioning Use Cases (W3C WG Note)",
+   "url": "https://www.w3.org/TR/xmlschema-guide2versioning/",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Introduction to Version 1.1",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#intro1.1",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Overview of XSD",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#xsover",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — XSD Abstract Data Model",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#concepts-data-model",
+   "concepts": [
+    "data-model"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Constraints and Validation Rules",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#concepts-schemaConstraints",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Conformance",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#concepts-conformance",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Names and Symbol Spaces",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#concepts-nameSymbolSpaces",
+   "concepts": [
+    "namespaces",
+    "identifiers"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Schema-related markup in instance documents (xsi:type, xsi:nil)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#Instance_Document_Constructions",
+   "concepts": [
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Attribute Declarations",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cAttribute_Declarations",
+   "concepts": [
+    "data-definition"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Element Declarations",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cElement_Declarations",
+   "concepts": [
+    "data-definition",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Complex Type Definitions",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definitions",
+   "concepts": [
+    "records-structs",
+    "inheritance",
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Attribute Group Definitions",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cAttribute_Group_Definitions",
+   "concepts": [
+    "mixins"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Model Groups (sequence, choice, all)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#Model_Groups",
+   "concepts": [
+    "union-intersection-types",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Particles (minOccurs/maxOccurs)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cParticles",
+   "concepts": [
+    "lists"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Wildcards (xs:any, xs:anyAttribute)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#Wildcards",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Identity-constraint Definitions (key, keyref, unique)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cIdentity-constraint_Definitions",
+   "concepts": [
+    "constraints-integrity",
+    "references-anchors"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Type Alternatives (conditional type assignment)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cTypeAlternative",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Assertions (xs:assert)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cAssertions",
+   "concepts": [
+    "assertions",
+    "constraints"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Annotations",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#cAnnotations",
+   "concepts": [
+    "documentation-comments",
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Simple Type Definitions",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#Simple_Type_Definitions",
+   "concepts": [
+    "scalars"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Schemas as a Whole",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#Schemas",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Schemas and Namespaces: Access and Composition (include, import, override)",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#composition",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Schema documents, namespaces and composition",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#layer2",
+   "concepts": [
+    "namespaces",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Assessing Schema-Validity",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#validation_outcome",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Schema for Schema Documents",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#normative-schemaSchema",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Post-schema-validation infoset contributions",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#PSVI_contributions",
+   "concepts": [
+    "data-model"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Changes since version 1.0",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#changes",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Analysis of the Unique Particle Attribution constraint",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#non-ambig",
+   "concepts": [
+    "automata",
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 1: Structures — Transformation for chameleon inclusion",
+   "url": "https://www.w3.org/TR/xmlschema11-1/#chameleon-xslt",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Datatype System",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#typesystem",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Value space",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#value-space",
+   "concepts": [
+    "data-model"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — The Lexical Space and Lexical Mapping",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#lexical-space",
+   "concepts": [
+    "literals",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Atomic vs. List vs. Union Datatypes",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#atomic-vs-list",
+   "concepts": [
+    "lists",
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Definition, Derivation, Restriction and Construction",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#derivation",
+   "concepts": [
+    "subtyping",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Primitive Datatypes",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#built-in-primitive-datatypes",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — string",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#string",
+   "concepts": [
+    "strings"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — boolean",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#boolean",
+   "concepts": [
+    "booleans"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — decimal",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#decimal",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — double",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#double",
+   "concepts": [
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — duration",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#duration",
+   "concepts": [
+    "date-time"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — dateTime",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#dateTime",
+   "concepts": [
+    "date-time"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — anyURI",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#anyURI",
+   "concepts": [
+    "scalars"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — QName",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#QName",
+   "concepts": [
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Other Built-in Datatypes",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#ordinary-built-ins",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — integer",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#integer",
+   "concepts": [
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Constraining Facets",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#rf-facets",
+   "concepts": [
+    "refinement-types",
+    "constraints"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Fundamental Facets",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#rf-fund-facets",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Date/time values",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#d-t-values",
+   "concepts": [
+    "date-time"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Regular Expressions",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#regexs",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Regular expressions — character classes",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#charcter-classes",
+   "concepts": [
+    "regular-expressions",
+    "unicode"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Implementation-defined and implementation-dependent features",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#idef-idep",
+   "concepts": [
+    "undefined-behavior"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSD 1.1 Part 2: Datatypes — Changes since version 1.0",
+   "url": "https://www.w3.org/TR/xmlschema11-2/#changes",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "1.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer Second Edition",
+   "url": "https://www.w3.org/TR/xmlschema-0/",
+   "concepts": [
+    "hello-world",
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2004,
+   "authors": [
+    "David C. Fallside",
+    "Priscilla Walmsley"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — The Purchase Order Schema",
+   "url": "https://www.w3.org/TR/xmlschema-0/#POSchema",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Complex Type Definitions, Element & Attribute Declarations",
+   "url": "https://www.w3.org/TR/xmlschema-0/#DefnDeclars",
+   "concepts": [
+    "records-structs",
+    "data-definition"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Simple Types",
+   "url": "https://www.w3.org/TR/xmlschema-0/#CreatDt",
+   "concepts": [
+    "primitive-types",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Anonymous Type Definitions",
+   "url": "https://www.w3.org/TR/xmlschema-0/#InlineTypDefn",
+   "concepts": [
+    "type-aliases"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Annotations",
+   "url": "https://www.w3.org/TR/xmlschema-0/#CommVers",
+   "concepts": [
+    "documentation-comments"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Building Content Models",
+   "url": "https://www.w3.org/TR/xmlschema-0/#groups",
+   "concepts": [
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Nil Values",
+   "url": "https://www.w3.org/TR/xmlschema-0/#Nils",
+   "concepts": [
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Namespaces, Schemas & Qualification",
+   "url": "https://www.w3.org/TR/xmlschema-0/#NS",
+   "concepts": [
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — A Schema in Multiple Documents",
+   "url": "https://www.w3.org/TR/xmlschema-0/#SchemaInMultDocs",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Deriving Types by Extension",
+   "url": "https://www.w3.org/TR/xmlschema-0/#DerivExt",
+   "concepts": [
+    "inheritance"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Deriving Complex Types by Restriction",
+   "url": "https://www.w3.org/TR/xmlschema-0/#DerivByRestrict",
+   "concepts": [
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Redefining Types & Groups",
+   "url": "https://www.w3.org/TR/xmlschema-0/#Redefine",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Substitution Groups",
+   "url": "https://www.w3.org/TR/xmlschema-0/#SubsGroups",
+   "concepts": [
+    "polymorphism"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Abstract Elements and Types",
+   "url": "https://www.w3.org/TR/xmlschema-0/#abstract",
+   "concepts": [
+    "abstract-classes"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Controlling the Creation & Use of Derived Types",
+   "url": "https://www.w3.org/TR/xmlschema-0/#restrictingTypeDerivs",
+   "concepts": [
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Defining Keys & their References",
+   "url": "https://www.w3.org/TR/xmlschema-0/#specifyingKeysAndtheirRefs",
+   "concepts": [
+    "references-anchors",
+    "constraints-integrity"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Importing Types",
+   "url": "https://www.w3.org/TR/xmlschema-0/#import",
+   "concepts": [
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Any Element, Any Attribute",
+   "url": "https://www.w3.org/TR/xmlschema-0/#any",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Simple Types & their Facets",
+   "url": "https://www.w3.org/TR/xmlschema-0/#SimpleTypeFacets",
+   "concepts": [
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XML Schema Part 0: Primer — Regular Expressions",
+   "url": "https://www.w3.org/TR/xmlschema-0/#regexAppendix",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "W3C XML Schema Test Suite (xsdtests)",
+   "url": "https://github.com/w3c/xsdtests",
+   "concepts": [
+    "testing",
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "xsdtests suite.xml — test-suite catalogue",
+   "url": "https://github.com/w3c/xsdtests/blob/master/suite.xml",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Apache Xerces2-J — XSD 1.0/1.1 validator",
+   "url": "https://github.com/apache/xerces2-j",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J XMLSchemaValidator.java — validation driver",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xs/XMLSchemaValidator.java",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J XSDHandler.java — schema document loading, include/import",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xs/traversers/XSDHandler.java",
+   "concepts": [
+    "imports",
+    "modules"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J XSSimpleTypeDecl.java — simple types and facets",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/dv/xs/XSSimpleTypeDecl.java",
+   "concepts": [
+    "primitive-types",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J XSDFACM.java — content-model DFA",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xs/models/XSDFACM.java",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J RegularExpression.java — XSD regex engine",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xpath/regex/RegularExpression.java",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J IdentityConstraint.java — key/keyref/unique",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xs/identity/IdentityConstraint.java",
+   "concepts": [
+    "constraints-integrity"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J SubstitutionGroupHandler.java",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xs/SubstitutionGroupHandler.java",
+   "concepts": [
+    "polymorphism"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-J XSConstraints.java — derivation and particle constraints",
+   "url": "https://github.com/apache/xerces2-j/blob/trunk/src/org/apache/xerces/impl/xs/XSConstraints.java",
+   "concepts": [
+    "subtyping",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-J",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Apache Xerces-C++",
+   "url": "https://github.com/apache/xerces-c",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "implementation": "Xerces-C++",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Xerces-C++ TraverseSchema.cpp — schema document traversal",
+   "url": "https://github.com/apache/xerces-c/blob/master/src/xercesc/validators/schema/TraverseSchema.cpp",
+   "concepts": [
+    "parser",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Xerces-C++",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "libxml2 (xmllint --schema)",
+   "url": "https://github.com/GNOME/libxml2",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "implementation": "libxml2",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 xmlschemas.c — XSD 1.0 parser and validator",
+   "url": "https://github.com/GNOME/libxml2/blob/master/xmlschemas.c",
+   "concepts": [
+    "schema-validation",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "libxml2",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 xmlschemastypes.c — built-in datatypes",
+   "url": "https://github.com/GNOME/libxml2/blob/master/xmlschemastypes.c",
+   "concepts": [
+    "primitive-types",
+    "date-time"
+   ],
+   "scope": "section",
+   "implementation": "libxml2",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 xmlregexp.c — regexps and content-model automata",
+   "url": "https://github.com/GNOME/libxml2/blob/master/xmlregexp.c",
+   "concepts": [
+    "regular-expressions",
+    "automata"
+   ],
+   "scope": "section",
+   "implementation": "libxml2",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "lxml xmlschema.pxi — Python binding to libxml2 XSD",
+   "url": "https://github.com/lxml/lxml/blob/master/src/lxml/xmlschema.pxi",
+   "concepts": [
+    "interoperability"
+   ],
+   "scope": "section",
+   "implementation": "lxml",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "xmlschema — pure-Python XSD 1.0/1.1 validator",
+   "url": "https://github.com/sissaschool/xmlschema",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema schemas.py — schema class and composition",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/schemas.py",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema complex_types.py",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/complex_types.py",
+   "concepts": [
+    "records-structs",
+    "inheritance"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema facets.py — constraining facets",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/facets.py",
+   "concepts": [
+    "refinement-types"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema identities.py — identity constraints",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/identities.py",
+   "concepts": [
+    "constraints-integrity"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema assertions.py — XSD 1.1 assertions",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/assertions.py",
+   "concepts": [
+    "assertions"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema groups.py — model groups",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/groups.py",
+   "concepts": [
+    "union-intersection-types"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xmlschema wildcards.py",
+   "url": "https://github.com/sissaschool/xmlschema/blob/master/xmlschema/validators/wildcards.py",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "implementation": "xmlschema (Python)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "W3Schools XML Schema tutorial",
+   "url": "https://www.w3schools.com/xml/schema_intro.asp",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Eric van der Vlist, XML Schema (O'Reilly, 2002)",
+   "url": "https://www.oreilly.com/library/view/xml-schema/0596002521/",
+   "scope": "whole",
+   "authors": [
+    "Eric van der Vlist"
+   ],
+   "year": 2002,
+   "access": "paywalled",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Priscilla Walmsley, Definitive XML Schema, 2nd ed.",
+   "url": "https://www.datypic.com/books/defxmlschema/",
+   "concepts": [
+    "schema-validation"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Priscilla Walmsley"
+   ],
+   "year": 2012,
+   "access": "paywalled",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Murata, Lee, Mani, Kawaguchi: Taxonomy of XML Schema Languages using Formal Language Theory",
+   "url": "https://doi.org/10.1145/1111627.1111631",
+   "concepts": [
+    "formal-grammars",
+    "comparison"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Makoto Murata",
+    "Dongwon Lee",
+    "Murali Mani",
+    "Kohsuke Kawaguchi"
+   ],
+   "year": 2005,
+   "authority": "academic",
+   "access": "paywalled",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Martens, Neven, Schwentick, Bex: Expressiveness and Complexity of XML Schema",
+   "url": "https://doi.org/10.1145/1166074.1166076",
+   "concepts": [
+    "formal-grammars",
+    "complexity"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Wim Martens",
+    "Frank Neven",
+    "Thomas Schwentick",
+    "Geert Jan Bex"
+   ],
+   "year": 2006,
+   "authority": "academic",
+   "access": "paywalled",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: XML Schema (W3C)",
+   "url": "https://en.wikipedia.org/wiki/XML_Schema_(W3C)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: XML schema (general)",
+   "url": "https://en.wikipedia.org/wiki/XML_schema",
+   "concepts": [
+    "comparison"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

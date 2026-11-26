@@ -1,0 +1,48 @@
+{
+ "id": "ebpf",
+ "name": "eBPF instruction set",
+ "aliases": ["eBPF", "BPF ISA", "extended Berkeley Packet Filter"],
+ "categories": ["bytecode", "assembly", "domain-specific"],
+ "paradigms": ["imperative", "register-based"],
+ "typing": ["untyped", "verifier-checked"],
+ "first_appeared": 2014,
+ "designers": ["Alexei Starovoitov", "Daniel Borkmann"],
+ "summary": "Register-based 64-bit virtual instruction set run inside the Linux kernel (and other hosts such as Windows and uBPF) after static verification for safety and termination, JIT-compiled to native code; standardised by the IETF as RFC 9669.",
+ "status": "active",
+ "defined_by": ["consortium-standard", "reference-implementation"],
+ "standards": ["RFC 9669 (BPF Instruction Set Architecture)"],
+ "file_extensions": [".o", ".bpf.c"],
+ "homepage": "https://ebpf.io/",
+ "influenced_by": [],
+ "related": [{"id": "c", "relation": "compiles-to"}],
+ "level_notes": {"0": "The Linux kernel is the reference implementation: kernel/bpf/core.c (interpreter), kernel/bpf/verifier.c (static verifier) and per-architecture JITs. uBPF (userspace VM), PREVAIL (abstract-interpretation verifier) and the LLVM BPF backend are independent implementations.", "3": "No PLDB entry was found."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "Linux kernel — kernel/bpf/core.c — BPF interpreter and core", "url": "https://github.com/torvalds/linux/blob/master/kernel/bpf/core.c", "implementation": "Linux kernel", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "reference-implementation", "title": "Linux kernel — kernel/bpf/verifier.c — static verifier (register value tracking, bounds, termination)", "url": "https://github.com/torvalds/linux/blob/master/kernel/bpf/verifier.c", "implementation": "Linux kernel", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "verification", "type-system"]},
+  {"level": 0, "kind": "reference-implementation", "title": "Linux kernel — arch/x86/net/bpf_jit_comp.c — x86-64 JIT compiler", "url": "https://github.com/torvalds/linux/blob/master/arch/x86/net/bpf_jit_comp.c", "implementation": "Linux kernel", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["jit", "code-generation-backend"]},
+  {"level": 0, "kind": "reference-implementation", "title": "Linux kernel — include/uapi/linux/bpf.h — UAPI header: instruction encoding, opcodes, helper IDs, map types", "url": "https://github.com/torvalds/linux/blob/master/include/uapi/linux/bpf.h", "implementation": "Linux kernel", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set", "bytecode"]},
+  {"level": 0, "kind": "implementation-repository", "title": "libbpf — loader library and CO-RE relocations", "url": "https://github.com/libbpf/libbpf", "implementation": "libbpf", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["tooling"]},
+  {"level": 0, "kind": "implementation-source", "title": "uBPF — vm/ubpf_vm.c — userspace eBPF interpreter", "url": "https://github.com/iovisor/ubpf/blob/main/vm/ubpf_vm.c", "implementation": "uBPF", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-repository", "title": "PREVAIL — polynomial-runtime eBPF verifier based on abstract interpretation", "url": "https://github.com/vbpf/ebpf-verifier", "implementation": "PREVAIL", "scope": "whole", "authority": "academic", "format": "repository", "access": "open", "concepts": ["verification"]},
+
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — BPF Instruction Set Architecture (ISA)", "url": "https://www.rfc-editor.org/rfc/rfc9669.html", "scope": "whole", "authority": "standards-body", "authors": ["Dave Thaler"], "year": 2024, "format": "html", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — Instruction encoding", "url": "https://www.rfc-editor.org/rfc/rfc9669.html#name-instruction-encoding", "scope": "section", "authority": "standards-body", "year": 2024, "format": "html", "access": "open", "concepts": ["bytecode", "encoding-wire-format"]},
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — Arithmetic instructions", "url": "https://www.rfc-editor.org/rfc/rfc9669.html#name-arithmetic-instructions", "scope": "section", "authority": "standards-body", "year": 2024, "format": "html", "access": "open", "concepts": ["operators", "integers"]},
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — Jump instructions", "url": "https://www.rfc-editor.org/rfc/rfc9669.html#name-jump-instructions", "scope": "section", "authority": "standards-body", "year": 2024, "format": "html", "access": "open", "concepts": ["conditionals", "goto-labels"]},
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — Load and store instructions", "url": "https://www.rfc-editor.org/rfc/rfc9669.html#name-load-and-store-instructions", "scope": "section", "authority": "standards-body", "year": 2024, "format": "html", "access": "open", "concepts": ["memory-management", "pointers-references"]},
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — Atomic operations", "url": "https://www.rfc-editor.org/rfc/rfc9669.html#name-atomic-operations", "scope": "section", "authority": "standards-body", "year": 2024, "format": "html", "access": "open", "concepts": ["atomics-memory-ordering"]},
+  {"level": 1, "kind": "standard", "title": "RFC 9669 — Maps", "url": "https://www.rfc-editor.org/rfc/rfc9669.html#name-maps", "scope": "section", "authority": "standards-body", "year": 2024, "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Linux kernel documentation — BPF", "url": "https://docs.kernel.org/bpf/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 1, "kind": "specification", "title": "Linux kernel docs — BPF Instruction Set Architecture", "url": "https://docs.kernel.org/bpf/standardization/instruction-set.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 1, "kind": "reference-manual", "title": "Linux kernel docs — eBPF verifier", "url": "https://docs.kernel.org/bpf/verifier.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["verification", "semantic-analysis"]},
+  {"level": 1, "kind": "reference-manual", "title": "Linux kernel docs — BPF maps", "url": "https://docs.kernel.org/bpf/maps.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "library-reference", "title": "bpf-helpers(7) man page — helper functions", "url": "https://www.man7.org/linux/man-pages/man7/bpf-helpers.7.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "original-paper", "title": "McCanne and Jacobson — The BSD Packet Filter: A New Architecture for User-level Packet Capture (USENIX 1993)", "url": "https://www.tcpdump.org/papers/bpf-usenix93.pdf", "scope": "whole", "authority": "designer", "authors": ["Steven McCanne", "Van Jacobson"], "year": 1993, "format": "pdf", "access": "open", "concepts": ["history", "design-rationale"]},
+
+  {"level": 2, "kind": "guide", "title": "ebpf.io — What is eBPF?", "url": "https://ebpf.io/what-is-ebpf/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "article", "title": "LWN — A thorough introduction to eBPF", "url": "https://lwn.net/Articles/740157/", "scope": "whole", "authority": "community", "year": 2017, "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "paper", "title": "Gershuni et al. — Simple and Precise Static Analysis of Untrusted Linux Kernel Extensions (PLDI 2019)", "url": "https://seahorn.github.io/papers/ebpf-pldi19.pdf", "scope": "whole", "authority": "academic", "year": 2019, "format": "pdf", "access": "open", "concepts": ["verification"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — eBPF", "url": "https://en.wikipedia.org/wiki/EBPF", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

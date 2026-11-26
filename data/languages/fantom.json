@@ -1,0 +1,48 @@
+{
+ "id": "fantom",
+ "name": "Fantom",
+ "aliases": ["Fan"],
+ "categories": ["general-purpose", "object-oriented"],
+ "paradigms": ["object-oriented", "functional", "imperative", "concurrent (actors)"],
+ "typing": ["static", "dynamic (-> invocation)", "strong", "nominal", "nullable types"],
+ "first_appeared": 2005,
+ "designers": ["Brian Frank", "Andy Frank"],
+ "summary": "Portable object-oriented language that compiles to its own fcode IR and runs on the JVM, .NET (historically) and JavaScript, with mixins, closures, nullable types, immutability, actor-based concurrency, built-in serialization and a deliberately limited generics design.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".fan", ".pod"],
+ "homepage": "https://fantom.org/",
+ "influenced_by": ["java", "csharp", "ruby", "erlang", "scala"],
+ "related": [{"id": "jvm-bytecode", "relation": "compiles-to"}, {"id": "javascript", "relation": "compiles-to"}],
+ "level_notes": {"0": "fantom-lang/fantom contains the self-hosted compiler (written in Fantom), the sys runtime and the standard pods.", "1": "No standard; the docLang chapters of the official documentation (including a grammar appendix) define the language."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "fantom-lang/fantom — compiler, runtime and standard pods", "url": "https://github.com/fantom-lang/fantom", "implementation": "Fantom", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "bootstrapping"]},
+  {"level": 0, "kind": "implementation-source", "title": "Tokenizer.fan — tokenizer", "url": "https://github.com/fantom-lang/fantom/blob/master/src/compiler/fan/parser/Tokenizer.fan", "implementation": "Fantom", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "Parser.fan — parser", "url": "https://github.com/fantom-lang/fantom/blob/master/src/compiler/fan/parser/Parser.fan", "implementation": "Fantom", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "standard-library-source", "title": "Obj.fan — sys::Obj root class", "url": "https://github.com/fantom-lang/fantom/blob/master/src/sys/fan/Obj.fan", "implementation": "Fantom", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["objects"]},
+  {"level": 0, "kind": "standard-library-source", "title": "Actor.fan — concurrent::Actor", "url": "https://github.com/fantom-lang/fantom/blob/master/src/concurrent/fan/Actor.fan", "implementation": "Fantom", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["actors"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Fantom language documentation (docLang)", "url": "https://fantom.org/doc/docLang/index", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Structure (pods, types, slots)", "url": "https://fantom.org/doc/docLang/Structure", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["program-structure", "modules"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Literals", "url": "https://fantom.org/doc/docLang/Literals", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["literals", "strings", "lists", "maps-dictionaries", "ranges"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Expressions", "url": "https://fantom.org/doc/docLang/Expressions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions", "operators", "null-optional"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Operator precedence", "url": "https://fantom.org/doc/docLang/Expressions#operator-precedence", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operator-precedence"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Statements", "url": "https://fantom.org/doc/docLang/Statements", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["statements", "conditionals", "loops", "switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Type system (nullable, generics, value types)", "url": "https://fantom.org/doc/docLang/TypeSystem", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "null-optional", "generics"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Classes", "url": "https://fantom.org/doc/docLang/Classes", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Mixins", "url": "https://fantom.org/doc/docLang/Mixins", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["mixins", "interfaces-protocols"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Closures", "url": "https://fantom.org/doc/docLang/Closures", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Exceptions", "url": "https://fantom.org/doc/docLang/Exceptions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Concurrency (immutability, actors)", "url": "https://fantom.org/doc/docLang/Concurrency", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["concurrency", "actors"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Java FFI", "url": "https://fantom.org/doc/docLang/JavaFFI", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ffi", "interoperability"]},
+  {"level": 1, "kind": "reference-manual", "title": "Fantom docLang — Grammar", "url": "https://fantom.org/doc/docLang/Grammar", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "library-reference", "title": "Fantom sys pod API", "url": "https://fantom.org/doc/sys/index", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Fantom tour", "url": "https://fantom.org/doc/docIntro/Tour", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "article", "title": "Why Fantom", "url": "https://fantom.org/doc/docIntro/WhyFantom", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Fantom (programming language)", "url": "https://en.wikipedia.org/wiki/Fantom_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Fantom", "url": "https://pldb.io/concepts/fantom.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Fantom", "url": "https://rosettacode.org/wiki/Category:Fantom", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

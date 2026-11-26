@@ -1,0 +1,91 @@
+{
+ "id": "raku",
+ "name": "Raku",
+ "aliases": [
+  "Perl 6"
+ ],
+ "categories": [
+  "general-purpose",
+  "scripting",
+  "functional",
+  "object-oriented",
+  "grammar-notation"
+ ],
+ "paradigms": [
+  "multi-paradigm",
+  "object-oriented",
+  "functional",
+  "procedural",
+  "concurrent"
+ ],
+ "typing": [
+  "gradual",
+  "dynamic",
+  "static-optional",
+  "nominal"
+ ],
+ "first_appeared": 2015,
+ "designers": [
+  "Larry Wall"
+ ],
+ "summary": "Gradually typed multi-paradigm language in the Perl family (formerly Perl 6) with built-in grammars, multiple dispatch, junctions, lazy lists, a metaobject protocol and high-level concurrency primitives; defined by its specification test suite (roast) rather than a prose standard.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".raku",
+  ".rakumod",
+  ".rakutest",
+  ".p6",
+  ".pm6"
+ ],
+ "homepage": "https://raku.org/",
+ "influenced_by": [
+  "perl",
+  "haskell",
+  "smalltalk",
+  "lisp",
+  "ruby",
+  "python"
+ ],
+ "related": [
+  {
+   "id": "perl",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Rakudo is the main compiler, written largely in NQP and Raku and targeting MoarVM (also JVM/JS backends). The roast test suite is the normative specification: a Raku version is defined as the set of roast tests it must pass.",
+  "1": "The 2000-2004 Apocalypses/Exegeses/Synopses were the original design documents and are now historical; docs.raku.org is the official language reference.",
+  "3": "Rosetta Code reports 'blocked' to automated checkers."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "rakudo/rakudo — the Rakudo compiler", "url": "https://github.com/rakudo/rakudo", "implementation": "Rakudo", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "grammar-source", "title": "src/Perl6/Grammar.nqp — the Raku grammar written as a Raku grammar (current frontend)", "url": "https://github.com/rakudo/rakudo/blob/main/src/Perl6/Grammar.nqp", "implementation": "Rakudo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "src/Perl6/Actions.nqp — grammar actions building QAST", "url": "https://github.com/rakudo/rakudo/blob/main/src/Perl6/Actions.nqp", "implementation": "Rakudo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["ast", "semantic-analysis"]},
+  {"level": 0, "kind": "conformance-tests", "title": "Raku/roast — the official Raku specification test suite", "url": "https://github.com/Raku/roast", "implementation": "Rakudo", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["testing"]},
+  {"level": 0, "kind": "implementation-source", "title": "MoarVM src/spesh/optimize.c — specializer (speculative optimization)", "url": "https://github.com/MoarVM/MoarVM/blob/main/src/spesh/optimize.c", "implementation": "MoarVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["optimization", "jit"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Syntax", "url": "https://docs.raku.org/language/syntax", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure", "comments", "literals", "identifiers"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Variables (sigils, twigils, scope declarators)", "url": "https://docs.raku.org/language/variables", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Operators", "url": "https://docs.raku.org/language/operators", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators", "operator-precedence"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Control flow", "url": "https://docs.raku.org/language/control", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Functions (multi dispatch, closures)", "url": "https://docs.raku.org/language/functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "multiple-dispatch", "closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Signature literals", "url": "https://docs.raku.org/language/signatures", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parameters-arguments", "pattern-matching", "destructuring"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Type system", "url": "https://docs.raku.org/language/typesystem", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "gradual-typing", "subtyping"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Object orientation (classes, roles, MOP)", "url": "https://docs.raku.org/language/objects", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes", "traits-typeclasses", "metaclasses"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Regexes", "url": "https://docs.raku.org/language/regexes", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["regular-expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Grammars", "url": "https://docs.raku.org/language/grammars", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["formal-grammars", "parser"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Modules", "url": "https://docs.raku.org/language/modules", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports", "packages"]},
+  {"level": 1, "kind": "reference-manual", "title": "Raku documentation — Concurrency (promises, supplies, channels)", "url": "https://docs.raku.org/language/concurrency", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["concurrency", "async-await", "channels-message-passing"]},
+  {"level": 1, "kind": "design-document", "title": "Synopsis 1: Overview (historical design document)", "url": "https://github.com/Raku/old-design-docs/blob/master/S01-overview.pod", "scope": "whole", "authority": "designer", "authors": ["Larry Wall"], "year": 2004, "format": "source-file", "access": "open", "concepts": ["design-rationale", "history"]},
+  {"level": 1, "kind": "design-document", "title": "Synopsis 5: Regexes and Rules", "url": "https://github.com/Raku/old-design-docs/blob/master/S05-regex.pod", "scope": "section", "authority": "designer", "authors": ["Damian Conway", "Allison Randal", "Patrick Michaud", "Larry Wall", "Moritz Lenz"], "format": "source-file", "access": "open", "concepts": ["regular-expressions", "formal-grammars"]},
+  {"level": 2, "kind": "comparison-guide", "title": "Raku documentation — Traps to avoid", "url": "https://docs.raku.org/language/traps", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "tutorial", "title": "Raku Guide", "url": "https://raku.guide/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "cheatsheet", "title": "Learn X in Y minutes — Raku", "url": "https://learnxinyminutes.com/raku/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Raku (programming language)", "url": "https://en.wikipedia.org/wiki/Raku_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Raku", "url": "https://pldb.io/concepts/raku.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Raku", "url": "https://rosettacode.org/wiki/Category:Raku", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

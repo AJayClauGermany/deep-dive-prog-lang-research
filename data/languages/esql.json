@@ -1,0 +1,274 @@
+{
+ "id": "esql",
+ "name": "Elasticsearch ES|QL",
+ "aliases": [
+  "ES|QL",
+  "Elasticsearch Query Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "dataflow"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2023,
+ "designers": [
+  "Elastic"
+ ],
+ "summary": "Piped query language introduced in Elasticsearch 8.11: a source command (FROM) followed by | processing commands such as WHERE, EVAL, STATS ... BY, SORT, LIMIT and LOOKUP JOIN, executed by a dedicated compute engine.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://www.elastic.co/docs/reference/query-languages/esql/",
+ "influenced_by": [
+  "kql",
+  "sql"
+ ],
+ "related": [
+  {
+   "id": "elasticsearch-dsl",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "3": "No dedicated Wikipedia or PLDB page."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "elastic/elasticsearch — ES|QL lives in x-pack/plugin/esql",
+   "url": "https://github.com/elastic/elasticsearch",
+   "implementation": "Elasticsearch",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "EsqlBaseParser.g4 — ANTLR parser grammar",
+   "url": "https://github.com/elastic/elasticsearch/blob/main/x-pack/plugin/esql/src/main/antlr/EsqlBaseParser.g4",
+   "implementation": "Elasticsearch",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "EsqlBaseLexer.g4 — ANTLR lexer grammar",
+   "url": "https://github.com/elastic/elasticsearch/blob/main/x-pack/plugin/esql/src/main/antlr/EsqlBaseLexer.g4",
+   "implementation": "Elasticsearch",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL reference",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Syntax reference",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/esql-syntax-reference",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "comments",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Source commands (FROM, ROW, SHOW)",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/commands/source-commands",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Processing commands (WHERE, EVAL, STATS, SORT, LIMIT, KEEP...)",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/commands/processing-commands",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "aggregation",
+    "sorting-limiting",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — LOOKUP JOIN",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/esql-lookup-join",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Aggregation functions",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/functions-operators/aggregation-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — String functions",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/functions-operators/string-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Conditional functions (CASE, COALESCE)",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/functions-operators/conditional-functions-and-expressions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Date-time functions",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/functions-operators/date-time-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Type conversion functions",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/functions-operators/type-conversion-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Operators",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/functions-operators/operators",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ES|QL — Limitations",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/limitations",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Get started with ES|QL",
+   "url": "https://www.elastic.co/docs/reference/query-languages/esql/esql-getting-started",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Elasticsearch",
+   "url": "https://en.wikipedia.org/wiki/Elasticsearch",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

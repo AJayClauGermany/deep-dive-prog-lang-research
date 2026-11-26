@@ -1,0 +1,459 @@
+{
+ "id": "json5",
+ "name": "JSON5",
+ "aliases": [
+  "JSON for Humans"
+ ],
+ "categories": [
+  "data-serialization",
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "self-describing"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Aseem Kishore",
+  "Jordan Tucker"
+ ],
+ "summary": "Superset of JSON that adds the ECMAScript 5.1 conveniences JSON left out: comments, trailing commas, unquoted identifier keys, single-quoted and multi-line strings, hexadecimal numbers, Infinity/NaN and leading/trailing decimal points.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "JSON5 Data Interchange Format 1.0.0"
+ ],
+ "file_extensions": [
+  ".json5"
+ ],
+ "homepage": "https://json5.org/",
+ "influenced_by": [
+  "json",
+  "javascript"
+ ],
+ "related": [
+  {
+   "id": "json",
+   "relation": "superset-of"
+  },
+  {
+   "id": "jsonc",
+   "relation": "family"
+  },
+  {
+   "id": "hjson",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The JSON5 Data Interchange Format specification (spec.json5.org, v1.0.0, 2018) defines the syntax as ECMAScript 5.1 grammar productions.",
+  "0": "json5/json5 (JavaScript) is the reference implementation; json5/json5-tests is the shared test corpus."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "json5/json5 — reference JavaScript implementation",
+   "url": "https://github.com/json5/json5",
+   "implementation": "json5 (JS)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "json5 lib/parse.js — lexer-state-machine parser",
+   "url": "https://github.com/json5/json5/blob/main/lib/parse.js",
+   "implementation": "json5 (JS)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "json5 lib/stringify.js — serializer with quote selection",
+   "url": "https://github.com/json5/json5/blob/main/lib/stringify.js",
+   "implementation": "json5 (JS)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "json5 lib/unicode.js — ECMAScript identifier character classes",
+   "url": "https://github.com/json5/json5/blob/main/lib/unicode.js",
+   "implementation": "json5 (JS)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "json5-tests — shared JSON5 test corpus (valid .json5, invalid .txt/.js)",
+   "url": "https://github.com/json5/json5-tests/blob/master/README.md",
+   "implementation": "json5-tests",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "json5-tests — block comment after array element",
+   "url": "https://github.com/json5/json5-tests/blob/master/comments/block-comment-following-array-element.json5",
+   "implementation": "json5-tests",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pyjson5 json5/lib.py — Python JSON5 load/dump",
+   "url": "https://github.com/dpranke/pyjson5/blob/main/json5/lib.py",
+   "implementation": "pyjson5 (Python)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "json5 CHANGELOG — release history",
+   "url": "https://github.com/json5/json5/blob/main/CHANGELOG.md",
+   "implementation": "json5 (JS)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The JSON5 Data Interchange Format (spec 1.0.0)",
+   "url": "https://spec.json5.org/",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Summary of features vs JSON",
+   "url": "https://spec.json5.org/#summary-of-features",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Objects: identifier names and trailing commas",
+   "url": "https://spec.json5.org/#objects",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Arrays",
+   "url": "https://spec.json5.org/#arrays",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Strings: single quotes, line continuations",
+   "url": "https://spec.json5.org/#strings",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Escapes",
+   "url": "https://spec.json5.org/#escapes",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Numbers: hex, Infinity, NaN, leading/trailing point",
+   "url": "https://spec.json5.org/#numbers",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Comments",
+   "url": "https://spec.json5.org/#comments",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — White Space",
+   "url": "https://spec.json5.org/#white-space",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Lexical grammar",
+   "url": "https://spec.json5.org/#lexical-grammar",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Syntactic grammar",
+   "url": "https://spec.json5.org/#syntactic-grammar",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON5 spec 1.0.0 — Parsers and Generators conformance",
+   "url": "https://spec.json5.org/#parsers",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jordan Tucker",
+    "Aseem Kishore"
+   ],
+   "year": 2018,
+   "version": "1.0.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "json5.org — JSON for Humans: overview, short example and feature list",
+   "url": "https://json5.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON5",
+   "url": "https://en.wikipedia.org/wiki/JSON5",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — JSON5",
+   "url": "https://pldb.io/concepts/json5.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON: Supersets (JSON5 among derivatives)",
+   "url": "https://en.wikipedia.org/wiki/JSON#Supersets",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  }
+ ]
+}

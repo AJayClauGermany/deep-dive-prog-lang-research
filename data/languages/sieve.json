@@ -1,0 +1,341 @@
+{
+ "id": "sieve",
+ "name": "Sieve (RFC 5228)",
+ "aliases": [
+  "Sieve",
+  "Sieve mail filtering language"
+ ],
+ "categories": [
+  "domain-specific",
+  "policy"
+ ],
+ "paradigms": [
+  "declarative",
+  "imperative"
+ ],
+ "typing": [
+  "untyped-strings"
+ ],
+ "first_appeared": 2001,
+ "designers": [
+  "Tim Showalter",
+  "Philip Guenther"
+ ],
+ "summary": "IETF standard language for server-side email filtering: a deliberately non-Turing-complete script of tests (header, address, size...) and actions (keep, fileinto, redirect, discard) with if/elsif/else, extended through 'require'd extensions defined in further RFCs.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "RFC 5228 (2008)",
+  "RFC 3028 (2001, obsoleted)"
+ ],
+ "file_extensions": [
+  ".sieve",
+  ".siv"
+ ],
+ "homepage": "http://sieve.info/",
+ "level_notes": {
+  "0": "Dovecot Pigeonhole and Cyrus IMAP sieve are the major implementations.",
+  "1": "RFC 5228 plus extension RFCs (variables, vacation, relational, imap4flags, body ...) and ManageSieve.",
+  "2": "Little secondary literature beyond implementation docs.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dovecot/pigeonhole — Dovecot Sieve implementation",
+   "url": "https://github.com/dovecot/pigeonhole",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Pigeonhole",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "cyrusimap/cyrus-imapd — includes Cyrus sieve (sieve/ directory)",
+   "url": "https://github.com/cyrusimap/cyrus-imapd",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Cyrus",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 — Sieve: An Email Filtering Language",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html",
+   "scope": "whole",
+   "year": 2008,
+   "authors": [
+    "Philip Guenther",
+    "Tim Showalter"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Whitespace",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-2.2",
+   "concepts": [
+    "whitespace-layout",
+    "lexical-structure"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Comments",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-2.3",
+   "concepts": [
+    "comments"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Literal Data (numbers, strings)",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-2.4",
+   "concepts": [
+    "literals",
+    "strings",
+    "integers"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Tests",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-2.5",
+   "concepts": [
+    "booleans",
+    "expressions"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Comparisons Across Character Sets / match types",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-2.7",
+   "concepts": [
+    "pattern-matching",
+    "unicode"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Evaluation",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-2.10",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Control if",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-3.1",
+   "concepts": [
+    "conditionals"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Control require",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-3.2",
+   "concepts": [
+    "imports",
+    "modules"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Action Commands",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-4",
+   "concepts": [
+    "statements"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Extensibility",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-6",
+   "concepts": [
+    "language-evolution"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Grammar",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-8.2",
+   "concepts": [
+    "grammar"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5228 Sieve — Security Considerations",
+   "url": "https://www.rfc-editor.org/rfc/rfc5228.html#section-10",
+   "concepts": [
+    "security-considerations"
+   ],
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html",
+   "version": "RFC 5228",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5229 — Sieve Variables Extension",
+   "url": "https://www.rfc-editor.org/rfc/rfc5229.html",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ],
+   "version": "RFC 5229",
+   "scope": "section",
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5230 — Sieve Vacation Extension",
+   "url": "https://www.rfc-editor.org/rfc/rfc5230.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "version": "RFC 5230",
+   "scope": "section",
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5231 — Sieve Relational Extension",
+   "url": "https://www.rfc-editor.org/rfc/rfc5231.html",
+   "concepts": [
+    "operators"
+   ],
+   "version": "RFC 5231",
+   "scope": "section",
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 5804 — Sieve ManageSieve protocol",
+   "url": "https://www.rfc-editor.org/rfc/rfc5804.html",
+   "concepts": [
+    "tooling"
+   ],
+   "version": "RFC 5804",
+   "scope": "section",
+   "access": "open",
+   "authority": "standards-body",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Pigeonhole Sieve documentation (Dovecot)",
+   "url": "https://doc.dovecot.org/main/core/plugins/sieve.html",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Sieve (mail filtering language)",
+   "url": "https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language)",
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

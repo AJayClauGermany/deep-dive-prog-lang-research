@@ -1,0 +1,428 @@
+{
+ "id": "vimscript",
+ "name": "Vim script / Vim9",
+ "aliases": [
+  "VimL",
+  "Vim script",
+  "Vim9 script",
+  "vimscript"
+ ],
+ "categories": [
+  "scripting",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural",
+  "object-oriented"
+ ],
+ "typing": [
+  "dynamic",
+  "gradual"
+ ],
+ "first_appeared": 1998,
+ "designers": [
+  "Bram Moolenaar"
+ ],
+ "summary": "Vim's extension language: legacy Vim script is a dynamically typed Ex-command language with lists, dicts, funcrefs, lambdas and scoped variables (g:, s:, l: ...); Vim9 script (Vim 9.0, 2022) adds compiled :def functions, declarations, types, classes, interfaces, enums, generics and import/export.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".vim"
+ ],
+ "homepage": "https://www.vim.org/",
+ "level_notes": {
+  "0": "vim/vim C sources (eval.c, userfunc.c, vim9compile.c, vim9execute.c).",
+  "1": "Vim's built-in help files eval.txt, vim9.txt, vim9class.txt (vimhelp.org renders them).",
+  "2": "Learn Vimscript the Hard Way, Learn X in Y minutes.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "vim/vim — source repository",
+   "url": "https://github.com/vim/vim",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "Vim",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vim src/eval.c — expression evaluation",
+   "url": "https://github.com/vim/vim/blob/master/src/eval.c",
+   "concepts": [
+    "interpreter",
+    "expressions"
+   ],
+   "access": "open",
+   "implementation": "Vim",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vim src/userfunc.c — user functions, lambdas, closures",
+   "url": "https://github.com/vim/vim/blob/master/src/userfunc.c",
+   "concepts": [
+    "functions",
+    "closures"
+   ],
+   "access": "open",
+   "implementation": "Vim",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vim src/vim9compile.c — Vim9 compiler to instructions",
+   "url": "https://github.com/vim/vim/blob/master/src/vim9compile.c",
+   "concepts": [
+    "bytecode",
+    "compiler-architecture"
+   ],
+   "access": "open",
+   "implementation": "Vim",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vim src/vim9execute.c — Vim9 instruction executor",
+   "url": "https://github.com/vim/vim/blob/master/src/vim9execute.c",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "access": "open",
+   "implementation": "Vim",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help — eval.txt (Expression evaluation)",
+   "url": "https://vimhelp.org/eval.txt.html",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Variables and types",
+   "url": "https://vimhelp.org/eval.txt.html#variables",
+   "concepts": [
+    "variables",
+    "primitive-types"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Lists",
+   "url": "https://vimhelp.org/eval.txt.html#Lists",
+   "concepts": [
+    "lists"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Dictionaries",
+   "url": "https://vimhelp.org/eval.txt.html#Dictionaries",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Funcref",
+   "url": "https://vimhelp.org/eval.txt.html#Funcref",
+   "concepts": [
+    "function-types",
+    "higher-order-functions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Expression syntax",
+   "url": "https://vimhelp.org/eval.txt.html#expression-syntax",
+   "concepts": [
+    "expressions",
+    "operators",
+    "operator-precedence"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — String literals",
+   "url": "https://vimhelp.org/eval.txt.html#expr-string",
+   "concepts": [
+    "strings",
+    "literals"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Internal variables and scopes",
+   "url": "https://vimhelp.org/eval.txt.html#internal-variables",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — User-defined functions",
+   "url": "https://vimhelp.org/eval.txt.html#user-functions",
+   "concepts": [
+    "functions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Lambda expressions",
+   "url": "https://vimhelp.org/eval.txt.html#lambda",
+   "concepts": [
+    "closures"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Ex :if",
+   "url": "https://vimhelp.org/eval.txt.html#%3Aif",
+   "concepts": [
+    "conditionals"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Ex :for",
+   "url": "https://vimhelp.org/eval.txt.html#%3Afor",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help eval.txt — Exception handling",
+   "url": "https://vimhelp.org/eval.txt.html#exception-handling",
+   "concepts": [
+    "exceptions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help — vim9.txt (Vim9 script)",
+   "url": "https://vimhelp.org/vim9.txt.html",
+   "scope": "whole",
+   "version": "Vim 9",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help vim9.txt — Declarations",
+   "url": "https://vimhelp.org/vim9.txt.html#vim9-declaration",
+   "concepts": [
+    "variables",
+    "constants"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help vim9.txt — Types",
+   "url": "https://vimhelp.org/vim9.txt.html#vim9-types",
+   "concepts": [
+    "type-system",
+    "type-annotations"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help vim9.txt — Type inference",
+   "url": "https://vimhelp.org/vim9.txt.html#type-inference",
+   "concepts": [
+    "type-inference"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help vim9.txt — Generic functions",
+   "url": "https://vimhelp.org/vim9.txt.html#generic-functions",
+   "concepts": [
+    "generics"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help vim9.txt — Import",
+   "url": "https://vimhelp.org/vim9.txt.html#vim9-import",
+   "concepts": [
+    "imports",
+    "modules"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help vim9.txt — Closures",
+   "url": "https://vimhelp.org/vim9.txt.html#vim9-closure",
+   "concepts": [
+    "closures"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vim help — vim9class.txt (classes and objects)",
+   "url": "https://vimhelp.org/vim9class.txt.html",
+   "concepts": [
+    "classes",
+    "interfaces-protocols",
+    "enums"
+   ],
+   "scope": "section",
+   "version": "Vim 9",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Steve Losh — Learn Vimscript the Hard Way",
+   "url": "https://learnvimscriptthehardway.stevelosh.com/",
+   "authors": [
+    "Steve Losh"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — Vimscript",
+   "url": "https://learnxinyminutes.com/vimscript/",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Vim (text editor): Vim script",
+   "url": "https://en.wikipedia.org/wiki/Vim_(text_editor)",
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

@@ -1,0 +1,406 @@
+{
+ "id": "xaml",
+ "name": "XAML",
+ "aliases": [
+  "Extensible Application Markup Language"
+ ],
+ "categories": [
+  "markup",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal"
+ ],
+ "first_appeared": 2006,
+ "designers": [
+  "Microsoft"
+ ],
+ "summary": "Microsoft's XML-based declarative language for instantiating .NET object graphs: elements map to CLR types, attributes and property elements to properties, with markup extensions ({Binding}, {StaticResource}), attached properties and x: language directives. Used by WPF, UWP/WinUI, Xamarin.Forms/.NET MAUI and (as dialects) Avalonia and Uno.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".xaml",
+  ".axaml"
+ ],
+ "homepage": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/",
+ "related": [
+  {
+   "id": "xml",
+   "relation": "family"
+  },
+  {
+   "id": "csharp",
+   "relation": "family"
+  },
+  {
+   "id": "qml",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The [MS-XAML] Open Specifications document formally defines the 2006/2009 vocabulary; the System.Xaml docs below are the practical language reference."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dotnet/wpf — WPF and System.Xaml source",
+   "url": "https://github.com/dotnet/wpf",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "System.Xaml"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "System.Xaml — XamlScanner.cs (XAML lexical scanner)",
+   "url": "https://github.com/dotnet/wpf/blob/main/src/Microsoft.DotNet.Wpf/src/System.Xaml/System/Xaml/Parser/XamlScanner.cs",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "parser"
+   ],
+   "implementation": "System.Xaml"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "System.Xaml — XamlSchemaContext.cs (type and namespace resolution)",
+   "url": "https://github.com/dotnet/wpf/blob/main/src/Microsoft.DotNet.Wpf/src/System.Xaml/System/Xaml/XamlSchemaContext.cs",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "semantic-analysis"
+   ],
+   "implementation": "System.Xaml"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "System.Xaml — MarkupExtension.cs",
+   "url": "https://github.com/dotnet/wpf/blob/main/src/Microsoft.DotNet.Wpf/src/System.Xaml/System/Windows/Markup/MarkupExtension.cs",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ],
+   "implementation": "System.Xaml"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WPF — XamlReader.cs (runtime XAML loading)",
+   "url": "https://github.com/dotnet/wpf/blob/main/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Markup/XamlReader.cs",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "WPF"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": ".NET MAUI — XamlParser.cs",
+   "url": "https://github.com/dotnet/maui/blob/main/src/Controls/src/Xaml/XamlParser.cs",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": ".NET MAUI"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Avalonia UI (cross-platform XAML dialect)",
+   "url": "https://github.com/AvaloniaUI/Avalonia",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Avalonia"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "XamlX — general-purpose XAML compiler (used by Avalonia)",
+   "url": "https://github.com/kekekeks/XamlX",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "compiler-architecture"
+   ],
+   "implementation": "XamlX"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XAML Services (System.Xaml) documentation",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XAML syntax in detail (WPF)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/xaml-syntax-in-detail",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "document-structure",
+    "data-model",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XAML namespace (x:) language features",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/namespace-language-features",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Markup extensions overview",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/markup-extensions-overview",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "White-space processing in XAML",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/white-space-processing",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Built-in types for common XAML language primitives",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/types-for-primitives",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XAML 2009 language features",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/xaml-2009-language-features",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "x:Class directive",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/xclass-directive",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XAML namespaces and namespace mapping for WPF XAML",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Attached properties overview (WPF)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/properties/attached-properties-overview",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Binding declarations overview (WPF)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/data/binding-declarations-overview",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "XAML overview (WPF)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": ".NET MAUI — Get started with XAML",
+   "url": "https://learn.microsoft.com/en-us/dotnet/maui/xaml/fundamentals/get-started",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": ".NET MAUI — XAML compilation (XamlC)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/maui/xaml/xamlc",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Windows App SDK — XAML overview",
+   "url": "https://learn.microsoft.com/en-us/windows/apps/develop/platform/xaml/xaml-overview",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Avalonia — Avalonia XAML fundamentals",
+   "url": "https://docs.avaloniaui.net/docs/fundamentals/avalonia-xaml",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — XAML",
+   "url": "https://en.wikipedia.org/wiki/Extensible_Application_Markup_Language",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — XAML",
+   "url": "https://pldb.io/concepts/xaml.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

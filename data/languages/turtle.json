@@ -1,0 +1,583 @@
+{
+ "id": "turtle",
+ "name": "Turtle / TriG / N3",
+ "aliases": [
+  "Turtle",
+  "Terse RDF Triple Language",
+  "TriG",
+  "Notation3",
+  "N3"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "rdf-based (datatyped literals)"
+ ],
+ "first_appeared": 1998,
+ "designers": [
+  "Tim Berners-Lee (N3)",
+  "Dave Beckett (Turtle)",
+  "Eric Prud'hommeaux",
+  "Gavin Carothers",
+  "Chris Bizer",
+  "Richard Cyganiak"
+ ],
+ "summary": "Family of compact text syntaxes for RDF: Turtle writes triples with prefixes, predicate/object lists, blank-node property lists, collections and literal abbreviations; TriG extends Turtle with named graphs (datasets); Notation3 (N3), the ancestor, adds formulae (quoted graphs), variables, paths and rules for logic.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard",
+  "community-specification"
+ ],
+ "standards": [
+  "W3C RDF 1.1 Turtle (2014)",
+  "W3C RDF 1.1 TriG (2014)",
+  "W3C RDF 1.2 Turtle (Candidate Recommendation)",
+  "W3C N3 Community Group report"
+ ],
+ "file_extensions": [
+  ".ttl",
+  ".trig",
+  ".n3"
+ ],
+ "homepage": "https://www.w3.org/TR/turtle/",
+ "influenced_by": [
+  "rdf"
+ ],
+ "related": [
+  {
+   "id": "rdf",
+   "relation": "family"
+  },
+  {
+   "id": "sparql",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Turtle and TriG are W3C Recommendations (1.1, 2014; 1.2 in Candidate Recommendation adds triple terms, reifiers and annotation syntax). N3 is specified by a W3C Community Group report (not a standard) and Tim Berners-Lee's original Design Issues note and Team Submission.",
+  "0": "Official test manifests are in w3c/rdf-tests; every RDF toolkit (Jena, rdflib, N3.js, RDF4J, Oxigraph) has a Turtle/TriG parser; N3.js and EYE implement N3."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Turtle — Terse RDF Triple Language (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/turtle/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Eric Prud'hommeaux",
+    "Gavin Carothers"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 Turtle — 6.5 Grammar (EBNF)",
+   "url": "https://www.w3.org/TR/turtle/#sec-grammar-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 TriG — RDF Dataset Language (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/trig/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Gavin Carothers",
+    "Andy Seaborne"
+   ],
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RDF 1.1 TriG — 2.2 Graph statements",
+   "url": "https://www.w3.org/TR/trig/#sec-graph-statements",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "1.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle (Candidate Recommendation)",
+   "url": "https://www.w3.org/TR/rdf12-turtle/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 2.2 Predicate Lists and 2.3 Object Lists",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#predicate-lists",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 2.5 IRIs (prefixed names, @base)",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#sec-iri",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 2.6 RDF Literals (numbers, booleans, long strings)",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "strings",
+    "integers",
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 2.7 RDF Blank Nodes",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#BNodes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 2.9 Collections",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#collections",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 2.10 Triple terms, reifying triples and annotation syntax",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#triple-terms",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 4 Differences from SPARQL",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#sec-diff-sparql",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 6.2 Comments",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#sec-grammar-comments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 6.4 Escape Sequences",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#sec-escapes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — 7 Parsing (state, terms, triples)",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#sec-parsing",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "RDF 1.2 Turtle — Embedding Turtle in HTML documents",
+   "url": "https://www.w3.org/TR/rdf12-turtle/#in-html",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "1.2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Notation3 Language (W3C N3 Community Group report)",
+   "url": "https://w3c-cg.github.io/N3/spec/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Dörthe Arndt",
+    "William Van Woensel",
+    "Dominik Tomaszuk",
+    "Gregg Kellogg"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Notation3 — Relation to Turtle",
+   "url": "https://w3c-cg.github.io/N3/spec/#rel-n3-turtle",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Notation3 (N3): A readable RDF syntax — W3C Team Submission",
+   "url": "https://www.w3.org/TeamSubmission/n3/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee",
+    "Dan Connolly"
+   ],
+   "year": 2008,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Tim Berners-Lee — Notation 3 (Design Issues)",
+   "url": "https://www.w3.org/DesignIssues/Notation3.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee"
+   ],
+   "year": 1998,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Turtle — Terse RDF Triple Language (W3C Team Submission 2008)",
+   "url": "https://www.w3.org/TeamSubmission/turtle/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "David Beckett",
+    "Tim Berners-Lee"
+   ],
+   "year": 2008,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "rdf-tests rdf/rdf11/rdf-turtle/manifest.ttl — Turtle test suite",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/rdf/rdf11/rdf-turtle/manifest.ttl",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "rdf-tests rdf/rdf11/rdf-trig/manifest.ttl — TriG test suite",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/rdf/rdf11/rdf-trig/manifest.ttl",
+   "scope": "section",
+   "implementation": "W3C",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Jena RIOT lang/LangTurtleBase.java — Turtle/TriG parser core",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/riot/lang/LangTurtleBase.java",
+   "scope": "section",
+   "implementation": "Apache Jena",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "N3.js src/N3Parser.js — Turtle, TriG, N-Triples and N3 parser",
+   "url": "https://github.com/rdfjs/N3.js/blob/main/src/N3Parser.js",
+   "scope": "section",
+   "implementation": "N3.js",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph lib/oxttl/src/terse.rs — Turtle/TriG recognizer",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/oxttl/src/terse.rs",
+   "scope": "section",
+   "implementation": "Oxigraph",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib plugins/parsers/notation3.py — N3 and Turtle parser",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/plugins/parsers/notation3.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rdflib plugins/serializers/turtle.py — Turtle serializer",
+   "url": "https://github.com/RDFLib/rdflib/blob/main/rdflib/plugins/serializers/turtle.py",
+   "scope": "section",
+   "implementation": "rdflib",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Tim Berners-Lee — Primer: Getting into RDF & Semantic Web using N3",
+   "url": "https://www.w3.org/2000/10/swap/Primer",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Turtle (syntax)",
+   "url": "https://en.wikipedia.org/wiki/Turtle_(syntax)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TriG (syntax)",
+   "url": "https://en.wikipedia.org/wiki/TriG_(syntax)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Notation3",
+   "url": "https://en.wikipedia.org/wiki/Notation3",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Turtle",
+   "url": "https://pldb.io/concepts/turtle.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Notation3",
+   "url": "https://pldb.io/concepts/notation3.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

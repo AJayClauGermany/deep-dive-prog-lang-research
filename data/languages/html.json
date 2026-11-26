@@ -1,0 +1,7050 @@
+{
+ "id": "html",
+ "name": "HTML",
+ "aliases": [
+  "HyperText Markup Language",
+  "HTML5",
+  "HTML Living Standard"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1993,
+ "designers": [
+  "Tim Berners-Lee",
+  "WHATWG (Ian Hickson and successors)",
+  "W3C HTML Working Groups"
+ ],
+ "summary": "The markup language of the World Wide Web. Since 2019 the WHATWG HTML Living Standard is the single authoritative definition; it specifies the element vocabulary and content models, the DOM-based data model, and an exact error-tolerant parsing algorithm (tokenizer state machine plus tree-construction insertion modes).",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "WHATWG HTML Living Standard",
+  "W3C HTML 4.01 (1999, superseded)",
+  "ISO/IEC 15445:2000",
+  "RFC 1866 (HTML 2.0, historic)"
+ ],
+ "file_extensions": [
+  ".html",
+  ".htm"
+ ],
+ "homepage": "https://html.spec.whatwg.org/multipage/",
+ "influenced_by": [
+  "sgml"
+ ],
+ "related": [
+  {
+   "id": "xhtml",
+   "relation": "variant-of"
+  },
+  {
+   "id": "sgml",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "css",
+   "relation": "host-of"
+  },
+  {
+   "id": "javascript",
+   "relation": "host-of"
+  },
+  {
+   "id": "svg",
+   "relation": "embeds"
+  },
+  {
+   "id": "mathml",
+   "relation": "embeds"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "HTML is defined by a specification, not an implementation, but the parsing chapter is an executable algorithm, so parsers are near-transliterations of it. Listed: html5lib (the first implementation, with the shared html5lib-tests corpus), web-platform-tests (the conformance suite), html5ever, parse5, the Gecko/Blink/WebKit/Ladybird parsers, several library parsers, the Nu Html Checker (RELAX NG schemas for document conformance) and the spec source itself. The html5lib-tests tree-construction files are linked as a directory because raw file fetches of that path fail from the research sandbox.",
+  "1": "The WHATWG HTML Living Standard is normative (W3C ceased publishing a competing HTML in 2019; see the MOU). Section numbers in titles drift as the standard changes; the fragment ids are stable. Historical versions (the 1992 \"HTML Tags\" note, RFC 1866, HTML 3.2, HTML 4.01, W3C HTML5) are included for history. w3.org answers some automated clients with 403, so those links may show as blocked in the link checker; they were verified manually.",
+  "2": "MDN and web.dev are the main maintained tutorials/references; Simon Pieters' \"Idiosyncrasies of the HTML parser\" is the standard secondary text on the syntax and parser.",
+  "3": "Rosetta Code blocks automated clients."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "html5lib/html5lib-python — pure-Python implementation of the WHATWG parsing algorithm",
+   "url": "https://github.com/html5lib/html5lib-python",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib _tokenizer.py — tokenizer state machine (one method per spec state)",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/_tokenizer.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata",
+    "escaping",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib html5parser.py — tree construction phases (insertion modes, adoption agency)",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/html5parser.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib _inputstream.py — byte stream decoding, BOM and <meta> charset prescan",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/_inputstream.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib constants.py — element categories, void/rcdata elements, entity table, parse error messages",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/constants.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "escaping",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib serializer.py — HTML serializer (optional tags, attribute quoting, escaping)",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/serializer.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib treebuilders/base.py — open element stack, active formatting elements, foster parenting",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/treebuilders/base.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib treewalkers/base.py — tree walker producing a token stream from a DOM",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/treewalkers/base.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "iterators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5lib filters/sanitizer.py — allow-list sanitizer filter",
+   "url": "https://github.com/html5lib/html5lib-python/blob/master/html5lib/filters/sanitizer.py",
+   "authority": "community",
+   "implementation": "html5lib",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib/html5lib-tests — shared tokenizer, tree-construction, encoding and serializer test data",
+   "url": "https://github.com/html5lib/html5lib-tests",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests tokenizer/README.md — JSON tokenizer test format",
+   "url": "https://github.com/html5lib/html5lib-tests/blob/master/tokenizer/README.md",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests tokenizer/test1.test — basic tokenizer cases (doctype, tags, comments, attributes)",
+   "url": "https://github.com/html5lib/html5lib-tests/blob/master/tokenizer/test1.test",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests tokenizer/namedEntities.test — every named character reference",
+   "url": "https://github.com/html5lib/html5lib-tests/blob/master/tokenizer/namedEntities.test",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests tokenizer/escapeFlag.test — script data and RCDATA escaping states",
+   "url": "https://github.com/html5lib/html5lib-tests/blob/master/tokenizer/escapeFlag.test",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests tree-construction/ — .dat tree builder tests (adoption agency, tables, templates, foreign content)",
+   "url": "https://github.com/html5lib/html5lib-tests/tree/master/tree-construction",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "format": "directory",
+   "scope": "section",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "testing",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests encoding/tests1.dat — character encoding sniffing cases",
+   "url": "https://github.com/html5lib/html5lib-tests/blob/master/encoding/tests1.dat",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "html5lib-tests serializer/core.test — serializer cases",
+   "url": "https://github.com/html5lib/html5lib-tests/blob/master/serializer/core.test",
+   "authority": "community",
+   "implementation": "html5lib-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "web-platform-tests/wpt — cross-browser conformance suite for the web platform",
+   "url": "https://github.com/web-platform-tests/wpt",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/README.md — layout of the HTML Standard tests (mirrors spec sections)",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/README.md",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/syntax/parsing/README — how the html5lib tree-construction tests are imported",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/syntax/parsing/README",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/syntax/parsing/named-character-references.html",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/syntax/parsing/named-character-references.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/syntax/serializing-html-fragments/serializing.html — innerHTML/outerHTML serialization",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/syntax/serializing-html-fragments/serializing.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/syntax/parsing/template/…/template-end-tag-without-start-one.html — \"in template\" insertion mode",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/syntax/parsing/template/additions-to-the-in-body-insertion-mode/template-end-tag-without-start-one.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/syntax/parsing/DOMContentLoaded-defer.html — script execution order at end of parsing",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/syntax/parsing/DOMContentLoaded-defer.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/dom/reflection.js — content attribute ↔ IDL attribute reflection harness",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/dom/reflection.js",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion",
+    "properties"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/dom/elements-metadata.js — per-element reflected attribute table",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/dom/elements-metadata.js",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/dom/idlharness.https.html — Web IDL interface conformance for HTML elements",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/dom/idlharness.https.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/dom/elements/global-attributes/dataset.html — data-* attributes and DOMStringMap",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/dom/elements/global-attributes/dataset.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/dom/elements/global-attributes/id-attribute.html — id uniqueness and lookup",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/dom/elements/global-attributes/id-attribute.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/semantics/forms/the-input-element/checkbox.html — form control behaviour",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/semantics/forms/the-input-element/checkbox.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/semantics/scripting-1/the-template-element/…/template-content.html",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/semantics/scripting-1/the-template-element/template-element/template-content.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/semantics/links/…/htmlanchorelement_noopener.html — hyperlink behaviour",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/semantics/links/links-created-by-a-and-area-elements/htmlanchorelement_noopener.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt html/rendering/non-replaced-elements/flow-content-0/div-align.html — presentational hints",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/html/rendering/non-replaced-elements/flow-content-0/div-align.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "wpt custom-elements/CustomElementRegistry.html — custom element definition",
+   "url": "https://github.com/web-platform-tests/wpt/blob/master/custom-elements/CustomElementRegistry.html",
+   "authority": "official",
+   "implementation": "web-platform-tests",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "whatwg/html — the single `source` file from which the Living Standard is generated",
+   "url": "https://github.com/whatwg/html",
+   "authority": "official",
+   "implementation": "WHATWG HTML source",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "whatwg/html source — spec source (Wattsi markup) containing every algorithm and content model",
+   "url": "https://github.com/whatwg/html/blob/main/source",
+   "authority": "official",
+   "implementation": "WHATWG HTML source",
+   "notes": "Very large file (several MB).",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "entities.json — machine-readable table of named character references",
+   "url": "https://html.spec.whatwg.org/entities.json",
+   "authority": "official",
+   "implementation": "WHATWG HTML source",
+   "format": "dataset",
+   "scope": "section",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "servo/html5ever — Rust HTML/XML parser used by Servo",
+   "url": "https://github.com/servo/html5ever",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5ever tokenizer/mod.rs — tokenizer state machine",
+   "url": "https://github.com/servo/html5ever/blob/main/html5ever/src/tokenizer/mod.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5ever tokenizer/states.rs — enumeration of tokenizer states",
+   "url": "https://github.com/servo/html5ever/blob/main/html5ever/src/tokenizer/states.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "enums"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5ever tokenizer/char_ref/mod.rs — character reference sub-tokenizer",
+   "url": "https://github.com/servo/html5ever/blob/main/html5ever/src/tokenizer/char_ref/mod.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5ever tree_builder/mod.rs — tree builder state, stack of open elements, adoption agency",
+   "url": "https://github.com/servo/html5ever/blob/main/html5ever/src/tree_builder/mod.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5ever tree_builder/rules.rs — insertion-mode rules written as a match macro",
+   "url": "https://github.com/servo/html5ever/blob/main/html5ever/src/tree_builder/rules.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "pattern-matching",
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "html5ever serialize/mod.rs — HTML fragment serializer",
+   "url": "https://github.com/servo/html5ever/blob/main/html5ever/src/serialize/mod.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "markup5ever interface/tree_builder.rs — TreeSink trait decoupling parser from DOM",
+   "url": "https://github.com/servo/html5ever/blob/main/markup5ever/interface/tree_builder.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "markup5ever_rcdom lib.rs — reference-counted DOM used for tests",
+   "url": "https://github.com/servo/html5ever/blob/main/rcdom/lib.rs",
+   "authority": "community",
+   "implementation": "html5ever (Servo)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Servo servoparser/html.rs — driving html5ever from the browser (script blocking, document.write)",
+   "url": "https://github.com/servo/servo/blob/main/components/script/dom/servoparser/html.rs",
+   "authority": "community",
+   "implementation": "Servo",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "inikulin/parse5 — spec-compliant HTML parser for Node.js (used by jsdom, Angular, rehype)",
+   "url": "https://github.com/inikulin/parse5",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 tokenizer/index.ts — tokenizer",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/tokenizer/index.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 tokenizer/preprocessor.ts — input stream preprocessing (newline normalisation, surrogates)",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/tokenizer/preprocessor.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 parser/index.ts — tree construction for all insertion modes",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/parser/index.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 parser/open-element-stack.ts — stack of open elements and scope checks",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/parser/open-element-stack.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 parser/formatting-element-list.ts — list of active formatting elements (\"Noah's Ark\" clause)",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/parser/formatting-element-list.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 serializer/index.ts — serializer",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/serializer/index.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 common/html.ts — tag ids, namespaces, special elements",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/common/html.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 common/foreign-content.ts — SVG/MathML integration points and attribute adjustment",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/common/foreign-content.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 common/doctype.ts — DOCTYPE to quirks-mode mapping",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/common/doctype.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parse5 common/error-codes.ts — the spec's named parse errors",
+   "url": "https://github.com/inikulin/parse5/blob/master/packages/parse5/lib/common/error-codes.ts",
+   "authority": "community",
+   "implementation": "parse5",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Firefox parser/html/nsHtml5Tokenizer.cpp — tokenizer (generated from Java)",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/parser/html/nsHtml5Tokenizer.cpp",
+   "authority": "vendor",
+   "implementation": "Gecko (Firefox)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Firefox parser/html/javasrc/Tokenizer.java — the Java source the C++ tokenizer is translated from",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/parser/html/javasrc/Tokenizer.java",
+   "authority": "vendor",
+   "implementation": "Gecko (Firefox)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Firefox parser/html/nsHtml5TreeBuilder.cpp — tree builder",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/parser/html/nsHtml5TreeBuilder.cpp",
+   "authority": "vendor",
+   "implementation": "Gecko (Firefox)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Firefox parser/html/nsHtml5StreamParser.cpp — off-main-thread streaming, encoding detection, speculative parsing",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/parser/html/nsHtml5StreamParser.cpp",
+   "authority": "vendor",
+   "implementation": "Gecko (Firefox)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "concurrency",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Firefox layout/style/res/html.css — user-agent style sheet for HTML elements",
+   "url": "https://github.com/mozilla-firefox/firefox/blob/main/layout/style/res/html.css",
+   "authority": "vendor",
+   "implementation": "Gecko (Firefox)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "validator/htmlparser Tokenizer.java — Validator.nu HTML parser (ancestor of the Gecko parser)",
+   "url": "https://github.com/validator/htmlparser/blob/master/src/nu/validator/htmlparser/impl/Tokenizer.java",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "validator/htmlparser TreeBuilder.java — tree builder",
+   "url": "https://github.com/validator/htmlparser/blob/master/src/nu/validator/htmlparser/impl/TreeBuilder.java",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "validator/validator — the Nu Html Checker (conformance checker behind validator.w3.org/nu)",
+   "url": "https://github.com/validator/validator",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Nu Html Checker schema/html5/html5.rnc — RELAX NG schema driver for HTML",
+   "url": "https://github.com/validator/validator/blob/main/schema/html5/html5.rnc",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Nu Html Checker schema/html5/common.rnc — common attributes and content-model patterns",
+   "url": "https://github.com/validator/validator/blob/main/schema/html5/common.rnc",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Nu Html Checker schema/html5/phrase.rnc — phrasing-content elements",
+   "url": "https://github.com/validator/validator/blob/main/schema/html5/phrase.rnc",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Nu Html Checker schema/html5/web-forms.rnc — form controls",
+   "url": "https://github.com/validator/validator/blob/main/schema/html5/web-forms.rnc",
+   "authority": "community",
+   "implementation": "Validator.nu",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "input-output"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_tokenizer.cc — tokenizer",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/parser/html_tokenizer.cc",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_tree_builder.cc — tree construction",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/parser/html_tree_builder.cc",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_construction_site.cc — node creation/insertion, foster parenting",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/parser/html_construction_site.cc",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_document_parser.cc — parser driver, yielding and script pausing",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/parser/html_document_parser.cc",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_preload_scanner.cc — speculative preload scanner",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/parser/html_preload_scanner.cc",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "optimization",
+    "performance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_entity_parser.cc — character reference decoding",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/parser/html_entity_parser.cc",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink core/html/resources/html.css — user-agent style sheet",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/resources/html.css",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_tag_names.json5 — element name table with interface mapping",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/html_tag_names.json5",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Blink html_attribute_names.json5 — attribute name table",
+   "url": "https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/html_attribute_names.json5",
+   "authority": "vendor",
+   "implementation": "Blink (Chromium)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit HTMLTokenizer.cpp — tokenizer",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/html/parser/HTMLTokenizer.cpp",
+   "authority": "vendor",
+   "implementation": "WebKit",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit HTMLTreeBuilder.cpp — tree construction",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/html/parser/HTMLTreeBuilder.cpp",
+   "authority": "vendor",
+   "implementation": "WebKit",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit HTMLConstructionSite.cpp — DOM construction",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/html/parser/HTMLConstructionSite.cpp",
+   "authority": "vendor",
+   "implementation": "WebKit",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit HTMLEntityParser.cpp — character references",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/html/parser/HTMLEntityParser.cpp",
+   "authority": "vendor",
+   "implementation": "WebKit",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit Source/WebCore/css/html.css — user-agent style sheet",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/css/html.css",
+   "authority": "vendor",
+   "implementation": "WebKit",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WebKit HTMLTagNames.in — element name table",
+   "url": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/html/HTMLTagNames.in",
+   "authority": "vendor",
+   "implementation": "WebKit",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Ladybird HTMLTokenizer.cpp — tokenizer written directly from the spec text",
+   "url": "https://github.com/LadybirdBrowser/ladybird/blob/master/Libraries/LibWeb/HTML/Parser/HTMLTokenizer.cpp",
+   "authority": "community",
+   "implementation": "Ladybird (LibWeb)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Ladybird HTMLParser.cpp — tree construction with spec steps quoted in comments",
+   "url": "https://github.com/LadybirdBrowser/ladybird/blob/master/Libraries/LibWeb/HTML/Parser/HTMLParser.cpp",
+   "authority": "community",
+   "implementation": "Ladybird (LibWeb)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Ladybird HTMLEncodingDetection.cpp — encoding sniffing and <meta> prescan",
+   "url": "https://github.com/LadybirdBrowser/ladybird/blob/master/Libraries/LibWeb/HTML/Parser/HTMLEncodingDetection.cpp",
+   "authority": "community",
+   "implementation": "Ladybird (LibWeb)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Ladybird Entities.json — named character reference table",
+   "url": "https://github.com/LadybirdBrowser/ladybird/blob/master/Libraries/LibWeb/HTML/Parser/Entities.json",
+   "authority": "community",
+   "implementation": "Ladybird (LibWeb)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go x/net/html token.go — tokenizer",
+   "url": "https://github.com/golang/net/blob/master/html/token.go",
+   "authority": "vendor",
+   "implementation": "golang.org/x/net/html",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go x/net/html parse.go — insertion modes as Go functions",
+   "url": "https://github.com/golang/net/blob/master/html/parse.go",
+   "authority": "vendor",
+   "implementation": "golang.org/x/net/html",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go x/net/html escape.go — EscapeString/UnescapeString",
+   "url": "https://github.com/golang/net/blob/master/html/escape.go",
+   "authority": "vendor",
+   "implementation": "golang.org/x/net/html",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Go x/net/html render.go — serializer",
+   "url": "https://github.com/golang/net/blob/master/html/render.go",
+   "authority": "vendor",
+   "implementation": "golang.org/x/net/html",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gumbo tokenizer.c — C99 HTML5 tokenizer",
+   "url": "https://github.com/google/gumbo-parser/blob/master/src/tokenizer.c",
+   "authority": "community",
+   "implementation": "Gumbo",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gumbo parser.c — C99 tree construction",
+   "url": "https://github.com/google/gumbo-parser/blob/master/src/parser.c",
+   "authority": "community",
+   "implementation": "Gumbo",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Gumbo char_ref.rl — character references as a Ragel state machine",
+   "url": "https://github.com/google/gumbo-parser/blob/master/src/char_ref.rl",
+   "authority": "community",
+   "implementation": "Gumbo",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lexbor html/tokenizer/state.c — fast C tokenizer",
+   "url": "https://github.com/lexbor/lexbor/blob/master/source/lexbor/html/tokenizer/state.c",
+   "authority": "community",
+   "implementation": "Lexbor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "performance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lexbor html/tree/insertion_mode/in_body.c — one file per insertion mode",
+   "url": "https://github.com/lexbor/lexbor/blob/master/source/lexbor/html/tree/insertion_mode/in_body.c",
+   "authority": "community",
+   "implementation": "Lexbor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lexbor html/serialize.c — serializer",
+   "url": "https://github.com/lexbor/lexbor/blob/master/source/lexbor/html/serialize.c",
+   "authority": "community",
+   "implementation": "Lexbor",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsoup TokeniserState.java — tokenizer states as a Java enum",
+   "url": "https://github.com/jhy/jsoup/blob/master/src/main/java/org/jsoup/parser/TokeniserState.java",
+   "authority": "community",
+   "implementation": "jsoup",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "enums"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsoup HtmlTreeBuilderState.java — insertion modes as a Java enum",
+   "url": "https://github.com/jhy/jsoup/blob/master/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+   "authority": "community",
+   "implementation": "jsoup",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsdom browser/parser/html.js — adapter from parse5 to a live DOM",
+   "url": "https://github.com/jsdom/jsdom/blob/main/lib/jsdom/browser/parser/html.js",
+   "authority": "community",
+   "implementation": "jsdom",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Lib/html/parser.py — regex-based, non-spec \"tag soup\" event parser",
+   "url": "https://github.com/python/cpython/blob/main/Lib/html/parser.py",
+   "authority": "community",
+   "implementation": "CPython html.parser",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython Lib/html/entities.py — html5 entity dictionary",
+   "url": "https://github.com/python/cpython/blob/main/Lib/html/entities.py",
+   "authority": "community",
+   "implementation": "CPython html.parser",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "HTML Tidy src/lexer.c — pre-HTML5 repairing lexer",
+   "url": "https://github.com/htacg/tidy-html5/blob/next/src/lexer.c",
+   "authority": "community",
+   "implementation": "HTML Tidy",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "HTML Tidy src/parser.c — repairing parser and cleanup",
+   "url": "https://github.com/htacg/tidy-html5/blob/next/src/parser.c",
+   "authority": "community",
+   "implementation": "HTML Tidy",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "DOMPurify src/purify.ts — DOM-based HTML sanitizer",
+   "url": "https://github.com/cure53/DOMPurify/blob/main/src/purify.ts",
+   "authority": "community",
+   "implementation": "DOMPurify",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Living Standard (WHATWG) — multipage edition",
+   "url": "https://html.spec.whatwg.org/multipage/",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Living Standard — developer edition (implementer-only material removed)",
+   "url": "https://html.spec.whatwg.org/dev/",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.2 Is this HTML5?",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#is-this-html5?",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.3 Background",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#background",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.6 History",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#history-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.7 Design notes",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#design-notes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.8 HTML vs XML syntax",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#html-vs-xhtml",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.10 A quick introduction to HTML",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#a-quick-introduction-to-html",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.10.1 Writing secure applications with HTML",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#writing-secure-applications-with-html",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.11 Conformance requirements for authors",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#conformance-requirements-for-authors",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.11.2 Syntax errors",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#syntax-errors",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 1.11.3 Restrictions on content models and on attribute values",
+   "url": "https://html.spec.whatwg.org/multipage/introduction.html#restrictions-on-content-models-and-on-attribute-values",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.1.8 Conformance classes",
+   "url": "https://html.spec.whatwg.org/multipage/infrastructure.html#conformance-classes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.1.10 Extensibility",
+   "url": "https://html.spec.whatwg.org/multipage/infrastructure.html#extensibility-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.1.3 XML compatibility",
+   "url": "https://html.spec.whatwg.org/multipage/infrastructure.html#xml",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.1.7 Character encodings",
+   "url": "https://html.spec.whatwg.org/multipage/infrastructure.html#encoding-terminology",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3 Common microsyntaxes",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#common-microsyntaxes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.2 Boolean attributes",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.3 Keywords and enumerated attributes",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#keywords-and-enumerated-attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.4 Numbers",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#numbers",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.5 Dates and times",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#dates-and-times",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.6 Legacy colors",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#colours",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.7 Space-separated tokens",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#space-separated-tokens",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.8 Comma-separated tokens",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#comma-separated-tokens",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.3.9 References (hash-name references)",
+   "url": "https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#syntax-references",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.4.2 Parsing URLs",
+   "url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#resolving-urls",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.4.3 Document base URLs",
+   "url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#document-base-urls",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.5.2 Determining the type of a resource",
+   "url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#content-type-sniffing",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.5.3 Extracting character encodings from meta elements",
+   "url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#extracting-character-encodings-from-meta-elements",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.6.1 Reflecting content attributes in IDL attributes",
+   "url": "https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#reflecting-content-attributes-in-idl-attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties",
+    "type-conversion",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 2.7 Safe passing of structured data (structured clone)",
+   "url": "https://html.spec.whatwg.org/multipage/structured-data.html#safe-passing-of-structured-data",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.1 Documents",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#documents",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.1.1 The Document object",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#the-document-object",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.1.7 DOM tree accessors",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#dom-tree-accessors",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.1 Semantics",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#semantics-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.2 Elements in the DOM",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#elements-in-the-dom",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.4 Element definitions",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#element-definitions",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.4.1 Attributes",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.5 Content models",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#content-models",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.5.2 Kinds of content (metadata, flow, sectioning, heading, phrasing, embedded, interactive)",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.5.3 Transparent content models",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#transparent-content-models",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.5.4 Paragraphs",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#paragraphs",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6 Global attributes",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#global-attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6 The id attribute",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6 The class attribute",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#classes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6.2 The lang and xml:lang attributes",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6.4 The dir attribute",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6.5 The style attribute",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.6.6 Embedding custom non-visible data with the data-* attributes",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.8 Requirements relating to the bidirectional algorithm",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#requirements-relating-to-the-bidirectional-algorithm",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 3.2.9 Requirements related to ARIA and to platform accessibility APIs",
+   "url": "https://html.spec.whatwg.org/multipage/dom.html#wai-aria",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.1 The document element (html)",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#the-root-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.2 Document metadata (head, title, base, link, meta, style)",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#document-metadata",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.2.3 The base element",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#the-base-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.2.4 The link element",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#the-link-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.2.5 The meta element",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.2.6 The style element",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#the-style-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.2.7 Interactions of styling and scripting",
+   "url": "https://html.spec.whatwg.org/multipage/semantics.html#interactions-of-styling-and-scripting",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.3 Sections (body, article, section, nav, aside, header, footer)",
+   "url": "https://html.spec.whatwg.org/multipage/sections.html#sections",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.3.6 The h1–h6 elements",
+   "url": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.3.11 Headings and outlines",
+   "url": "https://html.spec.whatwg.org/multipage/sections.html#headings-and-outlines-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4 Grouping content (p, pre, blockquote, lists, figure, div)",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4.1 The p element",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4.3 The pre element",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4.5 The ol element",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4.6 The ul element",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4.9 The dl element (name-value groups)",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.4.16 The div element",
+   "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5 Text-level semantics",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#text-level-semantics",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.1 The a element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.2 The em element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.15 The code element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.14 The time element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.25 The bdo element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.26 The span element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.5.27 The br element",
+   "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.6 Links",
+   "url": "https://html.spec.whatwg.org/multipage/links.html#links",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.6.5 Following hyperlinks",
+   "url": "https://html.spec.whatwg.org/multipage/links.html#following-hyperlinks",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.6.8 Link types (rel values)",
+   "url": "https://html.spec.whatwg.org/multipage/links.html#linkTypes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.7 Edits (ins, del)",
+   "url": "https://html.spec.whatwg.org/multipage/edits.html#edits",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.8.3 The img element",
+   "url": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.8.4.4 Requirements for providing text to act as an alternative for images",
+   "url": "https://html.spec.whatwg.org/multipage/images.html#alt",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.8.5 The iframe element",
+   "url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.8.11 Media elements",
+   "url": "https://html.spec.whatwg.org/multipage/media.html#media-elements",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.9 Tabular data",
+   "url": "https://html.spec.whatwg.org/multipage/tables.html#tables",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.9.1 The table element",
+   "url": "https://html.spec.whatwg.org/multipage/tables.html#the-table-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.9.12 Table processing model",
+   "url": "https://html.spec.whatwg.org/multipage/tables.html#table-processing-model",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10 Forms",
+   "url": "https://html.spec.whatwg.org/multipage/forms.html#forms",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10.5 The input element",
+   "url": "https://html.spec.whatwg.org/multipage/input.html#the-input-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10.5.1 States of the type attribute",
+   "url": "https://html.spec.whatwg.org/multipage/input.html#states-of-the-type-attribute",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10.21 Constraints (client-side form validation)",
+   "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#constraints",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10.22 Form submission",
+   "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-submission-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10.22.7 URL-encoded form data",
+   "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#url-encoded-form-data",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.10.22.8 Multipart form data",
+   "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart-form-data",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.11.1 The details element",
+   "url": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.11.4 The dialog element",
+   "url": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.12.1 The script element",
+   "url": "https://html.spec.whatwg.org/multipage/scripting.html#the-script-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "modules",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.12.2 The noscript element",
+   "url": "https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.12.3 The template element",
+   "url": "https://html.spec.whatwg.org/multipage/scripting.html#the-template-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.12.4 The slot element",
+   "url": "https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.12.5 The canvas element",
+   "url": "https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.13 Custom elements",
+   "url": "https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.13.3 Custom elements — core concepts (names, definitions)",
+   "url": "https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.13.7 Custom element reactions (lifecycle callbacks)",
+   "url": "https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-reactions",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constructors",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.16 Matching HTML elements using selectors and CSS",
+   "url": "https://html.spec.whatwg.org/multipage/semantics-other.html#selectors",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 4.16.3 Pseudo-classes",
+   "url": "https://html.spec.whatwg.org/multipage/semantics-other.html#pseudo-classes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 5 Microdata",
+   "url": "https://html.spec.whatwg.org/multipage/microdata.html#microdata",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 5.2.1 The microdata model",
+   "url": "https://html.spec.whatwg.org/multipage/microdata.html#the-microdata-model",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 5.4 Converting HTML to other formats (JSON)",
+   "url": "https://html.spec.whatwg.org/multipage/microdata.html#converting-html-to-other-formats",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 6.1 The hidden attribute",
+   "url": "https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 6.8.1 The contenteditable attribute",
+   "url": "https://html.spec.whatwg.org/multipage/interaction.html#contenteditable",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 7.1.1 Origins",
+   "url": "https://html.spec.whatwg.org/multipage/origin.html#origin",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 7.1.5 Sandboxing",
+   "url": "https://html.spec.whatwg.org/multipage/origin.html#sandboxing",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 7.4.6.4 Scrolling to a fragment",
+   "url": "https://html.spec.whatwg.org/multipage/browsing-the-web.html#scrolling-to-a-fragment",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 7.5.2 Loading HTML documents",
+   "url": "https://html.spec.whatwg.org/multipage/document-lifecycle.html#read-html",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.1.4 Script processing model",
+   "url": "https://html.spec.whatwg.org/multipage/webappapis.html#scripting-processing-model",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.1.5 Module specifier resolution (import maps)",
+   "url": "https://html.spec.whatwg.org/multipage/webappapis.html#module-specifier-resolution",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.1.7 Event loops",
+   "url": "https://html.spec.whatwg.org/multipage/webappapis.html#event-loops",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "concurrency",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.1.8 Events (event handler content attributes)",
+   "url": "https://html.spec.whatwg.org/multipage/webappapis.html#events",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.4 Dynamic markup insertion (document.open/write)",
+   "url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dynamic-markup-insertion",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.5 DOM parsing and serialization APIs (DOMParser, innerHTML)",
+   "url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-parsing-and-serialization",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 8.6 HTML sanitization",
+   "url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#html-sanitization",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 9.3 Cross-document messaging",
+   "url": "https://html.spec.whatwg.org/multipage/web-messaging.html#web-messaging",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "channels-message-passing",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 10 Web workers",
+   "url": "https://html.spec.whatwg.org/multipage/workers.html#workers",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "concurrency",
+    "threads"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13 The HTML syntax",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#syntax",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1 Writing HTML documents",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#writing",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.1 The DOCTYPE",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#the-doctype",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.2 Elements (void, template, raw text, escapable raw text, foreign, normal)",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#elements-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.2.1 Start tags",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#start-tags",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.2.3 Attributes (empty, unquoted, single- and double-quoted syntax)",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#attributes-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.2.4 Optional tags",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#optional-tags",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.2.5 Restrictions on content models",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#element-restrictions",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.2.6 Restrictions on the contents of raw text and escapable raw text elements",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#cdata-rcdata-restrictions",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.3 Text",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#text-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.3.1 Newlines",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#newlines",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.4 Character references",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#character-references",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.5 CDATA sections",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#cdata-sections",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.1.6 Comments",
+   "url": "https://html.spec.whatwg.org/multipage/syntax.html#comments",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2 Parsing HTML documents",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.1 Overview of the parsing model",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#overview-of-the-parsing-model",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.2 Parse errors",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parse-errors",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.3 The input byte stream",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#the-input-byte-stream",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.3.2 Determining the character encoding",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#determining-the-character-encoding",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.3.5 Preprocessing the input stream",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#preprocessing-the-input-stream",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.4 Parse state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parse-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.4.1 The insertion mode",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#the-insertion-mode",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.4.2 The stack of open elements",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#the-stack-of-open-elements",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.4.3 The list of active formatting elements",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#the-list-of-active-formatting-elements",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5 Tokenization",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#tokenization",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.1 Data state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#data-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.2 RCDATA state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#rcdata-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.4 Script data state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#script-data-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.6 Tag open state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#tag-open-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.20 Script data escaped state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#script-data-escaped-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.33 Attribute name state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#attribute-name-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.36 Attribute value (double-quoted) state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#attribute-value-(double-quoted)-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.42 Markup declaration open state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#markup-declaration-open-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.43 Comment start state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#comment-start-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.41 Bogus comment state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#bogus-comment-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.53 DOCTYPE state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#doctype-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.69 CDATA section state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#cdata-section-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.77 Character reference state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#character-reference-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.78 Named character reference state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#named-character-reference-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.5.84 Numeric character reference end state",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#numeric-character-reference-end-state",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6 Tree construction",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#tree-construction",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.1 Creating and inserting nodes (incl. foster parenting)",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#creating-and-inserting-nodes",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.3 Closing elements that have implied end tags",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#closing-elements-that-have-implied-end-tags",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.4.1 The \"initial\" insertion mode (quirks-mode detection)",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#the-initial-insertion-mode",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.4.4 The \"in head\" insertion mode",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inhead",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.4.7 The \"in body\" insertion mode (incl. adoption agency algorithm)",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.4.8 The \"text\" insertion mode",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-incdata",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.4.9 The \"in table\" insertion mode",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intable",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.4.16 The \"in template\" insertion mode",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intemplate",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.6.5 The rules for parsing tokens in foreign content (SVG, MathML)",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inforeign",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.7 The end (deferred scripts, DOMContentLoaded, load)",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#the-end",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.8 Speculative HTML parsing",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#speculative-html-parsing",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization",
+    "performance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.9 Coercing an HTML DOM into an infoset",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#coercing-an-html-dom-into-an-infoset",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.10 An introduction to error handling and strange cases in the parser",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#an-introduction-to-error-handling-and-strange-cases-in-the-parser",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.10.1 Misnested tags: <b><i></b></i>",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#misnested-tags:-b-i-/b-/i",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.10.3 Unexpected markup in tables",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#unexpected-markup-in-tables",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.2.10.4 Scripts that modify the page as it is being parsed",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#scripts-that-modify-the-page-as-it-is-being-parsed",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.3 Serializing HTML fragments",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#serialising-html-fragments",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.4 Parsing HTML fragments",
+   "url": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-html-fragments",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 13.5 Named character references",
+   "url": "https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 14 The XML syntax",
+   "url": "https://html.spec.whatwg.org/multipage/xhtml.html#the-xhtml-syntax",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 15 Rendering",
+   "url": "https://html.spec.whatwg.org/multipage/rendering.html#rendering",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 15.2 The CSS user agent style sheet and presentational hints",
+   "url": "https://html.spec.whatwg.org/multipage/rendering.html#the-css-user-agent-style-sheet-and-presentational-hints",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 15.3.3 Rendering of flow content",
+   "url": "https://html.spec.whatwg.org/multipage/rendering.html#flow-content-3",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 15.3.7 Rendering of lists",
+   "url": "https://html.spec.whatwg.org/multipage/rendering.html#lists",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 15.3.8 Rendering of tables",
+   "url": "https://html.spec.whatwg.org/multipage/rendering.html#tables-2",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 16 Obsolete features",
+   "url": "https://html.spec.whatwg.org/multipage/obsolete.html#obsolete",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 16.2 Non-conforming features",
+   "url": "https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — 17.1 text/html media type registration",
+   "url": "https://html.spec.whatwg.org/multipage/iana.html#text/html",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — Index of elements",
+   "url": "https://html.spec.whatwg.org/multipage/indices.html#elements-3",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — Index of element content categories",
+   "url": "https://html.spec.whatwg.org/multipage/indices.html#element-content-categories",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Standard — Index of attributes",
+   "url": "https://html.spec.whatwg.org/multipage/indices.html#attributes-3",
+   "authority": "standards-body",
+   "version": "Living Standard",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DOM Standard (WHATWG)",
+   "url": "https://dom.spec.whatwg.org/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DOM Standard — 1.1 Trees",
+   "url": "https://dom.spec.whatwg.org/#trees",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DOM Standard — 4.2 Node tree",
+   "url": "https://dom.spec.whatwg.org/#node-trees",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DOM Standard — 4.9 Interface Element (attributes, id, class)",
+   "url": "https://dom.spec.whatwg.org/#interface-element",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DOM Standard — 4.14 Interface Comment",
+   "url": "https://dom.spec.whatwg.org/#interface-comment",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "DOM Standard — 2 Events",
+   "url": "https://dom.spec.whatwg.org/#events",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding Standard (WHATWG) — encodings, labels and decoders used by HTML",
+   "url": "https://encoding.spec.whatwg.org/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "URL Standard (WHATWG)",
+   "url": "https://url.spec.whatwg.org/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Infra Standard (WHATWG) — primitives and algorithm conventions the HTML Standard is written in",
+   "url": "https://infra.spec.whatwg.org/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Quirks Mode Standard (WHATWG)",
+   "url": "https://quirks.spec.whatwg.org/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "WHATWG Working Mode — how changes to the Living Standard are made",
+   "url": "https://whatwg.org/working-mode",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "WHATWG Stages — staged process for new features",
+   "url": "https://whatwg.org/stages",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "WHATWG FAQ",
+   "url": "https://whatwg.org/faq",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "whatwg/html FAQ.md — rationale for recurring design questions",
+   "url": "https://github.com/whatwg/html/blob/main/FAQ.md",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Memorandum of Understanding between W3C and WHATWG (2019)",
+   "url": "https://www.w3.org/2019/04/WHATWG-W3C-MOU.html",
+   "authority": "standards-body",
+   "year": 2019,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "HTML Design Principles (W3C Working Draft)",
+   "url": "https://www.w3.org/TR/html-design-principles/",
+   "authority": "standards-body",
+   "year": 2007,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "HTML Design Principles — 2.4 Pave the Cowpaths",
+   "url": "https://www.w3.org/TR/html-design-principles/#pave-the-cowpaths",
+   "authority": "standards-body",
+   "year": 2007,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "HTML Design Principles — 3.2 Priority of Constituencies",
+   "url": "https://www.w3.org/TR/html-design-principles/#priority-of-constituencies",
+   "authority": "standards-body",
+   "year": 2007,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "HTML Design Principles — 4.3 Handle Errors",
+   "url": "https://www.w3.org/TR/html-design-principles/#handle-errors",
+   "authority": "standards-body",
+   "year": 2007,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "HTML Design Principles — 2.1 Support Existing Content",
+   "url": "https://www.w3.org/TR/html-design-principles/#support-existing-content",
+   "authority": "standards-body",
+   "year": 2007,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ARIA in HTML (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/html-aria/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HTML Accessibility API Mappings 1.0",
+   "url": "https://www.w3.org/TR/html-aam-1.0/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Tim Berners-Lee — \"HTML Tags\" (1992 snapshot of the first HTML description)",
+   "url": "https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee"
+   ],
+   "year": 1992,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Hypertext Markup Language (HTML) — Internet Draft, Berners-Lee & Connolly (June 1993)",
+   "url": "https://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt",
+   "authority": "designer",
+   "authors": [
+    "Tim Berners-Lee",
+    "Daniel Connolly"
+   ],
+   "year": 1993,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 1866 — Hypertext Markup Language 2.0",
+   "url": "https://datatracker.ietf.org/doc/html/rfc1866",
+   "authority": "standards-body",
+   "year": 1995,
+   "version": "2.0",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 2854 — The text/html Media Type",
+   "url": "https://datatracker.ietf.org/doc/html/rfc2854",
+   "authority": "standards-body",
+   "year": 2000,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 3.2 Reference Specification (W3C, superseded)",
+   "url": "https://www.w3.org/TR/2018/SPSD-html32-20180315/",
+   "authority": "standards-body",
+   "year": 1997,
+   "version": "3.2",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 Specification (W3C Recommendation, superseded)",
+   "url": "https://www.w3.org/TR/html401/",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 3 On SGML and HTML (elements, attributes, character references, comments)",
+   "url": "https://www.w3.org/TR/html401/intro/sgmltut.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "comments",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 5 HTML Document Representation (character sets, encodings, references)",
+   "url": "https://www.w3.org/TR/html401/charset.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 7 The global structure of an HTML document",
+   "url": "https://www.w3.org/TR/html401/struct/global.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 12 Links",
+   "url": "https://www.w3.org/TR/html401/struct/links.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 11 Tables",
+   "url": "https://www.w3.org/TR/html401/struct/tables.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 14 Style Sheets",
+   "url": "https://www.w3.org/TR/html401/present/styles.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 17 Forms",
+   "url": "https://www.w3.org/TR/html401/interact/forms.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML 4.01 — 18 Scripts",
+   "url": "https://www.w3.org/TR/html401/interact/scripts.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "HTML 4.01 — 21 Document Type Definition (the SGML DTD)",
+   "url": "https://www.w3.org/TR/html401/sgml/dtd.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "schema-validation",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "HTML 4.01 — 24 Character entity references",
+   "url": "https://www.w3.org/TR/html401/sgml/entities.html",
+   "authority": "standards-body",
+   "year": 1999,
+   "version": "4.01",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "HTML5 (W3C Recommendation, 28 October 2014; superseded)",
+   "url": "https://www.w3.org/TR/2014/REC-html5-20141028/",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "5",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "HTML5 Differences from HTML4 (W3C Working Group Note)",
+   "url": "https://www.w3.org/TR/html5-diff/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Structuring content with HTML (module overview)",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Basic HTML syntax (elements, attributes, anatomy of a document, entities, comments)",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "escaping",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — What's in the head? Web page metadata",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Headings and paragraphs",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Emphasis and importance",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Emphasis_and_importance",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Lists",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Structuring documents",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Advanced text features (description lists, quotations, code, time)",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Advanced_text_features",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "maps-dictionaries",
+    "date-time"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Creating links",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — HTML images",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — HTML video and audio",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — HTML table basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Debugging HTML (permissive parsing, validation)",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Debugging_HTML",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "tooling",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Web forms",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — Client-side form validation",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDN Learn — HTML: a good basis for accessibility",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — HTML: HyperText Markup Language (hub)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — HTML elements reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "keywords"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — HTML attribute reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "keywords"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Global attributes",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — id global attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/id",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — class global attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/class",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — style global attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/style",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — data-* global attributes",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/data-*",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Use data attributes",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — lang global attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Content categories",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "type-system"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Using HTML comments <!-- … -->",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Comments",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Quirks Mode and Standards Mode",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Date and time formats used in HTML",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Constraint validation",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Using microdata in HTML",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Microdata",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Responsive images",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "MDN — HTML cheatsheet",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <a>: the anchor element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <link>: the external resource link element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — rel attribute (link types)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <base>: the document base URL element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <meta>: the metadata element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <style>: the style information element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <script>: the script element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "modules",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <script type=\"importmap\">",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <template>: the content template element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <slot>: the web component slot element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/slot",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Using templates and slots",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Using custom elements",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <h1>–<h6>: the section heading elements",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <table>: the table element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <form>: the form element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <input>: the HTML input element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — <iframe>: the inline frame element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN Glossary — Character reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Character_reference",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN Glossary — Doctype",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Doctype",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN Glossary — Void element",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Void_element",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — HTML DOM API",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — DOMParser",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/DOMParser",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "reflection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Element.innerHTML (fragment parsing/serialization, security)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — HTML Sanitizer API",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Cross-site scripting (XSS)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/XSS",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "MDN — Populating the page: how browsers work",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev — Learn HTML (course)",
+   "url": "https://web.dev/learn/html",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Overview of HTML (elements, attributes, appearance)",
+   "url": "https://web.dev/learn/html/overview",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Document structure",
+   "url": "https://web.dev/learn/html/document-structure",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Metadata",
+   "url": "https://web.dev/learn/html/metadata",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Semantic HTML",
+   "url": "https://web.dev/learn/html/semantic-html",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Headings and sections",
+   "url": "https://web.dev/learn/html/headings-and-sections",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Attributes (boolean, enumerated, global, custom)",
+   "url": "https://web.dev/learn/html/attributes",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "booleans",
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Text basics",
+   "url": "https://web.dev/learn/html/text-basics",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Links",
+   "url": "https://web.dev/learn/html/links",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Lists",
+   "url": "https://web.dev/learn/html/lists",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Tables",
+   "url": "https://web.dev/learn/html/tables",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Forms",
+   "url": "https://web.dev/learn/html/forms",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — Template, slot, and shadow",
+   "url": "https://web.dev/learn/html/template",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "web.dev Learn HTML — HTML APIs",
+   "url": "https://web.dev/learn/html/apis",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "reflection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "How browsers work (Tali Garsiel, Paul Irish) — HTML parser",
+   "url": "https://web.dev/articles/howbrowserswork#html_parser",
+   "authority": "vendor",
+   "authors": [
+    "Tali Garsiel",
+    "Paul Irish"
+   ],
+   "year": 2011,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "How browsers work — The parsing algorithm (tokenization and tree construction walkthrough)",
+   "url": "https://web.dev/articles/howbrowserswork#the_parsing_algorithm",
+   "authority": "vendor",
+   "authors": [
+    "Tali Garsiel",
+    "Paul Irish"
+   ],
+   "year": 2011,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google HTML/CSS Style Guide — HTML style rules",
+   "url": "https://google.github.io/styleguide/htmlcssguide.html#html-style-rules",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google HTML/CSS Style Guide — Optional tags",
+   "url": "https://google.github.io/styleguide/htmlcssguide.html#optional-tags",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Google HTML/CSS Style Guide — Entity references",
+   "url": "https://google.github.io/styleguide/htmlcssguide.html#entity-references",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser (Simon Pieters) — free online book",
+   "url": "https://htmlparser.info/",
+   "authority": "community",
+   "scope": "whole",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Ch. 2 The HTML syntax",
+   "url": "https://htmlparser.info/syntax/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Ch. 3 The HTML parser: Tokenizer",
+   "url": "https://htmlparser.info/parser/#tokenizer",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Character references",
+   "url": "https://htmlparser.info/parser/#character-references",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Comments and bogus comments",
+   "url": "https://htmlparser.info/parser/#comments",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Detecting character encoding",
+   "url": "https://htmlparser.info/parser/#detecting-character-encoding",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Tree construction",
+   "url": "https://htmlparser.info/parser/#tree-construction",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Tables and foster parenting",
+   "url": "https://htmlparser.info/parser/#tables-and-foster-parenting",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Adoption Agency Algorithm",
+   "url": "https://htmlparser.info/parser/#adoption-agency-algorithm",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — The foreign lands: SVG and MathML",
+   "url": "https://htmlparser.info/parser/#the-foreign-lands-svg-and-mathml",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Templates",
+   "url": "https://htmlparser.info/parser/#templates",
+   "authority": "community",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Serializing",
+   "url": "https://htmlparser.info/serializing/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Scripting (document.write, innerHTML)",
+   "url": "https://htmlparser.info/scripting/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Security implications",
+   "url": "https://htmlparser.info/security/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Microsyntaxes",
+   "url": "https://htmlparser.info/microsyntaxes/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Implementations",
+   "url": "https://htmlparser.info/implementations/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Idiosyncrasies of the HTML parser — Conformance checkers",
+   "url": "https://htmlparser.info/conformance-checkers/",
+   "authority": "community",
+   "scope": "section",
+   "authors": [
+    "Simon Pieters"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Web Browser Engineering (Panchekha & Harrelson) — Constructing an HTML tree",
+   "url": "https://browser.engineering/html.html",
+   "authority": "community",
+   "authors": [
+    "Pavel Panchekha",
+    "Chris Harrelson"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Henri Sivonen — An HTML5 Conformance Checker (MSc thesis, 2007)",
+   "url": "https://hsivonen.fi/thesis/html5-conformance-checker",
+   "authority": "academic",
+   "authors": [
+    "Henri Sivonen"
+   ],
+   "year": 2007,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Henri Sivonen — Activating Browser Modes with Doctype",
+   "url": "https://hsivonen.fi/doctype/",
+   "authority": "community",
+   "authors": [
+    "Henri Sivonen"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Ian Hickson — Tag Soup: How UAs handle <x> <y> </x> </y> (2002)",
+   "url": "https://ln.hixie.ch/?start=1037910467&count=1",
+   "authority": "designer",
+   "authors": [
+    "Ian Hickson"
+   ],
+   "year": 2002,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Jake Archibald — The case against self-closing tags in HTML",
+   "url": "https://jakearchibald.com/2023/against-self-closing-tags-in-html/",
+   "authority": "community",
+   "authors": [
+    "Jake Archibald"
+   ],
+   "year": 2023,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Dave Raggett — A history of HTML (Raggett on HTML 4, ch. 2)",
+   "url": "https://www.w3.org/People/Raggett/book4/ch02.html",
+   "authority": "designer",
+   "authors": [
+    "Dave Raggett",
+    "Jenny Lam",
+    "Ian Alexander",
+    "Michael Kmiec"
+   ],
+   "year": 1998,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "W3C — HTML home page (archive of the MarkUp activity, links to every historical version)",
+   "url": "https://www.w3.org/MarkUp/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "CERN — the first website (restored 1992 copy)",
+   "url": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Jeremy Keith — HTML5 for Web Designers (free online edition)",
+   "url": "https://html5forwebdesigners.com/",
+   "authority": "community",
+   "authors": [
+    "Jeremy Keith"
+   ],
+   "year": 2010,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Jeremy Keith — Resilient Web Design",
+   "url": "https://resilientwebdesign.com/",
+   "authority": "community",
+   "authors": [
+    "Jeremy Keith"
+   ],
+   "year": 2016,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Eloquent JavaScript — Ch. 13 JavaScript and the Browser (HTML, script tags, sandbox)",
+   "url": "https://eloquentjavascript.net/13_browser.html",
+   "authority": "community",
+   "authors": [
+    "Marijn Haverbeke"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OWASP Cheat Sheet — Cross Site Scripting Prevention (output encoding per HTML context)",
+   "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OWASP Cheat Sheet — HTML5 Security",
+   "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "W3C I18n — Declaring character encodings in HTML",
+   "url": "https://www.w3.org/International/questions/qa-html-encoding-declarations",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "W3C I18n — Using character escapes in markup and CSS",
+   "url": "https://www.w3.org/International/questions/qa-escapes",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "W3C WAI Tutorials — Page structure",
+   "url": "https://www.w3.org/WAI/tutorials/page-structure/",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "W3C WAI Tutorials — Tables",
+   "url": "https://www.w3.org/WAI/tutorials/tables/",
+   "authority": "standards-body",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "WebAIM — Semantic structure: regions, headings, and lists",
+   "url": "https://webaim.org/techniques/semanticstructure/",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Nu Html Checker — about (what conformance checking covers)",
+   "url": "https://validator.w3.org/nu/about.html",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "WHATWG Wiki — FAQ (rationale and process questions)",
+   "url": "https://wiki.whatwg.org/wiki/FAQ",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "standardization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The WHATWG Blog",
+   "url": "https://blog.whatwg.org/",
+   "authority": "standards-body",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — HTML",
+   "url": "https://learnxinyminutes.com/html/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "W3Schools — HTML Tutorial",
+   "url": "https://www.w3schools.com/html/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "HTML Reference (htmlreference.io) — every element and attribute with examples",
+   "url": "https://htmlreference.io/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "HTML5 Doctor — Element index",
+   "url": "https://html5doctor.com/element-index/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — HTML",
+   "url": "https://en.wikipedia.org/wiki/HTML",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — HTML5",
+   "url": "https://en.wikipedia.org/wiki/HTML5",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — HTML element",
+   "url": "https://en.wikipedia.org/wiki/HTML_element",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — HTML attribute",
+   "url": "https://en.wikipedia.org/wiki/HTML_attribute",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Tag soup",
+   "url": "https://en.wikipedia.org/wiki/Tag_soup",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Document type declaration",
+   "url": "https://en.wikipedia.org/wiki/Document_type_declaration",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Quirks mode",
+   "url": "https://en.wikipedia.org/wiki/Quirks_mode",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — List of XML and HTML character entity references",
+   "url": "https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "characters"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Character encodings in HTML",
+   "url": "https://en.wikipedia.org/wiki/Character_encodings_in_HTML",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "escaping"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Semantic HTML",
+   "url": "https://en.wikipedia.org/wiki/Semantic_HTML",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — HTML sanitization",
+   "url": "https://en.wikipedia.org/wiki/HTML_sanitization",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — WHATWG",
+   "url": "https://en.wikipedia.org/wiki/WHATWG",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of HTML parsers",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "parser"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — HTML",
+   "url": "https://pldb.io/concepts/html.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:HTML",
+   "url": "https://rosettacode.org/wiki/Category:HTML",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "wpt.fyi — live web-platform-tests results for the html/ directory across browsers",
+   "url": "https://wpt.fyi/results/html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Can I use — browser support tables for HTML/CSS/JS features",
+   "url": "https://caniuse.com/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "versioning-compatibility"
+   ]
+  }
+ ]
+}

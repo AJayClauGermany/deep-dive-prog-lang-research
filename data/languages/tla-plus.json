@@ -1,0 +1,2329 @@
+{
+ "id": "tla-plus",
+ "name": "TLA+ / PlusCal",
+ "aliases": [
+  "TLA+",
+  "TLA Plus",
+  "PlusCal",
+  "+CAL",
+  "TLA+2"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "declarative",
+  "temporal-logic",
+  "set-theoretic",
+  "state-machine"
+ ],
+ "typing": [
+  "untyped",
+  "optional-type-annotations (Apalache)"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Leslie Lamport"
+ ],
+ "summary": "Leslie Lamport's specification language that combines Zermelo-Fraenkel set theory with the Temporal Logic of Actions to describe concurrent and distributed systems as state machines; PlusCal is an algorithm language that translates to TLA+. Specifications are checked with the TLC and Apalache model checkers and the TLAPS proof system.",
+ "status": "active",
+ "defined_by": [
+  "academic-paper",
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".tla",
+  ".cfg"
+ ],
+ "homepage": "https://lamport.azurewebsites.net/tla/tla.html",
+ "influenced_by": [
+  "temporal-logic",
+  "z-notation",
+  "first-order-logic"
+ ],
+ "related": [
+  {
+   "id": "temporal-logic",
+   "relation": "family"
+  },
+  {
+   "id": "z-notation",
+   "relation": "family"
+  },
+  {
+   "id": "b-method",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No ISO/industry standard. The language is defined by Lamport's book Specifying Systems (2002, free PDF; Part IV is the language definition) plus the TLA+2 guide for the proof-language additions; the TLA+ Foundation's tlaplus/rfcs repository now holds a machine-readable grammar and conformance tests. PlusCal is defined by Lamport's two PlusCal manuals.",
+  "0": "SANY (parser/semantic analyser), TLC (explicit-state model checker), the PlusCal translator and TLATeX live in tlaplus/tlaplus (Java). Apalache (symbolic, SMT-based model checker, Scala) and TLAPS/tlapm (proof manager, OCaml) are independent implementations of large parts of the language.",
+  "2": "Book section links use #page=N into the free PDFs (PDF page numbers, not printed page numbers)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers (full book PDF)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf",
+   "concepts": [
+    "design-rationale",
+    "formal-semantics"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "book",
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 1 A Little Simple Math (propositional logic, sets, predicate logic)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=27",
+   "concepts": [
+    "logic-foundations",
+    "sets",
+    "booleans"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 2 Specifying a Simple Clock (behaviors, the hour clock)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=33",
+   "concepts": [
+    "hello-world",
+    "automata"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 3.3 Types: A Reminder (TLA+ is untyped; type invariants)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=48",
+   "concepts": [
+    "type-system",
+    "dynamic-typing"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 3.4 Definitions",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=49",
+   "concepts": [
+    "functions",
+    "constants"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 3.5 Comments",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=50",
+   "concepts": [
+    "comments"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 4.2 Instantiation Examined (instantiation is substitution)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=55",
+   "concepts": [
+    "modules",
+    "imports",
+    "substitution-binding"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 5.2 Functions",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=66",
+   "concepts": [
+    "functions",
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 5.7 Invariance",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=79",
+   "concepts": [
+    "verification",
+    "assertions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 6.4 Functions versus Operators",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=87",
+   "concepts": [
+    "functions",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 7 Writing a Specification: Some Advice",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=93",
+   "concepts": [
+    "style-conventions",
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 8 Liveness and Fairness (temporal formulas, weak/strong fairness)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=105",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 10 Composing Specifications",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=153",
+   "concepts": [
+    "concurrency",
+    "modules"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 12 The Syntactic Analyzer (SANY)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=225",
+   "concepts": [
+    "tooling",
+    "parser"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 14 The TLC Model Checker",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=239",
+   "concepts": [
+    "tooling",
+    "verification"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 14.2.2 How TLC Evaluates Expressions",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=249",
+   "concepts": [
+    "interpreter",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 14.3 How TLC Checks Properties (model-checking and simulation modes, symmetry)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=258",
+   "concepts": [
+    "verification",
+    "automata"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — Part IV Mini-Manual (tables of operators and constructs)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=286",
+   "concepts": [
+    "operators",
+    "keywords"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 15 The Syntax of TLA+ (the simple grammar)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=293",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 15.2.1 Precedence and Associativity",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=301",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 15.2.2 Alignment (bulleted conjunction/disjunction lists)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=304",
+   "concepts": [
+    "whitespace-layout"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 15.3 The Lexemes of TLA+",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=307",
+   "concepts": [
+    "lexical-structure",
+    "keywords",
+    "identifiers"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16 The Operators of TLA+ (constant operators)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=309",
+   "concepts": [
+    "operators",
+    "expressions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.1 Boolean Operators; 16.1.2 The Choose Operator",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=311",
+   "concepts": [
+    "booleans",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.4 Conditional Constructs (IF/THEN/ELSE, CASE)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=316",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.5 The Let/In Construct; 16.1.6 The Operators of Set Theory",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=317",
+   "concepts": [
+    "scope",
+    "sets"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.7 Functions",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=319",
+   "concepts": [
+    "functions",
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.8 Records",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=323",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.9 Tuples",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=324",
+   "concepts": [
+    "tuples"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.10 Strings",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=325",
+   "concepts": [
+    "strings"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.1.11 Numbers",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=326",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.2.3 Action Operators (primed variables, UNCHANGED, ENABLED)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=330",
+   "concepts": [
+    "variables",
+    "assignment"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 16.2.4 Temporal Operators",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=332",
+   "concepts": [
+    "verification",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 17 The Meaning of a Module (operators, arity and order)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=335",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 17.2 Levels (constant, state, action and temporal levels)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=339",
+   "concepts": [
+    "formal-semantics",
+    "type-system"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 17.5 The Meaning of a Module (EXTENDS, declarations, definitions)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=345",
+   "concepts": [
+    "modules",
+    "imports",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 17.8 The Semantics of Instantiation",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=352",
+   "concepts": [
+    "substitution-binding",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Specifying Systems — 18 The Standard Modules (Sequences, FiniteSets, Bags, Naturals, Integers, Reals)",
+   "url": "https://lamport.azurewebsites.net/tla/book-02-08-08.pdf#page=357",
+   "concepts": [
+    "standard-library",
+    "lists"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2002,
+   "version": "TLA+ 1 (2002)",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "TLA+ Version 2: A Preliminary Guide (TLA+2 additions incl. the proof language)",
+   "url": "https://lamport.azurewebsites.net/tla/tla2-guide.pdf",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution",
+    "verification"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Temporal Logic of Actions (ACM TOPLAS 16(3), 1994)",
+   "url": "https://lamport.azurewebsites.net/pubs/lamport-actions.pdf",
+   "concepts": [
+    "formal-semantics",
+    "logic-foundations",
+    "verification"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 1994,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The PlusCal Algorithm Language (ICTAC 2009)",
+   "url": "https://lamport.azurewebsites.net/pubs/pluscal.pdf",
+   "concepts": [
+    "design-rationale",
+    "concurrency"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "year": 2009,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual — P-Syntax (full PDF)",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf",
+   "concepts": [
+    "statements"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 2 Getting Started (typing, translating and checking an algorithm)",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=9",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 2.7 Where Labels Must and Can't Go (atomicity of steps)",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=20",
+   "concepts": [
+    "goto-labels",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 3.2.2 If",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=24",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 3.2.3 Either (nondeterministic choice)",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=25",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 3.2.4 While; 3.2.5 Await; 3.2.6 With",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=26",
+   "concepts": [
+    "loops",
+    "synchronization"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 3.2.9 Assert; 3.2.10 Call and Return; 3.2.11 Goto; 3.3 Processes",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=28",
+   "concepts": [
+    "assertions",
+    "return",
+    "goto-labels",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 3.4 Procedures",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=29",
+   "concepts": [
+    "functions",
+    "recursion",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 3.5 Macros",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=31",
+   "concepts": [
+    "macros"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — 4.6 Termination, Liveness, and Fairness",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=41",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual (P-Syntax) — A The Grammar",
+   "url": "https://lamport.azurewebsites.net/tla/p-manual.pdf#page=60",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "version": "PlusCal 1.8",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "A PlusCal User's Manual — C-Syntax (full PDF)",
+   "url": "https://lamport.azurewebsites.net/tla/c-manual.pdf",
+   "concepts": [
+    "statements"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Current Versions of the TLA+ Tools (TLC, SANY, PlusCal translator options)",
+   "url": "https://lamport.azurewebsites.net/tla/current-tools.pdf",
+   "concepts": [
+    "tooling",
+    "command-line"
+   ],
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "implementation": "tla2tools",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "tlaplus/rfcs — Requests for Comments for changes to TLA+",
+   "url": "https://github.com/tlaplus/rfcs/blob/main/README.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "RFC 5 — Unicode syntax for TLA+",
+   "url": "https://github.com/tlaplus/rfcs/blob/main/accepted_rfcs/rfc5_unicode/README.md",
+   "concepts": [
+    "unicode",
+    "lexical-structure",
+    "language-evolution"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "TLAPlus2Grammar.tla — the TLA+2 grammar written in TLA+ (language_standard)",
+   "url": "https://github.com/tlaplus/rfcs/blob/main/language_standard/grammar/TLAPlus2Grammar.tla",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ],
+   "authority": "official",
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "TLA+ Proofs (FM 2012) — the TLA+2 hierarchical proof language and TLAPS",
+   "url": "https://arxiv.org/abs/1208.5933",
+   "concepts": [
+    "verification",
+    "logic-foundations"
+   ],
+   "authors": [
+    "Denis Cousineau",
+    "Damien Doligez",
+    "Leslie Lamport",
+    "Stephan Merz",
+    "Daniel Ricketts",
+    "Hernán Vanzetto"
+   ],
+   "year": 2012,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "tlaplus/tlaplus — SANY, TLC, PlusCal translator, TLATeX and the Toolbox",
+   "url": "https://github.com/tlaplus/tlaplus",
+   "concepts": [
+    "compiler-architecture",
+    "verification"
+   ],
+   "implementation": "SANY/TLC (tla2tools)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tlaplus/tlaplus — tla+.jj (JavaCC grammar of TLA+ used by SANY)",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/javacc/tla+.jj",
+   "concepts": [
+    "grammar",
+    "parser",
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "SANY",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tla2sany/parser/TLAplusParser.java — generated parser",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/parser/TLAplusParser.java",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "SANY",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tla2sany/drivers/SANY.java — Syntactic ANalYzer driver",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/drivers/SANY.java",
+   "concepts": [
+    "compiler-architecture",
+    "semantic-analysis"
+   ],
+   "implementation": "SANY",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tla2sany/semantic/Generator.java — builds the semantic graph from the syntax tree",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/semantic/Generator.java",
+   "concepts": [
+    "semantic-analysis",
+    "ast"
+   ],
+   "implementation": "SANY",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tla2sany/semantic/LevelNode.java — level checking (constant/state/action/temporal)",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/semantic/LevelNode.java",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ],
+   "implementation": "SANY",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tla2sany/semantic/SymbolTable.java — name resolution",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/semantic/SymbolTable.java",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "implementation": "SANY",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tla2sany/semantic/SubstInNode.java — INSTANCE ... WITH substitutions",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/semantic/SubstInNode.java",
+   "concepts": [
+    "modules",
+    "substitution-binding"
+   ],
+   "implementation": "SANY",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/tool/impl/Tool.java — TLC expression and action evaluator",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/tool/impl/Tool.java",
+   "concepts": [
+    "interpreter",
+    "evaluation-order"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/tool/ModelChecker.java — breadth-first explicit-state model checking",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/tool/ModelChecker.java",
+   "concepts": [
+    "verification",
+    "automata"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/tool/liveness/LiveCheck.java — liveness (temporal property) checking",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/tool/liveness/LiveCheck.java",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/tool/Simulator.java — random simulation mode",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/tool/Simulator.java",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/tool/fp/FPSet.java — fingerprint set of seen states",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/tool/fp/FPSet.java",
+   "concepts": [
+    "runtime-system",
+    "optimization"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/value/impl/FcnRcdValue.java — function values",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/value/impl/FcnRcdValue.java",
+   "concepts": [
+    "functions",
+    "maps-dictionaries"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/value/impl/RecordValue.java — record values",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/value/impl/RecordValue.java",
+   "concepts": [
+    "records-structs"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/value/impl/TupleValue.java — tuple/sequence values",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/value/impl/TupleValue.java",
+   "concepts": [
+    "tuples",
+    "lists"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/value/impl/SetEnumValue.java — enumerated set values",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/value/impl/SetEnumValue.java",
+   "concepts": [
+    "sets"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — tlc2/module/Sequences.java — Java overrides for the Sequences module",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tlc2/module/Sequences.java",
+   "concepts": [
+    "standard-library",
+    "lists"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "tlaplus/tlaplus — StandardModules/Sequences.tla",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/StandardModules/Sequences.tla",
+   "concepts": [
+    "standard-library",
+    "lists"
+   ],
+   "implementation": "SANY/TLC (tla2tools)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "tlaplus/tlaplus — StandardModules/Naturals.tla",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/StandardModules/Naturals.tla",
+   "concepts": [
+    "standard-library",
+    "integers"
+   ],
+   "implementation": "SANY/TLC (tla2tools)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "tlaplus/tlaplus — StandardModules/FiniteSets.tla",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/StandardModules/FiniteSets.tla",
+   "concepts": [
+    "standard-library",
+    "sets"
+   ],
+   "implementation": "SANY/TLC (tla2tools)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "tlaplus/tlaplus — StandardModules/TLC.tla (Print, Assert, Permutations, :> and @@)",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/tla2sany/StandardModules/TLC.tla",
+   "concepts": [
+    "standard-library",
+    "assertions"
+   ],
+   "implementation": "TLC",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — pcal/trans.java — PlusCal to TLA+ translator entry point",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/pcal/trans.java",
+   "concepts": [
+    "code-generation",
+    "compiler-architecture"
+   ],
+   "implementation": "PlusCal translator",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — pcal/ParseAlgorithm.java — PlusCal parser",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/pcal/ParseAlgorithm.java",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "PlusCal translator",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "tlaplus/tlaplus — pcal/PcalTLAGen.java — TLA+ code generation for PlusCal",
+   "url": "https://github.com/tlaplus/tlaplus/blob/master/tlatools/org.lamport.tlatools/src/pcal/PcalTLAGen.java",
+   "concepts": [
+    "code-generation"
+   ],
+   "implementation": "PlusCal translator",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "tlaplus/rfcs — language_standard/tests (syntax and semantic-error test corpus)",
+   "url": "https://github.com/tlaplus/rfcs/blob/main/language_standard/tests/README.md",
+   "concepts": [
+    "standardization",
+    "testing"
+   ],
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-tlaplus — grammar.js (TLA+ and PlusCal tree-sitter grammar)",
+   "url": "https://github.com/tlaplus-community/tree-sitter-tlaplus/blob/main/grammar.js",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "tree-sitter-tlaplus",
+   "authority": "community",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "tlaplus/tlapm — TLA+ Proof System (TLAPS) proof manager",
+   "url": "https://github.com/tlaplus/tlapm",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "TLAPS",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "tlaplus/tlapm — library/TLAPS.tla (proof backends and pragmas)",
+   "url": "https://github.com/tlaplus/tlapm/blob/main/library/TLAPS.tla",
+   "concepts": [
+    "verification",
+    "standard-library"
+   ],
+   "implementation": "TLAPS",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apalache-mc/apalache — symbolic (SMT-based) model checker for TLA+",
+   "url": "https://github.com/apalache-mc/apalache",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "implementation": "Apalache",
+   "authority": "community",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "tlaplus/CommunityModules — community-maintained TLA+ modules",
+   "url": "https://github.com/tlaplus/CommunityModules",
+   "concepts": [
+    "standard-library",
+    "packages"
+   ],
+   "implementation": "TLC",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "tlaplus/vscode-tlaplus — VS Code extension for TLA+ and PlusCal",
+   "url": "https://github.com/tlaplus/vscode-tlaplus",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Summary of TLA+ (Lamport's operator and syntax summary)",
+   "url": "https://lamport.azurewebsites.net/tla/summary-standalone.pdf",
+   "concepts": [
+    "operators",
+    "keywords"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "video",
+   "title": "The TLA+ Video Course (Leslie Lamport)",
+   "url": "https://lamport.azurewebsites.net/video/videos.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "format": "video",
+   "scope": "whole",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "The TLA+ Hyperbook",
+   "url": "https://lamport.azurewebsites.net/tla/hyperbook.html",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PlusCal tutorial (Lamport)",
+   "url": "https://lamport.azurewebsites.net/tla/tutorial/contents.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "A Science of Concurrent Programs (Lamport, Cambridge University Press)",
+   "url": "https://lamport.azurewebsites.net/tla/science-book.html",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "authority": "designer",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Practical TLA+: Planning Driven Development (Apress, 2018)",
+   "url": "https://link.springer.com/book/10.1007/978-1-4842-3829-5",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "year": 2018,
+   "access": "paywalled",
+   "format": "book",
+   "scope": "whole",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ (learntla.com) — introduction",
+   "url": "https://learntla.com/introduction/",
+   "concepts": [
+    "hello-world"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Conceptual Overview",
+   "url": "https://learntla.com/intro/conceptual-overview.html",
+   "concepts": [
+    "design-rationale"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Writing Specifications in PlusCal",
+   "url": "https://learntla.com/core/pluscal.html",
+   "concepts": [
+    "statements",
+    "assignment"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — PlusCal while",
+   "url": "https://learntla.com/core/pluscal.html#while",
+   "concepts": [
+    "loops"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Operators and Values",
+   "url": "https://learntla.com/core/operators.html",
+   "concepts": [
+    "operators",
+    "primitive-types"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — IF-THEN-ELSE",
+   "url": "https://learntla.com/core/operators.html#if-then-else",
+   "concepts": [
+    "conditionals"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Sequences",
+   "url": "https://learntla.com/core/operators.html#sequences",
+   "concepts": [
+    "lists"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Sets",
+   "url": "https://learntla.com/core/operators.html#sets",
+   "concepts": [
+    "sets"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Invariants",
+   "url": "https://learntla.com/core/invariants.html",
+   "concepts": [
+    "verification",
+    "assertions"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Structures (records)",
+   "url": "https://learntla.com/core/functions.html#structures",
+   "concepts": [
+    "records-structs"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Functions",
+   "url": "https://learntla.com/core/functions.html#functions",
+   "concepts": [
+    "functions",
+    "maps-dictionaries"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Concurrency (processes, await, procedures)",
+   "url": "https://learntla.com/core/concurrency.html",
+   "concepts": [
+    "concurrency",
+    "synchronization"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Temporal Properties (always, eventually, leads-to, fairness)",
+   "url": "https://learntla.com/core/temporal-logic.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Modules (EXTENDS, INSTANCE, parameterized modules)",
+   "url": "https://learntla.com/core/modules.html",
+   "concepts": [
+    "modules",
+    "imports"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Recursive operators",
+   "url": "https://learntla.com/core/advanced-operators.html#recursive-operators",
+   "concepts": [
+    "recursion"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Higher-order operators",
+   "url": "https://learntla.com/core/advanced-operators.html#higher-order-operators",
+   "concepts": [
+    "higher-order-functions"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — CASE",
+   "url": "https://learntla.com/core/advanced-operators.html#case",
+   "concepts": [
+    "switch-case"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — State Machines",
+   "url": "https://learntla.com/topics/state-machines.html",
+   "concepts": [
+    "automata"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — TLC from the command line",
+   "url": "https://learntla.com/topics/cli.html",
+   "concepts": [
+    "command-line",
+    "tooling"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn TLA+ — Standard modules",
+   "url": "https://learntla.com/reference/standard-library.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "authors": [
+    "Hillel Wayne"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — overview",
+   "url": "https://apalache-mc.org/docs/lang/index.html",
+   "concepts": [
+    "operators"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Booleans",
+   "url": "https://apalache-mc.org/docs/lang/booleans.html",
+   "concepts": [
+    "booleans"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Conditionals (IF-THEN-ELSE, CASE)",
+   "url": "https://apalache-mc.org/docs/lang/conditionals.html",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Sets",
+   "url": "https://apalache-mc.org/docs/lang/sets.html",
+   "concepts": [
+    "sets"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Functions",
+   "url": "https://apalache-mc.org/docs/lang/functions.html",
+   "concepts": [
+    "functions",
+    "maps-dictionaries"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Records",
+   "url": "https://apalache-mc.org/docs/lang/records.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Sequences",
+   "url": "https://apalache-mc.org/docs/lang/sequences.html",
+   "concepts": [
+    "lists"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Lambdas",
+   "url": "https://apalache-mc.org/docs/lang/user/lambdas.html",
+   "concepts": [
+    "closures"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Higher-order operators",
+   "url": "https://apalache-mc.org/docs/lang/user/higher-order-operators.html",
+   "concepts": [
+    "higher-order-functions"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache docs: TLA+ language manual for engineers — Variants (Apalache tagged unions)",
+   "url": "https://apalache-mc.org/docs/lang/variants.html",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apalache manual — The Snowcat type checker",
+   "url": "https://apalache-mc.org/docs/apalache/typechecker-snowcat.html",
+   "concepts": [
+    "type-system",
+    "type-inference"
+   ],
+   "implementation": "Apalache",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Apalache ADR-002 — Types and type annotations for TLA+",
+   "url": "https://apalache-mc.org/docs/adr/002adr-types.html",
+   "concepts": [
+    "type-annotations",
+    "type-system"
+   ],
+   "implementation": "Apalache",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "TLAPS tutorial — The example (hierarchical proofs of Euclid's algorithm)",
+   "url": "https://proofs.tlapl.us/doc/web/content/Documentation/Tutorial/The_example.html",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "implementation": "TLAPS",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "How Amazon Web Services Uses Formal Methods (CACM 2015)",
+   "url": "https://lamport.azurewebsites.net/tla/formal-methods-amazon.pdf",
+   "concepts": [
+    "history"
+   ],
+   "authors": [
+    "Chris Newcombe",
+    "Tim Rath",
+    "Fan Zhang",
+    "Bogdan Munteanu",
+    "Marc Brooker",
+    "Michael Deardeuff"
+   ],
+   "year": 2015,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Model Checking TLA+ Specifications (CHARME 1999) — the design of TLC",
+   "url": "https://lamport.azurewebsites.net/pubs/yuanyu-model-checking.pdf",
+   "concepts": [
+    "verification",
+    "interpreter"
+   ],
+   "authors": [
+    "Yuan Yu",
+    "Panagiotis Manolios",
+    "Leslie Lamport"
+   ],
+   "year": 1999,
+   "implementation": "TLC",
+   "authority": "academic",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "The Specification Language TLA+ (Merz, in Logics of Specification Languages, 2008)",
+   "url": "https://members.loria.fr/SMerz/papers/tla+logic2008.pdf",
+   "concepts": [
+    "formal-semantics",
+    "logic-foundations"
+   ],
+   "authors": [
+    "Stephan Merz"
+   ],
+   "year": 2008,
+   "authority": "academic",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TLA+",
+   "url": "https://en.wikipedia.org/wiki/TLA%2B",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TLA+: Standard modules",
+   "url": "https://en.wikipedia.org/wiki/TLA%2B#Standard_modules",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — PlusCal",
+   "url": "https://en.wikipedia.org/wiki/PlusCal",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — TLA+",
+   "url": "https://pldb.io/concepts/tla.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "tlaplus/Examples — collection of TLA+ specifications",
+   "url": "https://github.com/tlaplus/Examples",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "id": "zsh",
+ "name": "Z shell (zsh)",
+ "aliases": ["zsh", "Z shell"],
+ "categories": ["shell", "scripting"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["untyped", "string-based", "optional-attributes"],
+ "first_appeared": 1990,
+ "designers": ["Paul Falstad"],
+ "summary": "Bourne-compatible interactive shell and scripting language with ksh and csh features, powerful globbing (qualifiers, recursive **), parameter-expansion flags, associative arrays, loadable modules and a programmable completion system; the default login shell on macOS since 2019.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".zsh", ".zshrc"],
+ "homepage": "https://www.zsh.org/",
+ "influenced_by": ["ksh", "csh", "posix-sh", "bash"],
+ "related": [{"id": "posix-sh", "relation": "superset-of"}, {"id": "ksh", "relation": "family"}],
+ "level_notes": {"1": "No specification; the Zsh manual (zsh.sourceforge.io, which blocks automated access here, so section links point to the identical Debian zshmisc/zshexpn/zshparam man pages) documents the implementation. Yodl sources of the manual live in Doc/Zsh in the repository.", "0": "The C implementation (zsh-users/zsh, mirror of the SourceForge git repo) is the definition; Test/*.ztst is its regression suite."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "zsh-users/zsh — Z shell source (GitHub mirror)", "url": "https://github.com/zsh-users/zsh", "implementation": "zsh", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/lex.c — lexer", "url": "https://github.com/zsh-users/zsh/blob/master/Src/lex.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer", "lexical-structure"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/parse.c — parser producing word-code", "url": "https://github.com/zsh-users/zsh/blob/master/Src/parse.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "bytecode"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/exec.c — command execution, pipelines and forks", "url": "https://github.com/zsh-users/zsh/blob/master/Src/exec.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "processes-system", "pipelines"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/subst.c — parameter and command substitution", "url": "https://github.com/zsh-users/zsh/blob/master/Src/subst.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["string-formatting", "variables"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/glob.c — filename generation and glob qualifiers", "url": "https://github.com/zsh-users/zsh/blob/master/Src/glob.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching", "file-io"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/params.c — parameters, arrays and associative arrays", "url": "https://github.com/zsh-users/zsh/blob/master/Src/params.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["variables", "arrays", "maps-dictionaries"]},
+  {"level": 0, "kind": "implementation-source", "title": "Src/loop.c — for, while, select, case and if", "url": "https://github.com/zsh-users/zsh/blob/master/Src/loop.c", "implementation": "zsh", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["loops", "conditionals", "switch-case"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "The Z Shell Manual (zsh.sourceforge.io)", "url": "https://zsh.sourceforge.io/Doc/Release/zsh_toc.html", "implementation": "zsh", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Simple commands and pipelines", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#PRECOMMAND_MODIFIERS", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["statements", "pipelines"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Complex commands (if, for, while, case, select)", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#COMPLEX_COMMANDS", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Quoting", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#QUOTING", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings", "escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Redirection and multios", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#REDIRECTION", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["input-output", "file-io"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Functions (autoloading, anonymous functions)", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#FUNCTIONS", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Jobs and signals", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#JOBS", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["processes-system", "concurrency"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Arithmetic evaluation", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#ARITHMETIC_EVALUATION", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators", "integers", "floating-point"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshmisc(1) — Conditional expressions [[ ... ]]", "url": "https://manpages.debian.org/testing/zsh-common/zshmisc.1.en.html#CONDITIONAL_EXPRESSIONS", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "booleans"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshexpn(1) — Parameter expansion and expansion flags", "url": "https://manpages.debian.org/testing/zsh-common/zshexpn.1.en.html#PARAMETER_EXPANSION", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "string-formatting", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshexpn(1) — Filename generation (globbing)", "url": "https://manpages.debian.org/testing/zsh-common/zshexpn.1.en.html#FILENAME_GENERATION", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshexpn(1) — Glob qualifiers", "url": "https://manpages.debian.org/testing/zsh-common/zshexpn.1.en.html#Glob_Qualifiers", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching", "file-io"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshparam(1) — Array parameters and subscripts", "url": "https://manpages.debian.org/testing/zsh-common/zshparam.1.en.html#ARRAY_PARAMETERS", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays", "maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "zshbuiltins(1) — builtin commands", "url": "https://manpages.debian.org/testing/zsh-common/zshbuiltins.1.en.html", "implementation": "zsh", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "guide", "title": "A User's Guide to the Z-Shell (Peter Stephenson)", "url": "https://zsh.sourceforge.io/Guide/zshguide.html", "scope": "whole", "authority": "community", "authors": ["Peter Stephenson"], "format": "html", "access": "open", "concepts": ["hello-world"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Z shell", "url": "https://en.wikipedia.org/wiki/Z_shell", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — zsh", "url": "https://pldb.io/concepts/z-shell.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

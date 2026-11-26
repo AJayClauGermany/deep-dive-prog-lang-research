@@ -1,0 +1,78 @@
+{
+ "id": "luau",
+ "name": "Luau",
+ "categories": [
+  "scripting",
+  "general-purpose"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural",
+  "functional",
+  "prototype-based"
+ ],
+ "typing": [
+  "gradual",
+  "dynamic",
+  "structural",
+  "inferred"
+ ],
+ "first_appeared": 2019,
+ "designers": [
+  "Roblox (Arseny Kapoulkine and team)"
+ ],
+ "summary": "Roblox's fast, sandboxed, gradually typed derivative of Lua 5.1 with a structural type checker, string interpolation, compound assignment, generalized iteration and a native-code generator; evolved through a public RFC process.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".luau",
+  ".lua"
+ ],
+ "homepage": "https://luau.org/",
+ "influenced_by": [
+  "lua",
+  "typescript"
+ ],
+ "related": [
+  {
+   "id": "lua",
+   "relation": "dialect-of"
+  }
+ ],
+ "level_notes": {
+  "0": "luau-lang/luau is the single implementation: Ast/ (lexer, parser), Analysis/ (type checker; old TypeInfer and new constraint solver), Compiler/ (bytecode), VM/ (interpreter derived from Lua 5.1) and CodeGen/ (native code).",
+  "1": "luau.org documents the syntax extensions over Lua 5.1, the type system, grammar and library; language changes are made through luau-lang/rfcs. The Lua 5.1 manual remains the base definition."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "luau-lang/luau — Luau compiler, type checker and VM", "url": "https://github.com/luau-lang/luau", "implementation": "Luau", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "Ast/src/Lexer.cpp — lexer", "url": "https://github.com/luau-lang/luau/blob/master/Ast/src/Lexer.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "Ast/src/Parser.cpp — recursive-descent parser", "url": "https://github.com/luau-lang/luau/blob/master/Ast/src/Parser.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "Analysis/src/ConstraintSolver.cpp — constraint-based type inference (new solver)", "url": "https://github.com/luau-lang/luau/blob/master/Analysis/src/ConstraintSolver.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["type-inference"]},
+  {"level": 0, "kind": "implementation-source", "title": "Compiler/src/Compiler.cpp — AST to bytecode compiler", "url": "https://github.com/luau-lang/luau/blob/master/Compiler/src/Compiler.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode"]},
+  {"level": 0, "kind": "implementation-source", "title": "VM/src/lvmexecute.cpp — bytecode interpreter loop", "url": "https://github.com/luau-lang/luau/blob/master/VM/src/lvmexecute.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "VM/src/lgc.cpp — incremental garbage collector", "url": "https://github.com/luau-lang/luau/blob/master/VM/src/lgc.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["garbage-collection"]},
+  {"level": 0, "kind": "implementation-source", "title": "CodeGen/src/CodeGen.cpp — native code generation (x64/arm64)", "url": "https://github.com/luau-lang/luau/blob/master/CodeGen/src/CodeGen.cpp", "implementation": "Luau", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["jit", "code-generation-backend"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Syntax (extensions over Lua 5.1)", "url": "https://luau.org/syntax/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Syntax — string interpolation", "url": "https://luau.org/syntax/#string-interpolation", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Syntax — compound assignments", "url": "https://luau.org/syntax/#compound-assignments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["assignment"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Syntax — if-then-else expressions", "url": "https://luau.org/syntax/#if-then-else-expressions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Syntax — generalized iteration", "url": "https://luau.org/syntax/#generalized-iteration", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Syntax — const bindings", "url": "https://luau.org/syntax/#const-bindings", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["constants"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Type checking", "url": "https://luau.org/types/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "gradual-typing"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Types — generics", "url": "https://luau.org/types/generics/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Types — unions and intersections", "url": "https://luau.org/types/unions-and-intersections/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["union-intersection-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Types — type refinements", "url": "https://luau.org/types/type-refinements/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching", "type-system"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Types — tables", "url": "https://luau.org/types/tables/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs", "maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Grammar", "url": "https://luau.org/grammar/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "library-reference", "title": "Luau — Standard library", "url": "https://luau.org/library/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "Luau — Sandboxing", "url": "https://luau.org/sandbox/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["security-considerations"]},
+  {"level": 1, "kind": "proposal-index", "title": "Luau RFCs", "url": "https://rfcs.luau.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+  {"level": 2, "kind": "article", "title": "Luau — Performance (design notes on the VM, compiler and GC)", "url": "https://luau.org/performance/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["performance", "optimization", "interpreter"]},
+  {"level": 2, "kind": "tutorial", "title": "Luau — Getting started", "url": "https://luau.org/getting-started/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Luau (programming language)", "url": "https://en.wikipedia.org/wiki/Luau_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Luau", "url": "https://pldb.io/concepts/luau.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

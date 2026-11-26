@@ -1,0 +1,447 @@
+{
+ "id": "troff",
+ "name": "troff / groff / nroff",
+ "aliases": [
+  "troff",
+  "nroff",
+  "groff",
+  "roff",
+  "ditroff"
+ ],
+ "categories": [
+  "document-typesetting",
+  "markup"
+ ],
+ "paradigms": [
+  "macro",
+  "imperative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1973,
+ "designers": [
+  "Joseph F. Ossanna",
+  "Brian W. Kernighan",
+  "James Clark (groff)"
+ ],
+ "summary": "The Unix typesetting language: text interleaved with dot-requests (.sp, .ft, .de) and backslash escapes, with number registers, strings, macros, diversions, traps and conditionals; nroff targets terminals, troff typesetters. GNU groff is the main living implementation; macro packages (man, mdoc, ms, me, mm) and preprocessors (tbl, eqn, pic) build on it.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".roff",
+  ".tr",
+  ".ms",
+  ".me",
+  ".mm",
+  ".1"
+ ],
+ "homepage": "https://www.gnu.org/software/groff/",
+ "related": [
+  {
+   "id": "mdoc",
+   "relation": "host-of"
+  },
+  {
+   "id": "tex",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "Historic AT&T troff (DWB), its Heirloom descendant, neatroff and GNU groff (canonical repo on git.savannah.gnu.org, not linked) implement the language.",
+  "1": "CSTR 54 (Ossanna/Kernighan) is the classic definition; groff(7) and the groff Texinfo manual document GNU troff. gnu.org returns 403 to the link checker."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "n-t-roff/heirloom-doctools — Heirloom Documentation Tools (OpenSolaris-derived Unix troff/nroff)",
+   "url": "https://github.com/n-t-roff/heirloom-doctools",
+   "authority": "community",
+   "implementation": "Heirloom troff (descendant of Unix troff)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Heirloom troff n1.c — input reading, escape processing, main loop",
+   "url": "https://github.com/n-t-roff/heirloom-doctools/blob/master/troff/n1.c",
+   "authority": "community",
+   "implementation": "Heirloom troff (descendant of Unix troff)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "interpreter",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Heirloom troff n3.c — macros, strings, diversions (request storage)",
+   "url": "https://github.com/n-t-roff/heirloom-doctools/blob/master/troff/n3.c",
+   "authority": "community",
+   "implementation": "Heirloom troff (descendant of Unix troff)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Heirloom troff n5.c — miscellaneous requests incl. .if/.ie/.el conditionals",
+   "url": "https://github.com/n-t-roff/heirloom-doctools/blob/master/troff/n5.c",
+   "authority": "community",
+   "implementation": "Heirloom troff (descendant of Unix troff)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "neatroff tr.c — request handlers of a clean-room troff",
+   "url": "https://github.com/aligrudi/neatroff/blob/master/tr.c",
+   "authority": "community",
+   "implementation": "neatroff",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "keywords"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "neatroff reg.c — number registers and environments",
+   "url": "https://github.com/aligrudi/neatroff/blob/master/reg.c",
+   "authority": "community",
+   "implementation": "neatroff",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "neatroff in.c — input stack (files, macros, arguments)",
+   "url": "https://github.com/aligrudi/neatroff/blob/master/in.c",
+   "authority": "community",
+   "implementation": "neatroff",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "n-t-roff/DWB3.3 — AT&T Documenter's Workbench 3.3 (original troff and preprocessors)",
+   "url": "https://github.com/n-t-roff/DWB3.3",
+   "authority": "designer",
+   "implementation": "DWB troff",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Ossanna & Kernighan — Troff User's Manual (Bell Labs CSTR 54, rev. 1992)",
+   "url": "https://www.troff.org/54.pdf",
+   "authority": "designer",
+   "authors": [
+    "Joseph F. Ossanna",
+    "Brian W. Kernighan"
+   ],
+   "year": 1976,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — GNU roff language reference",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Numeric expressions",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Numeric_expressions",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Identifiers",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Identifiers",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Control structures (.if, .ie/.el, .while)",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Control_structures",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Strings",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Strings",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Registers",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Registers",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Writing macros",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Writing_macros",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Escape sequences",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Using_escape_sequences",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Traps",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Traps",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Diversions",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Diversions",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff(7) — Compatibility mode (AT&T troff vs groff)",
+   "url": "https://man7.org/linux/man-pages/man7/groff.7.html#Compatibility_mode",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff_diff(7) — differences between GNU troff and AT&T troff",
+   "url": "https://man7.org/linux/man-pages/man7/groff_diff.7.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The GNU groff manual (Texinfo, HTML)",
+   "url": "https://www.gnu.org/software/groff/manual/groff.html",
+   "authority": "official",
+   "notes": "gnu.org answers automated clients with 403.",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "roff(7) — concepts and history of roff",
+   "url": "https://man7.org/linux/man-pages/man7/roff.7.html#History",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "troff.org — history of the roff family",
+   "url": "https://www.troff.org/history.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "troff.org — papers and documentation index (CSTRs, tutorials)",
+   "url": "https://www.troff.org/papers.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Heirloom doctools — overview and documentation",
+   "url": "https://n-t-roff.github.io/heirloom/doctools.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — troff",
+   "url": "https://en.wikipedia.org/wiki/Troff",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — groff (software)",
+   "url": "https://en.wikipedia.org/wiki/Groff_(software)",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — troff",
+   "url": "https://pldb.io/concepts/troff.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — roff",
+   "url": "https://pldb.io/concepts/roff.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

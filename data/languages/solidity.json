@@ -1,0 +1,1953 @@
+{
+ "id": "solidity",
+ "name": "Solidity",
+ "categories": [
+  "smart-contract",
+  "object-oriented"
+ ],
+ "paradigms": [
+  "imperative",
+  "object-oriented",
+  "contract-oriented"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "nominal"
+ ],
+ "first_appeared": 2015,
+ "designers": [
+  "Gavin Wood",
+  "Christian Reitwiessner",
+  "Alex Beregszaszi"
+ ],
+ "summary": "Statically typed, curly-brace, contract-oriented language for the Ethereum Virtual Machine with multiple inheritance (C3 linearization), modifiers, events, custom errors, explicit data locations (storage/memory/calldata) and an ABI for external calls.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".sol"
+ ],
+ "homepage": "https://soliditylang.org/",
+ "influenced_by": [
+  "cpp",
+  "javascript",
+  "python"
+ ],
+ "related": [
+  {
+   "id": "yul",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "vyper",
+   "relation": "family"
+  },
+  {
+   "id": "fe-lang",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No external standard: the official Solidity documentation (docs.soliditylang.org) including the ANTLR grammar, ABI specification and storage-layout chapters is the language reference; the EVM itself is defined by the Ethereum Yellow Paper and EIPs. No official formal semantics; several academic ones (K, Isabelle) exist.",
+  "0": "solc (C++) in ethereum/solidity (now hosted under argotorg) is the reference compiler with a legacy codegen and a Yul-IR (via-IR) pipeline; Solang is an independent LLVM-based compiler."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "ethereum/solidity — solc, the reference Solidity compiler",
+   "url": "https://github.com/ethereum/solidity",
+   "implementation": "solc",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc liblangutil/Scanner.cpp — scanner (lexer)",
+   "url": "https://github.com/ethereum/solidity/blob/develop/liblangutil/Scanner.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/parsing/Parser.cpp — recursive-descent parser",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/parsing/Parser.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/ast/AST.h — AST node definitions",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/ast/AST.h",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/ast/Types.h — type representation",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/ast/Types.h",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/ast/Types.cpp — type rules and implicit conversions",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/ast/Types.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/analysis/NameAndTypeResolver.cpp — name and scope resolution",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/analysis/NameAndTypeResolver.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/analysis/TypeChecker.cpp — type checker",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/analysis/TypeChecker.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/analysis/OverrideChecker.cpp — override / inheritance checks",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/analysis/OverrideChecker.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/analysis/ContractLevelChecker.cpp — contract-level checks (abstract, linearization)",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/analysis/ContractLevelChecker.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "abstract-classes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/analysis/ViewPureChecker.cpp — view/pure state-mutability checker",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/analysis/ViewPureChecker.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "purity"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/analysis/ControlFlowAnalyzer.cpp — control-flow analysis (uninitialised storage, unreachable code)",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/analysis/ControlFlowAnalyzer.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/interface/CompilerStack.cpp — compiler driver pipeline",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/interface/CompilerStack.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/codegen/ContractCompiler.cpp — legacy EVM code generator",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/codegen/ContractCompiler.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/codegen/ABIFunctions.cpp — ABI encoder/decoder generation",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/codegen/ABIFunctions.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/codegen/ir/IRGenerator.cpp — Yul IR generator (via-IR pipeline)",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/codegen/ir/IRGenerator.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/codegen/ir/IRGeneratorForStatements.cpp — IR generation for statements and expressions",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/codegen/ir/IRGeneratorForStatements.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "expressions",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/codegen/YulUtilFunctions.cpp — Yul helper routines (checked arithmetic, copying)",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/codegen/YulUtilFunctions.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libyul/optimiser/README.md — Yul optimizer overview",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libyul/optimiser/README.md",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "optimization",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libevmasm/Assembly.cpp — EVM assembly and peephole stage",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libevmasm/Assembly.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "assembler-directives",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "solc libsolidity/formal/SMTEncoder.cpp — SMTChecker encoding into SMT",
+   "url": "https://github.com/ethereum/solidity/blob/develop/libsolidity/formal/SMTEncoder.cpp",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "verification",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "solc docs/grammar/SolidityParser.g4 — official ANTLR parser grammar",
+   "url": "https://github.com/ethereum/solidity/blob/develop/docs/grammar/SolidityParser.g4",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "solc docs/grammar/SolidityLexer.g4 — official ANTLR lexer grammar",
+   "url": "https://github.com/ethereum/solidity/blob/develop/docs/grammar/SolidityLexer.g4",
+   "implementation": "solc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "keywords"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "solc test/libsolidity/semanticTests — semantic test suite",
+   "url": "https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests",
+   "implementation": "solc",
+   "scope": "whole",
+   "authority": "official",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "solc-js — JavaScript bindings / emscripten build of solc",
+   "url": "https://github.com/ethereum/solc-js",
+   "implementation": "solc-js",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Solang — LLVM-based Solidity compiler (Solana, Polkadot)",
+   "url": "https://github.com/hyperledger-solang/solang",
+   "implementation": "Solang",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "KEVM — K semantics of the EVM",
+   "url": "https://github.com/runtimeverification/evm-semantics",
+   "implementation": "KEVM",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Solidity Changelog.md — compiler and language changelog",
+   "url": "https://github.com/ethereum/solidity/blob/develop/Changelog.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity documentation (latest)",
+   "url": "https://docs.soliditylang.org/en/latest/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Layout of a source file",
+   "url": "https://docs.soliditylang.org/en/latest/layout-of-source-files.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Pragmas",
+   "url": "https://docs.soliditylang.org/en/latest/layout-of-source-files.html#pragmas",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Importing other source files",
+   "url": "https://docs.soliditylang.org/en/latest/layout-of-source-files.html#importing-other-source-files",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Comments",
+   "url": "https://docs.soliditylang.org/en/latest/layout-of-source-files.html#comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Structure of a contract",
+   "url": "https://docs.soliditylang.org/en/latest/structure-of-a-contract.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Value types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#value-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Booleans",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#booleans",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Integers",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#integers",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Fixed point numbers",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#fixed-point-numbers",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Address type",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#address",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Rational and integer literals",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#rational-and-integer-literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "compile-time-evaluation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — String literals",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#string-literals-and-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Enums",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#enums",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — User-defined value types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#user-defined-value-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Function types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#function-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "function-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Data location (storage, memory, calldata)",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#data-location",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "memory-management",
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Arrays",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#arrays",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Array slices",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#array-slices",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Structs",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#structs",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Mapping types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#mapping-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Operators",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Order of precedence of operators",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#order-of-precedence-of-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Conversions between elementary types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#conversions-between-elementary-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Control structures",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#control-structures",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Function calls (internal and external)",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#function-calls",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Creating contracts via new",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#creating-contracts-via-new",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "objects",
+    "constructors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Order of evaluation of expressions",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#order-of-evaluation-of-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Destructuring assignments",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#destructuring-assignments-and-returning-multiple-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "destructuring",
+    "assignment",
+    "tuples"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Scoping and declarations",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#scoping-and-declarations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Checked or unchecked arithmetic",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#checked-or-unchecked-arithmetic",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Error handling: assert, require, revert",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#error-handling-assert-require-revert-and-exceptions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "exceptions",
+    "assertions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — try/catch",
+   "url": "https://docs.soliditylang.org/en/latest/control-structures.html#try-catch",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Visibility and getters",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#visibility-and-getters",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "visibility",
+    "encapsulation",
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Function modifiers",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Transient storage",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#transient-storage",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "storage-duration",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Constant and immutable state variables",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#constant-and-immutable-state-variables",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — State mutability (view, pure)",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#state-mutability",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "purity",
+    "effect-systems"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Special functions (receive, fallback)",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#special-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Function overloading",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#function-overloading",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Events",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#events",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Custom errors",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#custom-errors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Inheritance",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#inheritance",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Multiple inheritance and C3 linearization",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#multiple-inheritance-and-linearization",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Constructors",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#constructors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constructors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Abstract contracts",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#abstract-contracts",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "abstract-classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Interfaces",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#interfaces",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Libraries",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#libraries",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Using for",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html#using-for",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Special variables and functions",
+   "url": "https://docs.soliditylang.org/en/latest/units-and-global-variables.html#special-variables-and-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — ABI encoding and decoding functions",
+   "url": "https://docs.soliditylang.org/en/latest/units-and-global-variables.html#abi-encoding-and-decoding-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Reserved keywords",
+   "url": "https://docs.soliditylang.org/en/latest/units-and-global-variables.html#reserved-keywords",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Inline assembly",
+   "url": "https://docs.soliditylang.org/en/latest/assembly.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unsafe"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Inline assembly — memory safety",
+   "url": "https://docs.soliditylang.org/en/latest/assembly.html#memory-safety",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unsafe",
+    "memory-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Language grammar",
+   "url": "https://docs.soliditylang.org/en/latest/grammar.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Contract ABI specification",
+   "url": "https://docs.soliditylang.org/en/latest/abi-spec.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "calling-convention-abi",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — ABI — function selector",
+   "url": "https://docs.soliditylang.org/en/latest/abi-spec.html#function-selector",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "calling-convention-abi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Layout of state variables in storage",
+   "url": "https://docs.soliditylang.org/en/latest/internals/layout_in_storage.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "memory-model",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Layout in memory",
+   "url": "https://docs.soliditylang.org/en/latest/internals/layout_in_memory.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "memory-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — The optimizer",
+   "url": "https://docs.soliditylang.org/en/latest/internals/optimizer.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — NatSpec format",
+   "url": "https://docs.soliditylang.org/en/latest/natspec-format.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — SMTChecker and formal verification",
+   "url": "https://docs.soliditylang.org/en/latest/smtchecker.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "verification"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Security considerations",
+   "url": "https://docs.soliditylang.org/en/latest/security-considerations.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Security — re-entrancy",
+   "url": "https://docs.soliditylang.org/en/latest/security-considerations.html#reentrancy",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Contract metadata",
+   "url": "https://docs.soliditylang.org/en/latest/metadata.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Using the compiler",
+   "url": "https://docs.soliditylang.org/en/latest/using-the-compiler.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "command-line"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Solidity v0.8.0 breaking changes",
+   "url": "https://docs.soliditylang.org/en/latest/080-breaking-changes.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Solidity docs — Language influences",
+   "url": "https://docs.soliditylang.org/en/latest/language-influences.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ethereum Yellow Paper — formal specification of the EVM",
+   "url": "https://ethereum.github.io/yellowpaper/paper.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Gavin Wood"
+   ],
+   "year": 2014,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "virtual-machine",
+    "blockchain-execution",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "Ethereum Improvement Proposals (EIPs) index",
+   "url": "https://eips.ethereum.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "EIP-20 — Token standard",
+   "url": "https://eips.ethereum.org/EIPS/eip-20",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "EIP-1153 — Transient storage opcodes",
+   "url": "https://eips.ethereum.org/EIPS/eip-1153",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2018,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "storage-duration"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Solidity blog (release announcements)",
+   "url": "https://soliditylang.org/blog/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity documentation — Types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity documentation — Reference Types",
+   "url": "https://docs.soliditylang.org/en/latest/types.html#reference-types",
+   "concepts": [
+    "value-reference-semantics",
+    "pointers-references"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity documentation — Contracts",
+   "url": "https://docs.soliditylang.org/en/latest/contracts.html",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Solidity docs — Cheatsheet",
+   "url": "https://docs.soliditylang.org/en/latest/cheatsheet.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords",
+    "operators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Solidity docs — Introduction to smart contracts",
+   "url": "https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Solidity docs — Solidity by Example (voting, auction, ...)",
+   "url": "https://docs.soliditylang.org/en/latest/solidity-by-example.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Solidity style guide",
+   "url": "https://docs.soliditylang.org/en/latest/style-guide.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Solidity docs — Common patterns",
+   "url": "https://docs.soliditylang.org/en/latest/common-patterns.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Solidity by Example (solidity-by-example.org)",
+   "url": "https://solidity-by-example.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "CryptoZombies — interactive Solidity course",
+   "url": "https://cryptozombies.io/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ethereum.org — Smart contract languages (Solidity vs Vyper vs Yul)",
+   "url": "https://ethereum.org/en/developers/docs/smart-contracts/languages/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "evm.codes — interactive EVM opcode reference",
+   "url": "https://www.evm.codes/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "instruction-set",
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Hello World",
+   "url": "https://solidity-by-example.org/hello-world/",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Primitive Data Types",
+   "url": "https://solidity-by-example.org/primitives/",
+   "concepts": [
+    "primitive-types",
+    "integers",
+    "booleans",
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Variables",
+   "url": "https://solidity-by-example.org/variables/",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Constants",
+   "url": "https://solidity-by-example.org/constants/",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Mapping",
+   "url": "https://solidity-by-example.org/mapping/",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Array",
+   "url": "https://solidity-by-example.org/array/",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Enum",
+   "url": "https://solidity-by-example.org/enum/",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Structs",
+   "url": "https://solidity-by-example.org/structs/",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Data Locations - Storage, Memory and Calldata",
+   "url": "https://solidity-by-example.org/data-locations/",
+   "concepts": [
+    "memory-management",
+    "storage-duration"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — If / Else",
+   "url": "https://solidity-by-example.org/if-else/",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — For and While Loop",
+   "url": "https://solidity-by-example.org/loop/",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Function",
+   "url": "https://solidity-by-example.org/function/",
+   "concepts": [
+    "functions",
+    "return"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Error",
+   "url": "https://solidity-by-example.org/error/",
+   "concepts": [
+    "error-handling",
+    "exceptions",
+    "assertions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Function Modifier",
+   "url": "https://solidity-by-example.org/function-modifier/",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Events",
+   "url": "https://solidity-by-example.org/events/",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Constructor",
+   "url": "https://solidity-by-example.org/constructor/",
+   "concepts": [
+    "constructors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Inheritance",
+   "url": "https://solidity-by-example.org/inheritance/",
+   "concepts": [
+    "inheritance",
+    "classes"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Interface",
+   "url": "https://solidity-by-example.org/interface/",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Visibility",
+   "url": "https://solidity-by-example.org/visibility/",
+   "concepts": [
+    "visibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Library",
+   "url": "https://solidity-by-example.org/library/",
+   "concepts": [
+    "modules",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Try Catch",
+   "url": "https://solidity-by-example.org/try-catch/",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Import",
+   "url": "https://solidity-by-example.org/import/",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Call",
+   "url": "https://solidity-by-example.org/call/",
+   "concepts": [
+    "blockchain-execution",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "Solidity by Example — Unchecked Math",
+   "url": "https://solidity-by-example.org/unchecked-math/",
+   "concepts": [
+    "integers",
+    "operators"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Solidity",
+   "url": "https://en.wikipedia.org/wiki/Solidity",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Solidity",
+   "url": "https://pldb.io/concepts/solidity.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

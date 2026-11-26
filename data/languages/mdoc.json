@@ -1,0 +1,421 @@
+{
+ "id": "mdoc",
+ "name": "man / mdoc macros",
+ "aliases": [
+  "mdoc",
+  "man macros",
+  "man(7)",
+  "mdoc(7)",
+  "-mandoc"
+ ],
+ "categories": [
+  "markup",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "macro",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1979,
+ "designers": [
+  "Cynthia Livingston (mdoc, 4.4BSD)",
+  "Douglas McIlroy (man, Version 7 Unix)"
+ ],
+ "summary": "The roff macro languages for Unix manual pages: man(7), the presentational V7 package, and mdoc(7), the semantic BSD package with macros for names, flags, arguments, functions and cross references; formatted by groff or the standalone mandoc compiler.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".1",
+  ".2",
+  ".3",
+  ".4",
+  ".5",
+  ".6",
+  ".7",
+  ".8",
+  ".9",
+  ".man",
+  ".mdoc"
+ ],
+ "homepage": "https://mandoc.bsd.lv/",
+ "influenced_by": [
+  "troff"
+ ],
+ "related": [
+  {
+   "id": "troff",
+   "relation": "dialect-of"
+  }
+ ],
+ "level_notes": {
+  "0": "mandoc (BSD) parses man and mdoc without a full roff engine; GNU groff implements them as macro packages. Files are linked from the OpenBSD src GitHub mirror.",
+  "1": "mdoc(7) and man(7) on man.openbsd.org are the de facto references.",
+  "3": "PLDB has no entry."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mandoc mdoc_macro.c — mdoc macro parser (block/in-line scoping rules)",
+   "url": "https://github.com/openbsd/src/blob/master/usr.bin/mandoc/mdoc_macro.c",
+   "authority": "community",
+   "implementation": "mandoc (OpenBSD src mirror)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "macros",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mandoc mdoc_validate.c — semantic validation of mdoc documents",
+   "url": "https://github.com/openbsd/src/blob/master/usr.bin/mandoc/mdoc_validate.c",
+   "authority": "community",
+   "implementation": "mandoc (OpenBSD src mirror)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mandoc mdoc_html.c — mdoc to HTML formatter",
+   "url": "https://github.com/openbsd/src/blob/master/usr.bin/mandoc/mdoc_html.c",
+   "authority": "community",
+   "implementation": "mandoc (OpenBSD src mirror)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mandoc man_macro.c — man(7) macro parser",
+   "url": "https://github.com/openbsd/src/blob/master/usr.bin/mandoc/man_macro.c",
+   "authority": "community",
+   "implementation": "mandoc (OpenBSD src mirror)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mandoc roff.c — the roff subset mandoc understands (requests, escapes, conditionals)",
+   "url": "https://github.com/openbsd/src/blob/master/usr.bin/mandoc/roff.c",
+   "authority": "community",
+   "implementation": "mandoc (OpenBSD src mirror)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "conditionals",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "OpenBSD regress/usr.bin/mandoc/mdoc — mandoc regression tests for mdoc",
+   "url": "https://github.com/openbsd/src/blob/master/regress/usr.bin/mandoc/mdoc/Makefile",
+   "authority": "community",
+   "implementation": "mandoc (OpenBSD src mirror)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — semantic markup language for formatting manual pages (OpenBSD/mandoc)",
+   "url": "https://man.openbsd.org/mdoc.7",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Manual structure (standard sections)",
+   "url": "https://man.openbsd.org/mdoc.7#MANUAL_STRUCTURE",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Sections and cross references (.Sh, .Ss, .Sx, .Xr)",
+   "url": "https://man.openbsd.org/mdoc.7#Sections_and_cross_references",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Displays and lists (.Bd, .Bl, .It)",
+   "url": "https://man.openbsd.org/mdoc.7#Displays_and_lists",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Semantic markup for command-line utilities (.Nm, .Fl, .Ar)",
+   "url": "https://man.openbsd.org/mdoc.7#Semantic_markup_for_command_line_utilities",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Semantic markup for function libraries (.Fn, .Fa, .Ft)",
+   "url": "https://man.openbsd.org/mdoc.7#Semantic_markup_for_function_libraries",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Macro syntax (block full-/partial-explicit/implicit, callable, parsed)",
+   "url": "https://man.openbsd.org/mdoc.7#MACRO_SYNTAX",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "macros",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Delimiters",
+   "url": "https://man.openbsd.org/mdoc.7#Delimiters",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — Compatibility (groff, historic implementations)",
+   "url": "https://man.openbsd.org/mdoc.7#COMPATIBILITY",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mdoc(7) — History (4.4BSD mdoc by Cynthia Livingston)",
+   "url": "https://man.openbsd.org/mdoc.7#HISTORY~2",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "man(7) — legacy formatting language for manual pages",
+   "url": "https://man.openbsd.org/man.7",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "man(7) — Macro syntax (line and block macros)",
+   "url": "https://man.openbsd.org/man.7#MACRO_SYNTAX",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "roff(7) — roff language reference as supported by mandoc",
+   "url": "https://man.openbsd.org/roff.7",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "mandoc_char(7) — mandoc special characters (escape sequences)",
+   "url": "https://man.openbsd.org/mandoc_char.7",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "groff_man(7) — GNU groff man macro package",
+   "url": "https://man7.org/linux/man-pages/man7/groff_man.7.html",
+   "authority": "official",
+   "implementation": "GNU groff",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "man-pages(7) — Linux man-pages conventions",
+   "url": "https://man7.org/linux/man-pages/man7/man-pages.7.html",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Practical UNIX Manuals (mdoc tutorial, Kristaps Dzonsons)",
+   "url": "https://mandoc.bsd.lv/mdoc/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "mandoc — history of UNIX manpages",
+   "url": "https://mandoc.bsd.lv/history.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "mandoc project home",
+   "url": "https://mandoc.bsd.lv/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Man page",
+   "url": "https://en.wikipedia.org/wiki/Man_page",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

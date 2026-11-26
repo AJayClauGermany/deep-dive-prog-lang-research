@@ -1,0 +1,75 @@
+{
+ "id": "tcl",
+ "name": "Tcl",
+ "aliases": [
+  "Tool Command Language",
+  "Tcl/Tk"
+ ],
+ "categories": [
+  "scripting",
+  "general-purpose",
+  "shell"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural",
+  "object-oriented",
+  "event-driven",
+  "functional"
+ ],
+ "typing": [
+  "dynamic",
+  "everything-is-a-string"
+ ],
+ "first_appeared": 1988,
+ "designers": [
+  "John Ousterhout"
+ ],
+ "summary": "Embeddable command language by John Ousterhout in which every value is (conceptually) a string and the whole syntax is twelve substitution rules (the 'Dodekalogue'); control structures, namespaces, objects (TclOO) and coroutines are ordinary commands, and Tk made it a popular GUI scripting language.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".tcl",
+  ".tm",
+  ".tk"
+ ],
+ "homepage": "https://www.tcl-lang.org/",
+ "influenced_by": [
+  "lisp",
+  "posix-sh",
+  "c"
+ ],
+ "level_notes": {
+  "0": "The C implementation (core.tcl-lang.org fossil repo, mirrored at github.com/tcltk/tcl) compiles scripts to bytecode (tclCompile.c) executed by tclExecute.c; Tcl_Obj dual representation (tclObj.c) caches non-string forms.",
+  "1": "No external standard; the Tcl(n) man page with its twelve rules is the language definition, the other TclCmd man pages define the built-in commands, and changes go through TIPs (Tcl Improvement Proposals)."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "tcltk/tcl — Tcl core (GitHub mirror of the fossil repository)", "url": "https://github.com/tcltk/tcl", "implementation": "Tcl", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "generic/tclParse.c — parser implementing the substitution rules", "url": "https://github.com/tcltk/tcl/blob/main/generic/tclParse.c", "implementation": "Tcl", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "lexical-structure"]},
+  {"level": 0, "kind": "implementation-source", "title": "generic/tclCompile.c — bytecode compiler", "url": "https://github.com/tcltk/tcl/blob/main/generic/tclCompile.c", "implementation": "Tcl", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["bytecode"]},
+  {"level": 0, "kind": "implementation-source", "title": "generic/tclExecute.c — bytecode engine", "url": "https://github.com/tcltk/tcl/blob/main/generic/tclExecute.c", "implementation": "Tcl", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "generic/tclObj.c — Tcl_Obj dual-ported values (string + internal rep)", "url": "https://github.com/tcltk/tcl/blob/main/generic/tclObj.c", "implementation": "Tcl", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["dynamic-typing", "type-conversion", "memory-model"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — Tcl(n): the twelve rules (Dodekalogue) defining Tcl syntax", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/Tcl.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "lexical-structure", "program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — expr: expression language", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/expr.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions", "operators", "operator-precedence"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — if", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/if.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — switch", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/switch.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["switch-case", "pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — foreach", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/foreach.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["iteration-foreach", "loops"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — proc", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/proc.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — upvar (call-by-name)", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/upvar.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope", "pointers-references"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — namespace", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/namespace.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["namespaces", "modules"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — dict", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/dict.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — try", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/try.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — coroutine", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/coroutine.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["coroutines"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl man page — oo::class", "url": "https://www.tcl-lang.org/man/tcl/TclCmd/class.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Tcl/Tk documentation — man page contents", "url": "https://www.tcl-lang.org/man/tcl/contents.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "proposal-index", "title": "TIP index — Tcl Improvement Proposals", "url": "https://core.tcl-lang.org/tips/doc/trunk/index.md", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
+  {"level": 1, "kind": "original-paper", "title": "Tcl: An Embeddable Command Language (USENIX Winter 1990)", "url": "https://web.stanford.edu/~ouster/cgi-bin/papers/tcl-usenix.pdf", "scope": "whole", "authority": "designer", "authors": ["John K. Ousterhout"], "year": 1990, "format": "pdf", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 2, "kind": "tutorial", "title": "Tcl tutorial (official)", "url": "https://www.tcl-lang.org/man/tcl/tutorial/tcltutorial.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "history", "title": "History of Tcl (John Ousterhout)", "url": "https://www.tcl-lang.org/about/history.html", "scope": "whole", "authority": "designer", "authors": ["John Ousterhout"], "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "wiki", "title": "The Tcler's Wiki", "url": "https://wiki.tcl-lang.org/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Tcl", "url": "https://en.wikipedia.org/wiki/Tcl", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Tcl", "url": "https://pldb.io/concepts/tcl.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

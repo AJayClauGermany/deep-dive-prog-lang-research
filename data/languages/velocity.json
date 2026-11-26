@@ -1,0 +1,70 @@
+{
+ "id": "velocity",
+ "name": "Apache Velocity",
+ "aliases": [
+  "VTL",
+  "Velocity Template Language"
+ ],
+ "categories": [
+  "template"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2000,
+ "designers": [
+  "Jason van Zyl"
+ ],
+ "summary": "Velocity Template Language (VTL): Java template language with $references, #set/#if/#foreach/#macro directives and Velocimacros, evaluated by the Apache Velocity Engine.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".vm",
+  ".vtl"
+ ],
+ "homepage": "https://velocity.apache.org/",
+ "related": [
+  {
+   "id": "java",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "freemarker",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "apache/velocity-engine; the JavaCC grammar Parser.jjt defines the syntax.",
+  "1": "VTL Reference.",
+  "2": "Velocity User Guide.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "apache/velocity-engine", "url": "https://github.com/apache/velocity-engine", "implementation": "Apache Velocity Engine", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": []},
+  {"level": 0, "kind": "grammar-source", "title": "Parser.jjt — VTL JavaCC grammar", "url": "https://github.com/apache/velocity-engine/blob/master/velocity-engine-core/src/main/parser/Parser.jjt", "implementation": "Apache Velocity Engine", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser", "lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "directive/Foreach.java", "url": "https://github.com/apache/velocity-engine/blob/master/velocity-engine-core/src/main/java/org/apache/velocity/runtime/directive/Foreach.java", "implementation": "Apache Velocity Engine", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["loops"]},
+  {"level": 0, "kind": "implementation-source", "title": "node/ASTIfStatement.java", "url": "https://github.com/apache/velocity-engine/blob/master/velocity-engine-core/src/main/java/org/apache/velocity/runtime/parser/node/ASTIfStatement.java", "implementation": "Apache Velocity Engine", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — References", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#references", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #set", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#set-establishes-the-value-of-a-reference", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["assignment"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #if/#elseif/#else", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#ifelseifelse-output-conditional-on-truth-of-statements", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #foreach", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#foreach-loops-through-a-list-of-objects", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #break", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#break-stops-the-current-directive", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loop-control"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #include", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#include-renders-local-files-that-are-not-parsed-by-velocity", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["imports"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #parse", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#parse-renders-a-local-template-that-is-parsed-by-velocity", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["imports"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #evaluate", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#evaluate-dynamically-evaluates-a-string-or-reference", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["eval"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — #macro (Velocimacros)", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#macro-allows-users-to-define-a-velocimacro-vm-a-repeated-segment-of-a-vtl-template-as-required", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros", "functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "VTL Reference — Comments", "url": "https://velocity.apache.org/engine/2.3/vtl-reference.html#comments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 2, "kind": "guide", "title": "Velocity User Guide", "url": "https://velocity.apache.org/engine/2.3/user-guide.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "Velocity User Guide — Escaping valid VTL references", "url": "https://velocity.apache.org/engine/2.3/user-guide.html#escaping-valid-vtl-references", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["escaping"]},
+  {"level": 2, "kind": "guide", "title": "Velocity User Guide — Range operator", "url": "https://velocity.apache.org/engine/2.3/user-guide.html#range-operator", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ranges"]},
+  {"level": 2, "kind": "guide", "title": "Velocity User Guide — Relational and logical operators", "url": "https://velocity.apache.org/engine/2.3/user-guide.html#relational-and-logical-operators", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Apache Velocity", "url": "https://en.wikipedia.org/wiki/Apache_Velocity", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

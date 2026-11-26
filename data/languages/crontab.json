@@ -1,0 +1,179 @@
+{
+ "id": "crontab",
+ "name": "crontab",
+ "aliases": [
+  "cron table",
+  "cron expressions"
+ ],
+ "categories": [
+  "configuration",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "first_appeared": 1975,
+ "designers": [
+  "Ken Thompson",
+  "Brian Kernighan (cron rewrite)",
+  "Paul Vixie"
+ ],
+ "summary": "Line-oriented table format for scheduling commands: five time fields (minute hour day-of-month month day-of-week) with lists, ranges and steps, followed by a shell command. POSIX standardises the core; Vixie cron/cronie add steps, names, @reboot-style nicknames and environment lines; many libraries reuse the expression syntax.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "reference-implementation"
+ ],
+ "standards": [
+  "POSIX.1-2024 XCU crontab"
+ ],
+ "related": [
+  {
+   "id": "posix-sh",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "0": "cronie (the Vixie cron descendant used by most Linux distributions).",
+  "1": "POSIX crontab utility; crontab(5) manual for the extended syntax.",
+  "2": "Few tutorials of note.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "cronie-crond/cronie — cron daemon",
+   "url": "https://github.com/cronie-crond/cronie",
+   "concepts": [
+    "interpreter"
+   ],
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "cronie",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cronie src/entry.c — crontab line parser",
+   "url": "https://github.com/cronie-crond/cronie/blob/master/src/entry.c",
+   "concepts": [
+    "parser"
+   ],
+   "access": "open",
+   "implementation": "cronie",
+   "authority": "community",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX crontab utility",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/crontab.html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX crontab — Input files (table format)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/crontab.html#tag_20_25_10",
+   "concepts": [
+    "program-structure",
+    "grammar",
+    "ranges"
+   ],
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "access": "open",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "crontab(5) — Linux man page (cronie)",
+   "url": "https://man7.org/linux/man-pages/man5/crontab.5.html",
+   "concepts": [
+    "program-structure",
+    "ranges",
+    "comments",
+    "variables"
+   ],
+   "authority": "official",
+   "implementation": "cronie",
+   "scope": "whole",
+   "access": "open",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "crontab.guru — cron schedule expression editor",
+   "url": "https://crontab.guru/",
+   "format": "interactive",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — cron",
+   "url": "https://en.wikipedia.org/wiki/Cron",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "crontab(1) — Linux manual page (cronie)",
+   "url": "https://man7.org/linux/man-pages/man1/crontab.1.html",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section",
+   "concepts": [
+    "command-line"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "cron(8) — Linux manual page (cronie)",
+   "url": "https://man7.org/linux/man-pages/man8/cron.8.html",
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section",
+   "concepts": [
+    "processes-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cronie src/crontab.c — crontab command",
+   "url": "https://github.com/cronie-crond/cronie/blob/master/src/crontab.c",
+   "access": "open",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section",
+   "concepts": [
+    "command-line"
+   ],
+   "implementation": "cronie"
+  }
+ ]
+}

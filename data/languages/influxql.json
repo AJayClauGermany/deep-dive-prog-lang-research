@@ -1,0 +1,240 @@
+{
+ "id": "influxql",
+ "name": "InfluxQL",
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "InfluxData"
+ ],
+ "summary": "SQL-like query language of InfluxDB for time-series measurements: SELECT over fields and tags with GROUP BY time() buckets, fill(), selectors and transformations, plus SHOW schema statements and continuous queries.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://docs.influxdata.com/influxdb/v1/query_language/",
+ "influenced_by": [
+  "sql"
+ ],
+ "level_notes": {
+  "3": "No dedicated Wikipedia or PLDB entry; the InfluxDB article covers it."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "influxdata/influxql — InfluxQL parser package (Go)",
+   "url": "https://github.com/influxdata/influxql",
+   "implementation": "influxql",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "influxql scanner.go — lexer",
+   "url": "https://github.com/influxdata/influxql/blob/master/scanner.go",
+   "implementation": "influxql",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "influxql parser.go — recursive-descent parser",
+   "url": "https://github.com/influxdata/influxql/blob/master/parser.go",
+   "implementation": "influxql",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "influxql ast.go — AST and statement types",
+   "url": "https://github.com/influxdata/influxql/blob/master/ast.go",
+   "implementation": "influxql",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "influxdb 1.x query/select.go — SELECT execution",
+   "url": "https://github.com/influxdata/influxdb/blob/master-1.x/query/select.go",
+   "implementation": "InfluxDB 1.x",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "InfluxQL reference (specification)",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/spec/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "InfluxQL — Explore data (SELECT, WHERE, GROUP BY time, ORDER BY, LIMIT)",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/explore-data/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "aggregation",
+    "sorting-limiting",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "InfluxQL — Explore schema (SHOW statements)",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/schema_exploration/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "InfluxQL functions (aggregations, selectors, transformations)",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/functions/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "window-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "InfluxQL math operators",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/math_operators/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "InfluxQL continuous queries",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/continuous_queries/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "views",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "InfluxQL in InfluxDB 3 Core",
+   "url": "https://docs.influxdata.com/influxdb3/core/reference/influxql/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Query data with InfluxQL (InfluxDB v2)",
+   "url": "https://docs.influxdata.com/influxdb/v2/query-data/influxql/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "InfluxQL overview (InfluxDB v1)",
+   "url": "https://docs.influxdata.com/influxdb/v1/query_language/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — InfluxDB",
+   "url": "https://en.wikipedia.org/wiki/InfluxDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

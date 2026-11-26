@@ -1,0 +1,201 @@
+{
+  "id": "zinc-machine",
+  "name": "ZINC / ZAM",
+  "aliases": [
+    "ZINC abstract machine",
+    "ZAM",
+    "Zinc Is Not Caml"
+  ],
+  "categories": [
+    "theoretical-model",
+    "abstract-machine",
+    "bytecode"
+  ],
+  "paradigms": [
+    "functional"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 1990,
+  "designers": [
+    "Xavier Leroy"
+  ],
+  "summary": "Leroy's ZINC experiment (1990): a strict variant of the Krivine machine with an argument stack and efficient multiple-argument application, which became the bytecode machine of Caml Light and OCaml (the ZAM).",
+  "status": "maintained",
+  "defined_by": [
+    "academic-paper",
+    "reference-implementation"
+  ],
+  "influenced_by": [
+    "krivine-machine",
+    "categorical-abstract-machine"
+  ],
+  "related": [
+    {
+      "id": "ocaml",
+      "relation": "host-of"
+    },
+    {
+      "id": "caml",
+      "relation": "host-of"
+    },
+    {
+      "id": "krivine-machine",
+      "relation": "variant-of"
+    }
+  ],
+  "level_notes": {
+    "0": "OCaml's bytecode compiler and interpreter (bytecomp/, runtime/interp.c) are the living ZAM implementation."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Leroy (1990) — The ZINC Experiment: An Economical Implementation of the ML Language (INRIA RT-117)",
+      "url": "https://xavierleroy.org/publi/ZINC.pdf",
+      "concepts": [
+        "virtual-machine",
+        "instruction-set",
+        "currying"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Xavier Leroy"
+      ],
+      "year": 1990
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Leroy — From Krivine's machine to the Caml implementations (talk slides)",
+      "url": "https://xavierleroy.org/talks/zam-kazam05.pdf",
+      "concepts": [
+        "virtual-machine",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Xavier Leroy"
+      ],
+      "year": 2005
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "OCaml manual — Batch compilation (ocamlc bytecode compiler)",
+      "url": "https://ocaml.org/manual/5.2/comp.html",
+      "concepts": [
+        "bytecode",
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml runtime/interp.c — the bytecode interpreter (ZAM)",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/runtime/interp.c",
+      "concepts": [
+        "interpreter",
+        "virtual-machine"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml runtime/caml/instruct.h — bytecode instruction set",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/runtime/caml/instruct.h",
+      "concepts": [
+        "instruction-set",
+        "bytecode"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml bytecomp/instruct.ml — symbolic ZAM instructions",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/bytecomp/instruct.ml",
+      "concepts": [
+        "instruction-set"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml bytecomp/bytegen.ml — compiling lambda code to ZAM instructions",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/bytecomp/bytegen.ml",
+      "concepts": [
+        "code-generation-backend",
+        "closures"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "OCaml bytecomp/emitcode.ml — emitting bytecode",
+      "url": "https://github.com/ocaml/ocaml/blob/trunk/bytecomp/emitcode.ml",
+      "concepts": [
+        "bytecode"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "OCaml"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Caml (history, from CAM to ZINC)",
+      "url": "https://en.wikipedia.org/wiki/Caml",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — OCaml",
+      "url": "https://en.wikipedia.org/wiki/OCaml",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

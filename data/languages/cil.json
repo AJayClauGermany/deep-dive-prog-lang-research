@@ -1,0 +1,363 @@
+{
+ "id": "cil",
+ "name": "Common Intermediate Language (ECMA-335)",
+ "aliases": [
+  "CIL",
+  "MSIL",
+  "IL",
+  ".NET bytecode"
+ ],
+ "categories": [
+  "bytecode",
+  "intermediate-representation",
+  "abstract-machine"
+ ],
+ "paradigms": [
+  "imperative",
+  "stack-based",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "verified",
+  "nominal",
+  "reified-generics"
+ ],
+ "first_appeared": 2002,
+ "designers": [
+  "Microsoft"
+ ],
+ "summary": "The stack-based, object-oriented bytecode and metadata format of the Common Language Infrastructure, standardised as ECMA-335/ISO 23271; the compilation target of C#, F#, VB.NET and other .NET languages, with reified generics and tail calls.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "ECMA-335",
+  "ISO/IEC 23271:2012"
+ ],
+ "file_extensions": [
+  ".il",
+  ".dll",
+  ".exe"
+ ],
+ "homepage": "https://ecma-international.org/publications-and-standards/standards/ecma-335/",
+ "influenced_by": [
+  "jvm-bytecode"
+ ],
+ "related": [
+  {
+   "id": "jvm-bytecode",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "ECMA-335 (free PDF from Ecma; identical ISO/IEC 23271 is paywalled) defines CIL in Partition III and metadata/ILAsm syntax in Partition II; the standard has not been revised since 2012 and the dotnet/runtime 'augments' document records later changes.",
+  "0": "CoreCLR and Mono (both in dotnet/runtime) are the main implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-335: Common Language Infrastructure (CLI), Partitions I-VI",
+   "url": "https://ecma-international.org/publications-and-standards/standards/ecma-335/",
+   "concepts": [
+    "bytecode",
+    "instruction-set",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2012,
+   "version": "6th edition",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMA-335 Augments — .NET runtime deviations and additions to the standard",
+   "url": "https://github.com/dotnet/runtime/blob/main/docs/design/specs/Ecma-335-Augments.md",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "System.Reflection.Emit.OpCodes — CIL opcode reference (.NET API docs)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/api/system.reflection.emit.opcodes",
+   "concepts": [
+    "instruction-set",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Ilasm.exe (IL Assembler)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/framework/tools/ilasm-exe-il-assembler",
+   "concepts": [
+    "assembler-directives",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Design and Implementation of Generics for the .NET Common Language Runtime (PLDI 2001)",
+   "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2001/01/designandimplementationofgenerics.pdf",
+   "concepts": [
+    "generics",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Andrew Kennedy",
+    "Don Syme"
+   ],
+   "year": 2001,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "What is managed code? (.NET)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/standard/managed-code",
+   "concepts": [
+    "bytecode",
+    "jit"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Metadata and self-describing components (.NET)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/standard/metadata-and-self-describing-components",
+   "concepts": [
+    "reflection",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Book of the Runtime (BOTR) — CoreCLR internals",
+   "url": "https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/README.md",
+   "concepts": [
+    "runtime-system",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "BOTR — Type system overview",
+   "url": "https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/type-system.md",
+   "concepts": [
+    "type-system",
+    "generics"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RyuJIT overview — how CIL is imported and compiled",
+   "url": "https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/jit/ryujit-overview.md",
+   "concepts": [
+    "jit",
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dotnet/runtime — CoreCLR, Mono and the .NET libraries",
+   "url": "https://github.com/dotnet/runtime",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "CoreCLR",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "coreclr/inc/opcode.def — CIL opcode table",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/coreclr/inc/opcode.def",
+   "concepts": [
+    "instruction-set",
+    "bytecode"
+   ],
+   "scope": "section",
+   "implementation": "CoreCLR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "coreclr/jit/importer.cpp — CIL importer of the RyuJIT compiler",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/importer.cpp",
+   "concepts": [
+    "jit",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "CoreCLR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "coreclr/interpreter/compiler.cpp — CoreCLR CIL interpreter front end",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/coreclr/interpreter/compiler.cpp",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "section",
+   "implementation": "CoreCLR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "coreclr/ilasm/asmparse.y — ILAsm grammar (yacc)",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/coreclr/ilasm/asmparse.y",
+   "concepts": [
+    "grammar",
+    "assembler-directives",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "CoreCLR ilasm",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mono/mini/method-to-ir.c — Mono CIL-to-IR translation",
+   "url": "https://github.com/dotnet/runtime/blob/main/src/mono/mono/mini/method-to-ir.c",
+   "concepts": [
+    "jit",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "Mono",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Mono.Cecil — read/write CIL assemblies",
+   "url": "https://github.com/jbevain/cecil",
+   "concepts": [
+    "bytecode",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "implementation": "Cecil",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "ILSpy — .NET decompiler and IL disassembler",
+   "url": "https://github.com/icsharpcode/ILSpy",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "implementation": "ILSpy",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Common Intermediate Language",
+   "url": "https://en.wikipedia.org/wiki/Common_Intermediate_Language",
+   "concepts": [
+    "history",
+    "bytecode"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — List of CIL instructions",
+   "url": "https://en.wikipedia.org/wiki/List_of_CIL_instructions",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CIL",
+   "url": "https://pldb.io/concepts/cil.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

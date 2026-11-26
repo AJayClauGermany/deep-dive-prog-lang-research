@@ -1,0 +1,416 @@
+{
+ "id": "ivy",
+ "name": "Ivy",
+ "aliases": [
+  "IVy"
+ ],
+ "categories": [
+  "specification-modeling",
+  "proof-assistant"
+ ],
+ "paradigms": [
+  "imperative",
+  "modular",
+  "first-order-logic"
+ ],
+ "typing": [
+  "static",
+  "first-order sorts"
+ ],
+ "first_appeared": 2016,
+ "designers": [
+  "Ken McMillan",
+  "Oded Padon",
+  "Mooly Sagiv",
+  "Sharon Shoham"
+ ],
+ "summary": "A language and tool for specifying, implementing and verifying distributed protocols: imperative actions over first-order relational state, restricted to decidable logic fragments (EPR) so that inductive invariants can be checked automatically with Z3; it also supports compositional assume-guarantee reasoning, specification-based testing and extraction to C++.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".ivy"
+ ],
+ "homepage": "https://microsoft.github.io/ivy/",
+ "influenced_by": [
+  "first-order-logic",
+  "smt-lib"
+ ],
+ "related": [
+  {
+   "id": "smt-lib",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "cpp",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the 'IVy language' page of the official documentation and the PLDI 2016 paper; no standard.",
+  "3": "No Wikipedia or PLDB entry for the Ivy verification language (PLDB ivy is Rob Pike's unrelated APL-like calculator).",
+  "0": "microsoft/ivy (Python 2/3) is the only implementation; it uses Z3 for checking and emits C++ for extraction."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language (language reference)",
+   "url": "https://microsoft.github.io/ivy/language.html",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Types and declarations",
+   "url": "https://microsoft.github.io/ivy/language.html#types-and-declarations-",
+   "concepts": [
+    "type-system",
+    "variables"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Actions",
+   "url": "https://microsoft.github.io/ivy/language.html#actions",
+   "concepts": [
+    "functions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Conditionals",
+   "url": "https://microsoft.github.io/ivy/language.html#conditionals",
+   "concepts": [
+    "conditionals"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Loops",
+   "url": "https://microsoft.github.io/ivy/language.html#loops",
+   "concepts": [
+    "loops"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Non-deterministic choice",
+   "url": "https://microsoft.github.io/ivy/language.html#non-deterministic-choice",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Expressions",
+   "url": "https://microsoft.github.io/ivy/language.html#expressions",
+   "concepts": [
+    "expressions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Assume, require and ensure",
+   "url": "https://microsoft.github.io/ivy/language.html#assume-require-and-ensure",
+   "concepts": [
+    "assertions",
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Safety and invariants",
+   "url": "https://microsoft.github.io/ivy/language.html#safety-and-invariants",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Axioms and background theories",
+   "url": "https://microsoft.github.io/ivy/language.html#axioms-and-background-theories",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Modules",
+   "url": "https://microsoft.github.io/ivy/language.html#modules",
+   "concepts": [
+    "modules",
+    "generics"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Macro definitions",
+   "url": "https://microsoft.github.io/ivy/language.html#macro-definitions",
+   "concepts": [
+    "macros"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Interpreted types and theories",
+   "url": "https://microsoft.github.io/ivy/language.html#interpreted-types-and-theories",
+   "concepts": [
+    "primitive-types",
+    "integers"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Assume/guarantee reasoning",
+   "url": "https://microsoft.github.io/ivy/language.html#assumeguarantee-reasoning",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The IVy language — Changes between language versions",
+   "url": "https://microsoft.github.io/ivy/language.html#changes-between-ivy-language-versions",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Ivy: Safety Verification by Interactive Generalization (PLDI 2016)",
+   "url": "https://www.cs.tau.ac.il/~sharonshoham/papers/pldi16.pdf",
+   "concepts": [
+    "design-rationale",
+    "verification"
+   ],
+   "authors": [
+    "Oded Padon",
+    "Kenneth L. McMillan",
+    "Aurojit Panda",
+    "Mooly Sagiv",
+    "Sharon Shoham"
+   ],
+   "year": 2016,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "IVy documentation — Decidability (the EPR fragment)",
+   "url": "https://microsoft.github.io/ivy/decidability.html",
+   "concepts": [
+    "logic-foundations",
+    "complexity"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "microsoft/ivy — IVy tool (Python)",
+   "url": "https://github.com/microsoft/ivy",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Ivy",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ivy/ivy_lexer.py — lexer",
+   "url": "https://github.com/microsoft/ivy/blob/master/ivy/ivy_lexer.py",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "Ivy",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ivy/ivy_parser.py — PLY grammar/parser",
+   "url": "https://github.com/microsoft/ivy/blob/master/ivy/ivy_parser.py",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "Ivy",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ivy/ivy_check.py — invariant checking",
+   "url": "https://github.com/microsoft/ivy/blob/master/ivy/ivy_check.py",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Ivy",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ivy/ivy_to_cpp.py — extraction to C++",
+   "url": "https://github.com/microsoft/ivy/blob/master/ivy/ivy_to_cpp.py",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "implementation": "Ivy",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "IVy documentation — Hello world",
+   "url": "https://microsoft.github.io/ivy/examples/helloworld.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "IVy documentation — Leader election ring (invariants)",
+   "url": "https://microsoft.github.io/ivy/examples/leader.html",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "IVy documentation — Specification-based testing",
+   "url": "https://microsoft.github.io/ivy/examples/testing/intro.html",
+   "concepts": [
+    "testing"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "IVy documentation — Proving (tactics, proof structure)",
+   "url": "https://microsoft.github.io/ivy/proving.html",
+   "concepts": [
+    "verification"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

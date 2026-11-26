@@ -1,0 +1,411 @@
+{
+ "id": "mlir",
+ "name": "MLIR",
+ "aliases": [
+  "Multi-Level Intermediate Representation"
+ ],
+ "categories": [
+  "intermediate-representation"
+ ],
+ "paradigms": [
+  "ssa",
+  "extensible"
+ ],
+ "typing": [
+  "static",
+  "extensible"
+ ],
+ "first_appeared": 2019,
+ "designers": [
+  "Chris Lattner",
+  "Tatiana Shpeisman",
+  "Mehdi Amini",
+  "River Riddle",
+  "Jacques Pienaar",
+  "Nicolas Vasilache"
+ ],
+ "summary": "Extensible SSA-based compiler IR in the LLVM project, in which 'dialects' define operations, types and attributes at many abstraction levels (tensors, loops, GPU, LLVM IR) with nested regions and progressive lowering between them.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".mlir",
+  ".mlirbc"
+ ],
+ "homepage": "https://mlir.llvm.org/",
+ "influenced_by": [
+  "llvm-ir"
+ ],
+ "related": [
+  {
+   "id": "llvm-ir",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The MLIR Language Reference defines only the core syntax and semantics; each dialect has its own (often generated) reference page.",
+  "0": "The implementation lives in llvm-project/mlir and is the de-facto definition."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR Language Reference",
+   "url": "https://mlir.llvm.org/docs/LangRef/",
+   "concepts": [
+    "intermediate-representation",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Notation and common syntax (EBNF)",
+   "url": "https://mlir.llvm.org/docs/LangRef/#notation",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Dialects",
+   "url": "https://mlir.llvm.org/docs/LangRef/#dialects",
+   "concepts": [
+    "modules",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Operations (generic form)",
+   "url": "https://mlir.llvm.org/docs/LangRef/#operations",
+   "concepts": [
+    "instruction-set",
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Regions and value scoping",
+   "url": "https://mlir.llvm.org/docs/LangRef/#regions",
+   "concepts": [
+    "scope",
+    "closures"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Control flow and SSACFG regions",
+   "url": "https://mlir.llvm.org/docs/LangRef/#control-flow-and-ssacfg-regions",
+   "concepts": [
+    "conditionals",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Type system",
+   "url": "https://mlir.llvm.org/docs/LangRef/#type-system",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR LangRef — Attributes",
+   "url": "https://mlir.llvm.org/docs/LangRef/#attributes",
+   "concepts": [
+    "annotations-attributes",
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "MLIR — MLIR Rationale",
+   "url": "https://mlir.llvm.org/docs/Rationale/Rationale/",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — 'arith' dialect",
+   "url": "https://mlir.llvm.org/docs/Dialects/ArithOps/",
+   "concepts": [
+    "operators",
+    "integers",
+    "floating-point"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — 'scf' structured control flow dialect",
+   "url": "https://mlir.llvm.org/docs/Dialects/SCFDialect/",
+   "concepts": [
+    "loops",
+    "conditionals"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — 'func' dialect",
+   "url": "https://mlir.llvm.org/docs/Dialects/Func/",
+   "concepts": [
+    "functions",
+    "return"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — 'memref' dialect",
+   "url": "https://mlir.llvm.org/docs/Dialects/MemRef/",
+   "concepts": [
+    "arrays",
+    "memory-management",
+    "pointers-references"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — 'llvm' dialect (LLVM IR in MLIR)",
+   "url": "https://mlir.llvm.org/docs/Dialects/LLVM/",
+   "concepts": [
+    "interoperability",
+    "code-generation-backend"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — Interfaces",
+   "url": "https://mlir.llvm.org/docs/Interfaces/",
+   "concepts": [
+    "interfaces-protocols"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MLIR — MLIR bytecode format",
+   "url": "https://mlir.llvm.org/docs/BytecodeFormat/",
+   "concepts": [
+    "bytecode",
+    "encoding-wire-format"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — Pattern rewriting: generic DAG-to-DAG rewriting",
+   "url": "https://mlir.llvm.org/docs/PatternRewriter/",
+   "concepts": [
+    "rewriting",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR — Dialect conversion (progressive lowering)",
+   "url": "https://mlir.llvm.org/docs/DialectConversion/",
+   "concepts": [
+    "code-generation",
+    "rewriting"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "MLIR: Scaling Compiler Infrastructure for Domain Specific Computation (CGO 2021; arXiv 2002.11054)",
+   "url": "https://arxiv.org/abs/2002.11054",
+   "concepts": [
+    "design-rationale",
+    "intermediate-representation"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Chris Lattner",
+    "Mehdi Amini",
+    "Uday Bondhugula",
+    "Albert Cohen",
+    "Andy Davis",
+    "Jacques Pienaar",
+    "River Riddle",
+    "Tatiana Shpeisman",
+    "Nicolas Vasilache",
+    "Oleksandr Zinenko"
+   ],
+   "year": 2020,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/",
+   "concepts": [
+    "hello-world",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MLIR lib/AsmParser/Parser.cpp — textual IR parser",
+   "url": "https://github.com/llvm/llvm-project/blob/main/mlir/lib/AsmParser/Parser.cpp",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "MLIR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MLIR lib/IR/Verifier.cpp — dominance and region verification",
+   "url": "https://github.com/llvm/llvm-project/blob/main/mlir/lib/IR/Verifier.cpp",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "MLIR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MLIR lib/Target/LLVMIR/ModuleTranslation.cpp — export to LLVM IR",
+   "url": "https://github.com/llvm/llvm-project/blob/main/mlir/lib/Target/LLVMIR/ModuleTranslation.cpp",
+   "concepts": [
+    "code-generation-backend",
+    "interoperability"
+   ],
+   "scope": "section",
+   "implementation": "MLIR",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MLIR (software)",
+   "url": "https://en.wikipedia.org/wiki/MLIR_(software)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MLIR",
+   "url": "https://pldb.io/concepts/mlir.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

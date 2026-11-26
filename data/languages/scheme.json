@@ -1,0 +1,2337 @@
+{
+  "id": "scheme",
+  "name": "Scheme",
+  "aliases": [
+    "R5RS",
+    "R6RS",
+    "R7RS",
+    "Scheme language"
+  ],
+  "categories": [
+    "general-purpose",
+    "functional",
+    "educational"
+  ],
+  "paradigms": [
+    "functional",
+    "imperative",
+    "meta"
+  ],
+  "typing": [
+    "dynamic",
+    "strong",
+    "latent"
+  ],
+  "first_appeared": 1975,
+  "designers": [
+    "Guy L. Steele Jr.",
+    "Gerald Jay Sussman"
+  ],
+  "summary": "Minimalist, lexically scoped Lisp dialect with first-class continuations, proper tail calls and hygienic macros, defined by the Revised^n Reports (R5RS, R6RS, R7RS) and extended by SRFIs.",
+  "status": "active",
+  "defined_by": [
+    "community-specification",
+    "international-standard",
+    "academic-paper"
+  ],
+  "standards": [
+    "IEEE 1178-1990",
+    "R5RS",
+    "R6RS",
+    "R7RS-small"
+  ],
+  "file_extensions": [
+    ".scm",
+    ".ss",
+    ".sld",
+    ".sls",
+    ".sps"
+  ],
+  "homepage": "https://www.scheme.org/",
+  "influenced_by": [
+    "lisp",
+    "algol-60",
+    "lambda-calculus",
+    "maclisp"
+  ],
+  "related": [
+    {
+      "id": "lisp",
+      "relation": "dialect-of"
+    },
+    {
+      "id": "racket",
+      "relation": "family"
+    },
+    {
+      "id": "guile",
+      "relation": "family"
+    },
+    {
+      "id": "chez-scheme",
+      "relation": "family"
+    },
+    {
+      "id": "chicken-scheme",
+      "relation": "family"
+    },
+    {
+      "id": "t-lang",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "Defined by community reports: R5RS (1998), R6RS (2007, large and library-based) and R7RS-small (2013, the current small language; R7RS-large in progress). IEEE 1178-1990 is withdrawn. SRFIs are the community proposal process. Lambda Papers (Steele & Sussman, 1975-80) are the defining papers.",
+    "0": "Many independent implementations; Chez Scheme (R6RS, also Racket CS back end) and Chibi-Scheme (R7RS reference-like small implementation) are linked here. Guile and CHICKEN have their own entries."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — Revised⁷ Report on the Algorithmic Language Scheme (errata-corrected HTML)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs.html",
+      "concepts": [
+        "grammar",
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "authors": [
+        "Alex Shinn",
+        "John Cowan",
+        "Arthur A. Gleckler"
+      ],
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — official PDF",
+      "url": "https://standards.scheme.org/official/r7rs.pdf",
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 1.3.2 Error situations and unspecified behavior",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-3.html#TAG:__tex2page_sec_1.3.2",
+      "concepts": [
+        "error-handling",
+        "undefined-behavior"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 2.1 Identifiers",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-4.html#TAG:__tex2page_sec_2.1",
+      "concepts": [
+        "identifiers",
+        "lexical-structure"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 2.2 Whitespace and comments",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-4.html#TAG:__tex2page_sec_2.2",
+      "concepts": [
+        "comments",
+        "whitespace-layout"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 2.4 Datum labels",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-4.html#TAG:__tex2page_sec_2.4",
+      "concepts": [
+        "literals",
+        "references-anchors"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 3.1 Variables, syntactic keywords, and regions",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-5.html#TAG:__tex2page_sec_3.1",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 3.2 Disjointness of types",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-5.html#TAG:__tex2page_sec_3.2",
+      "concepts": [
+        "type-system",
+        "dynamic-typing"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 3.4 Storage model",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-5.html#TAG:__tex2page_sec_3.4",
+      "concepts": [
+        "memory-management",
+        "value-reference-semantics"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 3.5 Proper tail recursion",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-5.html#TAG:__tex2page_sec_3.5",
+      "concepts": [
+        "tail-calls",
+        "recursion"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.1.2 Literal expressions (quote)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.1.2",
+      "concepts": [
+        "literals",
+        "quotation-homoiconicity"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.1.4 Procedures (lambda)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.1.4",
+      "concepts": [
+        "functions",
+        "closures"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.1.5 Conditionals (if)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.1.5",
+      "concepts": [
+        "conditionals"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.1.6 Assignments (set!)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.1.6",
+      "concepts": [
+        "assignment"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.1 Derived conditionals (cond, case, and, or, when, unless)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.1",
+      "concepts": [
+        "conditionals",
+        "switch-case",
+        "short-circuit"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.2 Binding constructs (let, let*, letrec, let-values)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.2",
+      "concepts": [
+        "variables",
+        "scope",
+        "destructuring"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.4 Iteration (do, named let)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.4",
+      "concepts": [
+        "loops",
+        "recursion"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.5 Delayed evaluation (delay, force, make-promise)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.5",
+      "concepts": [
+        "lazy-evaluation"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.6 Dynamic bindings (parameterize)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.6",
+      "concepts": [
+        "scope"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.7 Exception handling (guard)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.7",
+      "concepts": [
+        "exceptions"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.8 Quasiquotation",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.8",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.2.9 Case-lambda",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.9",
+      "concepts": [
+        "overloading",
+        "parameters-arguments"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.3 Macros (syntax-rules, hygiene)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.3",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 4.3.2 Pattern language of syntax-rules",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.3.2",
+      "concepts": [
+        "macros",
+        "pattern-matching"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 5.1 Programs",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-7.html#TAG:__tex2page_sec_5.1",
+      "concepts": [
+        "program-structure"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 5.2 Import declarations",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-7.html#TAG:__tex2page_sec_5.2",
+      "concepts": [
+        "imports"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 5.5 Record-type definitions",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-7.html#TAG:__tex2page_sec_5.5",
+      "concepts": [
+        "records-structs"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 5.6 Libraries (define-library)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-7.html#TAG:__tex2page_sec_5.6",
+      "concepts": [
+        "modules",
+        "visibility"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.1 Equivalence predicates (eq?, eqv?, equal?)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.1",
+      "concepts": [
+        "type-equivalence"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.2 Numbers (numerical tower, exactness)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.2",
+      "concepts": [
+        "integers",
+        "floating-point",
+        "primitive-types"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.3 Booleans",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.3",
+      "concepts": [
+        "booleans"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.4 Pairs and lists",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.4",
+      "concepts": [
+        "lists"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.5 Symbols",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.5",
+      "concepts": [
+        "primitive-types"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.6 Characters",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.6",
+      "concepts": [
+        "characters",
+        "unicode"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.7 Strings",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.7",
+      "concepts": [
+        "strings"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.8 Vectors",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.8",
+      "concepts": [
+        "arrays"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.10 Control features (call/cc, values, dynamic-wind)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.10",
+      "concepts": [
+        "continuations",
+        "higher-order-functions",
+        "resource-management"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.11 Exceptions (raise, with-exception-handler, error)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.11",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.12 Environments and evaluation (eval)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.12",
+      "concepts": [
+        "eval"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.13 Input and output (ports)",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.13",
+      "concepts": [
+        "input-output",
+        "file-io"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 6.14 System interface",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.14",
+      "concepts": [
+        "command-line",
+        "processes-system"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 7.1 Formal syntax",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-9.html#TAG:__tex2page_sec_7.1",
+      "concepts": [
+        "grammar",
+        "formal-grammars"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R7RS-small — 7.2 Formal (denotational) semantics",
+      "url": "https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-9.html#TAG:__tex2page_sec_7.2",
+      "concepts": [
+        "formal-semantics",
+        "continuations"
+      ],
+      "authority": "standards-body",
+      "version": "R7RS-small",
+      "year": 2013,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — Revised⁶ Report on the Algorithmic Language Scheme (errata-corrected HTML)",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs.html",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "authors": [
+        "Michael Sperber",
+        "R. Kent Dybvig",
+        "Matthew Flatt",
+        "Anton van Straaten"
+      ],
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 3.1 Numerical tower",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-6.html#node_sec_3.1",
+      "concepts": [
+        "integers",
+        "floating-point"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 4.2 Lexical syntax",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-7.html#node_sec_4.2",
+      "concepts": [
+        "lexical-structure",
+        "literals"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 5.3 Exceptional situations",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-8.html#node_sec_5.3",
+      "concepts": [
+        "exceptions"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 5.11 Proper tail recursion",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-8.html#node_sec_5.11",
+      "concepts": [
+        "tail-calls"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 7.1 Library form",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-10.html#node_sec_7.1",
+      "concepts": [
+        "modules",
+        "imports",
+        "visibility"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 7.2 Import and export levels (phasing)",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-10.html#node_sec_7.2",
+      "concepts": [
+        "macros",
+        "compile-time-evaluation"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — 10 Expansion process",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-13.html#node_chap_10",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS — A Formal semantics (operational)",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-Z-H-15.html#node_chap_A",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS Standard Libraries (errata-corrected HTML)",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-lib.html",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS Standard Libraries — 6 Records",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-lib-Z-H-7.html#node_chap_6",
+      "concepts": [
+        "records-structs"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS Standard Libraries — 7 Exceptions and conditions",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-lib-Z-H-8.html#node_chap_7",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS Standard Libraries — 12 syntax-case",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-lib-Z-H-13.html#node_chap_12",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS Standard Libraries — 13 Hashtables",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-lib-Z-H-14.html#node_chap_13",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R6RS Standard Libraries — 14 Enumerations",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-lib-Z-H-15.html#node_chap_14",
+      "concepts": [
+        "enums"
+      ],
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "R6RS Rationale (errata-corrected HTML)",
+      "url": "https://standards.scheme.org/corrected-r6rs/r6rs-rationale.html",
+      "concepts": [
+        "design-rationale"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "R6RS",
+      "year": 2007,
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R5RS — Revised⁵ Report on Scheme: Expressions (incl. syntax-rules macros)",
+      "url": "https://standards.scheme.org/corrected-r5rs/r5rs-Z-H-7.html",
+      "concepts": [
+        "expressions",
+        "macros",
+        "conditionals"
+      ],
+      "authority": "standards-body",
+      "version": "R5RS",
+      "year": 1998,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R5RS — Formal syntax and semantics",
+      "url": "https://standards.scheme.org/corrected-r5rs/r5rs-Z-H-10.html",
+      "concepts": [
+        "grammar",
+        "formal-semantics"
+      ],
+      "authority": "standards-body",
+      "version": "R5RS",
+      "year": 1998,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "R5RS — Revised⁵ Report on the Algorithmic Language Scheme (HTML)",
+      "url": "https://standards.scheme.org/corrected-r5rs/r5rs.html",
+      "scope": "whole",
+      "authority": "standards-body",
+      "version": "R5RS",
+      "year": 1998,
+      "authors": [
+        "Richard Kelsey",
+        "William Clinger",
+        "Jonathan Rees"
+      ],
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "index",
+      "title": "standards.scheme.org — all Scheme reports (R0RS–R7RS, IEEE 1178)",
+      "url": "https://standards.scheme.org/",
+      "concepts": [
+        "standardization",
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "R7RS-large — working site and fascicles",
+      "url": "https://r7rs.org/",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal-index",
+      "title": "SRFI — Scheme Requests for Implementation (index)",
+      "url": "https://srfi.schemers.org/",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 1: List Library",
+      "url": "https://srfi.schemers.org/srfi-1/srfi-1.html",
+      "concepts": [
+        "lists",
+        "higher-order-functions"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 9: Defining Record Types",
+      "url": "https://srfi.schemers.org/srfi-9/srfi-9.html",
+      "concepts": [
+        "records-structs"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 18: Multithreading support",
+      "url": "https://srfi.schemers.org/srfi-18/srfi-18.html",
+      "concepts": [
+        "threads",
+        "synchronization"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 34: Exception Handling for Programs",
+      "url": "https://srfi.schemers.org/srfi-34/srfi-34.html",
+      "concepts": [
+        "exceptions"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 39: Parameter objects",
+      "url": "https://srfi.schemers.org/srfi-39/srfi-39.html",
+      "concepts": [
+        "scope"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 41: Streams",
+      "url": "https://srfi.schemers.org/srfi-41/srfi-41.html",
+      "concepts": [
+        "lazy-evaluation",
+        "iterators"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 42: Eager Comprehensions",
+      "url": "https://srfi.schemers.org/srfi-42/srfi-42.html",
+      "concepts": [
+        "comprehensions"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 69: Basic hash tables",
+      "url": "https://srfi.schemers.org/srfi-69/srfi-69.html",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 115: Scheme Regular Expressions",
+      "url": "https://srfi.schemers.org/srfi-115/srfi-115.html",
+      "concepts": [
+        "regular-expressions"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 158: Generators and Accumulators",
+      "url": "https://srfi.schemers.org/srfi-158/srfi-158.html",
+      "concepts": [
+        "generators"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 226: Control Features (delimited continuations, threads)",
+      "url": "https://srfi.schemers.org/srfi-226/srfi-226.html",
+      "concepts": [
+        "continuations",
+        "threads"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "SRFI 241: Match — Simple Pattern-Matching Syntax",
+      "url": "https://srfi.schemers.org/srfi-241/srfi-241.html",
+      "concepts": [
+        "pattern-matching"
+      ],
+      "authority": "community",
+      "year": null,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Lambda Papers — SCHEME: An Interpreter for Extended Lambda Calculus (AIM-349)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-scheme-report.html",
+      "concepts": [
+        "history",
+        "closures",
+        "continuations"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Gerald Jay Sussman"
+      ],
+      "year": 1975,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Lambda Papers — LAMBDA: The Ultimate Imperative (AIM-353)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-ltu-imperative.html",
+      "concepts": [
+        "closures",
+        "continuations"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Gerald Jay Sussman"
+      ],
+      "year": 1976,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Lambda Papers — LAMBDA: The Ultimate Declarative (AIM-379)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-ltu-declarative.html",
+      "concepts": [
+        "closures",
+        "functions"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Gerald Jay Sussman"
+      ],
+      "year": 1976,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Lambda Papers — Debunking the \"Expensive Procedure Call\" Myth (AIM-443)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-ltu-goto.html",
+      "concepts": [
+        "tail-calls",
+        "calling-convention-abi"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Gerald Jay Sussman"
+      ],
+      "year": 1977,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Lambda Papers — The Revised Report on SCHEME (AIM-452)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-revised-report.html",
+      "concepts": [
+        "design-rationale"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Gerald Jay Sussman"
+      ],
+      "year": 1978,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Lambda Papers — The Art of the Interpreter (AIM-453)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-interpreter.html",
+      "concepts": [
+        "interpreter",
+        "scope"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Gerald Jay Sussman"
+      ],
+      "year": 1978,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Lambda Papers — RABBIT: A Compiler for SCHEME (AI-TR-474)",
+      "url": "https://research.scheme.org/lambda-papers/lambda-papers-rabbit.html",
+      "concepts": [
+        "compiler-architecture",
+        "continuations",
+        "optimization"
+      ],
+      "authority": "designer",
+      "authors": [
+        "Guy L. Steele Jr."
+      ],
+      "year": 1978,
+      "scope": "section",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "bibliography",
+      "title": "The Lambda Papers — index",
+      "url": "https://research.scheme.org/lambda-papers/",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — full text",
+      "url": "https://www.scheme.com/tspl4/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Variables and Let Expressions",
+      "url": "https://www.scheme.com/tspl4/start.html#./start:h4",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Lambda Expressions",
+      "url": "https://www.scheme.com/tspl4/start.html#./start:h5",
+      "concepts": [
+        "functions",
+        "closures"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Conditional Expressions",
+      "url": "https://www.scheme.com/tspl4/start.html#./start:h7",
+      "concepts": [
+        "conditionals"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Syntactic Extension",
+      "url": "https://www.scheme.com/tspl4/further.html#./further:h1",
+      "concepts": [
+        "macros"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Continuations",
+      "url": "https://www.scheme.com/tspl4/further.html#./further:h3",
+      "concepts": [
+        "continuations"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Continuation Passing Style",
+      "url": "https://www.scheme.com/tspl4/further.html#./further:h4",
+      "concepts": [
+        "continuations"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Recursion and Iteration",
+      "url": "https://www.scheme.com/tspl4/control.html#./control:h4",
+      "concepts": [
+        "recursion",
+        "loops",
+        "tail-calls"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Mapping and Folding",
+      "url": "https://www.scheme.com/tspl4/control.html#./control:h5",
+      "concepts": [
+        "higher-order-functions"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Multiple Values",
+      "url": "https://www.scheme.com/tspl4/control.html#./control:h8",
+      "concepts": [
+        "return"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Constants and Quotation",
+      "url": "https://www.scheme.com/tspl4/objects.html#./objects:h1",
+      "concepts": [
+        "quotation-homoiconicity",
+        "literals"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Strings",
+      "url": "https://www.scheme.com/tspl4/objects.html#./objects:h8",
+      "concepts": [
+        "strings"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Hashtables",
+      "url": "https://www.scheme.com/tspl4/objects.html#./objects:h13",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Opening Files",
+      "url": "https://www.scheme.com/tspl4/io.html#./io:h2",
+      "concepts": [
+        "file-io"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Syntax-Case Transformers",
+      "url": "https://www.scheme.com/tspl4/syntax.html#./syntax:h3",
+      "concepts": [
+        "macros"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Defining Records",
+      "url": "https://www.scheme.com/tspl4/records.html#./records:h1",
+      "concepts": [
+        "records-structs"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Defining New Libraries",
+      "url": "https://www.scheme.com/tspl4/libraries.html#./libraries:h2",
+      "concepts": [
+        "modules"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — Raising and Handling Exceptions",
+      "url": "https://www.scheme.com/tspl4/exceptions.html#./exceptions:h1",
+      "concepts": [
+        "exceptions"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Scheme Programming Language, 4th ed. (Dybvig) — A Meta-Circular Interpreter for Scheme",
+      "url": "https://www.scheme.com/tspl4/examples.html#./examples:h7",
+      "concepts": [
+        "interpreter",
+        "eval"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 2009,
+      "version": "R6RS",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Structure and Interpretation of Computer Programs, 2nd ed. — full text (MIT Press)",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book.html",
+      "scope": "whole",
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 1.3 Formulating Abstractions with Higher-Order Procedures",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-12.html",
+      "concepts": [
+        "higher-order-functions",
+        "closures"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 1.2 Procedures and the Processes They Generate",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-11.html",
+      "concepts": [
+        "recursion",
+        "tail-calls"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 2.3 Symbolic Data (quote)",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-16.html",
+      "concepts": [
+        "quotation-homoiconicity"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 3.2 The Environment Model of Evaluation",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-21.html",
+      "concepts": [
+        "scope",
+        "closures"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 3.5 Streams",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-24.html",
+      "concepts": [
+        "lazy-evaluation"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 4.1 The Metacircular Evaluator",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-26.html",
+      "concepts": [
+        "interpreter",
+        "eval"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 5.3 Storage Allocation and Garbage Collection",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-33.html",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "SICP (Abelson & Sussman) — 5.5 Compilation",
+      "url": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-35.html",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "authors": [
+        "Harold Abelson",
+        "Gerald Jay Sussman",
+        "Julie Sussman"
+      ],
+      "year": 1996,
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Teach Yourself Scheme in Fixnum Days (Sitaram)",
+      "url": "https://ds26gte.github.io/tyscheme/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Dorai Sitaram"
+      ],
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Teach Yourself Scheme in Fixnum Days — 4 Conditionals",
+      "url": "https://ds26gte.github.io/tyscheme/index-Z-H-6.html#TAG:__tex2page_chap_4",
+      "concepts": [
+        "conditionals"
+      ],
+      "authors": [
+        "Dorai Sitaram"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Teach Yourself Scheme in Fixnum Days — 8 Macros",
+      "url": "https://ds26gte.github.io/tyscheme/index-Z-H-10.html#TAG:__tex2page_chap_8",
+      "concepts": [
+        "macros"
+      ],
+      "authors": [
+        "Dorai Sitaram"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Teach Yourself Scheme in Fixnum Days — 13 Jumps (call/cc)",
+      "url": "https://ds26gte.github.io/tyscheme/index-Z-H-15.html#TAG:__tex2page_chap_13",
+      "concepts": [
+        "continuations"
+      ],
+      "authors": [
+        "Dorai Sitaram"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Teach Yourself Scheme in Fixnum Days — 12 Objects and classes",
+      "url": "https://ds26gte.github.io/tyscheme/index-Z-H-14.html#TAG:__tex2page_chap_12",
+      "concepts": [
+        "objects",
+        "classes"
+      ],
+      "authors": [
+        "Dorai Sitaram"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Three Implementation Models for Scheme (Dybvig, PhD thesis)",
+      "url": "https://web.archive.org/web/20190924233628/https://cs.indiana.edu/~dyb/papers/3imp.pdf",
+      "concepts": [
+        "compiler-architecture",
+        "continuations",
+        "virtual-machine"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 1987,
+      "authority": "academic",
+      "scope": "whole",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Writing Hygienic Macros in Scheme with Syntax-Case (Dybvig, TR356)",
+      "url": "https://web.archive.org/web/20190926063216/https://cs.indiana.edu/~dyb/pubs/tr356.pdf",
+      "concepts": [
+        "macros"
+      ],
+      "authors": [
+        "R. Kent Dybvig"
+      ],
+      "year": 1992,
+      "authority": "academic",
+      "scope": "whole",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "history",
+      "title": "The Evolution of Lisp (Steele & Gabriel, HOPL II, uncut)",
+      "url": "https://www.dreamsongs.com/Files/HOPL2-Uncut.pdf",
+      "concepts": [
+        "history",
+        "language-evolution"
+      ],
+      "authors": [
+        "Guy L. Steele Jr.",
+        "Richard P. Gabriel"
+      ],
+      "year": 1993,
+      "authority": "academic",
+      "scope": "section",
+      "format": "pdf",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "docs.scheme.org — Scheme documentation portal",
+      "url": "https://docs.scheme.org/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "cisco/ChezScheme — Chez Scheme (R6RS)",
+      "url": "https://github.com/cisco/ChezScheme",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "implementation": "Chez Scheme",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chez Scheme s/syntax.ss — syntax-case expander (psyntax lineage)",
+      "url": "https://github.com/cisco/ChezScheme/blob/main/s/syntax.ss",
+      "concepts": [
+        "macros"
+      ],
+      "implementation": "Chez Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chez Scheme s/cpnanopass.ss — nanopass back end",
+      "url": "https://github.com/cisco/ChezScheme/blob/main/s/cpnanopass.ss",
+      "concepts": [
+        "compiler-architecture",
+        "intermediate-representation"
+      ],
+      "implementation": "Chez Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chez Scheme s/cp0.ss — source-level optimizer (inliner)",
+      "url": "https://github.com/cisco/ChezScheme/blob/main/s/cp0.ss",
+      "concepts": [
+        "optimization"
+      ],
+      "implementation": "Chez Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chez Scheme s/read.ss — reader",
+      "url": "https://github.com/cisco/ChezScheme/blob/main/s/read.ss",
+      "concepts": [
+        "lexer",
+        "parser"
+      ],
+      "implementation": "Chez Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chez Scheme c/gc.c — generational garbage collector",
+      "url": "https://github.com/cisco/ChezScheme/blob/main/c/gc.c",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "implementation": "Chez Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "ashinn/chibi-scheme — small embeddable R7RS implementation",
+      "url": "https://github.com/ashinn/chibi-scheme",
+      "concepts": [
+        "interpreter"
+      ],
+      "implementation": "Chibi-Scheme",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chibi-Scheme eval.c — analyzer/compiler to bytecode",
+      "url": "https://github.com/ashinn/chibi-scheme/blob/master/eval.c",
+      "concepts": [
+        "semantic-analysis",
+        "bytecode"
+      ],
+      "implementation": "Chibi-Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chibi-Scheme vm.c — bytecode virtual machine",
+      "url": "https://github.com/ashinn/chibi-scheme/blob/master/vm.c",
+      "concepts": [
+        "virtual-machine",
+        "continuations"
+      ],
+      "implementation": "Chibi-Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chibi-Scheme sexp.c — core data types and reader",
+      "url": "https://github.com/ashinn/chibi-scheme/blob/master/sexp.c",
+      "concepts": [
+        "parser",
+        "runtime-system"
+      ],
+      "implementation": "Chibi-Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chibi-Scheme gc.c — precise mark-and-sweep GC",
+      "url": "https://github.com/ashinn/chibi-scheme/blob/master/gc.c",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "implementation": "Chibi-Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Chibi-Scheme lib/init-7.scm — core R7RS syntax in Scheme (cond, case, syntax-rules)",
+      "url": "https://github.com/ashinn/chibi-scheme/blob/master/lib/init-7.scm",
+      "concepts": [
+        "macros",
+        "conditionals"
+      ],
+      "implementation": "Chibi-Scheme",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "Chibi-Scheme tests/r7rs-tests.scm — R7RS conformance tests",
+      "url": "https://github.com/ashinn/chibi-scheme/blob/master/tests/r7rs-tests.scm",
+      "concepts": [
+        "testing"
+      ],
+      "implementation": "Chibi-Scheme",
+      "format": "source-file",
+      "scope": "section",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Scheme (programming language)",
+      "url": "https://en.wikipedia.org/wiki/Scheme_(programming_language)",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Scheme",
+      "url": "https://pldb.io/concepts/scheme.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Scheme",
+      "url": "https://rosettacode.org/wiki/Category:Scheme",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "benchmark",
+      "title": "r7rs-benchmarks — cross-implementation Scheme benchmarks (ecraven)",
+      "url": "https://ecraven.github.io/r7rs-benchmarks/",
+      "concepts": [
+        "performance"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "get.scheme.org — list of Scheme implementations",
+      "url": "https://get.scheme.org/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "vala",
+ "name": "Vala",
+ "categories": ["general-purpose", "object-oriented"],
+ "paradigms": ["object-oriented", "imperative", "event-driven", "generic"],
+ "typing": ["static", "strong", "inferred-local", "nominal"],
+ "first_appeared": 2006,
+ "designers": ["Jürg Billeter", "Raffaele Sandrini"],
+ "summary": "C#-like object-oriented language for the GNOME/GObject type system: the valac compiler translates Vala to C that uses GLib/GObject, providing classes, interfaces, signals, properties, generics, async methods and reference-counted memory management without a separate runtime.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation", "informal"],
+ "file_extensions": [".vala", ".vapi"],
+ "homepage": "https://vala.dev/",
+ "influenced_by": ["csharp", "java", "c"],
+ "related": [{"id": "c", "relation": "compiles-to"}],
+ "level_notes": {"1": "No formal standard; the draft Vala Reference Manual (GNOME wiki) is the closest to a specification. valac is the de facto definition.", "0": "valac is developed on gitlab.gnome.org (blocked from the verification sandbox); file links use the official GitHub mirror GNOME/vala."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "GNOME/vala — the valac compiler (GitHub mirror of gitlab.gnome.org/GNOME/vala)", "url": "https://github.com/GNOME/vala", "implementation": "valac", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "valac vala/valascanner.vala — scanner", "url": "https://github.com/GNOME/vala/blob/main/vala/valascanner.vala", "implementation": "valac", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "valac vala/valaparser.vala — parser", "url": "https://github.com/GNOME/vala/blob/main/vala/valaparser.vala", "implementation": "valac", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "valac vala/valasemanticanalyzer.vala — semantic analyzer", "url": "https://github.com/GNOME/vala/blob/main/vala/valasemanticanalyzer.vala", "implementation": "valac", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "valac codegen/valaccodebasemodule.vala — C code generation base module", "url": "https://github.com/GNOME/vala/blob/main/codegen/valaccodebasemodule.vala", "implementation": "valac", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "valac codegen/valagobjectmodule.vala — GObject class/property code generation", "url": "https://github.com/GNOME/vala/blob/main/codegen/valagobjectmodule.vala", "implementation": "valac", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["classes", "properties"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Vala Reference Manual (draft, GNOME wiki)", "url": "https://wiki.gnome.org/Projects/Vala/Manual", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "library-reference", "title": "Valadoc — API references for Vala bindings (GLib, GObject, ...)", "url": "https://valadoc.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Vala main tutorial (docs.vala.dev)", "url": "https://docs.vala.dev/tutorials/main.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Data types", "url": "https://docs.vala.dev/tutorials/main/02-00-basics/02-04-data-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["primitive-types", "strings", "arrays"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Control structures", "url": "https://docs.vala.dev/tutorials/main/02-00-basics/02-06-control-structures.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "switch-case"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Signals", "url": "https://docs.vala.dev/tutorials/main/03-00-object-oriented-programming/03-04-signals.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["methods"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Properties", "url": "https://docs.vala.dev/tutorials/main/03-00-object-oriented-programming/03-05-properties.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["properties"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Interfaces", "url": "https://docs.vala.dev/tutorials/main/03-00-object-oriented-programming/03-08-interfaces.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["interfaces-protocols"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Generics", "url": "https://docs.vala.dev/tutorials/main/03-00-object-oriented-programming/03-13-generics.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Error handling", "url": "https://docs.vala.dev/tutorials/main/04-00-advanced-features/04-02-error-handling.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions", "error-handling"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Asynchronous methods", "url": "https://docs.vala.dev/tutorials/main/04-00-advanced-features/04-08-asynchronous-methods.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["async-await"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Ownership", "url": "https://docs.vala.dev/tutorials/main/04-00-advanced-features/04-10-ownership.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management", "ownership-borrowing"]},
+  {"level": 2, "kind": "tutorial", "title": "Vala tutorial — Binding libraries with VAPI files", "url": "https://docs.vala.dev/tutorials/main/06-00-libraries/06-03-binding-libraries-with-vapi-files.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ffi"]},
+  {"level": 2, "kind": "cheatsheet", "title": "Learn X in Y minutes — Vala", "url": "https://learnxinyminutes.com/vala/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Vala (programming language)", "url": "https://en.wikipedia.org/wiki/Vala_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Vala", "url": "https://pldb.io/concepts/vala.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

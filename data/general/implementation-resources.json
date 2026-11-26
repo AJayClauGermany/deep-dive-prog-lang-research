@@ -1,0 +1,2886 @@
+{
+ "id": "implementation-resources",
+ "title": "Language implementation resources: semantics frameworks, verified compilers, compiler infrastructure, parsers, runtimes",
+ "description": "Cross-language resources for implementing languages: executable/mechanised semantics frameworks (K, PLT Redex, Ott, Lem, Sail) and the language definitions written in them, verified compilers (CompCert, CakeML, Vellvm, WasmCert, JSCert), compiler infrastructure and tutorials (LLVM Kaleidoscope, GCC internals, MLIR, Cranelift, QBE, GraalVM Truffle, RPython), parser generators and grammar collections (tree-sitter, ANTLR, Bison, Menhir), small instructive compilers (chibicc, TCC, lcc, c4, mal), garbage collectors (MMTk, Boehm GC) and tooling protocols.",
+ "resources": [
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "K Framework — home (rewriting-based executable semantics framework)",
+   "url": "https://kframework.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "k-framework"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "rewriting"
+   ],
+   "notes": "Language definitions in K yield interpreters, model checkers and deductive verifiers."
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "K Framework — K tutorial",
+   "url": "https://kframework.org/k-distribution/k-tutorial/",
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "k-framework"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "runtimeverification/k — K Framework implementation",
+   "url": "https://github.com/runtimeverification/k",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "K",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "k-framework"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "kframework/c-semantics — executable formal semantics of C11 in K (kcc)",
+   "url": "https://github.com/kframework/c-semantics",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "K",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "undefined-behavior"
+   ],
+   "notes": "Used to detect undefined behaviour; by Ellison, Rosu, Hathhorn et al."
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "kframework/java-semantics — K-Java, formal semantics of Java 1.4",
+   "url": "https://github.com/kframework/java-semantics",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "K",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "java"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "kframework/javascript-semantics — KJS, formal semantics of ECMAScript 5.1",
+   "url": "https://github.com/kframework/javascript-semantics",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "K",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "javascript"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "kframework/python-semantics — formal semantics of Python 3.3 in K",
+   "url": "https://github.com/kframework/python-semantics",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "K",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "python"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "runtimeverification/evm-semantics — KEVM, formal semantics of the Ethereum Virtual Machine",
+   "url": "https://github.com/runtimeverification/evm-semantics",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "K",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "evm-bytecode"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PLT Redex — reference documentation",
+   "url": "https://docs.racket-lang.org/redex/index.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "plt-redex",
+    "racket"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "reduction"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "PLT Redex — Amb: a Redex tutorial",
+   "url": "https://docs.racket-lang.org/redex/tutorial.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "plt-redex"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "reduction"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ott — tool for writing definitions of programming languages and calculi",
+   "url": "https://www.cl.cam.ac.uk/~pes20/ott/",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Peter Sewell",
+    "Francesco Zappa Nardelli et al."
+   ],
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "ott"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "substitution-binding"
+   ],
+   "notes": "Generates LaTeX and Coq/Isabelle/HOL definitions from one source."
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "ott-lang/ott — Ott source",
+   "url": "https://github.com/ott-lang/ott",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "Ott",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "ott"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Lem — lightweight executable mathematics (semantic definition language)",
+   "url": "https://www.cl.cam.ac.uk/~pes20/lem/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "lem"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "rems-project/lem — Lem source",
+   "url": "https://github.com/rems-project/lem",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "Lem",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "lem"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Sail — ISA specification language (REMS project page)",
+   "url": "https://www.cl.cam.ac.uk/~pes20/sail/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "sail"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "instruction-set"
+   ],
+   "notes": "Used for the official RISC-V ISA model and ARM/CHERI models."
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "rems-project/sail — Sail compiler and models",
+   "url": "https://github.com/rems-project/sail",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "Sail",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "sail",
+    "risc-v-assembly"
+   ],
+   "concepts": [
+    "instruction-set",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "CompCert — formally verified optimizing C compiler (home)",
+   "url": "https://compcert.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Xavier Leroy et al."
+   ],
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "verification",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "CompCert user's manual",
+   "url": "https://compcert.org/man/",
+   "scope": "section",
+   "authority": "academic",
+   "implementation": "CompCert",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "CompCert — the CompCert C language and its verified compilation chain",
+   "url": "https://compcert.org/compcert-C.html",
+   "scope": "section",
+   "authority": "academic",
+   "implementation": "CompCert",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "intermediate-representation",
+    "verification"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "AbsInt/CompCert — CompCert source (Coq/Rocq + OCaml)",
+   "url": "https://github.com/AbsInt/CompCert",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "CompCert",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "c",
+    "rocq"
+   ],
+   "concepts": [
+    "verification",
+    "compiler-architecture",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "CakeML — verified implementation of ML (home)",
+   "url": "https://cakeml.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "cakeml",
+    "standard-ml"
+   ],
+   "concepts": [
+    "verification",
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "CakeML/cakeml — CakeML compiler, semantics and proofs (HOL4)",
+   "url": "https://github.com/CakeML/cakeml",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "CakeML",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "cakeml",
+    "hol4"
+   ],
+   "concepts": [
+    "verification",
+    "compiler-architecture",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Vellvm — verified LLVM (project page)",
+   "url": "https://www.cis.upenn.edu/~stevez/vellvm/",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Steve Zdancewic et al."
+   ],
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "vellvm/vellvm — Coq formalization of LLVM IR semantics (interaction trees)",
+   "url": "https://github.com/vellvm/vellvm",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "Vellvm",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "rocq"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "WasmCert/WasmCert-Coq — mechanised WebAssembly specification in Coq/Rocq",
+   "url": "https://github.com/WasmCert/WasmCert-Coq",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "WasmCert",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "webassembly",
+    "rocq"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "type-soundness"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "WasmCert/WasmCert-Isabelle — mechanised WebAssembly specification in Isabelle/HOL",
+   "url": "https://github.com/WasmCert/WasmCert-Isabelle",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "WasmCert",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "webassembly",
+    "isabelle"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "type-soundness"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "WebAssembly/spec — reference interpreter (OCaml) README",
+   "url": "https://github.com/WebAssembly/spec/blob/main/interpreter/README.md",
+   "scope": "whole",
+   "authority": "standards-body",
+   "implementation": "Wasm reference interpreter",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "webassembly",
+    "ocaml"
+   ],
+   "concepts": [
+    "interpreter",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "JSCert — certified JavaScript (Coq specification of ECMAScript 5)",
+   "url": "https://www.jscert.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "javascript",
+    "rocq"
+   ],
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "jscert/jscert — JSCert Coq sources and JSRef interpreter",
+   "url": "https://github.com/jscert/jscert",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "JSCert",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "javascript",
+    "rocq"
+   ],
+   "concepts": [
+    "formal-semantics",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Iris Project — higher-order concurrent separation logic framework",
+   "url": "https://iris-project.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "separation-logic",
+    "rocq"
+   ],
+   "concepts": [
+    "verification"
+   ],
+   "notes": "Basis of RustBelt and many language-level verification efforts."
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Tutorial: My First Language Frontend with LLVM (Kaleidoscope)",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 1. Kaleidoscope Introduction and the Lexer",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl01.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 2. Implementing a Parser and AST",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "parser",
+    "ast",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 3. Code generation to LLVM IR",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl03.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "code-generation-backend",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 4. Adding JIT and Optimizer Support",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl04.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "jit",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 5. Extending the Language: Control Flow",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl05.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 6. Extending the Language: User-defined Operators",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl06.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "operator-overloading",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 7. Extending the Language: Mutable Variables",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl07.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "variables",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 8. Compiling to Object Code",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl08.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM Kaleidoscope tutorial — 9. Adding Debug Information",
+   "url": "https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl09.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "llvm-project — Kaleidoscope tutorial example code (Chapter 2 parser)",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/examples/Kaleidoscope/Chapter2/toy.cpp",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "cpp"
+   ],
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "LLVM — Building a JIT (ORC) tutorial, chapter 1",
+   "url": "https://llvm.org/docs/tutorial/BuildingAJIT1.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir",
+    "cpp"
+   ],
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LLVM — Writing an LLVM pass (new pass manager)",
+   "url": "https://llvm.org/docs/WritingAnLLVMNewPMPass.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir"
+   ],
+   "concepts": [
+    "optimization",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "LLVM — Garbage collection with LLVM (statepoints, GC strategies)",
+   "url": "https://llvm.org/docs/GarbageCollection.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "LLVM",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "llvm-ir"
+   ],
+   "concepts": [
+    "garbage-collection",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "LLVM — publications using or about LLVM",
+   "url": "https://llvm.org/pubs/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals (gccint) manual",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl",
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Anatomy of a Language Front End",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Front-End.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Passes and Files of the Compiler",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Passes.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Parsing pass",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Parsing-pass.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Gimplification pass",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Gimplification-pass.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Tree SSA passes",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Tree-SSA-passes.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — RTL passes",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/RTL-passes.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "code-generation-backend",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — GENERIC",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/GENERIC.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "ast",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — GIMPLE",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Analysis and Optimization of GIMPLE tuples",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Tree-SSA.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "optimization",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — RTL Representation",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/RTL.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "intermediate-representation",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Control Flow Graph",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Control-Flow.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Analysis and Representation of Loops",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Loop-Analysis-and-Representation.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "optimization",
+    "loops"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Machine Descriptions",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Machine-Desc.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "code-generation-backend",
+    "instruction-set"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Target Description Macros and Functions",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Target-Macros.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "calling-convention-abi",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Memory Management and Type Information (GGC)",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Type-Information.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Plugins",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Plugins.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Link Time Optimization",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/LTO.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "optimization",
+    "separate-compilation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Match and Simplify (pattern-based peephole DSL)",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Match-and-Simplify.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "optimization",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "GCC Internals — Exception Handling",
+   "url": "https://gcc.gnu.org/onlinedocs/gccint/Exception-Handling.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GCC source — gcc/gimple.def (GIMPLE statement codes)",
+   "url": "https://github.com/gcc-mirror/gcc/blob/master/gcc/gimple.def",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "notes": "GitHub read-only mirror of gcc.gnu.org git."
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GCC source — gcc/tree.def (tree codes (GENERIC/GIMPLE operands))",
+   "url": "https://github.com/gcc-mirror/gcc/blob/master/gcc/tree.def",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "ast",
+    "intermediate-representation"
+   ],
+   "notes": "GitHub read-only mirror of gcc.gnu.org git."
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "GCC source — gcc/rtl.def (RTL expression codes)",
+   "url": "https://github.com/gcc-mirror/gcc/blob/master/gcc/rtl.def",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "gcc-gimple-rtl"
+   ],
+   "concepts": [
+    "intermediate-representation",
+    "code-generation-backend"
+   ],
+   "notes": "GitHub read-only mirror of gcc.gnu.org git."
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "libgccjit — GCC's embeddable JIT/AOT code-generation library",
+   "url": "https://gcc.gnu.org/onlinedocs/jit/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "jit",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MLIR — Multi-Level Intermediate Representation (home)",
+   "url": "https://mlir.llvm.org/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "intermediate-representation",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MLIR Language Reference",
+   "url": "https://mlir.llvm.org/docs/LangRef/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "intermediate-representation",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 1: Toy language and AST",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-1/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "ast",
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 2: Emitting basic MLIR",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-2/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 3: High-level language-specific analysis and transformation",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-3/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "optimization",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 4: Enabling generic transformation with interfaces",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-4/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 5: Partial lowering to lower-level dialects",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-5/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 6: Lowering to LLVM and code generation",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-6/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MLIR Toy tutorial — Chapter 7: Adding a composite type",
+   "url": "https://mlir.llvm.org/docs/Tutorials/Toy/Ch-7/",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "MLIR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "mlir"
+   ],
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Cranelift — fast, secure code generator (home)",
+   "url": "https://cranelift.dev/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Cranelift",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "cranelift-ir"
+   ],
+   "concepts": [
+    "code-generation-backend",
+    "jit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cranelift IR reference (cranelift/docs/ir.md)",
+   "url": "https://github.com/bytecodealliance/wasmtime/blob/main/cranelift/docs/ir.md",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Cranelift",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "cranelift-ir"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Wasmtime — WebAssembly runtime (uses Cranelift)",
+   "url": "https://wasmtime.dev/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Wasmtime",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "webassembly"
+   ],
+   "concepts": [
+    "runtime-system",
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "QBE — compiler backend (home)",
+   "url": "https://c9x.me/compile/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Quentin Carbonneaux"
+   ],
+   "implementation": "QBE",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "qbe",
+    "qbe-il"
+   ],
+   "concepts": [
+    "code-generation-backend",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "QBE Intermediate Language reference",
+   "url": "https://c9x.me/compile/doc/il.html",
+   "scope": "section",
+   "authority": "designer",
+   "implementation": "QBE",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "qbe-il"
+   ],
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GraalVM Truffle language implementation framework — documentation",
+   "url": "https://www.graalvm.org/latest/graalvm-as-a-platform/language-implementation-framework/",
+   "scope": "whole",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "java"
+   ],
+   "concepts": [
+    "interpreter",
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Truffle — Implementing a language with Truffle (SimpleLanguage tutorial)",
+   "url": "https://www.graalvm.org/latest/graalvm-as-a-platform/language-implementation-framework/LanguageTutorial/",
+   "scope": "section",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "ast"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Truffle — Partial evaluation",
+   "url": "https://www.graalvm.org/latest/graalvm-as-a-platform/language-implementation-framework/PartialEvaluation/",
+   "scope": "section",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "jit",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Truffle — Dynamic object model",
+   "url": "https://www.graalvm.org/latest/graalvm-as-a-platform/language-implementation-framework/DynamicObjectModel/",
+   "scope": "section",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "objects",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Truffle — On-stack replacement",
+   "url": "https://www.graalvm.org/latest/graalvm-as-a-platform/language-implementation-framework/OnStackReplacement/",
+   "scope": "section",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "oracle/graal — GraalVM (Truffle framework README)",
+   "url": "https://github.com/oracle/graal/blob/master/truffle/README.md",
+   "scope": "whole",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "java"
+   ],
+   "concepts": [
+    "interpreter",
+    "jit"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "graalvm/simplelanguage — SimpleLanguage, the Truffle demo language",
+   "url": "https://github.com/graalvm/simplelanguage",
+   "scope": "whole",
+   "authority": "vendor",
+   "implementation": "GraalVM Truffle",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "java"
+   ],
+   "concepts": [
+    "interpreter",
+    "ast",
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "RPython documentation (meta-tracing JIT toolchain behind PyPy)",
+   "url": "https://rpython.readthedocs.io/en/latest/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "RPython",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rpython",
+    "python"
+   ],
+   "concepts": [
+    "jit",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RPython — The RPython language",
+   "url": "https://rpython.readthedocs.io/en/latest/rpython.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "RPython",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rpython"
+   ],
+   "concepts": [
+    "type-inference"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RPython — The RPython meta-tracing JIT",
+   "url": "https://rpython.readthedocs.io/en/latest/jit/index.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "RPython",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rpython"
+   ],
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RPython — Garbage collection in RPython",
+   "url": "https://rpython.readthedocs.io/en/latest/garbage_collection.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "RPython",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rpython"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "RPython — The RPython translation toolchain",
+   "url": "https://rpython.readthedocs.io/en/latest/translation.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "RPython",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rpython"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PyPy documentation",
+   "url": "https://doc.pypy.org/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "PyPy",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "python",
+    "rpython"
+   ],
+   "concepts": [
+    "jit",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "pypy/pypy — PyPy and RPython source",
+   "url": "https://github.com/pypy/pypy",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "PyPy",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "python",
+    "rpython"
+   ],
+   "concepts": [
+    "jit",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LuaJIT — home",
+   "url": "https://luajit.org/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "LuaJIT",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "lua"
+   ],
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "DynASM — dynamic assembler used by LuaJIT",
+   "url": "https://luajit.org/dynasm.html",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "LuaJIT",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "lua",
+    "c"
+   ],
+   "concepts": [
+    "jit",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 — Ignition interpreter documentation",
+   "url": "https://v8.dev/docs/ignition",
+   "scope": "whole",
+   "authority": "vendor",
+   "implementation": "V8",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "javascript"
+   ],
+   "concepts": [
+    "bytecode",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 blog — Sparkplug, a non-optimizing JavaScript compiler",
+   "url": "https://v8.dev/blog/sparkplug",
+   "scope": "section",
+   "authority": "vendor",
+   "implementation": "V8",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "javascript"
+   ],
+   "concepts": [
+    "jit"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "V8 blog — Maglev, V8's fastest optimizing JIT",
+   "url": "https://v8.dev/blog/maglev",
+   "scope": "section",
+   "authority": "vendor",
+   "implementation": "V8",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "javascript"
+   ],
+   "concepts": [
+    "jit",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "libFirm — graph-based SSA compiler IR and backend",
+   "url": "https://libfirm.github.io/",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "libFirm",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "intermediate-representation",
+    "optimization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Nanopass framework — compiler construction with many small passes",
+   "url": "https://nanopass.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "scheme",
+    "racket"
+   ],
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "egg — e-graphs good (equality saturation library) project page",
+   "url": "https://egraphs-good.github.io/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "egraphs-good/egg — e-graph library (Rust)",
+   "url": "https://github.com/egraphs-good/egg",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "egg",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "rust"
+   ],
+   "concepts": [
+    "optimization",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Binaryen — WebAssembly compiler and toolchain infrastructure",
+   "url": "https://github.com/WebAssembly/binaryen",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Binaryen",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "webassembly"
+   ],
+   "concepts": [
+    "optimization",
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tree-sitter — incremental parsing system (documentation)",
+   "url": "https://tree-sitter.github.io/tree-sitter/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "tree-sitter",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "tree-sitter-grammar"
+   ],
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tree-sitter — Creating parsers (writing a grammar.js)",
+   "url": "https://tree-sitter.github.io/tree-sitter/creating-parsers/index.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "tree-sitter",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "tree-sitter-grammar"
+   ],
+   "concepts": [
+    "parser",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tree-sitter — Using parsers",
+   "url": "https://tree-sitter.github.io/tree-sitter/using-parsers/index.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "tree-sitter",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "tree-sitter-grammar"
+   ],
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "tree-sitter/tree-sitter — runtime and CLI",
+   "url": "https://github.com/tree-sitter/tree-sitter",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "tree-sitter",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "tree-sitter-grammar",
+    "c",
+    "rust"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ANTLR — ANother Tool for Language Recognition (home)",
+   "url": "https://www.antlr.org/",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Terence Parr"
+   ],
+   "implementation": "ANTLR",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "antlr-grammar"
+   ],
+   "concepts": [
+    "parser",
+    "lexer",
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ANTLR 4 documentation index",
+   "url": "https://github.com/antlr/antlr4/blob/dev/doc/index.md",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "ANTLR",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "antlr-grammar"
+   ],
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "antlr/antlr4 — ANTLR 4 tool and runtimes",
+   "url": "https://github.com/antlr/antlr4",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "ANTLR",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "antlr-grammar",
+    "java"
+   ],
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "antlr/grammars-v4 — grammars for hundreds of languages in ANTLR 4 format",
+   "url": "https://github.com/antlr/grammars-v4",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "ANTLR",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "antlr-grammar"
+   ],
+   "concepts": [
+    "grammar"
+   ],
+   "notes": "A cross-language collection of machine-readable grammars (C, Java, SQL dialects, Python, ...)."
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GNU Bison manual",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/index.html",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "yacc",
+    "c"
+   ],
+   "concepts": [
+    "parser",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GNU Bison manual — The Bison parser algorithm (LALR shift/reduce)",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/Algorithm.html",
+   "scope": "section",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "yacc"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "westes/flex — the fast lexical analyzer generator",
+   "url": "https://github.com/westes/flex",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "flex",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "lex",
+    "c"
+   ],
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Menhir — LR(1) parser generator for OCaml (home)",
+   "url": "https://gallium.inria.fr/~fpottier/menhir/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "François Pottier",
+    "Yann Régis-Gianas"
+   ],
+   "implementation": "Menhir",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "ocaml"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Menhir reference manual",
+   "url": "https://gallium.inria.fr/~fpottier/menhir/manual.html",
+   "scope": "section",
+   "authority": "designer",
+   "implementation": "Menhir",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "ocaml"
+   ],
+   "concepts": [
+    "parser",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Lark — parsing toolkit for Python (Earley and LALR)",
+   "url": "https://lark-parser.readthedocs.io/en/stable/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Lark",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "python"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Peggy — PEG parser generator for JavaScript",
+   "url": "https://peggyjs.org/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Peggy",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "peg",
+    "javascript"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ohm — PEG-based language for building parsers, interpreters and compilers",
+   "url": "https://ohmjs.org/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "Ohm",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "peg",
+    "javascript"
+   ],
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Spoofax language workbench",
+   "url": "https://spoofax.dev/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "semantic-analysis",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Rascal metaprogramming language",
+   "url": "https://www.rascal-mpl.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "rewriting",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "JetBrains MPS — projectional language workbench",
+   "url": "https://www.jetbrains.com/mps/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Eclipse Xtext — DSL framework",
+   "url": "https://eclipse.dev/Xtext/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "java"
+   ],
+   "concepts": [
+    "grammar",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Langium — language engineering toolkit with LSP support",
+   "url": "https://langium.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "typescript"
+   ],
+   "concepts": [
+    "grammar",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Racket Guide — Creating languages (macros, readers, #lang)",
+   "url": "https://docs.racket-lang.org/guide/languages.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "racket"
+   ],
+   "concepts": [
+    "macros",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Beautiful Racket — making languages with Racket",
+   "url": "https://beautifulracket.com/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Matthew Butterick"
+   ],
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "racket"
+   ],
+   "concepts": [
+    "macros",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Language Server Protocol specification (overview)",
+   "url": "https://microsoft.github.io/language-server-protocol/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Language Server Protocol 3.17 specification",
+   "url": "https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Debug Adapter Protocol",
+   "url": "https://microsoft.github.io/debug-adapter-protocol/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Compiler Explorer (godbolt.org) — see compiler output for many languages",
+   "url": "https://godbolt.org/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Matt Godbolt"
+   ],
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "compiler-explorer/compiler-explorer — Compiler Explorer source",
+   "url": "https://github.com/compiler-explorer/compiler-explorer",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "Compiler Explorer",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "rui314/chibicc — small C11 compiler written as a step-by-step commit history",
+   "url": "https://github.com/rui314/chibicc",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Rui Ueyama"
+   ],
+   "implementation": "chibicc",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "chibicc — tokenize.c (lexer)",
+   "url": "https://github.com/rui314/chibicc/blob/main/tokenize.c",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Rui Ueyama"
+   ],
+   "implementation": "chibicc",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "chibicc — parse.c (recursive-descent parser and type assignment)",
+   "url": "https://github.com/rui314/chibicc/blob/main/parse.c",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Rui Ueyama"
+   ],
+   "implementation": "chibicc",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "parser",
+    "ast",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "chibicc — codegen.c (x86-64 code generator)",
+   "url": "https://github.com/rui314/chibicc/blob/main/codegen.c",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Rui Ueyama"
+   ],
+   "implementation": "chibicc",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "code-generation-backend",
+    "calling-convention-abi"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "rui314/8cc — small self-hosting C compiler",
+   "url": "https://github.com/rui314/8cc",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Rui Ueyama"
+   ],
+   "implementation": "8cc",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tiny C Compiler (TCC) — home",
+   "url": "https://bellard.org/tcc/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Fabrice Bellard"
+   ],
+   "implementation": "TCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tiny C Compiler reference documentation (incl. internals chapter)",
+   "url": "https://bellard.org/tcc/tcc-doc.html",
+   "scope": "section",
+   "authority": "designer",
+   "implementation": "TCC",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "drh/lcc — lcc, the retargetable ANSI C compiler (Fraser & Hanson)",
+   "url": "https://github.com/drh/lcc",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Christopher W. Fraser",
+    "David R. Hanson"
+   ],
+   "implementation": "lcc",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "code-generation-backend"
+   ],
+   "notes": "Companion to the book 'A Retargetable C Compiler: Design and Implementation'."
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rswier/c4 — C in four functions (self-hosting C subset interpreter/VM)",
+   "url": "https://github.com/rswier/c4/blob/master/c4.c",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "c4",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "compiler-architecture",
+    "virtual-machine",
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "kanaka/mal — Make-A-Lisp: one Lisp implemented in 80+ languages",
+   "url": "https://github.com/kanaka/mal",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "mal",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "lisp"
+   ],
+   "concepts": [
+    "interpreter",
+    "comparison"
+   ],
+   "notes": "The same step-by-step Lisp interpreter in many host languages: a direct cross-language implementation comparison."
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "PL Zoo — small programming languages implemented in OCaml (Andrej Bauer)",
+   "url": "https://plzoo.andrej.com/",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Andrej Bauer"
+   ],
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "ocaml"
+   ],
+   "concepts": [
+    "interpreter",
+    "type-inference"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Lua 5.4 source code (browsable, lua.org)",
+   "url": "https://www.lua.org/source/5.4/",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "PUC-Rio Lua",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "lua"
+   ],
+   "concepts": [
+    "interpreter",
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Lua 5.4 — lvm.c (register-based virtual machine)",
+   "url": "https://www.lua.org/source/5.4/lvm.c.html",
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "PUC-Rio Lua",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "lua"
+   ],
+   "concepts": [
+    "virtual-machine",
+    "bytecode"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MMTk — Memory Management Toolkit (home)",
+   "url": "https://www.mmtk.io/",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "MMTk",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rust"
+   ],
+   "concepts": [
+    "garbage-collection",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MMTk documentation",
+   "url": "https://docs.mmtk.io/",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "MMTk",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "rust"
+   ],
+   "concepts": [
+    "garbage-collection",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "mmtk/mmtk-core — language-neutral GC framework (Rust)",
+   "url": "https://github.com/mmtk/mmtk-core",
+   "scope": "whole",
+   "authority": "academic",
+   "implementation": "MMTk",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "rust"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Boehm-Demers-Weiser conservative garbage collector (home)",
+   "url": "https://www.hboehm.info/gc/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Hans-J. Boehm"
+   ],
+   "implementation": "bdwgc",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c",
+    "cpp"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Boehm GC — Conservative GC algorithmic overview",
+   "url": "https://www.hboehm.info/gc/gcdescr.html",
+   "scope": "section",
+   "authority": "designer",
+   "implementation": "bdwgc",
+   "format": "html",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ivmai/bdwgc — Boehm-Demers-Weiser GC source",
+   "url": "https://github.com/ivmai/bdwgc",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "bdwgc",
+   "format": "repository",
+   "access": "open",
+   "languages": [
+    "c",
+    "cpp"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bdwgc — mark.c (marker)",
+   "url": "https://github.com/ivmai/bdwgc/blob/master/mark.c",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "bdwgc",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "garbage-collection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bdwgc — allchblk.c (heap block allocator)",
+   "url": "https://github.com/ivmai/bdwgc/blob/master/allchblk.c",
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "bdwgc",
+   "format": "source-file",
+   "access": "open",
+   "languages": [
+    "c"
+   ],
+   "concepts": [
+    "memory-management"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "build-your-own-x — 'Build your own programming language / interpreter / compiler' and more",
+   "url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md",
+   "scope": "whole",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-compilers — curated list of compiler resources",
+   "url": "https://github.com/aalhour/awesome-compilers",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "b1fipl — A Bestiary of Single-File Implementations of Programming Languages",
+   "url": "https://github.com/marcpaq/b1fipl",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "comp.compilers — Usenet newsgroup archive",
+   "url": "https://compilers.iecc.com/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "Software Preservation Group (Computer History Museum) — historic compilers and language source code",
+   "url": "https://softwarepreservation.computerhistory.org/",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "compiler-architecture"
+   ]
+  }
+ ]
+}

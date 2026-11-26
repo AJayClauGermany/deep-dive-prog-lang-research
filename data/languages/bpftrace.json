@@ -1,0 +1,281 @@
+{
+ "id": "bpftrace",
+ "name": "bpftrace",
+ "aliases": [
+  "bpftrace language"
+ ],
+ "categories": [
+  "domain-specific",
+  "scripting"
+ ],
+ "paradigms": [
+  "event-driven",
+  "imperative"
+ ],
+ "typing": [
+  "static",
+  "inferred"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Alastair Robertson",
+  "Brendan Gregg"
+ ],
+ "summary": "High-level tracing language for Linux eBPF inspired by awk and DTrace D: probe/filter/action blocks with maps, aggregations, builtins and C-struct access, compiled through LLVM to BPF bytecode verified and run in the kernel.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".bt"
+ ],
+ "homepage": "https://bpftrace.org/",
+ "influenced_by": [
+  "dtrace-d",
+  "awk"
+ ],
+ "related": [
+  {
+   "id": "systemtap",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "The bpftrace repository (C++, LLVM backend).",
+  "1": "docs/language.md and docs/stdlib.md in the repository plus the bpftrace(8) man page are the definition.",
+  "2": "Tutorials and Gregg's BPF Performance Tools.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "bpftrace/bpftrace — source repository",
+   "url": "https://github.com/bpftrace/bpftrace",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "bpftrace",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bpftrace src/ast/ast.h — AST definitions",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/src/ast/ast.h",
+   "concepts": [
+    "ast"
+   ],
+   "access": "open",
+   "implementation": "bpftrace",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bpftrace src/ast/passes/codegen_llvm.cpp — LLVM IR / BPF code generation",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/src/ast/passes/codegen_llvm.cpp",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "access": "open",
+   "implementation": "bpftrace",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language reference (docs/language.md)",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md",
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Action Blocks",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#action-blocks",
+   "concepts": [
+    "program-structure"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Comments",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#comments",
+   "concepts": [
+    "comments"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Conditionals",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#conditionals",
+   "concepts": [
+    "conditionals"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Data Types",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#data-types",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Filters/Predicates",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#filterspredicates",
+   "concepts": [
+    "conditionals"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Literals",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#literals",
+   "concepts": [
+    "literals"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Loops",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#loops",
+   "concepts": [
+    "loops"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Imports",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#imports",
+   "concepts": [
+    "imports"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace language — Command Line Parameters",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/language.md#command-line-parameters",
+   "concepts": [
+    "command-line"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "bpftrace standard library (docs/stdlib.md)",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/stdlib.md",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "bpftrace(8) man page source",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/man/adoc/bpftrace.adoc",
+   "concepts": [
+    "command-line"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "bpftrace One-Liner Tutorial",
+   "url": "https://github.com/bpftrace/bpftrace/blob/master/docs/tutorial_one_liners.md",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Brendan Gregg — BPF Performance Tools",
+   "url": "https://www.brendangregg.com/bpf-performance-tools-book.html",
+   "access": "paywalled",
+   "year": 2019,
+   "authors": [
+    "Brendan Gregg"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — eBPF (bpftrace section)",
+   "url": "https://en.wikipedia.org/wiki/EBPF",
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

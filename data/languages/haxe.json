@@ -1,0 +1,47 @@
+{
+ "id": "haxe",
+ "name": "Haxe",
+ "categories": ["general-purpose", "object-oriented"],
+ "paradigms": ["object-oriented", "functional", "imperative", "generic", "metaprogramming"],
+ "typing": ["static", "strong", "inferred", "nominal and structural", "optional dynamic"],
+ "first_appeared": 2005,
+ "designers": ["Nicolas Cannasse"],
+ "summary": "Statically typed, ECMAScript-flavoured language with an OCaml-written cross-compiler that targets JavaScript, C++, C#, Java/JVM bytecode, Python, Lua, PHP, Flash and the HashLink and Neko VMs. It features algebraic enums with pattern matching, abstract types, structural typing of anonymous structures and AST macros.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".hx", ".hxml"],
+ "homepage": "https://haxe.org/",
+ "influenced_by": ["actionscript", "ocaml", "java", "javascript"],
+ "related": [{"id": "actionscript", "relation": "family"}, {"id": "javascript", "relation": "compiles-to"}, {"id": "cpp", "relation": "compiles-to"}],
+ "level_notes": {"0": "HaxeFoundation/haxe holds the compiler (OCaml) with one generator per target; branch 'development'.", "1": "No formal specification: the Haxe Manual is the official reference; language changes go through haxe-evolution proposals."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "HaxeFoundation/haxe — Haxe compiler and standard library", "url": "https://github.com/HaxeFoundation/haxe", "implementation": "Haxe compiler", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "lexer.ml — lexer (sedlex)", "url": "https://github.com/HaxeFoundation/haxe/blob/development/src/syntax/lexer.ml", "implementation": "Haxe compiler", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "grammar.ml — parser (stream parser)", "url": "https://github.com/HaxeFoundation/haxe/blob/development/src/syntax/grammar.ml", "implementation": "Haxe compiler", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "typer.ml — typer: type inference and checking", "url": "https://github.com/HaxeFoundation/haxe/blob/development/src/typing/typer.ml", "implementation": "Haxe compiler", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["type-inference", "semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "genjs.ml — JavaScript generator", "url": "https://github.com/HaxeFoundation/haxe/blob/development/src/generators/genjs.ml", "implementation": "Haxe compiler", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual", "url": "https://haxe.org/manual/introduction.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Basic types", "url": "https://haxe.org/manual/types-basic-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["primitive-types", "integers", "floating-point", "booleans"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Nullability", "url": "https://haxe.org/manual/types-nullability.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["null-optional"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Enum instance (algebraic enums)", "url": "https://haxe.org/manual/types-enum-instance.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["enums", "algebraic-data-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Anonymous structure", "url": "https://haxe.org/manual/types-anonymous-structure.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Abstract types", "url": "https://haxe.org/manual/types-abstract.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-aliases", "operator-overloading"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Type parameters", "url": "https://haxe.org/manual/type-system-type-parameters.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Type inference", "url": "https://haxe.org/manual/type-system-type-inference.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-inference"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — if", "url": "https://haxe.org/manual/expression-if.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — for", "url": "https://haxe.org/manual/expression-for.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — switch", "url": "https://haxe.org/manual/expression-switch.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — try/catch", "url": "https://haxe.org/manual/expression-try-catch.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Pattern matching", "url": "https://haxe.org/manual/lf-pattern-matching.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Haxe Manual — Macros", "url": "https://haxe.org/manual/macro.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros"]},
+  {"level": 1, "kind": "library-reference", "title": "Haxe API documentation", "url": "https://api.haxe.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "proposal-index", "title": "haxe-evolution — Haxe language change proposals", "url": "https://github.com/HaxeFoundation/haxe-evolution", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["language-evolution"]},
+
+  {"level": 2, "kind": "by-example", "title": "Haxe Code Cookbook", "url": "https://code.haxe.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 2, "kind": "cheatsheet", "title": "Learn X in Y minutes — Haxe", "url": "https://learnxinyminutes.com/haxe/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["hello-world"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Haxe", "url": "https://en.wikipedia.org/wiki/Haxe", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Haxe", "url": "https://pldb.io/concepts/haxe.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

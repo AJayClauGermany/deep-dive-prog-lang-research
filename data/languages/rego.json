@@ -1,0 +1,540 @@
+{
+ "id": "rego",
+ "name": "Rego (Open Policy Agent policy language)",
+ "aliases": [
+  "Rego",
+  "OPA Rego"
+ ],
+ "categories": [
+  "policy",
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "logic (Datalog-inspired)"
+ ],
+ "typing": [
+  "dynamic",
+  "json values",
+  "optional schema-based type checking"
+ ],
+ "first_appeared": 2016,
+ "designers": [
+  "Tim Hinrichs",
+  "Torin Sandall",
+  "Styra"
+ ],
+ "summary": "Declarative, Datalog-inspired query language of the Open Policy Agent (CNCF) for writing policies over JSON-structured data: rules (complete, partial set/object, functions, defaults, else-chains) are defined by bodies of expressions with unification, references, comprehensions, negation, 'some'/'every' quantifiers and a large built-in library; evaluation is top-down.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "standards": [
+  "Rego v1 (OPA 1.0, 2024)"
+ ],
+ "file_extensions": [
+  ".rego"
+ ],
+ "homepage": "https://www.openpolicyagent.org/docs/policy-language",
+ "influenced_by": [
+  "datalog"
+ ],
+ "related": [
+  {
+   "id": "datalog",
+   "relation": "variant-of"
+  },
+  {
+   "id": "cedar",
+   "relation": "family"
+  },
+  {
+   "id": "cel",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No independent specification: the OPA documentation's Policy Language and Policy Reference pages (with an EBNF grammar) describe the language, and OPA's implementation is the definition. OPA 1.0 made the 'rego.v1' keywords (if, contains) mandatory.",
+  "0": "open-policy-agent/opa (Go) is the reference implementation (ast parser/compiler/type checker, topdown evaluator); Microsoft's Regorus is an independent Rust interpreter.",
+  "3": "No Wikipedia or PLDB article; the OPA Playground is the main interactive resource."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "OPA Policy Language (Rego)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Scalar Values and Strings",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#scalar-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "literals",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — String Interpolation",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#string-interpolation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Composite Values (arrays, objects, sets)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#composite-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries",
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Variables",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#variables",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "unification"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — References (lookup, iteration, self-joins)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#references",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "joins",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Comprehensions",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#comprehensions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Rules (complete, partial, incremental definitions)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#rules",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Functions",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Negation",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#negation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Universal Quantification (FOR ALL)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#universal-quantification-for-all",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "logic-foundations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Modules (comments, packages, imports)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#modules",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages",
+    "imports",
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — some keyword",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#some-keyword",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — with keyword (mocking data/input)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#with-keyword",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — default and else keywords",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#else-keyword",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Equality: Comparison, and Unification",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#equality-comparison-and-unification",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unification",
+    "operators",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Built-in Functions and Errors",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#errors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rego — Metadata (annotations)",
+   "url": "https://www.openpolicyagent.org/docs/policy-language#metadata",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "OPA Policy Reference — Grammar (EBNF)",
+   "url": "https://www.openpolicyagent.org/docs/policy-reference#grammar",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "OPA Policy Reference — Reserved Names & Keywords",
+   "url": "https://www.openpolicyagent.org/docs/policy-reference#reserved-names--keywords",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "OPA Policy Reference — Built-in functions",
+   "url": "https://www.openpolicyagent.org/docs/policy-reference/builtins",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "OPA — Policy Testing",
+   "url": "https://www.openpolicyagent.org/docs/policy-testing",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "OPA — Upgrading to v1.0 (Rego v0 to v1 changes)",
+   "url": "https://www.openpolicyagent.org/docs/v0-upgrade",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "OPA — Philosophy",
+   "url": "https://www.openpolicyagent.org/docs/philosophy",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "open-policy-agent/opa — Open Policy Agent (Go)",
+   "url": "https://github.com/open-policy-agent/opa",
+   "scope": "whole",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "opa v1/ast/internal/scanner/scanner.go — lexer",
+   "url": "https://github.com/open-policy-agent/opa/blob/main/v1/ast/internal/scanner/scanner.go",
+   "scope": "section",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "opa v1/ast/parser.go — Rego parser",
+   "url": "https://github.com/open-policy-agent/opa/blob/main/v1/ast/parser.go",
+   "scope": "section",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "opa v1/ast/term.go — Rego terms (scalars, refs, collections, comprehensions)",
+   "url": "https://github.com/open-policy-agent/opa/blob/main/v1/ast/term.go",
+   "scope": "section",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "opa v1/ast/compile.go — compiler stages (rewriting, safety, recursion checks)",
+   "url": "https://github.com/open-policy-agent/opa/blob/main/v1/ast/compile.go",
+   "scope": "section",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "opa v1/ast/check.go — type checker",
+   "url": "https://github.com/open-policy-agent/opa/blob/main/v1/ast/check.go",
+   "scope": "section",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "opa v1/topdown/eval.go — top-down evaluator",
+   "url": "https://github.com/open-policy-agent/opa/blob/main/v1/topdown/eval.go",
+   "scope": "section",
+   "implementation": "OPA",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "unification"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "microsoft/regorus — Rego interpreter in Rust",
+   "url": "https://github.com/microsoft/regorus",
+   "scope": "whole",
+   "implementation": "Regorus",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "The Rego Playground",
+   "url": "https://play.openpolicyagent.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "OPA — Policy Performance",
+   "url": "https://www.openpolicyagent.org/docs/policy-performance",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "indexes"
+   ]
+  }
+ ]
+}

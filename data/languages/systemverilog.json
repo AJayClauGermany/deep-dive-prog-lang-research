@@ -1,0 +1,2121 @@
+{
+  "id": "systemverilog",
+  "name": "SystemVerilog",
+  "aliases": [
+    "SV",
+    "IEEE 1800",
+    "SystemVerilog 3.1a"
+  ],
+  "categories": [
+    "hardware-description",
+    "object-oriented"
+  ],
+  "paradigms": [
+    "concurrent",
+    "event-driven",
+    "structural",
+    "imperative",
+    "object-oriented",
+    "constraint"
+  ],
+  "typing": [
+    "static",
+    "weak",
+    "four-valued-logic",
+    "nominal-classes"
+  ],
+  "first_appeared": 2002,
+  "designers": [
+    "Accellera (Co-Design Automation SUPERLOG donation, Synopsys Vera/OpenVera donation)",
+    "IEEE P1800 working group"
+  ],
+  "summary": "Hardware design and verification language standardised as IEEE 1800 (2005, 2009, 2012, 2017, 2023); a superset of Verilog adding rich data types, interfaces, packages, a class-based object system with constrained randomisation, functional coverage and SystemVerilog Assertions. Since 2009 IEEE 1800 subsumes IEEE 1364 Verilog.",
+  "status": "active",
+  "defined_by": [
+    "international-standard"
+  ],
+  "standards": [
+    "Accellera SystemVerilog 3.0 (2002)",
+    "Accellera SystemVerilog 3.1a (2004)",
+    "IEEE 1800-2005",
+    "IEEE 1800-2009",
+    "IEEE 1800-2012",
+    "IEEE 1800-2017",
+    "IEEE 1800-2023",
+    "IEEE 1800.2 (UVM)"
+  ],
+  "file_extensions": [
+    ".sv",
+    ".svh"
+  ],
+  "homepage": "https://standards.ieee.org/ieee/1800/7743/",
+  "influenced_by": [
+    "verilog",
+    "vhdl",
+    "c",
+    "cpp",
+    "java"
+  ],
+  "related": [
+    {
+      "id": "verilog",
+      "relation": "superset-of"
+    },
+    {
+      "id": "sva",
+      "relation": "embeds"
+    },
+    {
+      "id": "psl",
+      "relation": "family"
+    },
+    {
+      "id": "vhdl",
+      "relation": "family"
+    },
+    {
+      "id": "systemc",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "IEEE 1800 is the normative definition; the standard is paywalled but IEEE 1800 (and 1800.2 UVM) is free of charge through the IEEE GET Program (registration). No open working draft is linked; implementation manuals (Verilator, slang, Yosys) are filed at level 2 as they document tool support, not the language.",
+    "0": "No reference implementation. Open implementations: Verilator (compiled simulator), slang (complete front end/elaborator), Surelog/UHDM (parser with ANTLR grammar), Verible (parser/linter), sv2v (SV-to-Verilog converter), Yosys (synthesisable subset), CIRCT Moore dialect; the sv-tests suite measures conformance across tools.",
+    "2": "Free tutorials (ChipVerify, ASIC World, Doulos, Verification Guide) and many freely downloadable conference papers (Sutherland, Cummings); the main books (Sutherland et al., Spear & Tumbush) are commercial."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "IEEE 1800-2023 — Standard for SystemVerilog: Unified Hardware Design, Specification, and Verification Language",
+      "url": "https://standards.ieee.org/ieee/1800/7743/",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "paywalled",
+      "year": 2023,
+      "version": "1800-2023"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "IEEE 1800-2017 — SystemVerilog",
+      "url": "https://standards.ieee.org/ieee/1800/6700/",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "paywalled",
+      "year": 2017,
+      "version": "1800-2017"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "IEEE 1800-2012 — SystemVerilog",
+      "url": "https://standards.ieee.org/ieee/1800/5163/",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "paywalled",
+      "year": 2012,
+      "version": "1800-2012"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "IEEE 1800-2005 — SystemVerilog (first IEEE edition)",
+      "url": "https://standards.ieee.org/ieee/1800/3459/",
+      "concepts": [
+        "standardization",
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "paywalled",
+      "year": 2005,
+      "version": "1800-2005"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "IEEE GET Program — no-cost access to IEEE 1800 SystemVerilog and IEEE 1800.2 UVM",
+      "url": "https://ieeexplore.ieee.org/browse/standards/get-program/page/series?id=80",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "registration"
+    },
+    {
+      "level": 1,
+      "kind": "standard",
+      "title": "IEEE 1800.2-2020 — Universal Verification Methodology (UVM) Language Reference Manual",
+      "url": "https://standards.ieee.org/ieee/1800.2/7567/",
+      "concepts": [
+        "standard-library",
+        "testing"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "paywalled",
+      "year": 2020,
+      "version": "1800.2-2020"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Accellera — UVM standard downloads (class reference and reference implementation)",
+      "url": "https://www.accellera.org/downloads/standards/uvm",
+      "concepts": [
+        "standard-library",
+        "testing"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Input Languages (SystemVerilog support)",
+      "url": "https://verilator.org/guide/latest/languages.html",
+      "concepts": [
+        "versioning-compatibility",
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — SystemVerilog 2005 support",
+      "url": "https://verilator.org/guide/latest/languages.html#systemverilog-2005-ieee-1800-2005-support",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — SystemVerilog 2012 support",
+      "url": "https://verilator.org/guide/latest/languages.html#systemverilog-2012-ieee-1800-2012-support",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — SystemVerilog 2017 support",
+      "url": "https://verilator.org/guide/latest/languages.html#systemverilog-2017-ieee-1800-2017-support",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — SystemVerilog 2023 support",
+      "url": "https://verilator.org/guide/latest/languages.html#systemverilog-2023-ieee-1800-2023-support",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Class support",
+      "url": "https://verilator.org/guide/latest/languages.html#class",
+      "concepts": [
+        "classes"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Structures and unions",
+      "url": "https://verilator.org/guide/latest/languages.html#structures-and-unions",
+      "concepts": [
+        "records-structs",
+        "union-intersection-types"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Assertions",
+      "url": "https://verilator.org/guide/latest/languages.html#assertions",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Coverage",
+      "url": "https://verilator.org/guide/latest/languages.html#coverage",
+      "concepts": [
+        "testing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Bind",
+      "url": "https://verilator.org/guide/latest/languages.html#bind",
+      "concepts": [
+        "hdl-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Synthesis subset",
+      "url": "https://verilator.org/guide/latest/languages.html#synthesis-subset",
+      "concepts": [
+        "synthesis"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Verilator manual — Keyword limitations",
+      "url": "https://verilator.org/guide/latest/languages.html#language-keyword-limitations",
+      "concepts": [
+        "keywords"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "slang documentation — SystemVerilog language support status",
+      "url": "https://sv-lang.com/language-support.html",
+      "concepts": [
+        "standardization",
+        "versioning-compatibility"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "slang user manual",
+      "url": "https://sv-lang.com/user-manual.html",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Yosys manual — Verilog/SystemVerilog support in read_verilog -sv",
+      "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/using_yosys/verilog.html",
+      "concepts": [
+        "synthesis",
+        "versioning-compatibility"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Yosys"
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "CIRCT Moore dialect — an IR modelling SystemVerilog semantics",
+      "url": "https://github.com/llvm/circt/blob/main/docs/Dialects/Moore.md",
+      "concepts": [
+        "intermediate-representation",
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "CIRCT"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Verilator — SystemVerilog to C++ compiled simulator",
+      "url": "https://github.com/verilator/verilator",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/verilog.l — flex lexer for Verilog/SystemVerilog",
+      "url": "https://github.com/verilator/verilator/blob/master/src/verilog.l",
+      "concepts": [
+        "lexer",
+        "lexical-structure",
+        "keywords"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/verilog.y — bison grammar of SystemVerilog",
+      "url": "https://github.com/verilator/verilator/blob/master/src/verilog.y",
+      "concepts": [
+        "parser",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Width.cpp — expression width and type resolution",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Width.cpp",
+      "concepts": [
+        "semantic-analysis",
+        "type-system",
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Class.cpp — lowering of classes",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Class.cpp",
+      "concepts": [
+        "classes",
+        "objects"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Randomize.cpp — randomize() and constraint lowering",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Randomize.cpp",
+      "concepts": [
+        "constraints"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Fork.cpp — fork/join process handling",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Fork.cpp",
+      "concepts": [
+        "concurrency",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Timing.cpp — delays and event controls (timing support)",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Timing.cpp",
+      "concepts": [
+        "hdl-signals-timing",
+        "coroutines"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Sched.cpp — scheduling regions and evaluation loop",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Sched.cpp",
+      "concepts": [
+        "hdl-signals-timing",
+        "evaluation-order"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Assert.cpp — immediate/concurrent assertions, unique/priority checks",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Assert.cpp",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator src/V3Coverage.cpp — coverage instrumentation",
+      "url": "https://github.com/verilator/verilator/blob/master/src/V3Coverage.cpp",
+      "concepts": [
+        "testing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator include/verilated_random.cpp — runtime constraint solver interface",
+      "url": "https://github.com/verilator/verilator/blob/master/include/verilated_random.cpp",
+      "concepts": [
+        "constraints",
+        "runtime-system"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Verilator include/verilated_timing.cpp — C++ coroutine-based timing runtime",
+      "url": "https://github.com/verilator/verilator/blob/master/include/verilated_timing.cpp",
+      "concepts": [
+        "runtime-system",
+        "coroutines",
+        "hdl-signals-timing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verilator"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "slang — SystemVerilog compiler and language services (C++)",
+      "url": "https://github.com/MikePopoloski/slang",
+      "concepts": [
+        "compiler-architecture",
+        "semantic-analysis"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/parsing/Lexer.cpp — lexer",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/parsing/Lexer.cpp",
+      "concepts": [
+        "lexer",
+        "lexical-structure",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/parsing/Preprocessor.cpp — `define/`ifdef/`include preprocessor",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/parsing/Preprocessor.cpp",
+      "concepts": [
+        "preprocessor",
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/parsing/Parser_expressions.cpp — expression parser",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/parsing/Parser_expressions.cpp",
+      "concepts": [
+        "parser",
+        "expressions",
+        "operator-precedence"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/parsing/Parser_statements.cpp — statement parser",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/parsing/Parser_statements.cpp",
+      "concepts": [
+        "parser",
+        "statements"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang scripts/syntax.txt — machine-readable syntax-node definitions",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/scripts/syntax.txt",
+      "concepts": [
+        "ast",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang docs/grammar.md — SystemVerilog BNF as used by slang",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/docs/grammar.md",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/Lookup.cpp — name lookup and hierarchical references",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/Lookup.cpp",
+      "concepts": [
+        "scope",
+        "semantic-analysis"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/types/Type.cpp — type system (packed/unpacked, equivalence, assignment compatibility)",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/types/Type.cpp",
+      "concepts": [
+        "type-system",
+        "type-equivalence"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/symbols/ClassSymbols.cpp — classes, inheritance, virtual methods, parameterized classes",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/symbols/ClassSymbols.cpp",
+      "concepts": [
+        "classes",
+        "inheritance",
+        "generics"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/Constraints.cpp — constraint blocks",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/Constraints.cpp",
+      "concepts": [
+        "constraints"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/expressions/AssertionExpr.cpp — sequences and properties (SVA)",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/expressions/AssertionExpr.cpp",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/statements/LoopStatements.cpp — for/foreach/while/repeat/forever",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/statements/LoopStatements.cpp",
+      "concepts": [
+        "loops",
+        "iteration-foreach"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/statements/ConditionalStatements.cpp — if/case/randcase, unique and priority",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/statements/ConditionalStatements.cpp",
+      "concepts": [
+        "conditionals",
+        "switch-case",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/TimingControl.cpp — delays, event and clocking controls",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/TimingControl.cpp",
+      "concepts": [
+        "hdl-signals-timing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/symbols/InstanceSymbols.cpp — module/interface instances and elaboration",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/symbols/InstanceSymbols.cpp",
+      "concepts": [
+        "hdl-structure",
+        "modules"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/builtins/ArrayMethods.cpp — dynamic array, queue and associative array methods",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/builtins/ArrayMethods.cpp",
+      "concepts": [
+        "arrays",
+        "maps-dictionaries",
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/builtins/StringMethods.cpp — string methods",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/builtins/StringMethods.cpp",
+      "concepts": [
+        "strings",
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "slang source/ast/builtins/StdPackage.cpp — built-in std package (process, semaphore, mailbox)",
+      "url": "https://github.com/MikePopoloski/slang/blob/master/source/ast/builtins/StdPackage.cpp",
+      "concepts": [
+        "standard-library",
+        "synchronization",
+        "channels-message-passing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "slang"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "Surelog — SV3_1aParser.g4 ANTLR grammar of IEEE 1800",
+      "url": "https://github.com/chipsalliance/Surelog/blob/master/grammar/SV3_1aParser.g4",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Surelog"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "Surelog — SV3_1aLexer.g4 ANTLR lexer grammar",
+      "url": "https://github.com/chipsalliance/Surelog/blob/master/grammar/SV3_1aLexer.g4",
+      "concepts": [
+        "lexical-structure",
+        "lexer"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Surelog"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "Verible — verilog.y SystemVerilog grammar for linting/formatting",
+      "url": "https://github.com/chipsalliance/verible/blob/master/verible/verilog/parser/verilog.y",
+      "concepts": [
+        "grammar",
+        "parser",
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Verible"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "tree-sitter-verilog — grammar.js (Verilog/SystemVerilog)",
+      "url": "https://github.com/tree-sitter/tree-sitter-verilog/blob/master/grammar.js",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "tree-sitter"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Yosys — frontends/verilog/verilog_parser.y (SystemVerilog subset for synthesis)",
+      "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/verilog/verilog_parser.y",
+      "concepts": [
+        "parser",
+        "synthesis"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Yosys"
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "sv2v — SystemVerilog-to-Verilog converter (README)",
+      "url": "https://github.com/zachjs/sv2v/blob/master/README.md",
+      "concepts": [
+        "tooling",
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "sv2v"
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "UVM reference implementation (accellera-official/uvm-core)",
+      "url": "https://github.com/accellera-official/uvm-core/blob/main/README.md",
+      "concepts": [
+        "standard-library",
+        "testing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Accellera UVM"
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "sv-tests — SystemVerilog conformance test suite across tools",
+      "url": "https://github.com/chipsalliance/sv-tests",
+      "concepts": [
+        "standardization",
+        "testing"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "comparison-table",
+      "title": "sv-tests results dashboard",
+      "url": "https://chipsalliance.github.io/sv-tests-results/",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify — SystemVerilog tutorial (index)",
+      "url": "https://chipverify.com/systemverilog/systemverilog-tutorial",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Data types",
+      "url": "https://chipverify.com/systemverilog/systemverilog-datatypes",
+      "concepts": [
+        "primitive-types",
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — logic and four-state types",
+      "url": "https://chipverify.com/systemverilog/systemverilog-data-type-logic",
+      "concepts": [
+        "primitive-types",
+        "hdl-signals-timing"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Strings",
+      "url": "https://chipverify.com/systemverilog/systemverilog-strings",
+      "concepts": [
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Enumerations",
+      "url": "https://chipverify.com/systemverilog/systemverilog-enumeration",
+      "concepts": [
+        "enums"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Structures",
+      "url": "https://chipverify.com/systemverilog/systemverilog-struct",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Unions",
+      "url": "https://chipverify.com/systemverilog/systemverilog-union",
+      "concepts": [
+        "union-intersection-types"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — typedef and alias",
+      "url": "https://chipverify.com/systemverilog/systemverilog-typedef-alias",
+      "concepts": [
+        "type-aliases"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Arrays",
+      "url": "https://chipverify.com/systemverilog/systemverilog-arrays",
+      "concepts": [
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Dynamic arrays",
+      "url": "https://chipverify.com/systemverilog/systemverilog-dynamic-array",
+      "concepts": [
+        "arrays",
+        "memory-management"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Associative arrays",
+      "url": "https://chipverify.com/systemverilog/systemverilog-associative-array",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Queues",
+      "url": "https://chipverify.com/systemverilog/systemverilog-queue",
+      "concepts": [
+        "lists"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — const",
+      "url": "https://chipverify.com/systemverilog/systemverilog-const",
+      "concepts": [
+        "constants"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Static casting",
+      "url": "https://chipverify.com/systemverilog/systemverilog-static-cast",
+      "concepts": [
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Dynamic casting",
+      "url": "https://chipverify.com/systemverilog/systemverilog-dynamic-cast",
+      "concepts": [
+        "type-conversion",
+        "subtyping"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Streaming operators",
+      "url": "https://chipverify.com/systemverilog/systemverilog-streaming-operators",
+      "concepts": [
+        "operators",
+        "serialization"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Control flow and loops",
+      "url": "https://chipverify.com/systemverilog/systemverilog-control-flow-loops",
+      "concepts": [
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — foreach loop",
+      "url": "https://chipverify.com/systemverilog/systemverilog-foreach-loop",
+      "concepts": [
+        "iteration-foreach"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — break and continue",
+      "url": "https://chipverify.com/systemverilog/systemverilog-break-continue",
+      "concepts": [
+        "loop-control"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — unique and priority if",
+      "url": "https://chipverify.com/systemverilog/systemverilog-unique-priority-if-else",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — unique and priority case",
+      "url": "https://chipverify.com/systemverilog/systemverilog-unique-priority-case",
+      "concepts": [
+        "switch-case"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Functions and tasks",
+      "url": "https://chipverify.com/systemverilog/systemverilog-functions-tasks",
+      "concepts": [
+        "functions",
+        "parameters-arguments"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Classes",
+      "url": "https://chipverify.com/systemverilog/systemverilog-class",
+      "concepts": [
+        "classes"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Class constructors",
+      "url": "https://chipverify.com/systemverilog/systemverilog-class-constructor",
+      "concepts": [
+        "constructors"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Class handles and objects",
+      "url": "https://chipverify.com/systemverilog/systemverilog-class-handle-object",
+      "concepts": [
+        "objects",
+        "pointers-references"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Inheritance",
+      "url": "https://chipverify.com/systemverilog/systemverilog-inheritance",
+      "concepts": [
+        "inheritance"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Polymorphism",
+      "url": "https://chipverify.com/systemverilog/systemverilog-polymorphism",
+      "concepts": [
+        "polymorphism"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Virtual methods",
+      "url": "https://chipverify.com/systemverilog/systemverilog-virtual-methods",
+      "concepts": [
+        "methods",
+        "polymorphism"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Abstract (virtual) classes",
+      "url": "https://chipverify.com/systemverilog/systemverilog-abstract-class",
+      "concepts": [
+        "abstract-classes"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — local and protected access",
+      "url": "https://chipverify.com/systemverilog/systemverilog-local-access-level",
+      "concepts": [
+        "encapsulation",
+        "visibility"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Parameterized classes",
+      "url": "https://chipverify.com/systemverilog/systemverilog-parameterized-classes",
+      "concepts": [
+        "generics"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Scope resolution operator ::",
+      "url": "https://chipverify.com/systemverilog/systemverilog-scope-resolution-operator",
+      "concepts": [
+        "scope",
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Packages",
+      "url": "https://chipverify.com/systemverilog/systemverilog-package",
+      "concepts": [
+        "modules",
+        "imports",
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — `define macros",
+      "url": "https://chipverify.com/systemverilog/systemverilog-define-macro",
+      "concepts": [
+        "macros",
+        "preprocessor"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Interfaces",
+      "url": "https://chipverify.com/systemverilog/systemverilog-interface",
+      "concepts": [
+        "hdl-structure",
+        "interfaces-protocols"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Modports",
+      "url": "https://chipverify.com/systemverilog/systemverilog-modport",
+      "concepts": [
+        "hdl-structure",
+        "visibility"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Virtual interfaces",
+      "url": "https://chipverify.com/systemverilog/systemverilog-virtual-interface",
+      "concepts": [
+        "hdl-structure",
+        "pointers-references"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Clocking blocks",
+      "url": "https://chipverify.com/systemverilog/systemverilog-clocking-blocks",
+      "concepts": [
+        "hdl-signals-timing"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Scheduling semantics",
+      "url": "https://chipverify.com/systemverilog/systemverilog-scheduling-semantics",
+      "concepts": [
+        "hdl-signals-timing",
+        "evaluation-order"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Program blocks",
+      "url": "https://chipverify.com/systemverilog/systemverilog-program-block",
+      "concepts": [
+        "program-structure"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — fork/join",
+      "url": "https://chipverify.com/systemverilog/systemverilog-fork-join",
+      "concepts": [
+        "concurrency",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Events",
+      "url": "https://chipverify.com/systemverilog/systemverilog-event",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Semaphores",
+      "url": "https://chipverify.com/systemverilog/systemverilog-semaphore",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Mailboxes",
+      "url": "https://chipverify.com/systemverilog/systemverilog-mailbox",
+      "concepts": [
+        "channels-message-passing"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Randomization",
+      "url": "https://chipverify.com/systemverilog/systemverilog-randomization",
+      "concepts": [
+        "constraints"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Constraints",
+      "url": "https://chipverify.com/systemverilog/systemverilog-constraints",
+      "concepts": [
+        "constraints"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Assertions overview",
+      "url": "https://chipverify.com/systemverilog/systemverilog-assertions",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Concurrent assertions",
+      "url": "https://chipverify.com/systemverilog/systemverilog-concurrent-assertions",
+      "concepts": [
+        "assertions",
+        "hdl-signals-timing"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Functional coverage",
+      "url": "https://chipverify.com/systemverilog/systemverilog-functional-coverage",
+      "concepts": [
+        "testing"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — Direct Programming Interface (DPI)",
+      "url": "https://chipverify.com/systemverilog/systemverilog-dpi",
+      "concepts": [
+        "ffi",
+        "interoperability"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — File I/O",
+      "url": "https://chipverify.com/systemverilog/systemverilog-file-io",
+      "concepts": [
+        "file-io"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — SystemVerilog for RTL design",
+      "url": "https://chipverify.com/systemverilog/systemverilog-for-rtl-design",
+      "concepts": [
+        "synthesis"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ChipVerify SystemVerilog — A simple testbench",
+      "url": "https://chipverify.com/systemverilog/systemverilog-simple-testbench",
+      "concepts": [
+        "testing",
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ASIC World — SystemVerilog tutorial",
+      "url": "https://www.asic-world.com/systemverilog/tutorial.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ASIC World SystemVerilog — Data types",
+      "url": "https://www.asic-world.com/systemverilog/data_types.html",
+      "concepts": [
+        "primitive-types"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ASIC World SystemVerilog — Operators",
+      "url": "https://www.asic-world.com/systemverilog/operators.html",
+      "concepts": [
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ASIC World SystemVerilog — Procedural statements and control flow",
+      "url": "https://www.asic-world.com/systemverilog/procedure_ctrl.html",
+      "concepts": [
+        "conditionals",
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ASIC World SystemVerilog — Interfaces",
+      "url": "https://www.asic-world.com/systemverilog/interface.html",
+      "concepts": [
+        "hdl-structure"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "ASIC World SystemVerilog — DPI",
+      "url": "https://www.asic-world.com/systemverilog/dpi.html",
+      "concepts": [
+        "ffi"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Doulos — SystemVerilog KnowHow",
+      "url": "https://www.doulos.com/knowhow/systemverilog/",
+      "scope": "whole",
+      "authority": "vendor",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Verification Guide — SystemVerilog tutorial",
+      "url": "https://verificationguide.com/systemverilog/systemverilog-tutorial/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Stuart Sutherland — Synthesizing SystemVerilog: Busting the Myth that SystemVerilog is only for Verification (SNUG 2013)",
+      "url": "https://sutherland-hdl.com/papers/2013-SNUG-SV_Synthesizable-SystemVerilog_paper.pdf",
+      "concepts": [
+        "synthesis"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stuart Sutherland"
+      ],
+      "year": 2013
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Stuart Sutherland — Can My Synthesis Compiler Handle This SystemVerilog Construct? (DVCon 2014)",
+      "url": "https://sutherland-hdl.com/papers/2014-DVCon_ASIC-FPGA_SV_Synthesis_paper.pdf",
+      "concepts": [
+        "synthesis",
+        "versioning-compatibility"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stuart Sutherland"
+      ],
+      "year": 2014
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Stuart Sutherland — SystemVerilog 2012 — new features (DVCon 2012)",
+      "url": "https://sutherland-hdl.com/papers/2012-DVCon_SystemVerilog-2012_paper.pdf",
+      "concepts": [
+        "versioning-compatibility",
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stuart Sutherland"
+      ],
+      "year": 2012
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Stuart Sutherland — The Verilog and SystemVerilog merge into IEEE 1800-2009 (DVCon 2008)",
+      "url": "https://sutherland-hdl.com/papers/2008-DVCon_Verilog_SystemVerilog_merge_paper.pdf",
+      "concepts": [
+        "history",
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stuart Sutherland"
+      ],
+      "year": 2008
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Stuart Sutherland — I’m Still In Love With My X! — X-propagation in SystemVerilog (DVCon 2013)",
+      "url": "https://sutherland-hdl.com/papers/2013-DVCon_In-love-with-my-X_paper.pdf",
+      "concepts": [
+        "hdl-signals-timing",
+        "undefined-behavior"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stuart Sutherland"
+      ],
+      "year": 2013
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Stuart Sutherland — SystemVerilog Assertions for RTL designers (SNUG 2015)",
+      "url": "https://sutherland-hdl.com/papers/2015-SNUG-SV_SVA-for-RTL-Designers_paper.pdf",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Stuart Sutherland"
+      ],
+      "year": 2015
+    },
+    {
+      "level": 3,
+      "kind": "bibliography",
+      "title": "Sutherland HDL — papers and presentations on Verilog/SystemVerilog",
+      "url": "https://sutherland-hdl.com/papers",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "bibliography",
+      "title": "Cliff Cummings (Sunburst Design) technical papers, now hosted by Paradigm Works",
+      "url": "https://www.paradigm-works.com/technical-library",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Sutherland, Davidmann, Flake — SystemVerilog for Design (2nd ed., Springer)",
+      "url": "https://link.springer.com/book/10.1007/978-0-387-36495-7",
+      "concepts": [
+        "synthesis"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "book",
+      "access": "paywalled",
+      "authors": [
+        "Stuart Sutherland",
+        "Simon Davidmann",
+        "Peter Flake"
+      ],
+      "year": 2006
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Spear, Tumbush — SystemVerilog for Verification (3rd ed., Springer)",
+      "url": "https://link.springer.com/book/10.1007/978-1-4614-0715-7",
+      "concepts": [
+        "testing",
+        "classes"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "book",
+      "access": "paywalled",
+      "authors": [
+        "Chris Spear",
+        "Greg Tumbush"
+      ],
+      "year": 2012
+    },
+    {
+      "level": 2,
+      "kind": "interactive",
+      "title": "EDA Playground — run SystemVerilog in the browser",
+      "url": "https://www.edaplayground.com/",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "interactive",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — SystemVerilog",
+      "url": "https://en.wikipedia.org/wiki/SystemVerilog",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia SystemVerilog — History",
+      "url": "https://en.wikipedia.org/wiki/SystemVerilog#History",
+      "concepts": [
+        "history"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia SystemVerilog — Interfaces",
+      "url": "https://en.wikipedia.org/wiki/SystemVerilog#Interfaces",
+      "concepts": [
+        "hdl-structure"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia SystemVerilog — Classes",
+      "url": "https://en.wikipedia.org/wiki/SystemVerilog#Classes",
+      "concepts": [
+        "classes"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia SystemVerilog — Constrained random generation",
+      "url": "https://en.wikipedia.org/wiki/SystemVerilog#Constrained_random_generation",
+      "concepts": [
+        "constraints"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia SystemVerilog — Assertions",
+      "url": "https://en.wikipedia.org/wiki/SystemVerilog#Assertions",
+      "concepts": [
+        "assertions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — SystemVerilog",
+      "url": "https://pldb.io/concepts/systemverilog.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — SystemVerilog",
+      "url": "https://rosettacode.org/wiki/Category:SystemVerilog",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

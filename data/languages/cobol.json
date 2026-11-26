@@ -1,0 +1,48 @@
+{
+ "id": "cobol",
+ "name": "COBOL",
+ "aliases": ["COmmon Business-Oriented Language", "COBOL-60", "COBOL-85", "COBOL 2002", "COBOL 2014", "COBOL 2023"],
+ "categories": ["general-purpose", "historical", "domain-specific"],
+ "paradigms": ["imperative", "procedural", "object-oriented"],
+ "typing": ["static", "strong", "manifest"],
+ "first_appeared": 1959,
+ "designers": ["CODASYL Short-Range Committee", "Grace Hopper (influence)", "Jean Sammet", "Mary Hawes"],
+ "summary": "English-like business data-processing language designed by CODASYL in 1959: programs are divided into IDENTIFICATION, ENVIRONMENT, DATA and PROCEDURE divisions, with hierarchical record layouts (PICTURE clauses, level numbers), decimal fixed-point arithmetic, rich file and report handling; standardized as ISO/IEC 1989 and still widespread on mainframes.",
+ "status": "active",
+ "defined_by": ["international-standard"],
+ "file_extensions": [".cob", ".cbl", ".cpy"],
+ "homepage": "https://en.wikipedia.org/wiki/COBOL",
+ "influenced_by": ["flow-matic"],
+ "level_notes": {"1": "ISO/IEC 1989:2023 is paywalled and no legitimate free draft is published; the original CODASYL COBOL-60 report is freely available (bitsavers). Vendor language references (IBM Enterprise COBOL, Micro Focus) are the practical references.", "0": "GnuCOBOL (translates COBOL to C) is the main open-source implementation; it is developed on SourceForge (blocked from the verification sandbox), so file links use the OCamlPro/gnucobol GitHub mirror (gcos4gnucobol-3.x branch)."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "GnuCOBOL (SourceForge project)", "url": "https://sourceforge.net/projects/gnucobol/", "implementation": "GnuCOBOL", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "GnuCOBOL cobc/scanner.l — scanner (flex)", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/cobc/scanner.l", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "grammar-source", "title": "GnuCOBOL cobc/parser.y — parser grammar (bison)", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/cobc/parser.y", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "GnuCOBOL cobc/reserved.c — reserved words and dialect handling", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/cobc/reserved.c", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["keywords"]},
+  {"level": 0, "kind": "implementation-source", "title": "GnuCOBOL cobc/typeck.c — type checking of statements and data items", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/cobc/typeck.c", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "type-conversion"]},
+  {"level": 0, "kind": "implementation-source", "title": "GnuCOBOL cobc/codegen.c — C code generation", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/cobc/codegen.c", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "standard-library-source", "title": "GnuCOBOL libcob/numeric.c — decimal arithmetic runtime", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/libcob/numeric.c", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["integers", "floating-point"]},
+  {"level": 0, "kind": "standard-library-source", "title": "GnuCOBOL libcob/fileio.c — file I/O runtime (sequential, relative, indexed)", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/libcob/fileio.c", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["file-io"]},
+  {"level": 0, "kind": "implementation-source", "title": "GnuCOBOL config/ibm.conf — IBM dialect configuration", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/config/ibm.conf", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["versioning-compatibility"]},
+  {"level": 0, "kind": "conformance-tests", "title": "GnuCOBOL tests/testsuite.src/run_fundamental.at — fundamental run-time tests", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/tests/testsuite.src/run_fundamental.at", "implementation": "GnuCOBOL", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["testing"]},
+  {"level": 0, "kind": "implementation-source", "title": "GnuCOBOL doc/gnucobol.texi — GnuCOBOL manual source", "url": "https://github.com/OCamlPro/gnucobol/blob/gcos4gnucobol-3.x/doc/gnucobol.texi", "implementation": "GnuCOBOL", "scope": "whole", "authority": "community", "format": "source-file", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 1, "kind": "standard", "title": "ISO/IEC 1989:2023 — COBOL (ISO catalogue page)", "url": "https://www.iso.org/standard/74527.html", "scope": "whole", "authority": "standards-body", "year": 2023, "version": "COBOL 2023", "format": "html", "access": "paywalled", "concepts": ["standardization"]},
+  {"level": 1, "kind": "original-paper", "title": "COBOL — Initial Specifications for a Common Business Oriented Language (CODASYL report, April 1960)", "url": "http://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf", "scope": "whole", "authority": "designer", "authors": ["CODASYL"], "year": 1960, "format": "pdf", "access": "open", "concepts": ["history", "grammar"]},
+
+  {"level": 2, "kind": "guide", "title": "GnuCOBOL Programmer's Guide (Gary Cutler)", "url": "https://gnucobol.sourceforge.io/HTML/gnucobpg.html", "scope": "whole", "authority": "community", "authors": ["Gary Cutler"], "format": "html", "access": "open", "concepts": ["program-structure"]},
+  {"level": 2, "kind": "history", "title": "The Early History of COBOL (HOPL I, 1978)", "url": "https://dl.acm.org/doi/10.1145/800025.1198367", "scope": "whole", "authority": "designer", "authors": ["Jean E. Sammet"], "year": 1978, "format": "html", "access": "open", "concepts": ["history", "design-rationale"]},
+  {"level": 2, "kind": "course", "title": "Open Mainframe Project — COBOL Programming Course", "url": "https://github.com/openmainframeproject/cobol-programming-course", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — Program structure (divisions, sections, paragraphs)", "url": "https://www.tutorialspoint.com/cobol/cobol_program_structure.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["program-structure"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — Data types (PICTURE, levels)", "url": "https://www.tutorialspoint.com/cobol/cobol_data_types.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["primitive-types", "records-structs"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — Condition statements", "url": "https://www.tutorialspoint.com/cobol/cobol_condition_statements.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — Loop statements (PERFORM)", "url": "https://www.tutorialspoint.com/cobol/cobol_loop_statements.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["loops"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — Table processing (OCCURS)", "url": "https://www.tutorialspoint.com/cobol/cobol_table_processing.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["arrays"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — File handling", "url": "https://www.tutorialspoint.com/cobol/cobol_file_handling.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["file-io"]},
+  {"level": 2, "kind": "tutorial", "title": "COBOL tutorial (tutorialspoint) — Subroutines (CALL)", "url": "https://www.tutorialspoint.com/cobol/cobol_subroutines.htm", "scope": "section", "authority": "community", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 2, "kind": "cheatsheet", "title": "Learn X in Y minutes — COBOL", "url": "https://learnxinyminutes.com/cobol/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — COBOL", "url": "https://en.wikipedia.org/wiki/COBOL", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — COBOL", "url": "https://pldb.io/concepts/cobol.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

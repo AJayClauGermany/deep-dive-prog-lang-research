@@ -1,0 +1,45 @@
+{
+ "id": "self",
+ "name": "Self",
+ "categories": ["general-purpose", "object-oriented"],
+ "paradigms": ["object-oriented", "prototype-based", "reflective", "message-passing"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 1987,
+ "designers": ["David Ungar", "Randall B. Smith"],
+ "summary": "Prototype-based dialect of Smalltalk from Xerox PARC and Stanford/Sun in which objects consist of slots, inheritance is delegation through parent slots and there are no classes or variables apart from slots. Its implementation pioneered polymorphic inline caches, customization, adaptive optimization and deoptimization later used in HotSpot and JavaScript VMs.",
+ "status": "maintained",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".self", ".snap"],
+ "homepage": "https://selflanguage.org/",
+ "influenced_by": ["smalltalk"],
+ "related": [{"id": "smalltalk", "relation": "family"}, {"id": "javascript", "relation": "family"}, {"id": "newtonscript", "relation": "family"}, {"id": "io", "relation": "family"}],
+ "level_notes": {"0": "The Self VM (C++) and world live in russellallen/self; GitHub file links point at the master branch.", "1": "The Language Reference chapter of the Self Handbook and the 1987 OOPSLA paper define the language; there is no external standard."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "russellallen/self — Self virtual machine and Self world", "url": "https://github.com/russellallen/self", "implementation": "Self VM", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["virtual-machine", "jit"]},
+  {"level": 0, "kind": "implementation-source", "title": "scanner.cpp — Self scanner", "url": "https://github.com/russellallen/self/blob/master/vm/src/any/parser/scanner.cpp", "implementation": "Self VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "parser.cpp — Self parser", "url": "https://github.com/russellallen/self/blob/master/vm/src/any/parser/parser.cpp", "implementation": "Self VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "process.cpp — Self processes (green threads) in the VM", "url": "https://github.com/russellallen/self/blob/master/vm/src/any/runtime/process.cpp", "implementation": "Self VM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["threads", "runtime-system"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — Language Reference", "url": "https://handbook.selflanguage.org/2024.1/langref.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — 3.1 Objects (data objects, methods, blocks)", "url": "https://handbook.selflanguage.org/2024.1/langref.html#objects", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["objects", "prototypes", "methods", "closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — 3.2 Slot descriptors (parent slots)", "url": "https://handbook.selflanguage.org/2024.1/langref.html#slot-descriptors", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["prototypes", "inheritance", "properties"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — 3.3 Expressions and message sends", "url": "https://handbook.selflanguage.org/2024.1/langref.html#expressions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions", "methods"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — 3.3.8 The lookup algorithm", "url": "https://handbook.selflanguage.org/2024.1/langref.html#the-lookup-algorithm", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["inheritance", "polymorphism"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — 3.4 Lexical elements", "url": "https://handbook.selflanguage.org/2024.1/langref.html#lexical-elements", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure", "literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — Blocks, Booleans and Control Structures", "url": "https://handbook.selflanguage.org/2024.1/blocks.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — Mirrors (reflection)", "url": "https://handbook.selflanguage.org/2024.1/mirrors.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["reflection"]},
+  {"level": 1, "kind": "reference-manual", "title": "Self Handbook — Virtual Machine Reference", "url": "https://handbook.selflanguage.org/2024.1/vmref.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 1, "kind": "original-paper", "title": "Self: The Power of Simplicity (Ungar and Smith, OOPSLA 1987)", "url": "https://bibliography.selflanguage.org/self-power.html", "scope": "whole", "authority": "designer", "authors": ["David Ungar", "Randall B. Smith"], "year": 1987, "format": "html", "access": "open", "concepts": ["prototypes", "design-rationale"]},
+  {"level": 1, "kind": "original-paper", "title": "Parents are Shared Parts: Inheritance and Encapsulation in Self (1991)", "url": "https://bibliography.selflanguage.org/parents-shared-parts.html", "scope": "whole", "authority": "designer", "authors": ["Craig Chambers", "David Ungar", "Bay-Wei Chang", "Urs Hölzle"], "year": 1991, "format": "html", "access": "open", "concepts": ["inheritance", "encapsulation"]},
+
+  {"level": 2, "kind": "paper", "title": "Optimizing Dynamically-Typed Object-Oriented Languages with Polymorphic Inline Caches (Hölzle, Chambers, Ungar 1991)", "url": "https://bibliography.selflanguage.org/pics.html", "scope": "whole", "authority": "academic", "authors": ["Urs Hölzle", "Craig Chambers", "David Ungar"], "year": 1991, "format": "html", "access": "open", "concepts": ["jit", "optimization"]},
+  {"level": 2, "kind": "paper", "title": "Customization: Optimizing Compiler Technology for Self (Chambers and Ungar, PLDI 1989)", "url": "https://bibliography.selflanguage.org/customization.html", "scope": "whole", "authority": "academic", "authors": ["Craig Chambers", "David Ungar"], "year": 1989, "format": "html", "access": "open", "concepts": ["optimization", "jit"]},
+  {"level": 2, "kind": "paper", "title": "Debugging Optimized Code with Dynamic Deoptimization (Hölzle, Chambers, Ungar 1992)", "url": "https://bibliography.selflanguage.org/dynamic-deoptimization.html", "scope": "whole", "authority": "academic", "authors": ["Urs Hölzle", "Craig Chambers", "David Ungar"], "year": 1992, "format": "html", "access": "open", "concepts": ["jit"]},
+  {"level": 2, "kind": "history", "title": "Self (Ungar and Smith, HOPL III 2007)", "url": "https://dl.acm.org/doi/10.1145/1238844.1238853", "scope": "whole", "authority": "designer", "authors": ["David Ungar", "Randall B. Smith"], "year": 2007, "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 2, "kind": "guide", "title": "Self Handbook — How to Program in Self", "url": "https://handbook.selflanguage.org/2024.1/howtoprg.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+
+  {"level": 3, "kind": "bibliography", "title": "Self bibliography (papers on the language and implementation)", "url": "https://bibliography.selflanguage.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Self (programming language)", "url": "https://en.wikipedia.org/wiki/Self_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Self", "url": "https://pldb.io/concepts/self.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

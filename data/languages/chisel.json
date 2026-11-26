@@ -1,0 +1,422 @@
+{
+ "id": "chisel",
+ "name": "Chisel",
+ "aliases": [
+  "Chisel3",
+  "Constructing Hardware in a Scala Embedded Language"
+ ],
+ "categories": [
+  "hardware-description",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "object-oriented",
+  "generator",
+  "structural"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "width-inferred"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Jonathan Bachrach",
+  "Krste Asanović",
+  "UC Berkeley ASPIRE/ADEPT labs"
+ ],
+ "summary": "Hardware construction language embedded in Scala, from UC Berkeley and now CHIPS Alliance. Scala programs act as circuit generators that elaborate to FIRRTL, which the CIRCT-based firtool lowers to Verilog; used for RISC-V cores such as Rocket and BOOM.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".scala"
+ ],
+ "homepage": "https://www.chisel-lang.org/",
+ "influenced_by": [
+  "scala",
+  "verilog"
+ ],
+ "related": [
+  {
+   "id": "scala",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "firrtl",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal specification: the chisel-lang.org documentation and the Scala API are the reference; the DAC 2012 paper defines the original design.",
+  "0": "chipsalliance/chisel is the definition in practice; elaborated designs are emitted as FIRRTL and compiled by CIRCT firtool."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Bachrach et al. — Chisel: Constructing Hardware in a Scala Embedded Language (DAC 2012)",
+   "url": "https://people.eecs.berkeley.edu/~krste/papers/chisel-dac2012.pdf",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Jonathan Bachrach",
+    "Huy Vo",
+    "Brian Richards",
+    "Yunsup Lee",
+    "Andrew Waterman",
+    "Rimas Avižienis",
+    "John Wawrzynek",
+    "Krste Asanović"
+   ],
+   "year": 2012
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Motivation",
+   "url": "https://www.chisel-lang.org/docs/explanations/motivation",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Data types",
+   "url": "https://www.chisel-lang.org/docs/explanations/data-types",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Bundles and Vecs",
+   "url": "https://www.chisel-lang.org/docs/explanations/bundles-and-vecs",
+   "concepts": [
+    "records-structs",
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Operators",
+   "url": "https://www.chisel-lang.org/docs/explanations/operators",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Combinational circuits",
+   "url": "https://www.chisel-lang.org/docs/explanations/combinational-circuits",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Sequential circuits (registers)",
+   "url": "https://www.chisel-lang.org/docs/explanations/sequential-circuits",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Modules",
+   "url": "https://www.chisel-lang.org/docs/explanations/modules",
+   "concepts": [
+    "hdl-structure",
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Connection operators",
+   "url": "https://www.chisel-lang.org/docs/explanations/connection-operators",
+   "concepts": [
+    "assignment"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Muxes and input selection",
+   "url": "https://www.chisel-lang.org/docs/explanations/muxes-and-input-selection",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Width inference",
+   "url": "https://www.chisel-lang.org/docs/explanations/width-inference",
+   "concepts": [
+    "type-inference",
+    "integers"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — Polymorphism and parameterization",
+   "url": "https://www.chisel-lang.org/docs/explanations/polymorphism-and-parameterization",
+   "concepts": [
+    "generics",
+    "polymorphism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel docs — BlackBoxes",
+   "url": "https://www.chisel-lang.org/docs/explanations/blackboxes",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Chisel documentation home",
+   "url": "https://www.chisel-lang.org/docs",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "chipsalliance/chisel",
+   "url": "https://github.com/chipsalliance/chisel",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Chisel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Chisel core Data.scala — Data base class",
+   "url": "https://github.com/chipsalliance/chisel/blob/main/core/src/main/scala/chisel3/Data.scala",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Chisel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Chisel core Bits.scala — UInt/SInt/Bool",
+   "url": "https://github.com/chipsalliance/chisel/blob/main/core/src/main/scala/chisel3/Bits.scala",
+   "concepts": [
+    "integers",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Chisel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Chisel core Aggregate.scala — Vec and Bundle",
+   "url": "https://github.com/chipsalliance/chisel/blob/main/core/src/main/scala/chisel3/Aggregate.scala",
+   "concepts": [
+    "records-structs",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Chisel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Chisel core Module.scala — Module",
+   "url": "https://github.com/chipsalliance/chisel/blob/main/core/src/main/scala/chisel3/Module.scala",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Chisel"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Chisel core When.scala — when/elsewhen/otherwise",
+   "url": "https://github.com/chipsalliance/chisel/blob/main/core/src/main/scala/chisel3/When.scala",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Chisel"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Chisel Bootcamp (Jupyter notebooks)",
+   "url": "https://github.com/freechipsproject/chisel-bootcamp",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Schoeberl — Digital Design with Chisel (free PDF)",
+   "url": "https://www.imm.dtu.dk/~masca/chisel-book.pdf",
+   "concepts": [
+    "hello-world",
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Martin Schoeberl"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Digital Design with Chisel — sources",
+   "url": "https://github.com/schoeberl/chisel-book",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "authors": [
+    "Martin Schoeberl"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "chiseltest — testing library for Chisel",
+   "url": "https://github.com/ucb-bar/chiseltest",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Chisel (programming language)",
+   "url": "https://en.wikipedia.org/wiki/Chisel_(programming_language)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Chisel",
+   "url": "https://pldb.io/concepts/chisel.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

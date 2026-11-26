@@ -1,0 +1,283 @@
+{
+ "id": "sql-psm",
+ "name": "SQL/PSM",
+ "aliases": [
+  "Persistent Stored Modules",
+  "ISO/IEC 9075-4"
+ ],
+ "categories": [
+  "database-procedural",
+  "query"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 1996,
+ "designers": [
+  "ISO/IEC JTC 1/SC 32/WG 3",
+  "ANSI X3H2"
+ ],
+ "summary": "SQL/PSM (ISO/IEC 9075-4) is the standard procedural extension of SQL: stored procedures and functions, compound statements (BEGIN ... END), local variables, IF/CASE/LOOP/WHILE/REPEAT/FOR, cursors, condition handlers and SIGNAL/RESIGNAL; implemented closely by MySQL/MariaDB and Db2 SQL PL.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "ISO/IEC 9075-4:2023"
+ ],
+ "influenced_by": [
+  "sql",
+  "ada"
+ ],
+ "related": [
+  {
+   "id": "sql",
+   "relation": "subset-of"
+  },
+  {
+   "id": "sql-mysql",
+   "relation": "family"
+  },
+  {
+   "id": "sql-db2",
+   "relation": "family"
+  },
+  {
+   "id": "plpgsql",
+   "relation": "family"
+  },
+  {
+   "id": "plsql",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "MySQL's and MariaDB's stored-program engines (sp_head/sp_instr) are the most direct open implementations.",
+  "1": "ISO/IEC 9075-4 is paywalled (catalogue page, reports blocked); the MySQL Reference Manual's compound-statement chapter, which follows SQL/PSM, is linked (dev.mysql.com reports 403 to the checker).",
+  "2": "Few free secondary sources; Wikipedia covers history."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MySQL — sp_head.cc (stored program representation)",
+   "url": "https://github.com/mysql/mysql-server/blob/trunk/sql/sp_head.cc",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "stored-procedures"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MySQL — sp_instr.cc (stored program instructions)",
+   "url": "https://github.com/mysql/mysql-server/blob/trunk/sql/sp_instr.cc",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MySQL — sp_pcontext.cc (variables, handlers, cursors scope)",
+   "url": "https://github.com/mysql/mysql-server/blob/trunk/sql/sp_pcontext.cc",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MariaDB — sp_head.cc",
+   "url": "https://github.com/MariaDB/server/blob/main/sql/sp_head.cc",
+   "implementation": "MariaDB",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "stored-procedures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 9075-4:2023 — Persistent Stored Modules (SQL/PSM)",
+   "url": "https://www.iso.org/standard/76586.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2023,
+   "format": "html",
+   "access": "paywalled"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "SQL:2003 BNF (Ron Savage) — Part 2 Foundation grammar (SQL-invoked routines; Part 4 PSM control statements not included)",
+   "url": "https://ronsavage.github.io/SQL/sql-2003-2.bnf.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — Compound statement syntax",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/sql-compound-statements.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — CREATE PROCEDURE and CREATE FUNCTION",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/create-procedure.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "stored-procedures",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — Local variable DECLARE",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/declare-local-variable.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — Flow control statements",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/flow-control-statements.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — Cursors",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/cursors.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iterators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — DECLARE ... HANDLER",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/declare-handler.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MySQL 8.4 Reference Manual — SIGNAL",
+   "url": "https://dev.mysql.com/doc/refman/8.4/en/signal.html",
+   "implementation": "MySQL",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MariaDB — Programmatic and compound statements",
+   "url": "https://mariadb.com/docs/server/reference/sql-statements/programmatic-compound-statements",
+   "implementation": "MariaDB",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SQL/PSM",
+   "url": "https://en.wikipedia.org/wiki/SQL/PSM",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — SQL/PSM",
+   "url": "https://pldb.io/concepts/sql-psm.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

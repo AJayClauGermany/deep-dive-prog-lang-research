@@ -1,0 +1,554 @@
+{
+ "id": "opentype-feature",
+ "name": "OpenType feature file language",
+ "aliases": [
+  "AFDKO feature syntax",
+  ".fea"
+ ],
+ "categories": [
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "rule-based"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1998,
+ "designers": [
+  "Adobe Systems (Adobe Font Development Kit for OpenType)"
+ ],
+ "summary": "Adobe's textual language for OpenType Layout tables: feature and lookup blocks containing GSUB substitution and GPOS positioning rules over glyphs and glyph classes, with language-system declarations, mark classes, contextual/chaining rules, value records and anchors; compiled into binary GSUB/GPOS/GDEF tables by makeotf, fontTools feaLib or fea-rs.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".fea"
+ ],
+ "homepage": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html",
+ "level_notes": {
+  "2": "Little tutorial literature beyond the spec itself; Simon Cozens' book chapter is the main one.",
+  "3": "No Wikipedia article or PLDB entry covers the feature-file language itself."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 1. Introduction",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#1-introduction",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2. Syntax",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2-syntax",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.a Comments",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2a-comments",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.b White space",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2b-white-space",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.c Keywords",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2c-keywords",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.d Special characters",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2d-special-characters",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.e Numbers, locations and metrics",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2e-numbers-locations-and-metrics",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.e.iv Value record",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2eiv-value-record",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.e.vii Anchor",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2evii-anchor",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.f Glyphs",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2f-glyphs",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.g Glyph classes",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2g-glyph-classes",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.g.i Ranges",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2gi-ranges",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 2.i Lookup block labels",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#2i-lookup-block-labels",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 3. Including files",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#3-including-files",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 4. Specifying features",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#4-specifying-features",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 4.b Language system",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#4b-language-system",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 4.d lookupflag",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#4d-lookupflag",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 4.e lookup",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#4e-lookup",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 4.f markClass",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#4f-markclass",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 5. Glyph substitution (GSUB) rules",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#5-glyph-substitution-gsub-rules",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 5.f Chaining contextual substitution",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#5f-gsub-lookuptype-6-chaining-contextual-substitution",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 6. Glyph positioning (GPOS) rules",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#6-glyph-positioning-gpos-rules",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 7. Ordering of lookups and rules",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#7-ordering-of-lookups-and-rules-in-the-feature-file",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 8. Specially handled features",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#8-specially-handled-features",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OpenType Feature File Specification — 9. Specifying or overriding table values",
+   "url": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html#9-specifying-or-overriding-table-values",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OpenType specification — Registered features (feature tags)",
+   "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/featuretags",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OpenType specification — GSUB: glyph substitution table",
+   "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/gsub",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "OpenType specification — GPOS: glyph positioning table",
+   "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/gpos",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Adobe AFDKO (makeotf feature compiler)",
+   "url": "https://github.com/adobe-type-tools/afdko",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "makeotf"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AFDKO — docs/OpenTypeFeatureFileSpecification.md (spec source)",
+   "url": "https://github.com/adobe-type-tools/afdko/blob/develop/docs/OpenTypeFeatureFileSpecification.md",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ],
+   "implementation": "makeotf"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fontTools feaLib — lexer.py",
+   "url": "https://github.com/fonttools/fonttools/blob/main/Lib/fontTools/feaLib/lexer.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "fontTools feaLib"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fontTools feaLib — parser.py",
+   "url": "https://github.com/fonttools/fonttools/blob/main/Lib/fontTools/feaLib/parser.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "fontTools feaLib"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fontTools feaLib — ast.py",
+   "url": "https://github.com/fonttools/fonttools/blob/main/Lib/fontTools/feaLib/ast.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ],
+   "implementation": "fontTools feaLib"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fontTools feaLib — builder.py (compiles to GSUB/GPOS)",
+   "url": "https://github.com/fonttools/fonttools/blob/main/Lib/fontTools/feaLib/builder.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "implementation": "fontTools feaLib"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "fontTools — Tests/feaLib/parser_test.py",
+   "url": "https://github.com/fonttools/fonttools/blob/main/Tests/feaLib/parser_test.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ],
+   "implementation": "fontTools feaLib"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fontc — fea-rs README (Rust feature-file compiler)",
+   "url": "https://github.com/googlefonts/fontc/blob/main/fea-rs/README.md",
+   "scope": "whole",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "implementation": "fea-rs"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "fontTools documentation — feaLib",
+   "url": "https://fonttools.readthedocs.io/en/latest/feaLib/index.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Simon Cozens — Fonts and Layout for Global Scripts: Introducing OpenType Features",
+   "url": "https://simoncozens.github.io/fonts-and-layout/features.html",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "pattern-matching"
+   ],
+   "authors": [
+    "Simon Cozens"
+   ]
+  }
+ ]
+}

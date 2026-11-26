@@ -1,0 +1,34 @@
+{
+ "id": "typed-assembly-language",
+ "name": "Typed Assembly Language (TAL)",
+ "aliases": ["TAL", "TALx86", "STAL", "MTAL"],
+ "categories": ["assembly", "theoretical-model", "intermediate-representation"],
+ "paradigms": ["imperative", "typed-low-level"],
+ "typing": ["static", "polymorphic", "certified"],
+ "first_appeared": 1998,
+ "designers": ["Greg Morrisett", "David Walker", "Karl Crary", "Neal Glew"],
+ "summary": "Family of assembly languages with static type annotations (code types for labels, polymorphism, existential types, stack and alias types) whose type system guarantees memory and control-flow safety of machine code; introduced by compiling System F to a RISC-like TAL in a type-preserving compiler, and realised for IA-32 as TALx86 in the Cornell TALC project.",
+ "status": "historical",
+ "defined_by": ["academic-paper"],
+ "file_extensions": [".tal"],
+ "homepage": "https://www.cs.cornell.edu/talc/",
+ "influenced_by": ["x86-assembly"],
+ "related": [{"id": "x86-assembly", "relation": "variant-of"}, {"id": "cyclone", "relation": "family"}],
+ "level_notes": {"0": "The TALC releases (Cornell, up to 3.0) contain the TALx86 assembler/type checker and the Popcorn compiler, distributed as zip archives.", "1": "Defined by the research papers (POPL 1998 / TOPLAS 1999 and follow-ups on stack-based TAL, modular linking, alias types), which give formal semantics and type-soundness proofs.", "3": "Wikipedia only."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "TALC releases — TALx86 type checker, assembler and Popcorn compiler (zip)", "url": "https://www.cs.cornell.edu/talc/releases.html", "implementation": "TALC", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["tooling", "semantic-analysis"]},
+
+  {"level": 1, "kind": "original-paper", "title": "Morrisett, Walker, Crary, Glew — From System F to Typed Assembly Language (TOPLAS 1999)", "url": "https://www.cs.cornell.edu/talc/papers/tal-toplas.pdf", "scope": "whole", "authority": "designer", "authors": ["Greg Morrisett", "David Walker", "Karl Crary", "Neal Glew"], "year": 1999, "format": "pdf", "access": "open", "concepts": ["type-system", "type-soundness", "formal-semantics"]},
+  {"level": 1, "kind": "original-paper", "title": "Morrisett, Walker, Crary, Glew — From System F to Typed Assembly Language (POPL 1998)", "url": "https://www.cs.cornell.edu/talc/papers/tal-popl.pdf", "scope": "whole", "authority": "designer", "authors": ["Greg Morrisett", "David Walker", "Karl Crary", "Neal Glew"], "year": 1998, "format": "pdf", "access": "open", "concepts": ["type-system", "compiler-architecture"]},
+  {"level": 1, "kind": "formal-semantics", "title": "Morrisett, Crary, Glew, Walker — Stack-Based Typed Assembly Language", "url": "https://www.cs.cornell.edu/talc/papers/stal-tic.pdf", "scope": "whole", "authority": "designer", "authors": ["Greg Morrisett", "Karl Crary", "Neal Glew", "David Walker"], "year": 1998, "format": "pdf", "access": "open", "concepts": ["calling-convention-abi", "type-system"]},
+  {"level": 1, "kind": "design-document", "title": "Morrisett et al. — TALx86: A Realistic Typed Assembly Language", "url": "https://www.cs.cornell.edu/talc/papers/talx86-wcsss.pdf", "scope": "whole", "authority": "designer", "year": 1999, "format": "pdf", "access": "open", "concepts": ["instruction-set", "type-system"]},
+  {"level": 1, "kind": "formal-semantics", "title": "Glew and Morrisett — Type-Safe Linking and Modular Assembly Language", "url": "https://www.cs.cornell.edu/talc/papers/mtal.pdf", "scope": "whole", "authority": "designer", "authors": ["Neal Glew", "Greg Morrisett"], "year": 1999, "format": "pdf", "access": "open", "concepts": ["separate-compilation", "modules"]},
+
+  {"level": 2, "kind": "paper", "title": "Smith, Walker, Morrisett — Alias Types", "url": "https://www.cs.cornell.edu/talc/papers/alias.pdf", "scope": "whole", "authority": "academic", "authors": ["Frederick Smith", "David Walker", "Greg Morrisett"], "year": 2000, "format": "pdf", "access": "open", "concepts": ["pointers-references", "linear-types"]},
+  {"level": 2, "kind": "paper", "title": "Grossman and Morrisett — Scalable Certification for Typed Assembly Language", "url": "https://www.cs.cornell.edu/talc/papers/tal_scale.pdf", "scope": "whole", "authority": "academic", "authors": ["Dan Grossman", "Greg Morrisett"], "year": 2000, "format": "pdf", "access": "open", "concepts": ["verification", "performance"]},
+  {"level": 2, "kind": "paper", "title": "Crary — Toward a Foundational Typed Assembly Language (POPL 2003)", "url": "https://www.cs.cmu.edu/~crary/papers/2003/talt/talt.pdf", "scope": "whole", "authority": "academic", "authors": ["Karl Crary"], "year": 2003, "format": "pdf", "access": "open", "concepts": ["formal-semantics", "verification"]},
+  {"level": 2, "kind": "guide", "title": "Cornell TALC project — overview", "url": "https://www.cs.cornell.edu/talc/overview.html", "scope": "whole", "authority": "designer", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Typed assembly language", "url": "https://en.wikipedia.org/wiki/Typed_assembly_language", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

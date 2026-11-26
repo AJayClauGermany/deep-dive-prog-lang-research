@@ -1,0 +1,443 @@
+{
+ "id": "freebasic",
+ "name": "FreeBASIC",
+ "categories": [
+  "general-purpose",
+  "systems"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2004,
+ "designers": [
+  "Andre Victor"
+ ],
+ "summary": "Free, self-hosting BASIC compiler largely compatible with QuickBASIC (via -lang qb) that adds pointers, UDTs with methods and operator overloading, namespaces, a C-like preprocessor and threads.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".bas",
+  ".bi"
+ ],
+ "homepage": "https://www.freebasic.net/",
+ "influenced_by": [
+  "quickbasic",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "quickbasic",
+   "relation": "superset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The FreeBASIC wiki manual documents the compiler; no separate specification."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "freebasic/fbc — the FreeBASIC compiler (self-hosted) and runtime",
+   "url": "https://github.com/freebasic/fbc",
+   "scope": "whole",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/lex.bas — lexer",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/lex.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/pp.bas — preprocessor",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/pp.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "preprocessor"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/parser-statement.bas — statement parser",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/parser-statement.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "statements"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/parser-compound-if.bas — IF parser",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/parser-compound-if.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/parser-compound-for.bas — FOR parser",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/parser-compound-for.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/parser-decl-struct.bas — TYPE/UNION declarations",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/parser-decl-struct.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/ast.bas — AST",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/ast.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/symb.bas — symbol table",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/symb.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fbc src/compiler/rtl.bas — runtime-library binding",
+   "url": "https://github.com/freebasic/fbc/blob/master/src/compiler/rtl.bas",
+   "scope": "section",
+   "implementation": "fbc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — Table of contents",
+   "url": "https://www.freebasic.net/wiki/DocToc",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — IF...THEN",
+   "url": "https://www.freebasic.net/wiki/KeyPgIfthen",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — SELECT CASE",
+   "url": "https://www.freebasic.net/wiki/KeyPgSelectcase",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — FOR...NEXT",
+   "url": "https://www.freebasic.net/wiki/KeyPgFornext",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — DO...LOOP",
+   "url": "https://www.freebasic.net/wiki/KeyPgDoloop",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — SUB",
+   "url": "https://www.freebasic.net/wiki/KeyPgSub",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — FUNCTION",
+   "url": "https://www.freebasic.net/wiki/KeyPgFunction",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — TYPE (UDT)",
+   "url": "https://www.freebasic.net/wiki/KeyPgType",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — NAMESPACE",
+   "url": "https://www.freebasic.net/wiki/KeyPgNamespace",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — OPERATOR (overloading)",
+   "url": "https://www.freebasic.net/wiki/KeyPgOperator",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — Operator Precedence",
+   "url": "https://www.freebasic.net/wiki/OpPrecedence",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — Standard Data Types",
+   "url": "https://www.freebasic.net/wiki/CatPgStdDataTypes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — Preprocessor",
+   "url": "https://www.freebasic.net/wiki/CatPgPreProcess",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — Error Handling",
+   "url": "https://www.freebasic.net/wiki/ProPgErrorHandling",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — THREADCREATE",
+   "url": "https://www.freebasic.net/wiki/KeyPgThreadCreate",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "threads"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FreeBASIC Manual — FreeBASIC Dialects (-lang fb/qb/fblite)",
+   "url": "https://www.freebasic.net/wiki/CompilerDialects",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "FreeBASIC Manual — Differences from QB",
+   "url": "https://www.freebasic.net/wiki/LangQB",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — FreeBASIC",
+   "url": "https://en.wikipedia.org/wiki/FreeBASIC",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:FreeBASIC",
+   "url": "https://rosettacode.org/wiki/Category:FreeBASIC",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — FreeBASIC",
+   "url": "https://pldb.io/concepts/freebasic.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

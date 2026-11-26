@@ -1,0 +1,345 @@
+{
+  "id": "imp-while",
+  "name": "IMP / WHILE language",
+  "aliases": [
+    "IMP",
+    "While",
+    "WHILE",
+    "simple imperative language"
+  ],
+  "categories": [
+    "theoretical-model",
+    "educational"
+  ],
+  "paradigms": [
+    "imperative",
+    "structured"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 1981,
+  "designers": [
+    "Gordon Plotkin",
+    "Glynn Winskel",
+    "Hanne Riis Nielson",
+    "Flemming Nielson"
+  ],
+  "summary": "The minimal structured imperative language (assignment, sequencing, if, while over integer and boolean expressions) used throughout programming-language semantics textbooks to present operational, denotational and axiomatic semantics, program equivalence and verified compilation.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper",
+    "informal"
+  ],
+  "influenced_by": [
+    "algol-60",
+    "loop-language"
+  ],
+  "related": [
+    {
+      "id": "hoare-logic",
+      "relation": "family"
+    },
+    {
+      "id": "guarded-command-language",
+      "relation": "family"
+    },
+    {
+      "id": "loop-language",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "0": "No single implementation; level 0 lists the mechanised definitions used in teaching (Software Foundations in Coq, Concrete Semantics in Isabelle/HOL, Leroy's Coq course, the K framework IMP tutorial).",
+    "1": "There is no standard: each textbook fixes its own variant. Plotkin's SOS notes and the textbooks are the defining sources."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Plotkin (1981/2004) — A Structural Approach to Operational Semantics (SOS for a WHILE-style language)",
+      "url": "https://homepages.inf.ed.ac.uk/gdp/publications/sos_jlap.pdf",
+      "concepts": [
+        "formal-semantics",
+        "reduction"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Gordon D. Plotkin"
+      ],
+      "year": 1981
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Hoare (1969) — An Axiomatic Basis for Computer Programming (while-programs and their proof rules)",
+      "url": "https://www.cs.cmu.edu/~crary/819-f09/Hoare69.pdf",
+      "concepts": [
+        "verification",
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "C. A. R. Hoare"
+      ],
+      "year": 1969
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Software Foundations vol. 1 — Imp: Simple Imperative Programs (Coq definition of Imp)",
+      "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Imp.html",
+      "concepts": [
+        "formal-semantics",
+        "assignment",
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Coq",
+      "authors": [
+        "Benjamin C. Pierce et al."
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Software Foundations vol. 1 — ImpParser: lexing and parsing Imp in Coq",
+      "url": "https://softwarefoundations.cis.upenn.edu/lf-current/ImpParser.html",
+      "concepts": [
+        "parser",
+        "lexer"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Software Foundations vol. 1 — ImpCEvalFun: an evaluation function for Imp",
+      "url": "https://softwarefoundations.cis.upenn.edu/lf-current/ImpCEvalFun.html",
+      "concepts": [
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Software Foundations vol. 2 — Equiv: program equivalence for Imp",
+      "url": "https://softwarefoundations.cis.upenn.edu/plf-current/Equiv.html",
+      "concepts": [
+        "formal-semantics",
+        "optimization"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Software Foundations vol. 2 — Smallstep: small-step semantics",
+      "url": "https://softwarefoundations.cis.upenn.edu/plf-current/Smallstep.html",
+      "concepts": [
+        "reduction",
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Isabelle HOL-IMP — Com.thy: IMP commands (Concrete Semantics)",
+      "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/IMP/Com.thy",
+      "concepts": [
+        "grammar",
+        "ast"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Isabelle HOL-IMP — Big_Step.thy: big-step semantics",
+      "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/IMP/Big_Step.thy",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Isabelle HOL-IMP — Small_Step.thy: small-step semantics",
+      "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/IMP/Small_Step.thy",
+      "concepts": [
+        "reduction"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Isabelle/HOL"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Leroy, Mechanized Semantics course — IMP.v (semantics and compilation of IMP in Coq)",
+      "url": "https://github.com/xavierleroy/cdf-mech-sem/blob/master/IMP.v",
+      "concepts": [
+        "formal-semantics",
+        "interpreter"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Leroy, Mechanized Semantics course — Compil.v (verified compiler from IMP to a stack machine)",
+      "url": "https://github.com/xavierleroy/cdf-mech-sem/blob/master/Compil.v",
+      "concepts": [
+        "code-generation-backend",
+        "verification"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "cdf-mech-sem — Xavier Leroy's Collège de France course on mechanized semantics",
+      "url": "https://github.com/xavierleroy/cdf-mech-sem",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "K Framework PL tutorial — IMP lessons (executable semantics of IMP in K)",
+      "url": "https://kframework.org/k-distribution/pl-tutorial/1_k/2_imp/lesson_1/",
+      "concepts": [
+        "formal-semantics",
+        "interpreter"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Nipkow & Klein — Concrete Semantics with Isabelle/HOL (IMP throughout)",
+      "url": "http://concrete-semantics.org/concrete-semantics.pdf",
+      "concepts": [
+        "formal-semantics",
+        "verification",
+        "type-soundness"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Tobias Nipkow",
+        "Gerwin Klein"
+      ],
+      "year": 2014
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Concrete Semantics — book website with Isabelle theories and slides",
+      "url": "http://concrete-semantics.org/",
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Software Foundations — Logical Foundations (vol. 1)",
+      "url": "https://softwarefoundations.cis.upenn.edu/lf-current/toc.html",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Benjamin C. Pierce et al."
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Operational semantics",
+      "url": "https://en.wikipedia.org/wiki/Operational_semantics",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Denotational semantics",
+      "url": "https://en.wikipedia.org/wiki/Denotational_semantics",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

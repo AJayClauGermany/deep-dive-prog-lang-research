@@ -1,0 +1,548 @@
+{
+ "id": "pandoc-markdown",
+ "name": "Pandoc Markdown",
+ "aliases": [
+  "Pandoc's Markdown",
+  "pandoc markdown"
+ ],
+ "categories": [
+  "markup",
+  "document-typesetting"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2006,
+ "designers": [
+  "John MacFarlane"
+ ],
+ "summary": "The extended Markdown dialect read and written by Pandoc: adds metadata blocks, rich tables, definition and example lists, footnotes, citations, TeX math, attributes, fenced divs and bracketed spans, with individually toggleable extensions; documents map onto Pandoc's typed AST for conversion to many formats.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".md",
+  ".markdown"
+ ],
+ "homepage": "https://pandoc.org/MANUAL.html#pandocs-markdown",
+ "influenced_by": [
+  "markdown",
+  "restructuredtext",
+  "latex",
+  "commonmark"
+ ],
+ "related": [
+  {
+   "id": "markdown",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "commonmark",
+   "relation": "family"
+  },
+  {
+   "id": "haskell",
+   "relation": "implemented-in"
+  }
+ ],
+ "level_notes": {
+  "0": "Pandoc (Haskell) is the only implementation; its reader is the de facto definition. The AST in pandoc-types is the shared data model of all readers/writers.",
+  "1": "The User's Guide section \"Pandoc's Markdown\" is the reference; there is no formal spec. RFC 7764 §4 registers the Pandoc variant.",
+  "3": "PLDB has no separate entry."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "jgm/pandoc — Haskell universal document converter; its Markdown reader defines the dialect",
+   "url": "https://github.com/jgm/pandoc",
+   "authority": "designer",
+   "implementation": "Pandoc",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc Readers/Markdown.hs — Parsec-based Markdown reader",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Readers/Markdown.hs",
+   "authority": "designer",
+   "implementation": "Pandoc",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc Writers/Markdown.hs — Markdown writer (round-tripping, escaping)",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Writers/Markdown.hs",
+   "authority": "designer",
+   "implementation": "Pandoc",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Pandoc Extensions.hs — the extension flags and per-variant defaults (markdown, markdown_strict, gfm, commonmark_x ...)",
+   "url": "https://github.com/jgm/pandoc/blob/main/src/Text/Pandoc/Extensions.hs",
+   "authority": "designer",
+   "implementation": "Pandoc",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "enums"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pandoc-types Definition.hs — the Pandoc AST (Block, Inline, Meta, Attr)",
+   "url": "https://github.com/jgm/pandoc-types/blob/master/src/Text/Pandoc/Definition.hs",
+   "authority": "designer",
+   "implementation": "Pandoc",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Pandoc test/testsuite.txt — Markdown reader regression document",
+   "url": "https://github.com/jgm/pandoc/blob/main/test/testsuite.txt",
+   "authority": "designer",
+   "implementation": "Pandoc",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc User's Guide — Pandoc's Markdown",
+   "url": "https://pandoc.org/MANUAL.html#pandocs-markdown",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Philosophy",
+   "url": "https://pandoc.org/MANUAL.html#philosophy",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Heading identifiers and attributes",
+   "url": "https://pandoc.org/MANUAL.html#heading-identifiers",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Fenced code blocks with attributes",
+   "url": "https://pandoc.org/MANUAL.html#fenced-code-blocks",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Lists (fancy lists, example lists, definition lists)",
+   "url": "https://pandoc.org/MANUAL.html#lists",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Tables (simple, multiline, grid, pipe)",
+   "url": "https://pandoc.org/MANUAL.html#tables",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Metadata blocks (YAML, title block)",
+   "url": "https://pandoc.org/MANUAL.html#metadata-blocks",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Backslash escapes",
+   "url": "https://pandoc.org/MANUAL.html#backslash-escapes",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Math (TeX math)",
+   "url": "https://pandoc.org/MANUAL.html#math",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Raw HTML and raw attributes",
+   "url": "https://pandoc.org/MANUAL.html#raw-html",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — LaTeX macros",
+   "url": "https://pandoc.org/MANUAL.html#latex-macros",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Links (automatic, inline, reference, internal)",
+   "url": "https://pandoc.org/MANUAL.html#links-1",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Divs and spans (fenced divs, bracketed spans)",
+   "url": "https://pandoc.org/MANUAL.html#divs-and-spans",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Footnotes",
+   "url": "https://pandoc.org/MANUAL.html#footnotes",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Citation syntax",
+   "url": "https://pandoc.org/MANUAL.html#citation-syntax",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Markdown variants (markdown_strict, markdown_phpextra, markdown_mmd, gfm, commonmark_x)",
+   "url": "https://pandoc.org/MANUAL.html#markdown-variants",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Extensions (enabling/disabling with +ext/-ext)",
+   "url": "https://pandoc.org/MANUAL.html#extensions",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc's Markdown — Template syntax (variables, conditionals, loops, partials)",
+   "url": "https://pandoc.org/MANUAL.html#template-syntax",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc Lua Filters (programmatic AST transformation)",
+   "url": "https://pandoc.org/lua-filters.html",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "macros",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Pandoc Filters (JSON AST filters)",
+   "url": "https://pandoc.org/filters.html",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "pandoc-types Text.Pandoc.Definition (Hackage API docs)",
+   "url": "https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html",
+   "authority": "designer",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Pandoc — Getting started",
+   "url": "https://pandoc.org/getting-started.html",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Pandoc — Demos",
+   "url": "https://pandoc.org/demos.html",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Try pandoc! (online converter)",
+   "url": "https://pandoc.org/try/",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Pandoc FAQs",
+   "url": "https://pandoc.org/faqs.html",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Pandoc",
+   "url": "https://en.wikipedia.org/wiki/Pandoc",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

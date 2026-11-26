@@ -1,0 +1,290 @@
+{
+ "id": "bibtex",
+ "name": "BibTeX",
+ "aliases": [
+  ".bib",
+  ".bst",
+  "BibTeX style language"
+ ],
+ "categories": [
+  "data-serialization",
+  "document-typesetting",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "stack-based"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1985,
+ "designers": [
+  "Oren Patashnik",
+  "Leslie Lamport"
+ ],
+ "summary": "Two languages used with LaTeX: the .bib bibliographic database format (typed records of fields with @string macros and brace-delimited values) and the .bst style language, a postfix stack language with ENTRY/FUNCTION/MACRO/READ/ITERATE commands that formats entries into LaTeX.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".bib",
+  ".bst"
+ ],
+ "homepage": "https://ctan.org/pkg/bibtex",
+ "influenced_by": [
+  "tex",
+  "scribe"
+ ],
+ "related": [
+  {
+   "id": "latex",
+   "relation": "family"
+  },
+  {
+   "id": "tex",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "bibtex.web (0.99d) is the reference implementation; bibtex-x and Biber are reimplementations. ctan.org/tex-archive links redirect to a CTAN mirror.",
+  "1": "Patashnik's btxdoc and btxhak are the defining documents; biblatex/Biber extend the .bib data model."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "bibtex.web — Patashnik's WEB source of BibTeX: .bib parser and the .bst stack-machine interpreter",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/bibtex.web",
+   "authority": "designer",
+   "implementation": "BibTeX 0.99d",
+   "authors": [
+    "Oren Patashnik"
+   ],
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bibtex.ch — Web2C change file for bibtex.web",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/web2c/bibtex.ch",
+   "authority": "designer",
+   "implementation": "Web2C",
+   "authors": [
+    "Oren Patashnik"
+   ],
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "bootstrapping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bibtex-x bibtex-1.c — BibTeX8/BibTeXu reimplementation in C (8-bit and Unicode)",
+   "url": "https://github.com/TeX-Live/texlive-source/blob/trunk/texk/bibtex-x/bibtex-1.c",
+   "authority": "community",
+   "implementation": "bibtex-x",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Biber Input/file/bibtex.pm — Biber's .bib reader (biblatex backend)",
+   "url": "https://github.com/plk/biber/blob/master/lib/Biber/Input/file/bibtex.pm",
+   "authority": "community",
+   "implementation": "Biber",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "plain.bst — the standard plain bibliography style program",
+   "url": "https://ctan.org/tex-archive/biblio/bibtex/base/plain.bst",
+   "authority": "designer",
+   "implementation": "BibTeX 0.99d",
+   "format": "source-file",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "standard-library",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BibTeXing (btxdoc) — the user documentation: entry types, fields, name and string syntax",
+   "url": "https://texdoc.org/serve/btxdoc/0",
+   "authority": "designer",
+   "authors": [
+    "Oren Patashnik"
+   ],
+   "year": 1988,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "records-structs",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Designing BibTeX Styles (btxhak) — the .bst language: commands, built-in functions, stack semantics",
+   "url": "https://texdoc.org/serve/btxhak/0",
+   "authority": "designer",
+   "authors": [
+    "Oren Patashnik"
+   ],
+   "year": 1988,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "standard-library",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "biblatex manual (modern .bib data model: entry types, fields, data types)",
+   "url": "https://texdoc.org/serve/biblatex/0",
+   "authority": "community",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Biber manual",
+   "url": "https://texdoc.org/serve/biber/0",
+   "authority": "community",
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Nicolas Markey — Tame the BeaST: the B to X of BibTeX",
+   "url": "https://texdoc.org/serve/tamethebeast/0",
+   "authority": "community",
+   "format": "pdf",
+   "authors": [
+    "Nicolas Markey"
+   ],
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping",
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BibTeX.org — BibTeX format description",
+   "url": "https://www.bibtex.org/Format/",
+   "authority": "community",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "records-structs",
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "BibTeX.org — Using BibTeX",
+   "url": "https://www.bibtex.org/Using/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Overleaf — Bibliography management with BibTeX",
+   "url": "https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "CTAN — bibtex package",
+   "url": "https://ctan.org/pkg/bibtex",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — BibTeX",
+   "url": "https://en.wikipedia.org/wiki/BibTeX",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — BibTeX",
+   "url": "https://pldb.io/concepts/bibtex.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

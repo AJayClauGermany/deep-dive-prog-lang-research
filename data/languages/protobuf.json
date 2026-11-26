@@ -1,0 +1,1967 @@
+{
+ "id": "protobuf",
+ "name": "Protocol Buffers",
+ "aliases": [
+  "protobuf",
+  "proto2",
+  "proto3",
+  "Protobuf Editions",
+  ".proto IDL"
+ ],
+ "categories": [
+  "schema-idl",
+  "data-serialization",
+  "protocol"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal",
+  "schema-based"
+ ],
+ "first_appeared": 2008,
+ "designers": [
+  "Google (Jeff Dean, Sanjay Ghemawat, Kenton Varda et al.)"
+ ],
+ "summary": "Google's language-neutral interface definition language and binary wire format for structured data: .proto files declare messages, enums, oneofs, maps and services, protoc generates code, and field numbers plus tag-length-value encoding give forward/backward-compatible schema evolution. Syntax versions proto2 and proto3 are being superseded by feature-based Editions (2023, 2024).",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "proto2",
+  "proto3",
+  "Edition 2023",
+  "Edition 2024"
+ ],
+ "file_extensions": [
+  ".proto",
+  ".textproto",
+  ".txtpb",
+  ".binpb"
+ ],
+ "homepage": "https://protobuf.dev/",
+ "influenced_by": [
+  "asn1"
+ ],
+ "related": [
+  {
+   "id": "thrift",
+   "relation": "family"
+  },
+  {
+   "id": "avro",
+   "relation": "family"
+  },
+  {
+   "id": "capnproto",
+   "relation": "family"
+  },
+  {
+   "id": "flatbuffers",
+   "relation": "family"
+  },
+  {
+   "id": "json",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No standards-body specification. The language specifications (proto2, proto3 and Edition 2023 grammars), the language guides, the Encoding guide and the ProtoJSON/text-format specs on protobuf.dev are normative in practice; descriptor.proto is the machine-readable schema of schemas. Editions design documents are kept in the protobuf repository.",
+  "0": "protoc (C++, protocolbuffers/protobuf) is the reference compiler; upb is the C kernel behind Python/Ruby/PHP. The repository's conformance/ directory is the official cross-language conformance suite. Independent implementations: protobuf-go, protocompile (Buf), prost (Rust), protobuf.js.",
+  "3": "No Rosetta Code category."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "protocolbuffers/protobuf — protoc compiler and C++/Java/Python/... runtimes",
+   "url": "https://github.com/protocolbuffers/protobuf",
+   "implementation": "protoc",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/io/tokenizer.cc — lexer for .proto and text format",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/io/tokenizer.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure",
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/compiler/parser.cc — recursive-descent .proto parser producing FileDescriptorProto",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/compiler/parser.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "protobuf src/google/protobuf/descriptor.proto — descriptor.proto: the schema of .proto schemas",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "reflection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/descriptor.cc — DescriptorPool / DescriptorBuilder: name resolution and validation",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/feature_resolver.cc — Editions feature resolution and inheritance",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/feature_resolver.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "protobuf src/google/protobuf/compiler/plugin.proto — protoc plugin protocol (CodeGeneratorRequest)",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/compiler/plugin.proto",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/compiler/cpp/generator.cc — C++ code generator",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/compiler/cpp/generator.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/wire_format_lite.h — wire types, tags and ZigZag helpers",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/wire_format_lite.h",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/io/coded_stream.cc — CodedInputStream/CodedOutputStream: varint reading and limits",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/io/coded_stream.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "integers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/generated_message_tctable_impl.h — table-driven tail-call parser",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/generated_message_tctable_impl.h",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/unknown_field_set.h — UnknownFieldSet: preserving unknown fields",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/unknown_field_set.h",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/extension_set.cc — ExtensionSet: proto2 extensions",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/extension_set.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/text_format.cc — text format printer and parser",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/text_format.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/json/internal/parser.cc — ProtoJSON parser",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/json/internal/parser.cc",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "protobuf src/google/protobuf/any.proto — google.protobuf.Any",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/any.proto",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "protobuf src/google/protobuf/timestamp.proto — google.protobuf.Timestamp",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/timestamp.proto",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "protobuf src/google/protobuf/struct.proto — google.protobuf.Struct/Value",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/struct.proto",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf src/google/protobuf/arena.h — Arena allocation for messages",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/arena.h",
+   "implementation": "protoc (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf upb/wire/decode.c — upb wire decoder (C kernel for Python/Ruby/PHP)",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/upb/wire/decode.c",
+   "implementation": "upb",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf upb/wire/encode.c — upb wire encoder",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/upb/wire/encode.c",
+   "implementation": "upb",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf java/core/src/main/java/com/google/protobuf/CodedInputStream.java — Java CodedInputStream",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/java/core/src/main/java/com/google/protobuf/CodedInputStream.java",
+   "implementation": "protobuf-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "protobuf conformance/README.md — conformance test suite overview",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/conformance/README.md",
+   "implementation": "conformance",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "protobuf conformance/conformance.proto — conformance request/response protocol between runner and testee",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/conformance/conformance.proto",
+   "implementation": "conformance",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "protobuf conformance/binary_json_conformance_suite.cc — binary and JSON conformance cases",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/conformance/binary_json_conformance_suite.cc",
+   "implementation": "conformance",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "protobuf conformance/text_format_conformance_suite.cc — text format conformance cases",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/conformance/text_format_conformance_suite.cc",
+   "implementation": "conformance",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf-go encoding/protowire/wire.go — low-level wire format primitives",
+   "url": "https://github.com/protocolbuffers/protobuf-go/blob/master/encoding/protowire/wire.go",
+   "implementation": "protobuf-go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf-go encoding/protojson/decode.go — ProtoJSON decoder",
+   "url": "https://github.com/protocolbuffers/protobuf-go/blob/master/encoding/protojson/decode.go",
+   "implementation": "protobuf-go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf-go reflect/protodesc/desc.go — building descriptors from FileDescriptorProto",
+   "url": "https://github.com/protocolbuffers/protobuf-go/blob/master/reflect/protodesc/desc.go",
+   "implementation": "protobuf-go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "reflection",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "protocompile parser/proto.y — goyacc grammar for .proto files",
+   "url": "https://github.com/bufbuild/protocompile/blob/main/parser/proto.y",
+   "implementation": "protocompile (Buf)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protocompile linker/resolve.go — symbol resolution",
+   "url": "https://github.com/bufbuild/protocompile/blob/main/linker/resolve.go",
+   "implementation": "protocompile (Buf)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "prost encoding.rs — Rust wire-format encoding",
+   "url": "https://github.com/tokio-rs/prost/blob/master/prost/src/encoding.rs",
+   "implementation": "prost (Rust)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf.js src/parse.js — .proto parser in JavaScript",
+   "url": "https://github.com/protobufjs/protobuf.js/blob/master/src/parse.js",
+   "implementation": "protobuf.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "protobuf.js src/reader.js — wire-format reader",
+   "url": "https://github.com/protobufjs/protobuf.js/blob/master/src/reader.js",
+   "implementation": "protobuf.js",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Protocol Buffers Version 3 Language Specification (grammar, EBNF)",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "proto3",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Lexical elements: letters, digits, identifiers",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#lexical_elements",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Integer literals (decimal, octal, hex)",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#integer_literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Floating-point literals (inf, nan)",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#floating-point-literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — String literals and escapes",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#string_literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Import statement (weak, public)",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#import_statement",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Package",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#package",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Option",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#option",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Normal field: type, name, field number",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#normal_field",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Oneof and oneof field",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#oneof_and_oneof_field",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Map field",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#map_field",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Reserved field numbers and names",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#reserved",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Enum definition",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#enum_definition",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Message definition",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#message_definition",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Service definition (RPC)",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#service_definition",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "proto3 spec — Proto file: top-level structure",
+   "url": "https://protobuf.dev/reference/protobuf/proto3-spec/#proto_file",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Protocol Buffers Edition 2023 Language Specification",
+   "url": "https://protobuf.dev/reference/protobuf/edition-2023-spec/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "Edition 2023",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Edition 2023 spec — Edition statement",
+   "url": "https://protobuf.dev/reference/protobuf/edition-2023-spec/#edition",
+   "scope": "section",
+   "authority": "official",
+   "version": "Edition 2023",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Edition 2023 spec — Extensions and reserved ranges",
+   "url": "https://protobuf.dev/reference/protobuf/edition-2023-spec/#extensions_and_reserved",
+   "scope": "section",
+   "authority": "official",
+   "version": "Edition 2023",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Protocol Buffers Version 2 Language Specification",
+   "url": "https://protobuf.dev/reference/protobuf/proto2-spec/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "proto2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto 3)",
+   "url": "https://protobuf.dev/programming-guides/proto3/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "proto3",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Scalar value types and per-language mappings",
+   "url": "https://protobuf.dev/programming-guides/proto3/#scalar",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Default field values",
+   "url": "https://protobuf.dev/programming-guides/proto3/#default",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Field cardinality: optional, repeated, map",
+   "url": "https://protobuf.dev/programming-guides/proto3/#field-labels",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Assigning field numbers",
+   "url": "https://protobuf.dev/programming-guides/proto3/#assigning",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Enumerations",
+   "url": "https://protobuf.dev/programming-guides/proto3/#enum",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Nested types",
+   "url": "https://protobuf.dev/programming-guides/proto3/#nested",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Updating a message type: wire-safe and unsafe changes",
+   "url": "https://protobuf.dev/programming-guides/proto3/#updating",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Unknown fields",
+   "url": "https://protobuf.dev/programming-guides/proto3/#unknowns",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Any",
+   "url": "https://protobuf.dev/programming-guides/proto3/#any",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Oneof",
+   "url": "https://protobuf.dev/programming-guides/proto3/#oneof",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Maps",
+   "url": "https://protobuf.dev/programming-guides/proto3/#maps",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Packages and name resolution",
+   "url": "https://protobuf.dev/programming-guides/proto3/#packages",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Importing definitions",
+   "url": "https://protobuf.dev/programming-guides/proto3/#importing",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Defining services",
+   "url": "https://protobuf.dev/programming-guides/proto3/#services",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Options and custom options",
+   "url": "https://protobuf.dev/programming-guides/proto3/#options",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto3) — Adding comments",
+   "url": "https://protobuf.dev/programming-guides/proto3/#adding-comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto 2)",
+   "url": "https://protobuf.dev/programming-guides/proto2/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "proto2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto2) — Extensions",
+   "url": "https://protobuf.dev/programming-guides/proto2/#extensions",
+   "scope": "section",
+   "authority": "official",
+   "version": "proto2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto2) — Groups (deprecated)",
+   "url": "https://protobuf.dev/programming-guides/proto2/#groups",
+   "scope": "section",
+   "authority": "official",
+   "version": "proto2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (proto2) — required is strongly deprecated",
+   "url": "https://protobuf.dev/programming-guides/proto2/#required-deprecated",
+   "scope": "section",
+   "authority": "official",
+   "version": "proto2",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Language Guide (editions)",
+   "url": "https://protobuf.dev/programming-guides/editions/",
+   "scope": "whole",
+   "authority": "official",
+   "version": "Edition 2023",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Protobuf Editions Overview — features replace syntax versions",
+   "url": "https://protobuf.dev/editions/overview/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Editions Overview — Lifecycle of a feature",
+   "url": "https://protobuf.dev/editions/overview/#lifecycles",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Feature Settings for Editions (field_presence, enum_type, repeated_field_encoding, utf8_validation ...)",
+   "url": "https://protobuf.dev/editions/features/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Feature Settings — features.field_presence",
+   "url": "https://protobuf.dev/editions/features/#field_presence",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Feature Settings — features.repeated_field_encoding (packed vs expanded)",
+   "url": "https://protobuf.dev/editions/features/#repeated_field_encoding",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Feature Settings — features.utf8_validation",
+   "url": "https://protobuf.dev/editions/features/#utf8_validation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Implementing Editions Support (for code generators and runtimes)",
+   "url": "https://protobuf.dev/editions/implementation/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — the protobuf binary wire format",
+   "url": "https://protobuf.dev/programming-guides/encoding/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Base 128 varints",
+   "url": "https://protobuf.dev/programming-guides/encoding/#varints",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Message structure: tag = (field_number << 3) | wire_type",
+   "url": "https://protobuf.dev/programming-guides/encoding/#structure",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Signed integers and ZigZag encoding",
+   "url": "https://protobuf.dev/programming-guides/encoding/#signed-ints",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Non-varint numbers (I64, I32)",
+   "url": "https://protobuf.dev/programming-guides/encoding/#non-varints",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Length-delimited records: strings, bytes, submessages",
+   "url": "https://protobuf.dev/programming-guides/encoding/#length-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Last one wins (merging duplicate fields)",
+   "url": "https://protobuf.dev/programming-guides/encoding/#last-one-wins",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Packed repeated fields",
+   "url": "https://protobuf.dev/programming-guides/encoding/#packed",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Maps as repeated entry messages",
+   "url": "https://protobuf.dev/programming-guides/encoding/#maps",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Groups (SGROUP/EGROUP)",
+   "url": "https://protobuf.dev/programming-guides/encoding/#groups",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Size limitations (2 GiB)",
+   "url": "https://protobuf.dev/programming-guides/encoding/#size-limit",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Encoding — Condensed reference card",
+   "url": "https://protobuf.dev/programming-guides/encoding/#cheat-sheet",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ProtoJSON Format — canonical JSON mapping",
+   "url": "https://protobuf.dev/programming-guides/json/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ProtoJSON — Field representation (lowerCamelCase names, int64 as strings)",
+   "url": "https://protobuf.dev/programming-guides/json/#field-representation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ProtoJSON — Well-known types (Timestamp, Duration, Any) in JSON",
+   "url": "https://protobuf.dev/programming-guides/json/#wkt",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ProtoJSON — JSON wire safety of schema changes",
+   "url": "https://protobuf.dev/programming-guides/json/#json-wire-safety",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Text Format Language Specification",
+   "url": "https://protobuf.dev/reference/protobuf/textformat-spec/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Text Format spec — Lexical elements",
+   "url": "https://protobuf.dev/reference/protobuf/textformat-spec/#lexical",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Text Format spec — String literals",
+   "url": "https://protobuf.dev/reference/protobuf/textformat-spec/#string",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Application Note: Field Presence",
+   "url": "https://protobuf.dev/programming-guides/field_presence/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Enum Behavior — open vs closed enums across languages",
+   "url": "https://protobuf.dev/programming-guides/enum/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Proto Serialization Is Not Canonical",
+   "url": "https://protobuf.dev/programming-guides/serialization-not-canonical/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Proto Limits — maximum field numbers, nesting, sizes",
+   "url": "https://protobuf.dev/programming-guides/proto-limits/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Well-Known Types reference (google.protobuf)",
+   "url": "https://protobuf.dev/reference/protobuf/google.protobuf/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Well-Known Types — Timestamp",
+   "url": "https://protobuf.dev/reference/protobuf/google.protobuf/#timestamp",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Well-Known Types — Struct/Value/ListValue (JSON-like dynamic data)",
+   "url": "https://protobuf.dev/reference/protobuf/google.protobuf/#struct",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Well-Known Types — FieldMask",
+   "url": "https://protobuf.dev/reference/protobuf/google.protobuf/#field-mask",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "protobuf docs/design/editions — Editions design documents index",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/docs/design/editions/README.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "What are Protobuf Editions? (design document)",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/docs/design/editions/what-are-protobuf-editions.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Edition Zero: Converged Semantics (design document)",
+   "url": "https://github.com/protocolbuffers/protobuf/blob/main/docs/design/editions/edition-zero-converged-semantics.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Protocol Buffers News — release and change announcements",
+   "url": "https://protobuf.dev/news/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Protobuf design decisions",
+   "url": "https://protobuf.dev/design-decisions/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Overview — what protocol buffers are good and not good for",
+   "url": "https://protobuf.dev/overview/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Overview — History of Protocol Buffers",
+   "url": "https://protobuf.dev/overview/#history",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Protobuf history page (version 1, open-sourcing, proto3)",
+   "url": "https://protobuf.dev/history/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Protocol Buffer Basics: C++",
+   "url": "https://protobuf.dev/getting-started/cpptutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Protocol Buffer Basics: Python",
+   "url": "https://protobuf.dev/getting-started/pythontutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Protocol Buffer Basics: Go",
+   "url": "https://protobuf.dev/getting-started/gotutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Protocol Buffers Style Guide",
+   "url": "https://protobuf.dev/programming-guides/style/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Proto Best Practices — dos and don'ts",
+   "url": "https://protobuf.dev/best-practices/dos-donts/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Proto Best Practices — Don't re-use a tag number",
+   "url": "https://protobuf.dev/best-practices/dos-donts/#reuse-number",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Buf — Breaking change rules and categories (FILE, PACKAGE, WIRE_JSON, WIRE)",
+   "url": "https://buf.build/docs/breaking/rules/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Buf — Style guide",
+   "url": "https://buf.build/docs/best-practices/style-guide/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Martin Kleppmann — Schema evolution in Avro, Protocol Buffers and Thrift",
+   "url": "https://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Martin Kleppmann"
+   ],
+   "year": 2012,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "comparison",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Sandy Maguire — Protobuffers Are Wrong (type-system critique)",
+   "url": "https://reasonablypolymorphic.com/blog/protos-are-wrong/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Sandy Maguire"
+   ],
+   "year": 2018,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "algebraic-data-types",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Josh Haberman — Parsing Protobuf at 2+GB/s: tail calls in C (upb)",
+   "url": "https://blog.reverberate.org/2021/04/21/musttail-efficient-interpreters.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Josh Haberman"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "optimization",
+    "tail-calls"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Cap'n Proto, FlatBuffers, and SBE — comparison by Protobuf v2's author",
+   "url": "https://capnproto.org/news/2014-06-17-capnproto-flatbuffers-sbe.html",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Kenton Varda"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "gRPC — Core concepts: services defined in protobuf IDL",
+   "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Protocol Buffers",
+   "url": "https://en.wikipedia.org/wiki/Protocol_Buffers",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Protocol Buffers",
+   "url": "https://pldb.io/concepts/protobuf.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — Comparison of data-serialization formats",
+   "url": "https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-grpc",
+   "url": "https://github.com/grpc-ecosystem/awesome-grpc",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "Protobuf — Third-party add-ons (implementations for other languages)",
+   "url": "https://protobuf.dev/programming-guides/addons/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  }
+ ]
+}

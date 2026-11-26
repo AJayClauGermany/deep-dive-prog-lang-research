@@ -1,0 +1,403 @@
+{
+ "id": "ansi-escape-codes",
+ "name": "ANSI escape sequences (ECMA-48)",
+ "aliases": [
+  "ECMA-48",
+  "ISO/IEC 6429",
+  "ANSI X3.64",
+  "VT100 control sequences"
+ ],
+ "categories": [
+  "protocol",
+  "markup",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "in-band signalling"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1976,
+ "designers": [
+  "ECMA TC1",
+  "ANSI X3L2",
+  "Digital Equipment Corporation (VT100)"
+ ],
+ "summary": "In-band control language for character terminals standardised as ECMA-48 / ISO 6429 / ANSI X3.64: C0/C1 control characters and ESC-introduced sequences, chiefly CSI parameter;parameter final-byte sequences (cursor movement, erase, SGR colours and attributes), plus OSC, DCS and private-mode extensions popularised by the DEC VT100 and xterm.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "vendor-specification"
+ ],
+ "homepage": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+ "level_notes": {
+  "1": "ECMA-48 (5th ed., 1991) is free from Ecma; xterm's ctlseqs (Thomas Dickey) is the de facto reference for what modern emulators implement.",
+  "0": "Paul Williams' DEC-compatible parser state machine (vt100.net) is the basis of most emulator parsers (vte, vtparse, xterm.js)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ECMA-48: Control Functions for Coded Character Sets (5th edition)",
+   "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "standardization"
+   ],
+   "year": 1991
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Definitions",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-Definitions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — C1 (8-bit) control characters",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-C1-lparen-8-Bit-rparen-Control-Characters",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Single-character functions",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Single-character-functions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Controls beginning with ESC",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Controls-beginning-with-ESC",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "grammar"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Device-Control (DCS) functions",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Device-Control-functions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Functions using CSI (including SGR)",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Functions-using-CSI-_-ordered-by-the-final-character_s_",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "parameters-arguments"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Operating System Commands (OSC)",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Operating-System-Commands",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "processes-system"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Mouse tracking",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-Mouse-Tracking",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Bracketed paste mode",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-Bracketed-Paste-Mode",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "XTerm Control Sequences (ctlseqs) — Sixel graphics",
+   "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Sixel-Graphics",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ],
+   "authors": [
+    "Thomas E. Dickey",
+    "Edward Moy"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DEC VT100 User Guide — Chapter 3: Programmer Information",
+   "url": "https://vt100.net/docs/vt100-ug/chapter3.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "history"
+   ],
+   "year": 1981
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "DEC VT510 Video Terminal Programmer Information",
+   "url": "https://vt100.net/docs/vt510-rm/contents.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "console_codes(4) — Linux console escape and control sequences",
+   "url": "https://man7.org/linux/man-pages/man4/console_codes.4.html#DESCRIPTION",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Paul Williams — A parser for DEC's ANSI-compatible video terminals (state machine)",
+   "url": "https://vt100.net/emu/dec_ansi_parser",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "parser"
+   ],
+   "authors": [
+    "Paul Flo Williams"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "alacritty/vte — src/lib.rs (Rust implementation of the Williams parser)",
+   "url": "https://github.com/alacritty/vte/blob/master/src/lib.rs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata"
+   ],
+   "implementation": "vte (Rust)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "xterm.js — EscapeSequenceParser.ts",
+   "url": "https://github.com/xtermjs/xterm.js/blob/master/src/common/parser/EscapeSequenceParser.ts",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "xterm.js"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "WezTerm — vtparse/src/lib.rs",
+   "url": "https://github.com/wez/wezterm/blob/main/vtparse/src/lib.rs",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "wezterm"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "vttest — VT100/VT220/xterm terminal test program",
+   "url": "https://invisible-island.net/vttest/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ],
+   "authors": [
+    "Thomas E. Dickey"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "colorama — cross-platform ANSI sequence handling for Python",
+   "url": "https://github.com/tartley/colorama",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ],
+   "implementation": "colorama"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Build your own Command Line with ANSI escape codes",
+   "url": "https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "styling-layout"
+   ],
+   "authors": [
+    "Li Haoyi"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — ANSI escape code",
+   "url": "https://en.wikipedia.org/wiki/ANSI_escape_code",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — ISO/IEC 6429",
+   "url": "https://en.wikipedia.org/wiki/ISO/IEC_6429",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  }
+ ]
+}

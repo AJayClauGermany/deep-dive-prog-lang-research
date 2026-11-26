@@ -1,0 +1,2496 @@
+{
+ "id": "json-schema",
+ "name": "JSON Schema",
+ "aliases": [
+  "JSON Schema 2020-12",
+  "JSON Schema draft-07"
+ ],
+ "categories": [
+  "schema-idl",
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "constraint-based"
+ ],
+ "typing": [
+  "structural",
+  "open-world (unknown properties allowed by default)"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Kris Zyp",
+  "Francis Galiegue",
+  "Austin Wright",
+  "Henry Andrews",
+  "Ben Hutton",
+  "Greg Dennis"
+ ],
+ "summary": "Declarative, JSON-encoded vocabulary for describing, annotating and validating JSON documents; a schema is a set of keyword constraints (assertions, applicators, annotations) applied to an instance, with URI-based identification and referencing of subschemas.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "standards": [
+  "JSON Schema 2020-12 (draft-bhutton-json-schema-01)",
+  "JSON Schema draft-07 (draft-handrews-json-schema-01)",
+  "draft-zyp-json-schema-04"
+ ],
+ "file_extensions": [
+  ".schema.json",
+  ".json"
+ ],
+ "homepage": "https://json-schema.org/",
+ "influenced_by": [
+  "json",
+  "xml-schema",
+  "relax-ng"
+ ],
+ "related": [
+  {
+   "id": "openapi",
+   "relation": "family"
+  },
+  {
+   "id": "json",
+   "relation": "family"
+  },
+  {
+   "id": "asyncapi",
+   "relation": "family"
+  },
+  {
+   "id": "typespec",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "There is no single reference implementation. The official JSON-Schema-Test-Suite is the de-facto conformance suite and the Bowtie harness reports every implementation's results against it; ajv (JavaScript, compiles schemas to code), python-jsonschema, Hyperjump, santhosh-tekuri/jsonschema (Go), jsonschema-rs and networknt (Java) are widely used independent validators.",
+  "1": "Published as a series of IETF Internet-Drafts that never became RFCs ('draft-04', 'draft-06', 'draft-07', '2019-09', '2020-12'); the dialect meta-schemas are normative companions. Since 2022 the project has decoupled from the IETF process and is preparing a self-published stable release (see the ADRs in json-schema-spec).",
+  "2": "'Understanding JSON Schema' (hosted on json-schema.org) is the standard book-length guide; learnjsonschema.com documents every keyword of every dialect."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core 2020-12 — A Media Type for Describing JSON Documents",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Austin Wright",
+    "Henry Andrews",
+    "Ben Hutton",
+    "Greg Dennis"
+   ],
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "schema-validation",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation 2020-12 — A Vocabulary for Structural Validation of JSON",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Austin Wright",
+    "Henry Andrews",
+    "Ben Hutton"
+   ],
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 4.2.1 Instance Data Model",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-instance-data-model",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "primitive-types",
+    "scalars",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 4.2.2 Instance Equality",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-instance-equality",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-equivalence",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 4.3 JSON Schema Documents (schema objects, boolean schemas, vocabularies, meta-schemas)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-json-schema-documents",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "program-structure",
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 5 Fragment Identifiers",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-fragment-identifiers",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 6.3 Mathematical Integers",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-mathematical-integers",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 6.4 Regular Expressions",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-regular-expressions",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 6.5 Extending JSON Schema",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-extending-json-schema",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 7.1 Lexical Scope and Dynamic Scope",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-lexical-scope-and-dynamic-s",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 7.4 Identifiers",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-identifiers",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 7.5 Applicators",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-applicators",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 7.6 Assertions",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-assertions",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "assertions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 7.7 Annotations and their collection",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-annotations",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.1 Meta-Schemas and Vocabularies ($schema, $vocabulary)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-meta-schemas-and-vocabulari",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.2 Base URI, Anchors, and Dereferencing",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-base-uri-anchors-and-derefe",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.2.1 The \"$id\" Keyword",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-the-id-keyword",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.2.2 Defining location-independent identifiers ($anchor, $dynamicAnchor)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-defining-location-independe",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.2.3.1 Direct References with \"$ref\"",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-direct-references-with-ref",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.2.3.2 Dynamic References with \"$dynamicRef\"",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-dynamic-references-with-dyn",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "recursive-types",
+    "generics",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.2.4 Schema Re-Use With \"$defs\"",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-schema-re-use-with-defs",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 8.3 Comments With \"$comment\"",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-comments-with-comment",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 9.1 Loading a Schema (initial base URI, referenced schemas, detecting a meta-schema)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-loading-a-schema",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "separate-compilation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 9.3 Compound Documents and Bundling",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-compound-documents",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 9.4.1 Guarding Against Infinite Recursion",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-guarding-against-infinite-r",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion",
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 10.2.1 Keywords for Applying Subschemas With Logic (allOf, anyOf, oneOf, not)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-keywords-for-applying-subsch",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 10.2.2 Keywords for Applying Subschemas Conditionally (if, then, else, dependentSchemas)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-keywords-for-applying-subsche",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 10.3.1 Keywords for Applying Subschemas to Arrays (prefixItems, items, contains)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-keywords-for-applying-subschema",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "tuples",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 10.3.2 Keywords for Applying Subschemas to Objects (properties, patternProperties, additionalProperties, propertyNames)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-keywords-for-applying-subschemas",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 11 A Vocabulary for Unevaluated Locations (unevaluatedItems, unevaluatedProperties)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-a-vocabulary-for-unevaluate",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "inheritance",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 12 Output Formatting (flag, basic, detailed, verbose)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-output-formatting",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — 13 Security Considerations",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-security-considerations",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — Appendix C Example of recursive schema extension",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-example-of-recursive-schema",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursive-types",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core — Appendix G ChangeLog",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-core#name-changelog",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 6.1 Validation Keywords for Any Instance Type (type, enum, const)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-validation-keywords-for-any",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "enums",
+    "constants",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 6.2 Validation Keywords for Numeric Instances",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-validation-keywords-for-num",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "ranges",
+    "refinement-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 6.3 Validation Keywords for Strings (maxLength, minLength, pattern)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-validation-keywords-for-str",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 6.4 Validation Keywords for Arrays (maxItems, minItems, uniqueItems, min/maxContains)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-validation-keywords-for-arr",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 6.5 Validation Keywords for Objects (required, dependentRequired, min/maxProperties)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-validation-keywords-for-obj",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "null-optional",
+    "constraints-integrity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 7 Vocabularies for Semantic Content With \"format\"",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-vocabularies-for-semantic-c",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 7.3.1 Defined Formats: Dates, Times, and Duration",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-dates-times-and-duration",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 8 A Vocabulary for the Contents of String-Encoded Data (contentEncoding, contentMediaType, contentSchema)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-a-vocabulary-for-the-conten",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 9 A Vocabulary for Basic Meta-Data Annotations (title, description, default, deprecated, readOnly, examples)",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-a-vocabulary-for-basic-meta",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation — 10 Security Considerations",
+   "url": "https://json-schema.org/draft/2020-12/json-schema-validation#name-security-considerations",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Relative JSON Pointers (draft-bhutton-relative-json-pointer-00)",
+   "url": "https://json-schema.org/draft/2020-12/relative-json-pointer",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Geraint Luff",
+    "Henry Andrews",
+    "Ben Hutton"
+   ],
+   "year": 2020,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 6901 — JavaScript Object Notation (JSON) Pointer",
+   "url": "https://www.rfc-editor.org/rfc/rfc6901",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Paul C. Bryan",
+    "Kris Zyp",
+    "Mark Nottingham"
+   ],
+   "year": 2013,
+   "version": "RFC 6901",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "references-anchors",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "JSON Schema 2020-12 meta-schema (the schema that describes schemas)",
+   "url": "https://json-schema.org/draft/2020-12/schema",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema specification index — documents, meta-schemas, output schemas",
+   "url": "https://json-schema.org/specification",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "Specification Links — table of all drafts (draft-00 to 2020-12)",
+   "url": "https://json-schema.org/specification-links",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2022,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "JSON Schema 2020-12 Release Notes (prefixItems, $dynamicRef, bundling, vocabulary changes)",
+   "url": "https://json-schema.org/draft/2020-12/release-notes",
+   "scope": "section",
+   "authority": "official",
+   "year": 2020,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "JSON Schema 2019-09 Release Notes (vocabularies, $anchor, $defs, unevaluated*, output formats)",
+   "url": "https://json-schema.org/draft/2019-09/release-notes",
+   "scope": "section",
+   "authority": "official",
+   "year": 2019,
+   "version": "2019-09",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "JSON Schema Draft-07 Release Notes (if/then/else, readOnly, content*)",
+   "url": "https://json-schema.org/draft-07/json-schema-release-notes",
+   "scope": "section",
+   "authority": "official",
+   "year": 2018,
+   "version": "draft-07",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Core 2019-09 (draft-handrews-json-schema-02)",
+   "url": "https://json-schema.org/draft/2019-09/json-schema-core",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2019,
+   "version": "2019-09",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema Validation draft-07 (draft-handrews-json-schema-validation-01)",
+   "url": "https://json-schema.org/draft-07/json-schema-validation",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Austin Wright",
+    "Henry Andrews",
+    "Geraint Luff"
+   ],
+   "year": 2018,
+   "version": "draft-07",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Schema draft-04 core (draft-zyp-json-schema-04) on the IETF datatracker",
+   "url": "https://datatracker.ietf.org/doc/html/draft-zyp-json-schema-04",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Francis Galiegue",
+    "Kris Zyp",
+    "Gary Court"
+   ],
+   "year": 2013,
+   "version": "draft-04",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON Hyper-Schema 2019-09 — A Vocabulary for Hypermedia Annotation of JSON",
+   "url": "https://json-schema.org/draft/2019-09/json-schema-hypermedia",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Henry Andrews",
+    "Austin Wright"
+   ],
+   "year": 2019,
+   "version": "2019-09",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "json-schema-spec PROCESS.md — specification development process and stability guarantees",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/main/PROCESS.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "ADR 2022-09 — Decoupling from IETF",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/main/adr/2022-09-decouple-from-ietf.md",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "ADR 2022-11 — Stable specification and compatibility guarantees",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/main/adr/2022-11-stable-spec.md",
+   "scope": "section",
+   "authority": "official",
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "Proposal — propertyDependencies keyword",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/main/specs/proposals/propertyDependencies.md",
+   "scope": "section",
+   "authority": "official",
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "Next-release working text of JSON Schema Core (Markdown source)",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/main/specs/jsonschema-core.md",
+   "scope": "whole",
+   "authority": "official",
+   "version": "next (unreleased)",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Validation of Modern JSON Schema: Formalization and Complexity (POPL 2024)",
+   "url": "https://arxiv.org/abs/2307.10034",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Lyes Attouche",
+    "Mohamed-Amine Baazizi",
+    "Dario Colazzo",
+    "Giorgio Ghelli",
+    "Carlo Sartiani",
+    "Stefanie Scherzinger"
+   ],
+   "year": 2024,
+   "version": "2020-12",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "complexity",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Foundations of JSON Schema (WWW 2016) — first formal grammar and semantics",
+   "url": "http://gdac.uqam.ca/WWW2016-Proceedings/proceedings/p263.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Felipe Pezoa",
+    "Juan L. Reutter",
+    "Fernando Suarez",
+    "Martín Ugarte",
+    "Domagoj Vrgoč"
+   ],
+   "year": 2016,
+   "version": "draft-04",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "formal-grammars",
+    "complexity"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — official language-agnostic conformance tests",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+   "scope": "whole",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite README — structure of the suite, required vs optional tests",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/README.md",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/ref.json ($ref resolution cases)",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/ref.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/dynamicRef.json",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/dynamicRef.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "recursive-types",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/if-then-else.json",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/if-then-else.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/oneOf.json",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/oneOf.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/type.json",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/type.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/unevaluatedProperties.json",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/unevaluatedProperties.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "inheritance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "JSON-Schema-Test-Suite — validation/tests/vocabulary.json ($vocabulary handling)",
+   "url": "https://github.com/json-schema-org/JSON-Schema-Test-Suite/blob/main/validation/tests/vocabulary.json",
+   "scope": "section",
+   "implementation": "JSON-Schema-Test-Suite",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "json-schema-spec — specs/meta/applicator.json (applicator vocabulary meta-schema)",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/2020-12/meta/applicator.json",
+   "scope": "section",
+   "implementation": "json-schema-spec",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "union-intersection-types",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "json-schema-spec — specs/meta/validation.json (validation vocabulary meta-schema)",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/2020-12/meta/validation.json",
+   "scope": "section",
+   "implementation": "json-schema-spec",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "json-schema-spec — specs/meta/core.json (core vocabulary meta-schema)",
+   "url": "https://github.com/json-schema-org/json-schema-spec/blob/2020-12/meta/core.json",
+   "scope": "section",
+   "implementation": "json-schema-spec",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ajv — JSON Schema validator for JavaScript that compiles schemas to functions",
+   "url": "https://github.com/ajv-validator/ajv",
+   "scope": "whole",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/compile/index.ts — schema compilation driver",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/compile/index.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/compile/codegen/index.ts — JavaScript code generator",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/compile/codegen/index.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/compile/resolve.ts — $id/$anchor base-URI resolution",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/compile/resolve.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/compile/validate/dataType.ts — type checks and coercion",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/compile/validate/dataType.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/core/ref.ts — $ref keyword",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/core/ref.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "recursion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/dynamic/dynamicRef.ts — $dynamicRef keyword",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/dynamic/dynamicRef.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/applicator/if.ts — if/then/else",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/applicator/if.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/applicator/oneOf.ts — oneOf",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/applicator/oneOf.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/applicator/properties.ts — properties",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/applicator/properties.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/unevaluated/unevaluatedProperties.ts",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/unevaluated/unevaluatedProperties.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/validation/pattern.ts — pattern keyword",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/validation/pattern.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/validation/uniqueItems.ts",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/validation/uniqueItems.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "arrays"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ajv lib/vocabularies/draft2020.ts — vocabulary set of the 2020-12 dialect",
+   "url": "https://github.com/ajv-validator/ajv/blob/master/lib/vocabularies/draft2020.ts",
+   "scope": "section",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "python-jsonschema — JSON Schema validation for Python",
+   "url": "https://github.com/python-jsonschema/jsonschema",
+   "scope": "whole",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-jsonschema jsonschema/_keywords.py — one function per validation keyword",
+   "url": "https://github.com/python-jsonschema/jsonschema/blob/main/jsonschema/_keywords.py",
+   "scope": "section",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "conditionals",
+    "union-intersection-types",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-jsonschema jsonschema/validators.py — validator classes per draft, dialect dispatch",
+   "url": "https://github.com/python-jsonschema/jsonschema/blob/main/jsonschema/validators.py",
+   "scope": "section",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-jsonschema jsonschema/_types.py — TypeChecker (instance data model mapping)",
+   "url": "https://github.com/python-jsonschema/jsonschema/blob/main/jsonschema/_types.py",
+   "scope": "section",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "data-model"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-jsonschema jsonschema/_format.py — format checkers",
+   "url": "https://github.com/python-jsonschema/jsonschema/blob/main/jsonschema/_format.py",
+   "scope": "section",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "date-time"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-jsonschema jsonschema/exceptions.py — ValidationError tree and best_match",
+   "url": "https://github.com/python-jsonschema/jsonschema/blob/main/jsonschema/exceptions.py",
+   "scope": "section",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Hyperjump JSON Schema — vocabulary-driven validator, bundler and annotation engine (JavaScript)",
+   "url": "https://github.com/hyperjump-io/json-schema",
+   "scope": "whole",
+   "implementation": "Hyperjump JSON Schema",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Hyperjump lib/keywords/dynamicRef.js",
+   "url": "https://github.com/hyperjump-io/json-schema/blob/main/src/keywords/dynamicRef.js",
+   "scope": "section",
+   "implementation": "Hyperjump JSON Schema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Hyperjump lib/keywords/unevaluatedProperties.js",
+   "url": "https://github.com/hyperjump-io/json-schema/blob/main/src/keywords/unevaluatedProperties.js",
+   "scope": "section",
+   "implementation": "Hyperjump JSON Schema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Hyperjump draft-2020-12/index.js — dialect and vocabulary registration",
+   "url": "https://github.com/hyperjump-io/json-schema/blob/main/src/dialects/draft-2020-12/index.js",
+   "scope": "section",
+   "implementation": "Hyperjump JSON Schema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "santhosh-tekuri/jsonschema (Go) compiler.go — schema compiler",
+   "url": "https://github.com/santhosh-tekuri/jsonschema/blob/master/compiler.go",
+   "scope": "section",
+   "implementation": "santhosh-tekuri/jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "santhosh-tekuri/jsonschema (Go) draft.go — per-draft keyword tables and vocabularies",
+   "url": "https://github.com/santhosh-tekuri/jsonschema/blob/master/draft.go",
+   "scope": "section",
+   "implementation": "santhosh-tekuri/jsonschema",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonschema-rs crates/jsonschema/src/keywords/ref_.rs — $ref/$dynamicRef in Rust",
+   "url": "https://github.com/Stranger6667/jsonschema/blob/master/crates/jsonschema/src/keywords/ref_.rs",
+   "scope": "section",
+   "implementation": "jsonschema-rs",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "recursion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jsonschema-rs crates/jsonschema/src/compiler.rs — schema-to-validator-tree compilation",
+   "url": "https://github.com/Stranger6667/jsonschema/blob/master/crates/jsonschema/src/compiler.rs",
+   "scope": "section",
+   "implementation": "jsonschema-rs",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "performance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "networknt json-schema-validator (Java) — IfValidator.java",
+   "url": "https://github.com/networknt/json-schema-validator/blob/master/src/main/java/com/networknt/schema/keyword/IfValidator.java",
+   "scope": "section",
+   "implementation": "networknt json-schema-validator",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Bowtie — meta-validator that runs every implementation against the test suite",
+   "url": "https://github.com/bowtie-json-schema/bowtie",
+   "scope": "whole",
+   "implementation": "Bowtie",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — reference",
+   "url": "https://json-schema.org/understanding-json-schema/reference",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Michael Droettboom"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — The basics (Hello, World!, the type keyword, declaring a schema)",
+   "url": "https://json-schema.org/understanding-json-schema/basics",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Type-specific keywords and format",
+   "url": "https://json-schema.org/understanding-json-schema/reference/type",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system",
+    "date-time"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — string (length, regular expressions)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/string",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Regular Expressions",
+   "url": "https://json-schema.org/understanding-json-schema/reference/regular_expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Numeric types (integer, number, multiples, range)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/numeric",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "ranges"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — object (properties, additionalProperties, required, propertyNames)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/object",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "maps-dictionaries",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — object: Extending Closed Schemas",
+   "url": "https://json-schema.org/understanding-json-schema/reference/object#extending",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — array (items, tuple validation, contains, uniqueness)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/array",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists",
+    "sets"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — array: Tuple validation",
+   "url": "https://json-schema.org/understanding-json-schema/reference/array#tupleValidation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tuples"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — boolean",
+   "url": "https://json-schema.org/understanding-json-schema/reference/boolean",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — null",
+   "url": "https://json-schema.org/understanding-json-schema/reference/null",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Enumerated values",
+   "url": "https://json-schema.org/understanding-json-schema/reference/enum",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Constant values",
+   "url": "https://json-schema.org/understanding-json-schema/reference/const",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Annotations (title, description, default, examples, deprecated)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/annotations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Comments ($comment)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Schema composition (allOf, anyOf, oneOf, not)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/composition",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Conditional schema validation (dependentRequired, dependentSchemas, if-then-else, implication)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/conditionals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Media: string-encoding non-JSON data",
+   "url": "https://json-schema.org/understanding-json-schema/reference/non_json_data",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Dialect and vocabulary declaration ($schema, $vocabulary)",
+   "url": "https://json-schema.org/understanding-json-schema/reference/schema",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — Modular JSON Schema combination ($id, $anchor, $ref, $defs)",
+   "url": "https://json-schema.org/understanding-json-schema/structuring",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — structuring: Recursion",
+   "url": "https://json-schema.org/understanding-json-schema/structuring#recursion",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursive-types",
+    "recursion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding JSON Schema — structuring: Bundling",
+   "url": "https://json-schema.org/understanding-json-schema/structuring#bundling",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Creating your first schema — step-by-step getting started",
+   "url": "https://json-schema.org/learn/getting-started-step-by-step",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "records-structs",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Modeling a file system with JSON Schema (fstab example)",
+   "url": "https://json-schema.org/learn/file-system",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "union-intersection-types",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Miscellaneous Examples (arrays of things, enums, regex, nested objects, conditional validation)",
+   "url": "https://json-schema.org/learn/miscellaneous-examples",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "enums",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "JSON Schema Glossary (dialect, draft, keyword, meta-schema, vocabulary ...)",
+   "url": "https://json-schema.org/learn/glossary",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "What is JSON Schema? — overview and history",
+   "url": "https://json-schema.org/overview/what-is-jsonschema",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Migrating from older drafts",
+   "url": "https://json-schema.org/specification/migration",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Common interfaces across JSON Schema implementations (compilation, registries, output, dialects)",
+   "url": "https://json-schema.org/implementers/interfaces",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "tooling",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Using Dynamic References to Support Generic Types",
+   "url": "https://json-schema.org/blog/posts/dynamicref-and-generics",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Greg Dennis"
+   ],
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Understanding JSON Schema Lexical and Dynamic Scopes",
+   "url": "https://json-schema.org/blog/posts/understanding-lexical-dynamic-scopes",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Juan Cruz Viotti"
+   ],
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "JSON Schema Bundling Finally Formalised (compound documents)",
+   "url": "https://json-schema.org/blog/posts/bundling-json-schema-compound-documents",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Ben Hutton"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Modelling Inheritance with JSON Schema",
+   "url": "https://json-schema.org/blog/posts/modelling-inheritance",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Juan Cruz Viotti"
+   ],
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance",
+    "polymorphism",
+    "subtyping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "It all starts with applicability — JSON Schema Fundamentals part 1",
+   "url": "https://json-schema.org/blog/posts/applicability-json-schema-fundamentals-part-1",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Ben Hutton"
+   ],
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Moving Toward a Stable Spec (the future of JSON Schema)",
+   "url": "https://json-schema.org/blog/posts/future-of-json-schema",
+   "scope": "section",
+   "authority": "official",
+   "authors": [
+    "Jason Desrosiers"
+   ],
+   "year": 2023,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn JSON Schema — 2020-12 dialect keyword-by-keyword reference with examples",
+   "url": "https://www.learnjsonschema.com/2020-12/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Juan Cruz Viotti"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn JSON Schema — $ref",
+   "url": "https://www.learnjsonschema.com/2020-12/core/ref/",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn JSON Schema — if",
+   "url": "https://www.learnjsonschema.com/2020-12/applicator/if/",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "A Tour of JSON Schema — interactive lessons",
+   "url": "https://tour.json-schema.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "interactive",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Ajv documentation — JSON Schema keyword reference as implemented by ajv",
+   "url": "https://ajv.js.org/json-schema.html",
+   "scope": "whole",
+   "implementation": "ajv",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "python-jsonschema documentation — Referencing (registries and $ref resolution)",
+   "url": "https://python-jsonschema.readthedocs.io/en/stable/referencing/",
+   "scope": "section",
+   "implementation": "python-jsonschema",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "JSON: Data model, Query languages and Schema specification (PODS 2017)",
+   "url": "https://arxiv.org/abs/1701.02221",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Pierre Bourhis",
+    "Juan L. Reutter",
+    "Fernando Suárez",
+    "Domagoj Vrgoč"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "formal-semantics",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Finding Data Compatibility Bugs with JSON Subschema Checking (ISSTA 2021)",
+   "url": "https://arxiv.org/abs/1911.12651",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Andrew Habib",
+    "Avraham Shinnar",
+    "Martin Hirzel",
+    "Michael Pradel"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping",
+    "schema-evolution",
+    "verification"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Witness Generation for JSON Schema (VLDB 2022)",
+   "url": "https://arxiv.org/abs/2202.12849",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Lyes Attouche",
+    "Mohamed-Amine Baazizi",
+    "Dario Colazzo",
+    "Giorgio Ghelli",
+    "Carlo Sartiani",
+    "Stefanie Scherzinger"
+   ],
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "verification",
+    "complexity",
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — JSON Schema",
+   "url": "https://en.wikipedia.org/wiki/JSON_Schema",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — JSON Schema",
+   "url": "https://pldb.io/concepts/json-schema.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "json-schema.org Tools — index of validators, generators and other implementations",
+   "url": "https://json-schema.org/tools",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "Bowtie report — per-implementation compliance with the official test suite",
+   "url": "https://bowtie.report/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "JSON Schema Store — catalog of schemas for common configuration files",
+   "url": "https://www.schemastore.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  }
+ ]
+}

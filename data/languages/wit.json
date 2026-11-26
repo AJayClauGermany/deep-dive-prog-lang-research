@@ -1,0 +1,574 @@
+{
+ "id": "wit",
+ "name": "WIT (WebAssembly Interface Types / Component Model IDL)",
+ "aliases": [
+  "WIT",
+  "Wasm Interface Type",
+  "WebAssembly Component Model"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal resources",
+  "structural records/variants"
+ ],
+ "first_appeared": 2022,
+ "designers": [
+  "Luke Wagner",
+  "Alex Crichton",
+  "Bytecode Alliance",
+  "W3C WebAssembly CG"
+ ],
+ "summary": "Interface definition language of the WebAssembly Component Model: packages contain interfaces (types and functions) and worlds (sets of imports/exports) using records, variants, enums, flags, options, results, lists, tuples and resource handles; the Canonical ABI defines how these values are lowered to and lifted from core WebAssembly.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "WebAssembly Component Model (W3C WebAssembly CG proposal, phase 1)"
+ ],
+ "file_extensions": [
+  ".wit"
+ ],
+ "homepage": "https://component-model.bytecodealliance.org/",
+ "influenced_by": [
+  "webidl",
+  "rust"
+ ],
+ "related": [
+  {
+   "id": "webassembly",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "Specified by Markdown design documents in the WebAssembly/component-model repository (a W3C WebAssembly Community Group proposal, not yet a W3C standard); CanonicalABI.md is backed by an executable Python reference definition. The earlier 'Interface Types' proposal is superseded.",
+  "0": "wit-parser and wit-component in bytecodealliance/wasm-tools are the de-facto reference implementation; wit-bindgen generates guest bindings for many languages."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The WIT text format (component-model design/mvp/WIT.md)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Package Names",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#package-names",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — WIT Interfaces",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#wit-interfaces",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — WIT Worlds (imports/exports)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#wit-worlds",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — A Note on Subtyping",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#a-note-on-subtyping",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — WIT Packages and use",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#wit-packages-and-use",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — WIT Functions",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#wit-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — WIT Identifiers",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#wit-identifiers",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Lexical structure",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#lexical-structure",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "keywords",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Item: record (bag of named fields)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#item-record-bag-of-named-fields",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Item: variant (one of a set of types)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#item-variant-one-of-a-set-of-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Item: enum",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#item-enum-variant-but-with-no-payload",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Item: flags (bag-of-bools)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#item-flags-bag-of-bools",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Item: resource",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#item-resource",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "objects",
+    "resource-management",
+    "methods"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Types (option, result, list, tuple, primitives)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#types",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "null-optional",
+    "error-handling",
+    "lists",
+    "tuples"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Handles (own/borrow)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#handles",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ownership-borrowing",
+    "pointers-references"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "WIT.md — Name resolution",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md#name-resolution",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Component Model Explainer (design/mvp/Explainer.md)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/Explainer.md",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Canonical ABI (design/mvp/CanonicalABI.md) — lifting and lowering",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/CanonicalABI.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "calling-convention-abi",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Component Model binary format (design/mvp/Binary.md)",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/Binary.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "bytecode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Component Model high-level goals and use cases",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/high-level/README.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "WebAssembly Interface Types proposal — Explainer (superseded predecessor)",
+   "url": "https://github.com/WebAssembly/interface-types/blob/main/proposals/interface-types/Explainer.md",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "component-model design/mvp/canonical-abi/definitions.py — executable Canonical ABI reference",
+   "url": "https://github.com/WebAssembly/component-model/blob/main/design/mvp/canonical-abi/definitions.py",
+   "scope": "section",
+   "implementation": "Canonical ABI reference (Python)",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "calling-convention-abi",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "bytecodealliance/wasm-tools — wit-parser, wit-component and component tooling",
+   "url": "https://github.com/bytecodealliance/wasm-tools",
+   "scope": "whole",
+   "implementation": "wasm-tools",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "wit-parser src/ast/lex.rs — WIT lexer",
+   "url": "https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wit-parser/src/ast/lex.rs",
+   "scope": "section",
+   "implementation": "wasm-tools",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "wit-parser src/ast.rs — WIT AST and parser",
+   "url": "https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wit-parser/src/ast.rs",
+   "scope": "section",
+   "implementation": "wasm-tools",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "wit-parser src/ast/resolve.rs — name resolution",
+   "url": "https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wit-parser/src/ast/resolve.rs",
+   "scope": "section",
+   "implementation": "wasm-tools",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "wit-parser src/abi.rs — flattening types for the Canonical ABI",
+   "url": "https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wit-parser/src/abi.rs",
+   "scope": "section",
+   "implementation": "wasm-tools",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "calling-convention-abi"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "wit-component src/encoding.rs — encoding WIT worlds into components",
+   "url": "https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wit-component/src/encoding.rs",
+   "scope": "section",
+   "implementation": "wasm-tools",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend",
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "bytecodealliance/wit-bindgen — language bindings generator for WIT",
+   "url": "https://github.com/bytecodealliance/wit-bindgen",
+   "scope": "whole",
+   "implementation": "wit-bindgen",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "ffi"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The WebAssembly Component Model (Bytecode Alliance book)",
+   "url": "https://component-model.bytecodealliance.org/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Component Model book — An Overview of WIT",
+   "url": "https://component-model.bytecodealliance.org/design/wit.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Component Model book — Worlds",
+   "url": "https://component-model.bytecodealliance.org/design/worlds.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Component Model book — Interfaces",
+   "url": "https://component-model.bytecodealliance.org/design/interfaces.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Component Model book — Why the Component Model?",
+   "url": "https://component-model.bytecodealliance.org/design/why-component-model.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — WebAssembly",
+   "url": "https://en.wikipedia.org/wiki/WebAssembly",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "WASI.dev — WebAssembly System Interface (WIT-defined APIs)",
+   "url": "https://wasi.dev/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "id": "cyclone",
+ "name": "Cyclone",
+ "categories": ["systems", "historical"],
+ "paradigms": ["imperative", "procedural"],
+ "typing": ["static", "strong", "nominal"],
+ "first_appeared": 2002,
+ "designers": ["Trevor Jim", "Greg Morrisett", "Dan Grossman", "Michael Hicks", "James Cheney", "Yanling Wang"],
+ "summary": "Research safe dialect of C from AT&T Labs and Cornell that prevents buffer overflows, dangling pointers and format-string bugs using fat and never-null pointers, region-based memory management, tagged unions, pattern matching, exceptions and parametric polymorphism; a key precursor of Rust's ownership and lifetimes.",
+ "status": "historical",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "file_extensions": [".cyc"],
+ "homepage": "https://cyclone.thelanguage.org/",
+ "influenced_by": ["c", "standard-ml"],
+ "related": [{"id": "c", "relation": "dialect-of"}, {"id": "rust", "relation": "family"}],
+ "level_notes": {"1": "Defined by the Cyclone user manual and the designers' papers; development stopped around 2006 (last release 1.0).", "0": "The compiler (written in Cyclone, compiling to C) is downloadable from the project site; no maintained repository exists."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "Cyclone download (compiler 1.0 sources and VM image)", "url": "https://cyclone.thelanguage.org/wiki/Download", "implementation": "cyclone", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["compiler-architecture"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone User Manual", "url": "https://cyclone.thelanguage.org/wiki/User%20Manual/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone for C Programmers — Pointers (fat, never-null, bounded)", "url": "https://cyclone.thelanguage.org/wiki/Cyclone%20for%20C%20Programmers#Pointers", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pointers-references"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone for C Programmers — Regions", "url": "https://cyclone.thelanguage.org/wiki/Cyclone%20for%20C%20Programmers#Regions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management", "lifetimes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone for C Programmers — Let declarations and pattern matching", "url": "https://cyclone.thelanguage.org/wiki/Cyclone%20for%20C%20Programmers#LetDeclarationsandPatternMatching", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching", "destructuring"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone for C Programmers — Exceptions", "url": "https://cyclone.thelanguage.org/wiki/Cyclone%20for%20C%20Programmers#Exceptions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone for C Programmers — Polymorphic functions", "url": "https://cyclone.thelanguage.org/wiki/Cyclone%20for%20C%20Programmers#PolymorphicFunctions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone for C Programmers — Tagged unions", "url": "https://cyclone.thelanguage.org/wiki/Cyclone%20for%20C%20Programmers#Unions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["algebraic-data-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone manual — Memory Management Via Regions", "url": "https://cyclone.thelanguage.org/wiki/Memory%20Management%20Via%20Regions/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["memory-management", "lifetimes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cyclone manual — Pointers with Restricted Aliasing (unique and reference-counted pointers)", "url": "https://cyclone.thelanguage.org/wiki/Pointers%20with%20Restricted%20Aliasing", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ownership-borrowing", "linear-types"]},
+  {"level": 1, "kind": "original-paper", "title": "Cyclone: A Safe Dialect of C (USENIX ATC 2002)", "url": "https://www.usenix.org/legacy/event/usenix02/full_papers/jim/jim.pdf", "scope": "whole", "authority": "designer", "authors": ["Trevor Jim", "Greg Morrisett", "Dan Grossman", "Michael Hicks", "James Cheney", "Yanling Wang"], "year": 2002, "format": "pdf", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 1, "kind": "original-paper", "title": "Region-Based Memory Management in Cyclone (PLDI 2002)", "url": "https://homes.cs.washington.edu/~djg/papers/cyclone_regions.pdf", "scope": "whole", "authority": "designer", "authors": ["Dan Grossman", "Greg Morrisett", "Trevor Jim", "Michael Hicks", "Yanling Wang", "James Cheney"], "year": 2002, "format": "pdf", "access": "open", "concepts": ["memory-management", "lifetimes", "type-soundness"]},
+  {"level": 1, "kind": "original-paper", "title": "Safe and Flexible Memory Management in Cyclone (UMD tech report 2003)", "url": "https://homes.cs.washington.edu/~djg/papers/cyclone_memory.pdf", "scope": "whole", "authority": "designer", "authors": ["Michael Hicks", "Greg Morrisett", "Dan Grossman", "Trevor Jim"], "year": 2003, "format": "pdf", "access": "open", "concepts": ["memory-management", "ownership-borrowing"]},
+  {"level": 1, "kind": "formal-semantics", "title": "Safe Programming at the C Level of Abstraction (Dan Grossman, PhD thesis, 2003)", "url": "https://homes.cs.washington.edu/~djg/papers/grossman_thesis.pdf", "scope": "whole", "authority": "academic", "authors": ["Dan Grossman"], "year": 2003, "format": "pdf", "access": "open", "concepts": ["formal-semantics", "type-soundness"]},
+
+  {"level": 2, "kind": "article", "title": "Why Cyclone", "url": "https://cyclone.thelanguage.org/wiki/Why%20Cyclone", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale", "comparison"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Cyclone (programming language)", "url": "https://en.wikipedia.org/wiki/Cyclone_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Cyclone", "url": "https://pldb.io/concepts/cyclone.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

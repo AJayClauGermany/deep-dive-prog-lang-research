@@ -1,0 +1,48 @@
+{
+ "id": "elvish",
+ "name": "Elvish",
+ "aliases": ["elv"],
+ "categories": ["shell", "scripting", "functional"],
+ "paradigms": ["functional", "imperative", "pipeline"],
+ "typing": ["dynamic", "strong"],
+ "first_appeared": 2016,
+ "designers": ["Qi Xiao"],
+ "summary": "Expressive shell and scripting language in Go with structured value pipelines alongside byte pipes, lexically scoped closures, lists and maps as first-class values, exceptions on command failure and a module system.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".elv"],
+ "homepage": "https://elv.sh/",
+ "influenced_by": ["posix-sh", "fish", "scheme"],
+ "related": [{"id": "go", "relation": "implemented-in"}],
+ "level_notes": {"1": "The Elvish Language reference (elv.sh/ref/language.html) is a detailed semi-formal reference maintained with the implementation; no independent standard.", "0": "elves/elvish (Go) is the only implementation."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "elves/elvish — Elvish source (Go)", "url": "https://github.com/elves/elvish", "implementation": "elvish", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "pkg/parse/parse.go — parser", "url": "https://github.com/elves/elvish/blob/master/pkg/parse/parse.go", "implementation": "elvish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "pkg/eval/compile_effect.go — compiling pipelines and commands", "url": "https://github.com/elves/elvish/blob/master/pkg/eval/compile_effect.go", "implementation": "elvish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture", "pipelines"]},
+  {"level": 0, "kind": "implementation-source", "title": "pkg/eval/builtin_special.go — special commands (var, set, if, while, for, try, fn)", "url": "https://github.com/elves/elvish/blob/master/pkg/eval/builtin_special.go", "implementation": "elvish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["conditionals", "loops", "exceptions", "functions"]},
+  {"level": 0, "kind": "implementation-source", "title": "pkg/eval/closure.go — closures", "url": "https://github.com/elves/elvish/blob/master/pkg/eval/closure.go", "implementation": "elvish", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["closures"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "The Elvish Language (reference)", "url": "https://elv.sh/ref/language.html", "implementation": "elvish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Lexical elements", "url": "https://elv.sh/ref/language.html#lexical-elements", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure", "strings", "literals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Value types", "url": "https://elv.sh/ref/language.html#value-types", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — List and map", "url": "https://elv.sh/ref/language.html#list", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lists", "maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Exception", "url": "https://elv.sh/ref/language.html#exception", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Scoping rule", "url": "https://elv.sh/ref/language.html#scoping-rule", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Closure semantics", "url": "https://elv.sh/ref/language.html#closure-semantics", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Wildcard expansion", "url": "https://elv.sh/ref/language.html#wildcard-expansion", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Condition: if", "url": "https://elv.sh/ref/language.html#if", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Iterative loop: for", "url": "https://elv.sh/ref/language.html#for", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Exception control: try", "url": "https://elv.sh/ref/language.html#try", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions", "error-handling"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Function definition: fn", "url": "https://elv.sh/ref/language.html#fn", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Pipeline (value and byte pipes)", "url": "https://elv.sh/ref/language.html#pipeline", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pipelines", "concurrency"]},
+  {"level": 1, "kind": "reference-manual", "title": "Elvish language — Namespaces and modules", "url": "https://elv.sh/ref/language.html#namespaces-and-modules", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "namespaces", "imports"]},
+  {"level": 1, "kind": "library-reference", "title": "Elvish builtin module", "url": "https://elv.sh/ref/builtin.html", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "library-reference", "title": "Elvish re: regular expression module", "url": "https://elv.sh/ref/re.html", "implementation": "elvish", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["regular-expressions"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Quick tour of Elvish", "url": "https://elv.sh/learn/tour.html", "implementation": "elvish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world", "comparison"]},
+  {"level": 2, "kind": "guide", "title": "Some unique semantics of Elvish", "url": "https://elv.sh/learn/unique-semantics.html", "implementation": "elvish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 2, "kind": "guide", "title": "Effective Elvish", "url": "https://elv.sh/learn/effective-elvish.html", "implementation": "elvish", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["style-conventions"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Elvish", "url": "https://pldb.io/concepts/elvish.html", "implementation": "elvish", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

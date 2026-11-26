@@ -1,0 +1,44 @@
+{
+ "id": "dwarf",
+ "name": "DWARF debugging format",
+ "aliases": ["DWARF", "Debugging With Attributed Record Formats"],
+ "categories": ["data-serialization", "bytecode", "domain-specific"],
+ "paradigms": ["declarative"],
+ "typing": ["tagged"],
+ "first_appeared": 1988,
+ "designers": ["Brian Russell (Bell Labs)", "DWARF Debugging Information Format Committee"],
+ "summary": "Standard format for describing compiled programs to debuggers: a tree of debugging information entries (DIEs) with tagged attributes describing types, scopes, variables and functions, plus line-number programs, call-frame information and DWARF expressions, a stack-machine bytecode that computes variable locations and frame addresses.",
+ "status": "active",
+ "defined_by": ["consortium-standard"],
+ "standards": ["DWARF Version 5 (2017)"],
+ "file_extensions": [".debug_info (ELF sections)", ".dwo", ".dwp"],
+ "homepage": "https://dwarfstd.org/",
+ "influenced_by": [],
+ "related": [{"id": "x86-assembly", "relation": "family"}],
+ "level_notes": {"0": "Producers and consumers implement the standard: GCC/binutils (readelf, gas CFI), GDB, LLVM (DwarfDebug, llvm-dwarfdump), elfutils libdw, libdwarf and the Rust gimli crate. The DWARF expression evaluator is a small stack VM in each debugger.", "1": "The DWARF Debugging Information Format standard (v5, 2017; v6 in progress) published by the DWARF committee at dwarfstd.org.", "3": "Wikipedia; no PLDB entry."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "binutils — include/dwarf2.def — DWARF tags, attributes and opcodes", "url": "https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=include/dwarf2.def;hb=HEAD", "implementation": "GNU binutils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "binutils — binutils/dwarf.c — readelf/objdump DWARF decoder", "url": "https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=binutils/dwarf.c;hb=HEAD", "implementation": "GNU binutils", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "encoding-wire-format"]},
+  {"level": 0, "kind": "implementation-source", "title": "GDB — gdb/dwarf2/expr.c — DWARF expression evaluator (stack machine)", "url": "https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=gdb/dwarf2/expr.c;hb=HEAD", "implementation": "GDB", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "elfutils — libdw/dwarf.h — DWARF constants", "url": "https://sourceware.org/git/?p=elfutils.git;a=blob;f=libdw/dwarf.h;hb=HEAD", "implementation": "elfutils libdw", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "LLVM — include/llvm/BinaryFormat/Dwarf.def", "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/BinaryFormat/Dwarf.def", "implementation": "LLVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "LLVM — lib/CodeGen/AsmPrinter/DwarfDebug.cpp — DWARF producer", "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/CodeGen/AsmPrinter/DwarfDebug.cpp", "implementation": "LLVM", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "implementation-repository", "title": "gimli — Rust library for reading and writing DWARF", "url": "https://github.com/gimli-rs/gimli", "implementation": "gimli", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["serialization"]},
+  {"level": 0, "kind": "implementation-source", "title": "gimli — src/read/op.rs — DWARF expression operations and evaluation", "url": "https://github.com/gimli-rs/gimli/blob/master/src/read/op.rs", "implementation": "gimli", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "bytecode"]},
+  {"level": 0, "kind": "implementation-repository", "title": "libdwarf — DWARF consumer/producer library and dwarfdump", "url": "https://github.com/davea42/libdwarf-code", "implementation": "libdwarf", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 1, "kind": "standard", "title": "DWARF Debugging Information Format Version 5 (PDF)", "url": "https://dwarfstd.org/doc/DWARF5.pdf", "scope": "whole", "authority": "standards-body", "year": 2017, "version": "5", "format": "pdf", "access": "open", "concepts": ["data-model", "encoding-wire-format", "bytecode"]},
+  {"level": 1, "kind": "standard", "title": "DWARF Version 5 — standard page", "url": "https://dwarfstd.org/dwarf5std.html", "scope": "whole", "authority": "standards-body", "version": "5", "format": "html", "access": "open", "concepts": ["versioning-compatibility"]},
+  {"level": 1, "kind": "standard", "title": "DWARF Version 4 (PDF)", "url": "https://dwarfstd.org/doc/DWARF4.pdf", "scope": "whole", "authority": "standards-body", "year": 2010, "version": "4", "format": "pdf", "access": "open", "concepts": ["data-model"]},
+  {"level": 1, "kind": "standard", "title": "DWARF Version 2.0.0 (PDF)", "url": "https://dwarfstd.org/doc/dwarf-2.0.0.pdf", "scope": "whole", "authority": "standards-body", "year": 1993, "version": "2.0.0", "format": "pdf", "access": "open", "concepts": ["history"]},
+  {"level": 1, "kind": "proposal-index", "title": "DWARF committee — public issues (proposals for DWARF 6)", "url": "https://dwarfstd.org/issues.html", "scope": "whole", "authority": "standards-body", "format": "html", "access": "open", "concepts": ["language-evolution", "standardization"]},
+  {"level": 1, "kind": "specification", "title": "DWARF 6 — language code registry (DW_LNAME)", "url": "https://dwarfstd.org/languages-v6.html", "scope": "whole", "authority": "standards-body", "format": "html", "access": "open", "concepts": ["interoperability"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Michael Eager — Introduction to the DWARF Debugging Format", "url": "https://dwarfstd.org/doc/Debugging-using-DWARF-2012.pdf", "scope": "whole", "authority": "community", "authors": ["Michael J. Eager"], "year": 2012, "format": "pdf", "access": "open", "concepts": ["hello-world", "records-structs"]},
+  {"level": 2, "kind": "guide", "title": "LLVM — Source Level Debugging with LLVM", "url": "https://llvm.org/docs/SourceLevelDebugging.html", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 2, "kind": "article", "title": "Eli Bendersky — How debuggers work, part 3: debugging information", "url": "https://eli.thegreenplace.net/2011/02/07/how-debuggers-work-part-3-debugging-information", "scope": "whole", "authority": "community", "year": 2011, "format": "html", "access": "open", "concepts": ["tooling"]},
+  {"level": 2, "kind": "article", "title": "MaskRay — Distribution of debug information", "url": "https://maskray.me/blog/2022-10-30-distribution-of-debug-information", "scope": "whole", "authority": "community", "year": 2022, "format": "html", "access": "open", "concepts": ["separate-compilation"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — DWARF", "url": "https://en.wikipedia.org/wiki/DWARF", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

@@ -1,0 +1,2178 @@
+{
+ "id": "verilog",
+ "name": "Verilog",
+ "aliases": [
+  "Verilog HDL",
+  "IEEE 1364",
+  "Verilog-2001",
+  "Verilog-2005"
+ ],
+ "categories": [
+  "hardware-description"
+ ],
+ "paradigms": [
+  "concurrent",
+  "event-driven",
+  "structural",
+  "dataflow",
+  "imperative"
+ ],
+ "typing": [
+  "static",
+  "weak",
+  "four-valued-logic"
+ ],
+ "first_appeared": 1984,
+ "designers": [
+  "Phil Moorby",
+  "Prabhu Goel (Gateway Design Automation)"
+ ],
+ "summary": "Hardware description language created at Gateway Design Automation for the Verilog-XL simulator (drawing on the earlier HILO-2 language), standardised as IEEE 1364 (1995, 2001, 2005) and since 2009 merged into SystemVerilog (IEEE 1800). Describes digital circuits as module hierarchies of nets, registers, continuous assignments and event-driven always/initial processes; a subset is synthesisable to gates.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "IEEE 1364-1995",
+  "IEEE 1364-2001",
+  "IEEE 1364-2005",
+  "IEEE 1364.1-2002 (RTL synthesis)",
+  "IEEE 1800-2023 (subsumes Verilog)"
+ ],
+ "file_extensions": [
+  ".v",
+  ".vh"
+ ],
+ "homepage": "https://standards.ieee.org/ieee/1364/3641/",
+ "influenced_by": [
+  "c",
+  "ada"
+ ],
+ "related": [
+  {
+   "id": "systemverilog",
+   "relation": "family"
+  },
+  {
+   "id": "verilog-ams",
+   "relation": "family"
+  },
+  {
+   "id": "vhdl",
+   "relation": "family"
+  },
+  {
+   "id": "sva",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "IEEE 1364-2005 is the last stand-alone Verilog standard (withdrawn after the 2009 merge into IEEE 1800). IEEE standards are paywalled; IEEE 1800 is available at no cost through the IEEE GET Program (registration). Free reference cards (Sutherland) are listed as level 2.",
+  "0": "Open-source simulators/synthesizers: Icarus Verilog (interpreting simulator, vvp runtime), Verilator (cycle-based compiled simulator to C++), Yosys (synthesis); plus slang, sv2v, Verible and the sv-tests conformance suite.",
+  "2": "Many free tutorials (ASIC World, ChipVerify, HDLBits); classic books (Thomas & Moorby, Palnitkar) are not freely available."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE 1364-2005 — Standard for Verilog Hardware Description Language",
+   "url": "https://standards.ieee.org/ieee/1364/3641/",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "paywalled",
+   "year": 2005,
+   "version": "1364-2005"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE 1364-2001 — Verilog HDL",
+   "url": "https://standards.ieee.org/ieee/1364/2052/",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "paywalled",
+   "year": 2001,
+   "version": "1364-2001"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE 1364-1995 — Verilog HDL (first IEEE edition)",
+   "url": "https://standards.ieee.org/ieee/1364/1904/",
+   "concepts": [
+    "standardization",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "paywalled",
+   "year": 1995,
+   "version": "1364-1995"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE 1800-2023 — SystemVerilog (unified Verilog standard)",
+   "url": "https://standards.ieee.org/ieee/1800/7743/",
+   "concepts": [
+    "standardization",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "paywalled",
+   "year": 2023,
+   "version": "1800-2023"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "IEEE GET Program — free access to IEEE 1800 (SystemVerilog incl. Verilog)",
+   "url": "https://ieeexplore.ieee.org/browse/standards/get-program/page/series?id=80",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "registration"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Mike Gordon — The Semantic Challenge of Verilog HDL (LICS 1995 talk)",
+   "url": "https://www.cl.cam.ac.uk/archive/mjcg/Verilog/LICSTalk.pdf",
+   "concepts": [
+    "formal-semantics",
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Mike Gordon"
+   ],
+   "year": 1995
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Cambridge Verilog semantics project (Gordon, Greaves et al.)",
+   "url": "https://www.cl.cam.ac.uk/archive/mjcg/Verilog/",
+   "concepts": [
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Input Languages (standard support matrix)",
+   "url": "https://verilator.org/guide/latest/languages.html",
+   "concepts": [
+    "versioning-compatibility",
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Verilog 2005 support",
+   "url": "https://verilator.org/guide/latest/languages.html#verilog-2005-ieee-1364-2005-support",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Synthesis subset",
+   "url": "https://verilator.org/guide/latest/languages.html#synthesis-subset",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Unknown (X) states",
+   "url": "https://verilator.org/guide/latest/languages.html#unknown-states",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Time",
+   "url": "https://verilator.org/guide/latest/languages.html#time",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Latches",
+   "url": "https://verilator.org/guide/latest/languages.html#latches",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Gate primitives",
+   "url": "https://verilator.org/guide/latest/languages.html#gate-primitives",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Verilator manual — Specify blocks",
+   "url": "https://verilator.org/guide/latest/languages.html#specify-blocks",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Icarus Verilog documentation",
+   "url": "https://steveicarus.github.io/iverilog/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Icarus Verilog — notes on IEEE 1364 interpretation",
+   "url": "https://steveicarus.github.io/iverilog/developer/guide/misc/ieee1364-notes.html",
+   "concepts": [
+    "standardization",
+    "undefined-behavior"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yosys manual — Verilog support and extensions",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/using_yosys/verilog.html",
+   "concepts": [
+    "synthesis",
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Icarus Verilog release notes",
+   "url": "https://steveicarus.github.io/iverilog/releases/index.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Icarus Verilog (steveicarus/iverilog)",
+   "url": "https://github.com/steveicarus/iverilog",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog README.md — README — compiler/vvp structure",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/README.md",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog lexor.lex — lexer",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/lexor.lex",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog lexor_keyword.gperf — keyword table",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/lexor_keyword.gperf",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog parse.y — Bison grammar of Verilog/SystemVerilog",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/parse.y",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog pform.cc — parse form (AST construction)",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/pform.cc",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog PExpr.h — expression parse tree",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/PExpr.h",
+   "concepts": [
+    "ast",
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog Module.h — module representation",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/Module.h",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog PGate.h — gate/instance parse tree",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/PGate.h",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog PUdp.h — user-defined primitives",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/PUdp.h",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog elaborate.cc — elaboration",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/elaborate.cc",
+   "concepts": [
+    "semantic-analysis",
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog elab_expr.cc — expression elaboration and sizing rules",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/elab_expr.cc",
+   "concepts": [
+    "semantic-analysis",
+    "expressions",
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog elab_scope.cc — scope elaboration, parameters and generate",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/elab_scope.cc",
+   "concepts": [
+    "scope",
+    "code-generation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog eval_tree.cc — constant expression evaluation",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/eval_tree.cc",
+   "concepts": [
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog netlist.h — netlist intermediate form",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/netlist.h",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog synth2.cc — synthesis of processes",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/synth2.cc",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog vvp/schedule.cc — vvp event scheduler (stratified event queue)",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/vvp/schedule.cc",
+   "concepts": [
+    "hdl-signals-timing",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog vvp/vthread.cc — vvp threads executing behavioural code",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/vvp/vthread.cc",
+   "concepts": [
+    "interpreter",
+    "virtual-machine",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog vvp/vvp_net.cc — vvp net/functor propagation and 4-state vectors",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/vvp/vvp_net.cc",
+   "concepts": [
+    "hdl-signals-timing",
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog vvp/event.cc — event controls (@, posedge, negedge)",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/vvp/event.cc",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Icarus Verilog vvp/vpi_priv.cc — VPI implementation",
+   "url": "https://github.com/steveicarus/iverilog/blob/master/vvp/vpi_priv.cc",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "ivtest — Icarus Verilog regression suite",
+   "url": "https://github.com/steveicarus/ivtest",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Verilator",
+   "url": "https://github.com/verilator/verilator",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator docs/internals.rst — internals documentation",
+   "url": "https://github.com/verilator/verilator/blob/master/docs/internals.rst",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/verilog.l — lexer",
+   "url": "https://github.com/verilator/verilator/blob/master/src/verilog.l",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3PreLex.l — preprocessor lexer",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3PreLex.l",
+   "concepts": [
+    "preprocessor"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/verilog.y — grammar",
+   "url": "https://github.com/verilator/verilator/blob/master/src/verilog.y",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3LinkDot.cpp — hierarchical name resolution",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3LinkDot.cpp",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3Param.cpp — parameter and generate elaboration",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3Param.cpp",
+   "concepts": [
+    "generics",
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3Width.cpp — expression width/sign rules",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3Width.cpp",
+   "concepts": [
+    "type-system",
+    "type-conversion",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3Order.cpp — ordering of logic for evaluation",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3Order.cpp",
+   "concepts": [
+    "hdl-signals-timing",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3Sched.cpp — scheduling of combinational/sequential logic",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3Sched.cpp",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verilator src/V3Timing.cpp — timing control (delays, events) support",
+   "url": "https://github.com/verilator/verilator/blob/master/src/V3Timing.cpp",
+   "concepts": [
+    "hdl-signals-timing",
+    "coroutines"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Verilator"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Yosys Open SYnthesis Suite",
+   "url": "https://github.com/YosysHQ/yosys",
+   "concepts": [
+    "synthesis",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys frontends/verilog/verilog_lexer.l — Verilog lexer",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/verilog/verilog_lexer.l",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys frontends/verilog/verilog_parser.y — Verilog parser",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/verilog/verilog_parser.y",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys frontends/verilog/preproc.cc — Verilog preprocessor",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/verilog/preproc.cc",
+   "concepts": [
+    "preprocessor"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys frontends/ast/simplify.cc — AST simplification (generate, functions, constants)",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/ast/simplify.cc",
+   "concepts": [
+    "compile-time-evaluation",
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys frontends/ast/genrtlil.cc — AST to RTLIL conversion",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/ast/genrtlil.cc",
+   "concepts": [
+    "synthesis",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys passes/proc/proc.cc — proc: processes to netlists",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/passes/proc/proc.cc",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys techlibs/common/synth.cc — generic synth script",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/techlibs/common/synth.cc",
+   "concepts": [
+    "synthesis",
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "slang — SystemVerilog/Verilog compiler front end",
+   "url": "https://github.com/MikePopoloski/slang",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "implementation": "slang"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "sv2v — SystemVerilog to Verilog-2005 converter",
+   "url": "https://github.com/zachjs/sv2v",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Verible — SystemVerilog/Verilog parser, linter and formatter",
+   "url": "https://github.com/chipsalliance/verible",
+   "concepts": [
+    "tooling",
+    "style-conventions"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-verilog",
+   "url": "https://github.com/tree-sitter/tree-sitter-verilog",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "sv-tests — conformance test suite across Verilog/SystemVerilog tools",
+   "url": "https://github.com/chipsalliance/sv-tests",
+   "concepts": [
+    "testing",
+    "standardization"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Flake, Moorby, Golson — Verilog HDL and its ancestors and descendants (HOPL IV)",
+   "url": "https://doi.org/10.1145/3386337",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Peter Flake",
+    "Phil Moorby",
+    "Steve Golson",
+    "Arturo Salz",
+    "Simon Davidmann"
+   ],
+   "year": 2020,
+   "notes": "ACM open access; doi.org reports 403 to the checker."
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Doulos — A brief history of Verilog",
+   "url": "https://www.doulos.com/knowhow/verilog/a-brief-history-of-verilog/",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "ASIC World — History of Verilog",
+   "url": "https://www.asic-world.com/verilog/history.html",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Sutherland — Verilog HDL Quick Reference Guide (IEEE 1364-2001)",
+   "url": "https://sutherland-hdl.com/pdfs/verilog_2001_ref_guide.pdf",
+   "concepts": [
+    "grammar",
+    "keywords",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Stuart Sutherland"
+   ],
+   "year": 2001,
+   "version": "1364-2001"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World — Verilog Tutorial",
+   "url": "https://www.asic-world.com/verilog/veritut.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — My first program",
+   "url": "https://www.asic-world.com/verilog/first.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Syntax and lexical conventions",
+   "url": "https://www.asic-world.com/verilog/syntax.html",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "identifiers",
+    "literals"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Gate level modeling",
+   "url": "https://www.asic-world.com/verilog/gate.html",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — User defined primitives",
+   "url": "https://www.asic-world.com/verilog/udp.html",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Operators",
+   "url": "https://www.asic-world.com/verilog/operators.html",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Behavioral modeling (if, case, loops)",
+   "url": "https://www.asic-world.com/verilog/vbehave.html",
+   "concepts": [
+    "conditionals",
+    "switch-case",
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Procedural timing control",
+   "url": "https://www.asic-world.com/verilog/timing_ctrl.html",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Tasks and functions",
+   "url": "https://www.asic-world.com/verilog/task_func.html",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — System tasks and functions",
+   "url": "https://www.asic-world.com/verilog/sys_task_func.html",
+   "concepts": [
+    "standard-library",
+    "input-output"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Art of writing testbenches",
+   "url": "https://www.asic-world.com/verilog/art_testbench_writing.html",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Parameterized modules",
+   "url": "https://www.asic-world.com/verilog/para_modules.html",
+   "concepts": [
+    "generics",
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Verilog synthesis",
+   "url": "https://www.asic-world.com/verilog/synthesis.html",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Programming Language Interface (PLI)",
+   "url": "https://www.asic-world.com/verilog/pli.html",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Verilog-2001 new features",
+   "url": "https://www.asic-world.com/verilog/verilog2k.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ASIC World Verilog — Compiler directives",
+   "url": "https://www.asic-world.com/verilog/compiler.html",
+   "concepts": [
+    "preprocessor"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify — Verilog Tutorial",
+   "url": "https://chipverify.com/verilog/verilog-tutorial",
+   "concepts": [
+    "hello-world",
+    "comparison"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Syntax",
+   "url": "https://chipverify.com/verilog/verilog-syntax",
+   "concepts": [
+    "lexical-structure",
+    "comments"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Data types",
+   "url": "https://chipverify.com/verilog/verilog-data-types",
+   "concepts": [
+    "primitive-types",
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Net types",
+   "url": "https://chipverify.com/verilog/verilog-net-types",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Scalar and vector",
+   "url": "https://chipverify.com/verilog/verilog-scalar-vector",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Arrays and memories",
+   "url": "https://chipverify.com/verilog/verilog-arrays-memories",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Modules",
+   "url": "https://chipverify.com/verilog/verilog-modules",
+   "concepts": [
+    "hdl-structure",
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Ports",
+   "url": "https://chipverify.com/verilog/verilog-ports",
+   "concepts": [
+    "hdl-structure",
+    "parameters-arguments"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Module instantiations",
+   "url": "https://chipverify.com/verilog/verilog-module-instantiations",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — assign statement",
+   "url": "https://chipverify.com/verilog/verilog-assign-statement",
+   "concepts": [
+    "assignment",
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Operators",
+   "url": "https://chipverify.com/verilog/verilog-operators",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Concatenation",
+   "url": "https://chipverify.com/verilog/verilog-concatenation",
+   "concepts": [
+    "operators",
+    "arrays"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — always block",
+   "url": "https://chipverify.com/verilog/verilog-always-block",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — initial block",
+   "url": "https://chipverify.com/verilog/verilog-initial-block",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Blocking and non-blocking statements",
+   "url": "https://chipverify.com/verilog/verilog-blocking-non-blocking-statements",
+   "concepts": [
+    "assignment",
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — if-else",
+   "url": "https://chipverify.com/verilog/verilog-conditional-statements",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — case statement",
+   "url": "https://chipverify.com/verilog/verilog-case-statement",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — for loop",
+   "url": "https://chipverify.com/verilog/verilog-for-loop",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Functions",
+   "url": "https://chipverify.com/verilog/verilog-functions",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Tasks",
+   "url": "https://chipverify.com/verilog/verilog-task",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Parameters",
+   "url": "https://chipverify.com/verilog/verilog-parameters",
+   "concepts": [
+    "generics",
+    "constants"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — generate block",
+   "url": "https://chipverify.com/verilog/verilog-generate-block",
+   "concepts": [
+    "code-generation",
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — `define macros",
+   "url": "https://chipverify.com/verilog/verilog-define-macros",
+   "concepts": [
+    "macros",
+    "preprocessor"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — `ifdef",
+   "url": "https://chipverify.com/verilog/verilog-ifdef-conditional-compilation",
+   "concepts": [
+    "preprocessor"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — `timescale",
+   "url": "https://chipverify.com/verilog/verilog-timescale",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Scheduling semantics",
+   "url": "https://chipverify.com/verilog/verilog-scheduling-semantics",
+   "concepts": [
+    "hdl-signals-timing",
+    "evaluation-order"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Delay control",
+   "url": "https://chipverify.com/verilog/verilog-delay-control",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — File I/O",
+   "url": "https://chipverify.com/verilog/verilog-file-io-operations",
+   "concepts": [
+    "file-io"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Display tasks",
+   "url": "https://chipverify.com/verilog/verilog-display-tasks",
+   "concepts": [
+    "input-output",
+    "string-formatting"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Hierarchical reference scope",
+   "url": "https://chipverify.com/verilog/verilog-hierarchical-reference-scope",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Synthesis",
+   "url": "https://chipverify.com/verilog/verilog-synthesis",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "ChipVerify Verilog — Finite state machines",
+   "url": "https://chipverify.com/verilog/verilog-fsm",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — Verilog practice problems",
+   "url": "https://hdlbits.01xz.net/wiki/Problem_sets",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — Getting started",
+   "url": "https://hdlbits.01xz.net/wiki/Step_one",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — Wires",
+   "url": "https://hdlbits.01xz.net/wiki/Wire",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — Vectors",
+   "url": "https://hdlbits.01xz.net/wiki/Vector0",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — Modules",
+   "url": "https://hdlbits.01xz.net/wiki/Module",
+   "concepts": [
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — if statement",
+   "url": "https://hdlbits.01xz.net/wiki/Always_if",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — case statement",
+   "url": "https://hdlbits.01xz.net/wiki/Always_case",
+   "concepts": [
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — always blocks (clocked)",
+   "url": "https://hdlbits.01xz.net/wiki/Alwaysblock2",
+   "concepts": [
+    "hdl-signals-timing",
+    "assignment"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "HDLBits — Finite state machines",
+   "url": "https://hdlbits.01xz.net/wiki/Fsm1",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Doulos — Verilog KnowHow",
+   "url": "https://www.doulos.com/knowhow/verilog/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks — Programmable Logic/Verilog",
+   "url": "https://en.wikibooks.org/wiki/Programmable_Logic/Verilog",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Icarus Verilog developer guide — vvp simulation engine",
+   "url": "https://steveicarus.github.io/iverilog/developer/guide/vvp/vvp.html",
+   "concepts": [
+    "virtual-machine",
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Icarus Verilog developer guide — vvp threads",
+   "url": "https://steveicarus.github.io/iverilog/developer/guide/vvp/vthread.html",
+   "concepts": [
+    "virtual-machine",
+    "concurrency"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Icarus Verilog developer guide — netlist format",
+   "url": "https://steveicarus.github.io/iverilog/developer/guide/ivl/netlist.html",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Icarus Verilog developer guide — VPI",
+   "url": "https://steveicarus.github.io/iverilog/developer/guide/vpi/vpi.html",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Icarus Verilog"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Yosys internals — the Verilog frontend",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/yosys_internals/flow/verilog_frontend.html",
+   "concepts": [
+    "parser",
+    "ast",
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yosys — Converting process blocks (proc)",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/using_yosys/synthesis/proc.html",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yosys — Synth commands",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/using_yosys/synthesis/synth.html",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yosys — FSM handling",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/using_yosys/synthesis/fsm.html",
+   "concepts": [
+    "synthesis",
+    "automata"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yosys — Memory handling",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/using_yosys/synthesis/memory.html",
+   "concepts": [
+    "synthesis",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Yosys — Synthesis starter example",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/getting_started/example_synth.html",
+   "concepts": [
+    "synthesis",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "EDA Playground (online Verilog simulators)",
+   "url": "https://www.edaplayground.com/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "UC Berkeley EECS 151 — Digital Design and Integrated Circuits",
+   "url": "https://inst.eecs.berkeley.edu/~eecs151/",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Sutherland HDL — papers on Verilog/SystemVerilog",
+   "url": "https://sutherland-hdl.com/papers.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Verilog",
+   "url": "https://en.wikipedia.org/wiki/Verilog",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Verilog — History",
+   "url": "https://en.wikipedia.org/wiki/Verilog#History",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Verilog — Race conditions",
+   "url": "https://en.wikipedia.org/wiki/Verilog#Race_conditions",
+   "concepts": [
+    "hdl-signals-timing",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Verilog — Four-valued logic",
+   "url": "https://en.wikipedia.org/wiki/Verilog#Four-valued_logic",
+   "concepts": [
+    "hdl-signals-timing",
+    "booleans"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia Verilog — Synthesizable constructs",
+   "url": "https://en.wikipedia.org/wiki/Verilog#Synthesizable_constructs",
+   "concepts": [
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Verilog Procedural Interface",
+   "url": "https://en.wikipedia.org/wiki/Verilog_Procedural_Interface",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Icarus Verilog",
+   "url": "https://en.wikipedia.org/wiki/Icarus_Verilog",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Verilator",
+   "url": "https://en.wikipedia.org/wiki/Verilator",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Verilog",
+   "url": "https://pldb.io/concepts/verilog.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:Verilog",
+   "url": "https://rosettacode.org/wiki/Category:Verilog",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

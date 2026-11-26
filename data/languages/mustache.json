@@ -1,0 +1,1134 @@
+{
+  "id": "mustache",
+  "name": "Mustache",
+  "aliases": [
+    "{{mustache}}"
+  ],
+  "categories": [
+    "template"
+  ],
+  "paradigms": [
+    "declarative",
+    "logic-less"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 2009,
+  "designers": [
+    "Chris Wanstrath"
+  ],
+  "summary": "Logic-less template language using {{tags}} for interpolation, sections (iteration/conditionals over data), partials and optional lambdas and inheritance; implemented in dozens of host languages against a shared YAML conformance spec.",
+  "status": "active",
+  "defined_by": [
+    "community-specification"
+  ],
+  "file_extensions": [
+    ".mustache"
+  ],
+  "homepage": "https://mustache.github.io/",
+  "related": [
+    {
+      "id": "handlebars",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "The mustache(5) manual is the human-readable definition; the mustache/spec YAML files (v1.4) are the normative, test-based specification, with ~lambdas, ~inheritance and ~dynamic-names as optional modules.",
+    "0": "No single canonical implementation; the original Ruby gem and mustache.js are the historical references. Many implementations exist (see mustache.github.io)."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Logic-less templates (manual)",
+      "url": "https://mustache.github.io/mustache.5.html",
+      "concepts": [
+        "templating",
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authors": [
+        "Chris Wanstrath"
+      ],
+      "year": 2009,
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Description",
+      "url": "https://mustache.github.io/mustache.5.html#DESCRIPTION",
+      "concepts": [
+        "templating",
+        "design-rationale"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Tag types",
+      "url": "https://mustache.github.io/mustache.5.html#TAG-TYPES",
+      "concepts": [
+        "lexical-structure",
+        "templating"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Variables (interpolation and HTML escaping)",
+      "url": "https://mustache.github.io/mustache.5.html#Variables",
+      "concepts": [
+        "variables",
+        "escaping",
+        "templating"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Sections (lists, false values, lambdas)",
+      "url": "https://mustache.github.io/mustache.5.html#Sections",
+      "concepts": [
+        "conditionals",
+        "loops",
+        "iteration-foreach",
+        "functions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Inverted sections",
+      "url": "https://mustache.github.io/mustache.5.html#Inverted-Sections",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Comments",
+      "url": "https://mustache.github.io/mustache.5.html#Comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Partials",
+      "url": "https://mustache.github.io/mustache.5.html#Partials",
+      "concepts": [
+        "imports",
+        "modules",
+        "templating"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Blocks",
+      "url": "https://mustache.github.io/mustache.5.html#Blocks",
+      "concepts": [
+        "inheritance",
+        "templating"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Parents (template inheritance)",
+      "url": "https://mustache.github.io/mustache.5.html#Parents",
+      "concepts": [
+        "inheritance",
+        "imports"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(5) — Set Delimiter",
+      "url": "https://mustache.github.io/mustache.5.html#Set-Delimiter",
+      "concepts": [
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "mustache(1) — command-line renderer manual",
+      "url": "https://mustache.github.io/mustache.1.html",
+      "concepts": [
+        "command-line",
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "mustache/spec — the formal Mustache specification (YAML test-based)",
+      "url": "https://github.com/mustache/spec/blob/master/README.md",
+      "concepts": [
+        "standardization",
+        "versioning-compatibility"
+      ],
+      "scope": "whole",
+      "format": "source-file",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Interpolation (interpolation.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/interpolation.yml",
+      "concepts": [
+        "variables",
+        "escaping",
+        "scope"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Sections (sections.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/sections.yml",
+      "concepts": [
+        "conditionals",
+        "loops",
+        "scope"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Inverted sections (inverted.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/inverted.yml",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Comments (comments.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/comments.yml",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Partials (partials.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/partials.yml",
+      "concepts": [
+        "imports",
+        "whitespace-layout"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Set delimiters (delimiters.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/delimiters.yml",
+      "concepts": [
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Lambdas (optional module) (~lambdas.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/~lambdas.yml",
+      "concepts": [
+        "functions",
+        "higher-order-functions"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Inheritance: blocks and parents (optional module) (~inheritance.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/~inheritance.yml",
+      "concepts": [
+        "inheritance"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Mustache spec — Dynamic names (optional module) (~dynamic-names.yml)",
+      "url": "https://github.com/mustache/spec/blob/master/specs/~dynamic-names.yml",
+      "concepts": [
+        "imports",
+        "reflection"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "version": "1.4",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "mustache/spec — TESTING.md (how to run the spec suite)",
+      "url": "https://github.com/mustache/spec/blob/master/TESTING.md",
+      "concepts": [
+        "testing"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "mustache/spec — Changes (spec version history)",
+      "url": "https://github.com/mustache/spec/blob/master/Changes",
+      "concepts": [
+        "language-evolution",
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "format": "source-file",
+      "authority": "official",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "mustache/spec repository — YAML/JSON conformance suite",
+      "url": "https://github.com/mustache/spec",
+      "concepts": [
+        "testing",
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "mustache/mustache — original Ruby implementation",
+      "url": "https://github.com/mustache/mustache",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "Ruby mustache — lib/mustache/parser.rb (tokenizer/parser)",
+      "url": "https://github.com/mustache/mustache/blob/master/lib/mustache/parser.rb",
+      "concepts": [
+        "parser",
+        "lexer"
+      ],
+      "scope": "section",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "Ruby mustache — lib/mustache/generator.rb (compiles tokens to Ruby)",
+      "url": "https://github.com/mustache/mustache/blob/master/lib/mustache/generator.rb",
+      "concepts": [
+        "code-generation-backend",
+        "escaping"
+      ],
+      "scope": "section",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "Ruby mustache — lib/mustache/context.rb (context stack lookup)",
+      "url": "https://github.com/mustache/mustache/blob/master/lib/mustache/context.rb",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "scope": "section",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "Ruby mustache — lib/mustache/template.rb",
+      "url": "https://github.com/mustache/mustache/blob/master/lib/mustache/template.rb",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "section",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "Ruby mustache — lib/mustache.rb (view class, escaping, partials)",
+      "url": "https://github.com/mustache/mustache/blob/master/lib/mustache.rb",
+      "concepts": [
+        "escaping",
+        "imports"
+      ],
+      "scope": "section",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Ruby mustache — man/mustache.5.ron (manual source)",
+      "url": "https://github.com/mustache/mustache/blob/master/man/mustache.5.ron",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "section",
+      "implementation": "Ruby mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "janl/mustache.js — JavaScript implementation",
+      "url": "https://github.com/janl/mustache.js",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "mustache.js",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.js — mustache.js (scanner, parser, writer in one file)",
+      "url": "https://github.com/janl/mustache.js/blob/master/mustache.js",
+      "concepts": [
+        "lexer",
+        "parser",
+        "interpreter",
+        "escaping"
+      ],
+      "scope": "whole",
+      "implementation": "mustache.js",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "noahmorrison/chevron — Python implementation",
+      "url": "https://github.com/noahmorrison/chevron",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "chevron",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "chevron — tokenizer.py",
+      "url": "https://github.com/noahmorrison/chevron/blob/main/chevron/tokenizer.py",
+      "concepts": [
+        "lexer"
+      ],
+      "scope": "section",
+      "implementation": "chevron",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "chevron — renderer.py",
+      "url": "https://github.com/noahmorrison/chevron/blob/main/chevron/renderer.py",
+      "concepts": [
+        "interpreter",
+        "scope",
+        "escaping"
+      ],
+      "scope": "section",
+      "implementation": "chevron",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "bobthecow/mustache.php — PHP implementation",
+      "url": "https://github.com/bobthecow/mustache.php",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "mustache.php",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.php — src/Tokenizer.php",
+      "url": "https://github.com/bobthecow/mustache.php/blob/main/src/Tokenizer.php",
+      "concepts": [
+        "lexer"
+      ],
+      "scope": "section",
+      "implementation": "mustache.php",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.php — src/Parser.php",
+      "url": "https://github.com/bobthecow/mustache.php/blob/main/src/Parser.php",
+      "concepts": [
+        "parser",
+        "ast"
+      ],
+      "scope": "section",
+      "implementation": "mustache.php",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.php — src/Compiler.php (compiles templates to PHP classes)",
+      "url": "https://github.com/bobthecow/mustache.php/blob/main/src/Compiler.php",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "scope": "section",
+      "implementation": "mustache.php",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.php — src/Context.php (context stack)",
+      "url": "https://github.com/bobthecow/mustache.php/blob/main/src/Context.php",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "implementation": "mustache.php",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.php — src/Engine.php",
+      "url": "https://github.com/bobthecow/mustache.php/blob/main/src/Engine.php",
+      "concepts": [
+        "escaping",
+        "imports"
+      ],
+      "scope": "section",
+      "implementation": "mustache.php",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "spullara/mustache.java — Java implementation",
+      "url": "https://github.com/spullara/mustache.java",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "mustache.java",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.java — MustacheParser.java",
+      "url": "https://github.com/spullara/mustache.java/blob/main/compiler/src/main/java/com/github/mustachejava/MustacheParser.java",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mustache.java",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mustache.java — DefaultMustacheFactory.java",
+      "url": "https://github.com/spullara/mustache.java/blob/main/compiler/src/main/java/com/github/mustachejava/DefaultMustacheFactory.java",
+      "concepts": [
+        "imports",
+        "escaping"
+      ],
+      "scope": "section",
+      "implementation": "mustache.java",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "samskivert/jmustache — Java implementation (no dependencies)",
+      "url": "https://github.com/samskivert/jmustache",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "JMustache",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JMustache — Mustache.java (compiler/parser)",
+      "url": "https://github.com/samskivert/jmustache/blob/master/src/main/java/com/samskivert/mustache/Mustache.java",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "JMustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JMustache — Template.java (execution and context lookup)",
+      "url": "https://github.com/samskivert/jmustache/blob/master/src/main/java/com/samskivert/mustache/Template.java",
+      "concepts": [
+        "interpreter",
+        "scope"
+      ],
+      "scope": "section",
+      "implementation": "JMustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "nickel-org/rust-mustache — Rust implementation",
+      "url": "https://github.com/nickel-org/rust-mustache",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "rust-mustache",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "rust-mustache — src/parser.rs",
+      "url": "https://github.com/nickel-org/rust-mustache/blob/master/src/parser.rs",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "rust-mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "rust-mustache — src/compiler.rs",
+      "url": "https://github.com/nickel-org/rust-mustache/blob/master/src/compiler.rs",
+      "concepts": [
+        "compiler-architecture",
+        "imports"
+      ],
+      "scope": "section",
+      "implementation": "rust-mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JustusAdam/mustache (Haskell) — Text/Mustache/Parser.hs",
+      "url": "https://github.com/JustusAdam/mustache/blob/master/src/Text/Mustache/Parser.hs",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "section",
+      "implementation": "mustache (Haskell)",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mo — Mustache templates in pure Bash",
+      "url": "https://github.com/tests-always-included/mo/blob/master/mo",
+      "concepts": [
+        "interpreter"
+      ],
+      "scope": "section",
+      "implementation": "mo",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "hoisie/mustache — Go implementation (mustache.go)",
+      "url": "https://github.com/hoisie/mustache/blob/master/mustache.go",
+      "concepts": [
+        "parser",
+        "interpreter"
+      ],
+      "scope": "section",
+      "implementation": "hoisie/mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "cbroglie/mustache — maintained Go implementation",
+      "url": "https://github.com/cbroglie/mustache",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "cbroglie/mustache",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "kainjow/Mustache — header-only C++11 implementation (mustache.hpp)",
+      "url": "https://github.com/kainjow/Mustache/blob/master/mustache.hpp",
+      "concepts": [
+        "parser",
+        "interpreter"
+      ],
+      "scope": "section",
+      "implementation": "kainjow/Mustache",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mstch — C++ implementation, src/template_type.cpp (tokenizer)",
+      "url": "https://github.com/no1msd/mstch/blob/master/src/template_type.cpp",
+      "concepts": [
+        "lexer"
+      ],
+      "scope": "section",
+      "implementation": "mstch",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "mstch — src/render_context.cpp (context stack)",
+      "url": "https://github.com/no1msd/mstch/blob/master/src/render_context.cpp",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "implementation": "mstch",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "GRMustache.swift — Swift implementation",
+      "url": "https://github.com/groue/GRMustache.swift",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "implementation": "GRMustache.swift",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Templates",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#templates",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "implementation": "mustache.js",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Variables",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#variables",
+      "concepts": [
+        "variables",
+        "escaping"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Sections",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#sections",
+      "concepts": [
+        "conditionals",
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Functions (lambdas)",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#functions",
+      "concepts": [
+        "functions",
+        "higher-order-functions"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Inverted sections",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#inverted-sections",
+      "concepts": [
+        "conditionals"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Comments",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Partials",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#partials",
+      "concepts": [
+        "imports"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Custom delimiters",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#custom-delimiters",
+      "concepts": [
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "mustache.js README — Pre-parsing and caching templates",
+      "url": "https://github.com/janl/mustache.js/blob/master/README.md#pre-parsing-and-caching-templates",
+      "concepts": [
+        "performance"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Ruby mustache README — Overview and Why",
+      "url": "https://github.com/mustache/mustache/blob/master/README.md#overview",
+      "concepts": [
+        "design-rationale"
+      ],
+      "scope": "section",
+      "authority": "designer",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Ruby mustache README — Escaping",
+      "url": "https://github.com/mustache/mustache/blob/master/README.md#escaping",
+      "concepts": [
+        "escaping",
+        "security-considerations"
+      ],
+      "scope": "section",
+      "authority": "designer",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Ruby mustache README — Views",
+      "url": "https://github.com/mustache/mustache/blob/master/README.md#views",
+      "concepts": [
+        "classes",
+        "templating"
+      ],
+      "scope": "section",
+      "authority": "designer",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Ruby mustache README — Helpers",
+      "url": "https://github.com/mustache/mustache/blob/master/README.md#helpers",
+      "concepts": [
+        "modules",
+        "mixins"
+      ],
+      "scope": "section",
+      "authority": "designer",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "interactive",
+      "title": "Wontache playground — try Mustache in the browser",
+      "url": "https://jgonggrijp.gitlab.io/wontache/playground.html",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "format": "interactive",
+      "authority": "community",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "mustache.github.io — list of implementations",
+      "url": "https://mustache.github.io/",
+      "concepts": [
+        "templating"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Mustache (template system)",
+      "url": "https://en.wikipedia.org/wiki/Mustache_(template_system)",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Mustache",
+      "url": "https://pldb.io/concepts/mustache.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

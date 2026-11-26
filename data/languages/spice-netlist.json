@@ -1,0 +1,262 @@
+{
+ "id": "spice-netlist",
+ "name": "SPICE",
+ "aliases": [
+  "SPICE netlist",
+  "SPICE deck",
+  "Berkeley SPICE input language"
+ ],
+ "categories": [
+  "hardware-description",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "structural"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1973,
+ "designers": [
+  "Laurence Nagel",
+  "Donald Pederson",
+  "UC Berkeley"
+ ],
+ "summary": "Card-oriented netlist language of the Berkeley SPICE analog circuit simulator: element lines (R, C, L, V, M, Q...), .model and .subckt definitions, and dot-commands for analyses (.op, .dc, .ac, .tran); dialects in ngspice, Xyce, HSPICE, LTspice and others.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".cir",
+  ".sp",
+  ".spi",
+  ".net",
+  ".ckt"
+ ],
+ "homepage": "https://ngspice.sourceforge.io/",
+ "related": [
+  {
+   "id": "verilog-ams",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: each simulator manual defines its dialect; Nagel's 1975 thesis (SPICE2) is the original definition. The ngspice manual (sourceforge.io) reports 403 to automated clients.",
+  "0": "ngspice (successor of Berkeley SPICE3f5; GitHub mirror linked) and Sandia Xyce are open implementations."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Nagel — SPICE2: A Computer Program to Simulate Semiconductor Circuits (UCB/ERL M520, 1975)",
+   "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/1975/9602.html",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Laurence W. Nagel"
+   ],
+   "year": 1975
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ngspice User's Manual (PDF)",
+   "url": "https://ngspice.sourceforge.io/docs/ngspice-manual.pdf",
+   "concepts": [
+    "grammar",
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open",
+   "implementation": "ngspice",
+   "notes": "sourceforge.io returns 403 to automated clients."
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "ngspice documentation page",
+   "url": "https://ngspice.sourceforge.io/docs.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Xyce documentation and tutorials (Reference Guide)",
+   "url": "https://xyce.sandia.gov/documentation-tutorials/",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Xyce"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Berkeley SPICE3 home page and user guide (bwrcs)",
+   "url": "https://bwrcs.eecs.berkeley.edu/Classes/IcBook/SPICE/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "ngspice (GitHub mirror)",
+   "url": "https://github.com/imr/ngspice",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ngspice frontend/inpcom.c — netlist reading, includes and libraries",
+   "url": "https://github.com/imr/ngspice/blob/master/src/frontend/inpcom.c",
+   "concepts": [
+    "parser",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ngspice frontend/subckt.c — .subckt expansion",
+   "url": "https://github.com/imr/ngspice/blob/master/src/frontend/subckt.c",
+   "concepts": [
+    "macros",
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ngspice frontend/numparam/xpressn.c — .param expression evaluation",
+   "url": "https://github.com/imr/ngspice/blob/master/src/frontend/numparam/xpressn.c",
+   "concepts": [
+    "expressions",
+    "compile-time-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ngspice spicelib/parser/inp2r.c — resistor element card parsing",
+   "url": "https://github.com/imr/ngspice/blob/master/src/spicelib/parser/inp2r.c",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ngspice spicelib/analysis/dctran.c — transient analysis",
+   "url": "https://github.com/imr/ngspice/blob/master/src/spicelib/analysis/dctran.c",
+   "concepts": [
+    "hdl-signals-timing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ngspice maths/ni/niiter.c — Newton-Raphson iteration",
+   "url": "https://github.com/imr/ngspice/blob/master/src/maths/ni/niiter.c",
+   "concepts": [
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ngspice"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Xyce — Sandia parallel SPICE-compatible simulator",
+   "url": "https://github.com/Xyce/Xyce",
+   "concepts": [
+    "compiler-architecture",
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Xyce"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SPICE",
+   "url": "https://en.wikipedia.org/wiki/SPICE",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — SPICE",
+   "url": "https://pldb.io/concepts/spice.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

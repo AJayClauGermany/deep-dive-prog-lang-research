@@ -1,0 +1,468 @@
+{
+ "id": "fdr-cspm",
+ "name": "CSPM (FDR)",
+ "aliases": [
+  "CSP-M",
+  "Machine-readable CSP",
+  "CSPm"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "process-algebra",
+  "functional",
+  "concurrent"
+ ],
+ "typing": [
+  "static",
+  "inferred",
+  "polymorphic"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "Bryan Scattergood",
+  "A. W. Roscoe",
+  "Thomas Gibson-Robinson"
+ ],
+ "summary": "The machine-readable dialect of Hoare's CSP process algebra used by the FDR refinement checker and ProB: a lazy, typed functional expression language (sets, sequences, maps, datatypes, channels) combined with CSP process operators and refinement assertions checked by FDR.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".csp"
+ ],
+ "homepage": "https://cocotec.io/fdr/",
+ "influenced_by": [
+  "csp",
+  "haskell"
+ ],
+ "related": [
+  {
+   "id": "csp",
+   "relation": "dialect-of"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard; the CSPM chapter of the FDR4 manual (Cocotec / Oxford) is the de facto definition. Scattergood's 1998 DPhil thesis gave the original semantics.",
+  "0": "FDR4 itself is distributed as binaries; its CSPM front end libcspm (Haskell: parser, type checker, evaluator) is open source. ProB implements CSPM independently in Prolog."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual — CSPM language reference",
+   "url": "https://cocotec.io/fdr/manual/cspm.html",
+   "concepts": [
+    "grammar",
+    "formal-semantics"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Functional syntax (expressions, sequences, sets, maps, patterns, statements)",
+   "url": "https://cocotec.io/fdr/manual/cspm/syntax.html",
+   "concepts": [
+    "expressions",
+    "lists",
+    "sets",
+    "maps-dictionaries",
+    "pattern-matching"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Binding strength",
+   "url": "https://cocotec.io/fdr/manual/cspm/syntax.html#binding-strength",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Reserved words",
+   "url": "https://cocotec.io/fdr/manual/cspm/syntax.html#reserved-words",
+   "concepts": [
+    "keywords"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Type system (type atoms, constructors, constraints)",
+   "url": "https://cocotec.io/fdr/manual/cspm/types.html",
+   "concepts": [
+    "type-system",
+    "type-inference",
+    "generics"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Definitions (constants, functions, datatypes, channels, modules)",
+   "url": "https://cocotec.io/fdr/manual/cspm/definitions.html",
+   "concepts": [
+    "functions",
+    "constants",
+    "algebraic-data-types"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Definitions — channels",
+   "url": "https://cocotec.io/fdr/manual/cspm/definitions.html#channels",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Definitions — datatypes",
+   "url": "https://cocotec.io/fdr/manual/cspm/definitions.html#datatypes",
+   "concepts": [
+    "algebraic-data-types",
+    "enums"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Definitions — assertions (refinement, deadlock, divergence)",
+   "url": "https://cocotec.io/fdr/manual/cspm/definitions.html#assertions",
+   "concepts": [
+    "assertions",
+    "verification"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Definitions — modules and parameterised modules",
+   "url": "https://cocotec.io/fdr/manual/cspm/definitions.html#modules",
+   "concepts": [
+    "modules",
+    "visibility"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Definitions — include files",
+   "url": "https://cocotec.io/fdr/manual/cspm/definitions.html#include-files",
+   "concepts": [
+    "imports"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Defining processes (prefix, choice, parallel, hiding, renaming)",
+   "url": "https://cocotec.io/fdr/manual/cspm/processes.html",
+   "concepts": [
+    "process-calculi",
+    "concurrency"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Processes — parallel operators",
+   "url": "https://cocotec.io/fdr/manual/cspm/processes.html#parallel-operators",
+   "concepts": [
+    "concurrency",
+    "synchronization"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Built-in definitions (prelude)",
+   "url": "https://cocotec.io/fdr/manual/cspm/prelude.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FDR manual: CSPM — Prelude — error handling",
+   "url": "https://cocotec.io/fdr/manual/cspm/prelude.html#error-handling",
+   "concepts": [
+    "error-handling"
+   ],
+   "authority": "vendor",
+   "implementation": "FDR4",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "FDR4 release notes (changes to CSPM)",
+   "url": "https://cocotec.io/fdr/manual/changes.html",
+   "concepts": [
+    "language-evolution"
+   ],
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "tomgr/libcspm — CSPM parser, type checker and evaluator (Haskell)",
+   "url": "https://github.com/tomgr/libcspm",
+   "concepts": [
+    "parser",
+    "interpreter"
+   ],
+   "implementation": "libcspm (FDR front end)",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libcspm — Parser/Lexer.x — Alex lexer",
+   "url": "https://github.com/tomgr/libcspm/blob/master/src/CSPM/Parser/Lexer.x",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "libcspm (FDR front end)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libcspm — Parser/Parser.ppy — Happy grammar",
+   "url": "https://github.com/tomgr/libcspm/blob/master/src/CSPM/Parser/Parser.ppy",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "libcspm (FDR front end)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libcspm — TypeChecker/Expr.hs — type inference for expressions",
+   "url": "https://github.com/tomgr/libcspm/blob/master/src/CSPM/TypeChecker/Expr.hs",
+   "concepts": [
+    "type-inference",
+    "semantic-analysis"
+   ],
+   "implementation": "libcspm (FDR front end)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libcspm — Evaluator/Expr.hs — lazy evaluator",
+   "url": "https://github.com/tomgr/libcspm/blob/master/src/CSPM/Evaluator/Expr.hs",
+   "concepts": [
+    "interpreter",
+    "lazy-evaluation"
+   ],
+   "implementation": "libcspm (FDR front end)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libcspm — Prelude.hs — built-in functions",
+   "url": "https://github.com/tomgr/libcspm/blob/master/src/CSPM/Prelude.hs",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "libcspm (FDR front end)",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The Theory and Practice of Concurrency (Roscoe, free PDF)",
+   "url": "https://www.cs.ox.ac.uk/people/bill.roscoe/publications/68b.pdf",
+   "concepts": [
+    "process-calculi",
+    "formal-semantics"
+   ],
+   "authors": [
+    "A. W. Roscoe"
+   ],
+   "year": 1997,
+   "format": "pdf",
+   "scope": "whole",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Understanding Concurrent Systems (Roscoe) — companion site",
+   "url": "https://www.cs.ox.ac.uk/ucs/",
+   "concepts": [
+    "process-calculi"
+   ],
+   "authors": [
+    "A. W. Roscoe"
+   ],
+   "year": 2010,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "FDR manual — examples (dining philosophers, compression)",
+   "url": "https://cocotec.io/fdr/manual/examples/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "ProB — CSP-M support",
+   "url": "https://prob.hhu.de/w/index.php?title=CSP-M",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "ProB",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "FDR project page (University of Oxford)",
+   "url": "https://cocotec.io/fdr/",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Communicating sequential processes",
+   "url": "https://en.wikipedia.org/wiki/Communicating_sequential_processes",
+   "concepts": [
+    "process-calculi",
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

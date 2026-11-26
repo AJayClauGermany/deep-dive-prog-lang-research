@@ -1,0 +1,445 @@
+{
+ "id": "arm-assembly",
+ "name": "ARM A32 / A64 assembly",
+ "aliases": [
+  "ARM assembly",
+  "AArch64 assembly",
+  "Thumb",
+  "A64",
+  "A32"
+ ],
+ "categories": [
+  "assembly"
+ ],
+ "paradigms": [
+  "imperative",
+  "load-store"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1985,
+ "designers": [
+  "Sophie Wilson",
+  "Steve Furber"
+ ],
+ "summary": "Assembly languages of the Arm RISC architectures: the 32-bit A32 (ARM) and T32 (Thumb) instruction sets and the 64-bit A64 instruction set of AArch64, written in Arm's armasm/UAL syntax or GNU as syntax.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".s",
+  ".S",
+  ".asm"
+ ],
+ "homepage": "https://developer.arm.com/",
+ "influenced_by": [
+  "6502-assembly"
+ ],
+ "related": [],
+ "level_notes": {
+  "1": "The Arm Architecture Reference Manuals are the normative definition (free with registration-free download, but rendered by JavaScript on developer.arm.com, so no deep links); the Arm ABI (AAPCS) lives in ARM-software/abi-aa. Arm also publishes the architecture in its machine-readable ASL, from which sail-arm is generated.",
+  "0": "No single reference implementation: GNU as, LLVM's integrated assembler and armasm are the assemblers; QEMU and Unicorn emulate the ISA."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Arm Architecture Reference Manual for A-profile architecture (DDI 0487)",
+   "url": "https://developer.arm.com/documentation/ddi0487/latest",
+   "concepts": [
+    "instruction-set",
+    "memory-model"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Arm A64 Instruction Set Architecture (DDI 0602) — per-instruction reference",
+   "url": "https://developer.arm.com/documentation/ddi0602/latest",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ARMv7-A/R Architecture Reference Manual (DDI 0406) — A32/T32",
+   "url": "https://developer.arm.com/documentation/ddi0406/latest",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ARMv7-M Architecture Reference Manual (DDI 0403) — Thumb microcontroller profile",
+   "url": "https://developer.arm.com/documentation/ddi0403/latest",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Procedure Call Standard for the Arm 64-bit Architecture (AAPCS64)",
+   "url": "https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst",
+   "concepts": [
+    "calling-convention-abi",
+    "functions",
+    "parameters-arguments"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Procedure Call Standard for the Arm Architecture (AAPCS32)",
+   "url": "https://github.com/ARM-software/abi-aa/blob/main/aapcs32/aapcs32.rst",
+   "concepts": [
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ELF for the Arm 64-bit Architecture (AAELF64)",
+   "url": "https://github.com/ARM-software/abi-aa/blob/main/aaelf64/aaelf64.rst",
+   "concepts": [
+    "separate-compilation",
+    "calling-convention-abi"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Arm Compiler armasm User Guide (DUI 0801)",
+   "url": "https://developer.arm.com/documentation/dui0801/latest",
+   "concepts": [
+    "assembler-directives",
+    "macros"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — ARM Dependent Features",
+   "url": "https://sourceware.org/binutils/docs/as/ARM_002dDependent.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — ARM Machine Directives",
+   "url": "https://sourceware.org/binutils/docs/as/ARM-Directives.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — AArch64 Dependent Features",
+   "url": "https://sourceware.org/binutils/docs/as/AArch64_002dDependent.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU as — AArch64 Machine Directives",
+   "url": "https://sourceware.org/binutils/docs/as/AArch64-Directives.html",
+   "concepts": [
+    "assembler-directives"
+   ],
+   "scope": "whole",
+   "implementation": "GNU as",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Simplifying ARM Concurrency: Multicopy-atomic Axiomatic and Operational Models for ARMv8 (POPL 2018)",
+   "url": "https://www.cl.cam.ac.uk/~pes20/armv8-mca/armv8-mca-draft.pdf",
+   "concepts": [
+    "memory-model",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Christopher Pulte",
+    "Shaked Flur",
+    "Will Deacon",
+    "Jon French",
+    "Susmit Sarkar",
+    "Peter Sewell"
+   ],
+   "year": 2018,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "ISA Semantics for ARMv8-A, RISC-V, and CHERI-MIPS (Sail, POPL 2019)",
+   "url": "https://www.cl.cam.ac.uk/~pes20/sail/sail-popl2019.pdf",
+   "concepts": [
+    "formal-semantics",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "year": 2019,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn the architecture — A64 Instruction Set Architecture guide",
+   "url": "https://developer.arm.com/documentation/102374/latest",
+   "concepts": [
+    "instruction-set",
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn the architecture — Arm memory model guide",
+   "url": "https://developer.arm.com/documentation/102336/latest",
+   "concepts": [
+    "memory-model",
+    "atomics-memory-ordering"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Azeria Labs — Writing ARM Assembly (Part 1)",
+   "url": "https://azeria-labs.com/writing-arm-assembly-part-1/",
+   "concepts": [
+    "hello-world",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "sail-arm — Armv8.5-A/9 ISA model generated from Arm's ASL",
+   "url": "https://github.com/rems-project/sail-arm",
+   "concepts": [
+    "formal-semantics",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "implementation": "Sail",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "herdtools7 aarch64.cat — executable Arm memory model",
+   "url": "https://github.com/herd/herdtools7/blob/master/herd/libdir/aarch64.cat",
+   "concepts": [
+    "memory-model",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "implementation": "herd7",
+   "authority": "academic",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM AArch64InstrInfo.td — A64 instruction definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/AArch64/AArch64InstrInfo.td",
+   "concepts": [
+    "instruction-set",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LLVM ARMInstrInfo.td — A32 instruction definitions",
+   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/lib/Target/ARM/ARMInstrInfo.td",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "LLVM",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/arm/tcg/a64.decode — A64 decoder",
+   "url": "https://github.com/qemu/qemu/blob/master/target/arm/tcg/a64.decode",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QEMU target/arm/tcg/a32.decode — A32 decoder",
+   "url": "https://github.com/qemu/qemu/blob/master/target/arm/tcg/a32.decode",
+   "concepts": [
+    "instruction-set",
+    "encoding-wire-format"
+   ],
+   "scope": "section",
+   "implementation": "QEMU",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "glibc sysdeps/aarch64/memcpy.S — hand-written A64 assembly",
+   "url": "https://github.com/bminor/glibc/blob/master/sysdeps/aarch64/memcpy.S",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "glibc",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Unicorn — CPU emulator framework (ARM/AArch64 and others, QEMU-based)",
+   "url": "https://github.com/unicorn-engine/unicorn",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "Unicorn",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — ARM architecture family",
+   "url": "https://en.wikipedia.org/wiki/ARM_architecture_family",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — AArch64",
+   "url": "https://en.wikipedia.org/wiki/AArch64",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — ARM",
+   "url": "https://pldb.io/concepts/arm.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

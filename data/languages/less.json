@@ -1,0 +1,546 @@
+{
+ "id": "less",
+ "name": "Less",
+ "aliases": [
+  "Leaner Style Sheets",
+  "LESS",
+  "less.js"
+ ],
+ "categories": [
+  "stylesheet"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "Alexis Sellier"
+ ],
+ "summary": "A CSS-superset preprocessor language adding variables (lazily evaluated), nesting, parametric mixins with guards, operations, maps, detached rulesets and imports; compiled to CSS by the JavaScript reference implementation less.js.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".less"
+ ],
+ "homepage": "https://lesscss.org/",
+ "influenced_by": [
+  "css",
+  "sass"
+ ],
+ "related": [
+  {
+   "id": "css",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "sass",
+   "relation": "family"
+  },
+  {
+   "id": "stylus",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "less.js (originally Ruby, rewritten in JavaScript in 2010) is the reference implementation; links are pinned to tag v4.2.0 because the default branch is being restructured.",
+  "1": "No separate specification: the \"Features\" and \"Functions\" pages of lesscss.org document the language as implemented by less.js."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "less/less.js — the reference Less compiler (JavaScript)",
+   "url": "https://github.com/less/less.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js parser/parser.js — recursive-descent parser",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/parser/parser.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js tree/variable.js — variable lookup with lazy evaluation",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/tree/variable.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "lazy-evaluation",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js tree/mixin-definition.js — parametric mixins and pattern matching on arguments",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/tree/mixin-definition.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "parameters-arguments",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js tree/condition.js — guard conditions",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/tree/condition.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js tree/extend.js — :extend",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/tree/extend.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js import-manager.js — @import resolution",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/import-manager.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "less.js functions/math.js — built-in math functions",
+   "url": "https://github.com/less/less.js/blob/v4.2.0/packages/less/src/less/functions/math.js",
+   "authority": "official",
+   "implementation": "less.js",
+   "version": "4.2.0",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less — Features (in-depth language guide)",
+   "url": "https://lesscss.org/features/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Variables (interpolation, lazy evaluation, default variables)",
+   "url": "https://lesscss.org/features/#variables-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Lazy evaluation of variables",
+   "url": "https://lesscss.org/features/#variables-feature-lazy-evaluation",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Parent selectors (&)",
+   "url": "https://lesscss.org/features/#parent-selectors-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Extend",
+   "url": "https://lesscss.org/features/#extend-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Merge",
+   "url": "https://lesscss.org/features/#merge-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Mixins",
+   "url": "https://lesscss.org/features/#mixins-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Parametric mixins (pattern matching on arity and values)",
+   "url": "https://lesscss.org/features/#mixins-feature-mixins-parametric-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "pattern-matching",
+    "overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Mixin guards",
+   "url": "https://lesscss.org/features/#mixins-feature-mixin-guards-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Recursive mixins (loops)",
+   "url": "https://lesscss.org/features/#mixins-feature-loops-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "recursion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — CSS guards",
+   "url": "https://lesscss.org/features/#css-guards-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Detached rulesets",
+   "url": "https://lesscss.org/features/#detached-rulesets-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Maps",
+   "url": "https://lesscss.org/features/#maps-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — Scope",
+   "url": "https://lesscss.org/features/#scope-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — @import at-rules and options",
+   "url": "https://lesscss.org/features/#import-atrules-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less features — @plugin at-rules",
+   "url": "https://lesscss.org/features/#plugin-atrules-feature",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Less — Function reference",
+   "url": "https://lesscss.org/functions/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Less functions — Type functions (isnumber, iscolor ...)",
+   "url": "https://lesscss.org/functions/#type-functions",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Less functions — String functions",
+   "url": "https://lesscss.org/functions/#string-functions",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Less — Usage (command line, options, browser)",
+   "url": "https://lesscss.org/usage/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "command-line"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Less — Overview (getting started)",
+   "url": "https://lesscss.org/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Less overview — Escaping",
+   "url": "https://lesscss.org/#escaping",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Less overview — Operations (unit arithmetic)",
+   "url": "https://lesscss.org/#operations",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Less overview — Namespaces and accessors",
+   "url": "https://lesscss.org/#namespaces-and-accessors",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Less overview — Comments",
+   "url": "https://lesscss.org/#comments",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — Less",
+   "url": "https://learnxinyminutes.com/less/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Less (style sheet language)",
+   "url": "https://en.wikipedia.org/wiki/Less_(style_sheet_language)",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Less",
+   "url": "https://pldb.io/concepts/less.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

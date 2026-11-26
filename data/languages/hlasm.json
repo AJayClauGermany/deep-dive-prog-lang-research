@@ -1,0 +1,258 @@
+{
+ "id": "hlasm",
+ "name": "IBM High Level Assembler",
+ "aliases": [
+  "HLASM",
+  "IBM Assembler",
+  "BAL",
+  "z/OS assembler"
+ ],
+ "categories": [
+  "assembly"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "IBM"
+ ],
+ "summary": "IBM's macro assembler for System/370 through z/Architecture mainframes (successor of Assembler H and the System/360 Basic Assembly Language), with a powerful conditional-assembly macro language.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".asm",
+  ".hlasm",
+  ".mlc"
+ ],
+ "homepage": "https://www.ibm.com/products/high-level-assembler-and-toolkit-feature",
+ "level_notes": {
+  "1": "The z/Architecture Principles of Operation defines the machine; the HLASM Language Reference defines the assembler and its macro language (ibm.com/docs refuses automated link checks).",
+  "0": "HLASM itself is proprietary; z390 and Hercules are open-source reimplementations of the assembler and machine."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "z/Architecture Principles of Operation (SA22-7832)",
+   "url": "https://publibfp.dhe.ibm.com/epubs/pdf/a227832d.pdf",
+   "concepts": [
+    "instruction-set",
+    "memory-model"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "IBM System/360 Principles of Operation (A22-6821-0, 1964)",
+   "url": "https://ftp.mirrorservice.org/sites/www.bitsavers.org/pdf/ibm/360/princOps/A22-6821-0_360PrincOps.pdf",
+   "concepts": [
+    "instruction-set",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "year": 1964,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "High Level Assembler and Toolkit Feature 1.6 documentation (Language Reference, Programmer's Guide)",
+   "url": "https://www.ibm.com/docs/en/hla-and-tf/1.6",
+   "concepts": [
+    "assembler-directives",
+    "macros"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "version": "1.6",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "HLASM Language Reference (SC26-4940) PDF",
+   "url": "https://www.ibm.com/docs/en/SSENW6_1.6.0/pdf/asmr1024_pdf.pdf",
+   "concepts": [
+    "assembler-directives",
+    "macros",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "version": "1.6",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "HLASM: Benefiting from its Powerful New Features (Ehrman, SHARE 96)",
+   "url": "https://public.dhe.ibm.com/software/websphere/awdtools/hlasm/s8165b.pdf",
+   "concepts": [
+    "macros",
+    "compile-time-evaluation"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "authors": [
+    "John R. Ehrman"
+   ],
+   "year": 2001,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "High Level Assembler Toolkit Feature Technical Overview (Ehrman, SHARE 100)",
+   "url": "https://public.dhe.ibm.com/software/websphere/awdtools/hlasm/sa08166h.pdf",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "authors": [
+    "John R. Ehrman"
+   ],
+   "year": 2003,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "IBM High Level Assembler and Toolkit Feature — product overview",
+   "url": "https://www.ibm.com/products/high-level-assembler-and-toolkit-feature",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "z390 — portable mainframe assembler and emulator (Java)",
+   "url": "https://github.com/z390development/z390",
+   "concepts": [
+    "assembler-directives",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "implementation": "z390",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "z390 src/az390.java — HLASM-compatible assembler",
+   "url": "https://github.com/z390development/z390/blob/main/src/az390.java",
+   "concepts": [
+    "parser",
+    "assembler-directives"
+   ],
+   "scope": "section",
+   "implementation": "z390",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Hercules (SDL hyperion) general1.c — S/370-z/Architecture instruction emulation",
+   "url": "https://github.com/SDL-Hercules-390/hyperion/blob/master/general1.c",
+   "concepts": [
+    "interpreter",
+    "instruction-set"
+   ],
+   "scope": "section",
+   "implementation": "Hercules",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Eclipse Che4z HLASM Language Support (language server)",
+   "url": "https://github.com/eclipse-che4z/che-che4z-lsp-for-hlasm",
+   "concepts": [
+    "tooling",
+    "parser"
+   ],
+   "scope": "whole",
+   "implementation": "Che4z",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — IBM High Level Assembler",
+   "url": "https://en.wikipedia.org/wiki/IBM_High_Level_Assembler",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — IBM Basic assembly language and successors",
+   "url": "https://en.wikipedia.org/wiki/IBM_Basic_assembly_language_and_successors",
+   "concepts": [
+    "history",
+    "macros"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — z/Architecture",
+   "url": "https://en.wikipedia.org/wiki/Z/Architecture",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — HLASM",
+   "url": "https://pldb.io/concepts/hlasm.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

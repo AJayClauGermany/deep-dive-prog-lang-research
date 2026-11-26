@@ -1,0 +1,305 @@
+{
+ "id": "dhall",
+ "name": "Dhall",
+ "categories": [
+  "configuration",
+  "functional"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "dependent-limited",
+  "total"
+ ],
+ "first_appeared": 2017,
+ "designers": [
+  "Gabriella Gonzalez"
+ ],
+ "summary": "Total, strongly typed, non-Turing-complete configuration language based on a System F-omega-like calculus with records, unions, imports by URL with semantic integrity hashes, and normalisation to JSON/YAML.",
+ "status": "maintained",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".dhall"
+ ],
+ "homepage": "https://dhall-lang.org/",
+ "related": [
+  {
+   "id": "json",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The standard in dhall-lang/dhall-lang/standard is a formal natural-deduction specification (syntax ABNF, type inference, normalisation, imports, binary CBOR encoding) plus executable Haskell.",
+  "0": "dhall-haskell is the reference implementation; dhall-rust and dhall-golang are others; the dhall-lang/tests directory is the shared conformance suite.",
+  "2": "docs.dhall-lang.org hosts tutorials (the site was unreachable from the sandbox at writing time, so its links are omitted)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dhall-lang/dhall-lang — language standard and tests",
+   "url": "https://github.com/dhall-lang/dhall-lang",
+   "implementation": "standard",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "dhall-lang tests/ — parser, type-inference, normalisation and import test suite",
+   "url": "https://github.com/dhall-lang/dhall-lang/tree/master/tests",
+   "implementation": "standard",
+   "scope": "whole",
+   "authority": "official",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dhall-haskell — reference implementation",
+   "url": "https://github.com/dhall-lang/dhall-haskell",
+   "implementation": "dhall-haskell",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dhall-rust — Rust implementation",
+   "url": "https://github.com/Nadrieril/dhall-rust",
+   "implementation": "dhall-rust",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dhall-golang — Go implementation",
+   "url": "https://github.com/philandstuff/dhall-golang",
+   "implementation": "dhall-golang",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — README (semantics overview)",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — ABNF grammar",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/dhall.abnf",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Syntax",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/syntax.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Type inference judgments",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/type-inference.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-inference",
+    "type-system",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Beta-normalization",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/beta-normalization.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "reduction",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Alpha-normalization",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/alpha-normalization.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "substitution-binding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Equivalence",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/equivalence.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Imports (URLs, env vars, integrity hashes)",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/imports.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Binary encoding (CBOR)",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/binary.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Multi-line string literals",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/multiline.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Record operators",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/record.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Dhall standard — Versioning of the standard",
+   "url": "https://github.com/dhall-lang/dhall-lang/blob/master/standard/versioning.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Dhall",
+   "url": "https://en.wikipedia.org/wiki/Dhall",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Dhall",
+   "url": "https://pldb.io/concepts/dhall.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

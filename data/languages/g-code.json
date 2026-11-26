@@ -1,0 +1,354 @@
+{
+ "id": "g-code",
+ "name": "G-code (ISO 6983 / RS-274)",
+ "aliases": [
+  "RS-274",
+  "RS274NGC",
+  "ISO 6983"
+ ],
+ "categories": [
+  "industrial-control",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1958,
+ "designers": [
+  "MIT Servomechanisms Laboratory",
+  "EIA",
+  "NIST"
+ ],
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "reference-implementation"
+ ],
+ "summary": "Numerical-control language for machine tools and 3D printers: each block holds letter-addressed words (G preparatory, M miscellaneous, X/Y/Z coordinates, F feed) applied in modal groups; RS274NGC adds parameters, expressions and O-code subroutines and loops. ISO 6983-1 and EIA RS-274-D are the base standards; vendors (Fanuc, Heidenhain, Marlin) define dialects.",
+ "homepage": "https://linuxcnc.org/docs/html/gcode/overview.html",
+ "file_extensions": [
+  ".ngc",
+  ".nc",
+  ".gcode",
+  ".tap"
+ ],
+ "level_notes": {
+  "1": "ISO 6983-1:2009 is paywalled; the NIST RS274NGC report and LinuxCNC manual are the open references.",
+  "2": "Tutorials are mostly machinist and hobbyist blog posts; the LinuxCNC manual doubles as the tutorial."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The NIST RS274NGC Interpreter - Version 3 (Kramer, Proctor, Messina, 2000)",
+   "url": "https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3",
+   "concepts": [
+    "grammar",
+    "semantic-analysis",
+    "interpreter"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "year": 2000
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "NIST RS274NGC Interpreter v3 report (PDF)",
+   "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=823374",
+   "concepts": [
+    "grammar",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "pdf",
+   "access": "open",
+   "year": 2000
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Format of a line",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#_format_of_a_line",
+   "concepts": [
+    "grammar",
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Comments",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#_comments",
+   "concepts": [
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Numbers",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#gcode:numbers",
+   "concepts": [
+    "literals",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Parameters (numbered, named, system)",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#sec:overview-parameters",
+   "concepts": [
+    "variables",
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Expressions",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#gcode:expressions",
+   "concepts": [
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Operator precedence",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#gcode:operators-precedence",
+   "concepts": [
+    "operator-precedence",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Built-in functions",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#gcode:functions",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Modal groups",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#gcode:modal-groups",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Order of execution",
+   "url": "https://linuxcnc.org/docs/html/gcode/overview.html#gcode:order-of-execution",
+   "concepts": [
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: G-code quick reference",
+   "url": "https://linuxcnc.org/docs/html/gcode/g-code.html#gcode:quick-reference-table",
+   "concepts": [
+    "instruction-set",
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: M-codes",
+   "url": "https://linuxcnc.org/docs/html/gcode/m-code.html",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: O-code subroutines",
+   "url": "https://linuxcnc.org/docs/html/gcode/o-code.html#ocode:subroutines",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: O-code loops",
+   "url": "https://linuxcnc.org/docs/html/gcode/o-code.html#ocode:looping",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: O-code conditionals",
+   "url": "https://linuxcnc.org/docs/html/gcode/o-code.html#ocode:conditional",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LinuxCNC G-code: Calling files",
+   "url": "https://linuxcnc.org/docs/html/gcode/o-code.html#ocode:calling-files",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "LinuxCNC (RS274NGC interpreter in src/emc/rs274ngc)",
+   "url": "https://github.com/LinuxCNC/linuxcnc",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Grbl: G-code interpreter for Arduino CNC",
+   "url": "https://github.com/gnea/grbl",
+   "concepts": [
+    "interpreter"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Marlin firmware G-code index (3D printing dialect)",
+   "url": "https://marlinfw.org/meta/gcode/",
+   "concepts": [
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "RepRap G-code wiki (dialect comparison)",
+   "url": "https://reprap.org/wiki/G-code",
+   "concepts": [
+    "comparison",
+    "instruction-set"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "G-code (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/G-code",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "G-code on PLDB",
+   "url": "https://pldb.io/concepts/g-code.html",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

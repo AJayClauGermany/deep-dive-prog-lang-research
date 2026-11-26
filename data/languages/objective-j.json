@@ -1,0 +1,28 @@
+{
+ "id": "objective-j",
+ "name": "Objective-J",
+ "categories": ["scripting", "object-oriented"],
+ "paradigms": ["object-oriented", "message-passing", "imperative"],
+ "typing": ["dynamic", "weak"],
+ "first_appeared": 2008,
+ "designers": ["Francisco Tolmasky", "Tom Robinson", "Ross Boucher", "280 North"],
+ "summary": "Strict superset of JavaScript that adds Objective-C-style classes, message-send syntax and @import, used by the Cappuccino web-application framework; source is preprocessed/compiled to plain JavaScript in the browser or ahead of time.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation", "informal"],
+ "file_extensions": [".j"],
+ "homepage": "https://www.cappuccino.dev/learn/objective-j.html",
+ "influenced_by": ["objective-c", "javascript", "smalltalk"],
+ "related": [{"id": "javascript", "relation": "superset-of"}, {"id": "javascript", "relation": "compiles-to"}],
+ "level_notes": {"1": "No specification; the Cappuccino 'Learning Objective-J' guide is the only description of the language (filed at level 1 as reference manual).", "0": "The Objective-J runtime and preprocessor live in cappuccino/cappuccino (Objective-J/); newer releases use an acorn-based compiler (ObjJAcornCompiler)."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "cappuccino/cappuccino — Cappuccino framework and the Objective-J runtime", "url": "https://github.com/cappuccino/cappuccino", "implementation": "Cappuccino", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "standard-library"]},
+  {"level": 0, "kind": "implementation-source", "title": "Objective-J/Preprocessor.js — legacy Objective-J to JavaScript translator", "url": "https://github.com/cappuccino/cappuccino/blob/main/Objective-J/Preprocessor.js", "implementation": "Cappuccino", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "Objective-J/Runtime.js — class objects and objj_msgSend message dispatch", "url": "https://github.com/cappuccino/cappuccino/blob/main/Objective-J/Runtime.js", "implementation": "Cappuccino", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["runtime-system", "classes", "methods"]},
+  {"level": 0, "kind": "implementation-source", "title": "Objective-J/CFBundle.js — bundle loading for @import", "url": "https://github.com/cappuccino/cappuccino/blob/main/Objective-J/CFBundle.js", "implementation": "Cappuccino", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["imports", "modules"]},
+  {"level": 0, "kind": "standard-library-source", "title": "Foundation/CPObject.j — root class CPObject (written in Objective-J)", "url": "https://github.com/cappuccino/cappuccino/blob/main/Foundation/CPObject.j", "implementation": "Cappuccino", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["objects", "classes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Learning Objective-J (Cappuccino)", "url": "https://www.cappuccino.dev/learn/objective-j.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["classes", "methods", "imports", "hello-world"]},
+  {"level": 1, "kind": "library-reference", "title": "Cappuccino documentation (API reference)", "url": "https://www.cappuccino.dev/learn/documentation/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 2, "kind": "tutorial", "title": "Cappuccino — Starting a Cappuccino application (tutorial)", "url": "https://www.cappuccino.dev/learn/starter.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Objective-J", "url": "https://pldb.io/concepts/objective-j.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

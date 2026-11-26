@@ -1,0 +1,2014 @@
+{
+ "id": "markdown",
+ "name": "Markdown",
+ "aliases": [
+  "Markdown.pl",
+  "original Markdown",
+  "Daring Fireball Markdown"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2004,
+ "designers": [
+  "John Gruber",
+  "Aaron Swartz"
+ ],
+ "summary": "Lightweight plain-text markup language converted to (X)HTML, designed by John Gruber with Aaron Swartz to be readable as-is. The original dialect is defined only informally by the Daring Fireball syntax page and the Markdown.pl reference implementation; its ambiguities led to many flavours and to CommonMark.",
+ "status": "maintained",
+ "defined_by": [
+  "informal",
+  "reference-implementation"
+ ],
+ "standards": [
+  "RFC 7763 (text/markdown media type)",
+  "RFC 7764 (guidance on Markdown)"
+ ],
+ "file_extensions": [
+  ".md",
+  ".markdown",
+  ".mdown",
+  ".mkd"
+ ],
+ "homepage": "https://daringfireball.net/projects/markdown/",
+ "influenced_by": [
+  "html",
+  "textile",
+  "restructuredtext"
+ ],
+ "related": [
+  {
+   "id": "commonmark",
+   "relation": "family"
+  },
+  {
+   "id": "gfm",
+   "relation": "family"
+  },
+  {
+   "id": "pandoc-markdown",
+   "relation": "family"
+  },
+  {
+   "id": "mdx-jsx",
+   "relation": "family"
+  },
+  {
+   "id": "html",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "0": "Markdown.pl (Perl, 1.0.1 of 2004; 1.0.2b8 beta) is the reference implementation and in practice the definition. Ports that track its behaviour (PHP Markdown, Python-Markdown, Showdown, Discount, Redcarpet, kramdown, Parsedown) and later parsers (marked, markdown-it, md4c) are listed; the mdtest suite descends from Gruber's MarkdownTest.",
+  "1": "There is no formal specification: Gruber's syntax page is descriptive and leaves many cases undefined. RFC 7763/7764 register the text/markdown media type and variant names; PHP Markdown Extra and MultiMarkdown documents define the most influential early extensions. CommonMark, GFM and Pandoc Markdown have their own entries.",
+  "2": "The Markdown Guide is the main tutorial; Atwood's and MacFarlane's essays explain why the dialect fragmented.",
+  "3": "Babelmark compares implementations side by side."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Markdown.pl 1.0.1 — John Gruber's original Perl implementation (download archive)",
+   "url": "https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip",
+   "authority": "designer",
+   "implementation": "Markdown.pl",
+   "format": "source-file",
+   "year": 2004,
+   "version": "1.0.1",
+   "authors": [
+    "John Gruber"
+   ],
+   "notes": "ZIP archive containing Markdown.pl; the de facto definition of the original dialect.",
+   "scope": "whole",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Markdown.pl 1.0.2b8 — last beta of the reference implementation (copy kept in mdtest)",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Implementations/Markdown.pl",
+   "authority": "designer",
+   "implementation": "Markdown.pl",
+   "version": "1.0.2b8",
+   "authors": [
+    "John Gruber"
+   ],
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "regular-expressions",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "michelf/mdtest — Markdown test suite (MarkdownTest 1.0.3 successor) with Markdown.pl and PHP Markdown cases",
+   "url": "https://github.com/michelf/mdtest",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Amps and angle encoding\" (automatic escaping of & and <)",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Amps%20and%20angle%20encoding.text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Links, reference style\"",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Links,%20reference%20style.text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Ordered and unordered lists\"",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Ordered%20and%20unordered%20lists.text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Inline HTML (Advanced)\" (block-level HTML passthrough)",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Inline%20HTML%20(Advanced).text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Inline HTML comments\"",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Inline%20HTML%20comments.text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Strong and em together\"",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Strong%20and%20em%20together.text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "mdtest — \"Tabs\" (tab expansion and code-block indentation)",
+   "url": "https://github.com/michelf/mdtest/blob/HEAD/Markdown.mdtest/Tabs.text",
+   "authority": "community",
+   "implementation": "mdtest",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Python-Markdown/markdown — Python implementation that follows Markdown.pl closely",
+   "url": "https://github.com/Python-Markdown/markdown",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown core.py — Markdown class: preprocessors → block parser → tree/inline processors → postprocessors",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/core.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown preprocessors.py — normalisation and raw HTML block stashing",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/preprocessors.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown blockprocessors.py — block-level rules (headers, lists, code blocks, blockquotes, hr)",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/blockprocessors.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure",
+    "lists"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown inlinepatterns.py — inline regex patterns (emphasis, links, references, escapes, autolinks)",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/inlinepatterns.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "escaping",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown treeprocessors.py — ElementTree passes that run inline patterns",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/treeprocessors.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown htmlparser.py — raw HTML detection built on html.parser",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/htmlparser.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown serializers.py — (X)HTML serialisation of the ElementTree",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/serializers.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown extensions/fenced_code.py — fenced code blocks extension",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/extensions/fenced_code.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown extensions/tables.py — pipe tables extension",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/extensions/tables.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "collections"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown extensions/footnotes.py — footnotes extension",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/extensions/footnotes.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown extensions/toc.py — table of contents and header ids",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/extensions/toc.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Python-Markdown extensions/attr_list.py — {: #id .class } attribute lists",
+   "url": "https://github.com/Python-Markdown/markdown/blob/master/markdown/extensions/attr_list.py",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PHP Markdown Markdown.php — Michel Fortin's port of Markdown.pl",
+   "url": "https://github.com/michelf/php-markdown/blob/lib/Michelf/Markdown.php",
+   "authority": "community",
+   "implementation": "PHP Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PHP Markdown MarkdownExtra.php — Markdown Extra (tables, definition lists, footnotes, abbreviations)",
+   "url": "https://github.com/michelf/php-markdown/blob/lib/Michelf/MarkdownExtra.php",
+   "authority": "community",
+   "implementation": "PHP Markdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "showdownjs/showdown — JavaScript port of Markdown.pl",
+   "url": "https://github.com/showdownjs/showdown",
+   "authority": "community",
+   "implementation": "Showdown",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Showdown subParsers/hashHTMLBlocks.js — protecting block-level HTML",
+   "url": "https://github.com/showdownjs/showdown/blob/2.1.0/src/subParsers/hashHTMLBlocks.js",
+   "authority": "community",
+   "implementation": "Showdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Showdown subParsers/encodeBackslashEscapes.js — backslash escapes",
+   "url": "https://github.com/showdownjs/showdown/blob/2.1.0/src/subParsers/encodeBackslashEscapes.js",
+   "authority": "community",
+   "implementation": "Showdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Showdown subParsers/stripLinkDefinitions.js — reference link definitions",
+   "url": "https://github.com/showdownjs/showdown/blob/2.1.0/src/subParsers/stripLinkDefinitions.js",
+   "authority": "community",
+   "implementation": "Showdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Showdown subParsers/lists.js — list parsing",
+   "url": "https://github.com/showdownjs/showdown/blob/2.1.0/src/subParsers/lists.js",
+   "authority": "community",
+   "implementation": "Showdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Showdown subParsers/italicsAndBold.js — emphasis",
+   "url": "https://github.com/showdownjs/showdown/blob/2.1.0/src/subParsers/italicsAndBold.js",
+   "authority": "community",
+   "implementation": "Showdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Discount markdown.c — David Parsons' C implementation: block parser",
+   "url": "https://github.com/Orc/discount/blob/main/markdown.c",
+   "authority": "community",
+   "implementation": "Discount",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Discount generate.c — inline processing and HTML generation",
+   "url": "https://github.com/Orc/discount/blob/main/generate.c",
+   "authority": "community",
+   "implementation": "Discount",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Redcarpet markdown.c — Sundown-derived C parser used by Ruby (GitHub's former renderer)",
+   "url": "https://github.com/vmg/redcarpet/blob/master/ext/redcarpet/markdown.c",
+   "authority": "community",
+   "implementation": "Redcarpet / Sundown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kramdown parser/markdown.rb — kramdown's \"Markdown\" parser (original syntax only)",
+   "url": "https://github.com/gettalong/kramdown/blob/master/lib/kramdown/parser/markdown.rb",
+   "authority": "community",
+   "implementation": "kramdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kramdown parser/kramdown.rb — kramdown superset parser",
+   "url": "https://github.com/gettalong/kramdown/blob/master/lib/kramdown/parser/kramdown.rb",
+   "authority": "community",
+   "implementation": "kramdown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Parsedown.php — single-file PHP parser (line-based block handlers)",
+   "url": "https://github.com/erusev/parsedown/blob/master/Parsedown.php",
+   "authority": "community",
+   "implementation": "Parsedown",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "MultiMarkdown 6 mmd.c — Fletcher Penney's C implementation of MultiMarkdown",
+   "url": "https://github.com/fletcher/MultiMarkdown-6/blob/master/src/mmd.c",
+   "authority": "community",
+   "implementation": "MultiMarkdown 6",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "marked src/rules.ts — regex grammar of marked (original, GFM and pedantic modes)",
+   "url": "https://github.com/markedjs/marked/blob/master/src/rules.ts",
+   "authority": "community",
+   "implementation": "marked",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "marked src/Lexer.ts — block and inline lexer",
+   "url": "https://github.com/markedjs/marked/blob/master/src/Lexer.ts",
+   "authority": "community",
+   "implementation": "marked",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "marked src/Renderer.ts — token to HTML renderer",
+   "url": "https://github.com/markedjs/marked/blob/master/src/Renderer.ts",
+   "authority": "community",
+   "implementation": "marked",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "md4c src/md4c.c — fast C SAX-style parser (CommonMark-based)",
+   "url": "https://github.com/mity/md4c/blob/master/src/md4c.c",
+   "authority": "community",
+   "implementation": "MD4C",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "markdown-it src/parser_block.ts — rule-chain block parser",
+   "url": "https://github.com/markdown-it/markdown-it/blob/master/src/parser_block.ts",
+   "authority": "community",
+   "implementation": "markdown-it",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Daring Fireball: Markdown Syntax Documentation",
+   "url": "https://daringfireball.net/projects/markdown/syntax",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "version": "1.0.1",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Philosophy (readability above all)",
+   "url": "https://daringfireball.net/projects/markdown/syntax#philosophy",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Inline HTML",
+   "url": "https://daringfireball.net/projects/markdown/syntax#html",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Automatic Escaping for Special Characters",
+   "url": "https://daringfireball.net/projects/markdown/syntax#autoescape",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Paragraphs and Line Breaks",
+   "url": "https://daringfireball.net/projects/markdown/syntax#p",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Headers (Setext and atx)",
+   "url": "https://daringfireball.net/projects/markdown/syntax#header",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Blockquotes",
+   "url": "https://daringfireball.net/projects/markdown/syntax#blockquote",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Lists",
+   "url": "https://daringfireball.net/projects/markdown/syntax#list",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Code Blocks",
+   "url": "https://daringfireball.net/projects/markdown/syntax#precode",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Horizontal Rules",
+   "url": "https://daringfireball.net/projects/markdown/syntax#hr",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Links (inline and reference)",
+   "url": "https://daringfireball.net/projects/markdown/syntax#link",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Emphasis",
+   "url": "https://daringfireball.net/projects/markdown/syntax#em",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Code spans",
+   "url": "https://daringfireball.net/projects/markdown/syntax#code",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Images",
+   "url": "https://daringfireball.net/projects/markdown/syntax#img",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Automatic Links",
+   "url": "https://daringfireball.net/projects/markdown/syntax#autolink",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Markdown Syntax — Backslash Escapes",
+   "url": "https://daringfireball.net/projects/markdown/syntax#backslash",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Daring Fireball: Markdown — project page and Markdown.pl readme",
+   "url": "https://daringfireball.net/projects/markdown/",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Daring Fireball: Markdown Basics",
+   "url": "https://daringfireball.net/projects/markdown/basics",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Markdown license (BSD-style)",
+   "url": "https://daringfireball.net/projects/markdown/license",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Introducing Markdown (announcement, March 2004)",
+   "url": "https://daringfireball.net/2004/03/introducing_markdown",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Dive Into Markdown (Gruber on the design goals)",
+   "url": "https://daringfireball.net/2004/03/dive_into_markdown",
+   "authority": "designer",
+   "authors": [
+    "John Gruber"
+   ],
+   "year": 2004,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7763 — The text/markdown Media Type",
+   "url": "https://www.rfc-editor.org/rfc/rfc7763.html",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7763 — §2 Markdown Media Type Registration (variant parameter)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7763.html#section-2",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7763 — §6 Content Disposition and preview-type / fragment identifiers",
+   "url": "https://www.rfc-editor.org/rfc/rfc7763.html#section-6",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7764 — Guidance on Markdown: Design Philosophies, Stability Strategies, and Select Registrations",
+   "url": "https://www.rfc-editor.org/rfc/rfc7764.html",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7764 — §1 Markdown philosophy and history",
+   "url": "https://www.rfc-editor.org/rfc/rfc7764.html#section-1",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7764 — §3 Choosing a Markdown variant / stability strategies",
+   "url": "https://www.rfc-editor.org/rfc/rfc7764.html#section-3",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7764 — §4 Registered variants (Original, MultiMarkdown, GFM, Pandoc, Fountain, CommonMark ...)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7764.html#section-4",
+   "authority": "standards-body",
+   "authors": [
+    "Sean Leonard"
+   ],
+   "year": 2016,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "IANA Markdown Variants registry",
+   "url": "https://www.iana.org/assignments/markdown-variants",
+   "authority": "standards-body",
+   "notes": "Registry created by RFC 7763 for the text/markdown variant parameter.",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — syntax reference",
+   "url": "https://michelf.ca/projects/php-markdown/extra/",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Markdown inside HTML blocks (markdown=\"1\")",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#markdown-attr",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Special attributes (header ids, classes)",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#spe-attr",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Fenced code blocks",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#fenced-code-blocks",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Tables",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#table",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Definition lists",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#def-list",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Footnotes",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#footnotes",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Abbreviations",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#abbr",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "PHP Markdown Extra — Intra-word emphasis rule",
+   "url": "https://michelf.ca/projects/php-markdown/extra/#em",
+   "authority": "vendor",
+   "authors": [
+    "Michel Fortin"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown 6 Syntax Guide",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — Metadata and metadata variables",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/metadata.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — Tables",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/tables.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — Footnotes",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/footnotes.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — Cross-references",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/cross-references.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — File transclusion",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/transclusion.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — Math",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/math.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "MultiMarkdown — CriticMarkup",
+   "url": "https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html",
+   "authority": "vendor",
+   "authors": [
+    "Fletcher T. Penney"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Python-Markdown — Differences from Markdown.pl",
+   "url": "https://python-markdown.github.io/#differences",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "comparison"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python-Markdown — Extension API",
+   "url": "https://python-markdown.github.io/extensions/api/",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Python-Markdown — Fenced Code Blocks extension",
+   "url": "https://python-markdown.github.io/extensions/fenced_code_blocks/",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Python-Markdown — Attribute Lists extension",
+   "url": "https://python-markdown.github.io/extensions/attr_list/",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Python-Markdown — Table of Contents extension",
+   "url": "https://python-markdown.github.io/extensions/toc/",
+   "authority": "community",
+   "implementation": "Python-Markdown",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "kramdown Syntax",
+   "url": "https://kramdown.gettalong.org/syntax.html",
+   "authority": "community",
+   "implementation": "kramdown",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Basic Syntax",
+   "url": "https://www.markdownguide.org/basic-syntax/",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Alternate (Setext) heading syntax",
+   "url": "https://www.markdownguide.org/basic-syntax/#alternate-syntax",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Line break best practices",
+   "url": "https://www.markdownguide.org/basic-syntax/#line-break-best-practices",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Bold and italic",
+   "url": "https://www.markdownguide.org/basic-syntax/#bold-and-italic",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Nested blockquotes",
+   "url": "https://www.markdownguide.org/basic-syntax/#nested-blockquotes",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Adding elements in lists",
+   "url": "https://www.markdownguide.org/basic-syntax/#adding-elements-in-lists",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Escaping backticks in code",
+   "url": "https://www.markdownguide.org/basic-syntax/#escaping-backticks",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Reference-style links",
+   "url": "https://www.markdownguide.org/basic-syntax/#reference-style-links",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Characters you can escape",
+   "url": "https://www.markdownguide.org/basic-syntax/#characters-you-can-escape",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Extended Syntax",
+   "url": "https://www.markdownguide.org/extended-syntax/",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Markdown processors and flavours",
+   "url": "https://www.markdownguide.org/extended-syntax/#markdown-processors",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Linking to heading IDs",
+   "url": "https://www.markdownguide.org/extended-syntax/#linking-to-heading-ids",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Escaping pipe characters in tables",
+   "url": "https://www.markdownguide.org/extended-syntax/#escaping-pipe-characters-in-tables",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Hacks: comments",
+   "url": "https://www.markdownguide.org/hacks/#comments",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Hacks: table of contents",
+   "url": "https://www.markdownguide.org/hacks/#table-of-contents",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "The Markdown Guide — Cheat Sheet",
+   "url": "https://www.markdownguide.org/cheat-sheet/",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Getting Started (how Markdown processors work)",
+   "url": "https://www.markdownguide.org/getting-started/",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The Markdown Guide (book, free online edition)",
+   "url": "https://www.markdownguide.org/book/",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Tools (which applications support which features)",
+   "url": "https://www.markdownguide.org/tools/",
+   "authority": "community",
+   "authors": [
+    "Matt Cone"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Markdown Web Dingus (Gruber's online converter)",
+   "url": "https://daringfireball.net/projects/markdown/dingus",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "John MacFarlane — Beyond Markdown",
+   "url": "https://johnmacfarlane.net/beyond-markdown.html",
+   "authority": "community",
+   "authors": [
+    "John MacFarlane"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Jeff Atwood — Responsible Open Source Code Parenting (on Markdown's ambiguities)",
+   "url": "https://blog.codinghorror.com/responsible-open-source-code-parenting/",
+   "authority": "community",
+   "authors": [
+    "Jeff Atwood"
+   ],
+   "year": 2009,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Jeff Atwood — Standard Flavored Markdown (origin of CommonMark)",
+   "url": "https://blog.codinghorror.com/standard-flavored-markdown/",
+   "authority": "community",
+   "authors": [
+    "Jeff Atwood"
+   ],
+   "year": 2014,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Stack Overflow — Markdown editing help",
+   "url": "https://stackoverflow.com/editing-help",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn X in Y minutes — Markdown",
+   "url": "https://learnxinyminutes.com/markdown/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "kramdown Quick Reference",
+   "url": "https://kramdown.gettalong.org/quickref.html",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Markdown",
+   "url": "https://en.wikipedia.org/wiki/Markdown",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Markdown",
+   "url": "https://pldb.io/concepts/markdown.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Babelmark 3 — compare output of dozens of Markdown implementations",
+   "url": "https://babelmark.github.io/",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Babelmark 2 (John MacFarlane)",
+   "url": "https://johnmacfarlane.net/babelmark2/",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  }
+ ]
+}

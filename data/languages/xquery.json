@@ -1,0 +1,2029 @@
+{
+ "id": "xquery",
+ "name": "XQuery",
+ "aliases": [
+  "XML Query"
+ ],
+ "categories": [
+  "query",
+  "functional",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional"
+ ],
+ "typing": [
+  "static",
+  "dynamic",
+  "strong",
+  "optional-schema-aware"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "W3C XML Query Working Group",
+  "Don Chamberlin",
+  "Jonathan Robie",
+  "Daniela Florescu",
+  "Michael Kay"
+ ],
+ "summary": "W3C-standardised functional query language over the XQuery and XPath Data Model (XML nodes, atomic values, and since 3.1 maps and arrays/JSON); a superset of XPath with FLWOR expressions, node constructors, modules and higher-order functions. Recommendations 1.0 (2007), 3.0 (2014), 3.1 (2017); 4.0 is drafted by the QT4 Community Group.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C XQuery 1.0",
+  "W3C XQuery 3.0",
+  "W3C XQuery 3.1"
+ ],
+ "file_extensions": [
+  ".xq",
+  ".xquery",
+  ".xqm",
+  ".xql",
+  ".xqy"
+ ],
+ "homepage": "https://www.w3.org/XML/Query/",
+ "influenced_by": [
+  "xpath",
+  "sql",
+  "oql",
+  "xslt"
+ ],
+ "related": [
+  {
+   "id": "xpath",
+   "relation": "superset-of"
+  },
+  {
+   "id": "xquery-update",
+   "relation": "host-of"
+  },
+  {
+   "id": "xslt",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by a family of W3C Recommendations: XQuery 3.1 (language), XPath and XQuery Functions and Operators 3.1, the XQuery and XPath Data Model 3.1, Serialization 3.1, and the (1.0-only) Formal Semantics. www.w3.org returns a Cloudflare 403 to the link checker; all w3.org anchors were verified with a plain curl fetch. XQuery 4.0 drafts live at qt4cg.org.",
+  "0": "No single reference implementation; conformance is measured with the W3C QT3 test suite (qt3tests, and qt4tests for 4.0). BaseX (Java), Saxon (Java/C#; Saxon-HE is open source, its repository mainly ships releases), eXist-db (ANTLR grammar), Zorba (C++, dormant) and Galax (OCaml, historical) are representative implementations.",
+  "2": "Books: Walmsley's 'XQuery' (O'Reilly); Wadler's typed-functional XQuery tutorial; the Wikibooks XQuery cookbook."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "BaseX — XML database and XQuery 3.1/4.0 processor",
+   "url": "https://github.com/BaseXdb/basex",
+   "implementation": "BaseX",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — QueryParser.java — hand-written XQuery parser (prolog, expressions, constructors)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/QueryParser.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — GFLWOR.java — generalised FLWOR expression evaluation and rewriting",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/GFLWOR.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — For.java — for clause",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/For.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Let.java — let clause",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/Let.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Where.java — where clause",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/Where.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — GroupBy.java — group by clause",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/GroupBy.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — OrderBy.java — order by clause",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/OrderBy.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Window.java — tumbling/sliding window clause",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/gflwor/Window.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "window-functions",
+    "time-series"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Axis.java — XPath axes",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/path/Axis.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Path.java — path expressions",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/path/Path.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — If.java — conditional expression",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/If.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Switch.java — switch expression",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/Switch.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Typeswitch.java — typeswitch expression",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/Typeswitch.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Try.java — try/catch expression",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/Try.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Cast.java — cast as",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/expr/Cast.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Closure.java — inline functions / closures",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/func/Closure.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — XQMap.java — XDM map items",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/value/map/XQMap.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — XQArray.java — XDM array items",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/value/array/XQArray.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — SeqType.java — sequence types",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/value/type/SeqType.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — LibraryModule.java — library modules",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/scope/LibraryModule.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "modules"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — Updates.java — pending update lists (XQuery Update Facility)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/Updates.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "eXist-db — native XML database with XQuery engine",
+   "url": "https://github.com/eXist-db/exist",
+   "implementation": "eXist-db",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "eXist-db — XQuery.g ANTLR 2 grammar",
+   "url": "https://github.com/eXist-db/exist/blob/develop/exist-core/src/main/antlr/org/exist/xquery/parser/XQuery.g",
+   "implementation": "eXist-db",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "eXist-db — XQueryTree.g tree walker building the expression tree",
+   "url": "https://github.com/eXist-db/exist/blob/develop/exist-core/src/main/antlr/org/exist/xquery/parser/XQueryTree.g",
+   "implementation": "eXist-db",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Saxon-HE — open-source edition of Saxon (releases repository)",
+   "url": "https://github.com/Saxonica/Saxon-HE",
+   "implementation": "Saxon-HE",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Zorba — C++ XQuery processor",
+   "url": "https://github.com/zorba-processor/zorba",
+   "implementation": "Zorba",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "grammars-v4 — XPath 3.1 ANTLR grammar (shared XPath subset of XQuery)",
+   "url": "https://github.com/antlr/grammars-v4/blob/master/xpath/xpath31/XPath31Parser.g4",
+   "implementation": "ANTLR grammars-v4",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "QT3 test suite (XPath/XQuery 3.x conformance) — catalog.xml",
+   "url": "https://github.com/w3c/qt3tests/blob/master/catalog.xml",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "QT4 test suite (4.0 drafts) — catalog.xml",
+   "url": "https://github.com/qt4cg/qt4tests/blob/master/catalog.xml",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1: An XML Query Language (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/xquery-31/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 1 Introduction",
+   "url": "https://www.w3.org/TR/xquery-31/#id-introduction",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.2 Processing Model (static analysis, dynamic evaluation)",
+   "url": "https://www.w3.org/TR/xquery-31/#id-processing-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.3 Error Handling",
+   "url": "https://www.w3.org/TR/xquery-31/#id-kinds-of-errors",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.4.1 Document Order",
+   "url": "https://www.w3.org/TR/xquery-31/#id-document-order",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.4.2 Atomization",
+   "url": "https://www.w3.org/TR/xquery-31/#id-atomization",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.4.3 Effective Boolean Value",
+   "url": "https://www.w3.org/TR/xquery-31/#id-ebv",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.5 Types (sequence types, subtyping)",
+   "url": "https://www.w3.org/TR/xquery-31/#id-types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.5.6 SequenceType Subtype Relationships",
+   "url": "https://www.w3.org/TR/xquery-31/#id-sequencetype-subtype",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 2.6 Comments",
+   "url": "https://www.w3.org/TR/xquery-31/#comments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.1.1 Literals",
+   "url": "https://www.w3.org/TR/xquery-31/#id-literals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.1.2 Variable References",
+   "url": "https://www.w3.org/TR/xquery-31/#id-variables",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.1.5 Static Function Calls",
+   "url": "https://www.w3.org/TR/xquery-31/#id-function-calls",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.1.5.2 Function Conversion Rules",
+   "url": "https://www.w3.org/TR/xquery-31/#id-function-conversion-rules",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.1.6 Named Function References",
+   "url": "https://www.w3.org/TR/xquery-31/#id-named-function-ref",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "function-types",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.1.7 Inline Function Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-inline-func",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.2.1 Filter Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-filter-expression",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.3 Path Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-path-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.3.2.1 Axes",
+   "url": "https://www.w3.org/TR/xquery-31/#axes",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.3.3 Predicates within Steps",
+   "url": "https://www.w3.org/TR/xquery-31/#id-predicate",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.4 Sequence Expressions (union, intersect, except)",
+   "url": "https://www.w3.org/TR/xquery-31/#id-sequence-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.5 Arithmetic Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-arithmetic",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.7 Comparison Expressions (value, general, node)",
+   "url": "https://www.w3.org/TR/xquery-31/#id-comparisons",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.8 Logical Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-logical-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.9 Node Constructors",
+   "url": "https://www.w3.org/TR/xquery-31/#id-constructors",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.10 String Constructors",
+   "url": "https://www.w3.org/TR/xquery-31/#id-string-constructors",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting",
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.11.1 Maps",
+   "url": "https://www.w3.org/TR/xquery-31/#id-maps",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.11.2 Arrays",
+   "url": "https://www.w3.org/TR/xquery-31/#id-arrays",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.11.3 The Lookup Operator",
+   "url": "https://www.w3.org/TR/xquery-31/#id-lookup",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.12 FLWOR Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-flwor-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach",
+    "comprehensions",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.12.2 For Clause",
+   "url": "https://www.w3.org/TR/xquery-31/#id-xquery-for-clause",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.12.3 Let Clause",
+   "url": "https://www.w3.org/TR/xquery-31/#id-xquery-let-clause",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.12.4 Window Clause",
+   "url": "https://www.w3.org/TR/xquery-31/#id-windows",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "window-functions",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.12.7 Group By Clause",
+   "url": "https://www.w3.org/TR/xquery-31/#id-group-by",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.12.8 Order By Clause",
+   "url": "https://www.w3.org/TR/xquery-31/#id-order-by-clause",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.14 Conditional Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-conditionals",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.15 Switch Expression",
+   "url": "https://www.w3.org/TR/xquery-31/#id-switch",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.16 Quantified Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-quantified-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.17 Try/Catch Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-try-catch",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.18.1 Instance Of",
+   "url": "https://www.w3.org/TR/xquery-31/#id-instance-of",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.18.2 Typeswitch",
+   "url": "https://www.w3.org/TR/xquery-31/#id-typeswitch",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.18.3 Cast",
+   "url": "https://www.w3.org/TR/xquery-31/#id-cast",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.20 Arrow Operator",
+   "url": "https://www.w3.org/TR/xquery-31/#id-arrow-operator",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.19 Simple Map Operator (!)",
+   "url": "https://www.w3.org/TR/xquery-31/#id-map-operator",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 3.21 Validate Expressions",
+   "url": "https://www.w3.org/TR/xquery-31/#id-validate",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 4 Modules and Prologs",
+   "url": "https://www.w3.org/TR/xquery-31/#id-query-prolog",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 4.12 Module Import",
+   "url": "https://www.w3.org/TR/xquery-31/#id-module-import",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 4.13 Namespace Declaration",
+   "url": "https://www.w3.org/TR/xquery-31/#id-namespace-declaration",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 4.15 Annotations",
+   "url": "https://www.w3.org/TR/xquery-31/#id-annotations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 4.16 Variable Declaration",
+   "url": "https://www.w3.org/TR/xquery-31/#id-variable-declarations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — 4.18 Function Declaration",
+   "url": "https://www.w3.org/TR/xquery-31/#FunctionDeclns",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "recursion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — A.1 EBNF grammar",
+   "url": "https://www.w3.org/TR/xquery-31/#id-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — A.2 Lexical structure",
+   "url": "https://www.w3.org/TR/xquery-31/#lexical-structure",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — A.4 Precedence Order",
+   "url": "https://www.w3.org/TR/xquery-31/#id-precedence-order",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.1 — H.1 Example: Joins",
+   "url": "https://www.w3.org/TR/xquery-31/#id-joins",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "XPath and XQuery Functions and Operators 3.1",
+   "url": "https://www.w3.org/TR/xpath-functions-31/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 4 Functions and operators on numerics",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#numeric-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 5 Functions on strings",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#string-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 5.6 String functions that use regular expressions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#string.match",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 9 Functions and operators on durations, dates and times",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#dates-times",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 14.4 Aggregate functions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#aggregate-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 16 Higher-order functions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#higher-order-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 17.1 Functions that operate on maps",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#map-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 17.3 Functions that operate on arrays",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#array-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 17.5 Conversion to and from JSON",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#json",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Functions and Operators 3.1 — 19 Casting",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#casting",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery and XPath Data Model 3.1",
+   "url": "https://www.w3.org/TR/xpath-datamodel-31/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery and XPath Data Model 3.1 — 2.5 Sequences",
+   "url": "https://www.w3.org/TR/xpath-datamodel-31/#sequences",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery and XPath Data Model 3.1 — 2.7 Types",
+   "url": "https://www.w3.org/TR/xpath-datamodel-31/#types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XSLT and XQuery Serialization 3.1",
+   "url": "https://www.w3.org/TR/xslt-xquery-serialization-31/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery 1.0 and XPath 2.0 Formal Semantics (Second Edition)",
+   "url": "https://www.w3.org/TR/xquery-semantics/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2010,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "type-soundness"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery 1.0 Formal Semantics — 2.4 Types (static typing judgments)",
+   "url": "https://www.w3.org/TR/xquery-semantics/#sec_types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2010,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery 1.0 Formal Semantics — 4.8 FLWOR expressions (normalisation and typing)",
+   "url": "https://www.w3.org/TR/xquery-semantics/#sec_for-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2010,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery 1.0 Formal Semantics — 4.2 Path expressions",
+   "url": "https://www.w3.org/TR/xquery-semantics/#id-path-expressions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2010,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery 1.0 Formal Semantics — 4.1 Core grammar",
+   "url": "https://www.w3.org/TR/xquery-semantics/#sec_core_grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2010,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery 3.0: An XML Query Language",
+   "url": "https://www.w3.org/TR/xquery-30/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2014,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery (all versions) — W3C cover page",
+   "url": "https://www.w3.org/TR/xquery/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQueryX 3.1 (XML syntax for XQuery)",
+   "url": "https://www.w3.org/TR/xqueryx-31/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery and XPath Full Text 3.0",
+   "url": "https://www.w3.org/TR/xpath-full-text-30/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2015,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "XQuery Scripting Extension 1.0 (Working Group Note)",
+   "url": "https://www.w3.org/TR/xquery-sx-10/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "XQuery 3.1 Requirements and Use Cases",
+   "url": "https://www.w3.org/TR/xquery-31-requirements/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "3.1",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "XML Query Use Cases",
+   "url": "https://www.w3.org/TR/xquery-use-cases/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "XQuery 4.0: An XML Query Language (QT4 Community Group draft)",
+   "url": "https://qt4cg.org/specifications/xquery-40/xquery-40.html",
+   "scope": "whole",
+   "authority": "community",
+   "version": "4.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "XPath and XQuery Functions and Operators 4.0 (draft)",
+   "url": "https://qt4cg.org/specifications/xpath-functions-40/Overview.html",
+   "scope": "whole",
+   "authority": "community",
+   "version": "4.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "QT4 Community Group — specifications, issues and proposals for 4.0",
+   "url": "https://qt4cg.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XQuery — Wikibooks",
+   "url": "https://en.wikibooks.org/wiki/XQuery",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XQuery Wikibook — FLWOR Expression",
+   "url": "https://en.wikibooks.org/wiki/XQuery/FLWOR_Expression",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XQuery Wikibook — Sequences",
+   "url": "https://en.wikibooks.org/wiki/XQuery/Sequences",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "XQuery: A Typed Functional Language for Querying XML (tutorial)",
+   "url": "https://homepages.inf.ed.ac.uk/wadler/papers/xquery-tutorial/xquery-tutorial.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Philip Wadler"
+   ],
+   "year": 2002,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "XQuery, 2nd Edition (O'Reilly)",
+   "url": "https://www.datypic.com/books/xquery/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Priscilla Walmsley"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "paywalled"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BaseX documentation — XQuery (overview of 3.x features)",
+   "url": "https://docs.basex.org/main/XQuery",
+   "implementation": "BaseX",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BaseX documentation — XQuery 3.1",
+   "url": "https://docs.basex.org/main/XQuery_3.1",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BaseX documentation — XQuery 4.0",
+   "url": "https://docs.basex.org/main/XQuery_4.0",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BaseX documentation — XQuery Extensions",
+   "url": "https://docs.basex.org/main/XQuery_Extensions",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BaseX documentation — Full-Text",
+   "url": "https://docs.basex.org/main/Full-Text",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "eXist-db documentation — XQuery",
+   "url": "https://exist-db.org/exist/apps/doc/xquery",
+   "implementation": "eXist-db",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MarkLogic XQuery and XSLT Reference Guide",
+   "url": "https://docs.marklogic.com/guide/xquery",
+   "implementation": "MarkLogic",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Saxon 12 documentation",
+   "url": "https://www.saxonica.com/documentation12/index.html",
+   "implementation": "Saxon",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "learn-xquery — curated XQuery learning resources",
+   "url": "https://github.com/joewiz/learn-xquery",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "FunctX XQuery function library (examples)",
+   "url": "http://www.functx.com/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Priscilla Walmsley"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — XQuery",
+   "url": "https://en.wikipedia.org/wiki/XQuery",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — XQuery",
+   "url": "https://pldb.io/concepts/xquery.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "W3C XML Query home page (implementations list, history)",
+   "url": "https://www.w3.org/XML/Query/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:XQuery",
+   "url": "https://rosettacode.org/wiki/Category:XQuery",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

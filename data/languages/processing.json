@@ -1,0 +1,47 @@
+{
+ "id": "processing",
+ "name": "Processing",
+ "categories": ["educational", "domain-specific", "object-oriented"],
+ "paradigms": ["imperative", "object-oriented", "event-driven"],
+ "typing": ["static", "strong", "nominal"],
+ "first_appeared": 2001,
+ "designers": ["Casey Reas", "Ben Fry"],
+ "summary": "Simplified Java dialect and sketchbook environment from the MIT Media Lab for visual arts and teaching programming. A preprocessor wraps sketches (setup()/draw() functions, global variables, color literals) into a Java class extending PApplet; p5.js and Processing.py carry the API to JavaScript and Python.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".pde"],
+ "homepage": "https://processing.org/",
+ "influenced_by": ["java", "logo", "c"],
+ "related": [{"id": "java", "relation": "dialect-of"}, {"id": "javascript", "relation": "family"}],
+ "level_notes": {"0": "processing/processing4 contains the PDE, the Java-mode preprocessor (ANTLR grammar) and the core PApplet library.", "1": "No specification beyond the official reference: the language is Java with the preprocessing rules of the PDE; reference pages document each keyword and API element."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "processing/processing4 — Processing Development Environment and core library", "url": "https://github.com/processing/processing4", "implementation": "Processing", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "grammar-source", "title": "Processing.g4 — ANTLR grammar of the Processing dialect (extends Java grammar)", "url": "https://github.com/processing/processing4/blob/main/java/src/processing/mode/java/preproc/Processing.g4", "implementation": "Processing", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "PdePreprocessor.java — preprocessor turning sketches into Java classes", "url": "https://github.com/processing/processing4/blob/main/java/src/processing/mode/java/preproc/PdePreprocessor.java", "implementation": "Processing", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["program-structure", "code-generation"]},
+  {"level": 0, "kind": "standard-library-source", "title": "PApplet.java — PApplet: the sketch base class (setup/draw, drawing API)", "url": "https://github.com/processing/processing4/blob/main/core/src/processing/core/PApplet.java", "implementation": "Processing", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+
+  {"level": 1, "kind": "library-reference", "title": "Processing language reference", "url": "https://processing.org/reference", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library", "keywords"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — setup()", "url": "https://processing.org/reference/setup_", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — // (comment)", "url": "https://processing.org/reference/comment", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — int", "url": "https://processing.org/reference/int", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["integers", "primitive-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — String", "url": "https://processing.org/reference/String", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — Array", "url": "https://processing.org/reference/Array", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — ArrayList", "url": "https://processing.org/reference/ArrayList", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lists"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — HashMap", "url": "https://processing.org/reference/HashMap", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — if", "url": "https://processing.org/reference/if", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — switch", "url": "https://processing.org/reference/switch", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["switch-case"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — for", "url": "https://processing.org/reference/for", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — class", "url": "https://processing.org/reference/class", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — try", "url": "https://processing.org/reference/try", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Processing reference — thread()", "url": "https://processing.org/reference/thread_", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["threads"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Processing tutorials — Getting started", "url": "https://processing.org/tutorials/gettingstarted", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "Processing tutorials — Objects", "url": "https://processing.org/tutorials/objects", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["classes", "objects"]},
+  {"level": 2, "kind": "tutorial", "title": "Processing tutorials — Arrays", "url": "https://processing.org/tutorials/arrays", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
+  {"level": 2, "kind": "guide", "title": "Processing Development Environment (PDE) — preprocessing and modes", "url": "https://processing.org/environment", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Processing", "url": "https://en.wikipedia.org/wiki/Processing", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Processing", "url": "https://pldb.io/concepts/processing.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:Processing", "url": "https://rosettacode.org/wiki/Category:Processing", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

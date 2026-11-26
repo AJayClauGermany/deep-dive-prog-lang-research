@@ -1,0 +1,197 @@
+{
+ "id": "btor2",
+ "name": "BTOR2",
+ "aliases": [
+  "BTOR"
+ ],
+ "categories": [
+  "specification-modeling",
+  "intermediate-representation"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Aina Niemetz",
+  "Mathias Preiner",
+  "Clifford Wolf",
+  "Armin Biere"
+ ],
+ "summary": "A line-based word-level format for model checking hardware and software over bit-vectors and arrays: numbered nodes declare sorts, inputs, states with init/next functions, and bad/constraint/fair/justice properties; successor of the BTOR format and input of the HWMCC word-level track (BtorMC, Pono, AVR, Yosys write_btor).",
+ "status": "active",
+ "defined_by": [
+  "academic-paper",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".btor2",
+  ".btor"
+ ],
+ "homepage": "https://github.com/Boolector/btor2tools",
+ "level_notes": {
+  "1": "Defined by the CAV 2018 paper (grammar in its Figure); no separate standard.",
+  "0": "btor2tools provides the reference parser, simulator and converters.",
+  "2": "Little secondary literature beyond competition reports and tool papers; the defining papers double as tutorials."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Niemetz, Preiner, Wolf, Biere — BTOR2, BtorMC and Boolector 3.0 (CAV 2018)",
+   "url": "https://fmv.jku.at/papers/NiemetzPreinerWolfBiere-CAV18.pdf",
+   "concepts": [
+    "grammar",
+    "design-rationale",
+    "verification"
+   ],
+   "authors": [
+    "Aina Niemetz",
+    "Mathias Preiner",
+    "Clifford Wolf",
+    "Armin Biere"
+   ],
+   "year": 2018,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Brummayer, Biere, Lonsing — BTOR: bit-precise modelling of word-level problems for model checking (BPR 2008)",
+   "url": "https://fmv.jku.at/papers/BrummayerBiereLonsing-BPR08.pdf",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "authors": [
+    "Robert Brummayer",
+    "Armin Biere",
+    "Florian Lonsing"
+   ],
+   "year": 2008,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "btor2tools — BTOR2 parser and tools",
+   "url": "https://github.com/Boolector/btor2tools",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "btor2tools",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "btor2tools — btor2parser.c",
+   "url": "https://github.com/Boolector/btor2tools/blob/master/src/btor2parser/btor2parser.c",
+   "concepts": [
+    "parser",
+    "lexer"
+   ],
+   "implementation": "btor2tools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "btor2tools — btor2parser.h (node kinds / opcodes)",
+   "url": "https://github.com/Boolector/btor2tools/blob/master/src/btor2parser/btor2parser.h",
+   "concepts": [
+    "operators",
+    "ast"
+   ],
+   "implementation": "btor2tools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "btor2tools — catbtor.c (pretty printer)",
+   "url": "https://github.com/Boolector/btor2tools/blob/master/src/catbtor.c",
+   "concepts": [
+    "tooling"
+   ],
+   "implementation": "btor2tools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "btor2tools — examples/btorsim/factorial4even.btor2",
+   "url": "https://github.com/Boolector/btor2tools/blob/master/examples/btorsim/factorial4even.btor2",
+   "concepts": [
+    "hello-world"
+   ],
+   "implementation": "btor2tools",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Boolector (BtorMC model checker)",
+   "url": "https://github.com/Boolector/boolector",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Boolector",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Pono model checker (BTOR2 frontend)",
+   "url": "https://github.com/stanford-centaur/pono",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Pono",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 3,
+   "kind": "benchmark",
+   "title": "Hardware Model Checking Competition 2020",
+   "url": "https://fmv.jku.at/hwmcc20/",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

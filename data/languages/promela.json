@@ -1,0 +1,551 @@
+{
+ "id": "promela",
+ "name": "Promela (SPIN)",
+ "aliases": [
+  "Promela",
+  "Process Meta Language",
+  "SPIN"
+ ],
+ "categories": [
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "concurrent",
+  "imperative",
+  "guarded-command",
+  "message-passing"
+ ],
+ "typing": [
+  "static",
+  "weak"
+ ],
+ "first_appeared": 1989,
+ "designers": [
+  "Gerard J. Holzmann"
+ ],
+ "summary": "Process meta-language of the SPIN model checker for describing concurrent and distributed systems as communicating processes with guarded commands, channels (rendezvous and buffered) and never-claims/LTL properties; SPIN translates a model into a C verifier (pan).",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".pml",
+  ".prom"
+ ],
+ "homepage": "https://spinroot.com/",
+ "influenced_by": [
+  "guarded-command-language",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "temporal-logic",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard: Holzmann's online Promela manual pages and grammar on spinroot.com, plus the SPIN book (2003), define the language; the Spin implementation is authoritative in corner cases.",
+  "0": "Spin (C, Holzmann; now open source on GitHub) parses Promela with a yacc grammar and generates the pan.c verifier."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela Language Reference (index of manual pages)",
+   "url": "https://spinroot.com/spin/Man/promela.html",
+   "concepts": [
+    "keywords",
+    "statements"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — Promela grammar",
+   "url": "https://spinroot.com/spin/Man/grammar.html",
+   "concepts": [
+    "grammar"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — Data types (bit, bool, byte, short, int, unsigned)",
+   "url": "https://spinroot.com/spin/Man/datatypes.html",
+   "concepts": [
+    "primitive-types",
+    "integers"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — Arrays",
+   "url": "https://spinroot.com/spin/Man/arrays.html",
+   "concepts": [
+    "arrays"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — typedef (record types)",
+   "url": "https://spinroot.com/spin/Man/typedef.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — mtype (symbolic constants)",
+   "url": "https://spinroot.com/spin/Man/mtype.html",
+   "concepts": [
+    "enums"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — Comments",
+   "url": "https://spinroot.com/spin/Man/comments.html",
+   "concepts": [
+    "comments"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — Macros and preprocessing",
+   "url": "https://spinroot.com/spin/Man/macros.html",
+   "concepts": [
+    "macros",
+    "preprocessor"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — if (selection with guards)",
+   "url": "https://spinroot.com/spin/Man/if.html",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — do (repetition)",
+   "url": "https://spinroot.com/spin/Man/do.html",
+   "concepts": [
+    "loops"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — break",
+   "url": "https://spinroot.com/spin/Man/break.html",
+   "concepts": [
+    "loop-control"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — goto",
+   "url": "https://spinroot.com/spin/Man/goto.html",
+   "concepts": [
+    "goto-labels"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — proctype (process declarations)",
+   "url": "https://spinroot.com/spin/Man/proctype.html",
+   "concepts": [
+    "concurrency",
+    "functions"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — run (process instantiation)",
+   "url": "https://spinroot.com/spin/Man/run.html",
+   "concepts": [
+    "concurrency"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — chan (message channels)",
+   "url": "https://spinroot.com/spin/Man/chan.html",
+   "concepts": [
+    "channels-message-passing"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — atomic sequences",
+   "url": "https://spinroot.com/spin/Man/atomic.html",
+   "concepts": [
+    "synchronization"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — inline (macro-like procedures)",
+   "url": "https://spinroot.com/spin/Man/inline.html",
+   "concepts": [
+    "macros",
+    "functions"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — assert",
+   "url": "https://spinroot.com/spin/Man/assert.html",
+   "concepts": [
+    "assertions",
+    "verification"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — never claims",
+   "url": "https://spinroot.com/spin/Man/never.html",
+   "concepts": [
+    "verification",
+    "automata"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — ltl (inline LTL properties)",
+   "url": "https://spinroot.com/spin/Man/ltl.html",
+   "concepts": [
+    "verification"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Promela reference manual — unless (exception-like escape)",
+   "url": "https://spinroot.com/spin/Man/unless.html",
+   "concepts": [
+    "exceptions"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Model Checker SPIN (IEEE TSE 23(5), 1997)",
+   "url": "https://spinroot.com/spin/Doc/ieee97.pdf",
+   "concepts": [
+    "verification",
+    "design-rationale"
+   ],
+   "authors": [
+    "Gerard J. Holzmann"
+   ],
+   "year": 1997,
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open",
+   "authority": "designer"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "nimble-code/Spin — the SPIN model checker",
+   "url": "https://github.com/nimble-code/Spin",
+   "concepts": [
+    "verification"
+   ],
+   "implementation": "Spin",
+   "authority": "designer",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nimble-code/Spin — Src/spin.y: yacc grammar of Promela",
+   "url": "https://github.com/nimble-code/Spin/blob/master/Src/spin.y",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "implementation": "Spin",
+   "authority": "designer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nimble-code/Spin — Src/spinlex.c: lexer",
+   "url": "https://github.com/nimble-code/Spin/blob/master/Src/spinlex.c",
+   "concepts": [
+    "lexer"
+   ],
+   "implementation": "Spin",
+   "authority": "designer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nimble-code/Spin — Src/pangen1.c: verifier (pan.c) code generation",
+   "url": "https://github.com/nimble-code/Spin/blob/master/Src/pangen1.c",
+   "concepts": [
+    "code-generation-backend",
+    "verification"
+   ],
+   "implementation": "Spin",
+   "authority": "designer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "nimble-code/Spin — Src/run.c: simulation of Promela statements",
+   "url": "https://github.com/nimble-code/Spin/blob/master/Src/run.c",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "Spin",
+   "authority": "designer",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Basic Spin Manual",
+   "url": "https://spinroot.com/spin/Man/Manual.html",
+   "concepts": [
+    "hello-world",
+    "tooling"
+   ],
+   "authority": "designer",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Spin tutorial slides (Holzmann)",
+   "url": "https://spinroot.com/spin/Doc/SpinTutorial.pdf",
+   "concepts": [
+    "hello-world"
+   ],
+   "authority": "designer",
+   "scope": "whole",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Promela",
+   "url": "https://en.wikipedia.org/wiki/Promela",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SPIN model checker",
+   "url": "https://en.wikipedia.org/wiki/SPIN_model_checker",
+   "concepts": [
+    "history",
+    "verification"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Promela",
+   "url": "https://pldb.io/concepts/promela.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}

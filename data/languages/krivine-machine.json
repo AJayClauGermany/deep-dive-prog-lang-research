@@ -1,0 +1,218 @@
+{
+  "id": "krivine-machine",
+  "name": "Krivine machine",
+  "aliases": [
+    "KAM",
+    "Krivine abstract machine"
+  ],
+  "categories": [
+    "theoretical-model",
+    "abstract-machine"
+  ],
+  "paradigms": [
+    "functional"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 1985,
+  "designers": [
+    "Jean-Louis Krivine"
+  ],
+  "summary": "Minimal abstract machine for call-by-name (weak head) reduction of lambda terms in de Bruijn notation, with only three instructions (push, grab, access) over closures; circulated from 1985 and published in 2007. It underlies the ZAM and classical-realizability work.",
+  "status": "theoretical",
+  "defined_by": [
+    "academic-paper"
+  ],
+  "influenced_by": [
+    "lambda-calculus"
+  ],
+  "related": [
+    {
+      "id": "zinc-machine",
+      "relation": "family"
+    },
+    {
+      "id": "cek-machine",
+      "relation": "family"
+    },
+    {
+      "id": "lambda-calculus-with-explicit-substitutions",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "0": "Mechanised definitions (Coq library of undecidability) stand in for implementations; the OCaml bytecode interpreter descends from it via the ZAM."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Krivine (2007) — A Call-by-Name Lambda-Calculus Machine (author's copy)",
+      "url": "https://www.irif.fr/~krivine/articles/lazymach.pdf",
+      "concepts": [
+        "virtual-machine",
+        "evaluation-order",
+        "closures"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Jean-Louis Krivine"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Krivine (2007) — A Call-by-Name Lambda-Calculus Machine (Higher-Order and Symbolic Computation)",
+      "url": "https://doi.org/10.1007/s10990-007-9018-9",
+      "concepts": [
+        "virtual-machine"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Jean-Louis Krivine"
+      ],
+      "year": 2007
+    },
+    {
+      "level": 2,
+      "kind": "article",
+      "title": "Leroy — From Krivine's machine to the Caml implementations (talk slides)",
+      "url": "https://xavierleroy.org/talks/zam-kazam05.pdf",
+      "concepts": [
+        "virtual-machine",
+        "history",
+        "comparison"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Xavier Leroy"
+      ],
+      "year": 2005
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Ager, Biernacki, Danvy, Midtgaard (2003) — A Functional Correspondence between Evaluators and Abstract Machines (derives the Krivine machine)",
+      "url": "https://www.brics.dk/RS/03/13/BRICS-RS-03-13.pdf",
+      "concepts": [
+        "interpreter"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "Mads Sig Ager",
+        "Dariusz Biernacki",
+        "Olivier Danvy",
+        "Jan Midtgaard"
+      ],
+      "year": 2003
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability LambdaCalculus/Krivine.v — Krivine machine halting problem (Coq)",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/LambdaCalculus/Krivine.v",
+      "concepts": [
+        "formal-semantics",
+        "virtual-machine"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability LambdaCalculus/Util/Krivine_facts.v — Krivine machine metatheory",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/LambdaCalculus/Util/Krivine_facts.v",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "coq-library-undecidability TM/Reductions/KrivineMclosed_HALT_to_HaltUTM.v — Krivine machine simulated by a Turing machine",
+      "url": "https://github.com/uds-psl/coq-library-undecidability/blob/master/theories/TM/Reductions/KrivineMclosed_HALT_to_HaltUTM.v",
+      "concepts": [
+        "encodings",
+        "turing-completeness"
+      ],
+      "scope": "section",
+      "authority": "academic",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Coq"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Krivine machine",
+      "url": "https://en.wikipedia.org/wiki/Krivine_machine",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Krivine machine: Description (state and transitions)",
+      "url": "https://en.wikipedia.org/wiki/Krivine_machine#Description",
+      "concepts": [
+        "virtual-machine"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Krivine machine: Call by name and head normal form reduction",
+      "url": "https://en.wikipedia.org/wiki/Krivine_machine#Call_by_name_and_head_normal_form_reduction",
+      "concepts": [
+        "evaluation-order",
+        "reduction"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Krivine machine: Inter-derivations",
+      "url": "https://en.wikipedia.org/wiki/Krivine_machine#Inter-derivations",
+      "concepts": [
+        "comparison"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

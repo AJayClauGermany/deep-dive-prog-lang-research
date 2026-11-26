@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "language.schema.json",
+  "title": "Computer language entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "categories", "summary", "resources"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Stable kebab-case id; equals the file name without .json"},
+    "name": {"type": "string"},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "categories": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"enum": [
+        "general-purpose", "systems", "scripting", "shell", "functional", "object-oriented", "logic", "array", "concatenative",
+        "scientific", "educational", "visual", "query", "database-procedural", "data-serialization", "configuration", "schema-idl",
+        "markup", "stylesheet", "template", "document-typesetting", "diagram", "build", "grammar-notation", "pattern-matching",
+        "assembly", "intermediate-representation", "bytecode", "hardware-description", "shader-gpu", "smart-contract", "quantum",
+        "industrial-control", "proof-assistant", "specification-modeling", "theoretical-model", "calculus", "abstract-machine",
+        "esoteric", "historical", "domain-specific", "policy", "music-audio", "protocol"
+      ]}
+    },
+    "paradigms": {"type": "array", "items": {"type": "string"}, "description": "Free-form lowercase paradigm names, e.g. imperative, functional, declarative"},
+    "typing": {"type": "array", "items": {"type": "string"}, "description": "Free-form lowercase, e.g. static, dynamic, strong, inferred, nominal, structural, untyped"},
+    "first_appeared": {"type": ["integer", "null"], "description": "Year of first public appearance/publication"},
+    "designers": {"type": "array", "items": {"type": "string"}},
+    "summary": {"type": "string", "minLength": 20, "description": "One to three sentences"},
+    "status": {"enum": ["active", "maintained", "historical", "experimental", "theoretical", "esoteric"]},
+    "defined_by": {
+      "type": "array", "uniqueItems": true,
+      "items": {"enum": ["international-standard", "consortium-standard", "vendor-specification", "community-specification", "reference-implementation", "academic-paper", "informal"]},
+      "description": "What authoritatively defines the language (helps weigh Level 0 against Level 1)"
+    },
+    "standards": {"type": "array", "items": {"type": "string"}, "description": "Designations such as ISO/IEC 9899:2024, ECMA-262, RFC 8259"},
+    "file_extensions": {"type": "array", "items": {"type": "string"}},
+    "homepage": {"type": "string", "format": "uri"},
+    "influenced_by": {"type": "array", "items": {"type": "string"}, "description": "Language ids (kebab-case) of notable influences"},
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "relation"],
+        "properties": {
+          "id": {"type": "string"},
+          "relation": {"enum": ["dialect-of", "superset-of", "subset-of", "successor-of", "compiles-to", "implemented-in", "embeds", "host-of", "variant-of", "formalizes", "family"]}
+        }
+      }
+    },
+    "level_notes": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"0": {"type": "string"}, "1": {"type": "string"}, "2": {"type": "string"}, "3": {"type": "string"}},
+      "description": "Caveats per level, e.g. why no formal specification exists or which implementation is canonical"
+    },
+    "resources": {"type": "array", "minItems": 1, "items": {"$ref": "resource.schema.json"}}
+  }
+}

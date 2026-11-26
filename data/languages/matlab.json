@@ -1,0 +1,1762 @@
+{
+ "id": "matlab",
+ "name": "MATLAB",
+ "aliases": [
+  "MATrix LABoratory"
+ ],
+ "categories": [
+  "scientific",
+  "array",
+  "scripting"
+ ],
+ "paradigms": [
+  "imperative",
+  "array",
+  "procedural",
+  "object-oriented"
+ ],
+ "typing": [
+  "dynamic",
+  "weak-numeric-coercion"
+ ],
+ "first_appeared": 1984,
+ "designers": [
+  "Cleve Moler",
+  "Jack Little",
+  "Steve Bangert"
+ ],
+ "summary": "Proprietary matrix-oriented numerical computing language and environment from MathWorks, descended from Cleve Moler's 1970s Fortran MATLAB; every value is an array, with copy-on-write value semantics, function handles and classdef OOP.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".m",
+  ".mlx",
+  ".mat"
+ ],
+ "homepage": "https://www.mathworks.com/products/matlab.html",
+ "influenced_by": [
+  "fortran",
+  "apl"
+ ],
+ "related": [
+  {
+   "id": "octave",
+   "relation": "family"
+  },
+  {
+   "id": "scilab",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "MATLAB is closed source. Level 0 lists GNU Octave, the main open, largely compatible implementation (not MathWorks code), plus community grammars.",
+  "1": "No independent standard; the MathWorks online documentation is the de facto definition. mathworks.com blocks automated clients, so those links report 'blocked' from the checker."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "GNU Octave — free, largely MATLAB-compatible interpreter (GitHub mirror)",
+   "url": "https://github.com/gnu-octave/octave",
+   "scope": "whole",
+   "notes": "Canonical repository is Mercurial at hg.savannah.gnu.org; MATLAB itself is closed source.",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/parse-tree/lex.ll — flex lexer for the MATLAB/Octave language (command syntax, transpose vs quote, matrix-context whitespace)",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/parse-tree/lex.ll",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Octave libinterp/parse-tree/oct-parse.yy — Bison grammar for MATLAB-compatible syntax including classdef",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/parse-tree/oct-parse.yy",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/parse-tree/pt-eval.cc — tree-walking evaluator: if/switch/for/while/try/unwind_protect",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/parse-tree/pt-eval.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "conditionals",
+    "loops",
+    "switch-case",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov.cc — octave_value: the dynamically typed value container and operator dispatch",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing",
+    "data-model",
+    "operators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-base.cc — base class of all value types; type conversion hooks",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-base.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-fcn-handle.cc — function handles and anonymous functions (captured workspace)",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-fcn-handle.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "function-types",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-classdef.cc — classdef objects (MATLAB-style OOP)",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-classdef.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/cdef-class.cc — classdef class metadata, properties, methods, inheritance",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/cdef-class.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "inheritance",
+    "properties",
+    "reflection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-struct.cc — struct arrays and dynamic fields",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-struct.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-cell.cc — cell arrays and comma-separated lists",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-cell.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-str-mat.cc — character matrices (char arrays)",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-str-mat.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "characters"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/octave-value/ov-range.cc — lazily stored colon ranges",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/octave-value/ov-range.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ranges"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave liboctave/array/Array-base.cc — N-d array template: indexing, resizing, copy-on-write",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/liboctave/array/Array-base.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "value-reference-semantics",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/corefcn/error.cc — error/warning/MException-style error handling",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/corefcn/error.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/corefcn/symtab.cc — symbol table and function lookup precedence",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/corefcn/symtab.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/corefcn/load-path.cc — load path: finding function files, private/ and +package directories",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/corefcn/load-path.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages",
+    "imports"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/corefcn/stack-frame.cc — stack frames: workspaces, global and persistent variables, nested functions",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/corefcn/stack-frame.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables",
+    "storage-duration"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/corefcn/interpreter.cc — interpreter lifecycle, eval and the REPL",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/corefcn/interpreter.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "eval",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Octave libinterp/corefcn/oct-stream.cc — fopen/fprintf/fscanf stream I/O and format conversions",
+   "url": "https://github.com/gnu-octave/octave/blob/stable/libinterp/corefcn/oct-stream.cc",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "file-io",
+    "string-formatting",
+    "input-output"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "tree-sitter-matlab — community tree-sitter grammar for MATLAB",
+   "url": "https://github.com/acristoffers/tree-sitter-matlab/blob/main/grammar.js",
+   "scope": "whole",
+   "implementation": "tree-sitter-matlab",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "MathWorks MATLAB Language Server (open source)",
+   "url": "https://github.com/mathworks/MATLAB-language-server",
+   "scope": "section",
+   "implementation": "MATLAB language server",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB documentation — Language Fundamentals",
+   "url": "https://www.mathworks.com/help/matlab/language-fundamentals.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB documentation — Programming Scripts and Functions",
+   "url": "https://www.mathworks.com/help/matlab/programming-and-data-types.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "MATLAB function reference (all functions)",
+   "url": "https://www.mathworks.com/help/matlab/referencelist.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "MATLAB Release Notes",
+   "url": "https://www.mathworks.com/help/matlab/release-notes.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — if, elseif, else",
+   "url": "https://www.mathworks.com/help/matlab/ref/if.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — switch, case, otherwise",
+   "url": "https://www.mathworks.com/help/matlab/ref/switch.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — for loop",
+   "url": "https://www.mathworks.com/help/matlab/ref/for.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — while loop",
+   "url": "https://www.mathworks.com/help/matlab/ref/while.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — break",
+   "url": "https://www.mathworks.com/help/matlab/ref/break.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — continue",
+   "url": "https://www.mathworks.com/help/matlab/ref/continue.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loop-control"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — return",
+   "url": "https://www.mathworks.com/help/matlab/ref/return.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — try, catch",
+   "url": "https://www.mathworks.com/help/matlab/ref/try.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — MException object",
+   "url": "https://www.mathworks.com/help/matlab/ref/mexception.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — error",
+   "url": "https://www.mathworks.com/help/matlab/ref/error.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — assert",
+   "url": "https://www.mathworks.com/help/matlab/ref/assert.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assertions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — function declaration",
+   "url": "https://www.mathworks.com/help/matlab/ref/function.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — arguments block (argument validation)",
+   "url": "https://www.mathworks.com/help/matlab/ref/arguments.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — varargin (variable-length input)",
+   "url": "https://www.mathworks.com/help/matlab/ref/varargin.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — nargin",
+   "url": "https://www.mathworks.com/help/matlab/ref/nargin.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — varargout (variable-length output)",
+   "url": "https://www.mathworks.com/help/matlab/ref/varargout.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "return",
+    "tuples"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — persistent variables",
+   "url": "https://www.mathworks.com/help/matlab/ref/persistent.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "storage-duration",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — global variables",
+   "url": "https://www.mathworks.com/help/matlab/ref/global.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — cell arrays",
+   "url": "https://www.mathworks.com/help/matlab/ref/cell.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — struct",
+   "url": "https://www.mathworks.com/help/matlab/ref/struct.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — dictionary (R2022b+)",
+   "url": "https://www.mathworks.com/help/matlab/ref/dictionary.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — containers.Map",
+   "url": "https://www.mathworks.com/help/matlab/ref/containers.map.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — string arrays",
+   "url": "https://www.mathworks.com/help/matlab/ref/string.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — char arrays",
+   "url": "https://www.mathworks.com/help/matlab/ref/char.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "characters",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — sprintf",
+   "url": "https://www.mathworks.com/help/matlab/ref/sprintf.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — regexp",
+   "url": "https://www.mathworks.com/help/matlab/ref/regexp.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — double precision",
+   "url": "https://www.mathworks.com/help/matlab/ref/double.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — 32-bit integers",
+   "url": "https://www.mathworks.com/help/matlab/ref/int32.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — logical",
+   "url": "https://www.mathworks.com/help/matlab/ref/logical.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — cast",
+   "url": "https://www.mathworks.com/help/matlab/ref/cast.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — class of object",
+   "url": "https://www.mathworks.com/help/matlab/ref/class.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — colon operator (ranges and indexing)",
+   "url": "https://www.mathworks.com/help/matlab/ref/colon.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ranges",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — cellfun",
+   "url": "https://www.mathworks.com/help/matlab/ref/cellfun.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — arrayfun",
+   "url": "https://www.mathworks.com/help/matlab/ref/arrayfun.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — eval",
+   "url": "https://www.mathworks.com/help/matlab/ref/eval.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "eval"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — feval",
+   "url": "https://www.mathworks.com/help/matlab/ref/feval.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — import (namespace import)",
+   "url": "https://www.mathworks.com/help/matlab/ref/import.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — classdef",
+   "url": "https://www.mathworks.com/help/matlab/ref/classdef.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — handle class",
+   "url": "https://www.mathworks.com/help/matlab/ref/handle-class.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics",
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — fopen",
+   "url": "https://www.mathworks.com/help/matlab/ref/fopen.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — datetime",
+   "url": "https://www.mathworks.com/help/matlab/ref/datetime.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — table",
+   "url": "https://www.mathworks.com/help/matlab/ref/table.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — mex (build C/C++/Fortran MEX files)",
+   "url": "https://www.mathworks.com/help/matlab/ref/mex.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — parfor (Parallel Computing Toolbox)",
+   "url": "https://www.mathworks.com/help/parallel-computing/parfor.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parallelism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Anonymous Functions",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/anonymous-functions.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Nested Functions",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/nested-functions.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Local Functions",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/local-functions.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Create Function Handle",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/create-function-handle.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "function-types",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Function Precedence Order",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/function-precedence-order.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Operator Precedence",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/operator-precedence.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Array vs. Matrix Operations",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/array-vs-matrix-operations.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — MATLAB Operators and Special Characters",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/matlab-operators-and-special-characters.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Fundamental MATLAB Classes",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/fundamental-matlab-classes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Valid Combinations of Unlike Classes",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/valid-combinations-of-unlike-classes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Floating-Point Numbers",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/floating-point-numbers.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Integers",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/integers.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Base and Function Workspaces",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/base-and-function-workspaces.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Share Data Between Workspaces",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/share-data-between-workspaces.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Add Comments to Code",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/comments.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Continue Long Statements on Multiple Lines",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/continue-long-statements-on-multiple-lines.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Command vs. Function Syntax",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/command-vs-function-syntax.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Scripts vs. Functions",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/scripts-and-functions.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Access Data in Cell Array",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/access-data-in-a-cell-array.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Generate Field Names from Variables (dynamic fields)",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/generate-field-names-from-variables.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Create String Arrays",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/create-string-arrays.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Short-circuit AND (&&)",
+   "url": "https://www.mathworks.com/help/matlab/ref/short-circuit-and.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Avoid Unnecessary Copies of Data (copy-on-write)",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/avoid-unnecessary-copies-of-data.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Techniques to Improve Performance",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/techniques-for-improving-performance.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Vectorization",
+   "url": "https://www.mathworks.com/help/matlab/matlab_prog/vectorization.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Role of Classes in MATLAB",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/role-of-classes-in-matlab.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Comparison of Handle and Value Classes",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/comparing-handle-and-value-classes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Subclass Multiple Classes",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/subclassing-multiple-classes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "inheritance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Operator Overloading",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/operator-overloading.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Events and Listeners Syntax",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/events-and-listeners-syntax.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Enumerations",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/enumerations.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Property Attributes",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/property-attributes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Method Attributes",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/method-attributes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "methods",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Class Constructor Methods",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/class-constructor-methods.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constructors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Abstract Classes and Class Members",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/abstract-classes-and-interfaces.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "abstract-classes",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Create Namespaces (+folders)",
+   "url": "https://www.mathworks.com/help/matlab/matlab_oop/create-namespaces.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces",
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MATLAB — Call Python from MATLAB",
+   "url": "https://www.mathworks.com/help/matlab/call-python-from-matlab.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Cleve Moler — The Origins of MATLAB (MathWorks technical article, 2004)",
+   "url": "https://www.mathworks.com/company/technical-articles/the-origins-of-matlab.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Cleve Moler"
+   ],
+   "notes": "Moler's retrospective on the 1970s Fortran MATLAB and the founding of MathWorks.",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ],
+   "year": 2004
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MATLAB Onramp (free interactive course)",
+   "url": "https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+   "scope": "whole",
+   "authority": "vendor",
+   "access": "registration",
+   "format": "interactive",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Moler & Little — A History of MATLAB (HOPL IV, 2020)",
+   "url": "https://doi.org/10.1145/3386331",
+   "scope": "whole",
+   "authors": [
+    "Cleve Moler",
+    "Jack Little"
+   ],
+   "year": 2020,
+   "authority": "designer",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cleve Moler — Numerical Computing with MATLAB",
+   "url": "https://www.mathworks.com/moler/chapters.html",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Cleve Moler"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "NumPy for MATLAB users — key differences",
+   "url": "https://numpy.org/doc/stable/user/numpy-for-matlab-users.html#some-key-differences",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "NumPy for MATLAB users — rough equivalents",
+   "url": "https://numpy.org/doc/stable/user/numpy-for-matlab-users.html#general-purpose-equivalents",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Octave wiki — Differences between Octave and Matlab",
+   "url": "https://wiki.octave.org/Differences_between_Octave_and_Matlab",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Wikibooks — MATLAB Programming",
+   "url": "https://en.wikibooks.org/wiki/MATLAB_Programming",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GNU Octave manual — Functions and Scripts (MATLAB-compatible semantics)",
+   "url": "https://docs.octave.org/latest/Functions-and-Scripts.html",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GNU Octave manual — Function Handles and Anonymous Functions",
+   "url": "https://docs.octave.org/latest/Function-Handles-and-Anonymous-Functions.html",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GNU Octave manual — Comma-Separated Lists",
+   "url": "https://docs.octave.org/latest/Comma_002dSeparated-Lists.html",
+   "scope": "section",
+   "implementation": "GNU Octave",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — MATLAB",
+   "url": "https://learnxinyminutes.com/matlab/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Richard Johnson — MATLAB Programming Style Guidelines (MATLAB File Exchange)",
+   "url": "https://www.mathworks.com/matlabcentral/fileexchange/46056-matlab-style-guidelines-2-0",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MATLAB",
+   "url": "https://en.wikipedia.org/wiki/MATLAB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:MATLAB",
+   "url": "https://rosettacode.org/wiki/Category:MATLAB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MATLAB",
+   "url": "https://pldb.io/concepts/matlab.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "MATLAB Central File Exchange",
+   "url": "https://www.mathworks.com/matlabcentral/fileexchange/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

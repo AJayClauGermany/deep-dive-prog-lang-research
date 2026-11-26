@@ -1,0 +1,402 @@
+{
+ "id": "mdx-jsx",
+ "name": "MDX",
+ "aliases": [
+  "MDX",
+  "Markdown + JSX"
+ ],
+ "categories": [
+  "markup",
+  "template"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "John Otander",
+  "Titus Wormer",
+  "Guillermo Rauch"
+ ],
+ "summary": "A Markdown dialect that embeds JSX elements, JavaScript expressions and ES module import/export statements; MDX documents compile to JavaScript modules that render components (React, Preact, Vue, Solid ...).",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".mdx"
+ ],
+ "homepage": "https://mdxjs.com/",
+ "influenced_by": [
+  "commonmark",
+  "jsx",
+  "markdown"
+ ],
+ "related": [
+  {
+   "id": "commonmark",
+   "relation": "superset-of"
+  },
+  {
+   "id": "jsx",
+   "relation": "embeds"
+  },
+  {
+   "id": "javascript",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "markdown",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "The syntax is defined by the micromark extensions (mdx-jsx, mdx-expression, mdxjs-esm); @mdx-js/mdx compiles the resulting tree to JavaScript.",
+  "1": "The mdxjs.com documentation is the reference; there is no stand-alone specification document.",
+  "3": "No Wikipedia article."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "mdx-js/mdx — the MDX compiler (unified/remark/rehype/recma pipeline)",
+   "url": "https://github.com/mdx-js/mdx",
+   "authority": "official",
+   "implementation": "@mdx-js/mdx",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "@mdx-js/mdx lib/core.js — processor pipeline construction",
+   "url": "https://github.com/mdx-js/mdx/blob/main/packages/mdx/lib/core.js",
+   "authority": "official",
+   "implementation": "@mdx-js/mdx",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "@mdx-js/mdx lib/plugin/recma-jsx-rewrite.js — rewriting JSX to use provided components",
+   "url": "https://github.com/mdx-js/mdx/blob/main/packages/mdx/lib/plugin/recma-jsx-rewrite.js",
+   "authority": "official",
+   "implementation": "@mdx-js/mdx",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation",
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "micromark-extension-mdxjs index.js — MDX syntax = CommonMark + JSX + expressions + ESM",
+   "url": "https://github.com/micromark/micromark-extension-mdxjs/blob/main/index.js",
+   "authority": "official",
+   "implementation": "micromark MDX extensions",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "micromark-extension-mdx-jsx factory-tag.js — JSX tag tokenizer state machine",
+   "url": "https://github.com/micromark/micromark-extension-mdx-jsx/blob/main/dev/lib/factory-tag.js",
+   "authority": "official",
+   "implementation": "micromark MDX extensions",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "automata"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "micromark-extension-mdx-expression syntax.js — {expression} blocks and inlines (parsed with acorn)",
+   "url": "https://github.com/micromark/micromark-extension-mdx-expression/blob/main/packages/micromark-extension-mdx-expression/dev/lib/syntax.js",
+   "authority": "official",
+   "implementation": "micromark MDX extensions",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "micromark-extension-mdxjs-esm syntax.js — import/export statements",
+   "url": "https://github.com/micromark/micromark-extension-mdxjs-esm/blob/main/dev/lib/syntax.js",
+   "authority": "official",
+   "implementation": "micromark MDX extensions",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "mdast-util-mdx-jsx lib/index.js — JSX nodes in the mdast syntax tree",
+   "url": "https://github.com/syntax-tree/mdast-util-mdx-jsx/blob/main/lib/index.js",
+   "authority": "official",
+   "implementation": "micromark MDX extensions",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — What is MDX?",
+   "url": "https://mdxjs.com/docs/what-is-mdx/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — MDX syntax: Markdown (differences from CommonMark)",
+   "url": "https://mdxjs.com/docs/what-is-mdx/#markdown",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — MDX syntax: JSX",
+   "url": "https://mdxjs.com/docs/what-is-mdx/#jsx",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — MDX syntax: expressions",
+   "url": "https://mdxjs.com/docs/what-is-mdx/#expressions",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — MDX syntax: ESM (import/export)",
+   "url": "https://mdxjs.com/docs/what-is-mdx/#esm",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — Interleaving Markdown and JSX",
+   "url": "https://mdxjs.com/docs/what-is-mdx/#interleaving",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — Using MDX: how MDX works (compiled to a JS module)",
+   "url": "https://mdxjs.com/docs/using-mdx/#how-mdx-works",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — Using MDX: props",
+   "url": "https://mdxjs.com/docs/using-mdx/#props",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — Using MDX: components",
+   "url": "https://mdxjs.com/docs/using-mdx/#components",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — Troubleshooting: problems writing MDX (syntax error messages)",
+   "url": "https://mdxjs.com/docs/troubleshooting-mdx/#problems-writing-mdx",
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX docs — Extending MDX (remark/rehype/recma plugins)",
+   "url": "https://mdxjs.com/docs/extending-mdx/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "@mdx-js/mdx package API (compile, evaluate, run)",
+   "url": "https://mdxjs.com/packages/mdx/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "MDX — Table of components (Markdown construct → component name)",
+   "url": "https://mdxjs.com/table-of-components/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "MDX 2 release announcement",
+   "url": "https://mdxjs.com/blog/v2/",
+   "authority": "official",
+   "year": 2022,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "MDX docs — Getting started",
+   "url": "https://mdxjs.com/docs/getting-started/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "MDX playground (shows mdast, hast, esast and compiled JS)",
+   "url": "https://mdxjs.com/playground/",
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — MDX",
+   "url": "https://pldb.io/concepts/mdx.html",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

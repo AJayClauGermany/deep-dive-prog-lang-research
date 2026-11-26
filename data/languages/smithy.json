@@ -1,0 +1,477 @@
+{
+ "id": "smithy",
+ "name": "Smithy",
+ "aliases": [
+  "Smithy IDL",
+  "Smithy 2.0"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative",
+  "resource-oriented"
+ ],
+ "typing": [
+  "static",
+  "nominal shapes",
+  "traits as typed annotations"
+ ],
+ "first_appeared": 2019,
+ "designers": [
+  "Michael Dowling",
+  "Amazon Web Services"
+ ],
+ "summary": "Protocol-agnostic interface definition language from AWS: a model is a graph of shapes (simple types, lists, maps, structures, unions, enums, services, operations, resources) in namespaces, refined by traits (typed annotations) and mixins, with a selector language for querying models and documented breaking-change rules. Used to generate AWS SDKs.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "Smithy 2.0 specification (2022)",
+  "Smithy 1.0"
+ ],
+ "file_extensions": [
+  ".smithy",
+  ".json"
+ ],
+ "homepage": "https://smithy.io/",
+ "influenced_by": [
+  "omg-idl",
+  "json-schema"
+ ],
+ "related": [
+  {
+   "id": "typespec",
+   "relation": "family"
+  },
+  {
+   "id": "openapi",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The Smithy 2.0 specification at smithy.io (IDL ABNF, semantic model, prelude, trait catalogue) is normative; models have both an IDL and a JSON AST form.",
+  "0": "smithy-lang/smithy (Java) is the reference implementation: IDL loader, validators, selectors and smithy-diff; code generators (smithy-typescript, smithy-rs, ...) build on it."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 specification",
+   "url": "https://smithy.io/2.0/spec/index.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — The Smithy model: semantic model",
+   "url": "https://smithy.io/2.0/spec/model.html#the-semantic-model",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Shape ID (and ABNF)",
+   "url": "https://smithy.io/2.0/spec/model.html#shape-id",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Traits",
+   "url": "https://smithy.io/2.0/spec/model.html#traits",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Breaking change rules for traits",
+   "url": "https://smithy.io/2.0/spec/model.html#breaking-change-rules",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Prelude (built-in shapes and traits)",
+   "url": "https://smithy.io/2.0/spec/model.html#prelude",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Merging model files",
+   "url": "https://smithy.io/2.0/spec/model.html#merging-model-files",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "separate-compilation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Smithy IDL — ABNF grammar",
+   "url": "https://smithy.io/2.0/spec/idl.html#smithy-idl-abnf",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy IDL — Comments and documentation comments",
+   "url": "https://smithy.io/2.0/spec/idl.html#comments",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy IDL — Relative shape ID resolution",
+   "url": "https://smithy.io/2.0/spec/idl.html#relative-shape-id-resolution",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy IDL — Text blocks and string escapes",
+   "url": "https://smithy.io/2.0/spec/idl.html#text-blocks",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Simple types",
+   "url": "https://smithy.io/2.0/spec/simple-types.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Aggregate types (list, map, structure, union)",
+   "url": "https://smithy.io/2.0/spec/aggregate-types.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "maps-dictionaries",
+    "records-structs",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Service types (service, operation, resource)",
+   "url": "https://smithy.io/2.0/spec/service-types.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Mixins",
+   "url": "https://smithy.io/2.0/spec/mixins.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "mixins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Constraint traits",
+   "url": "https://smithy.io/2.0/spec/constraint-traits.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints",
+    "schema-validation",
+    "refinement-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — Selectors (model query language)",
+   "url": "https://smithy.io/2.0/spec/selectors.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Smithy 2.0 — JSON AST",
+   "url": "https://smithy.io/2.0/spec/json-ast.html",
+   "scope": "section",
+   "authority": "vendor",
+   "version": "2.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "serialization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "smithy-lang/smithy — reference implementation (Java)",
+   "url": "https://github.com/smithy-lang/smithy",
+   "scope": "whole",
+   "implementation": "smithy (Java)",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "smithy-model loader/IdlInternalTokenizer.java — IDL tokenizer",
+   "url": "https://github.com/smithy-lang/smithy/blob/main/smithy-model/src/main/java/software/amazon/smithy/model/loader/IdlInternalTokenizer.java",
+   "scope": "section",
+   "implementation": "smithy (Java)",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "smithy-model loader/IdlModelLoader.java — IDL parser/loader",
+   "url": "https://github.com/smithy-lang/smithy/blob/main/smithy-model/src/main/java/software/amazon/smithy/model/loader/IdlModelLoader.java",
+   "scope": "section",
+   "implementation": "smithy (Java)",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "smithy-model selector/SelectorParser.java — selector language parser",
+   "url": "https://github.com/smithy-lang/smithy/blob/main/smithy-model/src/main/java/software/amazon/smithy/model/selector/SelectorParser.java",
+   "scope": "section",
+   "implementation": "smithy (Java)",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "smithy-diff ModelDiff.java — breaking-change detection",
+   "url": "https://github.com/smithy-lang/smithy/blob/main/smithy-diff/src/main/java/software/amazon/smithy/diff/ModelDiff.java",
+   "scope": "section",
+   "implementation": "smithy (Java)",
+   "authority": "vendor",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Smithy quick start",
+   "url": "https://smithy.io/2.0/quickstart.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Smithy guide — Evolving models",
+   "url": "https://smithy.io/2.0/guides/evolving-models.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Smithy style guide",
+   "url": "https://smithy.io/2.0/guides/style-guide.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Smithy guide — Migrating IDL 1.0 to 2.0",
+   "url": "https://smithy.io/2.0/guides/migrating-idl-1-to-2.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "AWS Developer Tools Blog — Introducing Smithy IDL 2.0",
+   "url": "https://aws.amazon.com/blogs/developer/introducing-smithy-idl-2-0/",
+   "scope": "section",
+   "authority": "vendor",
+   "year": 2022,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Smithy",
+   "url": "https://pldb.io/concepts/smithy.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

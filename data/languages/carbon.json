@@ -1,0 +1,47 @@
+{
+ "id": "carbon",
+ "name": "Carbon",
+ "aliases": ["Carbon Language"],
+ "categories": ["general-purpose", "systems"],
+ "paradigms": ["imperative", "object-oriented", "generic"],
+ "typing": ["static", "strong", "nominal", "inferred-local"],
+ "first_appeared": 2022,
+ "designers": ["Chandler Carruth", "Google"],
+ "summary": "Experimental successor language to C++ started at Google, designed for bidirectional interoperability with existing C++ code, checked generics, a modern package/library model and an open evolution process; still pre-1.0.",
+ "status": "experimental",
+ "defined_by": ["community-specification", "reference-implementation"],
+ "file_extensions": [".carbon"],
+ "homepage": "https://github.com/carbon-language/carbon-lang",
+ "influenced_by": ["cpp", "rust", "swift", "go", "kotlin"],
+ "related": [{"id": "cpp", "relation": "family"}],
+ "level_notes": {"1": "No released specification; the design documents in docs/design (each linked to accepted proposals in proposals/) are the evolving language definition.", "0": "The toolchain (lexer, parser, checker to SemIR, LLVM lowering) is under development in carbon-language/carbon-lang/toolchain."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "carbon-language/carbon-lang — design, proposals and toolchain", "url": "https://github.com/carbon-language/carbon-lang", "implementation": "Carbon toolchain", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture", "design-rationale"]},
+  {"level": 0, "kind": "implementation-source", "title": "Carbon toolchain/docs/README.md — toolchain architecture overview", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/toolchain/docs/README.md", "implementation": "Carbon toolchain", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "Carbon toolchain/lex/lex.cpp — lexer", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/toolchain/lex/lex.cpp", "implementation": "Carbon toolchain", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "Carbon toolchain/parse/handle_statement.cpp — statement parsing", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/toolchain/parse/handle_statement.cpp", "implementation": "Carbon toolchain", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "statements"]},
+  {"level": 0, "kind": "implementation-source", "title": "Carbon toolchain/check/check.cpp — semantic checking into SemIR", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/toolchain/check/check.cpp", "implementation": "Carbon toolchain", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "Carbon toolchain/sem_ir/inst_kind.h — SemIR instruction kinds", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/toolchain/sem_ir/inst_kind.h", "implementation": "Carbon toolchain", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["intermediate-representation"]},
+
+  {"level": 1, "kind": "design-document", "title": "Carbon language design overview (docs/design/README.md)", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/README.md", "scope": "whole", "authority": "official", "format": "source-file", "access": "open", "concepts": ["program-structure"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Lexical conventions", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/lexical_conventions/README.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexical-structure"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Comments", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/lexical_conventions/comments.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Conditionals", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/control_flow/conditionals.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Loops", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/control_flow/loops.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["loops"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Pattern matching", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/pattern_matching.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["pattern-matching"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Functions", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/functions.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Classes", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/classes.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["classes", "inheritance"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Generics overview (checked generics, interfaces)", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/generics/overview.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["generics", "interfaces-protocols"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Sum types", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/sum_types.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["algebraic-data-types"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Tuples", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/tuples.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["tuples"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Code and name organization (packages, libraries)", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/code_and_name_organization/README.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["packages", "modules", "imports"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon design — Bidirectional interoperability with C++", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/design/interoperability/README.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interoperability", "ffi"]},
+  {"level": 1, "kind": "design-document", "title": "Carbon goals", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/project/goals.md", "scope": "whole", "authority": "official", "format": "source-file", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 1, "kind": "proposal-index", "title": "Carbon proposals (proposals/README.md)", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/proposals/README.md", "scope": "whole", "authority": "official", "format": "source-file", "access": "open", "concepts": ["language-evolution"]},
+
+  {"level": 2, "kind": "guide", "title": "Carbon evolution process", "url": "https://github.com/carbon-language/carbon-lang/blob/trunk/docs/project/evolution.md", "scope": "whole", "authority": "official", "format": "source-file", "access": "open", "concepts": ["language-evolution"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Carbon (programming language)", "url": "https://en.wikipedia.org/wiki/Carbon_(programming_language)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Carbon", "url": "https://pldb.io/concepts/carbon.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

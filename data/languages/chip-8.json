@@ -1,0 +1,37 @@
+{
+ "id": "chip-8",
+ "name": "CHIP-8",
+ "aliases": ["CHIP8", "SUPER-CHIP", "XO-CHIP"],
+ "categories": ["bytecode", "abstract-machine", "historical"],
+ "paradigms": ["imperative"],
+ "typing": ["untyped"],
+ "first_appeared": 1977,
+ "designers": ["Joseph Weisbecker"],
+ "summary": "Interpreted 16-bit-instruction virtual machine designed by Joseph Weisbecker for the RCA COSMAC VIP to make video games easy to write; it has 16 8-bit registers, an index register, a 64x32 monochrome display drawn with XOR sprites, timers and a hex keypad. Its many later variants (SUPER-CHIP, XO-CHIP) make it a classic first emulator project.",
+ "status": "maintained",
+ "defined_by": ["vendor-specification", "community-specification"],
+ "file_extensions": [".ch8", ".8o"],
+ "homepage": "https://chip-8.github.io/links/",
+ "influenced_by": [],
+ "related": [{"id": "tal-uxn", "relation": "family"}],
+ "level_notes": {"0": "The original interpreter is 512 bytes of RCA 1802 code in the VIP ROM; modern reference behaviour is captured by Octo (assembler and emulator) and community test ROM suites.", "1": "The 1978 COSMAC VIP Instruction Manual documents the original instruction set; Cowgod's technical reference and the Octo manual are the de facto modern specifications, with known quirk differences among variants.", "3": "Wikipedia and PLDB."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "Octo — js/emulator.js — CHIP-8/SUPER-CHIP/XO-CHIP emulator", "url": "https://github.com/JohnEarnest/Octo/blob/gh-pages/js/emulator.js", "implementation": "Octo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "Octo — js/compiler.js — Octo assembly language compiler", "url": "https://github.com/JohnEarnest/Octo/blob/gh-pages/js/compiler.js", "implementation": "Octo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "code-generation-backend", "macros"]},
+  {"level": 0, "kind": "conformance-tests", "title": "Timendus CHIP-8 test suite", "url": "https://github.com/Timendus/chip8-test-suite/blob/main/README.md", "implementation": "chip8-test-suite", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["testing"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "RCA COSMAC VIP Instruction Manual (1978) — includes original CHIP-8 description", "url": "http://bitsavers.org/components/rca/cosmac/COSMAC_VIP_Instruction_Manual_1978.pdf", "scope": "whole", "authority": "vendor", "authors": ["Joseph Weisbecker"], "year": 1978, "format": "pdf", "access": "open", "concepts": ["instruction-set", "history"]},
+  {"level": 1, "kind": "reference-manual", "title": "Original VIP CHIP-8 documentation (transcription)", "url": "https://chip8kb.gulrak.net/reference/resources/original-vip-chip8-documentation/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cowgod's CHIP-8 Technical Reference v1.0", "url": "http://devernay.free.fr/hacks/chip8/C8TECH10.HTM", "scope": "whole", "authority": "community", "authors": ["Thomas P. Greene"], "year": 1997, "format": "html", "access": "open", "concepts": ["instruction-set", "virtual-machine"]},
+  {"level": 1, "kind": "reference-manual", "title": "Octo manual (Octo assembly language for CHIP-8)", "url": "https://johnearnest.github.io/Octo/docs/Manual.html", "implementation": "Octo", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["assembler-directives", "macros", "grammar"]},
+  {"level": 1, "kind": "specification", "title": "CHIP-8 extensions and compatibility (variants and quirks)", "url": "https://chip-8.github.io/extensions/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["versioning-compatibility", "comparison"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Tobias V. Langhoff — Guide to making a CHIP-8 emulator", "url": "https://tobiasvl.github.io/blog/write-a-chip-8-emulator/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["interpreter"]},
+  {"level": 2, "kind": "history", "title": "Laurence Scotford — CHIP-8 on the COSMAC VIP (series analysing the original interpreter)", "url": "https://www.laurencescotford.net/2020/07/25/chip-8-on-the-cosmac-vip-index/", "scope": "whole", "authority": "community", "year": 2020, "format": "html", "access": "open", "concepts": ["history", "interpreter"]},
+  {"level": 2, "kind": "interactive", "title": "Octo — online CHIP-8 IDE", "url": "https://johnearnest.github.io/Octo/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 3, "kind": "curated-list", "title": "CHIP-8 research links", "url": "https://chip-8.github.io/links/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — CHIP-8", "url": "https://en.wikipedia.org/wiki/CHIP-8", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — CHIP-8", "url": "https://pldb.io/concepts/chip-8.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

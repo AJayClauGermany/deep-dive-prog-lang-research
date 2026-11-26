@@ -1,0 +1,482 @@
+{
+ "id": "gfm",
+ "name": "GitHub Flavored Markdown",
+ "aliases": [
+  "GFM"
+ ],
+ "categories": [
+  "markup"
+ ],
+ "paradigms": [
+  "declarative",
+  "markup"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "GitHub"
+ ],
+ "summary": "The Markdown dialect used on GitHub: since 2017 formally specified as a strict superset of CommonMark adding tables, task list items, strikethrough, extended autolinks and a raw-HTML tag filter, implemented by cmark-gfm. github.com additionally renders mentions, issue references, math and diagrams.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "GFM Spec 0.29-gfm"
+ ],
+ "file_extensions": [
+  ".md"
+ ],
+ "homepage": "https://github.github.com/gfm/",
+ "influenced_by": [
+  "commonmark",
+  "markdown"
+ ],
+ "related": [
+  {
+   "id": "commonmark",
+   "relation": "superset-of"
+  },
+  {
+   "id": "markdown",
+   "relation": "dialect-of"
+  },
+  {
+   "id": "html",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "0": "cmark-gfm is GitHub's reference implementation; the GFM spec examples are its tests.",
+  "1": "The GFM spec covers the syntax; github.com-specific rendering (mentions, math, Mermaid, alerts) is only described in GitHub Docs.",
+  "3": "PLDB has no separate GFM entry."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "github/cmark-gfm — GitHub's fork of cmark with the GFM extensions",
+   "url": "https://github.com/github/cmark-gfm",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark-gfm src/syntax_extension.h — syntax extension API",
+   "url": "https://github.com/github/cmark-gfm/blob/master/src/syntax_extension.h",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "macros"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark-gfm extensions/table.c — tables extension",
+   "url": "https://github.com/github/cmark-gfm/blob/master/extensions/table.c",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark-gfm extensions/strikethrough.c — strikethrough extension",
+   "url": "https://github.com/github/cmark-gfm/blob/master/extensions/strikethrough.c",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark-gfm extensions/autolink.c — extended autolinks (www., bare URLs, emails)",
+   "url": "https://github.com/github/cmark-gfm/blob/master/extensions/autolink.c",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark-gfm extensions/tagfilter.c — disallowed raw HTML filter",
+   "url": "https://github.com/github/cmark-gfm/blob/master/extensions/tagfilter.c",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cmark-gfm extensions/tasklist.c — task list items",
+   "url": "https://github.com/github/cmark-gfm/blob/master/extensions/tasklist.c",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "cmark-gfm test/spec.txt — GFM spec with examples (conformance tests)",
+   "url": "https://github.com/github/cmark-gfm/blob/master/test/spec.txt",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "cmark-gfm test/extensions.txt — additional extension tests",
+   "url": "https://github.com/github/cmark-gfm/blob/master/test/extensions.txt",
+   "authority": "vendor",
+   "implementation": "cmark-gfm",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "micromark-extension-gfm-table dev/lib/syntax.js — GFM tables as a micromark state machine",
+   "url": "https://github.com/micromark/micromark-extension-gfm-table/blob/main/dev/lib/syntax.js",
+   "authority": "community",
+   "implementation": "micromark",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "automata",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GitHub Flavored Markdown Spec",
+   "url": "https://github.github.com/gfm/",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §1.1 What is GitHub Flavored Markdown? (strict superset of CommonMark)",
+   "url": "https://github.github.com/gfm/#what-is-github-flavored-markdown-",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §4.10 Tables (extension)",
+   "url": "https://github.github.com/gfm/#tables-extension-",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §5.3 Task list items (extension)",
+   "url": "https://github.github.com/gfm/#task-list-items-extension-",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §6.5 Strikethrough (extension)",
+   "url": "https://github.github.com/gfm/#strikethrough-extension-",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "styling-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §6.9 Autolinks (extension)",
+   "url": "https://github.github.com/gfm/#autolinks-extension-",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §6.11 Disallowed raw HTML (extension)",
+   "url": "https://github.github.com/gfm/#disallowed-raw-html-extension-",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §6.1 Backslash escapes",
+   "url": "https://github.github.com/gfm/#backslash-escapes",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §4.7 Link reference definitions",
+   "url": "https://github.github.com/gfm/#link-reference-definitions",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GFM Spec — §4.5 Fenced code blocks",
+   "url": "https://github.github.com/gfm/#fenced-code-blocks",
+   "authority": "vendor",
+   "version": "0.29-gfm",
+   "year": 2019,
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GitHub Docs — Basic writing and formatting syntax",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GitHub Docs — Organizing information with tables",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GitHub Docs — Creating and highlighting code blocks",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GitHub Docs — Writing mathematical expressions",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GitHub Docs — Autolinked references and URLs (issues, commits, mentions)",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GitHub Docs — Creating diagrams (Mermaid, GeoJSON, STL in fenced blocks)",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams",
+   "authority": "vendor",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "GitHub Docs — Quickstart for writing on GitHub",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github",
+   "authority": "vendor",
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "GitHub Blog — A formal spec for GitHub Flavored Markdown (2017)",
+   "url": "https://github.blog/engineering/user-experience/a-formal-spec-for-github-markdown/",
+   "authority": "vendor",
+   "year": 2017,
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "standardization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "The Markdown Guide — Extended syntax (GFM tables, task lists, strikethrough)",
+   "url": "https://www.markdownguide.org/extended-syntax/",
+   "authority": "community",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Markdown § Variants (GitHub Flavored Markdown)",
+   "url": "https://en.wikipedia.org/wiki/Markdown#Variants",
+   "scope": "section",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  }
+ ]
+}

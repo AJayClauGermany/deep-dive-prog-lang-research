@@ -1,0 +1,2192 @@
+{
+ "id": "graphql",
+ "name": "GraphQL",
+ "categories": [
+  "query",
+  "schema-idl",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "nominal"
+ ],
+ "first_appeared": 2015,
+ "designers": [
+  "Lee Byron",
+  "Nick Schrock",
+  "Dan Schafer"
+ ],
+ "summary": "Query language and type-system/schema definition language for APIs, created at Facebook in 2012 and open-sourced in 2015; clients send hierarchical selection sets that are validated against a typed schema and executed by resolvers. Maintained by the GraphQL Foundation (Linux Foundation).",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "GraphQL Specification, September 2025 Edition"
+ ],
+ "file_extensions": [
+  ".graphql",
+  ".gql",
+  ".graphqls"
+ ],
+ "homepage": "https://graphql.org/",
+ "related": [
+  {
+   "id": "json",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The GraphQL Specification (spec.graphql.org) is normative, released in dated editions (July2015, October2015, October2016, June2018, October2021, September2025) with a rolling working draft; changes go through the RFC process of the GraphQL Working Group. Deep links point at the September 2025 edition. GraphQL-over-HTTP is a separate draft spec.",
+  "0": "graphql-js is the reference implementation that tracks the spec (branch 17.x.x linked; 16.x.x is the stable line). Independent implementations: graphql-java, graphql-core (Python port of graphql-js), graphql-ruby, Juniper and async-graphql (Rust), gqlgen (Go), GraphQL.NET.",
+  "2": "graphql.org/learn is the official tutorial; formal analyses: Hartig & Pérez (semantics and complexity) and the GraphCoQL mechanisation in Coq."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "graphql-js — JavaScript reference implementation of GraphQL",
+   "url": "https://github.com/graphql/graphql-js",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — language/lexer.ts — lexer (tokens, block strings, escapes)",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/language/lexer.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — language/parser.ts — recursive-descent parser for executable and SDL documents",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/language/parser.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — language/ast.ts — AST node types",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/language/ast.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — language/blockString.ts — block string dedent algorithm",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/language/blockString.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "literals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — validation/specifiedRules.ts — list of spec validation rules",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/validation/specifiedRules.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — validation/rules/OverlappingFieldsCanBeMergedRule.ts — field-selection merging rule",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/validation/rules/OverlappingFieldsCanBeMergedRule.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — validation/rules/NoFragmentCyclesRule.ts — fragment cycle detection",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/validation/rules/NoFragmentCyclesRule.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — execution/execute.ts — ExecuteRequest / operation execution entry points",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/execution/execute.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — execution/Executor.ts — executor: field resolution, completion, null propagation",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/execution/Executor.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "null-semantics",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — execution/collectFields.ts — CollectFields algorithm (fragments, @skip/@include)",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/execution/collectFields.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — execution/values.ts — coercion of variable and argument values",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/execution/values.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "variables"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — type/definition.ts — type system: object, interface, union, enum, input, list, non-null",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/type/definition.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — type/scalars.ts — built-in scalars Int, Float, String, Boolean, ID",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/type/scalars.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — type/directives.ts — built-in directives (@skip, @include, @deprecated, @specifiedBy, @oneOf)",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/type/directives.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — type/introspection.ts — introspection types __Schema, __Type, __Field",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/type/introspection.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "reflection"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — type/validate.ts — schema validation",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/type/validate.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — utilities/buildASTSchema.ts — building a schema from SDL",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/utilities/buildASTSchema.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — utilities/extendSchema.ts — type system extensions",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/utilities/extendSchema.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-js — utilities/coerceInputValue.ts — input coercion",
+   "url": "https://github.com/graphql/graphql-js/blob/17.x.x/src/utilities/coerceInputValue.ts",
+   "implementation": "graphql-js (reference implementation)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "graphql-java — GraphQL implementation for Java",
+   "url": "https://github.com/graphql-java/graphql-java",
+   "implementation": "graphql-java",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "graphql-java — GraphqlCommon.g4 ANTLR grammar (shared lexical rules and values)",
+   "url": "https://github.com/graphql-java/graphql-java/blob/master/src/main/antlr/GraphqlCommon.g4",
+   "implementation": "graphql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "graphql-java — GraphqlOperation.g4 ANTLR grammar for operations",
+   "url": "https://github.com/graphql-java/graphql-java/blob/master/src/main/antlr/GraphqlOperation.g4",
+   "implementation": "graphql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "graphql-java — GraphqlSDL.g4 ANTLR grammar for schema definition language",
+   "url": "https://github.com/graphql-java/graphql-java/blob/master/src/main/antlr/GraphqlSDL.g4",
+   "implementation": "graphql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-java — ExecutionStrategy.java (field resolution and completion)",
+   "url": "https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/execution/ExecutionStrategy.java",
+   "implementation": "graphql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-java — Validator.java",
+   "url": "https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/validation/Validator.java",
+   "implementation": "graphql-java",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "graphql-core — Python port of graphql-js",
+   "url": "https://github.com/graphql-python/graphql-core",
+   "implementation": "graphql-core",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-core — language/parser.py",
+   "url": "https://github.com/graphql-python/graphql-core/blob/main/src/graphql/language/parser.py",
+   "implementation": "graphql-core",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "graphql-ruby — Ruby implementation",
+   "url": "https://github.com/rmosolgo/graphql-ruby",
+   "implementation": "graphql-ruby",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-ruby — language/lexer.rb",
+   "url": "https://github.com/rmosolgo/graphql-ruby/blob/master/lib/graphql/language/lexer.rb",
+   "implementation": "graphql-ruby",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "graphql-ruby — language/parser.rb (hand-written parser)",
+   "url": "https://github.com/rmosolgo/graphql-ruby/blob/master/lib/graphql/language/parser.rb",
+   "implementation": "graphql-ruby",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Juniper — GraphQL server library for Rust",
+   "url": "https://github.com/graphql-rust/juniper",
+   "implementation": "Juniper",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "async-graphql — graphql.pest PEG grammar",
+   "url": "https://github.com/async-graphql/async-graphql/blob/master/parser/src/graphql.pest",
+   "implementation": "async-graphql",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "gqlgen — schema-first GraphQL server generator for Go",
+   "url": "https://github.com/99designs/gqlgen",
+   "implementation": "gqlgen",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "GraphQL.NET — .NET implementation",
+   "url": "https://github.com/graphql-dotnet/graphql-dotnet",
+   "implementation": "GraphQL.NET",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "GraphiQL — official in-browser GraphQL IDE",
+   "url": "https://github.com/graphql/graphiql",
+   "implementation": "GraphiQL",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification — September 2025 Edition",
+   "url": "https://spec.graphql.org/September2025/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "GraphQL Specification — Working Draft",
+   "url": "https://spec.graphql.org/draft/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "draft",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification — October 2021 Edition",
+   "url": "https://spec.graphql.org/October2021/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2021,
+   "version": "October2021",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification — June 2018 Edition",
+   "url": "https://spec.graphql.org/June2018/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2018,
+   "version": "June2018",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification — July 2015 Working Draft (first public release)",
+   "url": "https://spec.graphql.org/July2015/",
+   "scope": "whole",
+   "authority": "designer",
+   "year": 2015,
+   "version": "July2015",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 1 Overview (design principles)",
+   "url": "https://spec.graphql.org/September2025/#sec-Overview",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2 Language",
+   "url": "https://spec.graphql.org/September2025/#sec-Language",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.1 Source Text",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Source-Text",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.1.x White Space",
+   "url": "https://spec.graphql.org/September2025/#sec-White-Space",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.1.x Comments",
+   "url": "https://spec.graphql.org/September2025/#sec-Comments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.1.x Insignificant Commas",
+   "url": "https://spec.graphql.org/September2025/#sec-Insignificant-Commas",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.1.x Punctuators",
+   "url": "https://spec.graphql.org/September2025/#sec-Punctuators",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.1.x Names",
+   "url": "https://spec.graphql.org/September2025/#sec-Names",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.2 Document",
+   "url": "https://spec.graphql.org/September2025/#sec-Document",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.3 Operations (query, mutation, subscription)",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Operations",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.4 Selection Sets",
+   "url": "https://spec.graphql.org/September2025/#sec-Selection-Sets",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.5 Fields",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Fields",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.6 Arguments",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Arguments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.7 Field Alias",
+   "url": "https://spec.graphql.org/September2025/#sec-Field-Alias",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.8 Fragments",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Fragments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.8.2 Inline Fragments and type conditions",
+   "url": "https://spec.graphql.org/September2025/#sec-Inline-Fragments",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9 Input Values",
+   "url": "https://spec.graphql.org/September2025/#sec-Input-Values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9.1 Int Value",
+   "url": "https://spec.graphql.org/September2025/#sec-Int-Value",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9.2 Float Value",
+   "url": "https://spec.graphql.org/September2025/#sec-Float-Value",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9.4 String Value (escapes, block strings)",
+   "url": "https://spec.graphql.org/September2025/#sec-String-Value",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9.5 Null Value",
+   "url": "https://spec.graphql.org/September2025/#sec-Null-Value",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9.7 List Value",
+   "url": "https://spec.graphql.org/September2025/#sec-List-Value",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.9.8 Input Object Values",
+   "url": "https://spec.graphql.org/September2025/#sec-Input-Object-Values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.10 Variables",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Variables",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.11 Type References",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-References",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.12 Directives",
+   "url": "https://spec.graphql.org/September2025/#sec-Language.Directives",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 2.13 Schema Coordinates",
+   "url": "https://spec.graphql.org/September2025/#sec-Schema-Coordinates",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3 Type System (SDL)",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.2 Descriptions",
+   "url": "https://spec.graphql.org/September2025/#sec-Descriptions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.3 Schema",
+   "url": "https://spec.graphql.org/September2025/#sec-Schema",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.4 Types (named, input/output, wrapping)",
+   "url": "https://spec.graphql.org/September2025/#sec-Types",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.5 Scalars (Int, Float, String, Boolean, ID, custom)",
+   "url": "https://spec.graphql.org/September2025/#sec-Scalars",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.6 Objects",
+   "url": "https://spec.graphql.org/September2025/#sec-Objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.7 Interfaces",
+   "url": "https://spec.graphql.org/September2025/#sec-Interfaces",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "subtyping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.8 Unions",
+   "url": "https://spec.graphql.org/September2025/#sec-Unions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.9 Enums",
+   "url": "https://spec.graphql.org/September2025/#sec-Enums",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.10 Input Objects",
+   "url": "https://spec.graphql.org/September2025/#sec-Input-Objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.10.1 OneOf Input Objects",
+   "url": "https://spec.graphql.org/September2025/#sec-OneOf-Input-Objects",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.11 List",
+   "url": "https://spec.graphql.org/September2025/#sec-List",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.12 Non-Null",
+   "url": "https://spec.graphql.org/September2025/#sec-Non-Null",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.13 Directives (definitions, @skip, @include, @deprecated)",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System.Directives",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 3.1 Type System Extensions",
+   "url": "https://spec.graphql.org/September2025/#sec-Type-System-Extensions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 4 Introspection",
+   "url": "https://spec.graphql.org/September2025/#sec-Introspection",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 5 Validation",
+   "url": "https://spec.graphql.org/September2025/#sec-Validation",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 5.5.2.2 Fragment spreads must not form cycles",
+   "url": "https://spec.graphql.org/September2025/#sec-Fragment-Spreads-Must-Not-Form-Cycles",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6 Execution",
+   "url": "https://spec.graphql.org/September2025/#sec-Execution",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.1.2 Coercing Variable Values",
+   "url": "https://spec.graphql.org/September2025/#sec-Coercing-Variable-Values",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.2.2 Mutation (serial execution)",
+   "url": "https://spec.graphql.org/September2025/#sec-Mutation",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.2.3 Subscription (event streams)",
+   "url": "https://spec.graphql.org/September2025/#sec-Subscription",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "async-await",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.3.2 Field Collection",
+   "url": "https://spec.graphql.org/September2025/#sec-Field-Collection",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.3 Normal and Serial Execution",
+   "url": "https://spec.graphql.org/September2025/#sec-Normal-and-Serial-Execution",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "parallelism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.4.3 Value Completion",
+   "url": "https://spec.graphql.org/September2025/#sec-Value-Completion",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 6.4.4 Handling Execution Errors (null propagation)",
+   "url": "https://spec.graphql.org/September2025/#sec-Handling-Execution-Errors",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 7 Response",
+   "url": "https://spec.graphql.org/September2025/#sec-Response",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — 7.1.2 Errors",
+   "url": "https://spec.graphql.org/September2025/#sec-Errors",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — Appendix: Grammar Summary",
+   "url": "https://spec.graphql.org/September2025/#sec-Appendix-Grammar-Summary",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Specification (Sep 2025) — Appendix: Notation Conventions",
+   "url": "https://spec.graphql.org/September2025/#sec-Appendix-Notation-Conventions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2025,
+   "version": "September2025",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL over HTTP — working draft specification",
+   "url": "https://graphql.github.io/graphql-over-http/draft/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "draft",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "GraphQL Cursor Connections Specification (Relay)",
+   "url": "https://relay.dev/graphql/connections.htm",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "GraphQL Specification — contributing and RFC process (CONTRIBUTING.md)",
+   "url": "https://github.com/graphql/graphql-spec/blob/main/CONTRIBUTING.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "GraphQL Working Group — RFC documents",
+   "url": "https://github.com/graphql/graphql-wg/blob/main/rfcs/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "GraphQL: A data query language (Facebook Engineering announcement)",
+   "url": "https://engineering.fb.com/2015/09/14/core-infra/graphql-a-data-query-language/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Lee Byron"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Semantics and Complexity of GraphQL (WWW 2018)",
+   "url": "http://olafhartig.de/files/HartigPerez_WWW2018_Preprint.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Olaf Hartig",
+    "Jorge Pérez"
+   ],
+   "year": 2018,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "complexity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "A Mechanized Formalization of GraphQL (GraphCoQL, CPP 2020)",
+   "url": "https://hal.archives-ouvertes.fr/hal-02422532",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Tomás Díaz",
+    "Federico Olmedo",
+    "Éric Tanter"
+   ],
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL (official introduction)",
+   "url": "https://graphql.org/learn/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: fields",
+   "url": "https://graphql.org/learn/queries/#fields",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: arguments",
+   "url": "https://graphql.org/learn/queries/#arguments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: aliases",
+   "url": "https://graphql.org/learn/queries/#aliases",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: variables",
+   "url": "https://graphql.org/learn/queries/#variables",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: fragments",
+   "url": "https://graphql.org/learn/queries/#fragments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: inline fragments",
+   "url": "https://graphql.org/learn/queries/#inline-fragments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Queries: directives",
+   "url": "https://graphql.org/learn/queries/#directives",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: the type language (SDL)",
+   "url": "https://graphql.org/learn/schema/#type-language",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: scalar types",
+   "url": "https://graphql.org/learn/schema/#scalar-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: enum types",
+   "url": "https://graphql.org/learn/schema/#enum-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: non-null modifier",
+   "url": "https://graphql.org/learn/schema/#non-null",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: interfaces",
+   "url": "https://graphql.org/learn/schema/#interface-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: unions",
+   "url": "https://graphql.org/learn/schema/#union-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: input object types",
+   "url": "https://graphql.org/learn/schema/#input-object-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Schemas and Types: comments and descriptions",
+   "url": "https://graphql.org/learn/schema/#comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Mutations",
+   "url": "https://graphql.org/learn/mutations/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Subscriptions",
+   "url": "https://graphql.org/learn/subscriptions/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "async-await"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Validation",
+   "url": "https://graphql.org/learn/validation/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Execution and resolvers",
+   "url": "https://graphql.org/learn/execution/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Response format",
+   "url": "https://graphql.org/learn/response/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Introspection",
+   "url": "https://graphql.org/learn/introspection/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "reflection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Error handling",
+   "url": "https://graphql.org/learn/error-handling/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Pagination",
+   "url": "https://graphql.org/learn/pagination/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Global object identification",
+   "url": "https://graphql.org/learn/global-object-identification/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Performance",
+   "url": "https://graphql.org/learn/performance/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Security",
+   "url": "https://graphql.org/learn/security/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn GraphQL — Serving over HTTP",
+   "url": "https://graphql.org/learn/serving-over-http/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn GraphQL — Schema versioning and evolution",
+   "url": "https://graphql.org/learn/governance-versioning/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Learn GraphQL — Thinking in graphs",
+   "url": "https://graphql.org/learn/thinking-in-graphs/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GraphQL Best Practices (graphql.org)",
+   "url": "https://graphql.org/learn/best-practices/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "GraphQL FAQ (graphql.org)",
+   "url": "https://graphql.org/faq/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "How to GraphQL — fullstack tutorial",
+   "url": "https://www.howtographql.com/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Principled GraphQL (Apollo)",
+   "url": "https://principledgraphql.com/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "graphql-js documentation",
+   "url": "https://www.graphql-js.org/docs/",
+   "implementation": "graphql-js",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "An Initial Analysis of Facebook's GraphQL Language (AMW 2017)",
+   "url": "https://ceur-ws.org/Vol-1912/paper11.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Olaf Hartig",
+    "Jorge Pérez"
+   ],
+   "year": 2017,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "A Principled Approach to GraphQL Query Cost Analysis (ESEC/FSE 2020)",
+   "url": "https://arxiv.org/abs/2009.05632",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Alan Cha",
+    "Erik Wittern",
+    "Guillaume Baudart",
+    "James C. Davis",
+    "Louis Mandel",
+    "Jim A. Laredo"
+   ],
+   "year": 2020,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "complexity",
+    "performance"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "An Empirical Study of GraphQL Schemas (ICSOC 2019)",
+   "url": "https://arxiv.org/abs/1907.13012",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Erik Wittern",
+    "Alan Cha",
+    "James C. Davis",
+    "Guillaume Baudart",
+    "Louis Mandel"
+   ],
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "GraphQL: A Data Query Language (graphql.org blog, 2015)",
+   "url": "https://graphql.org/blog/2015-09-14-graphql/",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Lee Byron"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — GraphQL",
+   "url": "https://en.wikipedia.org/wiki/GraphQL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — GraphQL",
+   "url": "https://pldb.io/concepts/graphql.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "graphql.org — Tools and Libraries (implementations by language)",
+   "url": "https://graphql.org/community/tools-and-libraries/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "curated-list",
+   "title": "awesome-graphql",
+   "url": "https://github.com/chentsulin/awesome-graphql",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  }
+ ]
+}

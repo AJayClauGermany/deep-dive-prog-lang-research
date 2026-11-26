@@ -1,0 +1,365 @@
+{
+ "id": "xquery-update",
+ "name": "XQuery Update Facility",
+ "aliases": [
+  "XQUF",
+  "XQuery Update"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional"
+ ],
+ "typing": [
+  "static",
+  "dynamic",
+  "strong"
+ ],
+ "first_appeared": 2008,
+ "designers": [
+  "W3C XML Query Working Group",
+  "Don Chamberlin",
+  "Michael Dyck",
+  "Daniela Florescu",
+  "Jim Melton",
+  "Jonathan Robie",
+  "Jérôme Siméon"
+ ],
+ "summary": "W3C extension of XQuery with updating expressions (insert, delete, replace, rename) and the copy-modify (transform) expression; updates are collected into a pending update list and applied atomically at the end of a snapshot, keeping query evaluation side-effect free.",
+ "status": "maintained",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C XQuery Update Facility 1.0 (2011)",
+  "W3C XQuery Update Facility 3.0 (Working Group Note, 2017)"
+ ],
+ "homepage": "https://www.w3.org/TR/xquery-update-30/",
+ "influenced_by": [
+  "xquery"
+ ],
+ "related": [
+  {
+   "id": "xquery",
+   "relation": "superset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "XQUF 1.0 is a W3C Recommendation (with formal static typing rules); 3.0 aligns it with XQuery 3.0 and was published as a Working Group Note. www.w3.org returns a Cloudflare 403 to the link checker; anchors were verified with a plain curl fetch.",
+  "0": "BaseX implements XQUF 3.0 (updating expressions in up/expr, pending update list in up/Updates.java); Saxon-EE and Zorba also implement it."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — up/expr/Insert.java (insert expression)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/expr/Insert.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — up/expr/Delete.java (delete expression)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/expr/Delete.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — up/expr/Replace.java (replace / replace value of)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/expr/Replace.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — up/expr/Transform.java (copy-modify-return)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/expr/Transform.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — up/Updates.java (pending update list, snapshot application)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/Updates.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "BaseX — up/primitives/node/InsertInto.java (update primitive)",
+   "url": "https://github.com/BaseXdb/basex/blob/main/basex-core/src/main/java/org/basex/query/up/primitives/node/InsertInto.java",
+   "implementation": "BaseX",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 (W3C Working Group Note)",
+   "url": "https://www.w3.org/TR/xquery-update-30/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 2 Processing Model",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-processing-model",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 2.1 Pending Update Lists",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-pending-update-lists",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 2.3 Updating Functions",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-updating-functions",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "purity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 5.1 Insert",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-insert",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 5.2 Delete",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-delete",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 5.3 Replace",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-replace",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 5.4 Rename",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-rename",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — 5.6 Copy Modify (transform)",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-copy-modify",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "value-reference-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — upd:applyUpdates routine",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-upd-apply-updates",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 3.0 — A EBNF grammar",
+   "url": "https://www.w3.org/TR/xquery-update-30/#id-grammar",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2017,
+   "version": "3.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery Update Facility 1.0 (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/xquery-update-10/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2011,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery Update Facility 1.0 — 4 Static Typing (formal rules)",
+   "url": "https://www.w3.org/TR/xquery-update-10/#id-update-static",
+   "scope": "section",
+   "authority": "standards-body",
+   "year": 2011,
+   "version": "1.0",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "BaseX documentation — Updates",
+   "url": "https://docs.basex.org/main/Updates",
+   "implementation": "BaseX",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — XQuery Update Facility",
+   "url": "https://en.wikipedia.org/wiki/XQuery_Update_Facility",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

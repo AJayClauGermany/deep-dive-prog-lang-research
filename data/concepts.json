@@ -1,0 +1,2739 @@
+{
+ "categories": [
+  {
+   "id": "meta",
+   "description": "About the language: history, process, ecosystem"
+  },
+  {
+   "id": "syntax",
+   "description": "Lexical and syntactic structure"
+  },
+  {
+   "id": "bindings",
+   "description": "Names, variables and scope"
+  },
+  {
+   "id": "types",
+   "description": "Types and data"
+  },
+  {
+   "id": "control",
+   "description": "Control flow and evaluation"
+  },
+  {
+   "id": "functions",
+   "description": "Functions and abstraction"
+  },
+  {
+   "id": "oop",
+   "description": "Object orientation"
+  },
+  {
+   "id": "modules",
+   "description": "Modularity and program organisation"
+  },
+  {
+   "id": "memory",
+   "description": "Memory, safety and low-level semantics"
+  },
+  {
+   "id": "concurrency",
+   "description": "Concurrency and parallelism"
+  },
+  {
+   "id": "metaprogramming",
+   "description": "Metaprogramming"
+  },
+  {
+   "id": "io",
+   "description": "I/O, environment and interop"
+  },
+  {
+   "id": "implementation",
+   "description": "How implementations work (mostly Level 0)"
+  },
+  {
+   "id": "theory",
+   "description": "Formal foundations and models of computation"
+  },
+  {
+   "id": "data",
+   "description": "Data, markup and configuration languages"
+  },
+  {
+   "id": "query",
+   "description": "Query and database languages"
+  },
+  {
+   "id": "hardware",
+   "description": "Hardware, GPU, quantum and contract languages"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "hello-world",
+   "name": "Hello world / getting started",
+   "category": "meta",
+   "aliases": [
+    "first program",
+    "installation",
+    "quick start"
+   ],
+   "description": "Minimal complete program and how to run it."
+  },
+  {
+   "id": "history",
+   "name": "History and origins",
+   "category": "meta",
+   "aliases": [
+    "genesis",
+    "timeline",
+    "retrospectives"
+   ],
+   "description": "How and why the language came to be."
+  },
+  {
+   "id": "design-rationale",
+   "name": "Design goals and rationale",
+   "category": "meta",
+   "aliases": [
+    "philosophy",
+    "design principles",
+    "non-goals"
+   ],
+   "description": "Why the language is designed the way it is."
+  },
+  {
+   "id": "language-evolution",
+   "name": "Language evolution process",
+   "category": "meta",
+   "aliases": [
+    "proposals",
+    "RFC process",
+    "PEP",
+    "JEP",
+    "TC39 stages",
+    "editions"
+   ],
+   "description": "How changes to the language are proposed and adopted."
+  },
+  {
+   "id": "versioning-compatibility",
+   "name": "Versions, editions and compatibility",
+   "category": "meta",
+   "aliases": [
+    "deprecation",
+    "stability guarantees",
+    "dialect differences"
+   ],
+   "description": "Language versions/dialects and what differs between them."
+  },
+  {
+   "id": "standardization",
+   "name": "Standardization and conformance",
+   "category": "meta",
+   "aliases": [
+    "ISO",
+    "ECMA",
+    "conformance levels",
+    "test suites"
+   ],
+   "description": "Formal standard status and conformance requirements."
+  },
+  {
+   "id": "comparison",
+   "name": "Cross-language comparison",
+   "category": "meta",
+   "aliases": [
+    "X for Y programmers",
+    "migration guides",
+    "feature matrices"
+   ],
+   "description": "Material that explicitly compares this language to others."
+  },
+  {
+   "id": "style-conventions",
+   "name": "Style and naming conventions",
+   "category": "meta",
+   "aliases": [
+    "style guide",
+    "formatting",
+    "idioms",
+    "linting"
+   ],
+   "description": "Recommended code style and idiomatic usage."
+  },
+  {
+   "id": "tooling",
+   "name": "Tooling",
+   "category": "meta",
+   "aliases": [
+    "compiler driver",
+    "REPL",
+    "debugger",
+    "formatter",
+    "language server"
+   ],
+   "description": "Tools around the language."
+  },
+  {
+   "id": "testing",
+   "name": "Testing",
+   "category": "meta",
+   "aliases": [
+    "unit tests",
+    "property testing",
+    "doctest"
+   ],
+   "description": "Language/library support for testing code."
+  },
+  {
+   "id": "package-management",
+   "name": "Package management",
+   "category": "meta",
+   "aliases": [
+    "dependencies",
+    "registries",
+    "crates",
+    "npm",
+    "pip"
+   ],
+   "description": "Distributing and depending on third-party code."
+  },
+  {
+   "id": "build-systems",
+   "name": "Build systems",
+   "category": "meta",
+   "aliases": [
+    "compilation model",
+    "build files",
+    "incremental builds"
+   ],
+   "description": "How programs are built."
+  },
+  {
+   "id": "performance",
+   "name": "Performance and benchmarks",
+   "category": "meta",
+   "aliases": [
+    "benchmarks",
+    "cost model",
+    "profiling"
+   ],
+   "description": "Performance characteristics and measurement."
+  },
+  {
+   "id": "lexical-structure",
+   "name": "Lexical structure",
+   "category": "syntax",
+   "aliases": [
+    "tokens",
+    "lexical grammar",
+    "tokenization"
+   ],
+   "description": "Characters to tokens: the lexical grammar."
+  },
+  {
+   "id": "grammar",
+   "name": "Grammar and syntax definition",
+   "category": "syntax",
+   "aliases": [
+    "BNF",
+    "EBNF",
+    "syntax summary",
+    "railroad diagrams"
+   ],
+   "description": "The (context-free) syntax of the language as a whole."
+  },
+  {
+   "id": "comments",
+   "name": "Comments",
+   "category": "syntax",
+   "aliases": [
+    "line comments",
+    "block comments",
+    "doc comments"
+   ],
+   "description": "Comment syntax."
+  },
+  {
+   "id": "documentation-comments",
+   "name": "Documentation comments",
+   "category": "syntax",
+   "aliases": [
+    "docstrings",
+    "javadoc",
+    "rustdoc"
+   ],
+   "description": "Comments/strings processed into API documentation."
+  },
+  {
+   "id": "identifiers",
+   "name": "Identifiers and names",
+   "category": "syntax",
+   "aliases": [
+    "naming rules",
+    "name mangling"
+   ],
+   "description": "What names are legal and how they are written."
+  },
+  {
+   "id": "keywords",
+   "name": "Keywords and reserved words",
+   "category": "syntax",
+   "aliases": [
+    "reserved words",
+    "contextual keywords"
+   ],
+   "description": "Reserved words of the language."
+  },
+  {
+   "id": "literals",
+   "name": "Literals",
+   "category": "syntax",
+   "aliases": [
+    "numeric literals",
+    "string literals",
+    "collection literals"
+   ],
+   "description": "Notation for constant values."
+  },
+  {
+   "id": "whitespace-layout",
+   "name": "Whitespace, indentation and layout",
+   "category": "syntax",
+   "aliases": [
+    "offside rule",
+    "significant whitespace",
+    "semicolon insertion",
+    "line continuation"
+   ],
+   "description": "Role of whitespace, newlines and statement terminators."
+  },
+  {
+   "id": "operators",
+   "name": "Operators",
+   "category": "syntax",
+   "aliases": [
+    "arithmetic",
+    "comparison",
+    "logical",
+    "bitwise operators"
+   ],
+   "description": "Built-in operators and their meaning."
+  },
+  {
+   "id": "operator-precedence",
+   "name": "Operator precedence and associativity",
+   "category": "syntax",
+   "aliases": [
+    "precedence table",
+    "fixity"
+   ],
+   "description": "How operators bind."
+  },
+  {
+   "id": "expressions",
+   "name": "Expressions",
+   "category": "syntax",
+   "aliases": [
+    "expression forms",
+    "expression evaluation"
+   ],
+   "description": "Expression forms in general."
+  },
+  {
+   "id": "statements",
+   "name": "Statements",
+   "category": "syntax",
+   "aliases": [
+    "simple statements",
+    "compound statements",
+    "blocks"
+   ],
+   "description": "Statement forms in general; statement vs expression orientation."
+  },
+  {
+   "id": "preprocessor",
+   "name": "Preprocessing and conditional compilation",
+   "category": "syntax",
+   "aliases": [
+    "#include",
+    "#define",
+    "cfg",
+    "feature flags"
+   ],
+   "description": "Textual/token preprocessing and conditional compilation."
+  },
+  {
+   "id": "source-encoding",
+   "name": "Source text and encoding",
+   "category": "syntax",
+   "aliases": [
+    "character set",
+    "Unicode in source",
+    "line endings"
+   ],
+   "description": "How source files are encoded and interpreted."
+  },
+  {
+   "id": "variables",
+   "name": "Variables and bindings",
+   "category": "bindings",
+   "aliases": [
+    "let",
+    "var",
+    "declarations",
+    "initialization"
+   ],
+   "description": "Introducing and naming values/storage."
+  },
+  {
+   "id": "constants",
+   "name": "Constants and immutability",
+   "category": "bindings",
+   "aliases": [
+    "const",
+    "final",
+    "val",
+    "readonly",
+    "mutability"
+   ],
+   "description": "Immutable bindings and compile-time constants."
+  },
+  {
+   "id": "assignment",
+   "name": "Assignment",
+   "category": "bindings",
+   "aliases": [
+    "mutation",
+    "compound assignment",
+    "multiple assignment"
+   ],
+   "description": "Updating variables and locations."
+  },
+  {
+   "id": "scope",
+   "name": "Scope and name resolution",
+   "category": "bindings",
+   "aliases": [
+    "lexical scope",
+    "dynamic scope",
+    "shadowing",
+    "hoisting",
+    "name lookup"
+   ],
+   "description": "Where names are visible and how they are resolved."
+  },
+  {
+   "id": "destructuring",
+   "name": "Destructuring and unpacking",
+   "category": "bindings",
+   "aliases": [
+    "tuple unpacking",
+    "structured bindings"
+   ],
+   "description": "Binding several names from a compound value."
+  },
+  {
+   "id": "namespaces",
+   "name": "Namespaces",
+   "category": "bindings",
+   "aliases": [
+    "qualified names",
+    "name spaces"
+   ],
+   "description": "Grouping and qualifying names."
+  },
+  {
+   "id": "storage-duration",
+   "name": "Storage duration and object lifetime",
+   "category": "bindings",
+   "aliases": [
+    "static",
+    "automatic",
+    "linkage",
+    "extent"
+   ],
+   "description": "How long objects live and where they are stored."
+  },
+  {
+   "id": "type-system",
+   "name": "Type system overview",
+   "category": "types",
+   "aliases": [
+    "static vs dynamic",
+    "strong vs weak",
+    "type checking"
+   ],
+   "description": "Overall description of the type discipline."
+  },
+  {
+   "id": "primitive-types",
+   "name": "Primitive / built-in types",
+   "category": "types",
+   "aliases": [
+    "scalar types",
+    "basic types"
+   ],
+   "description": "The built-in basic types."
+  },
+  {
+   "id": "integers",
+   "name": "Integers and integer arithmetic",
+   "category": "types",
+   "aliases": [
+    "overflow",
+    "bignum",
+    "fixed-width",
+    "signedness"
+   ],
+   "description": "Integer types and arithmetic behaviour."
+  },
+  {
+   "id": "floating-point",
+   "name": "Floating-point and other numerics",
+   "category": "types",
+   "aliases": [
+    "IEEE 754",
+    "decimal",
+    "rational",
+    "complex"
+   ],
+   "description": "Non-integer numeric types."
+  },
+  {
+   "id": "booleans",
+   "name": "Booleans and truthiness",
+   "category": "types",
+   "aliases": [
+    "bool",
+    "truthy",
+    "falsy"
+   ],
+   "description": "Boolean type and what counts as true."
+  },
+  {
+   "id": "characters",
+   "name": "Characters",
+   "category": "types",
+   "aliases": [
+    "char",
+    "code points",
+    "runes"
+   ],
+   "description": "Character types."
+  },
+  {
+   "id": "strings",
+   "name": "Strings",
+   "category": "types",
+   "aliases": [
+    "string type",
+    "string operations",
+    "text"
+   ],
+   "description": "String types and operations."
+  },
+  {
+   "id": "string-formatting",
+   "name": "String formatting and interpolation",
+   "category": "types",
+   "aliases": [
+    "printf",
+    "f-strings",
+    "template literals",
+    "format"
+   ],
+   "description": "Building strings from values."
+  },
+  {
+   "id": "unicode",
+   "name": "Unicode and text encoding",
+   "category": "types",
+   "aliases": [
+    "UTF-8",
+    "UTF-16",
+    "normalization",
+    "graphemes"
+   ],
+   "description": "Handling of Unicode text."
+  },
+  {
+   "id": "arrays",
+   "name": "Arrays, vectors and slices",
+   "category": "types",
+   "aliases": [
+    "array",
+    "vector",
+    "slice",
+    "list (contiguous)",
+    "indexing"
+   ],
+   "description": "Indexed sequence types."
+  },
+  {
+   "id": "lists",
+   "name": "Lists and sequences",
+   "category": "types",
+   "aliases": [
+    "linked list",
+    "cons",
+    "sequence types"
+   ],
+   "description": "List/sequence types (esp. linked or abstract)."
+  },
+  {
+   "id": "tuples",
+   "name": "Tuples",
+   "category": "types",
+   "aliases": [
+    "product types",
+    "pairs"
+   ],
+   "description": "Fixed-size heterogeneous products."
+  },
+  {
+   "id": "records-structs",
+   "name": "Records and structs",
+   "category": "types",
+   "aliases": [
+    "struct",
+    "record",
+    "object literal",
+    "named fields"
+   ],
+   "description": "Named-field aggregate types."
+  },
+  {
+   "id": "maps-dictionaries",
+   "name": "Maps, dictionaries and tables",
+   "category": "types",
+   "aliases": [
+    "hash",
+    "associative array",
+    "table",
+    "object-as-map"
+   ],
+   "description": "Key-value collections."
+  },
+  {
+   "id": "sets",
+   "name": "Sets",
+   "category": "types",
+   "aliases": [
+    "hash set",
+    "set operations"
+   ],
+   "description": "Set collections."
+  },
+  {
+   "id": "ranges",
+   "name": "Ranges and intervals",
+   "category": "types",
+   "aliases": [
+    "range expressions",
+    "slicing syntax"
+   ],
+   "description": "Range values and slicing notation."
+  },
+  {
+   "id": "enums",
+   "name": "Enumerations",
+   "category": "types",
+   "aliases": [
+    "enum",
+    "enumerated type"
+   ],
+   "description": "Enumerated types."
+  },
+  {
+   "id": "algebraic-data-types",
+   "name": "Algebraic data types / tagged unions",
+   "category": "types",
+   "aliases": [
+    "sum types",
+    "variants",
+    "discriminated unions",
+    "sealed classes"
+   ],
+   "description": "Sum-of-products data types."
+  },
+  {
+   "id": "union-intersection-types",
+   "name": "Union and intersection types",
+   "category": "types",
+   "aliases": [
+    "untagged union",
+    "C union",
+    "type union"
+   ],
+   "description": "Types formed by union/intersection."
+  },
+  {
+   "id": "null-optional",
+   "name": "Null, nil and optional values",
+   "category": "types",
+   "aliases": [
+    "null safety",
+    "Option",
+    "Maybe",
+    "undefined",
+    "None"
+   ],
+   "description": "Absence of a value and how it is typed."
+  },
+  {
+   "id": "pointers-references",
+   "name": "Pointers and references",
+   "category": "types",
+   "aliases": [
+    "address-of",
+    "dereference",
+    "reference types",
+    "aliasing"
+   ],
+   "description": "Indirect access to objects."
+  },
+  {
+   "id": "function-types",
+   "name": "Function types",
+   "category": "types",
+   "aliases": [
+    "arrow types",
+    "callable types",
+    "function pointers",
+    "delegates"
+   ],
+   "description": "Types of functions/callables."
+  },
+  {
+   "id": "type-inference",
+   "name": "Type inference",
+   "category": "types",
+   "aliases": [
+    "Hindley-Milner",
+    "local inference",
+    "auto",
+    "var"
+   ],
+   "description": "Deducing types without annotations."
+  },
+  {
+   "id": "type-annotations",
+   "name": "Type annotations and declarations",
+   "category": "types",
+   "aliases": [
+    "type hints",
+    "signatures",
+    "ascription"
+   ],
+   "description": "Writing types down."
+  },
+  {
+   "id": "generics",
+   "name": "Generics / parametric polymorphism",
+   "category": "types",
+   "aliases": [
+    "templates",
+    "type parameters",
+    "bounded quantification"
+   ],
+   "description": "Code abstracted over types."
+  },
+  {
+   "id": "subtyping",
+   "name": "Subtyping",
+   "category": "types",
+   "aliases": [
+    "subsumption",
+    "inheritance vs subtyping",
+    "structural subtyping"
+   ],
+   "description": "Subtype relations between types."
+  },
+  {
+   "id": "variance",
+   "name": "Variance",
+   "category": "types",
+   "aliases": [
+    "covariance",
+    "contravariance",
+    "invariance",
+    "wildcards"
+   ],
+   "description": "How subtyping interacts with type constructors."
+  },
+  {
+   "id": "traits-typeclasses",
+   "name": "Traits, type classes and concepts",
+   "category": "types",
+   "aliases": [
+    "typeclass",
+    "trait",
+    "concept",
+    "implicit",
+    "ad hoc polymorphism"
+   ],
+   "description": "Constrained ad-hoc polymorphism."
+  },
+  {
+   "id": "interfaces-protocols",
+   "name": "Interfaces and protocols",
+   "category": "types",
+   "aliases": [
+    "interface",
+    "protocol",
+    "abstract type",
+    "duck typing"
+   ],
+   "description": "Declaring required behaviour."
+  },
+  {
+   "id": "type-conversion",
+   "name": "Type conversion, casts and coercion",
+   "category": "types",
+   "aliases": [
+    "implicit conversion",
+    "promotion",
+    "casting"
+   ],
+   "description": "Converting values between types."
+  },
+  {
+   "id": "type-aliases",
+   "name": "Type aliases and newtypes",
+   "category": "types",
+   "aliases": [
+    "typedef",
+    "newtype",
+    "opaque types"
+   ],
+   "description": "Naming or wrapping existing types."
+  },
+  {
+   "id": "type-equivalence",
+   "name": "Type equivalence (nominal vs structural)",
+   "category": "types",
+   "aliases": [
+    "nominal typing",
+    "structural typing",
+    "type identity"
+   ],
+   "description": "When two types are the same."
+  },
+  {
+   "id": "higher-kinded-types",
+   "name": "Higher-kinded and type-level programming",
+   "category": "types",
+   "aliases": [
+    "type constructors",
+    "kinds",
+    "type families",
+    "type-level functions"
+   ],
+   "description": "Abstraction over type constructors; computation at the type level."
+  },
+  {
+   "id": "dependent-types",
+   "name": "Dependent types",
+   "category": "types",
+   "aliases": [
+    "Pi types",
+    "Sigma types",
+    "indexed types"
+   ],
+   "description": "Types depending on values."
+  },
+  {
+   "id": "refinement-types",
+   "name": "Refinement types and contracts",
+   "category": "types",
+   "aliases": [
+    "liquid types",
+    "preconditions",
+    "design by contract",
+    "invariants"
+   ],
+   "description": "Types/contracts refined by predicates."
+  },
+  {
+   "id": "gradual-typing",
+   "name": "Gradual and optional typing",
+   "category": "types",
+   "aliases": [
+    "any",
+    "dynamic",
+    "type hints",
+    "unknown"
+   ],
+   "description": "Mixing static and dynamic typing."
+  },
+  {
+   "id": "linear-types",
+   "name": "Linear, affine and uniqueness types",
+   "category": "types",
+   "aliases": [
+    "substructural types",
+    "uniqueness typing"
+   ],
+   "description": "Types that control how often values are used."
+  },
+  {
+   "id": "effect-systems",
+   "name": "Effects and effect systems",
+   "category": "types",
+   "aliases": [
+    "algebraic effects",
+    "effect handlers",
+    "monads for effects",
+    "checked effects"
+   ],
+   "description": "Tracking and handling computational effects."
+  },
+  {
+   "id": "existential-types",
+   "name": "Existential and abstract types",
+   "category": "types",
+   "aliases": [
+    "abstract data types",
+    "opaque types",
+    "impl Trait",
+    "dyn"
+   ],
+   "description": "Hiding type representations."
+  },
+  {
+   "id": "recursive-types",
+   "name": "Recursive types",
+   "category": "types",
+   "aliases": [
+    "inductive types",
+    "coinductive types",
+    "mu types"
+   ],
+   "description": "Types defined in terms of themselves."
+  },
+  {
+   "id": "dynamic-typing",
+   "name": "Dynamic typing and runtime type information",
+   "category": "types",
+   "aliases": [
+    "RTTI",
+    "typeof",
+    "instanceof",
+    "type tags"
+   ],
+   "description": "Types inspected at run time."
+  },
+  {
+   "id": "conditionals",
+   "name": "Conditionals (if / else)",
+   "category": "control",
+   "aliases": [
+    "if statement",
+    "if expression",
+    "else",
+    "elif",
+    "ternary operator",
+    "cond",
+    "when/unless"
+   ],
+   "description": "Two-way and chained conditional execution."
+  },
+  {
+   "id": "switch-case",
+   "name": "Multiway branch (switch / case)",
+   "category": "control",
+   "aliases": [
+    "switch statement",
+    "case statement",
+    "select",
+    "computed goto"
+   ],
+   "description": "Selecting among many alternatives by value."
+  },
+  {
+   "id": "pattern-matching",
+   "name": "Pattern matching",
+   "category": "control",
+   "aliases": [
+    "match expression",
+    "case analysis",
+    "patterns",
+    "guards"
+   ],
+   "description": "Destructuring by structure with alternatives."
+  },
+  {
+   "id": "loops",
+   "name": "Loops",
+   "category": "control",
+   "aliases": [
+    "while",
+    "do-while",
+    "for",
+    "repeat",
+    "loop"
+   ],
+   "description": "Iterative execution."
+  },
+  {
+   "id": "iteration-foreach",
+   "name": "Collection iteration (for-each)",
+   "category": "control",
+   "aliases": [
+    "for-in",
+    "for-of",
+    "foreach",
+    "range-based for"
+   ],
+   "description": "Looping over elements of a collection or iterator."
+  },
+  {
+   "id": "loop-control",
+   "name": "Loop control (break / continue)",
+   "category": "control",
+   "aliases": [
+    "break",
+    "continue",
+    "labeled break",
+    "loop else"
+   ],
+   "description": "Early exit and skipping in loops."
+  },
+  {
+   "id": "goto-labels",
+   "name": "Goto and labels",
+   "category": "control",
+   "aliases": [
+    "jump",
+    "labeled statements",
+    "unstructured control flow"
+   ],
+   "description": "Unstructured jumps."
+  },
+  {
+   "id": "recursion",
+   "name": "Recursion",
+   "category": "control",
+   "aliases": [
+    "recursive functions",
+    "mutual recursion"
+   ],
+   "description": "Self-referential definitions."
+  },
+  {
+   "id": "tail-calls",
+   "name": "Tail calls",
+   "category": "control",
+   "aliases": [
+    "tail call optimization",
+    "proper tail recursion",
+    "TCO"
+   ],
+   "description": "Calls in tail position and their guarantees."
+  },
+  {
+   "id": "return",
+   "name": "Return and early exit",
+   "category": "control",
+   "aliases": [
+    "return statement",
+    "implicit return",
+    "multiple return values"
+   ],
+   "description": "Returning from functions."
+  },
+  {
+   "id": "exceptions",
+   "name": "Exceptions",
+   "category": "control",
+   "aliases": [
+    "try",
+    "catch",
+    "throw",
+    "raise",
+    "finally",
+    "conditions and restarts"
+   ],
+   "description": "Exception-style non-local error signalling."
+  },
+  {
+   "id": "error-handling",
+   "name": "Error handling (non-exception)",
+   "category": "control",
+   "aliases": [
+    "result types",
+    "error values",
+    "errno",
+    "panic",
+    "Either"
+   ],
+   "description": "Representing and propagating errors as values."
+  },
+  {
+   "id": "assertions",
+   "name": "Assertions",
+   "category": "control",
+   "aliases": [
+    "assert",
+    "static assert",
+    "invariants"
+   ],
+   "description": "Checking assumptions."
+  },
+  {
+   "id": "short-circuit",
+   "name": "Short-circuit evaluation",
+   "category": "control",
+   "aliases": [
+    "and/or",
+    "logical operators",
+    "null coalescing",
+    "safe navigation"
+   ],
+   "description": "Operators that skip evaluating operands."
+  },
+  {
+   "id": "evaluation-order",
+   "name": "Evaluation order and sequencing",
+   "category": "control",
+   "aliases": [
+    "sequence points",
+    "order of evaluation",
+    "side-effect ordering"
+   ],
+   "description": "In what order sub-expressions are evaluated."
+  },
+  {
+   "id": "comprehensions",
+   "name": "Comprehensions",
+   "category": "control",
+   "aliases": [
+    "list comprehension",
+    "set-builder",
+    "generator expression",
+    "LINQ-style"
+   ],
+   "description": "Declarative construction of collections."
+  },
+  {
+   "id": "iterators",
+   "name": "Iterators",
+   "category": "control",
+   "aliases": [
+    "iterator protocol",
+    "iterable",
+    "ranges",
+    "streams"
+   ],
+   "description": "Protocols for producing sequences of values."
+  },
+  {
+   "id": "generators",
+   "name": "Generators",
+   "category": "control",
+   "aliases": [
+    "yield",
+    "generator functions"
+   ],
+   "description": "Functions that yield a series of values."
+  },
+  {
+   "id": "coroutines",
+   "name": "Coroutines",
+   "category": "control",
+   "aliases": [
+    "stackful",
+    "stackless",
+    "fibers",
+    "green threads"
+   ],
+   "description": "Suspendable computations."
+  },
+  {
+   "id": "continuations",
+   "name": "Continuations",
+   "category": "control",
+   "aliases": [
+    "call/cc",
+    "delimited continuations",
+    "CPS"
+   ],
+   "description": "First-class control state."
+  },
+  {
+   "id": "resource-management",
+   "name": "Deterministic cleanup (RAII / defer / finally)",
+   "category": "control",
+   "aliases": [
+    "RAII",
+    "defer",
+    "using",
+    "with statement",
+    "try-with-resources",
+    "destructors"
+   ],
+   "description": "Guaranteeing cleanup of resources."
+  },
+  {
+   "id": "lazy-evaluation",
+   "name": "Lazy evaluation and evaluation strategy",
+   "category": "control",
+   "aliases": [
+    "call by need",
+    "call by name",
+    "call by value",
+    "strictness",
+    "thunks"
+   ],
+   "description": "When and whether expressions are evaluated."
+  },
+  {
+   "id": "functions",
+   "name": "Functions and procedures",
+   "category": "functions",
+   "aliases": [
+    "function definition",
+    "subroutine",
+    "procedure",
+    "def"
+   ],
+   "description": "Defining and calling functions."
+  },
+  {
+   "id": "parameters-arguments",
+   "name": "Parameters and argument passing",
+   "category": "functions",
+   "aliases": [
+    "default arguments",
+    "named arguments",
+    "varargs",
+    "pass by reference",
+    "pass by value"
+   ],
+   "description": "How arguments are declared and passed."
+  },
+  {
+   "id": "closures",
+   "name": "Closures and anonymous functions",
+   "category": "functions",
+   "aliases": [
+    "lambda",
+    "anonymous function",
+    "blocks",
+    "captures"
+   ],
+   "description": "Functions that capture their environment."
+  },
+  {
+   "id": "higher-order-functions",
+   "name": "Higher-order functions",
+   "category": "functions",
+   "aliases": [
+    "map",
+    "filter",
+    "fold",
+    "function composition"
+   ],
+   "description": "Functions taking/returning functions."
+  },
+  {
+   "id": "currying",
+   "name": "Currying and partial application",
+   "category": "functions",
+   "aliases": [
+    "partial application",
+    "sections"
+   ],
+   "description": "Supplying arguments incrementally."
+  },
+  {
+   "id": "overloading",
+   "name": "Function overloading",
+   "category": "functions",
+   "aliases": [
+    "ad hoc overloading",
+    "overload resolution"
+   ],
+   "description": "Multiple definitions selected by argument types."
+  },
+  {
+   "id": "operator-overloading",
+   "name": "Operator overloading",
+   "category": "functions",
+   "aliases": [
+    "user-defined operators",
+    "dunder methods"
+   ],
+   "description": "Giving operators user-defined meaning."
+  },
+  {
+   "id": "methods",
+   "name": "Methods",
+   "category": "functions",
+   "aliases": [
+    "member functions",
+    "receivers",
+    "self/this",
+    "extension methods"
+   ],
+   "description": "Functions associated with a type or object."
+  },
+  {
+   "id": "multiple-dispatch",
+   "name": "Multiple dispatch and multimethods",
+   "category": "functions",
+   "aliases": [
+    "generic functions",
+    "multimethods",
+    "CLOS"
+   ],
+   "description": "Dispatch on more than one argument."
+  },
+  {
+   "id": "purity",
+   "name": "Purity and side effects",
+   "category": "functions",
+   "aliases": [
+    "referential transparency",
+    "pure functions",
+    "const functions"
+   ],
+   "description": "Controlling or reasoning about side effects."
+  },
+  {
+   "id": "pipelines",
+   "name": "Pipelines and composition",
+   "category": "functions",
+   "aliases": [
+    "pipe operator",
+    "method chaining",
+    "composition operator"
+   ],
+   "description": "Chaining computations."
+  },
+  {
+   "id": "objects",
+   "name": "Objects and object model",
+   "category": "oop",
+   "aliases": [
+    "object identity",
+    "object system",
+    "slots"
+   ],
+   "description": "What an object is in the language."
+  },
+  {
+   "id": "classes",
+   "name": "Classes",
+   "category": "oop",
+   "aliases": [
+    "class definition",
+    "class body",
+    "static members"
+   ],
+   "description": "Class-based abstraction."
+  },
+  {
+   "id": "inheritance",
+   "name": "Inheritance",
+   "category": "oop",
+   "aliases": [
+    "subclassing",
+    "multiple inheritance",
+    "super",
+    "method resolution order"
+   ],
+   "description": "Deriving new classes from existing ones."
+  },
+  {
+   "id": "constructors",
+   "name": "Construction and destruction",
+   "category": "oop",
+   "aliases": [
+    "constructor",
+    "initializer",
+    "destructor",
+    "finalizer"
+   ],
+   "description": "Creating and destroying objects."
+  },
+  {
+   "id": "encapsulation",
+   "name": "Access control and encapsulation",
+   "category": "oop",
+   "aliases": [
+    "public",
+    "private",
+    "protected",
+    "visibility modifiers"
+   ],
+   "description": "Restricting access to members."
+  },
+  {
+   "id": "polymorphism",
+   "name": "Dynamic dispatch and polymorphism",
+   "category": "oop",
+   "aliases": [
+    "virtual methods",
+    "late binding",
+    "vtables",
+    "message passing"
+   ],
+   "description": "Selecting behaviour at run time."
+  },
+  {
+   "id": "abstract-classes",
+   "name": "Abstract classes and members",
+   "category": "oop",
+   "aliases": [
+    "abstract methods",
+    "pure virtual"
+   ],
+   "description": "Partially defined classes."
+  },
+  {
+   "id": "mixins",
+   "name": "Mixins and composition",
+   "category": "oop",
+   "aliases": [
+    "traits (OO)",
+    "delegation",
+    "composition over inheritance"
+   ],
+   "description": "Reusing behaviour without single inheritance."
+  },
+  {
+   "id": "prototypes",
+   "name": "Prototypes",
+   "category": "oop",
+   "aliases": [
+    "prototype chain",
+    "delegation",
+    "prototype-based OO"
+   ],
+   "description": "Object-based inheritance without classes."
+  },
+  {
+   "id": "properties",
+   "name": "Properties and accessors",
+   "category": "oop",
+   "aliases": [
+    "getters",
+    "setters",
+    "computed properties",
+    "descriptors"
+   ],
+   "description": "Field-like access backed by code."
+  },
+  {
+   "id": "metaclasses",
+   "name": "Metaclasses and metaobject protocols",
+   "category": "oop",
+   "aliases": [
+    "MOP",
+    "class objects"
+   ],
+   "description": "Classes of classes; customizing the object system."
+  },
+  {
+   "id": "modules",
+   "name": "Modules",
+   "category": "modules",
+   "aliases": [
+    "module system",
+    "compilation units",
+    "functors",
+    "signatures"
+   ],
+   "description": "Organising code into modules."
+  },
+  {
+   "id": "imports",
+   "name": "Imports and exports",
+   "category": "modules",
+   "aliases": [
+    "import",
+    "include",
+    "require",
+    "use",
+    "export"
+   ],
+   "description": "Bringing names from other modules into scope."
+  },
+  {
+   "id": "packages",
+   "name": "Packages and libraries",
+   "category": "modules",
+   "aliases": [
+    "package",
+    "crate",
+    "assembly",
+    "library layout"
+   ],
+   "description": "Larger units of distribution above modules."
+  },
+  {
+   "id": "visibility",
+   "name": "Module-level visibility",
+   "category": "modules",
+   "aliases": [
+    "pub",
+    "export lists",
+    "internal",
+    "private modules"
+   ],
+   "description": "Controlling what a module exposes."
+  },
+  {
+   "id": "separate-compilation",
+   "name": "Separate compilation and linking",
+   "category": "modules",
+   "aliases": [
+    "translation units",
+    "linkage",
+    "headers",
+    "ABI"
+   ],
+   "description": "Compiling parts independently and combining them."
+  },
+  {
+   "id": "standard-library",
+   "name": "Standard library",
+   "category": "modules",
+   "aliases": [
+    "prelude",
+    "built-in functions",
+    "core library"
+   ],
+   "description": "Library shipped with the language."
+  },
+  {
+   "id": "program-structure",
+   "name": "Program structure and entry point",
+   "category": "modules",
+   "aliases": [
+    "main function",
+    "top-level",
+    "startup and termination",
+    "scripts"
+   ],
+   "description": "Overall shape of a program and where execution begins."
+  },
+  {
+   "id": "memory-management",
+   "name": "Memory management overview",
+   "category": "memory",
+   "aliases": [
+    "allocation",
+    "deallocation",
+    "manual memory management",
+    "malloc/free"
+   ],
+   "description": "How memory is obtained and released."
+  },
+  {
+   "id": "garbage-collection",
+   "name": "Garbage collection",
+   "category": "memory",
+   "aliases": [
+    "tracing GC",
+    "reference counting",
+    "ARC",
+    "finalization"
+   ],
+   "description": "Automatic memory reclamation."
+  },
+  {
+   "id": "ownership-borrowing",
+   "name": "Ownership and borrowing",
+   "category": "memory",
+   "aliases": [
+    "borrow checker",
+    "move semantics",
+    "unique ownership"
+   ],
+   "description": "Static control of aliasing and lifetime through ownership."
+  },
+  {
+   "id": "lifetimes",
+   "name": "Lifetimes and regions",
+   "category": "memory",
+   "aliases": [
+    "lifetime annotations",
+    "region-based memory"
+   ],
+   "description": "Static tracking of how long references are valid."
+  },
+  {
+   "id": "value-reference-semantics",
+   "name": "Value vs reference semantics",
+   "category": "memory",
+   "aliases": [
+    "copy semantics",
+    "move semantics",
+    "deep copy",
+    "identity vs equality"
+   ],
+   "description": "Whether assignment/passing copies or shares."
+  },
+  {
+   "id": "memory-model",
+   "name": "Memory and object model",
+   "category": "memory",
+   "aliases": [
+    "object representation",
+    "layout",
+    "alignment",
+    "memory ordering"
+   ],
+   "description": "Abstract model of memory used by the definition."
+  },
+  {
+   "id": "undefined-behavior",
+   "name": "Undefined and unspecified behaviour",
+   "category": "memory",
+   "aliases": [
+    "UB",
+    "implementation-defined behaviour",
+    "safety"
+   ],
+   "description": "Behaviour the definition leaves open."
+  },
+  {
+   "id": "unsafe",
+   "name": "Unsafe and low-level escape hatches",
+   "category": "memory",
+   "aliases": [
+    "unsafe blocks",
+    "raw pointers",
+    "inline assembly",
+    "intrinsics"
+   ],
+   "description": "Bypassing the language's safety guarantees."
+  },
+  {
+   "id": "concurrency",
+   "name": "Concurrency overview",
+   "category": "concurrency",
+   "aliases": [
+    "concurrent programming model",
+    "tasks"
+   ],
+   "description": "The language's overall approach to concurrency."
+  },
+  {
+   "id": "threads",
+   "name": "Threads",
+   "category": "concurrency",
+   "aliases": [
+    "thread creation",
+    "thread-local storage"
+   ],
+   "description": "Preemptive threads."
+  },
+  {
+   "id": "async-await",
+   "name": "Async / await and futures",
+   "category": "concurrency",
+   "aliases": [
+    "promises",
+    "futures",
+    "tasks",
+    "event loop"
+   ],
+   "description": "Asynchronous programming constructs."
+  },
+  {
+   "id": "channels-message-passing",
+   "name": "Channels and message passing",
+   "category": "concurrency",
+   "aliases": [
+    "CSP channels",
+    "mailboxes",
+    "select"
+   ],
+   "description": "Communicating by sending messages."
+  },
+  {
+   "id": "actors",
+   "name": "Actors and processes",
+   "category": "concurrency",
+   "aliases": [
+    "actor model",
+    "lightweight processes",
+    "supervision"
+   ],
+   "description": "Isolated processes communicating by messages."
+  },
+  {
+   "id": "synchronization",
+   "name": "Locks and synchronization",
+   "category": "concurrency",
+   "aliases": [
+    "mutex",
+    "monitor",
+    "synchronized",
+    "condition variables"
+   ],
+   "description": "Coordinating shared-state access."
+  },
+  {
+   "id": "atomics-memory-ordering",
+   "name": "Atomics and concurrent memory model",
+   "category": "concurrency",
+   "aliases": [
+    "volatile",
+    "data races",
+    "happens-before"
+   ],
+   "description": "Low-level shared memory semantics."
+  },
+  {
+   "id": "parallelism",
+   "name": "Parallelism",
+   "category": "concurrency",
+   "aliases": [
+    "data parallelism",
+    "SIMD",
+    "parallel loops",
+    "GPU"
+   ],
+   "description": "Executing computations simultaneously for speed."
+  },
+  {
+   "id": "transactions-stm",
+   "name": "Software transactional memory",
+   "category": "concurrency",
+   "aliases": [
+    "STM",
+    "atomic blocks"
+   ],
+   "description": "Transactional shared memory."
+  },
+  {
+   "id": "macros",
+   "name": "Macros",
+   "category": "metaprogramming",
+   "aliases": [
+    "hygienic macros",
+    "procedural macros",
+    "syntax-rules",
+    "macro expansion"
+   ],
+   "description": "Programs that transform syntax."
+  },
+  {
+   "id": "compile-time-evaluation",
+   "name": "Compile-time evaluation",
+   "category": "metaprogramming",
+   "aliases": [
+    "constexpr",
+    "comptime",
+    "const fn",
+    "static if",
+    "templates as computation"
+   ],
+   "description": "Running code during compilation."
+  },
+  {
+   "id": "reflection",
+   "name": "Reflection and introspection",
+   "category": "metaprogramming",
+   "aliases": [
+    "runtime reflection",
+    "mirrors",
+    "type info"
+   ],
+   "description": "Programs inspecting themselves."
+  },
+  {
+   "id": "annotations-attributes",
+   "name": "Annotations, attributes and decorators",
+   "category": "metaprogramming",
+   "aliases": [
+    "decorators",
+    "pragmas",
+    "attributes"
+   ],
+   "description": "Attaching metadata to declarations."
+  },
+  {
+   "id": "eval",
+   "name": "Eval and dynamic code loading",
+   "category": "metaprogramming",
+   "aliases": [
+    "eval",
+    "exec",
+    "dynamic loading",
+    "REPL semantics"
+   ],
+   "description": "Executing code constructed at run time."
+  },
+  {
+   "id": "quotation-homoiconicity",
+   "name": "Quotation and code as data",
+   "category": "metaprogramming",
+   "aliases": [
+    "quote",
+    "quasiquote",
+    "homoiconicity",
+    "AST literals"
+   ],
+   "description": "Representing code as data."
+  },
+  {
+   "id": "code-generation",
+   "name": "Code generation and templating",
+   "category": "metaprogramming",
+   "aliases": [
+    "templates",
+    "generators",
+    "derive"
+   ],
+   "description": "Generating source code or boilerplate."
+  },
+  {
+   "id": "input-output",
+   "name": "Input and output",
+   "category": "io",
+   "aliases": [
+    "console I/O",
+    "print",
+    "streams",
+    "read"
+   ],
+   "description": "Basic I/O facilities."
+  },
+  {
+   "id": "file-io",
+   "name": "Files and the file system",
+   "category": "io",
+   "aliases": [
+    "file handles",
+    "paths",
+    "reading and writing files"
+   ],
+   "description": "File access."
+  },
+  {
+   "id": "command-line",
+   "name": "Command-line arguments and environment",
+   "category": "io",
+   "aliases": [
+    "argv",
+    "environment variables",
+    "exit status"
+   ],
+   "description": "Interaction with the process environment."
+  },
+  {
+   "id": "ffi",
+   "name": "Foreign function interface",
+   "category": "io",
+   "aliases": [
+    "C interop",
+    "bindings",
+    "extern",
+    "JNI",
+    "P/Invoke"
+   ],
+   "description": "Calling code written in other languages."
+  },
+  {
+   "id": "interoperability",
+   "name": "Interoperability and embedding",
+   "category": "io",
+   "aliases": [
+    "host language interop",
+    "embedding API",
+    "transpilation targets"
+   ],
+   "description": "Using the language with/inside other languages and hosts."
+  },
+  {
+   "id": "processes-system",
+   "name": "Processes and system interaction",
+   "category": "io",
+   "aliases": [
+    "subprocess",
+    "pipes",
+    "signals",
+    "redirection",
+    "job control"
+   ],
+   "description": "Spawning and controlling OS processes."
+  },
+  {
+   "id": "serialization",
+   "name": "Serialization",
+   "category": "io",
+   "aliases": [
+    "marshalling",
+    "encoding/decoding",
+    "pickling"
+   ],
+   "description": "Converting values to/from external representations."
+  },
+  {
+   "id": "date-time",
+   "name": "Date and time",
+   "category": "io",
+   "aliases": [
+    "timestamps",
+    "durations",
+    "time zones"
+   ],
+   "description": "Date/time types and literals."
+  },
+  {
+   "id": "regular-expressions",
+   "name": "Regular expressions",
+   "category": "io",
+   "aliases": [
+    "regex",
+    "pattern syntax",
+    "matching"
+   ],
+   "description": "Regex support and syntax."
+  },
+  {
+   "id": "compiler-architecture",
+   "name": "Implementation architecture",
+   "category": "implementation",
+   "aliases": [
+    "compiler pipeline",
+    "phases",
+    "internals overview"
+   ],
+   "description": "How an implementation is organised overall."
+  },
+  {
+   "id": "lexer",
+   "name": "Lexer / scanner implementation",
+   "category": "implementation",
+   "aliases": [
+    "tokenizer",
+    "scanner"
+   ],
+   "description": "Code that tokenizes source."
+  },
+  {
+   "id": "parser",
+   "name": "Parser implementation",
+   "category": "implementation",
+   "aliases": [
+    "recursive descent",
+    "LR",
+    "PEG",
+    "parser generator"
+   ],
+   "description": "Code that builds syntax trees."
+  },
+  {
+   "id": "ast",
+   "name": "Abstract syntax tree",
+   "category": "implementation",
+   "aliases": [
+    "AST definitions",
+    "syntax tree",
+    "CST"
+   ],
+   "description": "Tree representations of programs."
+  },
+  {
+   "id": "semantic-analysis",
+   "name": "Semantic analysis and type checking implementation",
+   "category": "implementation",
+   "aliases": [
+    "type checker",
+    "name resolution pass",
+    "elaboration"
+   ],
+   "description": "Code that checks static semantics."
+  },
+  {
+   "id": "intermediate-representation",
+   "name": "Intermediate representations",
+   "category": "implementation",
+   "aliases": [
+    "IR",
+    "SSA",
+    "three-address code",
+    "core language"
+   ],
+   "description": "Internal program representations."
+  },
+  {
+   "id": "bytecode",
+   "name": "Bytecode and instruction formats",
+   "category": "implementation",
+   "aliases": [
+    "opcodes",
+    "bytecode format",
+    "binary format"
+   ],
+   "description": "Portable instruction encodings."
+  },
+  {
+   "id": "interpreter",
+   "name": "Interpreter / evaluator",
+   "category": "implementation",
+   "aliases": [
+    "eval loop",
+    "tree-walking interpreter",
+    "abstract machine"
+   ],
+   "description": "Code that directly executes programs."
+  },
+  {
+   "id": "virtual-machine",
+   "name": "Virtual machine",
+   "category": "implementation",
+   "aliases": [
+    "VM design",
+    "stack machine",
+    "register machine"
+   ],
+   "description": "The virtual machine executing compiled code."
+  },
+  {
+   "id": "code-generation-backend",
+   "name": "Native code generation",
+   "category": "implementation",
+   "aliases": [
+    "backend",
+    "instruction selection",
+    "register allocation"
+   ],
+   "description": "Producing machine code."
+  },
+  {
+   "id": "optimization",
+   "name": "Optimization",
+   "category": "implementation",
+   "aliases": [
+    "optimization passes",
+    "inlining",
+    "escape analysis"
+   ],
+   "description": "Program transformations for performance."
+  },
+  {
+   "id": "jit",
+   "name": "Just-in-time compilation",
+   "category": "implementation",
+   "aliases": [
+    "JIT",
+    "tiered compilation",
+    "tracing JIT"
+   ],
+   "description": "Compiling at run time."
+  },
+  {
+   "id": "runtime-system",
+   "name": "Runtime system",
+   "category": "implementation",
+   "aliases": [
+    "runtime library",
+    "scheduler",
+    "startup code"
+   ],
+   "description": "Support code required at run time."
+  },
+  {
+   "id": "calling-convention-abi",
+   "name": "Calling conventions and ABI",
+   "category": "implementation",
+   "aliases": [
+    "ABI",
+    "stack frames",
+    "name mangling"
+   ],
+   "description": "Binary-level interface conventions."
+  },
+  {
+   "id": "bootstrapping",
+   "name": "Bootstrapping and self-hosting",
+   "category": "implementation",
+   "aliases": [
+    "self-hosting compiler",
+    "stage0"
+   ],
+   "description": "Compiling the compiler."
+  },
+  {
+   "id": "instruction-set",
+   "name": "Instruction set and encoding",
+   "category": "implementation",
+   "aliases": [
+    "opcodes",
+    "mnemonics",
+    "addressing modes",
+    "registers"
+   ],
+   "description": "Machine-level instructions (assembly / hardware)."
+  },
+  {
+   "id": "assembler-directives",
+   "name": "Assembler directives and syntax",
+   "category": "implementation",
+   "aliases": [
+    "pseudo-ops",
+    "sections",
+    "labels",
+    "macros in assemblers"
+   ],
+   "description": "Non-instruction parts of assembly languages."
+  },
+  {
+   "id": "formal-semantics",
+   "name": "Formal semantics",
+   "category": "theory",
+   "aliases": [
+    "operational semantics",
+    "denotational semantics",
+    "axiomatic semantics",
+    "mechanized semantics"
+   ],
+   "description": "Mathematical definition of program meaning."
+  },
+  {
+   "id": "type-soundness",
+   "name": "Type soundness and metatheory",
+   "category": "theory",
+   "aliases": [
+    "progress",
+    "preservation",
+    "type safety proofs"
+   ],
+   "description": "Formal guarantees of the type system."
+  },
+  {
+   "id": "reduction",
+   "name": "Reduction and evaluation rules",
+   "category": "theory",
+   "aliases": [
+    "beta reduction",
+    "normal forms",
+    "reduction strategies",
+    "confluence"
+   ],
+   "description": "Rewriting rules that define computation."
+  },
+  {
+   "id": "substitution-binding",
+   "name": "Substitution and variable binding",
+   "category": "theory",
+   "aliases": [
+    "alpha conversion",
+    "capture avoidance",
+    "de Bruijn indices"
+   ],
+   "description": "Treatment of bound variables."
+  },
+  {
+   "id": "encodings",
+   "name": "Encodings of data and control",
+   "category": "theory",
+   "aliases": [
+    "Church numerals",
+    "Church booleans",
+    "Scott encoding",
+    "Gödel numbering"
+   ],
+   "description": "Representing data inside a minimal formalism."
+  },
+  {
+   "id": "fixed-points",
+   "name": "Fixed points and recursion operators",
+   "category": "theory",
+   "aliases": [
+    "Y combinator",
+    "fix",
+    "recursion theorem"
+   ],
+   "description": "Achieving recursion via fixed points."
+  },
+  {
+   "id": "combinators",
+   "name": "Combinators",
+   "category": "theory",
+   "aliases": [
+    "SKI",
+    "point-free",
+    "combinatory logic",
+    "supercombinators"
+   ],
+   "description": "Variable-free function building blocks."
+  },
+  {
+   "id": "turing-completeness",
+   "name": "Computability and Turing completeness",
+   "category": "theory",
+   "aliases": [
+    "universality",
+    "halting problem",
+    "decidability",
+    "Church-Turing thesis"
+   ],
+   "description": "What the formalism can compute."
+  },
+  {
+   "id": "automata",
+   "name": "Automata and machines",
+   "category": "theory",
+   "aliases": [
+    "states",
+    "transitions",
+    "tapes",
+    "stacks",
+    "acceptance"
+   ],
+   "description": "State-machine models."
+  },
+  {
+   "id": "formal-grammars",
+   "name": "Formal grammars and languages",
+   "category": "theory",
+   "aliases": [
+    "Chomsky hierarchy",
+    "regular languages",
+    "context-free languages",
+    "productions"
+   ],
+   "description": "Grammars as generators of formal languages."
+  },
+  {
+   "id": "rewriting",
+   "name": "Rewriting systems",
+   "category": "theory",
+   "aliases": [
+    "term rewriting",
+    "string rewriting",
+    "graph rewriting",
+    "rules"
+   ],
+   "description": "Computation as rule application."
+  },
+  {
+   "id": "process-calculi",
+   "name": "Process calculi and concurrency theory",
+   "category": "theory",
+   "aliases": [
+    "pi-calculus",
+    "CSP",
+    "CCS",
+    "bisimulation"
+   ],
+   "description": "Formal models of concurrent interaction."
+  },
+  {
+   "id": "logic-foundations",
+   "name": "Logic and proofs-as-programs",
+   "category": "theory",
+   "aliases": [
+    "Curry-Howard",
+    "propositions as types",
+    "sequent calculus",
+    "natural deduction"
+   ],
+   "description": "Connection between logic and computation."
+  },
+  {
+   "id": "unification",
+   "name": "Unification and resolution",
+   "category": "theory",
+   "aliases": [
+    "logic variables",
+    "backtracking",
+    "SLD resolution",
+    "cut"
+   ],
+   "description": "Core mechanisms of logic programming."
+  },
+  {
+   "id": "constraints",
+   "name": "Constraints and solving",
+   "category": "theory",
+   "aliases": [
+    "constraint logic programming",
+    "SAT/SMT",
+    "constraint propagation"
+   ],
+   "description": "Declaring constraints solved by the system."
+  },
+  {
+   "id": "verification",
+   "name": "Specification and verification",
+   "category": "theory",
+   "aliases": [
+    "Hoare logic",
+    "pre/postconditions",
+    "model checking",
+    "proofs",
+    "tactics"
+   ],
+   "description": "Stating and proving program properties."
+  },
+  {
+   "id": "complexity",
+   "name": "Complexity and cost",
+   "category": "theory",
+   "aliases": [
+    "time/space complexity",
+    "resource bounds"
+   ],
+   "description": "Resource usage of the model."
+  },
+  {
+   "id": "data-model",
+   "name": "Data model",
+   "category": "data",
+   "aliases": [
+    "value kinds",
+    "information set",
+    "document model",
+    "type system of the format"
+   ],
+   "description": "Abstract model of the data a language describes or operates on."
+  },
+  {
+   "id": "scalars",
+   "name": "Scalar values",
+   "category": "data",
+   "aliases": [
+    "numbers",
+    "strings",
+    "booleans",
+    "null in data formats"
+   ],
+   "description": "Atomic values in a data language."
+  },
+  {
+   "id": "collections",
+   "name": "Collections (data formats)",
+   "category": "data",
+   "aliases": [
+    "objects",
+    "arrays",
+    "mappings",
+    "sequences",
+    "tables"
+   ],
+   "description": "Composite values in a data language."
+  },
+  {
+   "id": "references-anchors",
+   "name": "References, anchors and includes",
+   "category": "data",
+   "aliases": [
+    "anchors",
+    "aliases",
+    "$ref",
+    "entities",
+    "imports in data"
+   ],
+   "description": "Reuse and cross-references inside documents."
+  },
+  {
+   "id": "encoding-wire-format",
+   "name": "Encoding and wire format",
+   "category": "data",
+   "aliases": [
+    "binary encoding",
+    "byte order",
+    "framing",
+    "varints"
+   ],
+   "description": "Byte-level representation."
+  },
+  {
+   "id": "schema-validation",
+   "name": "Schemas and validation",
+   "category": "data",
+   "aliases": [
+    "schema definition",
+    "constraints",
+    "validation rules"
+   ],
+   "description": "Describing and checking the shape of data."
+  },
+  {
+   "id": "schema-evolution",
+   "name": "Schema evolution and compatibility",
+   "category": "data",
+   "aliases": [
+    "field numbering",
+    "backward compatibility",
+    "optional fields"
+   ],
+   "description": "Changing schemas without breaking consumers."
+  },
+  {
+   "id": "document-structure",
+   "name": "Document structure",
+   "category": "data",
+   "aliases": [
+    "elements",
+    "attributes",
+    "blocks",
+    "inline content",
+    "nesting"
+   ],
+   "description": "Structural building blocks of markup documents."
+  },
+  {
+   "id": "styling-layout",
+   "name": "Styling, layout and presentation",
+   "category": "data",
+   "aliases": [
+    "selectors",
+    "cascade",
+    "box model",
+    "typesetting"
+   ],
+   "description": "Controlling presentation of content."
+  },
+  {
+   "id": "templating",
+   "name": "Templating and interpolation",
+   "category": "data",
+   "aliases": [
+    "placeholders",
+    "template inheritance",
+    "filters"
+   ],
+   "description": "Generating text from templates and data."
+  },
+  {
+   "id": "escaping",
+   "name": "Escaping and quoting",
+   "category": "data",
+   "aliases": [
+    "escape sequences",
+    "entities",
+    "quoting rules",
+    "raw strings"
+   ],
+   "description": "Representing special characters."
+  },
+  {
+   "id": "security-considerations",
+   "name": "Security considerations",
+   "category": "data",
+   "aliases": [
+    "injection",
+    "untrusted input",
+    "sandboxing",
+    "denial of service"
+   ],
+   "description": "Security issues called out by the definition."
+  },
+  {
+   "id": "selection-projection",
+   "name": "Selection, filtering and projection",
+   "category": "query",
+   "aliases": [
+    "SELECT",
+    "WHERE",
+    "filter",
+    "projection"
+   ],
+   "description": "Choosing rows/fields/nodes."
+  },
+  {
+   "id": "joins",
+   "name": "Joins",
+   "category": "query",
+   "aliases": [
+    "inner join",
+    "outer join",
+    "cross join",
+    "graph joins"
+   ],
+   "description": "Combining related data."
+  },
+  {
+   "id": "aggregation",
+   "name": "Aggregation and grouping",
+   "category": "query",
+   "aliases": [
+    "GROUP BY",
+    "aggregate functions",
+    "HAVING",
+    "reduce"
+   ],
+   "description": "Summarising sets of values."
+  },
+  {
+   "id": "sorting-limiting",
+   "name": "Ordering and limiting",
+   "category": "query",
+   "aliases": [
+    "ORDER BY",
+    "LIMIT",
+    "pagination",
+    "top-k"
+   ],
+   "description": "Sorting and bounding results."
+  },
+  {
+   "id": "subqueries",
+   "name": "Subqueries and composition",
+   "category": "query",
+   "aliases": [
+    "nested queries",
+    "CTE",
+    "WITH",
+    "views as composition"
+   ],
+   "description": "Composing queries from queries."
+  },
+  {
+   "id": "recursive-queries",
+   "name": "Recursive queries",
+   "category": "query",
+   "aliases": [
+    "recursive CTE",
+    "transitive closure",
+    "fixpoint queries"
+   ],
+   "description": "Queries defined recursively."
+  },
+  {
+   "id": "window-functions",
+   "name": "Window functions",
+   "category": "query",
+   "aliases": [
+    "OVER",
+    "partitions",
+    "analytic functions"
+   ],
+   "description": "Computations across related rows."
+  },
+  {
+   "id": "set-operations",
+   "name": "Set operations",
+   "category": "query",
+   "aliases": [
+    "UNION",
+    "INTERSECT",
+    "EXCEPT",
+    "DISTINCT"
+   ],
+   "description": "Combining result sets."
+  },
+  {
+   "id": "data-definition",
+   "name": "Data definition",
+   "category": "query",
+   "aliases": [
+    "DDL",
+    "CREATE TABLE",
+    "schema objects",
+    "types and domains"
+   ],
+   "description": "Defining stored structures."
+  },
+  {
+   "id": "data-manipulation",
+   "name": "Data modification",
+   "category": "query",
+   "aliases": [
+    "INSERT",
+    "UPDATE",
+    "DELETE",
+    "MERGE",
+    "mutations"
+   ],
+   "description": "Changing stored data."
+  },
+  {
+   "id": "constraints-integrity",
+   "name": "Constraints and integrity",
+   "category": "query",
+   "aliases": [
+    "primary key",
+    "foreign key",
+    "CHECK",
+    "uniqueness"
+   ],
+   "description": "Declared integrity rules."
+  },
+  {
+   "id": "transactions",
+   "name": "Transactions and isolation",
+   "category": "query",
+   "aliases": [
+    "ACID",
+    "isolation levels",
+    "locking",
+    "MVCC"
+   ],
+   "description": "Atomic units of work."
+  },
+  {
+   "id": "indexes",
+   "name": "Indexes and query planning",
+   "category": "query",
+   "aliases": [
+    "index types",
+    "EXPLAIN",
+    "optimizer"
+   ],
+   "description": "Access paths and execution planning."
+  },
+  {
+   "id": "views",
+   "name": "Views and materialization",
+   "category": "query",
+   "aliases": [
+    "views",
+    "materialized views"
+   ],
+   "description": "Named stored queries."
+  },
+  {
+   "id": "stored-procedures",
+   "name": "Stored procedures, functions and triggers",
+   "category": "query",
+   "aliases": [
+    "procedural SQL",
+    "triggers",
+    "UDF"
+   ],
+   "description": "Server-side procedural logic."
+  },
+  {
+   "id": "null-semantics",
+   "name": "Null semantics and three-valued logic",
+   "category": "query",
+   "aliases": [
+    "NULL",
+    "unknown",
+    "missing values"
+   ],
+   "description": "Meaning of missing data in queries."
+  },
+  {
+   "id": "relational-model",
+   "name": "Relational model and algebra",
+   "category": "query",
+   "aliases": [
+    "relations",
+    "tuples",
+    "relational algebra operators",
+    "calculus"
+   ],
+   "description": "The mathematical model behind relational queries."
+  },
+  {
+   "id": "graph-patterns",
+   "name": "Graph patterns and traversal",
+   "category": "query",
+   "aliases": [
+    "pattern matching on graphs",
+    "path queries",
+    "triple patterns"
+   ],
+   "description": "Matching and navigating graph-shaped data."
+  },
+  {
+   "id": "path-expressions",
+   "name": "Path expressions and navigation",
+   "category": "query",
+   "aliases": [
+    "XPath axes",
+    "JSONPath",
+    "selectors",
+    "accessors"
+   ],
+   "description": "Navigating hierarchical data."
+  },
+  {
+   "id": "time-series",
+   "name": "Time series and streaming",
+   "category": "query",
+   "aliases": [
+    "range vectors",
+    "windows over time",
+    "continuous queries"
+   ],
+   "description": "Querying temporal/streaming data."
+  },
+  {
+   "id": "hdl-signals-timing",
+   "name": "Signals, timing and simulation semantics",
+   "category": "hardware",
+   "aliases": [
+    "wires",
+    "registers",
+    "delta cycles",
+    "clocks",
+    "event scheduling"
+   ],
+   "description": "Hardware description timing/simulation model."
+  },
+  {
+   "id": "hdl-structure",
+   "name": "Hardware modules and structure",
+   "category": "hardware",
+   "aliases": [
+    "modules",
+    "entities",
+    "ports",
+    "instantiation",
+    "generate"
+   ],
+   "description": "Structural hardware description."
+  },
+  {
+   "id": "synthesis",
+   "name": "Synthesis",
+   "category": "hardware",
+   "aliases": [
+    "synthesizable subset",
+    "RTL"
+   ],
+   "description": "Mapping descriptions to hardware."
+  },
+  {
+   "id": "shader-pipeline",
+   "name": "Shader stages and GPU pipeline",
+   "category": "hardware",
+   "aliases": [
+    "vertex/fragment/compute shaders",
+    "built-ins",
+    "uniforms"
+   ],
+   "description": "GPU execution model for shading languages."
+  },
+  {
+   "id": "quantum-operations",
+   "name": "Quantum operations",
+   "category": "hardware",
+   "aliases": [
+    "qubits",
+    "gates",
+    "measurement",
+    "circuits"
+   ],
+   "description": "Quantum programming primitives."
+  },
+  {
+   "id": "blockchain-execution",
+   "name": "Contract execution model",
+   "category": "hardware",
+   "aliases": [
+    "gas",
+    "storage",
+    "transactions",
+    "accounts"
+   ],
+   "description": "Execution model for smart-contract languages."
+  }
+ ]
+}

@@ -1,0 +1,335 @@
+{
+ "id": "flatbuffers",
+ "name": "FlatBuffers",
+ "categories": [
+  "data-serialization",
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "Wouter van Oortmerssen (Google)"
+ ],
+ "summary": "Google's zero-copy serialization library and schema language: tables with vtables for optional fields, fixed-layout structs, unions and vectors, readable in place without parsing; flatc compiles .fbs schemas to many languages and can also parse JSON.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".fbs"
+ ],
+ "homepage": "https://flatbuffers.dev/",
+ "related": [
+  {
+   "id": "protobuf",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "flatbuffers.dev schema and internals pages; reflection.fbs is the schema-of-schemas.",
+  "0": "google/flatbuffers (flatc compiler and runtimes)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "google/flatbuffers — flatc and runtime libraries",
+   "url": "https://github.com/google/flatbuffers",
+   "implementation": "flatc",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/idl_parser.cpp — schema and JSON parser",
+   "url": "https://github.com/google/flatbuffers/blob/master/src/idl_parser.cpp",
+   "implementation": "flatc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "flatbuffers.h — C++ runtime",
+   "url": "https://github.com/google/flatbuffers/blob/master/include/flatbuffers/flatbuffers.h",
+   "implementation": "flatc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "reflection/reflection.fbs — schema of schemas",
+   "url": "https://github.com/google/flatbuffers/blob/master/reflection/reflection.fbs",
+   "implementation": "flatc",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "reflection",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema language",
+   "url": "https://flatbuffers.dev/schema/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Tables",
+   "url": "https://flatbuffers.dev/schema/#tables",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Structs",
+   "url": "https://flatbuffers.dev/schema/#structs",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Types",
+   "url": "https://flatbuffers.dev/schema/#types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Scalars",
+   "url": "https://flatbuffers.dev/schema/#scalars",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Vectors",
+   "url": "https://flatbuffers.dev/schema/#vectors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Strings",
+   "url": "https://flatbuffers.dev/schema/#strings",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Enums",
+   "url": "https://flatbuffers.dev/schema/#enums",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Unions",
+   "url": "https://flatbuffers.dev/schema/#unions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Namespaces",
+   "url": "https://flatbuffers.dev/schema/#namespaces",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Includes",
+   "url": "https://flatbuffers.dev/schema/#includes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Attributes",
+   "url": "https://flatbuffers.dev/schema/#attributes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Comments and documentation",
+   "url": "https://flatbuffers.dev/schema/#comments-documentation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — JSON parsing",
+   "url": "https://flatbuffers.dev/schema/#json-parsing",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FlatBuffers schema — Gotchas (schema evolution)",
+   "url": "https://flatbuffers.dev/schema/#gotchas",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "FlatBuffers internals (binary format)",
+   "url": "https://flatbuffers.dev/internals/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "FlatBuffers tutorial",
+   "url": "https://flatbuffers.dev/tutorial/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — FlatBuffers",
+   "url": "https://en.wikipedia.org/wiki/FlatBuffers",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

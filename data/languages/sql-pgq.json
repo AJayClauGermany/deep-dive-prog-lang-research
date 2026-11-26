@@ -1,0 +1,40 @@
+{
+ "id": "sql-pgq",
+ "name": "SQL/PGQ",
+ "aliases": ["SQL Property Graph Queries", "ISO/IEC 9075-16"],
+ "categories": ["query", "domain-specific"],
+ "paradigms": ["declarative", "graph-pattern-matching"],
+ "typing": ["static"],
+ "first_appeared": 2023,
+ "designers": ["ISO/IEC JTC 1/SC 32/WG 3"],
+ "summary": "SQL/PGQ (ISO/IEC 9075-16:2023) adds property graphs to SQL: CREATE PROPERTY GRAPH defines vertex and edge tables over relational tables, and the GRAPH_TABLE operator evaluates GQL-style MATCH path patterns (shared with ISO GQL) returning a table.",
+ "status": "active",
+ "defined_by": ["international-standard"],
+ "standards": ["ISO/IEC 9075-16:2023"],
+ "influenced_by": ["sql", "cypher", "gql"],
+ "related": [{"id": "sql", "relation": "subset-of"}, {"id": "gql", "relation": "family"}],
+ "level_notes": {
+  "0": "DuckPGQ (DuckDB extension) is an open implementation; Oracle Database 23ai implements it proprietary.",
+  "1": "ISO/IEC 9075-16 is paywalled (catalogue page, reports blocked); vendor references for GRAPH_TABLE and CREATE PROPERTY GRAPH are linked.",
+  "3": "No dedicated Wikipedia article; covered in the GQL article."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "cwida/duckpgq-extension — SQL/PGQ for DuckDB", "url": "https://github.com/cwida/duckpgq-extension", "implementation": "DuckPGQ", "scope": "whole", "authority": "academic", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "duckpgq_extension.cpp — extension entry and parser hooks", "url": "https://github.com/cwida/duckpgq-extension/blob/main/src/duckpgq_extension.cpp", "implementation": "DuckPGQ", "scope": "section", "authority": "academic", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 1, "kind": "standard", "title": "ISO/IEC 9075-16:2023 — Property Graph Queries (SQL/PGQ)", "url": "https://www.iso.org/standard/79473.html", "scope": "whole", "authority": "standards-body", "year": 2023, "format": "html", "access": "paywalled"},
+  {"level": 1, "kind": "reference-manual", "title": "Oracle SQL Language Reference — GRAPH_TABLE operator", "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/graph_table-operator.html", "implementation": "Oracle Database 23ai", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["graph-patterns", "path-expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Oracle SQL Language Reference — CREATE PROPERTY GRAPH", "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/create-property-graph.html", "implementation": "Oracle Database 23ai", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["data-definition"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ — SQL/PGQ documentation", "url": "https://duckpgq.org/documentation/sql_pgq/", "scope": "whole", "authority": "academic", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — Creating the property graph", "url": "https://duckpgq.org/documentation/sql_pgq/#creating-the-property-graph", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["data-definition"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — Pattern matching queries", "url": "https://duckpgq.org/documentation/sql_pgq/#pattern-matching-queries", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["graph-patterns"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — Edge directions", "url": "https://duckpgq.org/documentation/sql_pgq/#edge-directions", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["graph-patterns"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — The COLUMNS clause", "url": "https://duckpgq.org/documentation/sql_pgq/#the-columns-clause", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["selection-projection"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — Path finding", "url": "https://duckpgq.org/documentation/sql_pgq/#path-finding", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["path-expressions", "recursive-queries"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — Quantifiers", "url": "https://duckpgq.org/documentation/sql_pgq/#quantifiers", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["path-expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "DuckPGQ SQL/PGQ — Path modes and search prefixes", "url": "https://duckpgq.org/documentation/sql_pgq/#path-modes-and-search-prefixes", "scope": "section", "authority": "academic", "format": "html", "access": "open", "concepts": ["path-expressions"]},
+  {"level": 2, "kind": "guide", "title": "Oracle Property Graph Developer's Guide — SQL property graphs", "url": "https://docs.oracle.com/en/database/oracle/property-graph/25.1/spgdg/sql-property-graphs.html", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["graph-patterns"]},
+  {"level": 2, "kind": "paper", "title": "Graph Pattern Matching in GQL and SQL/PGQ", "url": "https://arxiv.org/abs/2112.06217", "scope": "section", "authority": "academic", "authors": ["Alin Deutsch", "Nadime Francis", "Alastair Green", "Keith Hare", "Bei Li", "Leonid Libkin", "Tobias Lindaaker", "Victor Marsault", "Wim Martens", "Jan Michels", "Filip Murlak", "Stefan Plantikow", "Petra Selmer", "Oskar van Rest", "Hannes Voigt", "Domagoj Vrgoč", "Mingxi Wu", "Fred Zemke"], "year": 2022, "format": "html", "access": "open", "concepts": ["graph-patterns", "formal-semantics"]},
+  {"level": 2, "kind": "paper", "title": "DuckPGQ: Efficient property graph queries in an analytical RDBMS (CIDR 2023)", "url": "https://www.cidrdb.org/cidr2023/papers/p66-wolde.pdf", "scope": "section", "authority": "academic", "authors": ["Daniël ten Wolde", "Tavneet Singh", "Gábor Szárnyas", "Peter Boncz"], "year": 2023, "format": "pdf", "access": "open", "concepts": ["performance"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Graph Query Language (covers SQL/PGQ)", "url": "https://en.wikipedia.org/wiki/Graph_Query_Language", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

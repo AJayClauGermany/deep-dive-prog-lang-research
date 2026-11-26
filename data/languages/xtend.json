@@ -1,0 +1,46 @@
+{
+ "id": "xtend",
+ "name": "Xtend",
+ "categories": ["general-purpose", "object-oriented"],
+ "paradigms": ["object-oriented", "functional", "imperative", "expression-oriented"],
+ "typing": ["static", "strong", "nominal", "inferred"],
+ "first_appeared": 2011,
+ "designers": ["Sven Efftinge", "Sebastian Zarnekow", "itemis / Eclipse Xtext team"],
+ "summary": "Statically typed, expression-oriented JVM language built on Eclipse Xtext/Xbase that compiles to readable Java source, adding type inference, lambdas, extension methods, operator overloading, multiple dispatch, template expressions and active annotations (compile-time macros).",
+ "status": "maintained",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".xtend"],
+ "homepage": "https://eclipse.dev/Xtext/xtend/",
+ "influenced_by": ["java", "scala", "groovy", "csharp"],
+ "related": [{"id": "java", "relation": "compiles-to"}, {"id": "jvm-bytecode", "relation": "compiles-to"}],
+ "level_notes": {"0": "Xtend's grammar and compiler live in the eclipse-xtext/xtext monorepo (Xtend.xtext extends the Xbase expression language).", "1": "No separate specification: the official documentation's Classes/Members and Expressions chapters plus the Xtext grammar define the language."},
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "eclipse-xtext/xtext — Xtext framework incl. Xbase and Xtend", "url": "https://github.com/eclipse-xtext/xtext", "implementation": "Xtend", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "grammar-source", "title": "Xtend.xtext — Xtend grammar (Xtext)", "url": "https://github.com/eclipse-xtext/xtext/blob/main/org.eclipse.xtend.core/src/org/eclipse/xtend/core/Xtend.xtext", "implementation": "Xtend", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "grammar-source", "title": "Xbase.xtext — Xbase expression-language grammar", "url": "https://github.com/eclipse-xtext/xtext/blob/main/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/Xbase.xtext", "implementation": "Xtend", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "expressions"]},
+  {"level": 0, "kind": "implementation-source", "title": "XtendCompiler.java — Xtend-to-Java compiler", "url": "https://github.com/eclipse-xtext/xtext/blob/main/org.eclipse.xtend.core/src/org/eclipse/xtend/core/compiler/XtendCompiler.java", "implementation": "Xtend", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Classes and Members", "url": "https://eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes", "methods"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Local type inference", "url": "https://eclipse.dev/Xtext/xtend/documentation/201_types.html#local-type-inference", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-inference"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Conversion rules", "url": "https://eclipse.dev/Xtext/xtend/documentation/201_types.html#conversion-rules", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-conversion"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Polymorphic (multiple) dispatch", "url": "https://eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html#polymorphic-dispatch", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["multiple-dispatch"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Extension methods", "url": "https://eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html#extension-methods", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["methods"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Operator declarations", "url": "https://eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html#operator-declaration", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operator-overloading"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Expressions", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Literals", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#xtend-expressions-literals", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["literals", "strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Operators", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#operators", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Lambda expressions", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#lambdas", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — If expression", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#if-expression", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Switch expression and type guards", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#switch-expression", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["switch-case", "pattern-matching"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — For loop", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#for-loop", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Try, catch, finally", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#xtend-expressions-try-catch", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Template expressions", "url": "https://eclipse.dev/Xtext/xtend/documentation/203_xtend_expressions.html#templates", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["templating", "string-formatting"]},
+  {"level": 1, "kind": "reference-manual", "title": "Xtend documentation — Active annotations", "url": "https://eclipse.dev/Xtext/xtend/documentation/204_activeannotations.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros", "annotations-attributes"]},
+
+  {"level": 2, "kind": "tutorial", "title": "Xtend documentation — Hello World", "url": "https://eclipse.dev/Xtext/xtend/documentation/101_gettingstarted.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "Xtend documentation — Java interoperability", "url": "https://eclipse.dev/Xtext/xtend/documentation/201_types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["interoperability"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Xtend", "url": "https://en.wikipedia.org/wiki/Xtend", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Xtend", "url": "https://pldb.io/concepts/xtend.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

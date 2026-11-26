@@ -1,0 +1,47 @@
+{
+ "id": "vax-macro",
+ "name": "VAX MACRO",
+ "aliases": ["VAX-11 MACRO", "MACRO-32", "VAX assembly"],
+ "categories": ["assembly", "historical"],
+ "paradigms": ["imperative", "unstructured"],
+ "typing": ["untyped"],
+ "first_appeared": 1977,
+ "designers": ["Digital Equipment Corporation"],
+ "summary": "Assembly language of DEC's VAX architecture under VMS: a rich macro assembler for a famously orthogonal CISC instruction set with many addressing modes, CALLS/CALLG procedure-call instructions, string, decimal and queue instructions. On Alpha and Itanium OpenVMS, MACRO-32 source is compiled rather than assembled.",
+ "status": "historical",
+ "defined_by": ["vendor-specification"],
+ "file_extensions": [".mar"],
+ "homepage": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/",
+ "influenced_by": ["pdp-11-assembly"],
+ "related": [{"id": "pdp-11-assembly", "relation": "successor-of"}],
+ "level_notes": {"0": "DEC's assembler is proprietary; the SIMH VAX simulator implements the instruction set, and NetBSD/vax contains GNU-syntax VAX assembly.", "1": "DEC's VAX MACRO and Instruction Set Reference Manual (now maintained by VMS Software Inc.) and the VAX Architecture Reference Manual.", "3": "Wikipedia; Rosetta Code reports blocked."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "SIMH — VAX/vax_cpu.c — VAX instruction interpreter", "url": "https://github.com/open-simh/simh/blob/master/VAX/vax_cpu.c", "implementation": "SIMH", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "instruction-set"]},
+  {"level": 0, "kind": "implementation-source", "title": "SIMH — VAX/vax_cis.c — character and decimal string instructions", "url": "https://github.com/open-simh/simh/blob/master/VAX/vax_cis.c", "implementation": "SIMH", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["strings"]},
+  {"level": 0, "kind": "implementation-source", "title": "NetBSD — sys/arch/vax/vax/subr.S — VAX assembly in GNU syntax", "url": "https://github.com/NetBSD/src/blob/trunk/sys/arch/vax/vax/subr.S", "implementation": "NetBSD", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["program-structure"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "VSI — VAX MACRO and Instruction Set Reference Manual", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["assembler-directives", "instruction-set"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 2. Source statement format", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#MACRO_SOURCE_STATEMENT_FORMAT", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["statements", "comments", "goto-labels"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 3. Components of source statements (symbols, numbers, expressions)", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#COMPNTS_MACRO_SRC_STMNT", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["lexical-structure", "literals", "identifiers", "expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 3.4 Local labels", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#LOCAL_LABELS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 4. Macro arguments and string operators", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#MACROS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["macros", "parameters-arguments"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 5. Addressing modes", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#ADDRESSING_MODES", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["pointers-references"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 6. Assembler directives", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#ASSEMBLER_DIRECTIVES", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["assembler-directives"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 8.3 Data types", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#INTEGER_FORMATS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["primitive-types", "integers", "floating-point"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 9.5 Control instructions", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#_5_CONTROLINSTRUCTIONS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "goto-labels"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 9.6 Procedure call instructions (CALLS, CALLG, RET)", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#_6_PROCEDURECALLINSTRUCTIONS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["functions", "calling-convention-abi"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 9.10 Character string instructions", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#_15_CHARACTERSTRINGINSTRUCTIONS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["strings"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — 10. VAX vector architecture", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#VAX_VECTOR_ARCH", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["parallelism"]},
+  {"level": 1, "kind": "reference-manual", "title": "VAX MACRO manual — E. Exceptions during instruction execution", "url": "https://docs.vmssoftware.com/vsi-openvms-vax-macro-and-instruction-set-reference-manual/#FAULTS_TRAPS", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["exceptions"]},
+  {"level": 1, "kind": "reference-manual", "title": "DEC — VAX MACRO and Instruction Set Reference Manual (VMS 5.4, 1990, scan)", "url": "http://bitsavers.org/pdf/dec/vax/vms/5.4/AA-LA89B-TE_VAX_5.4_Macro_and_Instruction_Set_Reference_Manual_199006.pdf", "scope": "whole", "authority": "vendor", "year": 1990, "format": "pdf", "access": "open", "concepts": ["instruction-set"]},
+  {"level": 1, "kind": "specification", "title": "DEC — VAX Architecture Reference Manual (1987, scan)", "url": "http://bitsavers.org/pdf/dec/vax/archSpec/EY-3459E-DP_VAX_Architecture_Reference_Manual_1987.pdf", "scope": "whole", "authority": "vendor", "year": 1987, "format": "pdf", "access": "open", "concepts": ["instruction-set", "memory-model"]},
+  {"level": 1, "kind": "reference-manual", "title": "VSI — OpenVMS MACRO Compiler Porting and User's Guide (MACRO-32 on Alpha/Itanium/x86)", "url": "https://docs.vmssoftware.com/vsi-openvms-macro-compiler-porting-and-user-s-guide/", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["compiler-architecture"]},
+
+  {"level": 2, "kind": "history", "title": "DEC — VAX Technical Summary (1980, Computer History Museum)", "url": "https://archive.computerhistory.org/resources/text/DEC/vax/dec.vax.vax_technical_summary.1980.102630371.pdf", "scope": "whole", "authority": "vendor", "year": 1980, "format": "pdf", "access": "open", "concepts": ["history", "design-rationale"]},
+  {"level": 2, "kind": "guide", "title": "SIMH — computer history simulation project (run VAX/VMS)", "url": "https://simh.trailing-edge.com/", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["tooling"]},
+
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — VAX MACRO", "url": "https://en.wikipedia.org/wiki/VAX_MACRO", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — VAX", "url": "https://en.wikipedia.org/wiki/VAX", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "code-collection", "title": "Rosetta Code — Category:VAX Assembly", "url": "https://rosettacode.org/wiki/Category:VAX_Assembly", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

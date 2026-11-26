@@ -1,0 +1,81 @@
+{
+ "id": "cython",
+ "name": "Cython",
+ "categories": [
+  "general-purpose",
+  "scripting",
+  "systems"
+ ],
+ "paradigms": [
+  "imperative",
+  "object-oriented",
+  "procedural"
+ ],
+ "typing": [
+  "dynamic",
+  "static-optional",
+  "gradual"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "Robert Bradshaw",
+  "Stefan Behnel",
+  "Greg Ewing (Pyrex)"
+ ],
+ "summary": "Optimizing superset of Python (successor of Pyrex) that compiles to C/C++ extension modules for CPython, adding optional static C type declarations (cdef/cpdef), extension types, typed memoryviews, fused types and direct calls into C and C++ libraries.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".pyx",
+  ".pxd",
+  ".pxi"
+ ],
+ "homepage": "https://cython.org/",
+ "influenced_by": [
+  "python",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "python",
+   "relation": "superset-of"
+  },
+  {
+   "id": "c",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "0": "The Cython compiler is written in Python (Cython/Compiler): a hand-written recursive-descent parser over a Plex lexicon, a tree of Nodes/ExprNodes transformed by a pipeline of visitors, and C code generation in ModuleNode.py/Code.py.",
+  "1": "No specification beyond the official Cython documentation (language basics, extension types, interfacing with C/C++); the compiler defines the language. Changes are discussed as CEPs on the GitHub wiki."
+ },
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "cython/cython — the Cython compiler", "url": "https://github.com/cython/cython", "implementation": "Cython", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "Cython/Compiler/Lexicon.py — Plex lexicon (tokens)", "url": "https://github.com/cython/cython/blob/master/Cython/Compiler/Lexicon.py", "implementation": "Cython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "Cython/Compiler/Parsing.py — recursive-descent parser", "url": "https://github.com/cython/cython/blob/master/Cython/Compiler/Parsing.py", "implementation": "Cython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "Cython/Compiler/Nodes.py — statement and declaration nodes (cdef functions, classes)", "url": "https://github.com/cython/cython/blob/master/Cython/Compiler/Nodes.py", "implementation": "Cython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["ast"]},
+  {"level": 0, "kind": "implementation-source", "title": "Cython/Compiler/PyrexTypes.py — C and Python type model and coercions", "url": "https://github.com/cython/cython/blob/master/Cython/Compiler/PyrexTypes.py", "implementation": "Cython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["type-system", "type-conversion"]},
+  {"level": 0, "kind": "implementation-source", "title": "Cython/Compiler/ModuleNode.py — C module code generation", "url": "https://github.com/cython/cython/blob/master/Cython/Compiler/ModuleNode.py", "implementation": "Cython", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Language basics", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["type-annotations"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Declaring data types", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#declaring-data-types", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "primitive-types"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Structs, unions, enums", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#structs-unions-enums", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs", "enums"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Type inference", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#type-inference", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-inference"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Python functions vs. C functions (def, cdef, cpdef)", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#python-functions-vs-c-functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Error return values", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#error-return-values", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions", "error-handling"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Language basics — Automatic type conversions", "url": "https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#automatic-type-conversions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-conversion"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Extension types (cdef classes)", "url": "https://cython.readthedocs.io/en/latest/src/userguide/extension_types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["classes"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Sharing declarations between Cython modules (.pxd)", "url": "https://cython.readthedocs.io/en/latest/src/userguide/sharing_declarations.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "separate-compilation"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Interfacing with external C code", "url": "https://cython.readthedocs.io/en/latest/src/userguide/external_C_code.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ffi"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Using C++ in Cython", "url": "https://cython.readthedocs.io/en/latest/src/userguide/wrapping_CPlusPlus.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ffi", "interoperability"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Typed memoryviews", "url": "https://cython.readthedocs.io/en/latest/src/userguide/memoryviews.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Fused types (templates)", "url": "https://cython.readthedocs.io/en/latest/src/userguide/fusedtypes.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Using parallelism (prange, nogil)", "url": "https://cython.readthedocs.io/en/latest/src/userguide/parallelism.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parallelism", "threads"]},
+  {"level": 1, "kind": "reference-manual", "title": "Cython docs — Differences between Cython and Pyrex", "url": "https://cython.readthedocs.io/en/latest/src/userguide/pyrex_differences.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison", "language-evolution"]},
+  {"level": 2, "kind": "tutorial", "title": "Cython docs — Basic tutorial", "url": "https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "Cython docs — Pure Python mode", "url": "https://cython.readthedocs.io/en/latest/src/tutorial/pure.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-annotations"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Cython", "url": "https://en.wikipedia.org/wiki/Cython", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Cython", "url": "https://pldb.io/concepts/cython.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}
