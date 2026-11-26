@@ -1,0 +1,1539 @@
+{
+ "id": "rocq",
+ "name": "Rocq (Coq) / Gallina / Ltac",
+ "aliases": [
+  "Coq",
+  "Gallina",
+  "Ltac",
+  "Ltac2",
+  "Rocq Prover"
+ ],
+ "categories": [
+  "proof-assistant",
+  "functional"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative",
+  "tactic-based"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "dependent",
+  "inferred"
+ ],
+ "first_appeared": 1989,
+ "designers": [
+  "Thierry Coquand",
+  "Gérard Huet",
+  "Christine Paulin-Mohring"
+ ],
+ "summary": "Interactive proof assistant based on the Calculus of Inductive Constructions (formerly Coq, renamed Rocq in 2025). Its specification language Gallina is a dependently typed functional language; proofs are built with the Ltac/Ltac2 tactic languages and checked by a small kernel, and programs can be extracted to OCaml, Haskell or Scheme.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".v"
+ ],
+ "homepage": "https://rocq-prover.org/",
+ "influenced_by": [
+  "ml",
+  "automath",
+  "lf"
+ ],
+ "related": [
+  {
+   "id": "ocaml",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "ocaml",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "The Rocq Reference Manual (refman) is the official description; the kernel's type theory (CIC, documented in the refman's 'Typing rules' chapter and in Coquand/Huet and Paulin-Mohring papers) is the logical definition. No standard.",
+  "0": "rocq-prover/rocq (OCaml): kernel/ is the trusted checker, pretyping/ the elaborator, parsing/ the camlp5-style grammar (.mlg), plugins/ltac and plugins/ltac2 the tactic languages. The standard library is now in rocq-prover/stdlib."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "rocq-prover/rocq — the Rocq prover",
+   "url": "https://github.com/rocq-prover/rocq",
+   "concepts": [
+    "compiler-architecture",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "dev/doc — developer documentation of the Rocq sources",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/dev/doc/README.md",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/typeops.ml — kernel typing of terms",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/typeops.ml",
+   "concepts": [
+    "type-soundness",
+    "dependent-types",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/conversion.ml — kernel conversion (definitional equality)",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/conversion.ml",
+   "concepts": [
+    "type-equivalence",
+    "reduction"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/reduction.ml — reduction machinery",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/reduction.ml",
+   "concepts": [
+    "reduction",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/indtypes.ml — checking inductive declarations (positivity)",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/indtypes.ml",
+   "concepts": [
+    "algebraic-data-types",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/inductive.ml — guard condition for fixpoints, case typing",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/inductive.ml",
+   "concepts": [
+    "recursion",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/constr.mli — kernel term representation",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/constr.mli",
+   "concepts": [
+    "ast",
+    "substitution-binding"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/mod_typing.ml — typing of modules and functors",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/mod_typing.ml",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/uGraph.ml — universe constraint graph",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/uGraph.ml",
+   "concepts": [
+    "type-system",
+    "constraints"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/vm.ml — bytecode virtual machine for vm_compute",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/vm.ml",
+   "concepts": [
+    "virtual-machine",
+    "bytecode"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "kernel/nativecode.ml — native compilation for native_compute",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/kernel/nativecode.ml",
+   "concepts": [
+    "code-generation-backend",
+    "optimization"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pretyping/pretyping.ml — elaboration of Gallina terms",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/pretyping/pretyping.ml",
+   "concepts": [
+    "type-inference",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pretyping/evarconv.ml — unification of existential variables",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/pretyping/evarconv.ml",
+   "concepts": [
+    "unification",
+    "type-inference"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pretyping/cases.ml — compilation of dependent pattern matching",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/pretyping/cases.ml",
+   "concepts": [
+    "pattern-matching",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pretyping/typeclasses.ml — type class resolution",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/pretyping/typeclasses.ml",
+   "concepts": [
+    "traits-typeclasses"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "parsing/cLexer.ml — lexer",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/parsing/cLexer.ml",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "parsing/g_constr.mlg — grammar of terms",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/parsing/g_constr.mlg",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "vernac/g_vernac.mlg — grammar of vernacular commands",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/vernac/g_vernac.mlg",
+   "concepts": [
+    "grammar",
+    "program-structure"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "interp/notation.ml — notations and scopes",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/interp/notation.ml",
+   "concepts": [
+    "macros",
+    "operators"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "plugins/ltac/tacinterp.ml — Ltac interpreter",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/plugins/ltac/tacinterp.ml",
+   "concepts": [
+    "interpreter",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "plugins/ltac2/tac2interp.ml — Ltac2 interpreter",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/plugins/ltac2/tac2interp.ml",
+   "concepts": [
+    "interpreter",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "plugins/extraction/extraction.ml — program extraction",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/plugins/extraction/extraction.ml",
+   "concepts": [
+    "code-generation",
+    "interoperability"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "theories/Corelib/Init/Datatypes.v — core datatypes",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/theories/Corelib/Init/Datatypes.v",
+   "concepts": [
+    "standard-library",
+    "algebraic-data-types",
+    "booleans"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "theories/Corelib/Init/Logic.v — core logical connectives",
+   "url": "https://github.com/rocq-prover/rocq/blob/master/theories/Corelib/Init/Logic.v",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "rocq-prover/stdlib — the Rocq standard library",
+   "url": "https://github.com/rocq-prover/stdlib/blob/master/README.md",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "Rocq (rocq-prover/rocq)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Rocq Reference Manual",
+   "url": "https://rocq-prover.org/refman/index.html",
+   "concepts": [
+    "grammar",
+    "type-system",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Lexical conventions",
+   "url": "https://rocq-prover.org/refman/language/core/basic.html#lexical-conventions",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "identifiers",
+    "literals",
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Syntax conventions",
+   "url": "https://rocq-prover.org/refman/language/core/basic.html#syntax-conventions",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Attributes",
+   "url": "https://rocq-prover.org/refman/language/core/basic.html#attributes",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Sorts",
+   "url": "https://rocq-prover.org/refman/language/core/sorts.html",
+   "concepts": [
+    "type-system",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Functions and assumptions",
+   "url": "https://rocq-prover.org/refman/language/core/assumptions.html",
+   "concepts": [
+    "functions",
+    "function-types",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Definitions (let-in, top-level)",
+   "url": "https://rocq-prover.org/refman/language/core/definitions.html",
+   "concepts": [
+    "variables",
+    "constants",
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Type cast",
+   "url": "https://rocq-prover.org/refman/language/core/definitions.html#type-cast",
+   "concepts": [
+    "type-annotations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Conversion rules",
+   "url": "https://rocq-prover.org/refman/language/core/conversion.html",
+   "concepts": [
+    "reduction",
+    "type-equivalence",
+    "formal-semantics"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Typing rules (CIC)",
+   "url": "https://rocq-prover.org/refman/language/cic.html",
+   "concepts": [
+    "formal-semantics",
+    "dependent-types",
+    "type-soundness"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Subtyping rules",
+   "url": "https://rocq-prover.org/refman/language/cic.html#subtyping-rules",
+   "concepts": [
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Variants and the match construct",
+   "url": "https://rocq-prover.org/refman/language/core/variants.html",
+   "concepts": [
+    "enums",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Record types",
+   "url": "https://rocq-prover.org/refman/language/core/records.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Inductive types",
+   "url": "https://rocq-prover.org/refman/language/core/inductive.html#inductive-types",
+   "concepts": [
+    "algebraic-data-types",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Recursive functions (fix)",
+   "url": "https://rocq-prover.org/refman/language/core/inductive.html#recursive-functions-fix",
+   "concepts": [
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Positivity condition",
+   "url": "https://rocq-prover.org/refman/language/core/inductive.html#positivity-condition",
+   "concepts": [
+    "type-soundness",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Coinductive types and corecursion",
+   "url": "https://rocq-prover.org/refman/language/core/coinductive.html",
+   "concepts": [
+    "lazy-evaluation",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Sections",
+   "url": "https://rocq-prover.org/refman/language/core/sections.html",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — The module system",
+   "url": "https://rocq-prover.org/refman/language/core/modules.html",
+   "concepts": [
+    "modules",
+    "namespaces",
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Primitive objects (integers, floats, arrays, strings)",
+   "url": "https://rocq-prover.org/refman/language/core/primitive.html",
+   "concepts": [
+    "primitive-types",
+    "integers",
+    "floating-point",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Extended pattern matching",
+   "url": "https://rocq-prover.org/refman/language/extensions/match.html",
+   "concepts": [
+    "pattern-matching",
+    "destructuring"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — if-expression on boolean values",
+   "url": "https://rocq-prover.org/refman/language/extensions/match.html#pattern-matching-on-boolean-values-the-if-expression",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Matching objects of dependent types",
+   "url": "https://rocq-prover.org/refman/language/extensions/match.html#matching-objects-of-dependent-types",
+   "concepts": [
+    "dependent-types",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Implicit arguments",
+   "url": "https://rocq-prover.org/refman/language/extensions/implicit-arguments.html",
+   "concepts": [
+    "type-inference",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Existential variables",
+   "url": "https://rocq-prover.org/refman/language/extensions/evars.html",
+   "concepts": [
+    "type-inference",
+    "unification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Canonical structures",
+   "url": "https://rocq-prover.org/refman/language/extensions/canonical.html",
+   "concepts": [
+    "traits-typeclasses",
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Typeclasses",
+   "url": "https://rocq-prover.org/refman/addendum/type-classes.html",
+   "concepts": [
+    "traits-typeclasses",
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Implicit coercions",
+   "url": "https://rocq-prover.org/refman/addendum/implicit-coercions.html",
+   "concepts": [
+    "type-conversion",
+    "subtyping"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Universe polymorphism",
+   "url": "https://rocq-prover.org/refman/addendum/universe-polymorphism.html",
+   "concepts": [
+    "generics",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — SProp (definitionally proof-irrelevant propositions)",
+   "url": "https://rocq-prover.org/refman/addendum/sprop.html",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Program (subset types and obligations)",
+   "url": "https://rocq-prover.org/refman/addendum/program.html",
+   "concepts": [
+    "refinement-types",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Program extraction",
+   "url": "https://rocq-prover.org/refman/addendum/extraction.html",
+   "concepts": [
+    "code-generation",
+    "interoperability"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Generalized rewriting",
+   "url": "https://rocq-prover.org/refman/addendum/generalized-rewriting.html",
+   "concepts": [
+    "rewriting"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Rewrite rules",
+   "url": "https://rocq-prover.org/refman/addendum/rewrite-rules.html",
+   "concepts": [
+    "rewriting",
+    "reduction"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Syntax extensions and notation scopes",
+   "url": "https://rocq-prover.org/refman/user-extensions/syntax-extensions.html",
+   "concepts": [
+    "macros",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Precedences and associativity",
+   "url": "https://rocq-prover.org/refman/user-extensions/syntax-extensions.html#precedences-and-associativity",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Proof mode",
+   "url": "https://rocq-prover.org/refman/proofs/writing-proofs/proof-mode.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Reasoning with inductive types",
+   "url": "https://rocq-prover.org/refman/proofs/writing-proofs/reasoning-inductives.html",
+   "concepts": [
+    "verification",
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Reasoning with equalities",
+   "url": "https://rocq-prover.org/refman/proofs/writing-proofs/equality.html",
+   "concepts": [
+    "rewriting",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Tactics",
+   "url": "https://rocq-prover.org/refman/proof-engine/tactics.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Ltac",
+   "url": "https://rocq-prover.org/refman/proof-engine/ltac.html",
+   "concepts": [
+    "verification",
+    "macros"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Ltac control flow",
+   "url": "https://rocq-prover.org/refman/proof-engine/ltac.html#control-flow",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "exceptions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Ltac pattern matching on goals",
+   "url": "https://rocq-prover.org/refman/proof-engine/ltac.html#pattern-matching-on-goals-and-hypotheses-match-goal",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Ltac2",
+   "url": "https://rocq-prover.org/refman/proof-engine/ltac2.html",
+   "concepts": [
+    "verification",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — SSReflect proof language",
+   "url": "https://rocq-prover.org/refman/proof-engine/ssreflect-proof-language.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Vernacular commands",
+   "url": "https://rocq-prover.org/refman/proof-engine/vernacular-commands.html",
+   "concepts": [
+    "program-structure",
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Automatic tactics (auto, eauto)",
+   "url": "https://rocq-prover.org/refman/proofs/automatic-tactics/auto.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Micromega (lia, lra)",
+   "url": "https://rocq-prover.org/refman/addendum/micromega.html",
+   "concepts": [
+    "verification",
+    "constraints"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Functional induction",
+   "url": "https://rocq-prover.org/refman/using/libraries/funind.html",
+   "concepts": [
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Rocq commands (compiler, toplevel)",
+   "url": "https://rocq-prover.org/refman/practical-tools/coq-commands.html",
+   "concepts": [
+    "command-line",
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Utilities (build, makefiles)",
+   "url": "https://rocq-prover.org/refman/practical-tools/utilities.html",
+   "concepts": [
+    "build-systems"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — rocq doc documentation tool",
+   "url": "https://rocq-prover.org/refman/using/tools/coqdoc.html",
+   "concepts": [
+    "documentation-comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Rocq Reference Manual — Parallel proof processing",
+   "url": "https://rocq-prover.org/refman/addendum/parallel-proof-processing.html",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Rocq Reference Manual — The Rocq library overview",
+   "url": "https://rocq-prover.org/refman/language/coq-library.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Rocq Corelib documentation (9.0)",
+   "url": "https://rocq-prover.org/doc/V9.0.0/corelib/index.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Rocq Reference Manual — Recent changes",
+   "url": "https://rocq-prover.org/refman/changes.html",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "Rocq RFCs repository",
+   "url": "https://github.com/rocq-prover/rfcs/blob/master/README.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Calculus of Constructions (INRIA RR-530)",
+   "url": "https://inria.hal.science/inria-00076024/document",
+   "concepts": [
+    "logic-foundations",
+    "dependent-types",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Thierry Coquand",
+    "Gérard Huet"
+   ],
+   "year": 1986,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Calculus of Constructions (Information and Computation 76)",
+   "url": "https://doi.org/10.1016/0890-5401(88)90005-3",
+   "concepts": [
+    "logic-foundations",
+    "dependent-types"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Thierry Coquand",
+    "Gérard Huet"
+   ],
+   "year": 1988,
+   "format": "html",
+   "access": "paywalled"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Introduction to the Calculus of Inductive Constructions",
+   "url": "https://inria.hal.science/hal-01094195/document",
+   "concepts": [
+    "formal-semantics",
+    "algebraic-data-types",
+    "logic-foundations"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Christine Paulin-Mohring"
+   ],
+   "year": 2015,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Rocq Reference Manual — Early history of Coq",
+   "url": "https://rocq-prover.org/refman/history.html",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Software Foundations (vol. 1: Logical Foundations and later volumes)",
+   "url": "https://softwarefoundations.cis.upenn.edu/",
+   "concepts": [
+    "verification",
+    "logic-foundations"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Benjamin C. Pierce",
+    "et al."
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Basics (functional programming in Rocq)",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Basics.html",
+   "concepts": [
+    "hello-world",
+    "functions",
+    "enums",
+    "booleans",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Induction",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Induction.html",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Lists",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html",
+   "concepts": [
+    "lists",
+    "tuples",
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Poly (polymorphism and higher-order functions)",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Poly.html",
+   "concepts": [
+    "generics",
+    "higher-order-functions",
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Tactics",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Tactics.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Logic",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Logic.html",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — IndProp (inductively defined propositions)",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/IndProp.html",
+   "concepts": [
+    "dependent-types",
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — Maps",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/Maps.html",
+   "concepts": [
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Logical Foundations — ProofObjects (Curry-Howard)",
+   "url": "https://softwarefoundations.cis.upenn.edu/lf-current/ProofObjects.html",
+   "concepts": [
+    "logic-foundations",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "academic",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Certified Programming with Dependent Types",
+   "url": "https://adam.chlipala.net/cpdt/",
+   "concepts": [
+    "dependent-types",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Adam Chlipala"
+   ],
+   "year": 2013,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Mathematical Components (book)",
+   "url": "https://math-comp.github.io/mcb/",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Assia Mahboubi",
+    "Enrico Tassi"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn Coq in Y minutes",
+   "url": "https://learnxinyminutes.com/coq/",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Rocq documentation hub",
+   "url": "https://rocq-prover.org/docs",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Rocq — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rocq",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Coq — PLDB",
+   "url": "https://pldb.io/concepts/coq.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

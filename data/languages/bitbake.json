@@ -1,0 +1,340 @@
+{
+ "id": "bitbake",
+ "name": "BitBake",
+ "aliases": [
+  "BitBake metadata",
+  "bb recipes"
+ ],
+ "categories": [
+  "build",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "dependency-driven"
+ ],
+ "first_appeared": 2004,
+ "designers": [
+  "OpenEmbedded project",
+  "Chris Larson",
+  "Richard Purdie"
+ ],
+ "summary": "Metadata language of the BitBake task executor used by OpenEmbedded/Yocto: recipes (.bb), classes (.bbclass) and configuration (.conf) with variable assignment operators (?=, ??=, :=, +=, :append/:prepend/:remove overrides), conditional overrides, inheritance, and embedded shell and Python task functions.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".bb",
+  ".bbappend",
+  ".bbclass",
+  ".inc",
+  ".conf"
+ ],
+ "homepage": "https://docs.yoctoproject.org/bitbake/",
+ "related": [
+  {
+   "id": "python",
+   "relation": "embeds"
+  },
+  {
+   "id": "posix-sh",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "0": "openembedded/bitbake (Python).",
+  "1": "BitBake User Manual — Syntax and Operators chapter.",
+  "2": "Yocto Project manuals.",
+  "3": "Wikipedia, PLDB."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "openembedded/bitbake — source repository",
+   "url": "https://github.com/openembedded/bitbake",
+   "format": "repository",
+   "scope": "whole",
+   "access": "open",
+   "implementation": "BitBake",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bitbake parse/parse_py/BBHandler.py — .bb file parser",
+   "url": "https://github.com/openembedded/bitbake/blob/master/lib/bb/parse/parse_py/BBHandler.py",
+   "concepts": [
+    "parser"
+   ],
+   "access": "open",
+   "implementation": "BitBake",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bitbake parse/ast.py — metadata AST",
+   "url": "https://github.com/openembedded/bitbake/blob/master/lib/bb/parse/ast.py",
+   "concepts": [
+    "ast"
+   ],
+   "access": "open",
+   "implementation": "BitBake",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "bitbake data_smart.py — datastore, expansion and overrides",
+   "url": "https://github.com/openembedded/bitbake/blob/master/lib/bb/data_smart.py",
+   "concepts": [
+    "variables",
+    "evaluation-order"
+   ],
+   "access": "open",
+   "implementation": "BitBake",
+   "authority": "official",
+   "format": "source-file",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Syntax and Operators",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Basic syntax",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#basic-syntax",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Variable expansion",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#variable-expansion",
+   "concepts": [
+    "variables",
+    "string-formatting"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Immediate variable expansion",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#immediate-variable-expansion",
+   "concepts": [
+    "evaluation-order",
+    "assignment"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Default values (?=, ??=)",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#setting-a-default-value",
+   "concepts": [
+    "assignment"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Appending and prepending (override style)",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#appending-and-prepending-override-style-syntax",
+   "concepts": [
+    "operators",
+    "assignment"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Conditional syntax (overrides)",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#conditional-syntax-overrides",
+   "concepts": [
+    "conditionals"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Inline Python variable expansion",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#inline-python-variable-expansion",
+   "concepts": [
+    "eval",
+    "interoperability"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — inherit directive",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#inherit-directive",
+   "concepts": [
+    "inheritance",
+    "imports"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — include directive",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#include-directive",
+   "concepts": [
+    "imports"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Functions",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#functions",
+   "concepts": [
+    "functions"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Shell functions",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#shell-functions",
+   "concepts": [
+    "processes-system"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Anonymous Python functions",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#anonymous-python-functions",
+   "concepts": [
+    "closures"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Tasks",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#tasks",
+   "concepts": [
+    "build-systems"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "BitBake User Manual — Dependencies",
+   "url": "https://docs.yoctoproject.org/bitbake/bitbake-user-manual/bitbake-user-manual-metadata.html#dependencies",
+   "concepts": [
+    "build-systems"
+   ],
+   "access": "open",
+   "authority": "official",
+   "format": "html",
+   "scope": "section"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Yocto Project Reference Manual — Variables Glossary",
+   "url": "https://docs.yoctoproject.org/ref-manual/variables.html",
+   "concepts": [
+    "variables"
+   ],
+   "scope": "section",
+   "access": "open",
+   "authority": "official",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — BitBake",
+   "url": "https://pldb.io/concepts/bitbake.html",
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — BitBake",
+   "url": "https://en.wikipedia.org/wiki/BitBake",
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

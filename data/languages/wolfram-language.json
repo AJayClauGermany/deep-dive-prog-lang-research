@@ -1,0 +1,1482 @@
+{
+ "id": "wolfram-language",
+ "name": "Wolfram Language",
+ "aliases": [
+  "Mathematica",
+  "Wolfram Mathematica"
+ ],
+ "categories": [
+  "scientific",
+  "functional"
+ ],
+ "paradigms": [
+  "term-rewriting",
+  "functional",
+  "symbolic",
+  "procedural"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 1988,
+ "designers": [
+  "Stephen Wolfram"
+ ],
+ "summary": "Proprietary symbolic language of Mathematica (named Wolfram Language in 2013): everything is an expression, evaluated by repeated application of pattern-based transformation rules, with a very large built-in library.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".wl",
+  ".m",
+  ".nb",
+  ".wls"
+ ],
+ "homepage": "https://www.wolfram.com/language/",
+ "influenced_by": [
+  "lisp",
+  "apl",
+  "smp",
+  "prolog"
+ ],
+ "level_notes": {
+  "0": "Proprietary; Wolfram's kernel source is not available. Level 0 lists Mathics3, an independent open-source (Python) reimplementation of the core language - not the definition and not fully compatible.",
+  "1": "No standard; the vendor's Wolfram Language & System Documentation Center (reference pages, guides and tutorials) is the de-facto definition. Wolfram tutorials there are treated as the reference manual's prose sections."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Mathics3/mathics-core — open-source Wolfram Language interpreter",
+   "url": "https://github.com/Mathics3/mathics-core",
+   "scope": "whole",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/parser/parser.py (parser)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/parser/parser.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/rules.py (rewrite rules)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/rules.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/evaluation.py (evaluation loop)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/evaluation.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/expression.py (expression evaluation)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/expression.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/definitions.py (symbol definitions and contexts)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/definitions.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/builtin/procedural.py (procedural constructs (If, Do, While, Which, Catch))",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/builtin/procedural.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/builtin/scoping.py (Module, Block, With)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/builtin/scoping.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/symbols.py (symbols)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/symbols.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/builtin/functional/apply_fns_to_lists.py (Map/Apply)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/builtin/functional/apply_fns_to_lists.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/builtin/attributes.py (attributes (HoldAll, Listable, ...))",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/builtin/attributes.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/builtin/string/operations.py (string operations)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/builtin/string/operations.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Mathics3 — mathics/core/convert/sympy.py (SymPy bridge)",
+   "url": "https://github.com/Mathics3/mathics-core/blob/master/mathics/core/convert/sympy.py",
+   "scope": "section",
+   "implementation": "Mathics3",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language & System Documentation Center",
+   "url": "https://reference.wolfram.com/language/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Language Overview",
+   "url": "https://reference.wolfram.com/language/guide/LanguageOverview.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Syntax",
+   "url": "https://reference.wolfram.com/language/guide/Syntax.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Functional Programming",
+   "url": "https://reference.wolfram.com/language/guide/FunctionalProgramming.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Rules & Patterns",
+   "url": "https://reference.wolfram.com/language/guide/RulesAndPatterns.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Patterns",
+   "url": "https://reference.wolfram.com/language/guide/Patterns.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — List Manipulation",
+   "url": "https://reference.wolfram.com/language/guide/ListManipulation.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Associations",
+   "url": "https://reference.wolfram.com/language/guide/Associations.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — String Manipulation",
+   "url": "https://reference.wolfram.com/language/guide/StringManipulation.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Parallel Computing",
+   "url": "https://reference.wolfram.com/language/guide/ParallelComputing.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parallelism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Scoping Constructs",
+   "url": "https://reference.wolfram.com/language/guide/ScopingConstructs.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Conditionals",
+   "url": "https://reference.wolfram.com/language/guide/Conditionals.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Flow Control",
+   "url": "https://reference.wolfram.com/language/guide/FlowControl.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Robustness & Error Handling",
+   "url": "https://reference.wolfram.com/language/guide/RobustnessAndErrorHandling.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Package Development",
+   "url": "https://reference.wolfram.com/language/guide/PackageDevelopment.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Assignments",
+   "url": "https://reference.wolfram.com/language/guide/Assignments.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — LibraryLink",
+   "url": "https://reference.wolfram.com/language/guide/LibraryLink.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — String Patterns",
+   "url": "https://reference.wolfram.com/language/guide/StringPatterns.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Messages",
+   "url": "https://reference.wolfram.com/language/guide/Messages.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Logic & Boolean Algebra",
+   "url": "https://reference.wolfram.com/language/guide/LogicAndBooleanAlgebra.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Symbolic Arrays",
+   "url": "https://reference.wolfram.com/language/guide/SymbolicArrays.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Core Language Overview",
+   "url": "https://reference.wolfram.com/language/tutorial/CoreLanguageOverview.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Operator Input Forms",
+   "url": "https://reference.wolfram.com/language/tutorial/OperatorInputForms.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Evaluation",
+   "url": "https://reference.wolfram.com/language/tutorial/Evaluation.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Patterns",
+   "url": "https://reference.wolfram.com/language/tutorial/Patterns.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Transformation Rules and Definitions",
+   "url": "https://reference.wolfram.com/language/tutorial/TransformationRulesAndDefinitions.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Lists",
+   "url": "https://reference.wolfram.com/language/tutorial/Lists.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Input Syntax",
+   "url": "https://reference.wolfram.com/language/tutorial/InputSyntax.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Modularity and the Naming of Things",
+   "url": "https://reference.wolfram.com/language/tutorial/ModularityAndTheNamingOfThings.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — How Modules Work",
+   "url": "https://reference.wolfram.com/language/tutorial/HowModulesWork.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Conditionals",
+   "url": "https://reference.wolfram.com/language/tutorial/Conditionals.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Pure Functions",
+   "url": "https://reference.wolfram.com/language/tutorial/PureFunctions.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Messages",
+   "url": "https://reference.wolfram.com/language/tutorial/Messages.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Setting Up Wolfram Language Packages",
+   "url": "https://reference.wolfram.com/language/tutorial/SettingUpWolframLanguagePackages.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Contexts",
+   "url": "https://reference.wolfram.com/language/tutorial/Contexts.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Attributes",
+   "url": "https://reference.wolfram.com/language/tutorial/Attributes.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — The Standard Evaluation Procedure",
+   "url": "https://reference.wolfram.com/language/tutorial/TheStandardEvaluationProcedure.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Non-Standard Evaluation",
+   "url": "https://reference.wolfram.com/language/tutorial/NonStandardEvaluation.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lazy-evaluation",
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Associating Definitions with Different Symbols",
+   "url": "https://reference.wolfram.com/language/tutorial/AssociatingDefinitionsWithDifferentSymbols.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — String Patterns",
+   "url": "https://reference.wolfram.com/language/tutorial/StringPatterns.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Blocks Compared with Modules",
+   "url": "https://reference.wolfram.com/language/tutorial/BlocksComparedWithModules.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Functions as Procedures",
+   "url": "https://reference.wolfram.com/language/tutorial/FunctionsAsProcedures.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Numerical Precision",
+   "url": "https://reference.wolfram.com/language/tutorial/NumericalPrecision.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Loops and Control Structures",
+   "url": "https://reference.wolfram.com/language/tutorial/LoopsAndControlStructures.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Wolfram Language Documentation — Arbitrary-Precision Numbers",
+   "url": "https://reference.wolfram.com/language/tutorial/ArbitraryPrecisionNumbers.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point",
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — If",
+   "url": "https://reference.wolfram.com/language/ref/If.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Which",
+   "url": "https://reference.wolfram.com/language/ref/Which.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Switch",
+   "url": "https://reference.wolfram.com/language/ref/Switch.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Do",
+   "url": "https://reference.wolfram.com/language/ref/Do.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — For",
+   "url": "https://reference.wolfram.com/language/ref/For.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — While",
+   "url": "https://reference.wolfram.com/language/ref/While.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Module",
+   "url": "https://reference.wolfram.com/language/ref/Module.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Block",
+   "url": "https://reference.wolfram.com/language/ref/Block.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — With",
+   "url": "https://reference.wolfram.com/language/ref/With.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Function",
+   "url": "https://reference.wolfram.com/language/ref/Function.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Association",
+   "url": "https://reference.wolfram.com/language/ref/Association.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Catch",
+   "url": "https://reference.wolfram.com/language/ref/Catch.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Throw",
+   "url": "https://reference.wolfram.com/language/ref/Throw.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Failure",
+   "url": "https://reference.wolfram.com/language/ref/Failure.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Compile",
+   "url": "https://reference.wolfram.com/language/ref/Compile.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — FunctionCompile",
+   "url": "https://reference.wolfram.com/language/ref/FunctionCompile.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Hold",
+   "url": "https://reference.wolfram.com/language/ref/Hold.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "quotation-homoiconicity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Map",
+   "url": "https://reference.wolfram.com/language/ref/Map.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Apply",
+   "url": "https://reference.wolfram.com/language/ref/Apply.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Fold",
+   "url": "https://reference.wolfram.com/language/ref/Fold.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — ParallelMap",
+   "url": "https://reference.wolfram.com/language/ref/ParallelMap.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parallelism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — BeginPackage",
+   "url": "https://reference.wolfram.com/language/ref/BeginPackage.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Needs",
+   "url": "https://reference.wolfram.com/language/ref/Needs.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — StringTemplate",
+   "url": "https://reference.wolfram.com/language/ref/StringTemplate.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Rational",
+   "url": "https://reference.wolfram.com/language/ref/Rational.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Integer",
+   "url": "https://reference.wolfram.com/language/ref/Integer.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — String",
+   "url": "https://reference.wolfram.com/language/ref/String.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — List",
+   "url": "https://reference.wolfram.com/language/ref/List.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — ReplaceAll",
+   "url": "https://reference.wolfram.com/language/ref/ReplaceAll.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "rewriting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — SetDelayed",
+   "url": "https://reference.wolfram.com/language/ref/SetDelayed.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Sow",
+   "url": "https://reference.wolfram.com/language/ref/Sow.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Reap",
+   "url": "https://reference.wolfram.com/language/ref/Reap.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Table",
+   "url": "https://reference.wolfram.com/language/ref/Table.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Echo",
+   "url": "https://reference.wolfram.com/language/ref/Echo.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "input-output"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Import",
+   "url": "https://reference.wolfram.com/language/ref/Import.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "file-io",
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Missing",
+   "url": "https://reference.wolfram.com/language/ref/Missing.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Dataset",
+   "url": "https://reference.wolfram.com/language/ref/Dataset.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Wolfram Language reference — Quantity",
+   "url": "https://reference.wolfram.com/language/ref/Quantity.html",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "An Elementary Introduction to the Wolfram Language",
+   "url": "https://www.wolfram.com/language/elementary-introduction/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Stephen Wolfram"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Fast Introduction for Programmers",
+   "url": "https://www.wolfram.com/language/fast-introduction-for-programmers/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Stephen Wolfram: Writings on the Wolfram Language",
+   "url": "https://writings.stephenwolfram.com/category/wolfram-language/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Stephen Wolfram"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Stephen Wolfram — Tini Veltman, SMP and the origins of Mathematica (How Mathematica came to be)",
+   "url": "https://writings.stephenwolfram.com/2013/06/there-was-a-time-before-mathematica/",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Stephen Wolfram"
+   ],
+   "year": 2013,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn X in Y minutes — Wolfram",
+   "url": "https://learnxinyminutes.com/docs/wolfram/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Mathematica Stack Exchange",
+   "url": "https://mathematica.stackexchange.com/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Wolfram Language",
+   "url": "https://en.wikipedia.org/wiki/Wolfram_Language",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:Mathematica",
+   "url": "https://rosettacode.org/wiki/Category:Mathematica",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Wolfram Language",
+   "url": "https://pldb.io/concepts/wolfram.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Wolfram Mathematica",
+   "url": "https://en.wikipedia.org/wiki/Wolfram_Mathematica",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Wolfram Function Repository",
+   "url": "https://resources.wolframcloud.com/FunctionRepository/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  }
+ ]
+}

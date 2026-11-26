@@ -1,0 +1,1168 @@
+{
+ "id": "idris",
+ "name": "Idris 2",
+ "aliases": [
+  "Idris",
+  "Idris2"
+ ],
+ "categories": [
+  "general-purpose",
+  "functional",
+  "proof-assistant"
+ ],
+ "paradigms": [
+  "functional",
+  "dependently-typed"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "dependent",
+  "quantitative",
+  "inferred"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "Edwin Brady"
+ ],
+ "summary": "Purely functional programming language with first-class dependent types designed for type-driven development; Idris 2 is self-hosted, based on Quantitative Type Theory (multiplicities 0/1/ω enabling linear and erased arguments) and compiles via Chez Scheme, Racket, JavaScript or C.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".idr",
+  ".lidr",
+  ".ipkg"
+ ],
+ "homepage": "https://www.idris-lang.org/",
+ "influenced_by": [
+  "haskell",
+  "agda",
+  "epigram",
+  "ml"
+ ],
+ "related": [
+  {
+   "id": "scheme",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal specification. The Idris 2 documentation (tutorial plus language reference) and Brady's papers (Idris 1 JFP 2013; Idris 2 ECOOP 2021) define the language.",
+  "0": "idris-lang/Idris2 is the self-hosting compiler: Core/ holds the core type theory (TT), unification, linearity and termination checking; TTImp/ the elaborator; Compiler/ the backends."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "idris-lang/Idris2 — self-hosted Idris 2 compiler",
+   "url": "https://github.com/idris-lang/Idris2",
+   "concepts": [
+    "compiler-architecture",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Parser/Lexer/Source.idr — lexer",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Parser/Lexer/Source.idr",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "src/Idris/Parser.idr — surface-language parser",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Idris/Parser.idr",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Idris/Desugar.idr — desugaring surface syntax to TTImp",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Idris/Desugar.idr",
+   "concepts": [
+    "ast",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Core/TT.idr — core type theory terms",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Core/TT.idr",
+   "concepts": [
+    "ast",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Core/Normalise.idr — normalisation by evaluation",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Core/Normalise.idr",
+   "concepts": [
+    "reduction",
+    "evaluation-order"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Core/Unify.idr — unification",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Core/Unify.idr",
+   "concepts": [
+    "unification",
+    "type-inference"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Core/LinearCheck.idr — multiplicity (linearity) checking",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Core/LinearCheck.idr",
+   "concepts": [
+    "linear-types"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Core/Termination.idr — totality/termination checking",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Core/Termination.idr",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Core/Coverage.idr — coverage checking",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Core/Coverage.idr",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/TTImp/Elab/Check.idr — elaborator entry point",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/TTImp/Elab/Check.idr",
+   "concepts": [
+    "semantic-analysis",
+    "type-inference"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/TTImp/Elab/App.idr — elaborating applications and implicits",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/TTImp/Elab/App.idr",
+   "concepts": [
+    "parameters-arguments",
+    "type-inference"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/TTImp/Elab/Case.idr — case expressions",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/TTImp/Elab/Case.idr",
+   "concepts": [
+    "pattern-matching",
+    "switch-case"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/TTImp/ProcessData.idr — data declarations",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/TTImp/ProcessData.idr",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Idris/Elab/Interface.idr — interfaces",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Idris/Elab/Interface.idr",
+   "concepts": [
+    "traits-typeclasses",
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/TTImp/Interactive/ExprSearch.idr — proof/program search",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/TTImp/Interactive/ExprSearch.idr",
+   "concepts": [
+    "tooling",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Compiler/Scheme/Chez.idr — Chez Scheme backend",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Compiler/Scheme/Chez.idr",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Compiler/ES/Codegen.idr — JavaScript backend",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Compiler/ES/Codegen.idr",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Compiler/RefC/RefC.idr — reference-counting C backend",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/src/Compiler/RefC/RefC.idr",
+   "concepts": [
+    "code-generation-backend",
+    "memory-management"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "libs/prelude/Prelude/Types.idr — prelude types",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/libs/prelude/Prelude/Types.idr",
+   "concepts": [
+    "standard-library",
+    "null-optional"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "libs/base/Data/List.idr — list library",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/List.idr",
+   "concepts": [
+    "lists",
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "Idris 2 (idris-lang/Idris2)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 documentation",
+   "url": "https://idris2.readthedocs.io/en/latest/",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 language reference",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/index.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Operators",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/operators.html",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Records",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/records.html",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Strings and string interpolation",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/strings.html",
+   "concepts": [
+    "strings",
+    "string-formatting"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Built-in types",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/builtins.html",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Overloaded literals",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/overloadedlit.html",
+   "concepts": [
+    "literals",
+    "overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Pragmas",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/pragmas.html",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Documenting code",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/documenting.html",
+   "concepts": [
+    "documentation-comments",
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Literate programming",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/literate.html",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Packages (.ipkg)",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/packages.html",
+   "concepts": [
+    "packages",
+    "package-management"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 reference — Failing blocks",
+   "url": "https://idris2.readthedocs.io/en/latest/reference/failing.html",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 — Foreign function interface",
+   "url": "https://idris2.readthedocs.io/en/latest/ffi/ffi.html",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 — Code generation backends",
+   "url": "https://idris2.readthedocs.io/en/latest/backends/index.html",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 — Chez Scheme backend",
+   "url": "https://idris2.readthedocs.io/en/latest/backends/chez.html",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Idris 2 — RefC (C) backend",
+   "url": "https://idris2.readthedocs.io/en/latest/backends/refc.html",
+   "concepts": [
+    "code-generation-backend",
+    "memory-management"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "Idris 2 — Implementation overview",
+   "url": "https://idris2.readthedocs.io/en/latest/implementation/overview.html",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Idris 2 — Changes since Idris 1",
+   "url": "https://idris2.readthedocs.io/en/latest/updates/updates.html",
+   "concepts": [
+    "language-evolution",
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Idris 2 CHANGELOG",
+   "url": "https://github.com/idris-lang/Idris2/blob/main/CHANGELOG.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Idris 2: Quantitative Type Theory in Practice (ECOOP 2021)",
+   "url": "https://arxiv.org/abs/2104.00480",
+   "concepts": [
+    "linear-types",
+    "dependent-types",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Edwin Brady"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Idris, a general-purpose dependently typed programming language: design and implementation (JFP 2013)",
+   "url": "https://www.type-driven.org.uk/edwinb/papers/impldtp.pdf",
+   "concepts": [
+    "design-rationale",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Edwin Brady"
+   ],
+   "year": 2013,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Idris 2 library API documentation",
+   "url": "https://idris-lang.github.io/Idris2/",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Getting started",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/starting.html",
+   "concepts": [
+    "hello-world",
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Primitive types",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#primitive-types",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Data types",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#data-types",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Functions",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#functions",
+   "concepts": [
+    "functions",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Where clauses",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#where-clauses",
+   "concepts": [
+    "scope"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Totality and covering",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#totality-and-covering",
+   "concepts": [
+    "verification",
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Holes",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#holes",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Dependent types (Vect, Fin)",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#dependent-types",
+   "concepts": [
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Implicit arguments",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#implicit-arguments",
+   "concepts": [
+    "type-inference",
+    "parameters-arguments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — I/O",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#i-o",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — do notation",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#do-notation",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Laziness",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#laziness",
+   "concepts": [
+    "lazy-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Anonymous functions and operator sections",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#aside-anonymous-functions-and-operator-sections",
+   "concepts": [
+    "closures",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Maybe",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#maybe",
+   "concepts": [
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Tuples and dependent pairs",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#tuples",
+   "concepts": [
+    "tuples"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Records",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#records",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Let bindings",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#let-bindings",
+   "concepts": [
+    "variables",
+    "destructuring"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — List comprehensions",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#list-comprehensions",
+   "concepts": [
+    "comprehensions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Case expressions",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/typesfuns.html#case-expressions",
+   "concepts": [
+    "switch-case",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Interfaces",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/interfaces.html",
+   "concepts": [
+    "interfaces-protocols",
+    "traits-typeclasses"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Modules and namespaces",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/modules.html",
+   "concepts": [
+    "modules",
+    "namespaces",
+    "visibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Multiplicities",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/multiplicities.html",
+   "concepts": [
+    "linear-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Views and the with rule",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/views.html",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Theorem proving",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/theorems.html",
+   "concepts": [
+    "verification",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Interactive editing",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/interactive.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Example: the well-typed interpreter",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/interp.html",
+   "concepts": [
+    "interpreter",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 tutorial — Miscellany (auto implicits, cumulativity)",
+   "url": "https://idris2.readthedocs.io/en/latest/tutorial/miscellany.html",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 — Structuring applications (linear resources)",
+   "url": "https://idris2.readthedocs.io/en/latest/app/linear.html",
+   "concepts": [
+    "linear-types",
+    "resource-management"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 — Exceptions and state",
+   "url": "https://idris2.readthedocs.io/en/latest/app/exceptionsstate.html",
+   "concepts": [
+    "exceptions",
+    "effect-systems"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 — Theorem proving: propositional equality",
+   "url": "https://idris2.readthedocs.io/en/latest/proofs/propositional.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Idris 2 — Theorem proving: inductive proofs",
+   "url": "https://idris2.readthedocs.io/en/latest/proofs/inductive.html",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Idris 2 — Type-Driven Development with Idris: updates for Idris 2",
+   "url": "https://idris2.readthedocs.io/en/latest/typedd/typedd.html",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "faq",
+   "title": "Idris 2 FAQ",
+   "url": "https://idris2.readthedocs.io/en/latest/faq/faq.html",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Type-Driven Development with Idris (Manning, 2017)",
+   "url": "https://www.manning.com/books/type-driven-development-with-idris",
+   "concepts": [
+    "dependent-types"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Edwin Brady"
+   ],
+   "year": 2017,
+   "format": "html",
+   "access": "paywalled"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Idris (programming language) — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Idris_(programming_language)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Idris — PLDB",
+   "url": "https://pldb.io/concepts/idris.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,339 @@
+{
+ "id": "lp-format",
+ "name": "LP / MPS formats",
+ "aliases": [
+  "MPS",
+  "Mathematical Programming System format",
+  "CPLEX LP format",
+  "free MPS"
+ ],
+ "categories": [
+  "specification-modeling",
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1960,
+ "designers": [
+  "IBM (MPS/360)",
+  "CPLEX Optimization"
+ ],
+ "summary": "The de facto interchange formats for linear and mixed-integer programs: column-oriented, fixed/free-field MPS (NAME, ROWS, COLUMNS, RHS, RANGES, BOUNDS sections, from IBM's 1960s MPS/360) and the algebraic, row-oriented CPLEX LP format (objective, Subject To, Bounds, General/Binary sections), each with solver-specific extensions for quadratic, SOS and indicator constraints.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "informal"
+ ],
+ "file_extensions": [
+  ".mps",
+  ".lp"
+ ],
+ "homepage": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html",
+ "level_notes": {
+  "1": "No standard; vendor manuals (IBM CPLEX, Gurobi, lp_solve) are the de facto specifications and differ in details.",
+  "0": "Readers/writers in COIN-OR CoinUtils, HiGHS, GLPK and lp_solve."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html",
+   "concepts": [
+    "serialization"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS format",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#mps-format",
+   "concepts": [
+    "grammar",
+    "document-structure"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS ROWS section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#rows-section",
+   "concepts": [
+    "constraints"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS COLUMNS section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#columns-section",
+   "concepts": [
+    "data-model"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS integrality markers",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#integrality-markers",
+   "concepts": [
+    "integers"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS RHS section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#rhs-section",
+   "concepts": [
+    "constants"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS BOUNDS section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#bounds-section",
+   "concepts": [
+    "ranges"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: MPS SOS section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#sos-section",
+   "concepts": [
+    "constraints"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: LP format",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#lp-format",
+   "concepts": [
+    "grammar",
+    "expressions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: LP objective section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#objective-section",
+   "concepts": [
+    "expressions"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: LP constraints section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#constraints-section",
+   "concepts": [
+    "constraints",
+    "operators"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: LP variable type section",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#variable-type-section",
+   "concepts": [
+    "type-system",
+    "integers"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Gurobi Reference Manual — Model file formats: LP End statement",
+   "url": "https://docs.gurobi.com/projects/optimizer/en/current/reference/fileformats/modelformats.html#end-statement",
+   "concepts": [
+    "program-structure"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "IBM CPLEX — LP file format: algebraic representation",
+   "url": "https://www.ibm.com/docs/en/icos/22.1.1?topic=cplex-lp-file-format-algebraic-representation",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "IBM CPLEX — Records in MPS format",
+   "url": "https://www.ibm.com/docs/en/icos/22.1.1?topic=standard-records-in-mps-format",
+   "concepts": [
+    "grammar"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "lp_solve 5.5 — MPS file format",
+   "url": "https://lpsolve.sourceforge.net/5.5/mps-format.htm",
+   "concepts": [
+    "grammar",
+    "comments"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "lp_solve 5.5 — Formulating a linear program",
+   "url": "https://lpsolve.sourceforge.net/5.5/formulate.htm",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "COIN-OR CoinUtils — CoinMpsIO.cpp (MPS reader/writer)",
+   "url": "https://github.com/coin-or/CoinUtils/blob/master/src/CoinMpsIO.cpp",
+   "concepts": [
+    "parser",
+    "serialization"
+   ],
+   "implementation": "COIN-OR CoinUtils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "COIN-OR CoinUtils — CoinLpIO.cpp (LP reader/writer)",
+   "url": "https://github.com/coin-or/CoinUtils/blob/master/src/CoinLpIO.cpp",
+   "concepts": [
+    "parser",
+    "serialization"
+   ],
+   "implementation": "COIN-OR CoinUtils",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "HiGHS linear optimization solver",
+   "url": "https://github.com/ERGO-Code/HiGHS",
+   "concepts": [
+    "parser"
+   ],
+   "implementation": "HiGHS",
+   "scope": "whole",
+   "format": "repository",
+   "access": "open",
+   "authority": "official"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "HiGHS documentation",
+   "url": "https://ergo-code.github.io/HiGHS/dev/",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — MPS (format)",
+   "url": "https://en.wikipedia.org/wiki/MPS_(format)",
+   "concepts": [
+    "history",
+    "serialization"
+   ],
+   "scope": "whole",
+   "format": "html",
+   "access": "open",
+   "authority": "community"
+  }
+ ]
+}
