@@ -1,0 +1,503 @@
+{
+ "id": "flux",
+ "name": "Flux (InfluxData)",
+ "aliases": [
+  "Flux"
+ ],
+ "categories": [
+  "query",
+  "functional",
+  "scripting",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "dataflow"
+ ],
+ "typing": [
+  "static",
+  "inferred"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "InfluxData",
+  "Paul Dix"
+ ],
+ "summary": "Functional, statically typed (Hindley-Milner style) data-scripting language of InfluxDB 2.x: streams of tables piped through transformations like filter, aggregateWindow and join; now in maintenance mode.",
+ "status": "maintained",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".flux"
+ ],
+ "homepage": "https://docs.influxdata.com/flux/v0/",
+ "influenced_by": [
+  "javascript",
+  "influxql"
+ ],
+ "level_notes": {
+  "1": "Has a written language specification maintained alongside the implementation."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "influxdata/flux — Flux language implementation (Go + Rust libflux)",
+   "url": "https://github.com/influxdata/flux",
+   "implementation": "Flux",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libflux scanner/mod.rs — lexer (Ragel-generated scanner)",
+   "url": "https://github.com/influxdata/flux/blob/master/libflux/flux-core/src/scanner/mod.rs",
+   "implementation": "Flux",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libflux parser/mod.rs — parser",
+   "url": "https://github.com/influxdata/flux/blob/master/libflux/flux-core/src/parser/mod.rs",
+   "implementation": "Flux",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libflux semantic/mod.rs — semantic analysis and type inference",
+   "url": "https://github.com/influxdata/flux/blob/master/libflux/flux-core/src/semantic/mod.rs",
+   "implementation": "Flux",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-inference"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "interpreter/interpreter.go — Flux interpreter",
+   "url": "https://github.com/influxdata/flux/blob/master/interpreter/interpreter.go",
+   "implementation": "Flux",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "stdlib/universe/universe.flux — prelude function declarations",
+   "url": "https://github.com/influxdata/flux/blob/master/stdlib/universe/universe.flux",
+   "implementation": "Flux",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux language specification (SPEC.md in repo)",
+   "url": "https://github.com/influxdata/flux/blob/master/docs/SPEC.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux language specification (docs)",
+   "url": "https://docs.influxdata.com/flux/v0/spec/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Notation",
+   "url": "https://docs.influxdata.com/flux/v0/spec/notation/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Representation",
+   "url": "https://docs.influxdata.com/flux/v0/spec/representation/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Lexical elements",
+   "url": "https://docs.influxdata.com/flux/v0/spec/lexical-elements/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "literals",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Variables",
+   "url": "https://docs.influxdata.com/flux/v0/spec/variables/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Types",
+   "url": "https://docs.influxdata.com/flux/v0/spec/types/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "type-inference",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Blocks and scope",
+   "url": "https://docs.influxdata.com/flux/v0/spec/blocks/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Expressions (functions, conditionals, pipes)",
+   "url": "https://docs.influxdata.com/flux/v0/spec/expressions/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "functions",
+    "conditionals",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Operators",
+   "url": "https://docs.influxdata.com/flux/v0/spec/operators/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Statements",
+   "url": "https://docs.influxdata.com/flux/v0/spec/statements/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Packages",
+   "url": "https://docs.influxdata.com/flux/v0/spec/packages/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "packages",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Options",
+   "url": "https://docs.influxdata.com/flux/v0/spec/options/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Side effects",
+   "url": "https://docs.influxdata.com/flux/v0/spec/side-effects/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "purity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Flux spec — Data model (tables, streams)",
+   "url": "https://docs.influxdata.com/flux/v0/spec/data-model/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — filter()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/filter/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — group()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/group/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — aggregateWindow()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/aggregatewindow/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "window-functions",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — join()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/join/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — pivot()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/pivot/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — map()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/map/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — sort()",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/universe/sort/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Flux stdlib — regexp package",
+   "url": "https://docs.influxdata.com/flux/v0/stdlib/regexp/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Get started with Flux",
+   "url": "https://docs.influxdata.com/flux/v0/get-started/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Flux syntax basics",
+   "url": "https://docs.influxdata.com/flux/v0/get-started/syntax-basics/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "The future of Flux (maintenance-mode notice)",
+   "url": "https://docs.influxdata.com/flux/v0/future-of-flux/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Flux",
+   "url": "https://pldb.io/concepts/flux.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — InfluxDB",
+   "url": "https://en.wikipedia.org/wiki/InfluxDB",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,542 @@
+{
+ "id": "kql",
+ "name": "Kusto Query Language",
+ "aliases": [
+  "KQL",
+  "Kusto"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "dataflow"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "Microsoft"
+ ],
+ "summary": "Read-only pipe-based query language of Azure Data Explorer, Log Analytics, Sentinel and Fabric: tabular operators (where, project, summarize, join) chained with |, plus time-series, graph and let-bound functions.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".kql",
+  ".csl"
+ ],
+ "homepage": "https://learn.microsoft.com/en-us/kusto/query/",
+ "influenced_by": [
+  "sql"
+ ],
+ "level_notes": {
+  "0": "The Kusto engine is closed; Microsoft open-sources the Kusto.Language parser and binder used by its editors.",
+  "3": "No dedicated Wikipedia or PLDB page; Azure Data Explorer article covers it."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "microsoft/Kusto-Query-Language — official KQL parser and semantic analyzer (C#)",
+   "url": "https://github.com/microsoft/Kusto-Query-Language",
+   "implementation": "Kusto.Language",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Kusto.Language Parser/QueryGrammar.cs — parser-combinator grammar",
+   "url": "https://github.com/microsoft/Kusto-Query-Language/blob/master/src/Kusto.Language/Parser/QueryGrammar.cs",
+   "implementation": "Kusto.Language",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Kusto.Language Functions.cs — built-in scalar function signatures",
+   "url": "https://github.com/microsoft/Kusto-Query-Language/blob/master/src/Kusto.Language/Functions.cs",
+   "implementation": "Kusto.Language",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Kusto.Language Aggregates.cs — aggregate function signatures",
+   "url": "https://github.com/microsoft/Kusto-Query-Language/blob/master/src/Kusto.Language/Aggregates.cs",
+   "implementation": "Kusto.Language",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Kusto.Language Operators.cs — operator signatures",
+   "url": "https://github.com/microsoft/Kusto-Query-Language/blob/master/src/Kusto.Language/Operators.cs",
+   "implementation": "Kusto.Language",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Kusto Query Language (KQL) overview",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Syntax conventions",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/syntax-conventions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Tabular expression statements",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/tabular-expression-statements",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines",
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Scalar data types",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/scalar-data-types/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — where",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/where-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — project",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/project-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — extend",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/extend-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — summarize",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/summarize-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — join",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/join-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — union",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/union-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — sort",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/sort-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — take",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/take-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — top",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/top-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — let statement",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/let-statement",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — iff()",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/iff-function",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — case()",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/case-function",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — parse",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/parse-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — RE2 regular expression syntax",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/regex",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — mv-expand",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/mv-expand-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — make-series",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/make-series-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — series_decompose()",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/series-decompose-function",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — make-graph",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/make-graph-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — graph-match",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/graph-match-operator",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Aggregation functions",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/aggregation-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Window functions",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/window-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "window-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Datetime/timespan arithmetic",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/datetime-timespan-arithmetic",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — User-defined functions",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/functions/user-defined-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "KQL reference — Scalar functions",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/scalar-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "KQL tutorial — Learn common operators",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/tutorials/learn-common-operators",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "KQL best practices",
+   "url": "https://learn.microsoft.com/en-us/kusto/query/best-practices",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Must Learn KQL (Rod Trent)",
+   "url": "https://github.com/rod-trent/MustLearnKQL",
+   "authors": [
+    "Rod Trent"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Azure Data Explorer",
+   "url": "https://en.wikipedia.org/wiki/Azure_Data_Explorer",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

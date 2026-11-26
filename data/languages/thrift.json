@@ -1,0 +1,392 @@
+{
+ "id": "thrift",
+ "name": "Apache Thrift IDL",
+ "aliases": [
+  "Thrift"
+ ],
+ "categories": [
+  "schema-idl",
+  "data-serialization",
+  "protocol"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2007,
+ "designers": [
+  "Mark Slee",
+  "Aditya Agarwal",
+  "Marc Kwiatkowski (Facebook)"
+ ],
+ "summary": "Interface definition language and RPC framework originally from Facebook: structs, unions, exceptions and services with numbered fields, compiled to many languages, with pluggable binary, compact and JSON protocols and transports.",
+ "status": "maintained",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".thrift"
+ ],
+ "homepage": "https://thrift.apache.org/",
+ "related": [
+  {
+   "id": "protobuf",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The Thrift IDL page and the original 2007 whitepaper; the binary and compact protocols are specified in doc/specs in the repo.",
+  "0": "apache/thrift: thrift compiler (flex/bison) and per-language libraries; fbthrift is Meta's fork."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "apache/thrift — compiler and language libraries",
+   "url": "https://github.com/apache/thrift",
+   "implementation": "Apache Thrift",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "compiler thriftl.ll — flex lexer",
+   "url": "https://github.com/apache/thrift/blob/master/compiler/cpp/src/thrift/thriftl.ll",
+   "implementation": "Apache Thrift",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "compiler thrifty.yy — bison grammar",
+   "url": "https://github.com/apache/thrift/blob/master/compiler/cpp/src/thrift/thrifty.yy",
+   "implementation": "Apache Thrift",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "TCompactProtocol.h — compact protocol (C++)",
+   "url": "https://github.com/apache/thrift/blob/master/lib/cpp/src/thrift/protocol/TCompactProtocol.h",
+   "implementation": "Apache Thrift",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "test/ThriftTest.thrift — cross-language test IDL",
+   "url": "https://github.com/apache/thrift/blob/master/test/ThriftTest.thrift",
+   "implementation": "Apache Thrift",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "facebook/fbthrift — Meta's Thrift fork",
+   "url": "https://github.com/facebook/fbthrift",
+   "implementation": "fbthrift",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift Interface Description Language",
+   "url": "https://thrift.apache.org/docs/idl",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Document",
+   "url": "https://thrift.apache.org/docs/idl#document",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Namespace",
+   "url": "https://thrift.apache.org/docs/idl#namespace",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Typedef",
+   "url": "https://thrift.apache.org/docs/idl#typedef",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Enum",
+   "url": "https://thrift.apache.org/docs/idl#enum",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Struct",
+   "url": "https://thrift.apache.org/docs/idl#struct",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Union",
+   "url": "https://thrift.apache.org/docs/idl#union",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Exception",
+   "url": "https://thrift.apache.org/docs/idl#exception",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Service",
+   "url": "https://thrift.apache.org/docs/idl#service",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Field ID",
+   "url": "https://thrift.apache.org/docs/idl#field-id",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Field requiredness",
+   "url": "https://thrift.apache.org/docs/idl#field-requiredness",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Constant values",
+   "url": "https://thrift.apache.org/docs/idl#constant-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants",
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift IDL — Reserved keywords",
+   "url": "https://thrift.apache.org/docs/idl#reserved-keywords",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Thrift Types",
+   "url": "https://thrift.apache.org/docs/types",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift Binary protocol encoding (doc/specs)",
+   "url": "https://github.com/apache/thrift/blob/master/doc/specs/thrift-binary-protocol.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Thrift Compact protocol encoding (doc/specs)",
+   "url": "https://github.com/apache/thrift/blob/master/doc/specs/thrift-compact-protocol.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Slee, Agarwal, Kwiatkowski — Thrift: Scalable Cross-Language Services Implementation (2007)",
+   "url": "https://thrift.apache.org/static/files/thrift-20070401.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Mark Slee",
+    "Aditya Agarwal",
+    "Marc Kwiatkowski"
+   ],
+   "year": 2007,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Diwaker Gupta — Thrift: The Missing Guide",
+   "url": "https://diwakergupta.github.io/thrift-missing-guide/",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Diwaker Gupta"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Apache Thrift",
+   "url": "https://en.wikipedia.org/wiki/Apache_Thrift",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

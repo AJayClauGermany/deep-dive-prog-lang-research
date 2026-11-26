@@ -1,0 +1,26 @@
+{
+ "id": "miniscript",
+ "name": "Miniscript",
+ "categories": ["smart-contract", "domain-specific"],
+ "paradigms": ["declarative", "compositional"],
+ "typing": ["static", "type-system-of-correctness-properties"],
+ "first_appeared": 2019,
+ "designers": ["Pieter Wuille", "Andrew Poelstra", "Sanket Kanjalkar"],
+ "summary": "Structured, analysable language for writing a subset of Bitcoin Script: spending policies composed from and/or/thresh/timelock fragments with a type system that guarantees correctness, non-malleability and resource limits, plus a policy-to-Miniscript compiler.",
+ "status": "active",
+ "defined_by": ["community-specification", "reference-implementation"],
+ "homepage": "https://bitcoin.sipa.be/miniscript/",
+ "related": [{"id": "bitcoin-script", "relation": "compiles-to"}],
+ "level_notes": {"1": "BIP 379 and Pieter Wuille's Miniscript reference page define the fragments, type system and satisfaction rules.", "2": "Secondary material is mostly blog posts and conference talks; none stable enough to list.", "3": "No encyclopedia entry dedicated to Miniscript.", "0": "Implemented in C++ in Bitcoin Core (src/script/miniscript.*) and in Rust as rust-miniscript; sipa/miniscript is the original C++/JS implementation with the policy compiler."},
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "Bitcoin Core src/script/miniscript.h — Miniscript fragments and type system", "url": "https://github.com/bitcoin/bitcoin/blob/master/src/script/miniscript.h", "implementation": "Bitcoin Core", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["type-system", "ast"]},
+  {"level": 0, "kind": "implementation-source", "title": "Bitcoin Core src/script/miniscript.cpp — type computation and satisfaction", "url": "https://github.com/bitcoin/bitcoin/blob/master/src/script/miniscript.cpp", "implementation": "Bitcoin Core", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "Bitcoin Core src/script/descriptor.cpp — output descriptors embedding Miniscript", "url": "https://github.com/bitcoin/bitcoin/blob/master/src/script/descriptor.cpp", "implementation": "Bitcoin Core", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "reference-implementation", "title": "sipa/miniscript — original implementation and policy compiler", "url": "https://github.com/sipa/miniscript", "implementation": "sipa/miniscript", "scope": "whole", "authority": "designer", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-repository", "title": "rust-bitcoin/rust-miniscript — Rust implementation", "url": "https://github.com/rust-bitcoin/rust-miniscript", "implementation": "rust-miniscript", "scope": "whole", "authority": "community", "format": "repository", "access": "open"},
+
+  {"level": 1, "kind": "specification", "title": "Miniscript reference and policy compiler (Pieter Wuille)", "url": "https://bitcoin.sipa.be/miniscript/", "scope": "whole", "authority": "designer", "authors": ["Pieter Wuille"], "format": "html", "access": "open", "concepts": ["type-system", "grammar"]},
+  {"level": 1, "kind": "proposal", "title": "BIP 379 — Miniscript", "url": "https://github.com/bitcoin/bips/blob/master/bip-0379.md", "scope": "whole", "authority": "official", "authors": ["Pieter Wuille", "Andrew Poelstra", "Sanket Kanjalkar", "Antoine Poinsot", "Ava Chow"], "year": 2023, "format": "source-file", "access": "open", "concepts": ["type-system", "grammar"]},
+  {"level": 1, "kind": "reference-manual", "title": "Bitcoin Wiki — Script (target language)", "url": "https://en.bitcoin.it/wiki/Script", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["instruction-set"]}
+ ]
+}

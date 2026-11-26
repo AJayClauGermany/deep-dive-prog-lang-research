@@ -1,0 +1,270 @@
+{
+  "id": "carp",
+  "name": "Carp",
+  "categories": [
+    "systems",
+    "functional"
+  ],
+  "paradigms": [
+    "functional",
+    "imperative",
+    "meta"
+  ],
+  "typing": [
+    "static",
+    "inferred",
+    "strong"
+  ],
+  "first_appeared": 2016,
+  "designers": [
+    "Erik Svedäng"
+  ],
+  "summary": "A statically typed Lisp without garbage collection: Hindley-Milner-style inference, Rust-like ownership and borrowing, compiles to C for real-time and game use.",
+  "status": "experimental",
+  "defined_by": [
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".carp"
+  ],
+  "homepage": "https://github.com/carp-lang/Carp",
+  "influenced_by": [
+    "clojure",
+    "rust",
+    "standard-ml"
+  ],
+  "related": [
+    {
+      "id": "c",
+      "relation": "compiles-to"
+    },
+    {
+      "id": "haskell",
+      "relation": "implemented-in"
+    },
+    {
+      "id": "lisp",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "No spec; the docs/ folder of the repository is the language reference.",
+    "2": "Few secondary sources exist beyond the compiler manual."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Carp docs — Language Guide",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/LanguageGuide.md",
+      "concepts": [
+        "type-system",
+        "functions"
+      ],
+      "authority": "official",
+      "scope": "whole",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Carp docs — Memory management (ownership and borrowing)",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/Memory.md",
+      "concepts": [
+        "ownership-borrowing",
+        "memory-management"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Carp docs — Macros",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/Macros.md",
+      "concepts": [
+        "macros"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Carp docs — Dynamic semantics (compile-time evaluator)",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/DynamicSemantics.md",
+      "concepts": [
+        "compile-time-evaluation",
+        "formal-semantics"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Carp docs — C interop",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/CInterop.md",
+      "concepts": [
+        "ffi"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Carp docs — Libraries and modules",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/Libraries.md",
+      "concepts": [
+        "modules"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Carp docs — Compiler manual",
+      "url": "https://github.com/carp-lang/Carp/blob/master/docs/Manual.md",
+      "concepts": [
+        "tooling"
+      ],
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Carp core library API docs",
+      "url": "https://carp-lang.github.io/carp-docs/",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "Carp repository",
+      "url": "https://github.com/carp-lang/Carp",
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Carp compiler src/Parsing.hs — parser",
+      "url": "https://github.com/carp-lang/Carp/blob/master/src/Parsing.hs",
+      "concepts": [
+        "parser"
+      ],
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Carp compiler src/Eval.hs — dynamic evaluator / macro expansion",
+      "url": "https://github.com/carp-lang/Carp/blob/master/src/Eval.hs",
+      "concepts": [
+        "macros",
+        "compile-time-evaluation"
+      ],
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Carp compiler src/Constraints.hs — type constraint solving",
+      "url": "https://github.com/carp-lang/Carp/blob/master/src/Constraints.hs",
+      "concepts": [
+        "type-inference",
+        "unification"
+      ],
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Carp compiler src/Concretize.hs — generic instantiation",
+      "url": "https://github.com/carp-lang/Carp/blob/master/src/Concretize.hs",
+      "concepts": [
+        "generics"
+      ],
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Carp compiler src/Memory.hs — ownership / deleter insertion",
+      "url": "https://github.com/carp-lang/Carp/blob/master/src/Memory.hs",
+      "concepts": [
+        "ownership-borrowing"
+      ],
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Carp compiler src/Emit.hs — C code emitter",
+      "url": "https://github.com/carp-lang/Carp/blob/master/src/Emit.hs",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "implementation": "Carp compiler (Haskell)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Carp",
+      "url": "https://pldb.io/concepts/carp.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
+}

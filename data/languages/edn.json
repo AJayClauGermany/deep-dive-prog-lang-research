@@ -1,0 +1,307 @@
+{
+ "id": "edn",
+ "name": "edn (extensible data notation)",
+ "aliases": [
+  "EDN"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "tagged"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Rich Hickey"
+ ],
+ "summary": "Data notation derived from Clojure literal syntax: nil, booleans, strings, characters, symbols, keywords, numbers, lists, vectors, maps and sets, extensible through #tagged elements (#inst, #uuid). Used by Datomic and the Clojure ecosystem.",
+ "status": "maintained",
+ "defined_by": [
+  "community-specification"
+ ],
+ "file_extensions": [
+  ".edn"
+ ],
+ "homepage": "https://github.com/edn-format/edn",
+ "related": [
+  {
+   "id": "clojure",
+   "relation": "subset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The edn-format/edn README is the specification.",
+  "0": "clojure.edn (in Clojure) and tools.reader are the reference readers.",
+  "2": "Tutorial coverage is part of Clojure learning material; the Clojure reader reference is listed instead."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "edn-format/edn — specification repository",
+   "url": "https://github.com/edn-format/edn",
+   "implementation": "spec",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "clojure/edn.clj — clojure.edn reader",
+   "url": "https://github.com/clojure/clojure/blob/master/src/clj/clojure/edn.clj",
+   "implementation": "Clojure",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "clojure/tools.reader — Clojure/edn reader in Clojure",
+   "url": "https://github.com/clojure/tools.reader",
+   "implementation": "tools.reader",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn specification (README)",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md",
+   "scope": "whole",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — Rationale",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#rationale",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — General considerations",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#general-considerations",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — Built-in elements",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#built-in-elements",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — strings",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#strings",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — characters",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#characters",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "characters"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — symbols",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#symbols",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — keywords",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#keywords",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — integers",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#integers",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — floating point numbers",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#floating-point-numbers",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — maps",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#maps",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — sets",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#sets",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — tagged elements",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#tagged-elements",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — comments",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#comments",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "edn spec — equality",
+   "url": "https://github.com/edn-format/edn/blob/master/README.md#equality",
+   "scope": "section",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Clojure reference — The Reader",
+   "url": "https://clojure.org/reference/reader",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "literals"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — edn",
+   "url": "https://pldb.io/concepts/edn.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

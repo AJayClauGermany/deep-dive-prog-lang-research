@@ -1,0 +1,112 @@
+{
+ "id": "systemd-unit",
+ "name": "systemd unit files",
+ "categories": [
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Lennart Poettering"
+ ],
+ "summary": "INI-style declarative files describing systemd services, sockets, timers, mounts and other units: sections of key=value directives, drop-in overrides, specifiers and dependency declarations.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".service",
+  ".socket",
+  ".timer",
+  ".mount",
+  ".target"
+ ],
+ "homepage": "https://systemd.io/",
+ "influenced_by": [
+  "ini"
+ ],
+ "related": [
+  {
+   "id": "ini",
+   "relation": "dialect-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The systemd.syntax(7), systemd.unit(5) and per-type man pages are normative.",
+  "0": "src/shared/conf-parser.c in systemd parses the files."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "systemd src/shared/conf-parser.c — unit/config file parser",
+   "url": "https://github.com/systemd/systemd/blob/main/src/shared/conf-parser.c",
+   "implementation": "systemd",
+   "authority": "official",
+   "scope": "section",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "systemd.syntax(7) — general syntax of systemd configuration files",
+   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.syntax.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "comments",
+    "escaping",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "systemd.unit(5) — unit configuration, dependencies, drop-ins, specifiers",
+   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "systemd.service(5) — service unit configuration",
+   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+   "scope": "whole",
+   "format": "html",
+   "authority": "official",
+   "access": "open",
+   "concepts": [
+    "processes-system"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Systemd",
+   "url": "https://en.wikipedia.org/wiki/Systemd",
+   "scope": "whole",
+   "format": "html",
+   "authority": "community",
+   "access": "open"
+  }
+ ]
+}

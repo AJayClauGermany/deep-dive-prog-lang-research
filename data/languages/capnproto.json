@@ -1,0 +1,447 @@
+{
+ "id": "capnproto",
+ "name": "Cap'n Proto",
+ "aliases": [
+  "capnp"
+ ],
+ "categories": [
+  "data-serialization",
+  "schema-idl",
+  "protocol"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "Kenton Varda"
+ ],
+ "summary": "Zero-copy serialization format and capability-based RPC system by the former Protocol Buffers v2 author: the wire format is the in-memory format (8-byte words, pointers, segments), schemas support generics, groups, unions and annotations, and RPC has promise pipelining.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".capnp"
+ ],
+ "homepage": "https://capnproto.org/",
+ "related": [
+  {
+   "id": "protobuf",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "capnproto.org language and encoding pages, plus schema.capnp / rpc.capnp in the repo which are self-describing normative schemas.",
+  "0": "capnproto/capnproto (C++, the capnp compiler) is the reference; Rust, Go and others are third-party.",
+  "2": "Secondary literature is thin; the official site pages double as the tutorial and the design rationale (see the language page's protocol-evolution section)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "capnproto/capnproto — C++ reference implementation and compiler",
+   "url": "https://github.com/capnproto/capnproto",
+   "implementation": "capnp (C++)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "capnp compiler/lexer.c++",
+   "url": "https://github.com/capnproto/capnproto/blob/v2/c++/src/capnp/compiler/lexer.c++",
+   "implementation": "capnp (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "capnp compiler/parser.c++",
+   "url": "https://github.com/capnproto/capnproto/blob/v2/c++/src/capnp/compiler/parser.c++",
+   "implementation": "capnp (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "capnp layout.c++ — wire-format pointer layout",
+   "url": "https://github.com/capnproto/capnproto/blob/v2/c++/src/capnp/layout.c++",
+   "implementation": "capnp (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "schema.capnp — self-describing schema of schemas",
+   "url": "https://github.com/capnproto/capnproto/blob/v2/c++/src/capnp/schema.capnp",
+   "implementation": "capnp (C++)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "reflection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto Schema Language",
+   "url": "https://capnproto.org/language.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Comments",
+   "url": "https://capnproto.org/language.html#comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Built-in types",
+   "url": "https://capnproto.org/language.html#built-in-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Structs",
+   "url": "https://capnproto.org/language.html#structs",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Unions",
+   "url": "https://capnproto.org/language.html#unions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Groups",
+   "url": "https://capnproto.org/language.html#groups",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Enums",
+   "url": "https://capnproto.org/language.html#enums",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Interfaces",
+   "url": "https://capnproto.org/language.html#interfaces",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Generic types",
+   "url": "https://capnproto.org/language.html#generic-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Constants",
+   "url": "https://capnproto.org/language.html#constants",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Nesting, scope and aliases",
+   "url": "https://capnproto.org/language.html#nesting-scope-and-aliases",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Imports",
+   "url": "https://capnproto.org/language.html#imports",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Annotations",
+   "url": "https://capnproto.org/language.html#annotations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Unique IDs",
+   "url": "https://capnproto.org/language.html#unique-ids",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto schema language — Evolving your protocol",
+   "url": "https://capnproto.org/language.html#evolving-your-protocol",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto Encoding Spec",
+   "url": "https://capnproto.org/encoding.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Structs",
+   "url": "https://capnproto.org/encoding.html#structs",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Lists",
+   "url": "https://capnproto.org/encoding.html#lists",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Inter-segment pointers",
+   "url": "https://capnproto.org/encoding.html#inter-segment-pointers",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pointers-references"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Default values",
+   "url": "https://capnproto.org/encoding.html#default-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Packing",
+   "url": "https://capnproto.org/encoding.html#packing",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Canonicalization",
+   "url": "https://capnproto.org/encoding.html#canonicalization",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto encoding — Security considerations",
+   "url": "https://capnproto.org/encoding.html#security-considerations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cap'n Proto RPC protocol",
+   "url": "https://capnproto.org/rpc.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols",
+    "async-await"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Cap'n Proto",
+   "url": "https://en.wikipedia.org/wiki/Cap%27n_Proto",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

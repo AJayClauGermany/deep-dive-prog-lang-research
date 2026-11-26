@@ -1,0 +1,43 @@
+{
+ "id": "zokrates",
+ "name": "ZoKrates",
+ "categories": ["domain-specific", "smart-contract"],
+ "paradigms": ["imperative"],
+ "typing": ["static", "strong"],
+ "first_appeared": 2018,
+ "designers": ["Jacob Eberhardt", "Stefan Tai"],
+ "summary": "Toolbox and high-level language for zkSNARKs on Ethereum: programs compile to arithmetic circuits (R1CS) and the toolchain generates proofs and Solidity verifier contracts.",
+ "status": "maintained",
+ "defined_by": ["reference-implementation", "academic-paper"],
+ "file_extensions": [".zok"],
+ "homepage": "https://zokrates.github.io/",
+ "influenced_by": ["python", "rust"],
+ "related": [{"id": "solidity", "relation": "compiles-to"}],
+ "level_notes": {"1": "Defined by the documentation (ZoKrates book) and the original IEEE paper; grammar in pest format.", "0": "Rust implementation in Zokrates/ZoKrates.", "3": "No encyclopedia entry found."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "Zokrates/ZoKrates repository", "url": "https://github.com/Zokrates/ZoKrates", "implementation": "zokrates", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "grammar-source", "title": "ZoKrates pest grammar", "url": "https://github.com/Zokrates/ZoKrates/blob/develop/zokrates_parser/src/zokrates.pest", "implementation": "zokrates", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "zokrates_core lib.rs", "url": "https://github.com/Zokrates/ZoKrates/blob/develop/zokrates_core/src/lib.rs", "implementation": "zokrates", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
+
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book", "url": "https://zokrates.github.io/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Variables", "url": "https://zokrates.github.io/language/variables.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "scope"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Types", "url": "https://zokrates.github.io/language/types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types", "arrays", "records-structs"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Operators", "url": "https://zokrates.github.io/language/operators.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators", "operator-precedence"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Control flow", "url": "https://zokrates.github.io/language/control_flow.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Functions", "url": "https://zokrates.github.io/language/functions.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Constants", "url": "https://zokrates.github.io/language/constants.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["constants"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Generics", "url": "https://zokrates.github.io/language/generics.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Imports", "url": "https://zokrates.github.io/language/imports.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["imports", "modules"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Comments", "url": "https://zokrates.github.io/language/comments.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Macros", "url": "https://zokrates.github.io/language/macros.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Assembly", "url": "https://zokrates.github.io/language/assembly.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["unsafe"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Standard library", "url": "https://zokrates.github.io/toolbox/stdlib.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — ZIR intermediate representation", "url": "https://zokrates.github.io/toolbox/ir.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["intermediate-representation"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — Proving schemes", "url": "https://zokrates.github.io/toolbox/proving_schemes.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["verification"]},
+  {"level": 1, "kind": "reference-manual", "title": "ZoKrates book — ABI", "url": "https://zokrates.github.io/toolbox/abi.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["calling-convention-abi"]},
+  {"level": 1, "kind": "original-paper", "title": "ZoKrates – Scalable Privacy-Preserving Off-Chain Computations", "url": "https://ieeexplore.ieee.org/document/8726497", "scope": "whole", "authority": "designer", "authors": ["Jacob Eberhardt", "Stefan Tai"], "year": 2018, "format": "html", "access": "paywalled", "concepts": ["design-rationale"]},
+
+  {"level": 2, "kind": "tutorial", "title": "ZoKrates — Getting started", "url": "https://zokrates.github.io/gettingstarted.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "ZoKrates — Proving knowledge of a hash preimage", "url": "https://zokrates.github.io/examples/rng_tutorial.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]}
+ ]
+}
