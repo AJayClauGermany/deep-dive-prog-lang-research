@@ -1,359 +1,357 @@
 {
- "id": "scratch",
- "name": "Scratch",
- "categories": [
-  "educational",
-  "visual"
- ],
- "paradigms": [
-  "event-driven",
-  "imperative",
-  "block-based"
- ],
- "typing": [
-  "dynamic"
- ],
- "first_appeared": 2007,
- "designers": [
-  "Mitchel Resnick",
-  "John Maloney",
-  "MIT Media Lab Lifelong Kindergarten"
- ],
- "summary": "Block-based visual language from the MIT Media Lab for children: sprites run concurrent event-driven scripts assembled from snap-together blocks.",
- "status": "active",
- "defined_by": [
-  "reference-implementation"
- ],
- "file_extensions": [
-  ".sb3",
-  ".sb2",
-  ".sb"
- ],
- "homepage": "https://scratch.mit.edu/",
- "influenced_by": [
-  "logo",
-  "squeak",
-  "etoys",
-  "smalltalk"
- ],
- "level_notes": {
-  "1": "No specification; the Scratch 3 VM (scratch-vm) is the de-facto definition. The project.json file-format wiki page and the designers' papers are the closest primary sources.",
-  "0": "Scratch 3 is JavaScript (scratch-vm, scratch-blocks, scratch-gui); Scratch 1.x/2.0 were Squeak Smalltalk and Flash/ActionScript."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "scratchfoundation/scratch-vm — Scratch 3 virtual machine",
-   "url": "https://github.com/scratchfoundation/scratch-vm",
-   "scope": "whole",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "virtual-machine"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/engine/runtime.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/runtime.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "runtime-system"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/engine/sequencer.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/sequencer.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "concurrency",
-    "interpreter"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/engine/thread.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/thread.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "threads"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/blocks/scratch3_control.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_control.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "conditionals",
-    "loops"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/blocks/scratch3_data.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_data.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "variables",
-    "lists"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/blocks/scratch3_operators.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_operators.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "operators",
-    "strings"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/blocks/scratch3_procedures.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_procedures.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "functions"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "scratch-vm — src/blocks/scratch3_event.js",
-   "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_event.js",
-   "scope": "section",
-   "implementation": "scratch-vm",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "concurrency"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "scratchfoundation/scratch-blocks — block editor",
-   "url": "https://github.com/scratchfoundation/scratch-blocks",
-   "scope": "whole",
-   "implementation": "scratch-blocks",
-   "authority": "official",
-   "format": "repository",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Scratch Wiki — Scratch File Format (project.json)",
-   "url": "https://en.scratch-wiki.info/wiki/Scratch_File_Format",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "serialization",
-    "program-structure"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Scratch: Programming for All (CACM 2009)",
-   "url": "https://web.media.mit.edu/~mres/papers/Scratch-CACM-final.pdf",
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
+  "id": "scratch",
+  "name": "Scratch",
+  "categories": [
+    "educational",
+    "visual"
+  ],
+  "paradigms": [
+    "event-driven",
+    "imperative",
+    "block-based"
+  ],
+  "typing": [
+    "dynamic"
+  ],
+  "first_appeared": 2007,
+  "designers": [
     "Mitchel Resnick",
     "John Maloney",
-    "Andrés Monroy-Hernández",
-    "et al."
-   ],
-   "year": 2009,
-   "format": "pdf",
-   "access": "open",
-   "concepts": [
-    "design-rationale"
-   ]
+    "MIT Media Lab Lifelong Kindergarten"
+  ],
+  "summary": "Block-based visual language from the MIT Media Lab for children: sprites run concurrent event-driven scripts assembled from snap-together blocks.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".sb3",
+    ".sb2",
+    ".sb"
+  ],
+  "homepage": "https://scratch.mit.edu/",
+  "influenced_by": [
+    "logo",
+    "smalltalk"
+  ],
+  "level_notes": {
+    "1": "No specification; the Scratch 3 VM (scratch-vm) is the de-facto definition. The project.json file-format wiki page and the designers' papers are the closest primary sources.",
+    "0": "Scratch 3 is JavaScript (scratch-vm, scratch-blocks, scratch-gui); Scratch 1.x/2.0 were Squeak Smalltalk and Flash/ActionScript."
   },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — Blocks",
-   "url": "https://en.scratch-wiki.info/wiki/Blocks",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "grammar"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — Control Blocks",
-   "url": "https://en.scratch-wiki.info/wiki/Control_Blocks",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "conditionals",
-    "loops"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — Variables Blocks",
-   "url": "https://en.scratch-wiki.info/wiki/Variables_Blocks",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "variables",
-    "lists"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — Operators Blocks",
-   "url": "https://en.scratch-wiki.info/wiki/Operators_Blocks",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "operators"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — My Blocks",
-   "url": "https://en.scratch-wiki.info/wiki/My_Blocks",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "functions"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — Events Blocks",
-   "url": "https://en.scratch-wiki.info/wiki/Events_Blocks",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "concurrency"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Scratch Wiki — Cloning",
-   "url": "https://en.scratch-wiki.info/wiki/Cloning",
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "objects"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "Scratch — Ideas and tutorials",
-   "url": "https://scratch.mit.edu/ideas",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "hello-world"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — Scratch (programming language)",
-   "url": "https://en.wikipedia.org/wiki/Scratch_(programming_language)",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "history"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "code-collection",
-   "title": "Rosetta Code — Category:Scratch",
-   "url": "https://rosettacode.org/wiki/Category:Scratch",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "PLDB — Scratch",
-   "url": "https://pldb.io/concepts/scratch.html",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "scratchfoundation/scratch-vm — Scratch 3 virtual machine",
+      "url": "https://github.com/scratchfoundation/scratch-vm",
+      "scope": "whole",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "virtual-machine"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/engine/runtime.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/runtime.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "runtime-system"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/engine/sequencer.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/sequencer.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "concurrency",
+        "interpreter"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/engine/thread.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/thread.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "threads"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/blocks/scratch3_control.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_control.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "conditionals",
+        "loops"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/blocks/scratch3_data.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_data.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "variables",
+        "lists"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/blocks/scratch3_operators.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_operators.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "operators",
+        "strings"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/blocks/scratch3_procedures.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_procedures.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "functions"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "scratch-vm — src/blocks/scratch3_event.js",
+      "url": "https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_event.js",
+      "scope": "section",
+      "implementation": "scratch-vm",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "concurrency"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "scratchfoundation/scratch-blocks — block editor",
+      "url": "https://github.com/scratchfoundation/scratch-blocks",
+      "scope": "whole",
+      "implementation": "scratch-blocks",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Scratch File Format (project.json)",
+      "url": "https://en.scratch-wiki.info/wiki/Scratch_File_Format",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "serialization",
+        "program-structure"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Scratch: Programming for All (CACM 2009)",
+      "url": "https://web.media.mit.edu/~mres/papers/Scratch-CACM-final.pdf",
+      "scope": "whole",
+      "authority": "designer",
+      "authors": [
+        "Mitchel Resnick",
+        "John Maloney",
+        "Andrés Monroy-Hernández",
+        "et al."
+      ],
+      "year": 2009,
+      "format": "pdf",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Blocks",
+      "url": "https://en.scratch-wiki.info/wiki/Blocks",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "grammar"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Control Blocks",
+      "url": "https://en.scratch-wiki.info/wiki/Control_Blocks",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals",
+        "loops"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Variables Blocks",
+      "url": "https://en.scratch-wiki.info/wiki/Variables_Blocks",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables",
+        "lists"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Operators Blocks",
+      "url": "https://en.scratch-wiki.info/wiki/Operators_Blocks",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "operators"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — My Blocks",
+      "url": "https://en.scratch-wiki.info/wiki/My_Blocks",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "functions"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Events Blocks",
+      "url": "https://en.scratch-wiki.info/wiki/Events_Blocks",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "concurrency"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "Scratch Wiki — Cloning",
+      "url": "https://en.scratch-wiki.info/wiki/Cloning",
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "objects"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Scratch — Ideas and tutorials",
+      "url": "https://scratch.mit.edu/ideas",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "hello-world"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Scratch (programming language)",
+      "url": "https://en.wikipedia.org/wiki/Scratch_(programming_language)",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "history"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Scratch",
+      "url": "https://rosettacode.org/wiki/Category:Scratch",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Scratch",
+      "url": "https://pldb.io/concepts/scratch.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
 }

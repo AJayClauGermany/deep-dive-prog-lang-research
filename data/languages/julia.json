@@ -1,1847 +1,1847 @@
 {
- "id": "julia",
- "name": "Julia",
- "categories": [
-  "general-purpose",
-  "scientific"
- ],
- "paradigms": [
-  "multiple-dispatch",
-  "functional",
-  "imperative",
-  "metaprogramming"
- ],
- "typing": [
-  "dynamic",
-  "strong",
-  "nominal",
-  "parametric",
-  "optional-annotations"
- ],
- "first_appeared": 2012,
- "designers": [
-  "Jeff Bezanson",
-  "Stefan Karpinski",
-  "Viral B. Shah",
-  "Alan Edelman"
- ],
- "summary": "High-level, dynamically typed language for technical computing built around multiple dispatch over a parametric type system, JIT-compiled through LLVM, with Lisp-style macros.",
- "status": "active",
- "defined_by": [
-  "reference-implementation",
-  "informal"
- ],
- "file_extensions": [
-  ".jl"
- ],
- "homepage": "https://julialang.org/",
- "influenced_by": [
-  "lisp",
-  "matlab",
-  "python",
-  "r",
-  "dylan",
-  "fortran",
-  "ruby",
-  "perl"
- ],
- "level_notes": {
-  "1": "No formal specification or standard; the Julia manual and Base reference document the behaviour of the reference implementation. Language changes are discussed in GitHub issues/PRs (no formal proposal series); NEWS.md is the release-notes record.",
-  "0": "The reference implementation JuliaLang/julia: femtolisp front end (src/julia-parser.scm, julia-syntax.scm) being replaced by JuliaSyntax.jl, C runtime in src/, type inference in Compiler/, Base in base/."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "JuliaLang/julia — reference implementation",
-   "url": "https://github.com/JuliaLang/julia",
-   "scope": "whole",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "compiler-architecture"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/julia-parser.scm (femtolisp parser)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/julia-parser.scm",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "parser",
-    "grammar"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/julia-syntax.scm (lowering passes)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/julia-syntax.scm",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "code-generation",
-    "semantic-analysis"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/gc-stock.c (garbage collector)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/gc-stock.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "garbage-collection",
-    "memory-management"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/interpreter.c (AST/IR interpreter)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/interpreter.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "interpreter"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/codegen.cpp (LLVM code generation)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/codegen.cpp",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "code-generation-backend",
-    "jit"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/jitlayers.cpp (ORC JIT layers)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/jitlayers.cpp",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "jit"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/gf.c (generic functions and method dispatch)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/gf.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "multiple-dispatch"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/subtype.c (subtyping algorithm)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/subtype.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "subtyping",
-    "type-system"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/task.c (tasks (coroutines))",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/task.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "coroutines",
-    "concurrency"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/builtins.c (builtin functions)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/builtins.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "runtime-system"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/ccall.cpp (ccall implementation)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/ccall.cpp",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "ffi"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/jltypes.c (type construction and caching)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/jltypes.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "type-system",
-    "generics"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/datatype.c (DataType layout)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/datatype.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "records-structs",
-    "runtime-system"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — src/ast.c (AST conversion between flisp and Julia)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/src/ast.c",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "ast"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "JuliaLang/julia — Compiler/src/abstractinterpretation.jl (type inference by abstract interpretation)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/Compiler/src/abstractinterpretation.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "type-inference",
-    "optimization"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/boot.jl (bootstrap type definitions)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/boot.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "bootstrapping",
-    "primitive-types"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/strings/string.jl (String type)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/strings/string.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "strings",
-    "unicode"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/dict.jl (Dict implementation)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/dict.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "maps-dictionaries"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/array.jl (Array implementation)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/array.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "arrays"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/channels.jl (Channels)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/channels.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "channels-message-passing"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/threads.jl (Threads module)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/threads.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "threads"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/promotion.jl (promotion system)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/promotion.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "type-conversion"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/expr.jl (Expr utilities and macros)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/expr.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "macros",
-    "quotation-homoiconicity"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/iterators.jl (Iterators module)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/iterators.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "iterators"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/missing.jl (missing value)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/missing.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "null-optional"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "JuliaLang/julia — base/loading.jl (code loading)",
-   "url": "https://github.com/JuliaLang/julia/blob/master/base/loading.jl",
-   "scope": "section",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "modules",
-    "imports",
-    "packages"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "JuliaSyntax.jl — new Julia parser",
-   "url": "https://github.com/JuliaLang/JuliaSyntax.jl",
-   "scope": "whole",
-   "implementation": "JuliaSyntax.jl",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "parser",
-    "lexer"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "conformance-tests",
-   "title": "JuliaLang/julia — test suite",
-   "url": "https://github.com/JuliaLang/julia/tree/master/test",
-   "scope": "whole",
-   "implementation": "JuliaLang/julia",
-   "authority": "official",
-   "format": "directory",
-   "access": "open",
-   "concepts": [
-    "testing"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Documentation (manual, Base and stdlib reference)",
-   "url": "https://docs.julialang.org/en/v1/",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "standard-library"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Control Flow: Compound Expressions",
-   "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-compound-expressions",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "expressions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Control Flow: Conditional Evaluation",
-   "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "conditionals"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Control Flow: Short-Circuit Evaluation",
-   "url": "https://docs.julialang.org/en/v1/manual/control-flow/#Short-Circuit-Evaluation",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "short-circuit"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Control Flow: Loops",
-   "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-loops",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "loops",
-    "iteration-foreach",
-    "loop-control"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Control Flow: Exception Handling",
-   "url": "https://docs.julialang.org/en/v1/manual/control-flow/#Exception-Handling",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "exceptions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Control Flow: Tasks",
-   "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-tasks",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "coroutines"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Type Declarations",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#Type-Declarations",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "type-annotations"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Abstract Types",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#man-abstract-types",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "abstract-classes",
-    "subtyping"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Primitive Types",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#Primitive-Types",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "primitive-types"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Composite Types",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#Composite-Types",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "records-structs"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Type Unions",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#Type-Unions",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "union-intersection-types"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Parametric Types",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#Parametric-Types",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "generics"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: UnionAll Types",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#UnionAll-Types",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "existential-types",
-    "generics"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Types: Type Aliases",
-   "url": "https://docs.julialang.org/en/v1/manual/types/#Type-Aliases",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "type-aliases"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Argument Passing",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#man-argument-passing",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "parameters-arguments",
-    "value-reference-semantics"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: return",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#The-return-Keyword",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "return"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Anonymous Functions",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#man-anonymous-functions",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "closures",
-    "higher-order-functions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Tuples",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#Tuples",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "tuples"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Destructuring Assignment",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#destructuring-assignment",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "destructuring"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Keyword Arguments",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#Keyword-Arguments",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "parameters-arguments"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Function composition and piping",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#Function-composition-and-piping",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "pipelines"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Functions: Dot Syntax for Vectorizing",
-   "url": "https://docs.julialang.org/en/v1/manual/functions/#man-vectorized",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "higher-order-functions",
-    "arrays"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Strings: Characters",
-   "url": "https://docs.julialang.org/en/v1/manual/strings/#man-characters",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "characters"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Strings: Unicode and UTF-8",
-   "url": "https://docs.julialang.org/en/v1/manual/strings/#Unicode-and-UTF-8",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "unicode",
-    "strings"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Strings: Interpolation",
-   "url": "https://docs.julialang.org/en/v1/manual/strings/#string-interpolation",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "string-formatting"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Strings: Regular Expressions",
-   "url": "https://docs.julialang.org/en/v1/manual/strings/#man-regex-literals",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "regular-expressions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Metaprogramming: Program representation",
-   "url": "https://docs.julialang.org/en/v1/manual/metaprogramming/#Program-representation",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "ast",
-    "quotation-homoiconicity"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Metaprogramming: Macros",
-   "url": "https://docs.julialang.org/en/v1/manual/metaprogramming/#man-macros",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "macros"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Metaprogramming: Generated functions",
-   "url": "https://docs.julialang.org/en/v1/manual/metaprogramming/#Generated-functions",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "compile-time-evaluation",
-    "code-generation"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Methods: Defining Methods",
-   "url": "https://docs.julialang.org/en/v1/manual/methods/#Defining-Methods",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
+  "id": "julia",
+  "name": "Julia",
+  "categories": [
+    "general-purpose",
+    "scientific"
+  ],
+  "paradigms": [
     "multiple-dispatch",
-    "methods"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Methods: Method Ambiguities",
-   "url": "https://docs.julialang.org/en/v1/manual/methods/#man-ambiguities",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "multiple-dispatch",
-    "overloading"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Methods: Parametric Methods",
-   "url": "https://docs.julialang.org/en/v1/manual/methods/#Parametric-Methods",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "generics"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Methods: Function-like objects",
-   "url": "https://docs.julialang.org/en/v1/manual/methods/#Function-like-objects",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "function-types"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Variables And Scoping: Global Scope",
-   "url": "https://docs.julialang.org/en/v1/manual/variables-and-scoping/#Global-Scope",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "scope"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Variables And Scoping: Local Scope",
-   "url": "https://docs.julialang.org/en/v1/manual/variables-and-scoping/#local-scope",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "scope",
-    "closures"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Variables And Scoping: Constants",
-   "url": "https://docs.julialang.org/en/v1/manual/variables-and-scoping/#Constants",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "constants"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Variables",
-   "url": "https://docs.julialang.org/en/v1/manual/variables/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "variables",
-    "identifiers"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Integers and Floating-Point Numbers",
-   "url": "https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "integers",
-    "floating-point",
-    "literals"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Mathematical Operations",
-   "url": "https://docs.julialang.org/en/v1/manual/mathematical-operations/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "operators",
-    "operator-precedence"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Complex and Rational Numbers",
-   "url": "https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "primitive-types"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Constructors",
-   "url": "https://docs.julialang.org/en/v1/manual/constructors/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "constructors"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Conversion and Promotion",
-   "url": "https://docs.julialang.org/en/v1/manual/conversion-and-promotion/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "type-conversion"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Interfaces",
-   "url": "https://docs.julialang.org/en/v1/manual/interfaces/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "interfaces-protocols",
-    "iterators"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Modules",
-   "url": "https://docs.julialang.org/en/v1/manual/modules/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "modules",
-    "imports",
-    "namespaces"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Documentation",
-   "url": "https://docs.julialang.org/en/v1/manual/documentation/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "documentation-comments"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Multi-dimensional Arrays",
-   "url": "https://docs.julialang.org/en/v1/manual/arrays/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "arrays"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Missing Values",
-   "url": "https://docs.julialang.org/en/v1/manual/missing/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "null-optional"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Asynchronous Programming",
-   "url": "https://docs.julialang.org/en/v1/manual/asynchronous-programming/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "async-await",
-    "coroutines"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Multi-Threading",
-   "url": "https://docs.julialang.org/en/v1/manual/multi-threading/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "threads",
-    "synchronization",
-    "atomics-memory-ordering"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Multi-processing and Distributed Computing",
-   "url": "https://docs.julialang.org/en/v1/manual/distributed-computing/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "parallelism"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Calling C and Fortran Code",
-   "url": "https://docs.julialang.org/en/v1/manual/calling-c-and-fortran-code/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "ffi"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Embedding Julia",
-   "url": "https://docs.julialang.org/en/v1/manual/embedding/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "interoperability"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Networking and Streams",
-   "url": "https://docs.julialang.org/en/v1/manual/networking-and-streams/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "input-output"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Running External Programs",
-   "url": "https://docs.julialang.org/en/v1/manual/running-external-programs/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "processes-system"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Code Loading",
-   "url": "https://docs.julialang.org/en/v1/manual/code-loading/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "packages",
-    "imports"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — The World Age mechanism",
-   "url": "https://docs.julialang.org/en/v1/manual/worldage/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "eval"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Memory Management",
-   "url": "https://docs.julialang.org/en/v1/manual/memory-management/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "memory-management",
-    "garbage-collection"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Command-line Interface",
-   "url": "https://docs.julialang.org/en/v1/manual/command-line-interface/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "command-line"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Julia Manual — Unicode Input",
-   "url": "https://docs.julialang.org/en/v1/manual/unicode-input/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "source-encoding"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Collections and Data Structures",
-   "url": "https://docs.julialang.org/en/v1/base/collections/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "collections"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Strings",
-   "url": "https://docs.julialang.org/en/v1/base/strings/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "strings"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Arrays",
-   "url": "https://docs.julialang.org/en/v1/base/arrays/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "arrays"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — I/O and Network",
-   "url": "https://docs.julialang.org/en/v1/base/io-network/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "input-output",
-    "file-io"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Reflection and introspection",
-   "url": "https://docs.julialang.org/en/v1/base/reflection/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "reflection"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Punctuation",
-   "url": "https://docs.julialang.org/en/v1/base/punctuation/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "lexical-structure",
-    "operators"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Keywords",
-   "url": "https://docs.julialang.org/en/v1/base/base/#Keywords",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "keywords"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — Multi-Threading",
-   "url": "https://docs.julialang.org/en/v1/base/multi-threading/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "threads",
-    "atomics-memory-ordering"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Julia Base reference — C Interface",
-   "url": "https://docs.julialang.org/en/v1/base/c/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "ffi"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "release-notes",
-   "title": "Julia NEWS.md — release notes",
-   "url": "https://github.com/JuliaLang/julia/blob/master/NEWS.md",
-   "scope": "whole",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "language-evolution"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Julia: A Fast Dynamic Language for Technical Computing",
-   "url": "https://arxiv.org/abs/1209.5145",
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
+    "functional",
+    "imperative",
+    "metaprogramming"
+  ],
+  "typing": [
+    "dynamic",
+    "strong",
+    "nominal",
+    "parametric",
+    "optional-annotations"
+  ],
+  "first_appeared": 2012,
+  "designers": [
     "Jeff Bezanson",
     "Stefan Karpinski",
     "Viral B. Shah",
     "Alan Edelman"
-   ],
-   "year": 2012,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "design-rationale"
-   ]
+  ],
+  "summary": "High-level, dynamically typed language for technical computing built around multiple dispatch over a parametric type system, JIT-compiled through LLVM, with Lisp-style macros.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "informal"
+  ],
+  "file_extensions": [
+    ".jl"
+  ],
+  "homepage": "https://julialang.org/",
+  "influenced_by": [
+    "lisp",
+    "matlab",
+    "python",
+    "r",
+    "dylan",
+    "fortran",
+    "ruby",
+    "perl"
+  ],
+  "level_notes": {
+    "1": "No formal specification or standard; the Julia manual and Base reference document the behaviour of the reference implementation. Language changes are discussed in GitHub issues/PRs (no formal proposal series); NEWS.md is the release-notes record.",
+    "0": "The reference implementation JuliaLang/julia: femtolisp front end (src/julia-parser.scm, julia-syntax.scm) being replaced by JuliaSyntax.jl, C runtime in src/, type inference in Compiler/, Base in base/."
   },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Julia: A Fresh Approach to Numerical Computing (SIAM Review)",
-   "url": "https://arxiv.org/abs/1411.1607",
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
-    "Jeff Bezanson",
-    "Alan Edelman",
-    "Stefan Karpinski",
-    "Viral B. Shah"
-   ],
-   "year": 2017,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "design-rationale",
-    "multiple-dispatch"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Why We Created Julia (blog post)",
-   "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
-    "Jeff Bezanson",
-    "Stefan Karpinski",
-    "Viral B. Shah",
-    "Alan Edelman"
-   ],
-   "year": 2012,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "design-rationale",
-    "history"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "formal-semantics",
-   "title": "Julia Subtyping: A Rational Reconstruction (OOPSLA 2018)",
-   "url": "https://doi.org/10.1145/3276483",
-   "scope": "whole",
-   "authority": "academic",
-   "authors": [
-    "Francesco Zappa Nardelli",
-    "Julia Belyakova",
-    "Artem Pelenitsyn",
-    "Benjamin Chung",
-    "Jeff Bezanson",
-    "Jan Vitek"
-   ],
-   "year": 2018,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "subtyping",
-    "formal-semantics"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "formal-semantics",
-   "title": "Julia: Dynamism and Performance Reconciled by Design (OOPSLA 2018)",
-   "url": "https://doi.org/10.1145/3276490",
-   "scope": "whole",
-   "authority": "academic",
-   "authors": [
-    "Jeff Bezanson",
-    "Jiahao Chen",
-    "Benjamin Chung",
-    "Stefan Karpinski",
-    "Viral B. Shah",
-    "Jan Vitek",
-    "Lionel Zoubritzky"
-   ],
-   "year": 2018,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "performance",
-    "type-inference"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Julia ASTs",
-   "url": "https://docs.julialang.org/en/v1/devdocs/ast/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "ast",
-    "intermediate-representation"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Eval of Julia code",
-   "url": "https://docs.julialang.org/en/v1/devdocs/eval/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "compiler-architecture"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — More about types",
-   "url": "https://docs.julialang.org/en/v1/devdocs/types/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "type-system",
-    "subtyping"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Inference",
-   "url": "https://docs.julialang.org/en/v1/devdocs/inference/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "type-inference"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Julia SSA-form IR",
-   "url": "https://docs.julialang.org/en/v1/devdocs/ssair/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "intermediate-representation"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Garbage Collection in Julia",
-   "url": "https://docs.julialang.org/en/v1/devdocs/gc/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "garbage-collection"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Calling Conventions",
-   "url": "https://docs.julialang.org/en/v1/devdocs/callconv/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "calling-convention-abi"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Memory layout of Julia Objects",
-   "url": "https://docs.julialang.org/en/v1/devdocs/object/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "runtime-system"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — Julia Functions",
-   "url": "https://docs.julialang.org/en/v1/devdocs/functions/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "multiple-dispatch"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "internals-guide",
-   "title": "Julia Developer Docs — High-level Overview of the Native-Code Generation Process",
-   "url": "https://docs.julialang.org/en/v1/devdocs/compiler/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "code-generation-backend"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "Julia Manual — Getting Started",
-   "url": "https://docs.julialang.org/en/v1/manual/getting-started/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "hello-world"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "Julia Manual — Performance Tips",
-   "url": "https://docs.julialang.org/en/v1/manual/performance-tips/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "performance"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "style-guide",
-   "title": "Julia Manual — Style Guide",
-   "url": "https://docs.julialang.org/en/v1/manual/style-guide/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "style-conventions"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "faq",
-   "title": "Julia Manual — Frequently Asked Questions",
-   "url": "https://docs.julialang.org/en/v1/manual/faq/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "design-rationale"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "comparison-guide",
-   "title": "Julia Manual — Noteworthy Differences from other Languages",
-   "url": "https://docs.julialang.org/en/v1/manual/noteworthy-differences/",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "comparison"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "Learn X in Y minutes — Julia",
-   "url": "https://learnxinyminutes.com/docs/julia/",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "hello-world"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Think Julia: How to Think Like a Computer Scientist",
-   "url": "https://benlauwens.github.io/ThinkJulia.jl/latest/book.html",
-   "scope": "whole",
-   "authority": "community",
-   "authors": [
-    "Ben Lauwens",
-    "Allen B. Downey"
-   ],
-   "year": 2019,
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "history",
-   "title": "Julia (Jeff Bezanson PhD thesis: Abstraction in Technical Computing, MIT 2015)",
-   "url": "https://dspace.mit.edu/handle/1721.1/99811",
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
-    "Jeff Bezanson"
-   ],
-   "year": 2015,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "design-rationale",
-    "history",
-    "multiple-dispatch"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "paper",
-   "title": "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval (OOPSLA 2020)",
-   "url": "https://doi.org/10.1145/3428275",
-   "scope": "whole",
-   "authority": "academic",
-   "authors": [
-    "Julia Belyakova",
-    "Benjamin Chung",
-    "Jack Gelinas",
-    "Jameson Nash",
-    "Ross Tate",
-    "Jan Vitek"
-   ],
-   "year": 2020,
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "eval"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — Julia (programming language)",
-   "url": "https://en.wikipedia.org/wiki/Julia_(programming_language)",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "history"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "code-collection",
-   "title": "Rosetta Code — Category:Julia",
-   "url": "https://rosettacode.org/wiki/Category:Julia",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "PLDB — Julia",
-   "url": "https://pldb.io/concepts/julia.html",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "curated-list",
-   "title": "JuliaHub package search",
-   "url": "https://juliahub.com/ui/Packages",
-   "scope": "whole",
-   "authority": "vendor",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "package-management"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "benchmark",
-   "title": "Julia Micro-Benchmarks",
-   "url": "https://julialang.org/benchmarks/",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "performance"
-   ]
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "JuliaLang/julia — reference implementation",
+      "url": "https://github.com/JuliaLang/julia",
+      "scope": "whole",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "compiler-architecture"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/julia-parser.scm (femtolisp parser)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/julia-parser.scm",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "parser",
+        "grammar"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/julia-syntax.scm (lowering passes)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/julia-syntax.scm",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "code-generation",
+        "semantic-analysis"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/gc-stock.c (garbage collector)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/gc-stock.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "garbage-collection",
+        "memory-management"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/interpreter.c (AST/IR interpreter)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/interpreter.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "interpreter"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/codegen.cpp (LLVM code generation)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/codegen.cpp",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "code-generation-backend",
+        "jit"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/jitlayers.cpp (ORC JIT layers)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/jitlayers.cpp",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "jit"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/gf.c (generic functions and method dispatch)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/gf.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "multiple-dispatch"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/subtype.c (subtyping algorithm)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/subtype.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "subtyping",
+        "type-system"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/task.c (tasks (coroutines))",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/task.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "coroutines",
+        "concurrency"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/builtins.c (builtin functions)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/builtins.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "runtime-system"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/ccall.cpp (ccall implementation)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/ccall.cpp",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "ffi"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/jltypes.c (type construction and caching)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/jltypes.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "type-system",
+        "generics"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/datatype.c (DataType layout)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/datatype.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "records-structs",
+        "runtime-system"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — src/ast.c (AST conversion between flisp and Julia)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/src/ast.c",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "ast"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "JuliaLang/julia — Compiler/src/abstractinterpretation.jl (type inference by abstract interpretation)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/Compiler/src/abstractinterpretation.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "type-inference",
+        "optimization"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/boot.jl (bootstrap type definitions)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/boot.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "bootstrapping",
+        "primitive-types"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/strings/string.jl (String type)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/strings/string.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "strings",
+        "unicode"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/dict.jl (Dict implementation)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/dict.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "maps-dictionaries"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/array.jl (Array implementation)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/array.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "arrays"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/channels.jl (Channels)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/channels.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "channels-message-passing"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/threads.jl (Threads module)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/threads.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "threads"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/promotion.jl (promotion system)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/promotion.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "type-conversion"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/expr.jl (Expr utilities and macros)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/expr.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "macros",
+        "quotation-homoiconicity"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/iterators.jl (Iterators module)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/iterators.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "iterators"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/missing.jl (missing value)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/missing.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "null-optional"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "JuliaLang/julia — base/loading.jl (code loading)",
+      "url": "https://github.com/JuliaLang/julia/blob/master/base/loading.jl",
+      "scope": "section",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "modules",
+        "imports",
+        "packages"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "JuliaSyntax.jl — new Julia parser",
+      "url": "https://github.com/JuliaLang/JuliaSyntax.jl",
+      "scope": "whole",
+      "implementation": "JuliaSyntax.jl",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "parser",
+        "lexer"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "JuliaLang/julia — test suite",
+      "url": "https://github.com/JuliaLang/julia/tree/master/test",
+      "scope": "whole",
+      "implementation": "JuliaLang/julia",
+      "authority": "official",
+      "format": "directory",
+      "access": "open",
+      "concepts": [
+        "testing"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Documentation (manual, Base and stdlib reference)",
+      "url": "https://docs.julialang.org/en/v1/",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "standard-library"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Control Flow: Compound Expressions",
+      "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-compound-expressions",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "expressions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Control Flow: Conditional Evaluation",
+      "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Control Flow: Short-Circuit Evaluation",
+      "url": "https://docs.julialang.org/en/v1/manual/control-flow/#Short-Circuit-Evaluation",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "short-circuit"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Control Flow: Loops",
+      "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-loops",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "loops",
+        "iteration-foreach",
+        "loop-control"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Control Flow: Exception Handling",
+      "url": "https://docs.julialang.org/en/v1/manual/control-flow/#Exception-Handling",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "exceptions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Control Flow: Tasks",
+      "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-tasks",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "coroutines"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Type Declarations",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#Type-Declarations",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-annotations"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Abstract Types",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#man-abstract-types",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "abstract-classes",
+        "subtyping"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Primitive Types",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#Primitive-Types",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "primitive-types"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Composite Types",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#Composite-Types",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "records-structs"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Type Unions",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#Type-Unions",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "union-intersection-types"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Parametric Types",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#Parametric-Types",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "generics"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: UnionAll Types",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#UnionAll-Types",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "existential-types",
+        "generics"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Types: Type Aliases",
+      "url": "https://docs.julialang.org/en/v1/manual/types/#Type-Aliases",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-aliases"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Argument Passing",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#man-argument-passing",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "parameters-arguments",
+        "value-reference-semantics"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: return",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#The-return-Keyword",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "return"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Anonymous Functions",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#man-anonymous-functions",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "closures",
+        "higher-order-functions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Tuples",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#Tuples",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "tuples"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Destructuring Assignment",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#destructuring-assignment",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "destructuring"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Keyword Arguments",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#Keyword-Arguments",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "parameters-arguments"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Function composition and piping",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#Function-composition-and-piping",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "pipelines"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Functions: Dot Syntax for Vectorizing",
+      "url": "https://docs.julialang.org/en/v1/manual/functions/#man-vectorized",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "higher-order-functions",
+        "arrays"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Strings: Characters",
+      "url": "https://docs.julialang.org/en/v1/manual/strings/#man-characters",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "characters"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Strings: Unicode and UTF-8",
+      "url": "https://docs.julialang.org/en/v1/manual/strings/#Unicode-and-UTF-8",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "unicode",
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Strings: Interpolation",
+      "url": "https://docs.julialang.org/en/v1/manual/strings/#string-interpolation",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "string-formatting"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Strings: Regular Expressions",
+      "url": "https://docs.julialang.org/en/v1/manual/strings/#man-regex-literals",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "regular-expressions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Metaprogramming: Program representation",
+      "url": "https://docs.julialang.org/en/v1/manual/metaprogramming/#Program-representation",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "ast",
+        "quotation-homoiconicity"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Metaprogramming: Macros",
+      "url": "https://docs.julialang.org/en/v1/manual/metaprogramming/#man-macros",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "macros"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Metaprogramming: Generated functions",
+      "url": "https://docs.julialang.org/en/v1/manual/metaprogramming/#Generated-functions",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "compile-time-evaluation",
+        "code-generation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Methods: Defining Methods",
+      "url": "https://docs.julialang.org/en/v1/manual/methods/#Defining-Methods",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "multiple-dispatch",
+        "methods"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Methods: Method Ambiguities",
+      "url": "https://docs.julialang.org/en/v1/manual/methods/#man-ambiguities",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "multiple-dispatch",
+        "overloading"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Methods: Parametric Methods",
+      "url": "https://docs.julialang.org/en/v1/manual/methods/#Parametric-Methods",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "generics"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Methods: Function-like objects",
+      "url": "https://docs.julialang.org/en/v1/manual/methods/#Function-like-objects",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "function-types"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Variables And Scoping: Global Scope",
+      "url": "https://docs.julialang.org/en/v1/manual/variables-and-scoping/#Global-Scope",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "scope"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Variables And Scoping: Local Scope",
+      "url": "https://docs.julialang.org/en/v1/manual/variables-and-scoping/#local-scope",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "scope",
+        "closures"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Variables And Scoping: Constants",
+      "url": "https://docs.julialang.org/en/v1/manual/variables-and-scoping/#Constants",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "constants"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Variables",
+      "url": "https://docs.julialang.org/en/v1/manual/variables/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables",
+        "identifiers"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Integers and Floating-Point Numbers",
+      "url": "https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "integers",
+        "floating-point",
+        "literals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Mathematical Operations",
+      "url": "https://docs.julialang.org/en/v1/manual/mathematical-operations/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "operators",
+        "operator-precedence"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Complex and Rational Numbers",
+      "url": "https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "primitive-types"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Constructors",
+      "url": "https://docs.julialang.org/en/v1/manual/constructors/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "constructors"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Conversion and Promotion",
+      "url": "https://docs.julialang.org/en/v1/manual/conversion-and-promotion/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-conversion"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Interfaces",
+      "url": "https://docs.julialang.org/en/v1/manual/interfaces/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "interfaces-protocols",
+        "iterators"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Modules",
+      "url": "https://docs.julialang.org/en/v1/manual/modules/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "modules",
+        "imports",
+        "namespaces"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Documentation",
+      "url": "https://docs.julialang.org/en/v1/manual/documentation/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "documentation-comments"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Multi-dimensional Arrays",
+      "url": "https://docs.julialang.org/en/v1/manual/arrays/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "arrays"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Missing Values",
+      "url": "https://docs.julialang.org/en/v1/manual/missing/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "null-optional"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Asynchronous Programming",
+      "url": "https://docs.julialang.org/en/v1/manual/asynchronous-programming/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "async-await",
+        "coroutines"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Multi-Threading",
+      "url": "https://docs.julialang.org/en/v1/manual/multi-threading/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "threads",
+        "synchronization",
+        "atomics-memory-ordering"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Multi-processing and Distributed Computing",
+      "url": "https://docs.julialang.org/en/v1/manual/distributed-computing/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "parallelism"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Calling C and Fortran Code",
+      "url": "https://docs.julialang.org/en/v1/manual/calling-c-and-fortran-code/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "ffi"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Embedding Julia",
+      "url": "https://docs.julialang.org/en/v1/manual/embedding/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "interoperability"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Networking and Streams",
+      "url": "https://docs.julialang.org/en/v1/manual/networking-and-streams/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "input-output"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Running External Programs",
+      "url": "https://docs.julialang.org/en/v1/manual/running-external-programs/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "processes-system"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Code Loading",
+      "url": "https://docs.julialang.org/en/v1/manual/code-loading/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "packages",
+        "imports"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — The World Age mechanism",
+      "url": "https://docs.julialang.org/en/v1/manual/worldage/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "eval"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Memory Management",
+      "url": "https://docs.julialang.org/en/v1/manual/memory-management/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "memory-management",
+        "garbage-collection"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Command-line Interface",
+      "url": "https://docs.julialang.org/en/v1/manual/command-line-interface/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "command-line"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Julia Manual — Unicode Input",
+      "url": "https://docs.julialang.org/en/v1/manual/unicode-input/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "source-encoding"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Collections and Data Structures",
+      "url": "https://docs.julialang.org/en/v1/base/collections/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "collections"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Strings",
+      "url": "https://docs.julialang.org/en/v1/base/strings/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Arrays",
+      "url": "https://docs.julialang.org/en/v1/base/arrays/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "arrays"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — I/O and Network",
+      "url": "https://docs.julialang.org/en/v1/base/io-network/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "input-output",
+        "file-io"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Reflection and introspection",
+      "url": "https://docs.julialang.org/en/v1/base/reflection/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "reflection"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Punctuation",
+      "url": "https://docs.julialang.org/en/v1/base/punctuation/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "lexical-structure",
+        "operators"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Keywords",
+      "url": "https://docs.julialang.org/en/v1/base/base/#Keywords",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "keywords"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — Multi-Threading",
+      "url": "https://docs.julialang.org/en/v1/base/multi-threading/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "threads",
+        "atomics-memory-ordering"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Julia Base reference — C Interface",
+      "url": "https://docs.julialang.org/en/v1/base/c/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "ffi"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "release-notes",
+      "title": "Julia NEWS.md — release notes",
+      "url": "https://github.com/JuliaLang/julia/blob/master/NEWS.md",
+      "scope": "whole",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "language-evolution"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Julia: A Fast Dynamic Language for Technical Computing",
+      "url": "https://arxiv.org/abs/1209.5145",
+      "scope": "whole",
+      "authority": "designer",
+      "authors": [
+        "Jeff Bezanson",
+        "Stefan Karpinski",
+        "Viral B. Shah",
+        "Alan Edelman"
+      ],
+      "year": 2012,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Julia: A Fresh Approach to Numerical Computing (SIAM Review)",
+      "url": "https://arxiv.org/abs/1411.1607",
+      "scope": "whole",
+      "authority": "designer",
+      "authors": [
+        "Jeff Bezanson",
+        "Alan Edelman",
+        "Stefan Karpinski",
+        "Viral B. Shah"
+      ],
+      "year": 2017,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "design-rationale",
+        "multiple-dispatch"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "Why We Created Julia (blog post)",
+      "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+      "scope": "whole",
+      "authority": "designer",
+      "authors": [
+        "Jeff Bezanson",
+        "Stefan Karpinski",
+        "Viral B. Shah",
+        "Alan Edelman"
+      ],
+      "year": 2012,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "design-rationale",
+        "history"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "formal-semantics",
+      "title": "Julia Subtyping: A Rational Reconstruction (OOPSLA 2018)",
+      "url": "https://doi.org/10.1145/3276483",
+      "scope": "whole",
+      "authority": "academic",
+      "authors": [
+        "Francesco Zappa Nardelli",
+        "Julia Belyakova",
+        "Artem Pelenitsyn",
+        "Benjamin Chung",
+        "Jeff Bezanson",
+        "Jan Vitek"
+      ],
+      "year": 2018,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "subtyping",
+        "formal-semantics"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "Julia: Dynamism and Performance Reconciled by Design (OOPSLA 2018)",
+      "url": "https://doi.org/10.1145/3276490",
+      "scope": "whole",
+      "authority": "academic",
+      "authors": [
+        "Jeff Bezanson",
+        "Jiahao Chen",
+        "Benjamin Chung",
+        "Stefan Karpinski",
+        "Viral B. Shah",
+        "Jan Vitek",
+        "Lionel Zoubritzky"
+      ],
+      "year": 2018,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "performance",
+        "type-inference"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Julia ASTs",
+      "url": "https://docs.julialang.org/en/v1/devdocs/ast/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "ast",
+        "intermediate-representation"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Eval of Julia code",
+      "url": "https://docs.julialang.org/en/v1/devdocs/eval/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "compiler-architecture"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — More about types",
+      "url": "https://docs.julialang.org/en/v1/devdocs/types/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-system",
+        "subtyping"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Inference",
+      "url": "https://docs.julialang.org/en/v1/devdocs/inference/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-inference"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Julia SSA-form IR",
+      "url": "https://docs.julialang.org/en/v1/devdocs/ssair/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "intermediate-representation"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Garbage Collection in Julia",
+      "url": "https://docs.julialang.org/en/v1/devdocs/gc/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "garbage-collection"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Calling Conventions",
+      "url": "https://docs.julialang.org/en/v1/devdocs/callconv/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "calling-convention-abi"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Memory layout of Julia Objects",
+      "url": "https://docs.julialang.org/en/v1/devdocs/object/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "runtime-system"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — Julia Functions",
+      "url": "https://docs.julialang.org/en/v1/devdocs/functions/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "multiple-dispatch"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "internals-guide",
+      "title": "Julia Developer Docs — High-level Overview of the Native-Code Generation Process",
+      "url": "https://docs.julialang.org/en/v1/devdocs/compiler/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "code-generation-backend"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Julia Manual — Getting Started",
+      "url": "https://docs.julialang.org/en/v1/manual/getting-started/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "hello-world"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "Julia Manual — Performance Tips",
+      "url": "https://docs.julialang.org/en/v1/manual/performance-tips/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "performance"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "style-guide",
+      "title": "Julia Manual — Style Guide",
+      "url": "https://docs.julialang.org/en/v1/manual/style-guide/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "style-conventions"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "faq",
+      "title": "Julia Manual — Frequently Asked Questions",
+      "url": "https://docs.julialang.org/en/v1/manual/faq/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "comparison-guide",
+      "title": "Julia Manual — Noteworthy Differences from other Languages",
+      "url": "https://docs.julialang.org/en/v1/manual/noteworthy-differences/",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "comparison"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Learn X in Y minutes — Julia",
+      "url": "https://learnxinyminutes.com/docs/julia/",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "hello-world"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "Think Julia: How to Think Like a Computer Scientist",
+      "url": "https://benlauwens.github.io/ThinkJulia.jl/latest/book.html",
+      "scope": "whole",
+      "authority": "community",
+      "authors": [
+        "Ben Lauwens",
+        "Allen B. Downey"
+      ],
+      "year": 2019,
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Abstraction in Technical Computing (Jeff Bezanson, MIT PhD thesis, 2015)",
+      "url": "https://dspace.mit.edu/handle/1721.1/99811",
+      "scope": "whole",
+      "authority": "designer",
+      "authors": [
+        "Jeff Bezanson"
+      ],
+      "year": 2015,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "design-rationale",
+        "history",
+        "multiple-dispatch"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "paper",
+      "title": "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval (OOPSLA 2020)",
+      "url": "https://doi.org/10.1145/3428275",
+      "scope": "whole",
+      "authority": "academic",
+      "authors": [
+        "Julia Belyakova",
+        "Benjamin Chung",
+        "Jack Gelinas",
+        "Jameson Nash",
+        "Ross Tate",
+        "Jan Vitek"
+      ],
+      "year": 2020,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "eval"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Julia (programming language)",
+      "url": "https://en.wikipedia.org/wiki/Julia_(programming_language)",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "history"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Rosetta Code — Category:Julia",
+      "url": "https://rosettacode.org/wiki/Category:Julia",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Julia",
+      "url": "https://pldb.io/concepts/julia.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "curated-list",
+      "title": "JuliaHub package search",
+      "url": "https://platform.juliahub.com/ui/Packages",
+      "scope": "whole",
+      "authority": "vendor",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "package-management"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "benchmark",
+      "title": "Julia Micro-Benchmarks",
+      "url": "https://julialang.org/benchmarks/",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "performance"
+      ]
+    }
+  ]
 }
