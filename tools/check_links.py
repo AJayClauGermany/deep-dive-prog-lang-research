@@ -43,7 +43,7 @@ def host_lock(host):
         return _host_locks.setdefault(host, threading.Semaphore(2))
 
 
-GH = re.compile(r"^https?://github\.com/([^/]+)/([^/#?]+)(?:/(blob|tree|raw)/(.+?))?(?:/(wiki|issues|pull|pulls|releases|discussions|milestones|projects|commits?|actions|tags)(?:/.*)?)?/?(?:[?#].*)?$")
+GH = re.compile(r"^https?://github\.com/([^/]+)/([^/#?]+)(?:/(blob|tree|raw)/([^?#]+)|/(wiki|issues|pull|pulls|releases|discussions|milestones|projects|commits?|actions|tags)(?:/[^?#]*)?)?/?(?:[?#].*)?$")
 
 
 def plan(url):
@@ -66,7 +66,7 @@ def anchor_present(body, frag):
         return True
     cands = {frag, unquote(frag)}
     for f in cands:
-        pat = re.compile(rb"""(?:id|name)\s*=\s*(?:"%s"|'%s'|%s(?=[\s>]))""" % ((re.escape(f.encode()),) * 3))
+        pat = re.compile(rb"""(?i:id|name)\s*=\s*(?:"%s"|'%s'|%s(?=[\s>]))""" % ((re.escape(f.encode()),) * 3))
         if pat.search(body):
             return True
     return False
@@ -117,6 +117,17 @@ def fetch(url):
         elif code in (404, 410):
             res["status"] = "dead"
         elif code in (401, 403, 405, 406, 418, 429, 451, 999):
+            if code == 403 and attempt < 4 and session().headers.get("User-Agent") == UA:
+                # Some hosts (w3.org's Cloudflare) refuse browser-like UAs but accept plain clients.
+                try:
+                    with host_lock(parts.netloc):
+                        r2 = requests.get(fetch_url.split("#")[0], timeout=(15, 40), allow_redirects=True)
+                    if r2.status_code == 200:
+                        res["status"] = "anchor-missing" if (frag and "html" in r2.headers.get("content-type", "") and not anchor_present(r2.content[:MAX_BYTES], frag)) else "ok"
+                        res["http"] = 200
+                        return res
+                except Exception:
+                    pass
             res["status"] = "blocked"
         else:
             res["status"] = "error"
