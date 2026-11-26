@@ -1,0 +1,435 @@
+{
+ "id": "isabelle",
+ "name": "Isabelle/HOL / Isar",
+ "aliases": [
+  "Isabelle",
+  "Isabelle/HOL",
+  "Isar"
+ ],
+ "categories": [
+  "proof-assistant",
+  "functional"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "polymorphic",
+  "inferred"
+ ],
+ "first_appeared": 1986,
+ "designers": [
+  "Lawrence C. Paulson",
+  "Tobias Nipkow",
+  "Makarius Wenzel"
+ ],
+ "summary": "Generic LCF-style proof assistant whose meta-logic Isabelle/Pure hosts object logics, chiefly Isabelle/HOL (higher-order logic with type classes); proofs are written in the structured Isar language and backed by automation such as Sledgehammer.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".thy",
+  ".ML"
+ ],
+ "homepage": "https://isabelle.in.tum.de/",
+ "influenced_by": [
+  "standard-ml",
+  "hol4",
+  "lcf"
+ ],
+ "related": [
+  {
+   "id": "standard-ml",
+   "relation": "implemented-in"
+  }
+ ],
+ "level_notes": {
+  "1": "The Isabelle/Isar Reference Manual is the official definition of the theory/proof language; logic defined by the Pure kernel. isabelle.in.tum.de was intermittently unreachable from the research sandbox (links may report 'error').",
+  "0": "Official sources are a Mercurial repository; the GitHub mirror isabelle-prover/mirror-isabelle is linked for file-level browsing."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "isabelle-prover/mirror-isabelle — GitHub mirror of the Isabelle repository",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Pure/thm.ML — the LCF-style kernel (theorems)",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/Pure/thm.ML",
+   "concepts": [
+    "type-soundness",
+    "verification",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Pure/unify.ML — higher-order unification",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/Pure/unify.ML",
+   "concepts": [
+    "unification"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Pure/type_infer.ML — type inference",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/Pure/type_infer.ML",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Pure/Syntax/lexicon.ML — lexical syntax",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/Pure/Syntax/lexicon.ML",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Pure/Isar/proof.ML — Isar proof state machine",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/Pure/Isar/proof.ML",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/HOL/Tools/BNF/bnf_lfp.ML — (co)datatype package",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/Tools/BNF/bnf_lfp.ML",
+   "concepts": [
+    "algebraic-data-types",
+    "recursive-types"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/HOL/Tools/Function/function.ML — function package",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/Tools/Function/function.ML",
+   "concepts": [
+    "recursion",
+    "functions"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/Tools/Code/code_thingol.ML — code generator intermediate language",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/Tools/Code/code_thingol.ML",
+   "concepts": [
+    "code-generation",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "src/HOL/HOL.thy — the HOL object logic",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/HOL.thy",
+   "concepts": [
+    "logic-foundations",
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "src/HOL/List.thy — lists",
+   "url": "https://github.com/isabelle-prover/mirror-isabelle/blob/master/src/HOL/List.thy",
+   "concepts": [
+    "lists",
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "Isabelle",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Isabelle/Isar Reference Manual",
+   "url": "https://isabelle.in.tum.de/doc/isar-ref.pdf",
+   "concepts": [
+    "grammar",
+    "verification",
+    "lexical-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Defining (co)datatypes in Isabelle/HOL",
+   "url": "https://isabelle.in.tum.de/doc/datatypes.pdf",
+   "concepts": [
+    "algebraic-data-types",
+    "recursive-types"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Defining recursive functions in Isabelle/HOL",
+   "url": "https://isabelle.in.tum.de/doc/functions.pdf",
+   "concepts": [
+    "recursion",
+    "pattern-matching"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tutorial to locales and locale interpretation",
+   "url": "https://isabelle.in.tum.de/doc/locales.pdf",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Haskell-style type classes with Isabelle/Isar",
+   "url": "https://isabelle.in.tum.de/doc/classes.pdf",
+   "concepts": [
+    "traits-typeclasses",
+    "overloading"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Code generation from Isabelle/HOL theories",
+   "url": "https://isabelle.in.tum.de/doc/codegen.pdf",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Isabelle/Isar Implementation manual (Isabelle/ML)",
+   "url": "https://isabelle.in.tum.de/doc/implementation.pdf",
+   "concepts": [
+    "compiler-architecture",
+    "ffi"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "What's in Main (Isabelle/HOL library summary)",
+   "url": "https://isabelle.in.tum.de/doc/main.pdf",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "The Isabelle System Manual",
+   "url": "https://isabelle.in.tum.de/doc/system.pdf",
+   "concepts": [
+    "tooling",
+    "command-line",
+    "build-systems"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "The Foundation of a Generic Theorem Prover (J. Automated Reasoning 1989)",
+   "url": "https://arxiv.org/abs/cs/9301106",
+   "concepts": [
+    "logic-foundations",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Lawrence C. Paulson"
+   ],
+   "year": 1989,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Concrete Semantics with Isabelle/HOL",
+   "url": "http://concrete-semantics.org/",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Tobias Nipkow",
+    "Gerwin Klein"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Programming and Proving in Isabelle/HOL",
+   "url": "https://isabelle.in.tum.de/doc/prog-prove.pdf",
+   "concepts": [
+    "hello-world",
+    "functions",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Tobias Nipkow"
+   ],
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Archive of Formal Proofs",
+   "url": "https://www.isa-afp.org/",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Isabelle (proof assistant) — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Isabelle_(proof_assistant)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Isabelle — PLDB",
+   "url": "https://pldb.io/concepts/isabelle.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,418 @@
+{
+ "id": "stan",
+ "name": "Stan",
+ "categories": [
+  "scientific",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "probabilistic",
+  "imperative",
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Bob Carpenter",
+  "Andrew Gelman",
+  "Stan Development Team"
+ ],
+ "summary": "Statically typed probabilistic programming language for Bayesian statistical models, organised in data/parameters/model blocks and compiled via C++ to gradient-based samplers (HMC/NUTS).",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".stan"
+ ],
+ "homepage": "https://mc-stan.org/",
+ "influenced_by": [
+  "bugs"
+ ],
+ "related": [
+  {
+   "id": "bugs",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The Stan Reference Manual (with BNF grammar) is normative; stanc3 is the only compiler."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "stanc3 — the Stan compiler (OCaml)",
+   "url": "https://github.com/stan-dev/stanc3",
+   "scope": "whole",
+   "implementation": "stanc3",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "stanc3 src/frontend/lexer.mll — lexer",
+   "url": "https://github.com/stan-dev/stanc3/blob/master/src/frontend/lexer.mll",
+   "scope": "section",
+   "implementation": "stanc3",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "stanc3 src/frontend/parser.mly — Menhir grammar",
+   "url": "https://github.com/stan-dev/stanc3/blob/master/src/frontend/parser.mly",
+   "scope": "section",
+   "implementation": "stanc3",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "stanc3 src/frontend/Typechecker.ml — type checker",
+   "url": "https://github.com/stan-dev/stanc3/blob/master/src/frontend/Typechecker.ml",
+   "scope": "section",
+   "implementation": "stanc3",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "stanc3 src/frontend/Ast.ml — abstract syntax tree",
+   "url": "https://github.com/stan-dev/stanc3/blob/master/src/frontend/Ast.ml",
+   "scope": "section",
+   "implementation": "stanc3",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "stanc3 src/stan_math_backend/Lower_program.ml — C++ code generation",
+   "url": "https://github.com/stan-dev/stanc3/blob/master/src/stan_math_backend/Lower_program.ml",
+   "scope": "section",
+   "implementation": "stanc3",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Stan Math Library (C++ autodiff runtime)",
+   "url": "https://github.com/stan-dev/math",
+   "scope": "whole",
+   "implementation": "Stan Math",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "runtime-system",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual",
+   "url": "https://mc-stan.org/docs/reference-manual/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Character encoding",
+   "url": "https://mc-stan.org/docs/reference-manual/encoding.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Includes",
+   "url": "https://mc-stan.org/docs/reference-manual/includes.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Comments",
+   "url": "https://mc-stan.org/docs/reference-manual/comments.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Whitespace",
+   "url": "https://mc-stan.org/docs/reference-manual/whitespace.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Data types and declarations (constrained types)",
+   "url": "https://mc-stan.org/docs/reference-manual/types.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types",
+    "arrays",
+    "refinement-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Expressions",
+   "url": "https://mc-stan.org/docs/reference-manual/expressions.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Statements (assignment, sampling, loops, conditionals)",
+   "url": "https://mc-stan.org/docs/reference-manual/statements.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements",
+    "conditionals",
+    "loops",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Program blocks",
+   "url": "https://mc-stan.org/docs/reference-manual/blocks.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — User-defined functions",
+   "url": "https://mc-stan.org/docs/reference-manual/user-functions.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Constraint transforms",
+   "url": "https://mc-stan.org/docs/reference-manual/transforms.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Language syntax (BNF)",
+   "url": "https://mc-stan.org/docs/reference-manual/syntax.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Program execution",
+   "url": "https://mc-stan.org/docs/reference-manual/execution.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Stan Reference Manual — Deprecated features",
+   "url": "https://mc-stan.org/docs/reference-manual/deprecations.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Stan Functions Reference",
+   "url": "https://mc-stan.org/docs/functions-reference/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Carpenter et al. — Stan: A Probabilistic Programming Language (J. Stat. Software 2017)",
+   "url": "https://www.jstatsoft.org/article/view/v076i01",
+   "scope": "whole",
+   "authority": "designer",
+   "year": 2017,
+   "authors": [
+    "Bob Carpenter",
+    "Andrew Gelman",
+    "Matthew D. Hoffman",
+    "et al."
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Stan User's Guide",
+   "url": "https://mc-stan.org/docs/stan-users-guide/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "CmdStan Guide",
+   "url": "https://mc-stan.org/docs/cmdstan-guide/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Stan (software)",
+   "url": "https://en.wikipedia.org/wiki/Stan_(software)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Stan",
+   "url": "https://pldb.io/concepts/stan.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
