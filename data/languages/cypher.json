@@ -1,0 +1,1679 @@
+{
+ "id": "cypher",
+ "name": "Cypher / openCypher",
+ "aliases": [
+  "openCypher",
+  "Neo4j Cypher"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Andrés Taylor",
+  "Neo4j"
+ ],
+ "summary": "Declarative property-graph query language created for Neo4j, built around ASCII-art graph patterns in MATCH, clause pipelines joined by WITH, and MERGE/CREATE/SET updates; openCypher opened it to other vendors and it fed directly into ISO GQL.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".cypher",
+  ".cql"
+ ],
+ "homepage": "https://opencypher.org/",
+ "influenced_by": [
+  "sql",
+  "sparql"
+ ],
+ "related": [
+  {
+   "id": "gql",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The Neo4j Cypher Manual is the de facto reference; openCypher 9 is the vendor-neutral spec, with CIPs for changes. GQL (ISO/IEC 39075) now standardises the core.",
+  "0": "Neo4j is the reference implementation; openCypher TCK (Gherkin scenarios) is the conformance suite; Apache AGE and Memgraph are independent implementations."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "neo4j/neo4j — Neo4j graph database (Cypher reference implementation)",
+   "url": "https://github.com/neo4j/neo4j",
+   "implementation": "Neo4j",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "openCypher — specification artefacts, grammar and TCK",
+   "url": "https://github.com/opencypher/openCypher",
+   "implementation": "openCypher",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "openCypher grammar module (pom.xml for the XML grammar build)",
+   "url": "https://github.com/opencypher/openCypher/blob/main/grammar/pom.xml",
+   "implementation": "openCypher",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK README — Technology Compatibility Kit",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/README.adoc",
+   "implementation": "openCypher TCK",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — MATCH scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/match/Match1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "graph-patterns",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — MATCH ... WHERE scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/match-where/MatchWhere1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — WITH scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/with/With1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pipelines",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — MERGE scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/merge/Merge1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — CREATE scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/create/Create1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — DELETE scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/delete/Delete1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — SET scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/set/Set1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — UNWIND scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/unwind/Unwind1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — UNION scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/union/Union1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "set-operations",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — CALL procedures scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/call/Call1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "stored-procedures",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — RETURN ... ORDER BY scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/return-orderby/ReturnOrderBy1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — SKIP/LIMIT scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/clauses/return-skip-limit/ReturnSkipLimit1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — aggregation scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/aggregation/Aggregation1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — lists scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/list/List1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — maps scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/map/Map1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — null scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/null/Null1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "null-semantics",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — strings scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/string/String1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — quantifiers scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/quantifier/Quantifier1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — temporal values scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/temporal/Temporal1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "date-time",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — conditional (CASE) scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/conditional/Conditional1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — path values scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/path/Path1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — EXISTS subqueries scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/existentialSubqueries/ExistentialSubquery1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "subqueries",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — comparison scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/comparison/Comparison1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — type conversion scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/typeConversion/TypeConversion1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "openCypher TCK — literals scenarios",
+   "url": "https://github.com/opencypher/openCypher/blob/main/tck/features/expressions/literals/Literals1.feature",
+   "implementation": "openCypher TCK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "grammars-v4 CypherParser.g4 — ANTLR4 openCypher grammar",
+   "url": "https://github.com/antlr/grammars-v4/blob/master/cypher/CypherParser.g4",
+   "implementation": "ANTLR grammars-v4",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Apache AGE — openCypher graph extension for PostgreSQL",
+   "url": "https://github.com/apache/age",
+   "implementation": "Apache AGE",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Apache AGE cypher_gram.y — Bison grammar for Cypher",
+   "url": "https://github.com/apache/age/blob/master/src/backend/parser/cypher_gram.y",
+   "implementation": "Apache AGE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache AGE cypher_analyze.c — semantic analysis of Cypher queries",
+   "url": "https://github.com/apache/age/blob/master/src/backend/parser/cypher_analyze.c",
+   "implementation": "Apache AGE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache AGE cypher_clause.c — translation of clauses to PostgreSQL query trees",
+   "url": "https://github.com/apache/age/blob/master/src/backend/parser/cypher_clause.c",
+   "implementation": "Apache AGE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache AGE executor/cypher_create.c — CREATE execution",
+   "url": "https://github.com/apache/age/blob/master/src/backend/executor/cypher_create.c",
+   "implementation": "Apache AGE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Apache AGE executor/cypher_merge.c — MERGE execution",
+   "url": "https://github.com/apache/age/blob/master/src/backend/executor/cypher_merge.c",
+   "implementation": "Apache AGE",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Memgraph — in-memory graph database with openCypher",
+   "url": "https://github.com/memgraph/memgraph",
+   "implementation": "Memgraph",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Memgraph Cypher.g4 — ANTLR openCypher grammar",
+   "url": "https://github.com/memgraph/memgraph/blob/master/src/query/frontend/opencypher/grammar/Cypher.g4",
+   "implementation": "Memgraph",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Memgraph query/plan/operator.cpp — physical plan operators (Expand, Aggregate, ...)",
+   "url": "https://github.com/memgraph/memgraph/blob/master/src/query/plan/operator.cpp",
+   "implementation": "Memgraph",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "joins",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Memgraph query/interpreter.cpp — query interpreter",
+   "url": "https://github.com/memgraph/memgraph/blob/master/src/query/interpreter.cpp",
+   "implementation": "Memgraph",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "FalkorDB — graph database (RedisGraph successor) with openCypher",
+   "url": "https://github.com/FalkorDB/FalkorDB",
+   "implementation": "FalkorDB",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Neo4j Cypher Manual (current)",
+   "url": "https://neo4j.com/docs/cypher-manual/current/",
+   "implementation": "Neo4j",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "openCypher 9 — Cypher Query Language Reference (PDF)",
+   "url": "https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf",
+   "version": "9",
+   "scope": "whole",
+   "authority": "community",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "openCypher Cypher Improvement Proposals (CIPs)",
+   "url": "https://github.com/opencypher/openCypher/blob/main/cip/README.adoc",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Formal Semantics of the Language Cypher (Francis et al.)",
+   "url": "https://arxiv.org/abs/1802.09984",
+   "authors": [
+    "Nadime Francis",
+    "Alastair Green",
+    "Paolo Guagliardo",
+    "Leonid Libkin",
+    "Tobias Lindaaker",
+    "Victor Marsault",
+    "Stefan Plantikow",
+    "Mats Rydberg",
+    "Martin Schuster",
+    "Petra Selmer",
+    "Andrés Taylor"
+   ],
+   "year": 2018,
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Cypher: An Evolving Query Language for Property Graphs (SIGMOD 2018)",
+   "url": "https://doi.org/10.1145/3183713.3190657",
+   "year": 2018,
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "paywalled",
+   "concepts": [
+    "design-rationale",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Introduction",
+   "url": "https://neo4j.com/docs/cypher-manual/current/introduction/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Basic queries",
+   "url": "https://neo4j.com/docs/cypher-manual/current/queries/basic/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Core concepts (nodes, relationships, paths)",
+   "url": "https://neo4j.com/docs/cypher-manual/current/queries/concepts/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Clauses overview",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — MATCH",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/match/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — OPTIONAL MATCH",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/optional-match/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — RETURN",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/return/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — WITH",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/with/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — WHERE",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/where/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — ORDER BY",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/order-by/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — SKIP",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/skip/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — LIMIT",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/limit/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — CREATE",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/create/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — DELETE",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/delete/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — SET",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/set/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — REMOVE",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/remove/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — MERGE",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/merge/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — UNWIND",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/unwind/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — FOREACH",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/foreach/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — CALL procedure",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/call/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "stored-procedures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — LOAD CSV",
+   "url": "https://neo4j.com/docs/cypher-manual/current/clauses/load-csv/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — UNION (combined queries)",
+   "url": "https://neo4j.com/docs/cypher-manual/current/queries/composed-queries/combined-queries/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — CALL subqueries",
+   "url": "https://neo4j.com/docs/cypher-manual/current/subqueries/call-subquery/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — EXISTS subqueries",
+   "url": "https://neo4j.com/docs/cypher-manual/current/subqueries/existential/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — COUNT subqueries",
+   "url": "https://neo4j.com/docs/cypher-manual/current/subqueries/count/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — COLLECT subqueries",
+   "url": "https://neo4j.com/docs/cypher-manual/current/subqueries/collect/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries",
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Patterns",
+   "url": "https://neo4j.com/docs/cypher-manual/current/patterns/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Variable-length paths and quantified path patterns",
+   "url": "https://neo4j.com/docs/cypher-manual/current/patterns/variable-length-paths/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "recursive-queries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Shortest paths",
+   "url": "https://neo4j.com/docs/cypher-manual/current/patterns/shortest-paths/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Values and types",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Lists",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/lists/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Maps",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/maps/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Temporal values",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/temporal/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Spatial values",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/spatial/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Casting data values",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/casting-data/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Working with null",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/working-with-null/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-semantics",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Equality, ordering and comparison",
+   "url": "https://neo4j.com/docs/cypher-manual/current/values-and-types/ordering-equality-comparison/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Expressions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/expressions/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Conditional expressions (CASE)",
+   "url": "https://neo4j.com/docs/cypher-manual/current/expressions/conditional-expressions/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — List expressions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/expressions/list-expressions/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Predicates",
+   "url": "https://neo4j.com/docs/cypher-manual/current/expressions/predicates/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Functions overview",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Aggregating functions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — String functions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/string/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Numeric functions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — List functions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/list/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Temporal functions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — User-defined functions",
+   "url": "https://neo4j.com/docs/cypher-manual/current/functions/user-defined/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Comments",
+   "url": "https://neo4j.com/docs/cypher-manual/current/syntax/comments/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Naming rules",
+   "url": "https://neo4j.com/docs/cypher-manual/current/syntax/naming/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Parameters",
+   "url": "https://neo4j.com/docs/cypher-manual/current/syntax/parameters/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Keywords",
+   "url": "https://neo4j.com/docs/cypher-manual/current/syntax/keywords/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Variables",
+   "url": "https://neo4j.com/docs/cypher-manual/current/syntax/variables/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Constraints",
+   "url": "https://neo4j.com/docs/cypher-manual/current/schema/constraints/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constraints-integrity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Indexes",
+   "url": "https://neo4j.com/docs/cypher-manual/current/indexes/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Execution plans",
+   "url": "https://neo4j.com/docs/cypher-manual/current/planning-and-tuning/execution-plans/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Cypher runtimes",
+   "url": "https://neo4j.com/docs/cypher-manual/current/planning-and-tuning/runtimes/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "runtime-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — Deprecations, additions and compatibility",
+   "url": "https://neo4j.com/docs/cypher-manual/current/deprecations-additions-removals-compatibility/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cypher Manual — GQL conformance",
+   "url": "https://neo4j.com/docs/cypher-manual/current/appendix/gql-conformance/",
+   "implementation": "Neo4j",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standardization",
+    "comparison"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Neo4j GraphAcademy — Cypher Fundamentals",
+   "url": "https://graphacademy.neo4j.com/courses/cypher-fundamentals/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Neo4j Getting Started — Cypher",
+   "url": "https://neo4j.com/docs/getting-started/cypher/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Neo4j Cypher Cheat Sheet",
+   "url": "https://neo4j.com/docs/cypher-cheat-sheet/current/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Learn X in Y minutes — Cypher",
+   "url": "https://learnxinyminutes.com/cypher/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Memgraph — Querying with Cypher",
+   "url": "https://memgraph.com/docs/querying",
+   "implementation": "Memgraph",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Apache AGE manual — overview",
+   "url": "https://age.apache.org/age-manual/master/intro/overview.html",
+   "implementation": "Apache AGE",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Cypher (query language)",
+   "url": "https://en.wikipedia.org/wiki/Cypher_(query_language)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Cypher",
+   "url": "https://pldb.io/concepts/cypher.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "index",
+   "title": "openCypher.org — resources hub",
+   "url": "https://opencypher.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

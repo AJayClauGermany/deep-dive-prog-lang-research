@@ -1,0 +1,440 @@
+{
+ "id": "jmespath",
+ "name": "JMESPath",
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "James Saryerwinnie"
+ ],
+ "summary": "JSON query language with a formal ABNF specification and compliance suite: projections, filters, multiselects, pipes and a fixed built-in function library; used by the AWS and Azure CLIs and Ansible.",
+ "status": "active",
+ "defined_by": [
+  "community-specification"
+ ],
+ "homepage": "https://jmespath.org/",
+ "related": [
+  {
+   "id": "jsonpath",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "jmespath.py is the reference; jmespath.test is shared by all implementations."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "jmespath.py — reference implementation (Python)",
+   "url": "https://github.com/jmespath/jmespath.py",
+   "implementation": "jmespath.py",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jmespath.py lexer.py",
+   "url": "https://github.com/jmespath/jmespath.py/blob/develop/jmespath/lexer.py",
+   "implementation": "jmespath.py",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jmespath.py parser.py — Pratt parser",
+   "url": "https://github.com/jmespath/jmespath.py/blob/develop/jmespath/parser.py",
+   "implementation": "jmespath.py",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jmespath.py visitor.py — tree-walking interpreter",
+   "url": "https://github.com/jmespath/jmespath.py/blob/develop/jmespath/visitor.py",
+   "implementation": "jmespath.py",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "jmespath.py functions.py — built-in functions",
+   "url": "https://github.com/jmespath/jmespath.py/blob/develop/jmespath/functions.py",
+   "implementation": "jmespath.py",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "go-jmespath parser.go",
+   "url": "https://github.com/jmespath/go-jmespath/blob/master/parser.go",
+   "implementation": "go-jmespath",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "jmespath.test — compliance test suite",
+   "url": "https://github.com/jmespath/jmespath.test",
+   "implementation": "jmespath.test",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath Specification",
+   "url": "https://jmespath.org/specification.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Grammar",
+   "url": "https://jmespath.org/specification.html#grammar",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Identifiers",
+   "url": "https://jmespath.org/specification.html#identifiers",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Subexpressions",
+   "url": "https://jmespath.org/specification.html#subexpressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Index expressions and slices",
+   "url": "https://jmespath.org/specification.html#index-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "ranges"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Flatten operator",
+   "url": "https://jmespath.org/specification.html#flatten-operator",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Or expressions",
+   "url": "https://jmespath.org/specification.html#or-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Multiselect list",
+   "url": "https://jmespath.org/specification.html#multiselect-list",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Multiselect hash",
+   "url": "https://jmespath.org/specification.html#multiselect-hash",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Wildcard expressions (projections)",
+   "url": "https://jmespath.org/specification.html#wildcard-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Literal expressions",
+   "url": "https://jmespath.org/specification.html#literal-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Filter expressions",
+   "url": "https://jmespath.org/specification.html#filter-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Comparison operators",
+   "url": "https://jmespath.org/specification.html#comparison-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Function expressions",
+   "url": "https://jmespath.org/specification.html#function-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Data types",
+   "url": "https://jmespath.org/specification.html#data-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Built-in functions",
+   "url": "https://jmespath.org/specification.html#built-in-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — sort_by",
+   "url": "https://jmespath.org/specification.html#sort-by",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — sum",
+   "url": "https://jmespath.org/specification.html#sum",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JMESPath spec — Pipe expressions",
+   "url": "https://jmespath.org/specification.html#pipe-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "JMESPath Community specification (jmespath-community)",
+   "url": "https://github.com/jmespath-community/jmespath.spec",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "JMESPath Tutorial",
+   "url": "https://jmespath.org/tutorial.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "JMESPath Examples",
+   "url": "https://jmespath.org/examples.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "AWS CLI — Filtering output with JMESPath",
+   "url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — JMESPath",
+   "url": "https://pldb.io/concepts/jmespath.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

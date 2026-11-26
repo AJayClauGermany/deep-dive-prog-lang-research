@@ -1,0 +1,574 @@
+{
+ "id": "xslt",
+ "name": "XSLT",
+ "aliases": [
+  "XSL Transformations"
+ ],
+ "categories": [
+  "query",
+  "template",
+  "functional",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional",
+  "rule-based"
+ ],
+ "typing": [
+  "dynamic",
+  "optional-static"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "James Clark",
+  "Michael Kay",
+  "W3C XSL Working Group"
+ ],
+ "summary": "W3C XML-syntax language for transforming XML (and in 3.0 JSON) documents with template rules matched by XPath patterns, plus grouping, sorting, functions, packages and streaming.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C XSLT 1.0 (1999)",
+  "W3C XSLT 2.0 (2007)",
+  "W3C XSLT 3.0 (2017)"
+ ],
+ "file_extensions": [
+  ".xsl",
+  ".xslt"
+ ],
+ "homepage": "https://www.w3.org/TR/xslt-30/",
+ "influenced_by": [
+  "xpath"
+ ],
+ "related": [
+  {
+   "id": "xpath",
+   "relation": "embeds"
+  }
+ ],
+ "level_notes": {
+  "0": "libxslt (1.0, used by browsers and xsltproc) and Saxon (2.0/3.0) are the main processors."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "libxslt — GNOME XSLT 1.0 processor (C)",
+   "url": "https://github.com/GNOME/libxslt",
+   "implementation": "libxslt",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxslt transform.c — applying templates and instructions",
+   "url": "https://github.com/GNOME/libxslt/blob/master/libxslt/transform.c",
+   "implementation": "libxslt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxslt pattern.c — compiling match patterns",
+   "url": "https://github.com/GNOME/libxslt/blob/master/libxslt/pattern.c",
+   "implementation": "libxslt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxslt templates.c — attribute value templates",
+   "url": "https://github.com/GNOME/libxslt/blob/master/libxslt/templates.c",
+   "implementation": "libxslt",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Saxon-HE — XSLT 3.0 processor",
+   "url": "https://github.com/Saxonica/Saxon-HE",
+   "implementation": "Saxon-HE",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XSL Transformations (XSLT) Version 3.0",
+   "url": "https://www.w3.org/TR/xslt-30/",
+   "year": 2017,
+   "version": "3.0",
+   "authors": [
+    "Michael Kay"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XSL Transformations (XSLT) Version 2.0",
+   "url": "https://www.w3.org/TR/xslt20/",
+   "year": 2007,
+   "version": "2.0",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XSL Transformations (XSLT) Version 1.0",
+   "url": "https://www.w3.org/TR/xslt/",
+   "year": 1999,
+   "version": "1.0",
+   "authors": [
+    "James Clark"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — What is new in XSLT 3.0",
+   "url": "https://www.w3.org/TR/xslt-30/#whats-new-in-xslt3",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Rule-based processing",
+   "url": "https://www.w3.org/TR/xslt-30/#rule-based-processing",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Packages and modules",
+   "url": "https://www.w3.org/TR/xslt-30/#packages-and-modules",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Stylesheet structure",
+   "url": "https://www.w3.org/TR/xslt-30/#stylesheet-structure",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Combining stylesheet modules (include/import)",
+   "url": "https://www.w3.org/TR/xslt-30/#combining-modules",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Patterns",
+   "url": "https://www.w3.org/TR/xslt-30/#patterns",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Value templates",
+   "url": "https://www.w3.org/TR/xslt-30/#value-templates",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Template rules",
+   "url": "https://www.w3.org/TR/xslt-30/#rules",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Conflict resolution for template rules",
+   "url": "https://www.w3.org/TR/xslt-30/#conflict",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "multiple-dispatch"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Modes",
+   "url": "https://www.w3.org/TR/xslt-30/#modes",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "polymorphism"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Repetition (for-each, iterate)",
+   "url": "https://www.w3.org/TR/xslt-30/#repetition",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Conditional processing (if, choose)",
+   "url": "https://www.w3.org/TR/xslt-30/#conditionals",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "switch-case"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Try/catch",
+   "url": "https://www.w3.org/TR/xslt-30/#try-catch",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Variables and parameters",
+   "url": "https://www.w3.org/TR/xslt-30/#variables-and-parameters",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Scope of variables",
+   "url": "https://www.w3.org/TR/xslt-30/#scope-of-variables",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Named templates",
+   "url": "https://www.w3.org/TR/xslt-30/#named-templates",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Stylesheet functions",
+   "url": "https://www.w3.org/TR/xslt-30/#stylesheet-functions",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Sorting",
+   "url": "https://www.w3.org/TR/xslt-30/#sorting",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Grouping",
+   "url": "https://www.w3.org/TR/xslt-30/#grouping",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Regular expressions (analyze-string)",
+   "url": "https://www.w3.org/TR/xslt-30/#regular-expressions",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Streaming",
+   "url": "https://www.w3.org/TR/xslt-30/#streaming",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Maps",
+   "url": "https://www.w3.org/TR/xslt-30/#map",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Processing JSON data",
+   "url": "https://www.w3.org/TR/xslt-30/#json",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XSLT 3.0 — Serialization",
+   "url": "https://www.w3.org/TR/xslt-30/#serialization",
+   "version": "3.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Saxon 12 documentation",
+   "url": "https://www.saxonica.com/documentation12/index.html",
+   "implementation": "Saxon",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — XSLT",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/XML/XSLT",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Jeni Tennison — XSLT pages",
+   "url": "https://www.jenitennison.com/xslt/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — XSLT",
+   "url": "https://en.wikipedia.org/wiki/XSLT",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — XSLT",
+   "url": "https://pldb.io/concepts/xslt.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

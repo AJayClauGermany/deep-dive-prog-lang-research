@@ -1,0 +1,146 @@
+{
+ "id": "blif",
+ "name": "BLIF",
+ "aliases": [
+  "Berkeley Logic Interchange Format",
+  "Extended BLIF",
+  "EBLIF"
+ ],
+ "categories": [
+  "hardware-description",
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative",
+  "structural"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1992,
+ "designers": [
+  "UC Berkeley (SIS/MV-SIS group)"
+ ],
+ "summary": "Plain-text netlist format from Berkeley's SIS/ABC logic-synthesis tools describing a hierarchy of models built from .names cover tables (PLA-style logic), .latch elements and subcircuits; used as interchange between synthesis and place-and-route (Yosys, ABC, VPR).",
+ "status": "maintained",
+ "defined_by": [
+  "academic-paper",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".blif",
+  ".eblif"
+ ],
+ "related": [
+  {
+   "id": "edif",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "2": "Format documentation is tool-centric; no tutorials beyond tool manuals.",
+  "3": "No Wikipedia article on BLIF."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Berkeley Logic Interchange Format (BLIF) specification",
+   "url": "https://people.eecs.berkeley.edu/~alanmi/publications/other/blif.pdf",
+   "concepts": [
+    "grammar",
+    "hdl-structure"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ABC src/base/io/ioReadBlif.c — BLIF reader",
+   "url": "https://github.com/berkeley-abc/abc/blob/master/src/base/io/ioReadBlif.c",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "ABC"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys frontends/blif/blifparse.cc — BLIF frontend",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/frontends/blif/blifparse.cc",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Yosys backends/blif/blif.cc — BLIF writer",
+   "url": "https://github.com/YosysHQ/yosys/blob/main/backends/blif/blif.cc",
+   "concepts": [
+    "code-generation-backend",
+    "synthesis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Yosys — command reference (read_blif / write_blif)",
+   "url": "https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/index_frontends.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "Yosys"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VTR/VPR file formats — BLIF netlist",
+   "url": "https://docs.verilogtorouting.org/en/latest/vpr/file_formats/#blif-netlist-blif",
+   "concepts": [
+    "grammar",
+    "hdl-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "VPR"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "VTR/VPR file formats — Extended BLIF (.eblif)",
+   "url": "https://docs.verilogtorouting.org/en/latest/vpr/file_formats/#extended-blif-eblif",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "implementation": "VPR"
+  }
+ ]
+}
