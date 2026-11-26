@@ -1,37 +1,325 @@
 {
- "id": "clickhouse-sql",
- "name": "ClickHouse SQL",
- "aliases": ["ClickHouse"],
- "categories": ["query", "domain-specific"],
- "paradigms": ["declarative", "relational"],
- "typing": ["static", "strong"],
- "first_appeared": 2016,
- "designers": ["Alexey Milovidov"],
- "summary": "The SQL dialect of the ClickHouse columnar OLAP database: SQL with array/map types, ARRAY JOIN, lambdas, rich aggregate combinators and eventual-consistency mutations instead of classic UPDATE.",
- "status": "active",
- "defined_by": ["reference-implementation", "vendor-specification"],
- "homepage": "https://clickhouse.com/docs/sql-reference",
- "related": [{"id": "sql", "relation": "dialect-of"}, {"id": "cpp", "relation": "implemented-in"}],
- "resources": [
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — SQL reference", "url": "https://clickhouse.com/docs/sql-reference", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["statements"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — syntax", "url": "https://clickhouse.com/docs/sql-reference/syntax", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure", "literals", "comments"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — SELECT", "url": "https://clickhouse.com/docs/sql-reference/statements/select", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["selection-projection"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — JOIN", "url": "https://clickhouse.com/docs/sql-reference/statements/select/join", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["joins"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — ARRAY JOIN", "url": "https://clickhouse.com/docs/sql-reference/statements/select/array-join", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["joins", "arrays"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — GROUP BY", "url": "https://clickhouse.com/docs/sql-reference/statements/select/group-by", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["aggregation"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — WITH", "url": "https://clickhouse.com/docs/sql-reference/statements/select/with", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["subqueries", "recursive-queries"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — window functions", "url": "https://clickhouse.com/docs/sql-reference/window-functions", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["window-functions"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — aggregate functions", "url": "https://clickhouse.com/docs/sql-reference/aggregate-functions", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["aggregation"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — CREATE TABLE", "url": "https://clickhouse.com/docs/sql-reference/statements/create/table", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["data-definition"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — INSERT INTO", "url": "https://clickhouse.com/docs/sql-reference/statements/insert-into", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["data-manipulation"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — ALTER TABLE UPDATE (mutations)", "url": "https://clickhouse.com/docs/sql-reference/statements/alter/update", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["data-manipulation"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — data types", "url": "https://clickhouse.com/docs/sql-reference/data-types", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system"]},
-  {"level": 1, "kind": "reference-manual", "title": "ClickHouse docs — Nullable", "url": "https://clickhouse.com/docs/sql-reference/data-types/nullable", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["null-semantics"]},
-  {"level": 2, "kind": "guide", "title": "ClickHouse docs — transactional (ACID) support", "url": "https://clickhouse.com/docs/guides/developer/transactional", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "html", "access": "open", "concepts": ["transactions"]},
-  {"level": 0, "kind": "implementation-repository", "title": "ClickHouse/ClickHouse", "url": "https://github.com/ClickHouse/ClickHouse", "scope": "whole", "implementation": "ClickHouse", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "src/Parsers — hand-written recursive-descent parser", "url": "https://github.com/ClickHouse/ClickHouse/tree/master/src/Parsers", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "directory", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "implementation-source", "title": "ExpressionListParsers.cpp — operator-precedence expression parser", "url": "https://github.com/ClickHouse/ClickHouse/blob/master/src/Parsers/ExpressionListParsers.cpp", "scope": "section", "implementation": "ClickHouse", "authority": "official", "format": "source-file", "access": "open", "concepts": ["operator-precedence", "parser"]},
-  {"level": 1, "kind": "original-paper", "title": "ClickHouse — Lightning Fast Analytics for Everyone (VLDB 2024)", "url": "https://www.vldb.org/pvldb/vol17/p3731-schulze.pdf", "scope": "whole", "authority": "designer", "format": "pdf", "access": "open", "concepts": ["design-rationale"]},
-  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — ClickHouse", "url": "https://en.wikipedia.org/wiki/ClickHouse", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
- ]
+  "id": "clickhouse-sql",
+  "name": "ClickHouse SQL",
+  "aliases": [
+    "ClickHouse"
+  ],
+  "categories": [
+    "query",
+    "domain-specific"
+  ],
+  "paradigms": [
+    "declarative",
+    "relational"
+  ],
+  "typing": [
+    "static",
+    "strong"
+  ],
+  "first_appeared": 2016,
+  "designers": [
+    "Alexey Milovidov"
+  ],
+  "summary": "The SQL dialect of the ClickHouse columnar OLAP database: SQL with array/map types, ARRAY JOIN, lambdas, rich aggregate combinators and eventual-consistency mutations instead of classic UPDATE.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation",
+    "vendor-specification"
+  ],
+  "homepage": "https://clickhouse.com/docs/reference/home",
+  "related": [
+    {
+      "id": "sql",
+      "relation": "dialect-of"
+    },
+    {
+      "id": "cpp",
+      "relation": "implemented-in"
+    }
+  ],
+  "resources": [
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — SQL reference",
+      "url": "https://clickhouse.com/docs/reference/home",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "statements"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — syntax",
+      "url": "https://clickhouse.com/docs/reference/syntax",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "lexical-structure",
+        "literals",
+        "comments"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — SELECT",
+      "url": "https://clickhouse.com/docs/reference/statements/select",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "selection-projection"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — JOIN",
+      "url": "https://clickhouse.com/docs/reference/statements/select/join",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "joins"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — ARRAY JOIN",
+      "url": "https://clickhouse.com/docs/reference/statements/select/array-join",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "joins",
+        "arrays"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — GROUP BY",
+      "url": "https://clickhouse.com/docs/reference/statements/select/group-by",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "aggregation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — WITH",
+      "url": "https://clickhouse.com/docs/reference/statements/select/with",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "subqueries",
+        "recursive-queries"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — window functions",
+      "url": "https://clickhouse.com/docs/reference/functions/window-functions",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "window-functions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — aggregate functions",
+      "url": "https://clickhouse.com/docs/reference/functions/aggregate-functions",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "aggregation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — CREATE TABLE",
+      "url": "https://clickhouse.com/docs/reference/statements/create/table",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-definition"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — INSERT INTO",
+      "url": "https://clickhouse.com/docs/reference/statements/insert-into",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-manipulation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — ALTER TABLE UPDATE (mutations)",
+      "url": "https://clickhouse.com/docs/reference/statements/alter/update",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-manipulation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — data types",
+      "url": "https://clickhouse.com/docs/reference/data-types",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-system"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ClickHouse docs — Nullable",
+      "url": "https://clickhouse.com/docs/reference/data-types/nullable",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "null-semantics"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "ClickHouse docs — transactional (ACID) support",
+      "url": "https://clickhouse.com/docs/concepts/features/operations/insert/transactions",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "transactions"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "ClickHouse/ClickHouse",
+      "url": "https://github.com/ClickHouse/ClickHouse",
+      "scope": "whole",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "compiler-architecture"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "src/Parsers — hand-written recursive-descent parser",
+      "url": "https://github.com/ClickHouse/ClickHouse/tree/master/src/Parsers",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "directory",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "ExpressionListParsers.cpp — operator-precedence expression parser",
+      "url": "https://github.com/ClickHouse/ClickHouse/blob/master/src/Parsers/ExpressionListParsers.cpp",
+      "scope": "section",
+      "implementation": "ClickHouse",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "operator-precedence",
+        "parser"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "ClickHouse — Lightning Fast Analytics for Everyone (VLDB 2024)",
+      "url": "https://www.vldb.org/pvldb/vol17/p3731-schulze.pdf",
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — ClickHouse",
+      "url": "https://en.wikipedia.org/wiki/ClickHouse",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "history"
+      ]
+    }
+  ]
 }

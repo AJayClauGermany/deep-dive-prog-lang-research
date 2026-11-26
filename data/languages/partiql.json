@@ -1,25 +1,138 @@
 {
- "id": "partiql",
- "name": "PartiQL",
- "aliases": [],
- "categories": ["query", "domain-specific"],
- "paradigms": ["declarative", "semi-structured"],
- "typing": ["static", "strong"],
- "first_appeared": 2019,
- "designers": ["Amazon"],
- "summary": "Amazon's SQL-compatible query language for nested and schemaless data (Ion/JSON), backward compatible with SQL-92 and based on SQL++; used in DynamoDB, QLDB and Redshift.",
- "status": "active",
- "defined_by": ["community-specification", "reference-implementation"],
- "homepage": "https://partiql.org/",
- "related": [{"id": "sql", "relation": "superset-of"}, {"id": "sqlpp", "relation": "variant-of"}],
- "resources": [
-  {"level": 1, "kind": "reference-manual", "title": "PartiQL — PartiQL home", "url": "https://partiql.org/", "scope": "section", "implementation": "PartiQL", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
-  {"level": 1, "kind": "specification", "title": "PartiQL Specification", "url": "https://partiql.org/assets/PartiQL-Specification.pdf", "scope": "section", "implementation": "PartiQL", "authority": "official", "format": "pdf", "access": "open", "concepts": ["formal-semantics", "selection-projection", "null-semantics", "path-expressions"]},
-  {"level": 2, "kind": "tutorial", "title": "PartiQL tutorial", "url": "https://partiql.org/tutorial.html", "scope": "section", "implementation": "PartiQL", "authority": "official", "format": "html", "access": "open", "concepts": ["selection-projection", "path-expressions"]},
-  {"level": 0, "kind": "implementation-repository", "title": "partiql/partiql-lang-kotlin — reference implementation", "url": "https://github.com/partiql/partiql-lang-kotlin", "scope": "whole", "implementation": "PartiQL", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-repository", "title": "partiql/partiql-lang-rust", "url": "https://github.com/partiql/partiql-lang-rust", "scope": "whole", "implementation": "PartiQL", "authority": "official", "format": "repository", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "implementation-repository", "title": "partiql/partiql-spec — specification sources", "url": "https://github.com/partiql/partiql-spec", "scope": "whole", "implementation": "PartiQL", "authority": "official", "format": "repository", "access": "open", "concepts": ["formal-semantics"]},
-  {"level": 1, "kind": "reference-manual", "title": "PartiQL — Amazon DynamoDB PartiQL reference", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.html", "scope": "section", "implementation": "PartiQL", "authority": "official", "format": "html", "access": "open", "concepts": ["data-manipulation"]},
-  {"level": 3, "kind": "catalog", "title": "PLDB — PartiQL", "url": "https://pldb.io/concepts/partiql.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
- ]
+  "id": "partiql",
+  "name": "PartiQL",
+  "aliases": [],
+  "categories": [
+    "query",
+    "domain-specific"
+  ],
+  "paradigms": [
+    "declarative",
+    "semi-structured"
+  ],
+  "typing": [
+    "static",
+    "strong"
+  ],
+  "first_appeared": 2019,
+  "designers": [
+    "Amazon"
+  ],
+  "summary": "Amazon's SQL-compatible query language for nested and schemaless data (Ion/JSON), backward compatible with SQL-92 and based on SQL++; used in DynamoDB, QLDB and Redshift.",
+  "status": "active",
+  "defined_by": [
+    "community-specification",
+    "reference-implementation"
+  ],
+  "homepage": "https://partiql.org/",
+  "related": [
+    {
+      "id": "sql",
+      "relation": "superset-of"
+    },
+    {
+      "id": "sqlpp",
+      "relation": "variant-of"
+    }
+  ],
+  "resources": [
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "PartiQL Specification",
+      "url": "https://partiql.org/assets/PartiQL-Specification.pdf",
+      "scope": "section",
+      "implementation": "PartiQL",
+      "authority": "official",
+      "format": "pdf",
+      "access": "open",
+      "concepts": [
+        "formal-semantics",
+        "selection-projection",
+        "null-semantics",
+        "path-expressions"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "PartiQL tutorial",
+      "url": "https://partiql.org/tutorial.html",
+      "scope": "section",
+      "implementation": "PartiQL",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "selection-projection",
+        "path-expressions"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "partiql/partiql-lang-kotlin — reference implementation",
+      "url": "https://github.com/partiql/partiql-lang-kotlin",
+      "scope": "whole",
+      "implementation": "PartiQL",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "compiler-architecture"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "partiql/partiql-lang-rust",
+      "url": "https://github.com/partiql/partiql-lang-rust",
+      "scope": "whole",
+      "implementation": "PartiQL",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "partiql/partiql-spec — specification sources",
+      "url": "https://github.com/partiql/partiql-spec",
+      "scope": "whole",
+      "implementation": "PartiQL",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "formal-semantics"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "PartiQL — Amazon DynamoDB PartiQL reference",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.html",
+      "scope": "section",
+      "implementation": "PartiQL",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-manipulation"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — PartiQL",
+      "url": "https://pldb.io/concepts/partiql.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
 }
