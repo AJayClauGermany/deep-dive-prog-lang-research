@@ -1,487 +1,623 @@
 {
- "id": "jsonnet",
- "name": "Jsonnet",
- "categories": [
-  "configuration",
-  "data-serialization",
-  "functional"
- ],
- "paradigms": [
-  "functional",
-  "declarative",
-  "prototype-based"
- ],
- "typing": [
-  "dynamic",
-  "strong"
- ],
- "first_appeared": 2014,
- "designers": [
-  "Dave Cunningham",
-  "Google"
- ],
- "summary": "Pure, lazy, JSON-superset templating language from Google with object-oriented inheritance via mixins (self/super), comprehensions, functions and a standard library; programs manifest to JSON (or YAML/INI).",
- "status": "active",
- "defined_by": [
-  "vendor-specification",
-  "reference-implementation"
- ],
- "file_extensions": [
-  ".jsonnet",
-  ".libsonnet"
- ],
- "homepage": "https://jsonnet.org/",
- "related": [
-  {
-   "id": "json",
-   "relation": "superset-of"
-  }
- ],
- "influenced_by": [
-  "json",
-  "python"
- ],
- "level_notes": {
-  "1": "jsonnet.org/ref/spec.html is a formal specification (lexing, abstract syntax, desugaring, static checking, big-step semantics); the language reference is informal.",
-  "0": "C++ (google/jsonnet), Go (google/go-jsonnet) and Rust (jrsonnet) implementations; go-jsonnet is now primary."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "google/jsonnet — C++ implementation, website and stdlib",
-   "url": "https://github.com/google/jsonnet",
-   "implementation": "jsonnet (C++)",
-   "scope": "whole",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "interpreter"
-   ]
+  "id": "jsonnet",
+  "name": "Jsonnet",
+  "categories": [
+    "configuration",
+    "data-serialization",
+    "functional"
+  ],
+  "paradigms": [
+    "functional",
+    "declarative",
+    "prototype-based"
+  ],
+  "typing": [
+    "dynamic",
+    "strong"
+  ],
+  "first_appeared": 2014,
+  "designers": [
+    "Dave Cunningham",
+    "Google"
+  ],
+  "summary": "Pure, lazy, JSON-superset templating language from Google with object-oriented inheritance via mixins (self/super), comprehensions, functions and a standard library; programs manifest to JSON (or YAML/INI).",
+  "status": "active",
+  "defined_by": [
+    "vendor-specification",
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".jsonnet",
+    ".libsonnet"
+  ],
+  "homepage": "https://jsonnet.org/",
+  "related": [
+    {
+      "id": "json",
+      "relation": "superset-of"
+    }
+  ],
+  "influenced_by": [
+    "json",
+    "python"
+  ],
+  "level_notes": {
+    "1": "jsonnet.org/ref/spec.html is a formal specification (lexing, abstract syntax, desugaring, static checking, big-step semantics); the language reference is informal.",
+    "0": "C++ (google/jsonnet), Go (google/go-jsonnet) and Rust (jrsonnet) implementations; go-jsonnet is now primary."
   },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "core/lexer.cpp — lexer",
-   "url": "https://github.com/google/jsonnet/blob/master/core/lexer.cpp",
-   "implementation": "jsonnet (C++)",
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "lexer"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "core/parser.cpp — parser",
-   "url": "https://github.com/google/jsonnet/blob/master/core/parser.cpp",
-   "implementation": "jsonnet (C++)",
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "parser"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "core/desugarer.cpp — desugaring to core language",
-   "url": "https://github.com/google/jsonnet/blob/master/core/desugarer.cpp",
-   "implementation": "jsonnet (C++)",
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "ast",
-    "semantic-analysis"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "core/vm.cpp — evaluator",
-   "url": "https://github.com/google/jsonnet/blob/master/core/vm.cpp",
-   "implementation": "jsonnet (C++)",
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "interpreter",
-    "lazy-evaluation"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "stdlib/std.jsonnet — standard library in Jsonnet",
-   "url": "https://github.com/google/jsonnet/blob/master/stdlib/std.jsonnet",
-   "implementation": "jsonnet (C++)",
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "standard-library"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "google/go-jsonnet — Go implementation",
-   "url": "https://github.com/google/go-jsonnet",
-   "implementation": "go-jsonnet",
-   "scope": "whole",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "interpreter"
-   ]
-  },
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "jrsonnet — Rust implementation",
-   "url": "https://github.com/CertainLach/jrsonnet",
-   "implementation": "jrsonnet",
-   "scope": "whole",
-   "authority": "community",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "interpreter",
-    "performance"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet Specification",
-   "url": "https://jsonnet.org/ref/spec.html",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "formal-semantics",
-    "grammar"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Lexing",
-   "url": "https://jsonnet.org/ref/spec.html#lexing",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "lexical-structure",
-    "lexer",
-    "comments",
-    "strings"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Abstract syntax",
-   "url": "https://jsonnet.org/ref/spec.html#abstract_syntax",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "grammar",
-    "ast"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Associativity and precedence",
-   "url": "https://jsonnet.org/ref/spec.html#associativity_precedence",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "operator-precedence"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Desugaring",
-   "url": "https://jsonnet.org/ref/spec.html#desugaring",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "semantic-analysis"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Static checking",
-   "url": "https://jsonnet.org/ref/spec.html#static_checking",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "semantic-analysis",
-    "scope"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Execution (big-step semantics)",
-   "url": "https://jsonnet.org/ref/spec.html#execution",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "formal-semantics",
-    "lazy-evaluation"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Hidden inheritance",
-   "url": "https://jsonnet.org/ref/spec.html#hidden_inheritance",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "inheritance",
-    "visibility"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "Jsonnet spec — Manifestation to JSON",
-   "url": "https://jsonnet.org/ref/spec.html#manifestation",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "serialization"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet language reference",
-   "url": "https://jsonnet.org/ref/language.html",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "expressions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Strings",
-   "url": "https://jsonnet.org/ref/language.html#string",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "strings",
-    "escaping"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Objects",
-   "url": "https://jsonnet.org/ref/language.html#object",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "objects",
-    "maps-dictionaries"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Inheritance",
-   "url": "https://jsonnet.org/ref/language.html#inheritance",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "inheritance",
-    "mixins"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Array comprehensions",
-   "url": "https://jsonnet.org/ref/language.html#array-comprehensions",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "comprehensions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Functions",
-   "url": "https://jsonnet.org/ref/language.html#function",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "functions",
-    "closures"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Self-referencing objects",
-   "url": "https://jsonnet.org/ref/language.html#self-referencing-objects",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "objects",
-    "references-anchors"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — External variables",
-   "url": "https://jsonnet.org/ref/language.html#external-variables-extvars",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "command-line"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Top-level arguments",
-   "url": "https://jsonnet.org/ref/language.html#top-level-arguments-tlas",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "parameters-arguments"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Conditional fields",
-   "url": "https://jsonnet.org/ref/language.html#conditional-fields",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "conditionals"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Jsonnet reference — Field visibility",
-   "url": "https://jsonnet.org/ref/language.html#visibilities",
-   "scope": "section",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "visibility"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "Jsonnet standard library",
-   "url": "https://jsonnet.org/ref/stdlib.html",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "standard-library"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "design-document",
-   "title": "Jsonnet design rationale",
-   "url": "https://jsonnet.org/articles/design.html",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "design-rationale"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "Jsonnet tutorial",
-   "url": "https://jsonnet.org/learning/tutorial.html",
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "concepts": [
-    "hello-world"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "PLDB — Jsonnet",
-   "url": "https://pldb.io/concepts/jsonnet.html",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "google/jsonnet — C++ implementation, website and stdlib",
+      "url": "https://github.com/google/jsonnet",
+      "implementation": "jsonnet (C++)",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "interpreter"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "core/lexer.cpp — lexer",
+      "url": "https://github.com/google/jsonnet/blob/master/core/lexer.cpp",
+      "implementation": "jsonnet (C++)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "lexer"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "core/parser.cpp — parser",
+      "url": "https://github.com/google/jsonnet/blob/master/core/parser.cpp",
+      "implementation": "jsonnet (C++)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "core/desugarer.cpp — desugaring to core language",
+      "url": "https://github.com/google/jsonnet/blob/master/core/desugarer.cpp",
+      "implementation": "jsonnet (C++)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "ast",
+        "semantic-analysis"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "core/vm.cpp — evaluator",
+      "url": "https://github.com/google/jsonnet/blob/master/core/vm.cpp",
+      "implementation": "jsonnet (C++)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "interpreter",
+        "lazy-evaluation"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "stdlib/std.jsonnet — standard library in Jsonnet",
+      "url": "https://github.com/google/jsonnet/blob/master/stdlib/std.jsonnet",
+      "implementation": "jsonnet (C++)",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "standard-library"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "google/go-jsonnet — Go implementation",
+      "url": "https://github.com/google/go-jsonnet",
+      "implementation": "go-jsonnet",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "interpreter"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "jrsonnet — Rust implementation",
+      "url": "https://github.com/CertainLach/jrsonnet",
+      "implementation": "jrsonnet",
+      "scope": "whole",
+      "authority": "community",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "interpreter",
+        "performance"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet Specification",
+      "url": "https://jsonnet.org/ref/spec.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "formal-semantics",
+        "grammar"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Lexing",
+      "url": "https://jsonnet.org/ref/spec.html#lexing",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "lexical-structure",
+        "lexer",
+        "comments",
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Abstract syntax",
+      "url": "https://jsonnet.org/ref/spec.html#abstract_syntax",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "grammar",
+        "ast"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Associativity and precedence",
+      "url": "https://jsonnet.org/ref/spec.html#associativity_precedence",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "operator-precedence"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Desugaring",
+      "url": "https://jsonnet.org/ref/spec.html#desugaring",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "semantic-analysis"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Static checking",
+      "url": "https://jsonnet.org/ref/spec.html#static_checking",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "semantic-analysis",
+        "scope"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Execution (big-step semantics)",
+      "url": "https://jsonnet.org/ref/spec.html#execution",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "formal-semantics",
+        "lazy-evaluation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Hidden inheritance",
+      "url": "https://jsonnet.org/ref/spec.html#hidden_inheritance",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "inheritance",
+        "visibility"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Jsonnet spec — Manifestation to JSON",
+      "url": "https://jsonnet.org/ref/spec.html#manifestation",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "serialization"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet language reference",
+      "url": "https://jsonnet.org/ref/language.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "expressions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Strings",
+      "url": "https://jsonnet.org/ref/language.html#string",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings",
+        "escaping"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Objects",
+      "url": "https://jsonnet.org/ref/language.html#object",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "objects",
+        "maps-dictionaries"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Inheritance",
+      "url": "https://jsonnet.org/ref/language.html#inheritance",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "inheritance",
+        "mixins"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Array comprehensions",
+      "url": "https://jsonnet.org/ref/language.html#array-comprehensions",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "comprehensions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Functions",
+      "url": "https://jsonnet.org/ref/language.html#function",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "functions",
+        "closures"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Self-referencing objects",
+      "url": "https://jsonnet.org/ref/language.html#self-referencing-objects",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "objects",
+        "references-anchors"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — External variables",
+      "url": "https://jsonnet.org/ref/language.html#external-variables-extvars",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "command-line"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Top-level arguments",
+      "url": "https://jsonnet.org/ref/language.html#top-level-arguments-tlas",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "parameters-arguments"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Conditional fields",
+      "url": "https://jsonnet.org/ref/language.html#conditional-fields",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Jsonnet reference — Field visibility",
+      "url": "https://jsonnet.org/ref/language.html#visibilities",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "visibility"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "Jsonnet standard library",
+      "url": "https://jsonnet.org/ref/stdlib.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "standard-library"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "Jsonnet design rationale",
+      "url": "https://jsonnet.org/articles/design.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial",
+      "url": "https://jsonnet.org/learning/tutorial.html",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "hello-world"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — Jsonnet",
+      "url": "https://pldb.io/concepts/jsonnet.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Syntax",
+      "url": "https://jsonnet.org/learning/tutorial.html#syntax",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "lexical-structure",
+        "literals"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Variables",
+      "url": "https://jsonnet.org/learning/tutorial.html#variables",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — References",
+      "url": "https://jsonnet.org/learning/tutorial.html#references",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "references-anchors",
+        "scope"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Arithmetic",
+      "url": "https://jsonnet.org/learning/tutorial.html#arithmetic",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "operators"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Functions",
+      "url": "https://jsonnet.org/learning/tutorial.html#functions",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "functions",
+        "closures"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Conditionals",
+      "url": "https://jsonnet.org/learning/tutorial.html#conditionals",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Array and object comprehension",
+      "url": "https://jsonnet.org/learning/tutorial.html#comprehension",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "loops",
+        "collections"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Imports",
+      "url": "https://jsonnet.org/learning/tutorial.html#imports",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "imports",
+        "modules"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Errors",
+      "url": "https://jsonnet.org/learning/tutorial.html#errors",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "error-handling"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Jsonnet tutorial — Object-orientation",
+      "url": "https://jsonnet.org/learning/tutorial.html#object-orientation",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "classes",
+        "records-structs"
+      ]
+    }
+  ]
 }

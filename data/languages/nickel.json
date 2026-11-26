@@ -1,107 +1,453 @@
 {
- "id": "nickel",
- "name": "Nickel",
- "categories": [
-  "configuration",
-  "functional"
- ],
- "paradigms": [
-  "functional",
-  "declarative"
- ],
- "typing": [
-  "gradual",
-  "contracts",
-  "structural"
- ],
- "first_appeared": 2020,
- "designers": [
-  "Tweag"
- ],
- "summary": "Tweag's lazy, functional configuration language with gradual typing, runtime contracts and recursive record merging, designed as a cleaner successor to Nix-style configuration.",
- "status": "active",
- "defined_by": [
-  "reference-implementation"
- ],
- "file_extensions": [
-  ".ncl"
- ],
- "homepage": "https://nickel-lang.org/",
- "influenced_by": [
-  "nix",
-  "jsonnet",
-  "cue"
- ],
- "related": [
-  {
-   "id": "nix",
-   "relation": "family"
+  "id": "nickel",
+  "name": "Nickel",
+  "categories": [
+    "configuration",
+    "functional"
+  ],
+  "paradigms": [
+    "functional",
+    "declarative"
+  ],
+  "typing": [
+    "gradual",
+    "contracts",
+    "structural"
+  ],
+  "first_appeared": 2020,
+  "designers": [
+    "Tweag"
+  ],
+  "summary": "Tweag's lazy, functional configuration language with gradual typing, runtime contracts and recursive record merging, designed as a cleaner successor to Nix-style configuration.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".ncl"
+  ],
+  "homepage": "https://nickel-lang.org/",
+  "influenced_by": [
+    "nix",
+    "jsonnet",
+    "cue"
+  ],
+  "related": [
+    {
+      "id": "nix",
+      "relation": "family"
+    },
+    {
+      "id": "cue",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "The user manual and RFCs in the repository describe the language; there is no separate formal spec.",
+    "0": "tweag/nickel (Rust) is the reference implementation.",
+    "3": "No Wikipedia or PLDB entry exists for Nickel at the time of writing."
   },
-  {
-   "id": "cue",
-   "relation": "family"
-  }
- ],
- "level_notes": {
-  "1": "The user manual and RFCs in the repository describe the language; there is no separate formal spec.",
-  "0": "tweag/nickel (Rust) is the reference implementation."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "tweag/nickel — Nickel interpreter, LSP and stdlib (Rust)",
-   "url": "https://github.com/tweag/nickel",
-   "implementation": "nickel",
-   "authority": "official",
-   "scope": "whole",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "interpreter"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "The Nickel User Manual — Introduction",
-   "url": "https://nickel-lang.org/user-manual/introduction/",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "design-rationale"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Nickel User Manual — Contracts",
-   "url": "https://nickel-lang.org/user-manual/contracts/",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "refinement-types",
-    "schema-validation",
-    "assertions"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Nickel User Manual — Merging records",
-   "url": "https://nickel-lang.org/user-manual/merging/",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "records-structs",
-    "inheritance"
-   ]
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "tweag/nickel — Nickel interpreter, LSP and stdlib (Rust)",
+      "url": "https://github.com/tweag/nickel",
+      "implementation": "nickel",
+      "authority": "official",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "interpreter"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "The Nickel User Manual — Introduction",
+      "url": "https://nickel-lang.org/user-manual/introduction/",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel User Manual — Contracts",
+      "url": "https://nickel-lang.org/user-manual/contracts/",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "refinement-types",
+        "schema-validation",
+        "assertions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel User Manual — Merging records",
+      "url": "https://nickel-lang.org/user-manual/merging/",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "records-structs",
+        "inheritance"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: identifiers",
+      "url": "https://nickel-lang.org/user-manual/syntax/#identifiers",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "lexical-structure",
+        "variables"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: numeric and boolean values",
+      "url": "https://nickel-lang.org/user-manual/syntax/#simple-values",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "literals",
+        "primitive-types",
+        "scalars"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: strings",
+      "url": "https://nickel-lang.org/user-manual/syntax/#strings",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: escape sequences",
+      "url": "https://nickel-lang.org/user-manual/syntax/#escape-sequences",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "escaping"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: enums",
+      "url": "https://nickel-lang.org/user-manual/syntax/#enums",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "enums"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: arrays",
+      "url": "https://nickel-lang.org/user-manual/syntax/#arrays",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "arrays",
+        "collections"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: records",
+      "url": "https://nickel-lang.org/user-manual/syntax/#records",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "records-structs",
+        "maps-dictionaries"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: if-then-else",
+      "url": "https://nickel-lang.org/user-manual/syntax/#if-then-else",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: let-in",
+      "url": "https://nickel-lang.org/user-manual/syntax/#let-in",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables",
+        "scope"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: functions",
+      "url": "https://nickel-lang.org/user-manual/syntax/#functions",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "functions",
+        "closures"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: primitive operators",
+      "url": "https://nickel-lang.org/user-manual/syntax/#primitive-operators",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "operators"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: pattern matching",
+      "url": "https://nickel-lang.org/user-manual/syntax/#pattern-matching",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "pattern-matching",
+        "switch-case"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: type annotations",
+      "url": "https://nickel-lang.org/user-manual/syntax/#type-annotations",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-system"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Syntax: imports",
+      "url": "https://nickel-lang.org/user-manual/syntax/#imports",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "imports",
+        "modules"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Typing",
+      "url": "https://nickel-lang.org/user-manual/typing/",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-system",
+        "type-inference",
+        "generics"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Types vs contracts",
+      "url": "https://nickel-lang.org/user-manual/types-vs-contracts/",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-system",
+        "schema-validation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Correctness (error reporting)",
+      "url": "https://nickel-lang.org/user-manual/correctness/",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "error-handling"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Nickel user manual — Modular configurations",
+      "url": "https://nickel-lang.org/user-manual/modular-configurations/",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "modules"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "design-document",
+      "title": "Nickel RATIONALE.md — design rationale",
+      "url": "https://github.com/tweag/nickel/blob/master/RATIONALE.md",
+      "authority": "official",
+      "scope": "whole",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "design-rationale"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "Nickel user manual — Tutorial",
+      "url": "https://nickel-lang.org/user-manual/tutorial/",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "hello-world"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "Nickel LALRPOP grammar (grammar.lalrpop)",
+      "url": "https://github.com/tweag/nickel/blob/master/parser/src/grammar.lalrpop",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nickel",
+      "concepts": [
+        "grammar",
+        "parser"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Nickel lexer (lexer.rs)",
+      "url": "https://github.com/tweag/nickel/blob/master/parser/src/lexer.rs",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nickel",
+      "concepts": [
+        "lexer"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Nickel abstract machine evaluator (eval/mod.rs)",
+      "url": "https://github.com/tweag/nickel/blob/master/core/src/eval/mod.rs",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nickel",
+      "concepts": [
+        "interpreter",
+        "lazy-evaluation"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Nickel typechecker (typecheck/mod.rs)",
+      "url": "https://github.com/tweag/nickel/blob/master/core/src/typecheck/mod.rs",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nickel",
+      "concepts": [
+        "type-system",
+        "type-inference"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "standard-library-source",
+      "title": "Nickel standard library (std.ncl)",
+      "url": "https://github.com/tweag/nickel/blob/master/core/stdlib/std.ncl",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nickel",
+      "concepts": [
+        "standard-library"
+      ]
+    }
+  ]
 }

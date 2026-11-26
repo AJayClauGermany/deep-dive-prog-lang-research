@@ -1,97 +1,323 @@
 {
- "id": "hocon",
- "name": "HOCON",
- "aliases": [
-  "Human-Optimized Config Object Notation"
- ],
- "categories": [
-  "configuration"
- ],
- "paradigms": [
-  "declarative"
- ],
- "typing": [
-  "dynamic"
- ],
- "first_appeared": 2011,
- "designers": [
-  "Lightbend"
- ],
- "summary": "Lightbend's JSON superset for configuration with path keys, object merging, substitutions (${...}), includes and unquoted strings, used by Akka and Play.",
- "status": "maintained",
- "defined_by": [
-  "community-specification",
-  "reference-implementation"
- ],
- "file_extensions": [
-  ".conf"
- ],
- "homepage": "https://github.com/lightbend/config/blob/main/HOCON.md",
- "influenced_by": [
-  "json"
- ],
- "related": [
-  {
-   "id": "json",
-   "relation": "superset-of"
-  }
- ],
- "level_notes": {
-  "1": "HOCON.md in lightbend/config is the specification.",
-  "0": "lightbend/config (Java) is the reference implementation."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "lightbend/config — reference Java implementation",
-   "url": "https://github.com/lightbend/config",
-   "implementation": "Typesafe Config",
-   "authority": "official",
-   "scope": "whole",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "parser"
-   ]
+  "id": "hocon",
+  "name": "HOCON",
+  "aliases": [
+    "Human-Optimized Config Object Notation"
+  ],
+  "categories": [
+    "configuration"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [
+    "dynamic"
+  ],
+  "first_appeared": 2011,
+  "designers": [
+    "Lightbend"
+  ],
+  "summary": "Lightbend's JSON superset for configuration with path keys, object merging, substitutions (${...}), includes and unquoted strings, used by Akka and Play.",
+  "status": "maintained",
+  "defined_by": [
+    "community-specification",
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".conf"
+  ],
+  "homepage": "https://github.com/lightbend/config/blob/main/HOCON.md",
+  "influenced_by": [
+    "json"
+  ],
+  "related": [
+    {
+      "id": "json",
+      "relation": "superset-of"
+    }
+  ],
+  "level_notes": {
+    "1": "HOCON.md in lightbend/config is the specification.",
+    "0": "lightbend/config (Java) is the reference implementation."
   },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "HOCON.md — HOCON (Human-Optimized Config Object Notation) specification",
-   "url": "https://github.com/lightbend/config/blob/main/HOCON.md",
-   "authority": "official",
-   "scope": "section",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "data-model",
-    "references-anchors",
-    "grammar",
-    "comments",
-    "strings",
-    "imports"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — HOCON",
-   "url": "https://en.wikipedia.org/wiki/HOCON",
-   "scope": "whole",
-   "format": "html",
-   "authority": "community",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "PLDB — HOCON",
-   "url": "https://pldb.io/concepts/hocon.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "community",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "lightbend/config — reference Java implementation",
+      "url": "https://github.com/lightbend/config",
+      "implementation": "Typesafe Config",
+      "authority": "official",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON.md — HOCON (Human-Optimized Config Object Notation) specification",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "data-model",
+        "references-anchors",
+        "grammar",
+        "comments",
+        "strings",
+        "imports"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — HOCON",
+      "url": "https://en.wikipedia.org/wiki/HOCON",
+      "scope": "whole",
+      "format": "html",
+      "authority": "community",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — HOCON",
+      "url": "https://pldb.io/concepts/hocon.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "community",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Comments",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#comments",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "comments"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Whitespace",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#whitespace",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "lexical-structure"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Duplicate keys and object merging",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#duplicate-keys-and-object-merging",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-model",
+        "maps-dictionaries"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Unquoted strings",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#unquoted-strings",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings",
+        "scalars"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Multi-line strings",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#multi-line-strings",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings",
+        "escaping"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Array and object concatenation",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#array-and-object-concatenation",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "collections",
+        "arrays"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Path expressions",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#path-expressions",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "document-structure"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Substitutions",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#substitutions",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "references-anchors"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Includes",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#includes",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "imports",
+        "modules"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — MIME type",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#mime-type",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "encoding-wire-format"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Automatic type conversions",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#automatic-type-conversions",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "type-conversion"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "HOCON spec — Syntax",
+      "url": "https://github.com/lightbend/config/blob/main/HOCON.md#syntax",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "grammar"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Typesafe Config tokenizer (Tokenizer.java)",
+      "url": "https://github.com/lightbend/config/blob/main/config/src/main/java/com/typesafe/config/impl/Tokenizer.java",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "typesafe-config",
+      "concepts": [
+        "lexer"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Typesafe Config parser (ConfigDocumentParser.java)",
+      "url": "https://github.com/lightbend/config/blob/main/config/src/main/java/com/typesafe/config/impl/ConfigDocumentParser.java",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "typesafe-config",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "go-akka/configuration — HOCON parser for Go",
+      "url": "https://github.com/go-akka/configuration",
+      "authority": "community",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open",
+      "implementation": "go-akka/configuration"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "chimpler/pyhocon — HOCON parser for Python",
+      "url": "https://github.com/chimpler/pyhocon",
+      "authority": "community",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open",
+      "implementation": "pyhocon"
+    },
+    {
+      "level": 2,
+      "kind": "by-example",
+      "title": "Learn X in Y minutes — HOCON",
+      "url": "https://learnxinyminutes.com/hocon/",
+      "authority": "community",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "comments",
+        "references-anchors",
+        "strings"
+      ]
+    }
+  ]
 }

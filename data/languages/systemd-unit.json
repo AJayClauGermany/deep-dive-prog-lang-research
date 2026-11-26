@@ -1,112 +1,266 @@
 {
- "id": "systemd-unit",
- "name": "systemd unit files",
- "categories": [
-  "configuration"
- ],
- "paradigms": [
-  "declarative"
- ],
- "typing": [
-  "untyped"
- ],
- "first_appeared": 2010,
- "designers": [
-  "Lennart Poettering"
- ],
- "summary": "INI-style declarative files describing systemd services, sockets, timers, mounts and other units: sections of key=value directives, drop-in overrides, specifiers and dependency declarations.",
- "status": "active",
- "defined_by": [
-  "reference-implementation"
- ],
- "file_extensions": [
-  ".service",
-  ".socket",
-  ".timer",
-  ".mount",
-  ".target"
- ],
- "homepage": "https://systemd.io/",
- "influenced_by": [
-  "ini"
- ],
- "related": [
-  {
-   "id": "ini",
-   "relation": "dialect-of"
-  }
- ],
- "level_notes": {
-  "1": "The systemd.syntax(7), systemd.unit(5) and per-type man pages are normative.",
-  "0": "src/shared/conf-parser.c in systemd parses the files."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "systemd src/shared/conf-parser.c — unit/config file parser",
-   "url": "https://github.com/systemd/systemd/blob/main/src/shared/conf-parser.c",
-   "implementation": "systemd",
-   "authority": "official",
-   "scope": "section",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "parser"
-   ]
+  "id": "systemd-unit",
+  "name": "systemd unit files",
+  "categories": [
+    "configuration"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 2010,
+  "designers": [
+    "Lennart Poettering"
+  ],
+  "summary": "INI-style declarative files describing systemd services, sockets, timers, mounts and other units: sections of key=value directives, drop-in overrides, specifiers and dependency declarations.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".service",
+    ".socket",
+    ".timer",
+    ".mount",
+    ".target"
+  ],
+  "homepage": "https://systemd.io/",
+  "influenced_by": [
+    "ini"
+  ],
+  "related": [
+    {
+      "id": "ini",
+      "relation": "dialect-of"
+    }
+  ],
+  "level_notes": {
+    "1": "The systemd.syntax(7), systemd.unit(5) and per-type man pages are normative.",
+    "0": "src/shared/conf-parser.c in systemd parses the files."
   },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "systemd.syntax(7) — general syntax of systemd configuration files",
-   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.syntax.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "grammar",
-    "comments",
-    "escaping",
-    "strings"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "systemd.unit(5) — unit configuration, dependencies, drop-ins, specifiers",
-   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "document-structure",
-    "imports"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "systemd.service(5) — service unit configuration",
-   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "processes-system"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — Systemd",
-   "url": "https://en.wikipedia.org/wiki/Systemd",
-   "scope": "whole",
-   "format": "html",
-   "authority": "community",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "systemd src/shared/conf-parser.c — unit/config file parser",
+      "url": "https://github.com/systemd/systemd/blob/main/src/shared/conf-parser.c",
+      "implementation": "systemd",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.syntax(7) — general syntax of systemd configuration files",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.syntax.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "grammar",
+        "comments",
+        "escaping",
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — unit configuration, dependencies, drop-ins, specifiers",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "document-structure",
+        "imports"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.service(5) — service unit configuration",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "processes-system"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Systemd",
+      "url": "https://en.wikipedia.org/wiki/Systemd",
+      "scope": "whole",
+      "format": "html",
+      "authority": "community",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.syntax(7) — Quoting",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.syntax.html#Quoting",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings",
+        "escaping"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — String escaping for inclusion in unit names",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#String%20Escaping%20for%20Inclusion%20in%20Unit%20Names",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "escaping"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — Unit file load path (drop-ins and overrides)",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Unit%20File%20Load%20Path",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "imports",
+        "document-structure"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — Implicit and default dependencies",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Implicit%20Dependencies",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "references-anchors"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — Conditions and asserts",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Conditions%20and%20Asserts",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — Specifiers (%-substitutions)",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.unit(5) — [Unit] section options",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#%5BUnit%5D%20Section%20Options",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-model"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.exec(5) — execution environment configuration",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "security-considerations"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.timer(5) — timer unit configuration",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.timer.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "systemd.socket(5) — socket unit configuration",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.socket.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "systemd-analyze verify — unit file checker (analyze-verify.c)",
+      "url": "https://github.com/systemd/systemd/blob/main/src/analyze/analyze-verify.c",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "systemd",
+      "concepts": [
+        "schema-validation"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "systemd unit file loader (load-fragment.c)",
+      "url": "https://github.com/systemd/systemd/blob/main/src/core/load-fragment.c",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "systemd",
+      "concepts": [
+        "parser"
+      ]
+    }
+  ]
 }
