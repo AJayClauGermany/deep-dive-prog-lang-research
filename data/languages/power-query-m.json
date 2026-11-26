@@ -1,0 +1,466 @@
+{
+ "id": "power-query-m",
+ "name": "Power Query M",
+ "aliases": [
+  "M formula language",
+  "Power Query Formula Language"
+ ],
+ "categories": [
+  "query",
+  "functional",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "optional-static"
+ ],
+ "first_appeared": 2013,
+ "designers": [
+  "Microsoft"
+ ],
+ "summary": "Lazy, mostly pure functional mashup language behind Power Query in Excel and Power BI: let-expressions, records, lists, tables, first-class functions and a large library for extracting and reshaping data, with a published formal language specification.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".pq",
+  ".m"
+ ],
+ "homepage": "https://learn.microsoft.com/en-us/powerquery-m/",
+ "influenced_by": [
+  "fsharp"
+ ],
+ "level_notes": {
+  "0": "The Mashup engine is closed source; Microsoft publishes the TypeScript parser and language services."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "microsoft/powerquery-parser — M lexer and parser (TypeScript)",
+   "url": "https://github.com/microsoft/powerquery-parser",
+   "implementation": "powerquery-parser",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "powerquery-parser lexer.ts",
+   "url": "https://github.com/microsoft/powerquery-parser/blob/master/src/powerquery-parser/lexer/lexer.ts",
+   "implementation": "powerquery-parser",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "powerquery-parser naiveParseSteps.ts — recursive-descent parse steps",
+   "url": "https://github.com/microsoft/powerquery-parser/blob/master/src/powerquery-parser/parser/parsers/naiveParseSteps.ts",
+   "implementation": "powerquery-parser",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "powerquery-parser language/ast/ast.ts — AST node definitions",
+   "url": "https://github.com/microsoft/powerquery-parser/blob/master/src/powerquery-parser/language/ast/ast.ts",
+   "implementation": "powerquery-parser",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "powerquery-parser language/type/type.ts — M type model",
+   "url": "https://github.com/microsoft/powerquery-parser/blob/master/src/powerquery-parser/language/type/type.ts",
+   "implementation": "powerquery-parser",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "microsoft/powerquery-language-services",
+   "url": "https://github.com/microsoft/powerquery-language-services",
+   "implementation": "powerquery-language-services",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "tooling"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "microsoft/DataConnectors — Power Query custom connector samples",
+   "url": "https://github.com/microsoft/DataConnectors",
+   "implementation": "Power Query SDK",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Power Query M language specification",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/power-query-m-language-specification",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Introduction",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-introduction",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Lexical structure",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-lexical-structure",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "comments",
+    "literals",
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Basic concepts",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-basic-concepts",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "evaluation-order",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Values",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-values",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "lists",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Types",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-types",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Operators",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-operators",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Let expression",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-let",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Conditionals",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-conditionals",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Functions",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Error handling",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-error-handling",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Sections",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-sections",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "M spec — Consolidated grammar",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/m-spec-consolidated-grammar",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — Function reference",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/power-query-m-function-reference",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — Table functions",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/table-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — List functions",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/list-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — Text functions",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/text-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — DateTime functions",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/datetime-functions",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — Table.Group",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/table-group",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — Table.Join",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/table-join",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "M function reference — Table.SelectRows",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/table-selectrows",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Quick tour of the Power Query M formula language",
+   "url": "https://learn.microsoft.com/en-us/powerquery-m/quick-tour-of-the-power-query-m-formula-language",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Power Query M Primer (Ben Gribaudo) — part 1",
+   "url": "https://bengribaudo.com/blog/2017/11/17/4107/power-query-m-primer-part1-introduction-simple-expressions-let",
+   "authors": [
+    "Ben Gribaudo"
+   ],
+   "year": 2017,
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Power Query",
+   "url": "https://en.wikipedia.org/wiki/Power_Query",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  }
+ ]
+}

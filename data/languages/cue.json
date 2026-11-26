@@ -1,0 +1,410 @@
+{
+ "id": "cue",
+ "name": "CUE",
+ "aliases": [
+  "Configure Unify Execute"
+ ],
+ "categories": [
+  "configuration",
+  "schema-idl",
+  "logic"
+ ],
+ "paradigms": [
+  "declarative",
+  "constraint",
+  "logic"
+ ],
+ "typing": [
+  "types-as-values",
+  "lattice-based"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Marcel van Lohuizen"
+ ],
+ "summary": "Constraint-based configuration and validation language in which types and values form a single lattice combined by unification; supersets JSON and is used for schemas, policy and data validation. Influenced by Google's GCL and typed feature structures.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".cue"
+ ],
+ "homepage": "https://cuelang.org/",
+ "related": [
+  {
+   "id": "json",
+   "relation": "superset-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The CUE Language Specification (cuelang.org/docs/reference/spec) is normative.",
+  "0": "cue-lang/cue (Go) is the only full implementation."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "cue-lang/cue — CUE command and Go API",
+   "url": "https://github.com/cue-lang/cue",
+   "implementation": "cue",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cue/scanner/scanner.go — lexer",
+   "url": "https://github.com/cue-lang/cue/blob/master/cue/scanner/scanner.go",
+   "implementation": "cue",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cue/parser/parser.go — parser",
+   "url": "https://github.com/cue-lang/cue/blob/master/cue/parser/parser.go",
+   "implementation": "cue",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "internal/core/adt/unify.go — unification evaluator",
+   "url": "https://github.com/cue-lang/cue/blob/master/internal/core/adt/unify.go",
+   "implementation": "cue",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "unification",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The CUE Language Specification",
+   "url": "https://cuelang.org/docs/reference/spec/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Lexical elements",
+   "url": "https://cuelang.org/docs/reference/spec/#lexical-elements",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Comments",
+   "url": "https://cuelang.org/docs/reference/spec/#comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Commas (automatic insertion)",
+   "url": "https://cuelang.org/docs/reference/spec/#commas",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Numeric literals",
+   "url": "https://cuelang.org/docs/reference/spec/#numeric-literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — String and byte sequence literals",
+   "url": "https://cuelang.org/docs/reference/spec/#string-and-byte-sequence-literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Bottom and errors",
+   "url": "https://cuelang.org/docs/reference/spec/#bottom-and-errors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Default values",
+   "url": "https://cuelang.org/docs/reference/spec/#default-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Disjunction",
+   "url": "https://cuelang.org/docs/reference/spec/#disjunction",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "union-intersection-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Bounds",
+   "url": "https://cuelang.org/docs/reference/spec/#bounds",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "refinement-types",
+    "constraints"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Closed structs",
+   "url": "https://cuelang.org/docs/reference/spec/#closed-structs",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Definitions and hidden fields",
+   "url": "https://cuelang.org/docs/reference/spec/#definitions-and-hidden-fields",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition",
+    "visibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Lists",
+   "url": "https://cuelang.org/docs/reference/spec/#lists",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — References",
+   "url": "https://cuelang.org/docs/reference/spec/#references",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Comprehensions",
+   "url": "https://cuelang.org/docs/reference/spec/#comprehensions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Operator precedence",
+   "url": "https://cuelang.org/docs/reference/spec/#operator-precedence",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Attributes",
+   "url": "https://cuelang.org/docs/reference/spec/#attributes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Import declarations",
+   "url": "https://cuelang.org/docs/reference/spec/#import-declarations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Modules, instances and packages",
+   "url": "https://cuelang.org/docs/reference/spec/#modules-instances-and-packages",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "packages"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CUE spec — Cycles",
+   "url": "https://cuelang.org/docs/reference/spec/#cycles",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "recursive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Logic of CUE (value lattice)",
+   "url": "https://cuelang.org/docs/concept/the-logic-of-cue/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unification",
+    "type-system",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "A Tour of CUE",
+   "url": "https://cuelang.org/docs/tour/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CUE",
+   "url": "https://pldb.io/concepts/cuelang.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

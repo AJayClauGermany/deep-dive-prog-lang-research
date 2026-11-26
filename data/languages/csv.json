@@ -1,0 +1,414 @@
+{
+ "id": "csv",
+ "name": "CSV",
+ "aliases": [
+  "Comma-separated values",
+  "RFC 4180",
+  "text/csv"
+ ],
+ "categories": [
+  "data-serialization"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped",
+  "string-valued"
+ ],
+ "first_appeared": 1972,
+ "summary": "Plain-text tabular format of records separated by line breaks and fields separated by commas, with double-quote quoting. In use since the early 1970s; RFC 4180 (2005) documented the common form and registered text/csv, and W3C's CSV on the Web added a model and metadata vocabulary. Dialects (delimiters, quoting, encodings, headers) remain the main interoperability problem.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "informal"
+ ],
+ "standards": [
+  "RFC 4180",
+  "RFC 7111",
+  "W3C Model for Tabular Data and Metadata on the Web"
+ ],
+ "file_extensions": [
+  ".csv",
+  ".tsv"
+ ],
+ "homepage": "https://www.rfc-editor.org/rfc/rfc4180.html",
+ "related": [
+  {
+   "id": "ndjson",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "RFC 4180 is informational, not a standards-track definition; it documents common practice and registers text/csv. The W3C CSV on the Web recommendations (2015) define a tabular data model, parsing hints and a JSON metadata vocabulary; Frictionless Table Dialect describes dialect parameters.",
+  "0": "No reference implementation; widely used parsers (CPython _csv, Go encoding/csv, rust-csv, libcsv, Papa Parse) define their own dialect options."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "CPython Modules/_csv.c — state-machine CSV reader and writer",
+   "url": "https://github.com/python/cpython/blob/main/Modules/_csv.c",
+   "implementation": "CPython csv",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Go encoding/csv reader.go — RFC 4180 reader with LazyQuotes",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/csv/reader.go",
+   "implementation": "Go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Go encoding/csv writer.go — quoting decisions",
+   "url": "https://github.com/golang/go/blob/master/src/encoding/csv/writer.go",
+   "implementation": "Go",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "rust-csv csv-core reader.rs — DFA-based allocation-free CSV parser",
+   "url": "https://github.com/BurntSushi/rust-csv/blob/master/csv-core/src/reader.rs",
+   "implementation": "rust-csv",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "automata",
+    "performance"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libcsv libcsv.c — streaming CSV parser in C",
+   "url": "https://github.com/rgamble/libcsv/blob/master/libcsv.c",
+   "implementation": "libcsv (C)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Papa Parse papaparse.js — in-browser CSV parser with delimiter detection",
+   "url": "https://github.com/mholt/PapaParse/blob/master/papaparse.js",
+   "implementation": "Papa Parse (JS)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4180 — Common Format and MIME Type for CSV Files",
+   "url": "https://www.rfc-editor.org/rfc/rfc4180.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Yakov Shafranovich"
+   ],
+   "year": 2005,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4180 — 2 Definition of the CSV format (records, header, quoting, escaped double quotes)",
+   "url": "https://www.rfc-editor.org/rfc/rfc4180.html#section-2",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Yakov Shafranovich"
+   ],
+   "year": 2005,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "escaping",
+    "strings",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 4180 — 3 MIME type registration of text/csv (charset, header parameters)",
+   "url": "https://www.rfc-editor.org/rfc/rfc4180.html#section-3",
+   "scope": "section",
+   "authority": "standards-body",
+   "authors": [
+    "Yakov Shafranovich"
+   ],
+   "year": 2005,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "encoding-wire-format",
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "RFC 7111 — URI Fragment Identifiers for the text/csv Media Type (row, col, cell selection)",
+   "url": "https://www.rfc-editor.org/rfc/rfc7111.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Michael Hausenblas",
+    "Erik Wilde",
+    "Jeni Tennison"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "draft-shafranovich-rfc4180-bis — proposed update to RFC 4180",
+   "url": "https://datatracker.ietf.org/doc/draft-shafranovich-rfc4180-bis/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Yakov Shafranovich"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "W3C — Model for Tabular Data and Metadata on the Web",
+   "url": "https://www.w3.org/TR/tabular-data-model/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "authors": [
+    "Jeni Tennison",
+    "Gregg Kellogg"
+   ],
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "W3C — Metadata Vocabulary for Tabular Data (CSVW)",
+   "url": "https://www.w3.org/TR/tabular-metadata/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "W3C — Generating JSON from Tabular Data on the Web (csv2json)",
+   "url": "https://www.w3.org/TR/csv2json/",
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 2015,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Frictionless Data — CSV Dialect / Table Dialect specification",
+   "url": "https://specs.frictionlessdata.io/csv-dialect/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python csv — Dialects and formatting parameters",
+   "url": "https://docs.python.org/3/library/csv.html#dialects-and-formatting-parameters",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Go encoding/csv package documentation",
+   "url": "https://pkg.go.dev/encoding/csv",
+   "implementation": "Go",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Falsehoods Programmers Believe About CSVs",
+   "url": "https://donatstudios.com/Falsehoods-Programmers-Believe-About-CSVs",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Jesse G. Donat"
+   ],
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability",
+    "escaping"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Library of Congress — CSV format description (sustainability factors and history)",
+   "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "CSVLint — validator for CSV files and CSVW schemas",
+   "url": "https://csvlint.io/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "tooling"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Comma-separated values",
+   "url": "https://en.wikipedia.org/wiki/Comma-separated_values",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — CSV: History",
+   "url": "https://en.wikipedia.org/wiki/Comma-separated_values#History",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — CSV: Specification",
+   "url": "https://en.wikipedia.org/wiki/Comma-separated_values#Specification",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "standardization"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — CSV",
+   "url": "https://pldb.io/concepts/csv.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

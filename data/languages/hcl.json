@@ -1,0 +1,579 @@
+{
+ "id": "hcl",
+ "name": "HCL (HashiCorp Configuration Language)",
+ "aliases": [
+  "HCL",
+  "HCL2"
+ ],
+ "categories": [
+  "configuration",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "structural"
+ ],
+ "first_appeared": 2014,
+ "designers": [
+  "Mitchell Hashimoto",
+  "Martin Atkins (HCL2)",
+  "HashiCorp"
+ ],
+ "summary": "Block-and-attribute configuration language from HashiCorp with an expression sub-language (templates, for expressions, splats, functions) over a cty type system; used by Terraform, Nomad, Packer, Vault and Consul. Has a native syntax and an equivalent JSON syntax.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".hcl",
+  ".tf",
+  ".nomad",
+  ".pkr.hcl"
+ ],
+ "homepage": "https://github.com/hashicorp/hcl",
+ "related": [
+  {
+   "id": "terraform-language",
+   "relation": "host-of"
+  },
+  {
+   "id": "json",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Normative docs are the markdown specs in the hashicorp/hcl repo: spec.md (syntax-agnostic information model), hclsyntax/spec.md (native syntax) and json/spec.md (JSON syntax).",
+  "0": "The Go module github.com/hashicorp/hcl/v2 is the reference implementation; the cty type system lives in zclconf/go-cty.",
+  "2": "Little standalone tutorial literature; most learning material is Terraform's."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "hashicorp/hcl — HCL v2 Go implementation",
+   "url": "https://github.com/hashicorp/hcl",
+   "implementation": "hcl/v2",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "hclsyntax/scan_tokens.rl — Ragel lexer for native syntax",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/scan_tokens.rl",
+   "implementation": "hcl/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "hclsyntax/parser.go — recursive-descent parser",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/parser.go",
+   "implementation": "hcl/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "hclsyntax/parser_template.go — template parsing",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/parser_template.go",
+   "implementation": "hcl/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "hclsyntax/expression.go — expression AST and evaluation",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/expression.go",
+   "implementation": "hcl/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "hclsyntax/expression_ops.go — operators",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/expression_ops.go",
+   "implementation": "hcl/v2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "zclconf/go-cty — cty type system used by HCL",
+   "url": "https://github.com/zclconf/go-cty",
+   "implementation": "go-cty",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL Native Syntax Specification",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Lexical Elements",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#lexical-elements",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Comments and Whitespace",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#comments-and-whitespace",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Identifiers",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#identifiers",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Keywords",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#keywords",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Operators and Delimiters",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#operators-and-delimiters",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Numeric Literals",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#numeric-literals",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "literals",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Structural Elements",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#structural-elements",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Blocks",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#blocks",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Expressions",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Collection Values",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#collection-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Template Expressions",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#template-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — For Expressions",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#for-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Splat Operators",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#splat-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Operations",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#operations",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Conditional Operator",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#conditional-operator",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Template Interpolations",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#template-interpolations",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Template For Directive",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#template-for-directive",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL native syntax — Static Analysis",
+   "url": "https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#static-analysis",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL Syntax-Agnostic Information Model",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Schema-driven Processing",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#schema-driven-processing",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Values and Value Types",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#values-and-value-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Primitive Types",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#primitive-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "scalars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Collection Types",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#collection-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Null values",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#null-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Unknown Values and the Dynamic Pseudo-type",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#unknown-values-and-the-dynamic-pseudo-type",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Type Conversions and Unification",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#type-conversions-and-unification",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL information model — Functions and Function Calls",
+   "url": "https://github.com/hashicorp/hcl/blob/main/spec.md#functions-and-function-calls",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "HCL JSON Syntax Specification",
+   "url": "https://github.com/hashicorp/hcl/blob/main/json/spec.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "HCL README — Information model and syntax overview",
+   "url": "https://github.com/hashicorp/hcl/blob/main/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — HashiCorp (HCL section context)",
+   "url": "https://en.wikipedia.org/wiki/HashiCorp",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — HCL",
+   "url": "https://pldb.io/concepts/hcl.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

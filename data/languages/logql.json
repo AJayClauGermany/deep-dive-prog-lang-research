@@ -1,0 +1,248 @@
+{
+ "id": "logql",
+ "name": "LogQL",
+ "aliases": [
+  "Loki Query Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "dataflow"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2019,
+ "designers": [
+  "Grafana Labs"
+ ],
+ "summary": "Grafana Loki's PromQL-inspired query language for logs: a label stream selector followed by a pipeline of line filters, parsers (json, logfmt, regexp, pattern), label filters and formatters, optionally wrapped in metric aggregations.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "homepage": "https://grafana.com/docs/loki/latest/query/",
+ "influenced_by": [
+  "promql"
+ ],
+ "level_notes": {
+  "1": "Defined only by the Loki documentation and implementation.",
+  "3": "No Wikipedia or PLDB page."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "grafana/loki — log aggregation system and LogQL engine",
+   "url": "https://github.com/grafana/loki",
+   "implementation": "Loki",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "pkg/logql/syntax/syntax.y — goyacc grammar for LogQL",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/syntax/syntax.y",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/syntax/lex.go — lexer",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/syntax/lex.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/syntax/ast.go — AST",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/syntax/ast.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/engine.go — query engine",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/engine.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/log/pipeline.go — log pipeline stages",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/log/pipeline.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/log/filter.go — line filters",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/log/filter.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/log/parser.go — json/logfmt/regexp/pattern parsers",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/log/parser.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "pkg/logql/range_vector.go — range aggregations",
+   "url": "https://github.com/grafana/loki/blob/main/pkg/logql/range_vector.go",
+   "implementation": "Loki",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LogQL: Log query language",
+   "url": "https://grafana.com/docs/loki/latest/query/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LogQL — Log queries (stream selectors, line filters, parsers, formatting)",
+   "url": "https://grafana.com/docs/loki/latest/query/log_queries/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "pipelines",
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LogQL — Metric queries (range and vector aggregations)",
+   "url": "https://grafana.com/docs/loki/latest/query/metric_queries/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "time-series"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "LogQL — Template functions",
+   "url": "https://grafana.com/docs/loki/latest/query/template_functions/",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating",
+    "strings"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "LogQL — Query examples",
+   "url": "https://grafana.com/docs/loki/latest/query/query_examples/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "LogQL — Simple LogQL query analyzer",
+   "url": "https://grafana.com/docs/loki/latest/query/analyzer/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  }
+ ]
+}

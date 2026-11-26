@@ -1,0 +1,241 @@
+{
+ "id": "java-properties",
+ "name": "Java .properties",
+ "aliases": [
+  ".properties",
+  "Java properties file"
+ ],
+ "categories": [
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped",
+  "string-valued"
+ ],
+ "first_appeared": 1996,
+ "designers": [
+  "Sun Microsystems"
+ ],
+ "summary": "Line-oriented key=value (or key:value, or whitespace-separated) configuration and localisation format of java.util.Properties, with # and ! comments, backslash line continuations and \\uXXXX escapes; ISO-8859-1 by default for streams, UTF-8 for resource bundles since Java 9.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".properties"
+ ],
+ "homepage": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html",
+ "influenced_by": [
+  "ini"
+ ],
+ "related": [
+  {
+   "id": "ini",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by the Javadoc of java.util.Properties.load(Reader), which spells out the line, comment, separator and escape grammar.",
+  "0": "OpenJDK's Properties.java (LineReader, loadConvert/saveConvert) is the reference implementation.",
+  "2": "No notable tutorials or design-rationale pieces exist beyond the Javadoc and reference material; the format is a small, stable legacy convention."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "OpenJDK Properties.java — LineReader, loadConvert/saveConvert",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/Properties.java",
+   "implementation": "OpenJDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "escaping",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "OpenJDK PropertyResourceBundle.java — UTF-8 then ISO-8859-1 fallback",
+   "url": "https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/PropertyResourceBundle.java",
+   "implementation": "OpenJDK",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "source-encoding"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "java.util.Properties (Java SE 21 API)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html",
+   "implementation": "OpenJDK",
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 21",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Properties.load(Reader) — normative line, comment, key/value separator and escape grammar",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)",
+   "implementation": "OpenJDK",
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 21",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "comments",
+    "escaping",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Properties.load(InputStream) — ISO 8859-1 encoding and \\uXXXX escapes",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html#load(java.io.InputStream)",
+   "implementation": "OpenJDK",
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 21",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Properties.store(Writer, String) — serialization and escaping rules",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html#store(java.io.Writer,java.lang.String)",
+   "implementation": "OpenJDK",
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 21",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Properties.loadFromXML — the XML properties DTD variant",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html#loadFromXML(java.io.InputStream)",
+   "implementation": "OpenJDK",
+   "scope": "section",
+   "authority": "official",
+   "version": "Java SE 21",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "java.util.PropertyResourceBundle — .properties for localisation (UTF-8 default)",
+   "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/PropertyResourceBundle.html",
+   "implementation": "OpenJDK",
+   "scope": "whole",
+   "authority": "official",
+   "version": "Java SE 21",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "unicode"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "JEP 226 — UTF-8 Property Resource Bundles",
+   "url": "https://openjdk.org/jeps/226",
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Naoto Sato"
+   ],
+   "year": 2014,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "source-encoding",
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — .properties",
+   "url": "https://en.wikipedia.org/wiki/.properties",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — .properties: Format",
+   "url": "https://en.wikipedia.org/wiki/.properties#Format",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — .properties: Non-Java uses and exceptions",
+   "url": "https://en.wikipedia.org/wiki/.properties#Non-Java_uses_and_exceptions",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Java properties",
+   "url": "https://pldb.io/concepts/java-properties.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

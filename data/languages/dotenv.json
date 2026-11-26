@@ -1,0 +1,264 @@
+{
+ "id": "dotenv",
+ "name": "dotenv (.env files)",
+ "aliases": [
+  ".env",
+  "env file"
+ ],
+ "categories": [
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped",
+  "string-valued"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Brandon Keepers (Ruby dotenv)"
+ ],
+ "summary": "Shell-like KEY=value files that load environment variables for twelve-factor apps; popularised by Ruby's dotenv gem and copied into Node, Python, Go, Docker Compose and others, each with its own rules for quoting, comments, multiline values, export prefixes and ${VAR} interpolation.",
+ "status": "active",
+ "defined_by": [
+  "informal",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".env"
+ ],
+ "homepage": "https://github.com/bkeepers/dotenv",
+ "influenced_by": [
+  "sh"
+ ],
+ "related": [
+  {
+   "id": "ini",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No specification: each library documents its own parsing rules (Docker Compose's env-file syntax and the dotenvx/dotenvy format pages are the most explicit). The Twelve-Factor App 'Config' chapter is the design rationale.",
+  "0": "The parsers are the de-facto definitions: bkeepers/dotenv (Ruby, original), motdotla/dotenv (Node), python-dotenv, godotenv.",
+  "3": "No Wikipedia or PLDB page."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "bkeepers/dotenv — original Ruby implementation",
+   "url": "https://github.com/bkeepers/dotenv",
+   "implementation": "dotenv (Ruby)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Ruby dotenv parser.rb — line regex, quotes, export, substitution",
+   "url": "https://github.com/bkeepers/dotenv/blob/main/lib/dotenv/parser.rb",
+   "implementation": "dotenv (Ruby)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "escaping"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Node dotenv lib/main.js — parse(): quotes, multiline values, comments",
+   "url": "https://github.com/motdotla/dotenv/blob/master/lib/main.js",
+   "implementation": "dotenv (Node)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-dotenv parser.py — tokenizer for keys, quoted values and comments",
+   "url": "https://github.com/theskumar/python-dotenv/blob/main/src/dotenv/parser.py",
+   "implementation": "python-dotenv",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "python-dotenv variables.py — ${VAR:-default} expansion",
+   "url": "https://github.com/theskumar/python-dotenv/blob/main/src/dotenv/variables.py",
+   "implementation": "python-dotenv",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "godotenv parser.go — Go port of the Ruby parser",
+   "url": "https://github.com/joho/godotenv/blob/main/parser.go",
+   "implementation": "godotenv (Go)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "dotenv-linter — lints .env files for common mistakes",
+   "url": "https://github.com/dotenv-linter/dotenv-linter",
+   "implementation": "dotenv-linter",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Docker Compose — .env file syntax and interpolation rules",
+   "url": "https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/#env-file-syntax",
+   "implementation": "Docker Compose",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "escaping",
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Docker Compose — Interpolation syntax (${VAR:-default}, ${VAR?err})",
+   "url": "https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/#interpolation-syntax",
+   "implementation": "Docker Compose",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "dotenvx — .env file format reference (syntax, interpolation, command substitution)",
+   "url": "https://dotenvx.com/docs/env-file/",
+   "implementation": "dotenvx",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "dotenvx — .env format: interpolation",
+   "url": "https://dotenvx.com/docs/env-file/#interpolation",
+   "implementation": "dotenvx",
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dotenvy (Elixir) — dotenv file format",
+   "url": "https://dotenvy.hexdocs.pm/dotenv-file-format.html",
+   "implementation": "Dotenvy",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "smartmob RFC 2 — dotenv: a proposed specification of the .env format",
+   "url": "https://smartmob-rfc.readthedocs.io/en/latest/2-dotenv.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "The Twelve-Factor App — III. Config: store config in the environment",
+   "url": "https://12factor.net/config",
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Adam Wiggins"
+   ],
+   "year": 2011,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "dotenv.org — .env file security guidance",
+   "url": "https://www.dotenv.org/docs/security/env",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "id": "nix",
+ "name": "Nix language",
+ "aliases": [
+  "Nix expression language"
+ ],
+ "categories": [
+  "configuration",
+  "functional",
+  "build",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative"
+ ],
+ "typing": [
+  "dynamic",
+  "strong"
+ ],
+ "first_appeared": 2003,
+ "designers": [
+  "Eelco Dolstra"
+ ],
+ "summary": "Pure, lazy, dynamically typed functional language used to describe packages and system configurations for the Nix package manager, NixOS and nixpkgs; values are attribute sets, lists, strings with context, paths and functions, and derivations describe build actions.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".nix"
+ ],
+ "homepage": "https://nixos.org/",
+ "level_notes": {
+  "1": "No formal specification; the Nix Reference Manual's language chapter is the reference. Dolstra's PhD thesis gives a formal semantics of the original language.",
+  "0": "NixOS/nix (C++; lexer.l, parser.y, eval.cc) is the reference evaluator; Lix and Tvix are alternative implementations."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "NixOS/nix — Nix package manager and evaluator",
+   "url": "https://github.com/NixOS/nix",
+   "implementation": "Nix",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/libexpr/parser/parser.y — bison grammar",
+   "url": "https://github.com/NixOS/nix/blob/master/src/libexpr/parser/parser.y",
+   "implementation": "Nix",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/libexpr/eval.cc — lazy evaluator",
+   "url": "https://github.com/NixOS/nix/blob/master/src/libexpr/eval.cc",
+   "implementation": "Nix",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "lazy-evaluation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/libexpr/primops.cc — builtins",
+   "url": "https://github.com/NixOS/nix/blob/master/src/libexpr/primops.cc",
+   "implementation": "Nix",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "NixOS/nixpkgs — the package collection (largest Nix codebase)",
+   "url": "https://github.com/NixOS/nixpkgs",
+   "implementation": "nixpkgs",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Nix Reference Manual — Nix language",
+   "url": "https://nix.dev/manual/nix/stable/language/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Nix manual — Language syntax and semantics",
+   "url": "https://nix.dev/manual/nix/stable/language/syntax.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Nix manual — Data types",
+   "url": "https://nix.dev/manual/nix/stable/language/types.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "scalars",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Nix manual — Operators",
+   "url": "https://nix.dev/manual/nix/stable/language/operators.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Nix manual — String interpolation",
+   "url": "https://nix.dev/manual/nix/stable/language/string-interpolation.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Nix manual — Derivations",
+   "url": "https://nix.dev/manual/nix/stable/language/derivations.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "build-systems"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Nix manual — Built-in functions",
+   "url": "https://nix.dev/manual/nix/stable/language/builtins.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Dolstra — The Purely Functional Software Deployment Model (PhD thesis, 2006)",
+   "url": "https://edolstra.github.io/pubs/phd-thesis.pdf",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Eelco Dolstra"
+   ],
+   "year": 2006,
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "nix.dev — Nix language basics",
+   "url": "https://nix.dev/tutorials/nix-language",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Learn X in Y minutes — Nix",
+   "url": "https://learnxinyminutes.com/nix/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Nix (package manager)",
+   "url": "https://en.wikipedia.org/wiki/Nix_(package_manager)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Nix",
+   "url": "https://pldb.io/concepts/nix.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

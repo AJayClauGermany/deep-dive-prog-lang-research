@@ -1,0 +1,361 @@
+{
+ "id": "ini",
+ "name": "INI files",
+ "aliases": [
+  "INI",
+  ".ini",
+  "initialization file",
+  "conf/cfg files"
+ ],
+ "categories": [
+  "configuration"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped",
+  "string-valued"
+ ],
+ "first_appeared": 1985,
+ "designers": [
+  "Microsoft (MS-DOS / Windows 1.0)"
+ ],
+ "summary": "Informal configuration format of [section] headers and key=value lines with ; or # comments, popularised by Windows 1.x/3.x WIN.INI and SYSTEM.INI. Never standardised, so every parser (Windows profile API, Python configparser, Git config, systemd units, PHP, inih) defines its own dialect of quoting, escaping, comments, duplicates and nesting.",
+ "status": "maintained",
+ "defined_by": [
+  "informal",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".ini",
+  ".cfg",
+  ".conf"
+ ],
+ "homepage": "https://en.wikipedia.org/wiki/INI_file",
+ "related": [
+  {
+   "id": "toml",
+   "relation": "family"
+  },
+  {
+   "id": "java-properties",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No specification. The Windows GetPrivateProfileString/WritePrivateProfileString documentation is the closest to an original definition; Python configparser, git-config, systemd.syntax and the freedesktop Desktop Entry spec each define documented dialects; Cloanto's 'INI file specification' is an unofficial attempt at a common core.",
+  "0": "Each implementation is its own dialect definition: CPython configparser, inih, libconfini.",
+  "3": "Wikipedia's article includes a comparison of INI parsers."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "CPython Lib/configparser.py — RawConfigParser/ConfigParser and interpolation",
+   "url": "https://github.com/python/cpython/blob/main/Lib/configparser.py",
+   "implementation": "CPython configparser",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "inih ini.c — tiny callback-based INI parser in C",
+   "url": "https://github.com/benhoyt/inih/blob/master/ini.c",
+   "implementation": "inih (C)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libconfini src/confini.c — configurable parser for many INI dialects",
+   "url": "https://github.com/madmurphy/libconfini/blob/master/src/confini.c",
+   "implementation": "libconfini (C)",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Windows API — GetPrivateProfileString (original INI semantics: sections, keys, defaults)",
+   "url": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestring",
+   "implementation": "Windows",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "file-io"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python configparser — Supported INI file structure",
+   "url": "https://docs.python.org/3/library/configparser.html#supported-ini-file-structure",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "comments",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python configparser — Interpolation of values (%(name)s and ${section:option})",
+   "url": "https://docs.python.org/3/library/configparser.html#interpolation-of-values",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting",
+    "references-anchors"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python configparser — Quick start",
+   "url": "https://docs.python.org/3/library/configparser.html#quick-start",
+   "implementation": "CPython",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "git-config — Syntax of Git's INI-style configuration files",
+   "url": "https://git-scm.com/docs/git-config#_syntax",
+   "implementation": "Git",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "escaping",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "git-config — Includes (include and includeIf sections)",
+   "url": "https://git-scm.com/docs/git-config#_includes",
+   "implementation": "Git",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "systemd.syntax(7) — general syntax of systemd unit/configuration files",
+   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.syntax.html",
+   "implementation": "systemd",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "systemd.syntax(7) — Quoting",
+   "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.syntax.html#Quoting",
+   "implementation": "systemd",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping",
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "freedesktop.org Desktop Entry Specification (INI-like .desktop files)",
+   "url": "https://specifications.freedesktop.org/desktop-entry/latest/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "PHP parse_ini_file — PHP's INI dialect (typed values, arrays)",
+   "url": "https://www.php.net/manual/en/function.parse-ini-file.php",
+   "implementation": "PHP",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Cloanto — INI file specification (unofficial common-core spec)",
+   "url": "https://cloanto.com/specs/ini/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "EditorConfig specification (INI-like file format with glob sections)",
+   "url": "https://spec.editorconfig.org/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "An INI critique of TOML (libconfini wiki)",
+   "url": "https://github.com/madmurphy/libconfini/wiki/An-INI-critique-of-TOML",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — INI file",
+   "url": "https://en.wikipedia.org/wiki/INI_file",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — INI file: Format (sections, key–value pairs, case sensitivity, comments)",
+   "url": "https://en.wikipedia.org/wiki/INI_file#Format",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "document-structure",
+    "comments"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — INI file: Escape characters",
+   "url": "https://en.wikipedia.org/wiki/INI_file#Escape_characters",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "escaping"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — INI file: Hierarchy (section nesting)",
+   "url": "https://en.wikipedia.org/wiki/INI_file#Hierarchy_(section_nesting)",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "comparison-table",
+   "title": "Wikipedia — INI file: Comparison of INI parsers",
+   "url": "https://en.wikipedia.org/wiki/INI_file#Comparison_of_INI_parsers",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — INI",
+   "url": "https://pldb.io/concepts/ini.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
