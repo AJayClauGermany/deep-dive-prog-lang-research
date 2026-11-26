@@ -1,0 +1,466 @@
+{
+ "id": "twelf",
+ "name": "Twelf",
+ "aliases": [
+  "Elf"
+ ],
+ "categories": [
+  "proof-assistant",
+  "logic"
+ ],
+ "paradigms": [
+  "logic",
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "dependent",
+  "inferred"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "Frank Pfenning",
+  "Carsten Schürmann"
+ ],
+ "summary": "Implementation of the Edinburgh LF logical framework with the Elf higher-order constraint logic programming language and a meta-theorem checker (modes, termination, coverage), widely used to mechanise programming-language metatheory.",
+ "status": "maintained",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".elf",
+  ".cfg"
+ ],
+ "homepage": "https://twelf.org/",
+ "influenced_by": [
+  "lf",
+  "lambda-prolog"
+ ],
+ "related": [
+  {
+   "id": "lf",
+   "relation": "formalizes"
+  },
+  {
+   "id": "standard-ml",
+   "relation": "implemented-in"
+  }
+ ],
+ "level_notes": {
+  "1": "The Twelf User's Guide (v1.4) and the CADE-99 system description define the language.",
+  "0": "standardml/twelf (Standard ML)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "standardml/twelf — Twelf sources",
+   "url": "https://github.com/standardml/twelf",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/frontend/lexer.fun — lexer",
+   "url": "https://github.com/standardml/twelf/blob/main/src/frontend/lexer.fun",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/frontend/parse-term.fun — term parser",
+   "url": "https://github.com/standardml/twelf/blob/main/src/frontend/parse-term.fun",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/frontend/recon-term.fun — type/term reconstruction",
+   "url": "https://github.com/standardml/twelf/blob/main/src/frontend/recon-term.fun",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/lambda/intsyn.fun — internal LF syntax",
+   "url": "https://github.com/standardml/twelf/blob/main/src/lambda/intsyn.fun",
+   "concepts": [
+    "ast",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/lambda/unify.fun — higher-order pattern unification",
+   "url": "https://github.com/standardml/twelf/blob/main/src/lambda/unify.fun",
+   "concepts": [
+    "unification"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/lambda/whnf.fun — weak head normalisation",
+   "url": "https://github.com/standardml/twelf/blob/main/src/lambda/whnf.fun",
+   "concepts": [
+    "reduction"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/opsem/absmachine.fun — logic programming abstract machine",
+   "url": "https://github.com/standardml/twelf/blob/main/src/opsem/absmachine.fun",
+   "concepts": [
+    "interpreter",
+    "virtual-machine"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/modes/modecheck.fun — mode checking",
+   "url": "https://github.com/standardml/twelf/blob/main/src/modes/modecheck.fun",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/terminate/reduces.fun — termination/reduction checking",
+   "url": "https://github.com/standardml/twelf/blob/main/src/terminate/reduces.fun",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/cover/cover.fun — coverage checking",
+   "url": "https://github.com/standardml/twelf/blob/main/src/cover/cover.fun",
+   "concepts": [
+    "pattern-matching",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Twelf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide 1.4",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_toc.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "authors": [
+    "Frank Pfenning",
+    "Carsten Schürmann"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Lexical conventions",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_2.html",
+   "concepts": [
+    "lexical-structure",
+    "identifiers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Syntax",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_3.html",
+   "concepts": [
+    "grammar",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Term reconstruction",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_4.html",
+   "concepts": [
+    "type-inference",
+    "type-annotations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Logic programming",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_5.html",
+   "concepts": [
+    "logic-foundations",
+    "unification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Constraint domains",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_6.html",
+   "concepts": [
+    "constraints",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Modes",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_7.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Termination",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_8.html",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Twelf User's Guide — Coverage",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_9.html",
+   "concepts": [
+    "pattern-matching",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "System Description: Twelf — A Meta-Logical Framework for Deductive Systems (CADE-16)",
+   "url": "https://www.cs.cmu.edu/~fp/papers/cade99.pdf",
+   "concepts": [
+    "design-rationale",
+    "logic-foundations"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Frank Pfenning",
+    "Carsten Schürmann"
+   ],
+   "year": 1999,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Twelf User's Guide — History",
+   "url": "https://www.cs.cmu.edu/~twelf/guide-1-4/twelf_16.html",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "designer",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Proving metatheorems with Twelf",
+   "url": "https://twelf.org/wiki/proving-metatheorems-with-twelf/",
+   "concepts": [
+    "verification",
+    "formal-semantics"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Twelf wiki — Tutorials",
+   "url": "https://twelf.org/wiki/tutorials/",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Twelf style guide",
+   "url": "https://twelf.org/wiki/twelf-style-guide/",
+   "concepts": [
+    "style-conventions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Mechanizing Metatheory in a Logical Framework (JFP 2007)",
+   "url": "https://www.cs.cmu.edu/~rwh/papers/mech/jfp07.pdf",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Robert Harper",
+    "Daniel R. Licata"
+   ],
+   "year": 2007,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "Twelf bibliography",
+   "url": "https://twelf.org/bibliography/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Twelf — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Twelf",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Twelf — PLDB",
+   "url": "https://pldb.io/concepts/twelf.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

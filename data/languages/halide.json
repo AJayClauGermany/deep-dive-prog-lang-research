@@ -1,0 +1,325 @@
+{
+ "id": "halide",
+ "name": "Halide",
+ "aliases": [
+  "Halide DSL"
+ ],
+ "categories": [
+  "domain-specific",
+  "shader-gpu"
+ ],
+ "paradigms": [
+  "functional",
+  "declarative",
+  "data-parallel"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2012,
+ "designers": [
+  "Jonathan Ragan-Kelley",
+  "Andrew Adams",
+  "Connelly Barnes",
+  "Sylvain Paris",
+  "Frédo Durand",
+  "Saman Amarasinghe"
+ ],
+ "summary": "C++-embedded DSL for image processing and array pipelines that separates the algorithm (pure functions over integer domains) from the schedule (tiling, vectorisation, parallelism, fusion, GPU mapping); JIT or AOT compiled via LLVM to CPUs, GPUs and DSPs.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".cpp"
+ ],
+ "homepage": "https://halide-lang.org/",
+ "influenced_by": [
+  "cpp"
+ ],
+ "related": [
+  {
+   "id": "cpp",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No standard; the PLDI 2013 paper and API reference define the language together with the compiler."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Ragan-Kelley et al. — Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines (PLDI 2013)",
+   "url": "http://people.csail.mit.edu/jrk/halide-pldi13.pdf",
+   "concepts": [
+    "design-rationale",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Jonathan Ragan-Kelley",
+    "Connelly Barnes",
+    "Andrew Adams",
+    "Sylvain Paris",
+    "Frédo Durand",
+    "Saman Amarasinghe"
+   ],
+   "year": 2013
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Ragan-Kelley — Decoupling Algorithms from the Organization of Computation for High Performance Image Processing (PhD thesis, MIT 2014)",
+   "url": "http://people.csail.mit.edu/jrk/jrkthesis.pdf",
+   "concepts": [
+    "formal-semantics",
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open",
+   "authors": [
+    "Jonathan Ragan-Kelley"
+   ],
+   "year": 2014
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Halide API reference",
+   "url": "https://halide-lang.org/docs/api/index.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorials",
+   "url": "https://halide-lang.org/docs/tutorial/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — Basics (Func, Var, Expr)",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_01_basics.html",
+   "concepts": [
+    "hello-world",
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — Scheduling 1",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_05_scheduling_1.html",
+   "concepts": [
+    "parallelism",
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — Multi-stage pipelines",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_07_multi_stage_pipelines.html",
+   "concepts": [
+    "pipelines"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — Scheduling 2",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_08_scheduling_2.html",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — Update definitions and reductions",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_09_update_definitions.html",
+   "concepts": [
+    "recursion",
+    "aggregation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — AOT compilation",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_10_aot_compilation_generate.html",
+   "concepts": [
+    "separate-compilation"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Halide tutorial — Using the GPU",
+   "url": "https://halide-lang.org/docs/tutorial/lesson_12_using_the_gpu.html",
+   "concepts": [
+    "parallelism"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "halide/Halide",
+   "url": "https://github.com/halide/Halide",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Halide src/Func.h — Func (front-end definitions)",
+   "url": "https://github.com/halide/Halide/blob/main/src/Func.h",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Halide src/IR.h — IR node types",
+   "url": "https://github.com/halide/Halide/blob/main/src/IR.h",
+   "concepts": [
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Halide src/Lower.cpp — lowering pipeline",
+   "url": "https://github.com/halide/Halide/blob/main/src/Lower.cpp",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Halide src/Bounds.cpp — bounds inference",
+   "url": "https://github.com/halide/Halide/blob/main/src/Bounds.cpp",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Halide src/Schedule.h — schedule directives",
+   "url": "https://github.com/halide/Halide/blob/main/src/Schedule.h",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Halide src/CodeGen_LLVM.cpp — LLVM code generation",
+   "url": "https://github.com/halide/Halide/blob/main/src/CodeGen_LLVM.cpp",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "Halide"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Halide (programming language)",
+   "url": "https://en.wikipedia.org/wiki/Halide_(programming_language)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

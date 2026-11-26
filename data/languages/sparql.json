@@ -1,0 +1,1421 @@
+{
+ "id": "sparql",
+ "name": "SPARQL",
+ "aliases": [
+  "SPARQL Protocol and RDF Query Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2008,
+ "designers": [
+  "W3C RDF Data Access Working Group",
+  "Eric Prud'hommeaux",
+  "Andy Seaborne"
+ ],
+ "summary": "W3C query language for RDF graphs: queries match triple/graph patterns with OPTIONAL, UNION, property paths, aggregates and subqueries, returning tables, graphs or booleans; companion specs cover Update, protocol, federation and entailment.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C SPARQL 1.1 (2013)",
+  "W3C SPARQL 1.0 (2008)"
+ ],
+ "file_extensions": [
+  ".rq",
+  ".ru"
+ ],
+ "homepage": "https://www.w3.org/TR/sparql11-overview/",
+ "influenced_by": [
+  "sql",
+  "rdql"
+ ],
+ "level_notes": {
+  "1": "SPARQL 1.1 W3C Recommendations (2013) are normative; SPARQL 1.2 is a Working Draft.",
+  "0": "Many independent engines; Apache Jena ARQ is the de facto reference used by the editors. W3C rdf-tests holds the conformance suite."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Apache Jena — RDF framework including the ARQ SPARQL engine",
+   "url": "https://github.com/apache/jena",
+   "implementation": "Apache Jena ARQ",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "jena-arq Grammar/main.jj — JavaCC master grammar for SPARQL/ARQ",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/Grammar/main.jj",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "ARQParser.java — generated SPARQL parser",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/lang/arq/javacc/ARQParser.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AlgebraGenerator.java — translation of syntax to SPARQL algebra",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/algebra/AlgebraGenerator.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Algebra.java — algebra utilities (compile, optimize, exec)",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/algebra/Algebra.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpLeftJoin.java — OPTIONAL as left join operator",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/algebra/op/OpLeftJoin.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "joins",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "optimize/Optimize.java — algebra rewriting optimizer",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/algebra/optimize/Optimize.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpExecutor.java — algebra evaluation dispatcher",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/engine/main/OpExecutor.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "StageGeneratorGeneric.java — basic graph pattern matching",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/engine/main/StageGeneratorGeneric.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "engine/join/Join.java — join algorithms",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/engine/join/Join.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "joins"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "PathEval.java — property path evaluation",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/path/eval/PathEval.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "recursive-queries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QueryIterGroup.java — GROUP BY evaluation",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/engine/iterator/QueryIterGroup.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "AggregatorFactory.java — aggregate functions",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/expr/aggregate/AggregatorFactory.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "E_Exists.java — EXISTS / NOT EXISTS expressions",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/expr/E_Exists.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "E_Regex.java — REGEX function",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/expr/E_Regex.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "XSDFuncOp.java — XPath/XSD function and operator implementations",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/expr/nodevalue/XSDFuncOp.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "UpdateEngineWorker.java — SPARQL Update execution",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/modify/UpdateEngineWorker.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "QueryExecHTTP.java — SPARQL protocol client",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/src/main/java/org/apache/jena/sparql/exec/http/QueryExecHTTP.java",
+   "implementation": "Apache Jena ARQ",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Jena ARQ test manifest",
+   "url": "https://github.com/apache/jena/blob/main/jena-arq/testing/ARQ/manifest-arq.ttl",
+   "implementation": "Apache Jena ARQ",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Eclipse RDF4J — Java RDF framework with SPARQL engine",
+   "url": "https://github.com/eclipse-rdf4j/rdf4j",
+   "implementation": "RDF4J",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "RDF4J DefaultEvaluationStrategy.java — query algebra evaluation",
+   "url": "https://github.com/eclipse-rdf4j/rdf4j/blob/main/core/queryalgebra/evaluation/src/main/java/org/eclipse/rdf4j/query/algebra/evaluation/impl/DefaultEvaluationStrategy.java",
+   "implementation": "RDF4J",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Oxigraph — SPARQL graph database in Rust",
+   "url": "https://github.com/oxigraph/oxigraph",
+   "implementation": "Oxigraph",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph spargebra/src/parser.rs — SPARQL parser",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/spargebra/src/parser.rs",
+   "implementation": "Oxigraph",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Oxigraph spareval/src/eval.rs — SPARQL evaluator",
+   "url": "https://github.com/oxigraph/oxigraph/blob/main/lib/spareval/src/eval.rs",
+   "implementation": "Oxigraph",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Virtuoso Open Source — RDF/SQL server",
+   "url": "https://github.com/openlink/virtuoso-opensource",
+   "implementation": "Virtuoso",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Blazegraph database",
+   "url": "https://github.com/blazegraph/database",
+   "implementation": "Blazegraph",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Comunica — modular SPARQL engine for the Web (TypeScript)",
+   "url": "https://github.com/comunica/comunica",
+   "implementation": "Comunica",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "W3C rdf-tests — SPARQL 1.1 test suite manifest",
+   "url": "https://github.com/w3c/rdf-tests/blob/main/sparql/sparql11/manifest-all.ttl",
+   "implementation": "W3C test suite",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Query Language (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/sparql11-query/",
+   "year": 2013,
+   "version": "1.1",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "selection-projection",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Overview",
+   "url": "https://www.w3.org/TR/sparql11-overview/",
+   "year": 2013,
+   "version": "1.1",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Update",
+   "url": "https://www.w3.org/TR/sparql11-update/",
+   "year": 2013,
+   "version": "1.1",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Protocol",
+   "url": "https://www.w3.org/TR/sparql11-protocol/",
+   "year": 2013,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Federated Query",
+   "url": "https://www.w3.org/TR/sparql11-federated-query/",
+   "year": 2013,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Entailment Regimes",
+   "url": "https://www.w3.org/TR/sparql11-entailment/",
+   "year": 2013,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Query Results JSON Format",
+   "url": "https://www.w3.org/TR/sparql11-results-json/",
+   "year": 2013,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL 1.1 Service Description",
+   "url": "https://www.w3.org/TR/sparql11-service-description/",
+   "year": 2013,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "SPARQL Query Language for RDF (SPARQL 1.0, 2008)",
+   "url": "https://www.w3.org/TR/rdf-sparql-query/",
+   "year": 2008,
+   "version": "1.0",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "SPARQL 1.2 Query Language (Working Draft)",
+   "url": "https://www.w3.org/TR/sparql12-query/",
+   "version": "1.2",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Making simple queries",
+   "url": "https://www.w3.org/TR/sparql11-query/#basicpatterns",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — RDF term constraints (FILTER)",
+   "url": "https://www.w3.org/TR/sparql11-query/#termConstraint",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — SPARQL syntax",
+   "url": "https://www.w3.org/TR/sparql11-query/#sparqlSyntax",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Syntax for IRIs and prefixed names",
+   "url": "https://www.w3.org/TR/sparql11-query/#QSynIRI",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Syntax for literals",
+   "url": "https://www.w3.org/TR/sparql11-query/#QSynLiterals",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Syntax for query variables",
+   "url": "https://www.w3.org/TR/sparql11-query/#QSynVariables",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — RDF collections syntax",
+   "url": "https://www.w3.org/TR/sparql11-query/#collections",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Graph patterns",
+   "url": "https://www.w3.org/TR/sparql11-query/#GraphPattern",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Scope of filters",
+   "url": "https://www.w3.org/TR/sparql11-query/#scopeFilters",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — OPTIONAL patterns",
+   "url": "https://www.w3.org/TR/sparql11-query/#optionals",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "joins",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — UNION",
+   "url": "https://www.w3.org/TR/sparql11-query/#alternatives",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Negation: NOT EXISTS and MINUS",
+   "url": "https://www.w3.org/TR/sparql11-query/#negation",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations",
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Property paths",
+   "url": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Arbitrary length path matching",
+   "url": "https://www.w3.org/TR/sparql11-query/#propertypath-arbitrary-length",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "recursive-queries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — BIND",
+   "url": "https://www.w3.org/TR/sparql11-query/#bind",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — VALUES inline data",
+   "url": "https://www.w3.org/TR/sparql11-query/#inline-data",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Aggregates",
+   "url": "https://www.w3.org/TR/sparql11-query/#aggregates",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — GROUP BY",
+   "url": "https://www.w3.org/TR/sparql11-query/#groupby",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — HAVING",
+   "url": "https://www.w3.org/TR/sparql11-query/#having",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Subqueries",
+   "url": "https://www.w3.org/TR/sparql11-query/#subqueries",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subqueries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — RDF dataset and named graphs",
+   "url": "https://www.w3.org/TR/sparql11-query/#rdfDataset",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Basic federated query (SERVICE)",
+   "url": "https://www.w3.org/TR/sparql11-query/#basic-federated-query",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Solution sequences and modifiers",
+   "url": "https://www.w3.org/TR/sparql11-query/#solutionModifiers",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — ORDER BY",
+   "url": "https://www.w3.org/TR/sparql11-query/#modOrderBy",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Projection",
+   "url": "https://www.w3.org/TR/sparql11-query/#modProjection",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — DISTINCT",
+   "url": "https://www.w3.org/TR/sparql11-query/#modDistinct",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — LIMIT",
+   "url": "https://www.w3.org/TR/sparql11-query/#modResultLimit",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Query forms (SELECT, CONSTRUCT, ASK, DESCRIBE)",
+   "url": "https://www.w3.org/TR/sparql11-query/#QueryForms",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — CONSTRUCT",
+   "url": "https://www.w3.org/TR/sparql11-query/#construct",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Expressions and testing values",
+   "url": "https://www.w3.org/TR/sparql11-query/#expressions",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Effective boolean value",
+   "url": "https://www.w3.org/TR/sparql11-query/#ebv",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Operator mapping",
+   "url": "https://www.w3.org/TR/sparql11-query/#OperatorMapping",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — IF",
+   "url": "https://www.w3.org/TR/sparql11-query/#func-if",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — COALESCE",
+   "url": "https://www.w3.org/TR/sparql11-query/#func-coalesce",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional",
+    "null-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Functions on strings",
+   "url": "https://www.w3.org/TR/sparql11-query/#func-strings",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Functions on numerics",
+   "url": "https://www.w3.org/TR/sparql11-query/#func-numerics",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Functions on dates and times",
+   "url": "https://www.w3.org/TR/sparql11-query/#func-date-time",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — XPath constructor functions (casting)",
+   "url": "https://www.w3.org/TR/sparql11-query/#FunctionMapping",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Extensible value testing",
+   "url": "https://www.w3.org/TR/sparql11-query/#extensionFunctions",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Definition of SPARQL (algebra)",
+   "url": "https://www.w3.org/TR/sparql11-query/#sparqlDefinition",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Variable scope",
+   "url": "https://www.w3.org/TR/sparql11-query/#variableScope",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Evaluation semantics",
+   "url": "https://www.w3.org/TR/sparql11-query/#sparqlAlgebraEval",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Aggregate algebra",
+   "url": "https://www.w3.org/TR/sparql11-query/#aggregateAlgebra",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — SPARQL grammar",
+   "url": "https://www.w3.org/TR/sparql11-query/#grammar",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Comments",
+   "url": "https://www.w3.org/TR/sparql11-query/#grammarComments",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Escape sequences in strings",
+   "url": "https://www.w3.org/TR/sparql11-query/#grammarEscapes",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — Security considerations",
+   "url": "https://www.w3.org/TR/sparql11-query/#security",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Update — INSERT DATA",
+   "url": "https://www.w3.org/TR/sparql11-update/#insertData",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Update — DELETE/INSERT",
+   "url": "https://www.w3.org/TR/sparql11-update/#deleteInsert",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Update — Graph management (CREATE, DROP, COPY, MOVE, ADD)",
+   "url": "https://www.w3.org/TR/sparql11-update/#graphManagement",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Update — Formal model",
+   "url": "https://www.w3.org/TR/sparql11-update/#formalModel",
+   "version": "1.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "transactions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Apache Jena — ARQ query engine documentation",
+   "url": "https://jena.apache.org/documentation/query/",
+   "implementation": "Apache Jena ARQ",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Semantics and Complexity of SPARQL (Pérez, Arenas, Gutierrez)",
+   "url": "https://arxiv.org/abs/cs/0605124",
+   "authors": [
+    "Jorge Pérez",
+    "Marcelo Arenas",
+    "Claudio Gutierrez"
+   ],
+   "year": 2006,
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "complexity"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Apache Jena SPARQL tutorial",
+   "url": "https://jena.apache.org/tutorials/sparql.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Wikidata SPARQL tutorial",
+   "url": "https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "RDF4J — Getting started tutorial",
+   "url": "https://rdf4j.org/documentation/tutorials/getting-started/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Learning SPARQL (Bob DuCharme)",
+   "url": "https://www.learningsparql.com/",
+   "authors": [
+    "Bob DuCharme"
+   ],
+   "year": 2013,
+   "scope": "whole",
+   "authority": "community",
+   "format": "book",
+   "access": "paywalled"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "GraphDB documentation (SPARQL engine guide)",
+   "url": "https://graphdb.ontotext.com/documentation/",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — SPARQL",
+   "url": "https://en.wikipedia.org/wiki/SPARQL",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — SPARQL",
+   "url": "https://pldb.io/concepts/sparql.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

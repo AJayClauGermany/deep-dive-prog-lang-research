@@ -1,0 +1,1466 @@
+{
+ "id": "intercal",
+ "name": "INTERCAL",
+ "aliases": [
+  "Compiler Language With No Pronounceable Acronym",
+  "C-INTERCAL",
+  "CLC-INTERCAL"
+ ],
+ "categories": [
+  "esoteric"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 1972,
+ "designers": [
+  "Don Woods",
+  "James M. Lyon"
+ ],
+ "summary": "Compiler Language With No Pronounceable Acronym, created by Don Woods and James Lyon in 1972 as a parody of contemporary languages; revived as C-INTERCAL by Eric Raymond (1990) with COME FROM, threading and backtracking extensions.",
+ "status": "esoteric",
+ "defined_by": [
+  "informal",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".i",
+  ".3i"
+ ],
+ "homepage": "http://www.catb.org/~esr/intercal/",
+ "level_notes": {
+  "1": "The 1973 INTERCAL Reference Manual (Woods & Lyon) is reproduced and extended in the C-INTERCAL Revamped Manual, whose section anchors are linked here.",
+  "0": "C-INTERCAL (esr/intercal on GitLab) is the de facto reference; CLC-INTERCAL (Claudio Calvelli) is the other major implementation.",
+  "2": "Secondary literature is thin; the manual's tutorial-like chapters double as the guide."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual (single HTML page, includes the INTERCAL-72 language definition)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm",
+   "concepts": [
+    "grammar",
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — About this manual",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#About-this-manual",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Invoking ick",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Invoking-ick",
+   "concepts": [
+    "tooling",
+    "command-line"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Language-affecting options",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Language_002daffecting-Options",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Debug options",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Debug-Options",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Optimizer options",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Optimizer-Options",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Environment variables",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Environment-Variables",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Errors",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Errors",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Warnings",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Warnings",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — The yuk debugger",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#The-yuk-debugger",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Syntax",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Syntax",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Princeton and Atari syntax",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Princeton-and-Atari-Syntax",
+   "concepts": [
+    "lexical-structure",
+    "source-encoding"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Line labels",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Line-Labels",
+   "concepts": [
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Statement identifiers (DO/PLEASE)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Statement-Identifiers",
+   "concepts": [
+    "statements",
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Execution chance (%)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Execution-Chance",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — ONCE and AGAIN",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#ONCE-and-AGAIN",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Expressions",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Expressions",
+   "concepts": [
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Constants and variables (spot, two-spot, tail, hybrid)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Constants-and-Variables",
+   "concepts": [
+    "variables",
+    "literals",
+    "integers",
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Grouping rules (sparks and rabbit-ears)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Grouping-Rules",
+   "concepts": [
+    "operator-precedence",
+    "expressions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Operators",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Operators",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Mingle ($ / ¢)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Mingle",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Select (~)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Select",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Unary binary logic (& V ?)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Unary-Binary-Logic",
+   "concepts": [
+    "operators",
+    "booleans"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Array subscript (SUB)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Array-Subscript",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Statements",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Statements",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Syntax errors as statements",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Syntax-Error",
+   "concepts": [
+    "error-handling",
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Calculate (<-)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Calculate",
+   "concepts": [
+    "assignment"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — NEXT, FORGET and RESUME",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#NEXT_002c-FORGET-and-RESUME",
+   "concepts": [
+    "functions",
+    "return",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — STASH and RETRIEVE",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#STASH-and-RETRIEVE",
+   "concepts": [
+    "scope",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — IGNORE and REMEMBER",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#IGNORE-and-REMEMBER",
+   "concepts": [
+    "constants",
+    "variables"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — ABSTAIN and REINSTATE",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#ABSTAIN-and-REINSTATE",
+   "concepts": [
+    "conditionals",
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — READ OUT and WRITE IN",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#READ-OUT-and-WRITE-IN",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — INTERCAL-72 I/O (Roman numerals)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#INTERCAL_002d72-I_002fO",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — C-INTERCAL I/O (Turing Text Model)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#C_002dINTERCAL-I_002fO",
+   "concepts": [
+    "input-output",
+    "characters"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — CLC-INTERCAL I/O (Baudot)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#CLC_002dINTERCAL-I_002fO",
+   "concepts": [
+    "input-output",
+    "source-encoding"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — GIVE UP",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#GIVE-UP",
+   "concepts": [
+    "program-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — TRY AGAIN",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#TRY-AGAIN",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — COME FROM and NEXT FROM",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#COME-FROM-and-NEXT-FROM",
+   "concepts": [
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — System libraries",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#System-Libraries",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — syslib (integer arithmetic)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#syslib",
+   "concepts": [
+    "standard-library",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — floatlib (floating point)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#floatlib",
+   "concepts": [
+    "standard-library",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — TriINTERCAL (non-binary bases)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#TriINTERCAL",
+   "concepts": [
+    "integers",
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Multithreading and backtracking",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Multithreading-and-Backtracking",
+   "concepts": [
+    "concurrency",
+    "threads"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Multithreading using COME FROM",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Multithreading-using-COME-FROM",
+   "concepts": [
+    "threads"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Backtracking (MAYBE, GO BACK, GO AHEAD)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Backtracking",
+   "concepts": [
+    "continuations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Operand overloading",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Operand-Overloading",
+   "concepts": [
+    "operator-overloading"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — PIC-INTERCAL",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#PIC_002dINTERCAL",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — CREATE (user-defined statements and operators)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#CREATE",
+   "concepts": [
+    "macros",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — External calls",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#External-Calls",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — External calls to C",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#External-Calls-to-C",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — External calls to Funge-98",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#External-Calls-to-Funge_002d98",
+   "concepts": [
+    "ffi"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Differences to other compilers",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Differences-to-Other-Compilers",
+   "concepts": [
+    "comparison"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Character sets",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Character-Sets",
+   "concepts": [
+    "source-encoding",
+    "characters"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "C-INTERCAL 0.29 Revamped Instruction Manual — Optimizer Idiom Language (OIL)",
+   "url": "http://www.catb.org/~esr/intercal/ick.htm#Optimizer-Idiom-Language",
+   "concepts": [
+    "optimization",
+    "rewriting"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "authors": [
+    "Eric S. Raymond",
+    "Alex Smith"
+   ],
+   "version": "C-INTERCAL 0.29"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "esr/intercal — C-INTERCAL compiler (GitLab)",
+   "url": "https://gitlab.com/esr/intercal",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/lexer.l — lexer (flex)",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/lexer.l",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/parser.y — parser (yacc grammar)",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/parser.y",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/ick.h — compilation types / parse tree",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/ick.h",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/feh2.c — code generator emitting C",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/feh2.c",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/dekludge.c — optimizer",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/dekludge.c",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/idiotism.oil — optimizer idioms in OIL",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/idiotism.oil",
+   "concepts": [
+    "optimization",
+    "rewriting"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/oil.y — OIL compiler grammar",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/oil.y",
+   "concepts": [
+    "parser",
+    "code-generation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/fiddle.c — the five INTERCAL operators",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/fiddle.c",
+   "concepts": [
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/cesspool.c — runtime support (I/O, stash)",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/cesspool.c",
+   "concepts": [
+    "runtime-system",
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/unravel.c — multithreading and backtracking runtime",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/unravel.c",
+   "concepts": [
+    "threads",
+    "continuations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/numerals.c — internationalized numeral input",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/numerals.c",
+   "concepts": [
+    "input-output"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/ick_lose.c — error messages",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/ick_lose.c",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/perpet.c — compiler driver",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/perpet.c",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/arrgghh.c — generated-program argument parsing",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/arrgghh.c",
+   "concepts": [
+    "command-line"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/clc-cset.c — character-set conversion",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/clc-cset.c",
+   "concepts": [
+    "source-encoding"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/ick-wrap.c — C skeleton for generated programs",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/ick-wrap.c",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/yuk.c — yuk debugger",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/yuk.c",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL src/uncommon.c — shared helpers",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/src/uncommon.c",
+   "concepts": [
+    "runtime-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL pit/lib/syslib.i — system library in INTERCAL",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/pit/lib/syslib.i",
+   "concepts": [
+    "standard-library",
+    "integers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL pit/lib/floatlib.i — floating-point library",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/pit/lib/floatlib.i",
+   "concepts": [
+    "standard-library",
+    "floating-point"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL pit/hello.i — Hello, world",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/pit/hello.i",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL pit/beer.i — 99 bottles of beer",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/pit/beer.i",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL NEWS — release history",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/NEWS",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "C-INTERCAL README — README",
+   "url": "https://gitlab.com/esr/intercal/-/blob/master/README",
+   "concepts": [
+    "history"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "C-INTERCAL"
+  },
+  {
+   "level": 3,
+   "kind": "wiki",
+   "title": "Esolang wiki — INTERCAL",
+   "url": "https://esolangs.org/wiki/INTERCAL",
+   "concepts": [
+    "history",
+    "turing-completeness"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — INTERCAL",
+   "url": "https://en.wikipedia.org/wiki/INTERCAL",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — COMEFROM",
+   "url": "https://en.wikipedia.org/wiki/COMEFROM",
+   "concepts": [
+    "goto-labels"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "code-collection",
+   "title": "Rosetta Code — Category:INTERCAL",
+   "url": "https://rosettacode.org/wiki/Category:INTERCAL",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "notes": "rosettacode.org reports blocked from the sandbox."
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Eric S. Raymond — The INTERCAL Resources Page",
+   "url": "http://www.catb.org/~esr/intercal/",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

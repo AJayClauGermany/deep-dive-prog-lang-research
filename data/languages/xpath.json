@@ -1,0 +1,1393 @@
+{
+ "id": "xpath",
+ "name": "XPath",
+ "aliases": [
+  "XML Path Language"
+ ],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional"
+ ],
+ "typing": [
+  "dynamic",
+  "optional-static"
+ ],
+ "first_appeared": 1999,
+ "designers": [
+  "James Clark",
+  "Steve DeRose",
+  "W3C XSL and XML Query Working Groups",
+  "Michael Kay"
+ ],
+ "summary": "W3C expression language for addressing and computing over XML trees: location paths with axes and predicates, grown in 2.0-3.1 into a functional language over sequences with types from XML Schema, higher-order functions, maps, arrays and JSON support.",
+ "status": "active",
+ "defined_by": [
+  "consortium-standard"
+ ],
+ "standards": [
+  "W3C XPath 1.0 (1999)",
+  "W3C XPath 2.0 (2007/2010)",
+  "W3C XPath 3.1 (2017)"
+ ],
+ "homepage": "https://www.w3.org/TR/xpath-31/",
+ "influenced_by": [
+  "xslt"
+ ],
+ "related": [
+  {
+   "id": "xquery",
+   "relation": "subset-of"
+  },
+  {
+   "id": "xslt",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "W3C Recommendations (1.0, 2.0, 3.0, 3.1) with a separate Functions & Operators and Data Model spec; 4.0 is being drafted by the QT4 community group.",
+  "0": "libxml2 (1.0) is the most deployed engine; Saxon-HE is the reference-quality 3.1 processor; W3C QT3 is the conformance suite."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "libxml2 — C XML toolkit with XPath 1.0 engine (GNOME)",
+   "url": "https://github.com/GNOME/libxml2",
+   "implementation": "libxml2",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 xpath.c — XPath 1.0 parser, compiler and evaluator",
+   "url": "https://github.com/GNOME/libxml2/blob/master/xpath.c",
+   "implementation": "libxml2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interpreter",
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 include/libxml/xpath.h — public XPath API",
+   "url": "https://github.com/GNOME/libxml2/blob/master/include/libxml/xpath.h",
+   "implementation": "libxml2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "libxml2 xpathInternals.h — XPath object types and function registration",
+   "url": "https://github.com/GNOME/libxml2/blob/master/include/libxml/xpathInternals.h",
+   "implementation": "libxml2",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "functions"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Saxon-HE — open-source XPath 3.1 / XSLT 3.0 / XQuery processor (Saxonica)",
+   "url": "https://github.com/Saxonica/Saxon-HE",
+   "implementation": "Saxon-HE",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "elementpath — XPath 1.0/2.0/3.0/3.1 for Python",
+   "url": "https://github.com/sissaschool/elementpath",
+   "implementation": "elementpath",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "elementpath tdop.py — Pratt (top-down operator precedence) parser framework",
+   "url": "https://github.com/sissaschool/elementpath/blob/master/elementpath/tdop.py",
+   "implementation": "elementpath",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "elementpath xpath1/xpath1_parser.py — XPath 1.0 grammar and operators",
+   "url": "https://github.com/sissaschool/elementpath/blob/master/elementpath/xpath1/xpath1_parser.py",
+   "implementation": "elementpath",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "elementpath xpath2/xpath2_parser.py — XPath 2.0 parser (sequences, for/if/quantified)",
+   "url": "https://github.com/sissaschool/elementpath/blob/master/elementpath/xpath2/xpath2_parser.py",
+   "implementation": "elementpath",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "loops",
+    "conditionals"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "elementpath xpath31/xpath31_parser.py — XPath 3.1 maps, arrays and lookups",
+   "url": "https://github.com/sissaschool/elementpath/blob/master/elementpath/xpath31/xpath31_parser.py",
+   "implementation": "elementpath",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "arrays"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "FontoXPath — XPath 3.1 engine in TypeScript",
+   "url": "https://github.com/FontoXML/fontoxpath",
+   "implementation": "FontoXPath",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "BaseX — XML database and XQuery/XPath processor",
+   "url": "https://github.com/BaseXdb/basex",
+   "implementation": "BaseX",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "W3C QT3 test suite (XPath/XQuery 3.x conformance)",
+   "url": "https://github.com/w3c/qt3tests",
+   "implementation": "W3C QT3",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing",
+    "standardization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "QT3 test suite catalog.xml",
+   "url": "https://github.com/w3c/qt3tests/blob/master/catalog.xml",
+   "implementation": "W3C QT3",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML Path Language (XPath) 3.1 (W3C Recommendation)",
+   "url": "https://www.w3.org/TR/xpath-31/",
+   "year": 2017,
+   "version": "3.1",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XPath and XQuery Functions and Operators 3.1",
+   "url": "https://www.w3.org/TR/xpath-functions-31/",
+   "year": 2017,
+   "version": "3.1",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery and XPath Data Model 3.1",
+   "url": "https://www.w3.org/TR/xpath-datamodel-31/",
+   "year": 2017,
+   "version": "3.1",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML Path Language (XPath) Version 1.0",
+   "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/",
+   "year": 1999,
+   "version": "1.0",
+   "authors": [
+    "James Clark",
+    "Steve DeRose"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions",
+    "history"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML Path Language (XPath) 2.0",
+   "url": "https://www.w3.org/TR/xpath20/",
+   "year": 2010,
+   "version": "2.0",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XML Path Language (XPath) 3.0",
+   "url": "https://www.w3.org/TR/xpath-30/",
+   "year": 2014,
+   "version": "3.0",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "XQuery and XPath Full Text 3.0",
+   "url": "https://www.w3.org/TR/xpath-full-text-30/",
+   "year": 2015,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "XQuery 1.0 and XPath 2.0 Formal Semantics",
+   "url": "https://www.w3.org/TR/xquery-semantics/",
+   "year": 2010,
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "standard-draft",
+   "title": "XPath 4.0 (QT4 Community Group draft)",
+   "url": "https://qt4cg.org/specifications/xquery-40/xpath-40.html",
+   "version": "4.0",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "XPath 3.1 diff-marked changes vs 3.0",
+   "url": "https://www.w3.org/TR/xpath-31/xpath-31-diff.html",
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Expression context (static and dynamic)",
+   "url": "https://www.w3.org/TR/xpath-31/#context",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Error handling",
+   "url": "https://www.w3.org/TR/xpath-31/#errors",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Document order",
+   "url": "https://www.w3.org/TR/xpath-31/#id-document-order",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Atomization",
+   "url": "https://www.w3.org/TR/xpath-31/#id-atomization",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Effective boolean value",
+   "url": "https://www.w3.org/TR/xpath-31/#id-ebv",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Types",
+   "url": "https://www.w3.org/TR/xpath-31/#id-types",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — SequenceType syntax",
+   "url": "https://www.w3.org/TR/xpath-31/#id-sequencetype-syntax",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-annotations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — SequenceType subtype relationships",
+   "url": "https://www.w3.org/TR/xpath-31/#id-sequencetype-subtype",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "subtyping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Comments",
+   "url": "https://www.w3.org/TR/xpath-31/#comments",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Literals",
+   "url": "https://www.w3.org/TR/xpath-31/#id-literals",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Variable references",
+   "url": "https://www.w3.org/TR/xpath-31/#id-variables",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Static function calls",
+   "url": "https://www.w3.org/TR/xpath-31/#id-function-calls",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "parameters-arguments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Inline function expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-inline-func",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Dynamic function calls",
+   "url": "https://www.w3.org/TR/xpath-31/#id-dynamic-function-invocation",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Filter expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-filter-expression",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Path expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-path-expressions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Steps and axes",
+   "url": "https://www.w3.org/TR/xpath-31/#id-steps",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Predicates within steps",
+   "url": "https://www.w3.org/TR/xpath-31/#id-predicate",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Abbreviated syntax",
+   "url": "https://www.w3.org/TR/xpath-31/#abbrev",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Combining node sequences (union, intersect, except)",
+   "url": "https://www.w3.org/TR/xpath-31/#combining_seq",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Sequence expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-sequence-expressions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Arithmetic expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-arithmetic",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — String concatenation",
+   "url": "https://www.w3.org/TR/xpath-31/#id-string-concat-expr",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Comparison expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-comparisons",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Logical expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-logical-expressions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — For expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-for-expressions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Let expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-let-expressions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Maps",
+   "url": "https://www.w3.org/TR/xpath-31/#id-maps",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Arrays",
+   "url": "https://www.w3.org/TR/xpath-31/#id-arrays",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Lookup operator",
+   "url": "https://www.w3.org/TR/xpath-31/#id-lookup",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Conditional expressions",
+   "url": "https://www.w3.org/TR/xpath-31/#id-conditionals",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Quantified expressions (some/every)",
+   "url": "https://www.w3.org/TR/xpath-31/#id-quantified-expressions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Cast and castable",
+   "url": "https://www.w3.org/TR/xpath-31/#id-cast",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — instance of",
+   "url": "https://www.w3.org/TR/xpath-31/#id-instance-of",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Simple map operator (!)",
+   "url": "https://www.w3.org/TR/xpath-31/#id-map-operator",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Arrow operator (=>)",
+   "url": "https://www.w3.org/TR/xpath-31/#id-arrow-operator",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pipelines"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — EBNF grammar",
+   "url": "https://www.w3.org/TR/xpath-31/#id-grammar",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Lexical structure",
+   "url": "https://www.w3.org/TR/xpath-31/#lexical-structure",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Precedence order",
+   "url": "https://www.w3.org/TR/xpath-31/#id-precedence-order",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Type promotion",
+   "url": "https://www.w3.org/TR/xpath-31/#promotion",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — Incompatibilities relative to XPath 1.0",
+   "url": "https://www.w3.org/TR/xpath-31/#id-backwards-compatibility",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Function overloading",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-overloading",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "overloading"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Errors and diagnostics (fn:error, fn:trace)",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#errors-and-diagnostics",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Functions and operators on numerics",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#numeric-functions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Formatting numbers",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#formatting-numbers",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "string-formatting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Functions on strings",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#string-functions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Regular-expression functions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#string.match",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Regular expression syntax",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#regex-syntax",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Boolean functions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#boolean-functions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Dates and times",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#dates-times",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Functions on sequences",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#sequence-functions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "collections"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — fn:distinct-values",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-distinct-values",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "set-operations"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — fn:count",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-count",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — fn:sum",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-sum",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Higher-order functions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#higher-order-functions",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — fn:fold-left",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-fold-left",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "higher-order-functions",
+    "aggregation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — fn:sort",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-sort",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Maps and arrays functions",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#maps-and-arrays",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — fn:parse-json",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#func-parse-json",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath Functions 3.1 — Casting",
+   "url": "https://www.w3.org/TR/xpath-functions-31/#casting",
+   "version": "3.1",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 1.0 — Location paths",
+   "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/#location-paths",
+   "version": "1.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 1.0 — Axes",
+   "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/#axes",
+   "version": "1.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 1.0 — Predicates",
+   "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/#predicates",
+   "version": "1.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 1.0 — Core function library",
+   "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/#corelib",
+   "version": "1.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 1.0 — Data model",
+   "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/#data-model",
+   "version": "1.0",
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Saxon 12 documentation",
+   "url": "https://www.saxonica.com/documentation12/index.html",
+   "implementation": "Saxon",
+   "scope": "whole",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Two Semantics for XPath (Philip Wadler)",
+   "url": "https://homepages.inf.ed.ac.uk/wadler/papers/xpath-semantics/xpath-semantics.pdf",
+   "authors": [
+    "Philip Wadler"
+   ],
+   "year": 2000,
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — XPath",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/XML/XPath",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "MDN — Document.evaluate() (XPath in the browser DOM)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interoperability"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — XPath",
+   "url": "https://en.wikipedia.org/wiki/XPath",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — XPath",
+   "url": "https://pldb.io/concepts/xpath.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

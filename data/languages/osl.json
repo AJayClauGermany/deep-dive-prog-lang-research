@@ -1,0 +1,296 @@
+{
+ "id": "osl",
+ "name": "Open Shading Language",
+ "aliases": [
+  "OSL"
+ ],
+ "categories": [
+  "shader-gpu"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
+ "first_appeared": 2010,
+ "designers": [
+  "Larry Gritz",
+  "Sony Pictures Imageworks"
+ ],
+ "summary": "Shading language for production ray tracers (Arnold, Cycles, RenderMan, V-Ray) from Sony Pictures Imageworks, now an ASWF project: shaders compute radiance closures rather than colours, connect into shader groups, and are JIT-compiled via LLVM.",
+ "status": "active",
+ "defined_by": [
+  "community-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".osl",
+  ".oso"
+ ],
+ "homepage": "https://openshadinglanguage.org/",
+ "influenced_by": [
+  "renderman-sl",
+  "c"
+ ],
+ "related": [
+  {
+   "id": "renderman-sl",
+   "relation": "family"
+  }
+ ],
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Language Specification",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Introduction",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/intro.html",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — The big picture",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/bigpicture.html",
+   "concepts": [
+    "shader-pipeline"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Lexical structure",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/lexical.html",
+   "concepts": [
+    "lexical-structure",
+    "comments"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Gross syntax, shader types, parameters",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/grosssyntax.html",
+   "concepts": [
+    "program-structure",
+    "parameters-arguments"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Data types",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/datatypes.html",
+   "concepts": [
+    "primitive-types",
+    "type-system",
+    "records-structs"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Language syntax",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/syntax.html",
+   "concepts": [
+    "statements",
+    "expressions",
+    "conditionals",
+    "loops",
+    "functions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Standard library functions",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/stdlib.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Shader groups and layers",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/shadergroups.html",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "OSL Specification — Formal grammar",
+   "url": "https://open-shading-language.readthedocs.io/en/latest/grammar.html",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "AcademySoftwareFoundation/OpenShadingLanguage",
+   "url": "https://github.com/AcademySoftwareFoundation/OpenShadingLanguage",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "implementation": "oslc/liboslexec"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OSL src/liboslcomp/osllex.l — lexer",
+   "url": "https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/blob/main/src/liboslcomp/osllex.l",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "OSL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OSL src/liboslcomp/oslgram.y — grammar",
+   "url": "https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/blob/main/src/liboslcomp/oslgram.y",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "OSL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OSL src/liboslcomp/typecheck.cpp — type checker",
+   "url": "https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/blob/main/src/liboslcomp/typecheck.cpp",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "OSL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OSL src/liboslexec/llvm_gen.cpp — LLVM code generation",
+   "url": "https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/blob/main/src/liboslexec/llvm_gen.cpp",
+   "concepts": [
+    "jit",
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "OSL"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OSL src/liboslexec/runtimeoptimize.cpp — runtime optimizer",
+   "url": "https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/blob/main/src/liboslexec/runtimeoptimize.cpp",
+   "concepts": [
+    "optimization"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "OSL"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Blender Manual — Open Shading Language",
+   "url": "https://docs.blender.org/manual/en/latest/render/cycles/osl/index.html",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Open Shading Language",
+   "url": "https://en.wikipedia.org/wiki/Open_Shading_Language",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

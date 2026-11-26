@@ -1,0 +1,423 @@
+{
+ "id": "fstar",
+ "name": "F*",
+ "aliases": [
+  "FStar",
+  "F-star"
+ ],
+ "categories": [
+  "general-purpose",
+  "functional",
+  "proof-assistant"
+ ],
+ "paradigms": [
+  "functional",
+  "effectful"
+ ],
+ "typing": [
+  "static",
+  "dependent",
+  "refinement",
+  "effect-typed",
+  "inferred"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Nikhil Swamy",
+  "Cătălin Hriţcu",
+  "Microsoft Research and Inria"
+ ],
+ "summary": "Proof-oriented ML-family programming language with dependent and refinement types and a user-extensible monadic effect system; verification conditions go to Z3, programs extract to OCaml, F# or (via Low*/KaRaMeL) C, as in Project Everest's verified cryptography.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".fst",
+  ".fsti"
+ ],
+ "homepage": "https://fstar-lang.org/",
+ "influenced_by": [
+  "ocaml",
+  "f-sharp",
+  "rocq",
+  "dafny"
+ ],
+ "related": [
+  {
+   "id": "ocaml",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal language specification; the online book 'Proof-Oriented Programming in F*' and the POPL 2016 paper are the primary descriptions.",
+  "0": "FStarLang/FStar (self-hosted in F*, extracted to OCaml)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "FStarLang/FStar — the F* compiler and standard library",
+   "url": "https://github.com/FStarLang/FStar",
+   "concepts": [
+    "compiler-architecture",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "F* (FStarLang/FStar)",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/typechecker/FStarC.TypeChecker.Tc.fst — top-level type checker",
+   "url": "https://github.com/FStarLang/FStar/blob/master/src/typechecker/FStarC.TypeChecker.Tc.fst",
+   "concepts": [
+    "semantic-analysis",
+    "dependent-types"
+   ],
+   "scope": "section",
+   "implementation": "F* (FStarLang/FStar)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/typechecker/FStarC.TypeChecker.Rel.fst — unification and subtyping relation",
+   "url": "https://github.com/FStarLang/FStar/blob/master/src/typechecker/FStarC.TypeChecker.Rel.fst",
+   "concepts": [
+    "unification",
+    "subtyping"
+   ],
+   "scope": "section",
+   "implementation": "F* (FStarLang/FStar)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "src/smtencoding/FStarC.SMTEncoding.Encode.fst — SMT encoding of verification conditions",
+   "url": "https://github.com/FStarLang/FStar/blob/master/src/smtencoding/FStarC.SMTEncoding.Encode.fst",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "F* (FStarLang/FStar)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "ulib/Prims.fst — primitive definitions and effects",
+   "url": "https://github.com/FStarLang/FStar/blob/master/ulib/Prims.fst",
+   "concepts": [
+    "standard-library",
+    "effect-systems"
+   ],
+   "scope": "section",
+   "implementation": "F* (FStarLang/FStar)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "ulib/FStar.List.Tot.Base.fst — total list library",
+   "url": "https://github.com/FStarLang/FStar/blob/master/ulib/FStar.List.Tot.Base.fst",
+   "concepts": [
+    "lists"
+   ],
+   "scope": "section",
+   "implementation": "F* (FStarLang/FStar)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "KaRaMeL — compiler from Low* to C (README)",
+   "url": "https://github.com/FStarLang/karamel/blob/master/README.md",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "KaRaMeL",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "F* CHANGES.md",
+   "url": "https://github.com/FStarLang/FStar/blob/master/CHANGES.md",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Dependent Types and Multi-Monadic Effects in F* (POPL 2016)",
+   "url": "https://www.fstar-lang.org/papers/mumon/",
+   "concepts": [
+    "effect-systems",
+    "dependent-types",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Nikhil Swamy",
+    "et al."
+   ],
+   "year": 2016,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F*",
+   "url": "https://fstar-lang.org/tutorial/book/index.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Getting off the ground",
+   "url": "https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html",
+   "concepts": [
+    "hello-world",
+    "refinement-types",
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Polymorphism and inference",
+   "url": "https://fstar-lang.org/tutorial/book/part1/part1_polymorphism.html",
+   "concepts": [
+    "generics",
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Inductive types and pattern matching",
+   "url": "https://fstar-lang.org/tutorial/book/part1/part1_inductives.html",
+   "concepts": [
+    "algebraic-data-types",
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Proofs of termination",
+   "url": "https://fstar-lang.org/tutorial/book/part1/part1_termination.html",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Lemmas and proofs by induction",
+   "url": "https://fstar-lang.org/tutorial/book/part1/part1_lemmas.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Executing programs",
+   "url": "https://fstar-lang.org/tutorial/book/part1/part1_execution.html",
+   "concepts": [
+    "code-generation",
+    "tooling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Inductive type families",
+   "url": "https://fstar-lang.org/tutorial/book/part2/part2_inductive_type_families.html",
+   "concepts": [
+    "dependent-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Universes",
+   "url": "https://fstar-lang.org/tutorial/book/part2/part2_universes.html",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Interfaces",
+   "url": "https://fstar-lang.org/tutorial/book/part3/part3_interfaces.html",
+   "concepts": [
+    "modules",
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Typeclasses",
+   "url": "https://fstar-lang.org/tutorial/book/part3/part3_typeclasses.html",
+   "concepts": [
+    "traits-typeclasses"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Computation types (effects)",
+   "url": "https://fstar-lang.org/tutorial/book/part4/part4_computation_types_and_tot.html",
+   "concepts": [
+    "effect-systems",
+    "purity"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Ghost computations",
+   "url": "https://fstar-lang.org/tutorial/book/part4/part4_ghost.html",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Meta-F* tactics",
+   "url": "https://fstar-lang.org/tutorial/book/part5/part5_meta.html",
+   "concepts": [
+    "reflection",
+    "macros"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Proof-Oriented Programming in F* — Pulse (concurrent separation logic DSL)",
+   "url": "https://fstar-lang.org/tutorial/book/pulse/pulse.html",
+   "concepts": [
+    "concurrency",
+    "memory-model",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "F* (programming language) — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/F*_(programming_language)",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "F* — PLDB",
+   "url": "https://pldb.io/concepts/fstar.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
