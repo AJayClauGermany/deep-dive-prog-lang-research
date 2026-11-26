@@ -1,0 +1,279 @@
+{
+ "id": "glob",
+ "name": "glob patterns",
+ "aliases": [
+  "glob",
+  "wildcards",
+  "fnmatch patterns",
+  "shell patterns"
+ ],
+ "categories": [
+  "pattern-matching",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "first_appeared": 1971,
+ "designers": [
+  "Ken Thompson (Unix /etc/glob)"
+ ],
+ "summary": "Wildcard pattern notation (*, ?, [...] bracket expressions) for matching file names and strings, originating in Unix v1's /etc/glob; standardised by POSIX's Pattern Matching Notation and the glob()/fnmatch() functions, extended by shells (extglob, globstar **, brace expansion) and reused by countless tools.",
+ "status": "active",
+ "defined_by": [
+  "international-standard"
+ ],
+ "standards": [
+  "POSIX.1-2024 XCU 2.14 Pattern Matching Notation"
+ ],
+ "related": [
+  {
+   "id": "posix-sh",
+   "relation": "family"
+  },
+  {
+   "id": "bash",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "glibc glob.c/fnmatch.c, and library implementations in other languages.",
+  "1": "POSIX pattern matching notation and the glob/fnmatch C interfaces; shell manuals for extensions.",
+  "2": "Articles and library docs.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "glibc posix/glob.c — glob() implementation",
+   "url": "https://github.com/bminor/glibc/blob/master/posix/glob.c",
+   "concepts": [
+    "regular-expressions",
+    "file-io"
+   ],
+   "implementation": "glibc",
+   "access": "open",
+   "format": "source-file",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "glibc posix/fnmatch.c — fnmatch() implementation",
+   "url": "https://github.com/bminor/glibc/blob/master/posix/fnmatch.c",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "implementation": "glibc",
+   "access": "open",
+   "format": "source-file",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "CPython Lib/glob.py — Python glob module",
+   "url": "https://github.com/python/cpython/blob/main/Lib/glob.py",
+   "concepts": [
+    "standard-library"
+   ],
+   "implementation": "CPython",
+   "access": "open",
+   "format": "source-file",
+   "authority": "community",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX — 2.14 Pattern Matching Notation",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html#tag_19_14",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX — 2.14.1 Patterns Matching a Single Character",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html#tag_19_14_01",
+   "concepts": [
+    "characters",
+    "regular-expressions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX — 2.14.2 Patterns Matching Multiple Characters",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html#tag_19_14_02",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX — 2.14.3 Patterns Used for Filename Expansion",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html#tag_19_14_03",
+   "concepts": [
+    "file-io"
+   ],
+   "access": "open",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "scope": "section"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "POSIX glob() function",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/functions/glob.html",
+   "concepts": [
+    "standard-library",
+    "file-io"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "POSIX fnmatch() function",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/functions/fnmatch.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "access": "open",
+   "format": "html",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "glob(7) — Linux man page",
+   "url": "https://man7.org/linux/man-pages/man7/glob.7.html",
+   "concepts": [
+    "regular-expressions",
+    "history"
+   ],
+   "authority": "official",
+   "scope": "whole",
+   "access": "open",
+   "format": "html",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Bash Reference Manual — Pattern Matching (extglob, globstar)",
+   "url": "https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html",
+   "concepts": [
+    "regular-expressions"
+   ],
+   "authority": "official",
+   "implementation": "GNU Bash",
+   "scope": "section",
+   "access": "open",
+   "format": "html",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python docs — glob module",
+   "url": "https://docs.python.org/3/library/glob.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "access": "open",
+   "format": "html",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Python docs — fnmatch module",
+   "url": "https://docs.python.org/3/library/fnmatch.html",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "access": "open",
+   "format": "html",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Go path/filepath — Match",
+   "url": "https://pkg.go.dev/path/filepath#Match",
+   "concepts": [
+    "standard-library"
+   ],
+   "authority": "official",
+   "scope": "section",
+   "access": "open",
+   "format": "html",
+   "version": "POSIX.1-2024"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Russ Cox — Glob Matching Can Be Simple And Fast Too",
+   "url": "https://research.swtch.com/glob",
+   "concepts": [
+    "performance",
+    "complexity"
+   ],
+   "authors": [
+    "Russ Cox"
+   ],
+   "year": 2017,
+   "scope": "whole",
+   "access": "open",
+   "authority": "community",
+   "format": "html"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — glob (programming)",
+   "url": "https://en.wikipedia.org/wiki/Glob_(programming)",
+   "concepts": [
+    "history"
+   ],
+   "access": "open",
+   "authority": "community",
+   "format": "html",
+   "scope": "whole"
+  }
+ ]
+}

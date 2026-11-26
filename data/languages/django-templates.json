@@ -1,0 +1,75 @@
+{
+ "id": "django-templates",
+ "name": "Django template language",
+ "aliases": [
+  "DTL",
+  "Django templates"
+ ],
+ "categories": [
+  "template"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2005,
+ "designers": [
+  "Adrian Holovaty",
+  "Simon Willison"
+ ],
+ "summary": "Deliberately restricted text template language of the Django web framework: {{ variables }} with |filters, {% tags %} for control flow, block-based template inheritance and automatic HTML escaping. Ancestor of Jinja, Twig, Liquid-like and Nunjucks syntaxes.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".html",
+  ".txt"
+ ],
+ "homepage": "https://docs.djangoproject.com/en/stable/topics/templates/",
+ "related": [
+  {
+   "id": "python",
+   "relation": "implemented-in"
+  },
+  {
+   "id": "jinja",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "0": "django/template in the Django repository is the only implementation (pongo2 for Go is an independent dialect).",
+  "1": "The 'Django template language' and 'Built-in template tags and filters' reference pages are the definition.",
+  "2": "Django tutorial part 3 and topic guide.",
+  "3": "Wikipedia."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "django/template/base.py — Lexer, Parser, Variable resolution", "url": "https://github.com/django/django/blob/main/django/template/base.py", "implementation": "Django", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer", "parser", "compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "django/template/defaulttags.py — built-in tags (if, for, ...)", "url": "https://github.com/django/django/blob/main/django/template/defaulttags.py", "implementation": "Django", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["conditionals", "loops"]},
+  {"level": 0, "kind": "implementation-source", "title": "django/template/defaultfilters.py — built-in filters", "url": "https://github.com/django/django/blob/main/django/template/defaultfilters.py", "implementation": "Django", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library", "functions"]},
+  {"level": 0, "kind": "implementation-source", "title": "django/template/loader_tags.py — block, extends, include", "url": "https://github.com/django/django/blob/main/django/template/loader_tags.py", "implementation": "Django", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["inheritance", "imports"]},
+  {"level": 0, "kind": "implementation-source", "title": "django/utils/html.py — escape()", "url": "https://github.com/django/django/blob/main/django/utils/html.py", "implementation": "Django", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["escaping"]},
+  {"level": 1, "kind": "reference-manual", "title": "The Django template language", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["templating", "program-structure"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Variables", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#variables", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Filters", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#filters", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "pipelines"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Tags", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#tags", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["statements"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Comments", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#comments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Template inheritance", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#template-inheritance", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["inheritance", "templating"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Automatic HTML escaping", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#automatic-html-escaping", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["escaping", "security-considerations"]},
+  {"level": 1, "kind": "reference-manual", "title": "Django template language — Custom tag and filter libraries", "url": "https://docs.djangoproject.com/en/stable/ref/templates/language/#custom-tag-and-filter-libraries", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in template tags and filters", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in tags — if", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/#if", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in tags — boolean operators", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/#boolean-operators", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators", "booleans"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in tags — for", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/#for", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in tags — extends", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/#extends", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["inheritance"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in tags — autoescape", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/#autoescape", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["escaping"]},
+  {"level": 1, "kind": "library-reference", "title": "Built-in filters — date", "url": "https://docs.djangoproject.com/en/stable/ref/templates/builtins/#date", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["date-time"]},
+  {"level": 2, "kind": "guide", "title": "Django topic guide — Templates", "url": "https://docs.djangoproject.com/en/stable/topics/templates/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 2, "kind": "tutorial", "title": "Writing your first Django app, part 3 — templates", "url": "https://docs.djangoproject.com/en/stable/intro/tutorial03/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "guide", "title": "Django how-to — Custom template tags and filters", "url": "https://docs.djangoproject.com/en/stable/howto/custom-template-tags/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Django (web framework)", "url": "https://en.wikipedia.org/wiki/Django_(web_framework)", "scope": "whole", "authority": "community", "format": "html", "access": "open", "concepts": ["history"]}
+ ]
+}

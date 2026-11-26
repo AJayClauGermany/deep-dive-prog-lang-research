@@ -1,0 +1,67 @@
+{
+ "id": "go-templates",
+ "name": "Go text/template",
+ "aliases": [
+  "Go templates",
+  "html/template"
+ ],
+ "categories": [
+  "template"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "dynamic"
+ ],
+ "first_appeared": 2011,
+ "designers": [
+  "Rob Pike"
+ ],
+ "summary": "Template language of the Go standard library: {{actions}} with pipelines, variables, if/range/with/define/block, evaluated reflectively against Go data; html/template adds contextual auto-escaping. Used by Helm, Hugo and many CLIs.",
+ "status": "active",
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".tmpl",
+  ".gotmpl"
+ ],
+ "homepage": "https://pkg.go.dev/text/template",
+ "related": [
+  {
+   "id": "go",
+   "relation": "implemented-in"
+  }
+ ],
+ "level_notes": {
+  "0": "src/text/template and src/html/template in the Go repository.",
+  "1": "The package documentation is the specification.",
+  "2": "Hugo and Helm guides.",
+  "3": "none of note."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-source", "title": "text/template/parse/lex.go", "url": "https://github.com/golang/go/blob/master/src/text/template/parse/lex.go", "implementation": "gc (Go std)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "text/template/parse/parse.go", "url": "https://github.com/golang/go/blob/master/src/text/template/parse/parse.go", "implementation": "gc (Go std)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "text/template/parse/node.go — AST", "url": "https://github.com/golang/go/blob/master/src/text/template/parse/node.go", "implementation": "gc (Go std)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["ast"]},
+  {"level": 0, "kind": "implementation-source", "title": "text/template/exec.go — evaluator", "url": "https://github.com/golang/go/blob/master/src/text/template/exec.go", "implementation": "gc (Go std)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "reflection"]},
+  {"level": 0, "kind": "implementation-source", "title": "text/template/funcs.go — builtin functions", "url": "https://github.com/golang/go/blob/master/src/text/template/funcs.go", "implementation": "gc (Go std)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+  {"level": 0, "kind": "implementation-source", "title": "html/template/escape.go — contextual escaper", "url": "https://github.com/golang/go/blob/master/src/html/template/escape.go", "implementation": "gc (Go std)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["escaping", "security-considerations"]},
+  {"level": 1, "kind": "library-reference", "title": "Package text/template", "url": "https://pkg.go.dev/text/template", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Text and spaces", "url": "https://pkg.go.dev/text/template#hdr-Text_and_spaces", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["whitespace-layout"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Actions", "url": "https://pkg.go.dev/text/template#hdr-Actions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "comments"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Arguments", "url": "https://pkg.go.dev/text/template#hdr-Arguments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["expressions", "literals"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Pipelines", "url": "https://pkg.go.dev/text/template#hdr-Pipelines", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pipelines"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Variables", "url": "https://pkg.go.dev/text/template#hdr-Variables", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "scope"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Functions", "url": "https://pkg.go.dev/text/template#hdr-Functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "operators"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Associated templates", "url": "https://pkg.go.dev/text/template#hdr-Associated_templates", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["imports"]},
+  {"level": 1, "kind": "library-reference", "title": "text/template — Nested template definitions", "url": "https://pkg.go.dev/text/template#hdr-Nested_template_definitions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "inheritance"]},
+  {"level": 1, "kind": "library-reference", "title": "Package html/template", "url": "https://pkg.go.dev/html/template", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["escaping"]},
+  {"level": 1, "kind": "library-reference", "title": "html/template — Contexts", "url": "https://pkg.go.dev/html/template#hdr-Contexts", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["escaping"]},
+  {"level": 1, "kind": "library-reference", "title": "html/template — Security model", "url": "https://pkg.go.dev/html/template#hdr-Security_Model", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["security-considerations"]},
+  {"level": 2, "kind": "guide", "title": "Hugo — Introduction to templating", "url": "https://gohugo.io/templates/introduction/", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 2, "kind": "guide", "title": "Helm — Chart template guide", "url": "https://helm.sh/docs/chart_template_guide/", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["templating"]},
+  {"level": 2, "kind": "article", "title": "Rob Pike — Lexical Scanning in Go (talk slides)", "url": "https://go.dev/talks/2011/lex.slide", "scope": "whole", "authority": "designer", "authors": ["Rob Pike"], "year": 2011, "format": "html", "access": "open", "concepts": ["lexer", "design-rationale"]}
+ ]
+}

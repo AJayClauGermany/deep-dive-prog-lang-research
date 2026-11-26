@@ -1,0 +1,1402 @@
+{
+ "id": "dafny",
+ "name": "Dafny",
+ "categories": [
+  "general-purpose",
+  "proof-assistant",
+  "specification-modeling"
+ ],
+ "paradigms": [
+  "imperative",
+  "functional",
+  "object-oriented"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "inferred",
+  "refinement-subset-types"
+ ],
+ "first_appeared": 2009,
+ "designers": [
+  "K. Rustan M. Leino"
+ ],
+ "summary": "Verification-aware programming language with built-in pre/postconditions, loop invariants, termination metrics, ghost code and lemmas; programs are verified by translation to Boogie and the Z3 SMT solver and compiled to C#, Java, JavaScript, Go, Python and Rust.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".dfy"
+ ],
+ "homepage": "https://dafny.org/",
+ "influenced_by": [
+  "boogie",
+  "spec-sharp",
+  "eiffel",
+  "ml"
+ ],
+ "related": [
+  {
+   "id": "boogie",
+   "relation": "compiles-to"
+  },
+  {
+   "id": "spec-sharp",
+   "relation": "successor-of"
+  }
+ ],
+ "level_notes": {
+  "1": "The Dafny Reference Manual (single page, dafny.org/latest) is the de facto specification; there is no standard. Leino's 2010 LPAR paper introduced the language.",
+  "0": "Single implementation in dafny-lang/dafny (C#): Coco/R grammar Dafny.atg, resolver/pre-type inference, Boogie generator (verifier) and per-target code generators."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "dafny-lang/dafny — Dafny verifier, compiler, runtime and IDE server",
+   "url": "https://github.com/dafny-lang/dafny",
+   "concepts": [
+    "compiler-architecture",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Source/DafnyCore/Dafny.atg — Coco/R grammar of Dafny",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Dafny.atg",
+   "concepts": [
+    "grammar",
+    "parser",
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Resolver/ModuleResolver.cs — module and name resolution",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Resolver/ModuleResolver.cs",
+   "concepts": [
+    "modules",
+    "semantic-analysis",
+    "scope"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Resolver/PreType/PreTypeResolve.Expressions.cs — pre-type inference for expressions",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Resolver/PreType/PreTypeResolve.Expressions.cs",
+   "concepts": [
+    "type-inference",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Resolver/PreType/PreTypeResolver.Match.cs — resolving match expressions",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Resolver/PreType/PreTypeResolver.Match.cs",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Resolver/TailRecursion.cs — tail-recursion detection",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Resolver/TailRecursion.cs",
+   "concepts": [
+    "tail-calls",
+    "optimization"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Resolver/InferDecreasesClause.cs — inferring termination metrics",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Resolver/InferDecreasesClause.cs",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Resolver/GhostInterestVisitor.cs — ghost/compiled code separation",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Resolver/GhostInterestVisitor.cs",
+   "concepts": [
+    "verification",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verifier/BoogieGenerator.cs — translation of Dafny to Boogie",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Verifier/BoogieGenerator.cs",
+   "concepts": [
+    "verification",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verifier/BoogieGenerator.Methods.cs — method contracts to Boogie procedures",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Verifier/BoogieGenerator.Methods.cs",
+   "concepts": [
+    "verification",
+    "functions"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verifier/BoogieGenerator.Decreases.cs — termination checks",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Verifier/BoogieGenerator.Decreases.cs",
+   "concepts": [
+    "verification",
+    "recursion"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Verifier/BoogieGenerator.Types.cs — encoding of types and subset types",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Verifier/BoogieGenerator.Types.cs",
+   "concepts": [
+    "type-system",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "DafnyPrelude.bpl — Boogie axiomatisation of Dafny's heap, sets, sequences and maps",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/DafnyPrelude.bpl",
+   "concepts": [
+    "formal-semantics",
+    "collections",
+    "memory-model"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Rewriters/RefinementTransformer.cs — module refinement",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Rewriters/RefinementTransformer.cs",
+   "concepts": [
+    "modules",
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Rewriters/InductionRewriter.cs — automatic induction",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Rewriters/InductionRewriter.cs",
+   "concepts": [
+    "verification",
+    "recursion"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Backends/SinglePassCodeGenerator/SinglePassCodeGenerator.cs — shared compilation backend",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Backends/SinglePassCodeGenerator/SinglePassCodeGenerator.cs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Backends/CSharp/CsharpCodeGenerator.cs — C# backend",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Backends/CSharp/CsharpCodeGenerator.cs",
+   "concepts": [
+    "code-generation-backend",
+    "interoperability"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Backends/Java/JavaCodeGenerator.cs — Java backend",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Backends/Java/JavaCodeGenerator.cs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Backends/GoLang/GoCodeGenerator.cs — Go backend",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Backends/GoLang/GoCodeGenerator.cs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Backends/Python/PythonCodeGenerator.cs — Python backend",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyCore/Backends/Python/PythonCodeGenerator.cs",
+   "concepts": [
+    "code-generation-backend"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "Dafny standard libraries — README",
+   "url": "https://github.com/dafny-lang/dafny/blob/master/Source/DafnyStandardLibraries/README.md",
+   "concepts": [
+    "standard-library"
+   ],
+   "scope": "section",
+   "implementation": "Dafny (dafny-lang/dafny)",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef",
+   "concepts": [
+    "grammar",
+    "type-system",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Lexical and low level grammar",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-lexical-grammar",
+   "concepts": [
+    "lexical-structure",
+    "identifiers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Comments",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-comments",
+   "concepts": [
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Documentation comments",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-documentation-comments",
+   "concepts": [
+    "documentation-comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Programs and include directives",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-program",
+   "concepts": [
+    "program-structure",
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Modules",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-modules",
+   "concepts": [
+    "modules",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Importing modules",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-importing-modules",
+   "concepts": [
+    "imports"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Export sets and access control",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-export-sets",
+   "concepts": [
+    "visibility",
+    "encapsulation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Module abstraction",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-module-abstraction",
+   "concepts": [
+    "modules",
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Name resolution",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-name-resolution",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Basic types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-basic-type",
+   "concepts": [
+    "primitive-types",
+    "integers",
+    "booleans",
+    "characters"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Type parameters",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-type-parameters",
+   "concepts": [
+    "generics",
+    "variance"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Collection types (sets, multisets, sequences, maps)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-collection-types",
+   "concepts": [
+    "sets",
+    "lists",
+    "maps-dictionaries",
+    "strings"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Type synonyms, subset types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-type-definition",
+   "concepts": [
+    "type-aliases",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Newtypes",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-newtypes",
+   "concepts": [
+    "type-equivalence",
+    "refinement-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Class types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-class-types",
+   "concepts": [
+    "classes",
+    "objects",
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Trait types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-trait-types",
+   "concepts": [
+    "traits-typeclasses",
+    "inheritance",
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Array types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-array-type",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Iterator types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-iterator-types",
+   "concepts": [
+    "iterators",
+    "generators"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Arrow types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-arrow-types",
+   "concepts": [
+    "function-types",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Tuple types",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-tuple-types",
+   "concepts": [
+    "tuples"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Algebraic datatypes (inductive and coinductive)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-datatype",
+   "concepts": [
+    "algebraic-data-types",
+    "recursive-types",
+    "lazy-evaluation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Method declarations",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-method-declaration",
+   "concepts": [
+    "methods",
+    "functions",
+    "constructors"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Function declarations",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-function-declaration",
+   "concepts": [
+    "functions",
+    "purity"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Specifications",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-specifications",
+   "concepts": [
+    "verification",
+    "assertions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Method specification (requires/ensures/modifies)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-method-specification",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Loop specification (invariants, decreases)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-loop-specification",
+   "concepts": [
+    "verification",
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Statements",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-statements",
+   "concepts": [
+    "statements"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Return statement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-return-statement",
+   "concepts": [
+    "return"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Update with failure statement (:-)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-update-with-failure-statement",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Variable declaration statement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-variable-declaration-statement",
+   "concepts": [
+    "variables",
+    "destructuring"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — If statement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-if-statement",
+   "concepts": [
+    "conditionals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Match statement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-match-statement",
+   "concepts": [
+    "pattern-matching",
+    "switch-case"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — While statement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-while-statement",
+   "concepts": [
+    "loops"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — For loops",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-for-statement",
+   "concepts": [
+    "loops",
+    "ranges"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Break and continue",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-break-continue-statement",
+   "concepts": [
+    "loop-control",
+    "goto-labels"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Assert statement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-assert-statement",
+   "concepts": [
+    "assertions",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Calc statement (calculational proofs)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-calc-statement",
+   "concepts": [
+    "verification",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Expressions",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-expressions",
+   "concepts": [
+    "expressions",
+    "operators",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — As (conversion) and is (type test) expressions",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-as-is-expression",
+   "concepts": [
+    "type-conversion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Lambda expressions",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-lambda-expression",
+   "concepts": [
+    "closures",
+    "higher-order-functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Literal expressions",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-literal-expression",
+   "concepts": [
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Sequence display and comprehension",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-seq-comprehension",
+   "concepts": [
+    "comprehensions",
+    "lists"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Refinement",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-module-refinement",
+   "concepts": [
+    "modules",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Attributes",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-attributes",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Type inference",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-type-inference",
+   "concepts": [
+    "type-inference"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Well-founded functions and extreme predicates",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-extreme",
+   "concepts": [
+    "recursion",
+    "fixed-points",
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — Definite assignment",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-definite-assignment",
+   "concepts": [
+    "variables",
+    "null-optional"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Dafny Reference Manual — User's guide (CLI, compilation targets)",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-user-guide",
+   "concepts": [
+    "tooling",
+    "command-line"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Dafny Reference Manual — Dafny grammar",
+   "url": "https://dafny.org/latest/DafnyRef/DafnyRef#sec-grammar-details",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Dafny: An Automatic Program Verifier for Functional Correctness (LPAR-16)",
+   "url": "https://leino.science/papers/krml203.pdf",
+   "concepts": [
+    "design-rationale",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "K. Rustan M. Leino"
+   ],
+   "year": 2010,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Dafny compilation — how Dafny is encoded in Boogie",
+   "url": "https://dafny.org/latest/Compilation/Boogie",
+   "concepts": [
+    "verification",
+    "intermediate-representation"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Dafny compilation — auto-initialization of types",
+   "url": "https://dafny.org/latest/Compilation/AutoInitialization",
+   "concepts": [
+    "variables",
+    "type-system"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "design-document",
+   "title": "Dafny integration with JavaScript",
+   "url": "https://dafny.org/latest/DafnyRef/integration-js/IntegrationJS",
+   "concepts": [
+    "ffi",
+    "interoperability"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Dafny error catalog",
+   "url": "https://dafny.org/latest/HowToFAQ/Errors",
+   "concepts": [
+    "error-handling",
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny: A Guide",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide",
+   "concepts": [
+    "hello-world",
+    "verification"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny — Pre- and postconditions",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide#pre--and-postconditions",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny — Functions",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide#functions",
+   "concepts": [
+    "functions"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny — Loop invariants",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide#loop-invariants",
+   "concepts": [
+    "loops",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny — Arrays",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide#arrays",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny — Quantifiers",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide#quantifiers",
+   "concepts": [
+    "logic-foundations"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Getting Started with Dafny — Framing",
+   "url": "https://dafny.org/latest/OnlineTutorial/guide#framing",
+   "concepts": [
+    "memory-model",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dafny tutorial — Lemmas and induction",
+   "url": "https://dafny.org/latest/OnlineTutorial/Lemmas",
+   "concepts": [
+    "verification",
+    "recursion"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dafny tutorial — Modules",
+   "url": "https://dafny.org/latest/OnlineTutorial/Modules",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dafny tutorial — Sequences",
+   "url": "https://dafny.org/latest/OnlineTutorial/Sequences",
+   "concepts": [
+    "lists"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dafny tutorial — Sets",
+   "url": "https://dafny.org/latest/OnlineTutorial/Sets",
+   "concepts": [
+    "sets"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dafny tutorial — Termination",
+   "url": "https://dafny.org/latest/OnlineTutorial/Termination",
+   "concepts": [
+    "recursion",
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Dafny tutorial — Value types",
+   "url": "https://dafny.org/latest/OnlineTutorial/ValueTypes",
+   "concepts": [
+    "value-reference-semantics",
+    "maps-dictionaries"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Dafny quick reference",
+   "url": "https://dafny.org/latest/QuickReference",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Dafny cheat sheet (PDF)",
+   "url": "https://dafny.org/latest/DafnyCheatsheet.pdf",
+   "scope": "whole",
+   "authority": "official",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Dafny style guide",
+   "url": "https://dafny.org/latest/StyleGuide/Style-Guide",
+   "concepts": [
+    "style-conventions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Program Proofs (Leino, MIT Press 2023) — companion site",
+   "url": "https://program-proofs.com/",
+   "concepts": [
+    "verification"
+   ],
+   "scope": "section",
+   "authority": "designer",
+   "authors": [
+    "K. Rustan M. Leino"
+   ],
+   "year": 2023,
+   "format": "html",
+   "access": "partially-open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Dafny blog",
+   "url": "https://dafny.org/blog/",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Dafny — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dafny",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "Dafny — PLDB",
+   "url": "https://pldb.io/concepts/dafny.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
