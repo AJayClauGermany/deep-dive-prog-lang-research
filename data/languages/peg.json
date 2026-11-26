@@ -1,0 +1,392 @@
+{
+ "id": "peg",
+ "name": "Parsing expression grammars",
+ "aliases": [
+  "PEG"
+ ],
+ "categories": [
+  "grammar-notation",
+  "theoretical-model"
+ ],
+ "paradigms": [
+  "declarative",
+  "recognition-based"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 2004,
+ "designers": [
+  "Bryan Ford"
+ ],
+ "summary": "Recognition-based grammar formalism with ordered choice (/), greedy repetition and syntactic predicates (&, !); unambiguous by construction and parsable in linear time by packrat memoisation. Used by CPython, Zig, LPeg, pest and Peggy.",
+ "status": "active",
+ "defined_by": [
+  "academic-paper"
+ ],
+ "influenced_by": [
+  "ebnf",
+  "bnf"
+ ],
+ "related": [
+  {
+   "id": "ebnf",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Defined by Ford's POPL 2004 paper; PEP 617 documents the dialect used by CPython.",
+  "0": "Many generators with their own concrete syntax (pegen, LPeg, pest, Peggy)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Bryan Ford: Parsing Expression Grammars: A Recognition-Based Syntactic Foundation (POPL 2004)",
+   "url": "https://bford.info/pub/lang/peg.pdf",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "parser"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Bryan Ford"
+   ],
+   "year": 2004,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Bryan Ford: Packrat Parsing: Simple, Powerful, Lazy, Linear Time (ICFP 2002)",
+   "url": "https://bford.info/pub/lang/packrat-icfp02.pdf",
+   "concepts": [
+    "parser",
+    "complexity",
+    "lazy-evaluation"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Bryan Ford"
+   ],
+   "year": 2002,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Bryan Ford: Packrat Parsing: a Practical Linear-Time Algorithm with Backtracking (MS thesis 2002)",
+   "url": "https://bford.info/pub/lang/thesis.pdf",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Bryan Ford"
+   ],
+   "year": 2002,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "bibliography",
+   "title": "The Packrat Parsing and PEG page (Bryan Ford)",
+   "url": "https://bford.info/packrat/",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Roberto Ierusalimschy: A Text Pattern-Matching Tool based on Parsing Expression Grammars (LPeg)",
+   "url": "https://www.inf.puc-rio.br/~roberto/docs/peg.pdf",
+   "concepts": [
+    "pattern-matching",
+    "virtual-machine"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Roberto Ierusalimschy"
+   ],
+   "year": 2009,
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 617 — New PEG parser for CPython",
+   "url": "https://peps.python.org/pep-0617/",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Guido van Rossum",
+    "Pablo Galindo",
+    "Lysandros Nikolaou"
+   ],
+   "year": 2020,
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 617 — Background on PEG parsers",
+   "url": "https://peps.python.org/pep-0617/#background-on-peg-parsers",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 617 — Left recursion",
+   "url": "https://peps.python.org/pep-0617/#left-recursion",
+   "concepts": [
+    "recursion",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 617 — Grammar expressions (&e, !e lookahead, ~ cut)",
+   "url": "https://peps.python.org/pep-0617/#grammar-expressions",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal",
+   "title": "PEP 617 — Grammar actions",
+   "url": "https://peps.python.org/pep-0617/#grammar-actions",
+   "concepts": [
+    "ast"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "CPython Grammar/python.gram — Python's PEG grammar",
+   "url": "https://github.com/python/cpython/blob/main/Grammar/python.gram",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "CPython pegen",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython pegen parser_generator.py",
+   "url": "https://github.com/python/cpython/blob/main/Tools/peg_generator/pegen/parser_generator.py",
+   "concepts": [
+    "code-generation",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "CPython pegen",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "CPython pegen c_generator.py — emits the C packrat parser",
+   "url": "https://github.com/python/cpython/blob/main/Tools/peg_generator/pegen/c_generator.py",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "CPython pegen",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LPeg lpvm.c — parsing machine",
+   "url": "https://github.com/roberto-ieru/LPeg/blob/master/lpvm.c",
+   "concepts": [
+    "virtual-machine"
+   ],
+   "scope": "section",
+   "implementation": "LPeg",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "LPeg lpcode.c — pattern compiler",
+   "url": "https://github.com/roberto-ieru/LPeg/blob/master/lpcode.c",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "LPeg",
+   "authority": "designer",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "LPeg manual (PUC-Rio)",
+   "url": "https://www.inf.puc-rio.br/~roberto/lpeg/",
+   "concepts": [
+    "pattern-matching"
+   ],
+   "scope": "whole",
+   "authority": "designer",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "pest — meta/src/grammar.pest (pest grammar of PEG)",
+   "url": "https://github.com/pest-parser/pest/blob/master/meta/src/grammar.pest",
+   "concepts": [
+    "grammar",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "pest (Rust)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "pest book (Rust PEG parser generator)",
+   "url": "https://pest.rs/book/",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Peggy — src/parser.pegjs (Peggy grammar in itself)",
+   "url": "https://github.com/peggyjs/peggy/blob/main/src/parser.pegjs",
+   "concepts": [
+    "grammar",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "Peggy (JS)",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Peggy documentation — Grammar Syntax and Semantics",
+   "url": "https://peggyjs.org/documentation.html#grammar-syntax-and-semantics",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Peggy documentation — Parsing Expression Types",
+   "url": "https://peggyjs.org/documentation.html#grammar-syntax-and-semantics-parsing-expression-types",
+   "concepts": [
+    "grammar",
+    "operators"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Zig Language Reference — Grammar (PEG)",
+   "url": "https://ziglang.org/documentation/master/#Grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Parsing expression grammar",
+   "url": "https://en.wikipedia.org/wiki/Parsing_expression_grammar",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: PEG",
+   "url": "https://pldb.io/concepts/peg.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

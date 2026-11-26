@@ -1,0 +1,496 @@
+{
+ "id": "yacc",
+ "name": "Yacc / Bison grammar language",
+ "aliases": [
+  "Yacc",
+  "Bison",
+  "byacc"
+ ],
+ "categories": [
+  "grammar-notation",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1975,
+ "designers": [
+  "Stephen C. Johnson",
+  "Robert Corbett",
+  "Charles Donnelly",
+  "Richard Stallman"
+ ],
+ "summary": "Input language of the Yacc LALR(1) parser generator and its successors (Bison, byacc, goyacc): declarations with %token/%left/%right precedence, BNF-style rules with embedded C actions, and a user-code section.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "reference-implementation"
+ ],
+ "standards": [
+  "POSIX.1-2024 yacc"
+ ],
+ "file_extensions": [
+  ".y",
+  ".yy"
+ ],
+ "homepage": "https://www.gnu.org/software/bison/",
+ "influenced_by": [
+  "bnf"
+ ],
+ "related": [
+  {
+   "id": "lex",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "POSIX specifies yacc; Bison extends it (GLR, %define, C++/Java skeletons) and its manual is the de facto reference. gnu.org could not be reached from the sandbox (links reported error); bison.texi source is linked as a fallback."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX.1-2024 yacc utility",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "version": "POSIX.1-2024",
+   "year": 2024,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Lexical Structure of the Grammar",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_02",
+   "concepts": [
+    "lexical-structure",
+    "comments"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Declarations Section",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_03",
+   "concepts": [
+    "data-definition",
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Grammar Rules in yacc",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_04",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Input Grammar (yacc grammar in yacc)",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_06",
+   "concepts": [
+    "grammar",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Conflicts",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_07",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Error Handling",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_08",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Interface to the Lexical Analyzer",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_13_09",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "POSIX yacc — Rationale",
+   "url": "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/yacc.html#tag_20_154_18",
+   "concepts": [
+    "design-rationale"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Stephen C. Johnson: Yacc — Yet Another Compiler-Compiler (1975)",
+   "url": "https://www.cs.utexas.edu/~novak/yaccpaper.htm",
+   "concepts": [
+    "parser",
+    "grammar",
+    "history"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Stephen C. Johnson"
+   ],
+   "year": 1975,
+   "authority": "designer",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Bison manual — The Bison Grammar File",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/Grammar-File.html",
+   "concepts": [
+    "grammar",
+    "program-structure"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Bison manual — Operator Precedence",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/Precedence.html",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Bison manual — The Bison Parser Algorithm",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/Algorithm.html",
+   "concepts": [
+    "parser",
+    "automata"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Bison manual — Error Recovery",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/Error-Recovery.html",
+   "concepts": [
+    "error-handling"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Bison manual — Writing GLR Parsers",
+   "url": "https://www.gnu.org/software/bison/manual/html_node/GLR-Parsers.html",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "GNU Bison manual source (doc/bison.texi)",
+   "url": "https://github.com/akimd/bison/blob/master/doc/bison.texi",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "implementation": "GNU Bison",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "GNU Bison (GitHub mirror)",
+   "url": "https://github.com/akimd/bison",
+   "concepts": [
+    "parser",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Bison src/parse-gram.y — grammar of Bison grammar files",
+   "url": "https://github.com/akimd/bison/blob/master/src/parse-gram.y",
+   "concepts": [
+    "grammar",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bison src/scan-gram.l — grammar-file scanner",
+   "url": "https://github.com/akimd/bison/blob/master/src/scan-gram.l",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bison src/lalr.c — LALR(1) lookahead computation",
+   "url": "https://github.com/akimd/bison/blob/master/src/lalr.c",
+   "concepts": [
+    "automata",
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bison src/ielr.c — IELR(1)",
+   "url": "https://github.com/akimd/bison/blob/master/src/ielr.c",
+   "concepts": [
+    "automata"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bison src/conflicts.c — conflict resolution",
+   "url": "https://github.com/akimd/bison/blob/master/src/conflicts.c",
+   "concepts": [
+    "operator-precedence"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Bison data/skeletons/yacc.c — C parser skeleton",
+   "url": "https://github.com/akimd/bison/blob/master/data/skeletons/yacc.c",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "Bison tests/testsuite.at",
+   "url": "https://github.com/akimd/bison/blob/master/tests/testsuite.at",
+   "concepts": [
+    "testing"
+   ],
+   "scope": "section",
+   "implementation": "GNU Bison",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Berkeley yacc (byacc) snapshots",
+   "url": "https://github.com/ThomasDickey/byacc-snapshots",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "whole",
+   "implementation": "byacc",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "OpenBSD yacc reader.c",
+   "url": "https://github.com/openbsd/src/blob/master/usr.bin/yacc/reader.c",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "OpenBSD yacc",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "goyacc — Go port of yacc (yacc.go)",
+   "url": "https://github.com/golang/tools/blob/master/cmd/goyacc/yacc.go",
+   "concepts": [
+    "code-generation"
+   ],
+   "scope": "section",
+   "implementation": "goyacc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Berkeley Yacc manual page (invisible-island)",
+   "url": "https://invisible-island.net/byacc/byacc.html",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "implementation": "byacc",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Yacc",
+   "url": "https://en.wikipedia.org/wiki/Yacc",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: GNU Bison",
+   "url": "https://en.wikipedia.org/wiki/GNU_Bison",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: Yacc",
+   "url": "https://pldb.io/concepts/yacc.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: Bison",
+   "url": "https://pldb.io/concepts/bison.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}
