@@ -1,0 +1,461 @@
+{
+ "id": "fidl",
+ "name": "Fuchsia FIDL",
+ "aliases": [
+  "FIDL",
+  "Fuchsia Interface Definition Language"
+ ],
+ "categories": [
+  "schema-idl"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static",
+  "nominal"
+ ],
+ "first_appeared": 2016,
+ "designers": [
+  "Google Fuchsia team"
+ ],
+ "summary": "Interface definition language of the Fuchsia OS for IPC over Zircon channels: libraries of structs, tables, unions, bits, enums and protocols with strict/flexible evolution rules, a defined wire format and API versioning.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".fidl"
+ ],
+ "homepage": "https://fuchsia.dev/fuchsia-src/development/languages/fidl",
+ "level_notes": {
+  "0": "fidlc lives in the Fuchsia monorepo on fuchsia.googlesource.com.",
+  "3": "No dedicated encyclopedia article."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language specification",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language",
+   "concepts": [
+    "type-system"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "FIDL grammar",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "FIDL wire format specification",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/wire-format",
+   "concepts": [
+    "encoding-wire-format",
+    "serialization"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL attributes",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/attributes",
+   "concepts": [
+    "annotations-attributes"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL versioning (@available)",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/versioning",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Comments",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#comments",
+   "concepts": [
+    "comments",
+    "documentation-comments"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Keywords",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#keywords",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Identifiers",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#identifiers",
+   "concepts": [
+    "identifiers"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Literals",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#literals",
+   "concepts": [
+    "literals"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Constants",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#constants",
+   "concepts": [
+    "constants"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Libraries",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#libraries",
+   "concepts": [
+    "modules"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Primitives",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#primitives",
+   "concepts": [
+    "primitive-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Bits",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#bits",
+   "concepts": [
+    "enums"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Enums",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#enums",
+   "concepts": [
+    "enums"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Arrays",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#arrays",
+   "concepts": [
+    "arrays"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Strings",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#strings",
+   "concepts": [
+    "strings"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Vectors",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#vectors",
+   "concepts": [
+    "lists"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Handles",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#handles",
+   "concepts": [
+    "pointers-references"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Structs",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#structs",
+   "concepts": [
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Tables",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#tables",
+   "concepts": [
+    "schema-evolution",
+    "records-structs"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Unions",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#unions",
+   "concepts": [
+    "algebraic-data-types"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Strict vs. flexible",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#strict-vs-flexible",
+   "concepts": [
+    "schema-evolution"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Protocols",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#protocols",
+   "concepts": [
+    "interfaces-protocols"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FIDL language — Protocol composition",
+   "url": "https://fuchsia.dev/fuchsia-src/reference/fidl/language/language#protocol-composition",
+   "concepts": [
+    "inheritance"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "proposal-index",
+   "title": "Fuchsia RFCs (incl. FIDL language changes)",
+   "url": "https://fuchsia.dev/fuchsia-src/contribute/governance/rfcs",
+   "concepts": [
+    "language-evolution"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "FIDL API rubric",
+   "url": "https://fuchsia.dev/fuchsia-src/development/api/fidl",
+   "concepts": [
+    "style-conventions"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "FIDL ABI and source compatibility guide",
+   "url": "https://fuchsia.dev/fuchsia-src/development/languages/fidl/guides/compatibility",
+   "concepts": [
+    "versioning-compatibility"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "FIDL overview and tutorials",
+   "url": "https://fuchsia.dev/fuchsia-src/development/languages/fidl",
+   "concepts": [
+    "hello-world"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fidlc README",
+   "url": "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/tools/fidl/fidlc/README.md",
+   "concepts": [
+    "compiler-architecture"
+   ],
+   "scope": "section",
+   "implementation": "fidlc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fidlc lexer.cc",
+   "url": "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/tools/fidl/fidlc/src/lexer.cc",
+   "concepts": [
+    "lexer"
+   ],
+   "scope": "section",
+   "implementation": "fidlc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fidlc parser.cc",
+   "url": "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/tools/fidl/fidlc/src/parser.cc",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "fidlc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "fidlc compiler.cc",
+   "url": "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/tools/fidl/fidlc/src/compiler.cc",
+   "concepts": [
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "fidlc",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  }
+ ]
+}

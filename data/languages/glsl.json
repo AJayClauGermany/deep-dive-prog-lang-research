@@ -1,2091 +1,2092 @@
 {
- "id": "glsl",
- "name": "GLSL",
- "aliases": [
-  "OpenGL Shading Language",
-  "GLslang",
-  "GLSL ES"
- ],
- "categories": [
-  "shader-gpu",
-  "domain-specific"
- ],
- "paradigms": [
-  "imperative",
-  "procedural",
-  "data-parallel"
- ],
- "typing": [
-  "static",
-  "strong",
-  "manifest"
- ],
- "first_appeared": 2004,
- "designers": [
-  "John Kessenich",
-  "Dave Baldwin",
-  "Randi Rost (3Dlabs)",
-  "OpenGL ARB / Khronos Group"
- ],
- "summary": "C-like shading language for programmable stages of the OpenGL graphics pipeline (vertex, tessellation, geometry, fragment, compute), introduced with OpenGL 2.0 and maintained by Khronos; GLSL ES is the OpenGL ES/WebGL dialect, and GLSL with GL_KHR_vulkan_glsl compiles to SPIR-V for Vulkan. Provides vector/matrix types, opaque sampler/image types, storage and layout qualifiers and a large built-in function library.",
- "status": "active",
- "defined_by": [
-  "consortium-standard"
- ],
- "standards": [
-  "OpenGL Shading Language 4.60 (Khronos)",
-  "OpenGL ES Shading Language 3.20 (Khronos)",
-  "GL_KHR_vulkan_glsl"
- ],
- "file_extensions": [
-  ".glsl",
-  ".vert",
-  ".frag",
-  ".geom",
-  ".tesc",
-  ".tese",
-  ".comp"
- ],
- "homepage": "https://www.khronos.org/opengl/",
- "influenced_by": [
-  "c",
-  "renderman-sl",
-  "cg-nvidia"
- ],
- "related": [
-  {
-   "id": "hlsl",
-   "relation": "family"
-  },
-  {
-   "id": "wgsl",
-   "relation": "family"
-  },
-  {
-   "id": "spir-v",
-   "relation": "compiles-to"
-  },
-  {
-   "id": "cg-nvidia",
-   "relation": "family"
-  },
-  {
-   "id": "metal-shading-language",
-   "relation": "family"
-  }
- ],
- "level_notes": {
-  "1": "The Khronos specifications (GLSL 4.60, GLSL ES 3.20) are free HTML/PDF in the Khronos registry; it sits behind a bot challenge so the link checker reports these URLs as blocked. Section anchors were taken from the explicit [[ids]] in the AsciiDoc spec source (KhronosGroup/GLSL), which is also linked directly.",
-  "0": "glslang is the Khronos reference front end (GLSL/ESSL to SPIR-V). Other implementations: Mesa GLSL compiler, ANGLE shader translator, naga (wgpu) GLSL front/back end, SPIRV-Cross (SPIR-V to GLSL), shaderc.",
-  "2": "Many free tutorials (LearnOpenGL, The Book of Shaders, WebGL2 Fundamentals, MDN); the OpenGL Wiki pages are also behind the Khronos bot challenge."
- },
- "resources": [
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "The OpenGL Shading Language, version 4.60 (Khronos registry, HTML)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html",
-   "concepts": [
-    "standardization"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60",
-   "authors": [
+  "id": "glsl",
+  "name": "GLSL",
+  "aliases": [
+    "OpenGL Shading Language",
+    "GLslang",
+    "GLSL ES"
+  ],
+  "categories": [
+    "shader-gpu",
+    "domain-specific"
+  ],
+  "paradigms": [
+    "imperative",
+    "procedural",
+    "data-parallel"
+  ],
+  "typing": [
+    "static",
+    "strong",
+    "manifest"
+  ],
+  "first_appeared": 2004,
+  "designers": [
     "John Kessenich",
     "Dave Baldwin",
-    "Randi Rost"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Introduction",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#introduction",
-   "concepts": [
-    "history"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Changes from previous versions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#changes",
-   "concepts": [
-    "versioning-compatibility",
-    "language-evolution"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Error handling",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#error-handling",
-   "concepts": [
-    "error-handling"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Deprecation",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#deprecation",
-   "concepts": [
-    "versioning-compatibility"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Compatibility profile",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#compatibility",
-   "concepts": [
-    "versioning-compatibility"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Overview of shading (processors)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#overview-of-opengl-shading",
-   "concepts": [
-    "shader-pipeline",
-    "program-structure"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Vertex processor",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#vertex-processor",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Fragment processor",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#fragment-processor",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Compute processor",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#compute-processor",
-   "concepts": [
-    "shader-pipeline",
-    "parallelism"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Basics",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#basics",
-   "concepts": [
-    "lexical-structure"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Source strings",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#source-strings",
-   "concepts": [
-    "source-encoding"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Version declaration (#version)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#version-declaration",
-   "concepts": [
-    "versioning-compatibility",
-    "preprocessor"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Preprocessor",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#preprocessor",
-   "concepts": [
-    "preprocessor",
-    "macros"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Comments",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#comments",
-   "concepts": [
-    "comments"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Tokens",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#tokens",
-   "concepts": [
-    "lexical-structure"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Keywords",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#keywords",
-   "concepts": [
-    "keywords"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Identifiers",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#identifiers",
-   "concepts": [
-    "identifiers"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Dynamically uniform expressions and uniform control flow",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#dynamically-uniform-expressions-and-uniform-control-flow",
-   "concepts": [
-    "shader-pipeline",
-    "parallelism"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Logical phases of compilation",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#logical-phases-of-compilation",
-   "concepts": [
-    "separate-compilation",
-    "compiler-architecture"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Variables and types",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#variables-and-types",
-   "concepts": [
-    "variables",
-    "type-system"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Basic types",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#basic-types",
-   "concepts": [
-    "primitive-types"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Booleans",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#booleans",
-   "concepts": [
-    "booleans"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Integers",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#integers",
-   "concepts": [
-    "integers"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Floats",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#floats",
-   "concepts": [
-    "floating-point"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Vectors",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#vectors",
-   "concepts": [
-    "arrays",
-    "primitive-types"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Matrices",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#matrices",
-   "concepts": [
-    "arrays"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Opaque types (samplers, images, atomic counters)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#opaque-types",
-   "concepts": [
-    "primitive-types",
-    "pointers-references"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Structures",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#structures",
-   "concepts": [
-    "records-structs"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Arrays",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#arrays",
-   "concepts": [
-    "arrays"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Implicit conversions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#implicit-conversions",
-   "concepts": [
-    "type-conversion"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Initializers",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#initializers",
-   "concepts": [
-    "variables",
-    "literals"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Scoping",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#scoping",
-   "concepts": [
-    "scope"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Storage qualifiers",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#storage-qualifiers",
-   "concepts": [
-    "storage-duration",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — const qualifier",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#constant-qualifier",
-   "concepts": [
-    "constants"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Constant expressions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#constant-expressions",
-   "concepts": [
-    "compile-time-evaluation",
-    "constants"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Uniform variables",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#uniform-variables",
-   "concepts": [
-    "shader-pipeline",
-    "variables"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Buffer variables (SSBO)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#buffer-variables",
-   "concepts": [
-    "memory-model",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Shared variables (compute)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shared-variables",
-   "concepts": [
-    "parallelism",
-    "synchronization"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Interface blocks",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#interface-blocks",
-   "concepts": [
-    "records-structs",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Layout qualifiers",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#layout-qualifiers",
-   "concepts": [
-    "annotations-attributes",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Operators and expressions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#operators-and-expressions",
-   "concepts": [
-    "operators",
-    "expressions",
-    "operator-precedence"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Function calls",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-calls",
-   "concepts": [
-    "functions"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Constructors",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#constructors",
-   "concepts": [
-    "constructors",
-    "type-conversion"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Vector and matrix operations",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#vector-and-matrix-operations",
-   "concepts": [
-    "operators",
-    "arrays"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Out-of-bounds accesses",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#out-of-bounds-accesses",
-   "concepts": [
-    "undefined-behavior"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Evaluation of expressions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#evaluation-of-expressions",
-   "concepts": [
-    "evaluation-order",
-    "floating-point"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Statements and structure",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#statements-and-structure",
-   "concepts": [
-    "statements",
-    "program-structure"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Function definitions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-definitions",
-   "concepts": [
-    "functions",
-    "overloading"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Function calling conventions (in/out/inout)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-calling-conventions",
-   "concepts": [
-    "parameters-arguments",
-    "value-reference-semantics"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Subroutines",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#subroutines",
-   "concepts": [
-    "function-types",
-    "polymorphism"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Selection (if, switch)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#selection",
-   "concepts": [
-    "conditionals",
-    "switch-case"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Iteration (for, while, do)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#iteration",
-   "concepts": [
-    "loops"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Jumps (break, continue, return, discard)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#jumps",
-   "concepts": [
-    "loop-control",
-    "return"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Built-in variables",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#built-in-variables",
-   "concepts": [
-    "shader-pipeline",
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Built-in constants",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#built-in-constants",
-   "concepts": [
-    "constants",
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Built-in functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#built-in-functions",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Common functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#common-functions",
-   "concepts": [
-    "standard-library",
-    "floating-point"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Geometric functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#geometric-functions",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Texture functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#texture-functions",
-   "concepts": [
-    "standard-library",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Atomic memory functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#atomic-memory-functions",
-   "concepts": [
-    "atomics-memory-ordering"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Image functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#image-functions",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Derivative functions",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#derivative-functions",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Shader invocation control (barrier)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shader-invocation-control-functions",
-   "concepts": [
-    "synchronization"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Shader memory control (memoryBarrier)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shader-memory-control-functions",
-   "concepts": [
-    "atomics-memory-ordering",
-    "memory-model"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Memory qualifiers (coherent, volatile, restrict)",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#memory-qualifiers",
-   "concepts": [
-    "memory-model",
-    "atomics-memory-ordering"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — precise qualifier",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#the-precise-qualifier",
-   "concepts": [
-    "floating-point",
-    "optimization"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Specialization-constant qualifier",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#specialization-constant-qualifier",
-   "concepts": [
-    "constants",
-    "compile-time-evaluation"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Shading language grammar",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shading-language-grammar",
-   "concepts": [
-    "grammar"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL 4.60 specification — Non-normative SPIR-V mappings",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#spirvmappings",
-   "concepts": [
-    "code-generation-backend",
-    "interoperability"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "4.60"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "The OpenGL ES Shading Language, version 3.20 (Khronos registry, HTML)",
-   "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html",
-   "concepts": [
-    "standardization",
-    "versioning-compatibility"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "ES 3.20"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL ES 3.20 specification — Shader interface matching between stages",
-   "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#shader-interface-matching",
-   "concepts": [
-    "shader-pipeline",
-    "type-equivalence"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "ES 3.20"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL ES 3.20 specification — Precision qualifiers",
-   "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#precision-and-precision-qualifiers",
-   "concepts": [
-    "floating-point",
-    "type-annotations"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "ES 3.20"
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "The OpenGL Shading Language, version 1.10 (3Dlabs/ARB, 2004) — first GLSL specification",
-   "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.1.10.pdf",
-   "concepts": [
-    "history",
-    "design-rationale"
-   ],
-   "scope": "whole",
-   "authority": "designer",
-   "format": "pdf",
-   "access": "open",
-   "authors": [
-    "John Kessenich",
-    "Dave Baldwin",
-    "Randi Rost"
-   ],
-   "year": 2004,
-   "version": "1.10"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "The OpenGL ES Shading Language, version 1.00 (WebGL 1 dialect)",
-   "url": "https://registry.khronos.org/OpenGL/specs/es/2.0/GLSL_ES_Specification_1.00.pdf",
-   "concepts": [
-    "versioning-compatibility"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "pdf",
-   "access": "open",
-   "year": 2009,
-   "version": "ES 1.00"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "KhronosGroup/GLSL — AsciiDoc source of the GLSL and ESSL specifications and extensions",
-   "url": "https://github.com/KhronosGroup/GLSL/blob/main/README.adoc",
-   "concepts": [
-    "language-evolution"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "grammar",
-   "title": "GLSL specification source — chapters/grammar.adoc (shading language grammar)",
-   "url": "https://github.com/KhronosGroup/GLSL/blob/main/chapters/grammar.adoc",
-   "concepts": [
-    "grammar"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "GLSL specification source — chapters/builtinfunctions.adoc",
-   "url": "https://github.com/KhronosGroup/GLSL/blob/main/chapters/builtinfunctions.adoc",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "proposal",
-   "title": "GL_KHR_vulkan_glsl — GLSL for Vulkan (SPIR-V generation, descriptor sets, push constants)",
-   "url": "https://github.com/KhronosGroup/GLSL/blob/main/extensions/khr/GL_KHR_vulkan_glsl.txt",
-   "concepts": [
-    "versioning-compatibility",
-    "interoperability",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "OpenGL 4 Reference Pages — GLSL built-in functions and variables",
-   "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "OpenGL 4 Reference Pages — texture()",
-   "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/texture.xhtml",
-   "concepts": [
-    "standard-library",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "OpenGL 4 Reference Pages — mix()",
-   "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/mix.xhtml",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "OpenGL 4 Reference Pages — barrier()",
-   "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/barrier.xhtml",
-   "concepts": [
-    "synchronization"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "library-reference",
-   "title": "OpenGL 4 Reference Pages — gl_FragCoord",
-   "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/gl_FragCoord.xhtml",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "reference-implementation",
-   "title": "glslang — Khronos reference GLSL/ESSL front end and SPIR-V generator",
-   "url": "https://github.com/KhronosGroup/glslang",
-   "concepts": [
-    "compiler-architecture"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "repository",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang Scan.cpp — scanner and keyword table",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Scan.cpp",
-   "concepts": [
-    "lexer",
-    "keywords"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang preprocessor/Pp.cpp — #define/#if/#extension/#version handling",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/preprocessor/Pp.cpp",
-   "concepts": [
-    "preprocessor",
-    "macros"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang glslang.y — bison grammar of GLSL",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/glslang.y",
-   "concepts": [
-    "grammar",
-    "parser"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang ParseHelper.cpp — semantic checks: qualifiers, layouts, constructors, overload resolution",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/ParseHelper.cpp",
-   "concepts": [
-    "semantic-analysis",
-    "overloading",
-    "constructors"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang Intermediate.cpp — AST building, implicit conversions and promotions",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Intermediate.cpp",
-   "concepts": [
-    "ast",
-    "type-conversion"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang Initialize.cpp — declarations of all built-in functions and variables",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Initialize.cpp",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang Versions.cpp — version/profile and extension gating",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Versions.cpp",
-   "concepts": [
-    "versioning-compatibility"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang Constant.cpp — constant folding",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Constant.cpp",
-   "concepts": [
-    "compile-time-evaluation",
-    "optimization"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang SymbolTable.cpp — scoped symbol tables",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/SymbolTable.cpp",
-   "concepts": [
-    "scope"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang linkValidate.cpp — cross-stage/link-time validation",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/linkValidate.cpp",
-   "concepts": [
-    "separate-compilation",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang iomapper.cpp — mapping of uniforms/IO to bindings and locations",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/iomapper.cpp",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang reflection.cpp — shader reflection",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/reflection.cpp",
-   "concepts": [
-    "reflection"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "glslang SPIRV/GlslangToSpv.cpp — AST to SPIR-V code generation",
-   "url": "https://github.com/KhronosGroup/glslang/blob/main/SPIRV/GlslangToSpv.cpp",
-   "concepts": [
-    "code-generation-backend",
-    "intermediate-representation"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "conformance-tests",
-   "title": "glslang Test directory — shader test corpus with expected outputs",
-   "url": "https://github.com/KhronosGroup/glslang/tree/main/Test",
-   "concepts": [
-    "testing"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "directory",
-   "access": "open",
-   "implementation": "glslang"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "ANGLE shader translator — glslang.y (GLSL ES grammar)",
-   "url": "https://github.com/google/angle/blob/main/src/compiler/translator/glslang.y",
-   "concepts": [
-    "grammar",
-    "parser"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "ANGLE"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "ANGLE shader translator — glslang.l (GLSL ES lexer)",
-   "url": "https://github.com/google/angle/blob/main/src/compiler/translator/glslang.l",
-   "concepts": [
-    "lexer"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "ANGLE"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "naga (wgpu) — GLSL front end parser",
-   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/glsl/parser.rs",
-   "concepts": [
-    "parser"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "naga"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "naga (wgpu) — GLSL back end (IR to GLSL)",
-   "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/back/glsl/mod.rs",
-   "concepts": [
-    "code-generation-backend"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "naga"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "SPIRV-Cross — spirv_glsl.cpp (SPIR-V to GLSL decompiler)",
-   "url": "https://github.com/KhronosGroup/SPIRV-Cross/blob/main/spirv_glsl.cpp",
-   "concepts": [
-    "code-generation-backend",
-    "interoperability"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "SPIRV-Cross"
-  },
-  {
-   "level": 0,
-   "kind": "tooling-source",
-   "title": "shaderc — Google GLSL/HLSL to SPIR-V compiler tools and library",
-   "url": "https://github.com/google/shaderc",
-   "concepts": [
-    "tooling"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "implementation": "shaderc"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "Mesa — GLSL compiler parser (glsl_parser.yy)",
-   "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/src/compiler/glsl/glsl_parser.yy",
-   "concepts": [
-    "parser",
-    "grammar"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "implementation": "Mesa",
-   "notes": "gitlab.freedesktop.org may require sign-in for automated clients"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "Mesa — GLSL AST to HIR translation (ast_to_hir.cpp)",
-   "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/src/compiler/glsl/ast_to_hir.cpp",
-   "concepts": [
-    "semantic-analysis",
-    "intermediate-representation"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "repository",
-   "access": "open",
-   "implementation": "Mesa",
-   "notes": "gitlab.freedesktop.org may require sign-in for automated clients"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LearnOpenGL — Shaders (GLSL introduction)",
-   "url": "https://learnopengl.com/Getting-started/Shaders",
-   "concepts": [
-    "hello-world",
-    "primitive-types",
-    "shader-pipeline"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LearnOpenGL — Hello Triangle (first vertex and fragment shader)",
-   "url": "https://learnopengl.com/Getting-started/Hello-Triangle",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LearnOpenGL — Advanced GLSL (built-ins, interface blocks, UBOs)",
-   "url": "https://learnopengl.com/Advanced-OpenGL/Advanced-GLSL",
-   "concepts": [
-    "shader-pipeline",
-    "records-structs"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders (Gonzalez Vivo, Lowe)",
-   "url": "https://thebookofshaders.com/",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open",
-   "authors": [
-    "Patricio Gonzalez Vivo",
-    "Jen Lowe"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders — Hello World",
-   "url": "https://thebookofshaders.com/02/",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders — Uniforms",
-   "url": "https://thebookofshaders.com/03/",
-   "concepts": [
-    "shader-pipeline",
-    "variables"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders — Shaping functions",
-   "url": "https://thebookofshaders.com/05/",
-   "concepts": [
-    "functions",
-    "standard-library"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders — Colors (vec types and swizzling)",
-   "url": "https://thebookofshaders.com/06/",
-   "concepts": [
-    "primitive-types",
-    "arrays"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders — Shapes",
-   "url": "https://thebookofshaders.com/07/",
-   "concepts": [
-    "functions"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "The Book of Shaders — Noise",
-   "url": "https://thebookofshaders.com/11/",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "WebGL2 Fundamentals — WebGL Shaders and GLSL",
-   "url": "https://webgl2fundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html",
-   "concepts": [
-    "shader-pipeline",
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "MDN — GLSL shaders",
-   "url": "https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "opengl-tutorial.org — The first triangle (shaders)",
-   "url": "https://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Core Language (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Core_Language_(GLSL)",
-   "concepts": [
-    "lexical-structure",
-    "preprocessor",
-    "functions"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Data Type (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Data_Type_(GLSL)",
-   "concepts": [
-    "primitive-types",
-    "arrays",
-    "records-structs"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Type Qualifier (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Type_Qualifier_(GLSL)",
-   "concepts": [
-    "storage-duration",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Layout Qualifier (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Layout_Qualifier_(GLSL)",
-   "concepts": [
-    "annotations-attributes"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Interface Block (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Interface_Block_(GLSL)",
-   "concepts": [
-    "records-structs",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Uniform (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Uniform_(GLSL)",
-   "concepts": [
-    "variables",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Built-in Variable (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Built-in_Variable_(GLSL)",
-   "concepts": [
-    "standard-library",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Sampler (GLSL)",
-   "url": "https://wikis.khronos.org/opengl/Sampler_(GLSL)",
-   "concepts": [
-    "primitive-types"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Shader Compilation",
-   "url": "https://wikis.khronos.org/opengl/Shader_Compilation",
-   "concepts": [
-    "separate-compilation",
-    "tooling"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — GLSL: common mistakes",
-   "url": "https://wikis.khronos.org/opengl/GLSL_:_common_mistakes",
-   "concepts": [
-    "style-conventions"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Shader Storage Buffer Object",
-   "url": "https://wikis.khronos.org/opengl/Shader_Storage_Buffer_Object",
-   "concepts": [
-    "memory-model"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "OpenGL Wiki — Compute Shader",
-   "url": "https://wikis.khronos.org/opengl/Compute_Shader",
-   "concepts": [
-    "parallelism",
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "video",
-   "title": "The Art of Code — Shadertoy/GLSL tutorials (YouTube channel)",
-   "url": "https://www.youtube.com/@TheArtofCodeIsCool",
-   "scope": "whole",
-   "authority": "community",
-   "format": "video",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — OpenGL Shading Language",
-   "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language",
-   "concepts": [
-    "history"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia GLSL — Versions",
-   "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions",
-   "concepts": [
-    "versioning-compatibility"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia GLSL — Operators",
-   "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Operators",
-   "concepts": [
-    "operators"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia GLSL — Functions and control structures",
-   "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Functions_and_control_structures",
-   "concepts": [
-    "functions",
-    "conditionals",
-    "loops"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia GLSL — Compilation and execution",
-   "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Compilation_and_execution",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "section",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "PLDB — GLSL",
-   "url": "https://pldb.io/concepts/glsl.html",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "code-collection",
-   "title": "Shadertoy — community GLSL ES fragment shaders",
-   "url": "https://www.shadertoy.com/",
-   "concepts": [
-    "shader-pipeline"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "interactive",
-   "access": "open"
-  }
- ]
+    "Randi Rost (3Dlabs)",
+    "OpenGL ARB / Khronos Group"
+  ],
+  "summary": "C-like shading language for programmable stages of the OpenGL graphics pipeline (vertex, tessellation, geometry, fragment, compute), introduced with OpenGL 2.0 and maintained by Khronos; GLSL ES is the OpenGL ES/WebGL dialect, and GLSL with GL_KHR_vulkan_glsl compiles to SPIR-V for Vulkan. Provides vector/matrix types, opaque sampler/image types, storage and layout qualifiers and a large built-in function library.",
+  "status": "active",
+  "defined_by": [
+    "consortium-standard"
+  ],
+  "standards": [
+    "OpenGL Shading Language 4.60 (Khronos)",
+    "OpenGL ES Shading Language 3.20 (Khronos)",
+    "GL_KHR_vulkan_glsl"
+  ],
+  "file_extensions": [
+    ".glsl",
+    ".vert",
+    ".frag",
+    ".geom",
+    ".tesc",
+    ".tese",
+    ".comp"
+  ],
+  "homepage": "https://www.khronos.org/opengl/",
+  "influenced_by": [
+    "c",
+    "renderman-sl",
+    "cg-nvidia"
+  ],
+  "related": [
+    {
+      "id": "hlsl",
+      "relation": "family"
+    },
+    {
+      "id": "wgsl",
+      "relation": "family"
+    },
+    {
+      "id": "spir-v",
+      "relation": "compiles-to"
+    },
+    {
+      "id": "cg-nvidia",
+      "relation": "family"
+    },
+    {
+      "id": "metal-shading-language",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "The Khronos specifications (GLSL 4.60, GLSL ES 3.20) are free HTML/PDF in the Khronos registry; it sits behind a bot challenge so the link checker reports these URLs as blocked. Section anchors were taken from the explicit [[ids]] in the AsciiDoc spec source (KhronosGroup/GLSL), which is also linked directly.",
+    "0": "glslang is the Khronos reference front end (GLSL/ESSL to SPIR-V). Other implementations: Mesa GLSL compiler, ANGLE shader translator, naga (wgpu) GLSL front/back end, SPIRV-Cross (SPIR-V to GLSL), shaderc.",
+    "2": "Many free tutorials (LearnOpenGL, The Book of Shaders, WebGL2 Fundamentals, MDN).",
+    "3": "The community OpenGL Wiki (wikis.khronos.org) topic pages are filed as level-3 wiki entries; they sit behind the Khronos bot challenge."
+  },
+  "resources": [
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "The OpenGL Shading Language, version 4.60 (Khronos registry, HTML)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60",
+      "authors": [
+        "John Kessenich",
+        "Dave Baldwin",
+        "Randi Rost"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Introduction",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#introduction",
+      "concepts": [
+        "history"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Changes from previous versions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#changes",
+      "concepts": [
+        "versioning-compatibility",
+        "language-evolution"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Error handling",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#error-handling",
+      "concepts": [
+        "error-handling"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Deprecation",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#deprecation",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Compatibility profile",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#compatibility",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Overview of shading (processors)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#overview-of-opengl-shading",
+      "concepts": [
+        "shader-pipeline",
+        "program-structure"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Vertex processor",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#vertex-processor",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Fragment processor",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#fragment-processor",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Compute processor",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#compute-processor",
+      "concepts": [
+        "shader-pipeline",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Basics",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#basics",
+      "concepts": [
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Source strings",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#source-strings",
+      "concepts": [
+        "source-encoding"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Version declaration (#version)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#version-declaration",
+      "concepts": [
+        "versioning-compatibility",
+        "preprocessor"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Preprocessor",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#preprocessor",
+      "concepts": [
+        "preprocessor",
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Comments",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#comments",
+      "concepts": [
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Tokens",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#tokens",
+      "concepts": [
+        "lexical-structure"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Keywords",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#keywords",
+      "concepts": [
+        "keywords"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Identifiers",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#identifiers",
+      "concepts": [
+        "identifiers"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Dynamically uniform expressions and uniform control flow",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#dynamically-uniform-expressions-and-uniform-control-flow",
+      "concepts": [
+        "shader-pipeline",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Logical phases of compilation",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#logical-phases-of-compilation",
+      "concepts": [
+        "separate-compilation",
+        "compiler-architecture"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Variables and types",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#variables-and-types",
+      "concepts": [
+        "variables",
+        "type-system"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Basic types",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#basic-types",
+      "concepts": [
+        "primitive-types"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Booleans",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#booleans",
+      "concepts": [
+        "booleans"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Integers",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#integers",
+      "concepts": [
+        "integers"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Floats",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#floats",
+      "concepts": [
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Vectors",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#vectors",
+      "concepts": [
+        "arrays",
+        "primitive-types"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Matrices",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#matrices",
+      "concepts": [
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Opaque types (samplers, images, atomic counters)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#opaque-types",
+      "concepts": [
+        "primitive-types",
+        "pointers-references"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Structures",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#structures",
+      "concepts": [
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Arrays",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#arrays",
+      "concepts": [
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Implicit conversions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#implicit-conversions",
+      "concepts": [
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Initializers",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#initializers",
+      "concepts": [
+        "variables",
+        "literals"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Scoping",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#scoping",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Storage qualifiers",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#storage-qualifiers",
+      "concepts": [
+        "storage-duration",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — const qualifier",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#constant-qualifier",
+      "concepts": [
+        "constants"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Constant expressions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#constant-expressions",
+      "concepts": [
+        "compile-time-evaluation",
+        "constants"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Uniform variables",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#uniform-variables",
+      "concepts": [
+        "shader-pipeline",
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Buffer variables (SSBO)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#buffer-variables",
+      "concepts": [
+        "memory-model",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Shared variables (compute)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shared-variables",
+      "concepts": [
+        "parallelism",
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Interface blocks",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#interface-blocks",
+      "concepts": [
+        "records-structs",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Layout qualifiers",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#layout-qualifiers",
+      "concepts": [
+        "annotations-attributes",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Operators and expressions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#operators-and-expressions",
+      "concepts": [
+        "operators",
+        "expressions",
+        "operator-precedence"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Function calls",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-calls",
+      "concepts": [
+        "functions"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Constructors",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#constructors",
+      "concepts": [
+        "constructors",
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Vector and matrix operations",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#vector-and-matrix-operations",
+      "concepts": [
+        "operators",
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Out-of-bounds accesses",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#out-of-bounds-accesses",
+      "concepts": [
+        "undefined-behavior"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Evaluation of expressions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#evaluation-of-expressions",
+      "concepts": [
+        "evaluation-order",
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Statements and structure",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#statements-and-structure",
+      "concepts": [
+        "statements",
+        "program-structure"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Function definitions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-definitions",
+      "concepts": [
+        "functions",
+        "overloading"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Function calling conventions (in/out/inout)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-calling-conventions",
+      "concepts": [
+        "parameters-arguments",
+        "value-reference-semantics"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Subroutines",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#subroutines",
+      "concepts": [
+        "function-types",
+        "polymorphism"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Selection (if, switch)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#selection",
+      "concepts": [
+        "conditionals",
+        "switch-case"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Iteration (for, while, do)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#iteration",
+      "concepts": [
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Jumps (break, continue, return, discard)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#jumps",
+      "concepts": [
+        "loop-control",
+        "return"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Built-in variables",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#built-in-variables",
+      "concepts": [
+        "shader-pipeline",
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Built-in constants",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#built-in-constants",
+      "concepts": [
+        "constants",
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Built-in functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#built-in-functions",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Common functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#common-functions",
+      "concepts": [
+        "standard-library",
+        "floating-point"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Geometric functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#geometric-functions",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Texture functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#texture-functions",
+      "concepts": [
+        "standard-library",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Atomic memory functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#atomic-memory-functions",
+      "concepts": [
+        "atomics-memory-ordering"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Image functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#image-functions",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Derivative functions",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#derivative-functions",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Shader invocation control (barrier)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shader-invocation-control-functions",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Shader memory control (memoryBarrier)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shader-memory-control-functions",
+      "concepts": [
+        "atomics-memory-ordering",
+        "memory-model"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Memory qualifiers (coherent, volatile, restrict)",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#memory-qualifiers",
+      "concepts": [
+        "memory-model",
+        "atomics-memory-ordering"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — precise qualifier",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#the-precise-qualifier",
+      "concepts": [
+        "floating-point",
+        "optimization"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Specialization-constant qualifier",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#specialization-constant-qualifier",
+      "concepts": [
+        "constants",
+        "compile-time-evaluation"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Shading language grammar",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#shading-language-grammar",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL 4.60 specification — Non-normative SPIR-V mappings",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html#spirvmappings",
+      "concepts": [
+        "code-generation-backend",
+        "interoperability"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "4.60"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "The OpenGL ES Shading Language, version 3.20 (Khronos registry, HTML)",
+      "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html",
+      "concepts": [
+        "standardization",
+        "versioning-compatibility"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "ES 3.20"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL ES 3.20 specification — Shader interface matching between stages",
+      "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#shader-interface-matching",
+      "concepts": [
+        "shader-pipeline",
+        "type-equivalence"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "ES 3.20"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL ES 3.20 specification — Precision qualifiers",
+      "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#precision-and-precision-qualifiers",
+      "concepts": [
+        "floating-point",
+        "type-annotations"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "ES 3.20"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "The OpenGL Shading Language, version 1.10 (3Dlabs/ARB, 2004) — first GLSL specification",
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.1.10.pdf",
+      "concepts": [
+        "history",
+        "design-rationale"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "pdf",
+      "access": "open",
+      "authors": [
+        "John Kessenich",
+        "Dave Baldwin",
+        "Randi Rost"
+      ],
+      "year": 2004,
+      "version": "1.10"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "The OpenGL ES Shading Language, version 1.00 (WebGL 1 dialect)",
+      "url": "https://registry.khronos.org/OpenGL/specs/es/2.0/GLSL_ES_Specification_1.00.pdf",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "pdf",
+      "access": "open",
+      "year": 2009,
+      "version": "ES 1.00"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "KhronosGroup/GLSL — AsciiDoc source of the GLSL and ESSL specifications and extensions",
+      "url": "https://github.com/KhronosGroup/GLSL/blob/main/README.adoc",
+      "concepts": [
+        "language-evolution"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "grammar",
+      "title": "GLSL specification source — chapters/grammar.adoc (shading language grammar)",
+      "url": "https://github.com/KhronosGroup/GLSL/blob/main/chapters/grammar.adoc",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "GLSL specification source — chapters/builtinfunctions.adoc",
+      "url": "https://github.com/KhronosGroup/GLSL/blob/main/chapters/builtinfunctions.adoc",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "proposal",
+      "title": "GL_KHR_vulkan_glsl — GLSL for Vulkan (SPIR-V generation, descriptor sets, push constants)",
+      "url": "https://github.com/KhronosGroup/GLSL/blob/main/extensions/khr/GL_KHR_vulkan_glsl.txt",
+      "concepts": [
+        "versioning-compatibility",
+        "interoperability",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "OpenGL 4 Reference Pages — GLSL built-in functions and variables",
+      "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "OpenGL 4 Reference Pages — texture()",
+      "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/texture.xhtml",
+      "concepts": [
+        "standard-library",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "OpenGL 4 Reference Pages — mix()",
+      "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/mix.xhtml",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "OpenGL 4 Reference Pages — barrier()",
+      "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/barrier.xhtml",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "library-reference",
+      "title": "OpenGL 4 Reference Pages — gl_FragCoord",
+      "url": "https://registry.khronos.org/OpenGL-Refpages/gl4/html/gl_FragCoord.xhtml",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "glslang — Khronos reference GLSL/ESSL front end and SPIR-V generator",
+      "url": "https://github.com/KhronosGroup/glslang",
+      "concepts": [
+        "compiler-architecture"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "repository",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang Scan.cpp — scanner and keyword table",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Scan.cpp",
+      "concepts": [
+        "lexer",
+        "keywords"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang preprocessor/Pp.cpp — #define/#if/#extension/#version handling",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/preprocessor/Pp.cpp",
+      "concepts": [
+        "preprocessor",
+        "macros"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang glslang.y — bison grammar of GLSL",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/glslang.y",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang ParseHelper.cpp — semantic checks: qualifiers, layouts, constructors, overload resolution",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/ParseHelper.cpp",
+      "concepts": [
+        "semantic-analysis",
+        "overloading",
+        "constructors"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang Intermediate.cpp — AST building, implicit conversions and promotions",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Intermediate.cpp",
+      "concepts": [
+        "ast",
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang Initialize.cpp — declarations of all built-in functions and variables",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Initialize.cpp",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang Versions.cpp — version/profile and extension gating",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Versions.cpp",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang Constant.cpp — constant folding",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/Constant.cpp",
+      "concepts": [
+        "compile-time-evaluation",
+        "optimization"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang SymbolTable.cpp — scoped symbol tables",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/SymbolTable.cpp",
+      "concepts": [
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang linkValidate.cpp — cross-stage/link-time validation",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/linkValidate.cpp",
+      "concepts": [
+        "separate-compilation",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang iomapper.cpp — mapping of uniforms/IO to bindings and locations",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/iomapper.cpp",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang reflection.cpp — shader reflection",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/glslang/MachineIndependent/reflection.cpp",
+      "concepts": [
+        "reflection"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "glslang SPIRV/GlslangToSpv.cpp — AST to SPIR-V code generation",
+      "url": "https://github.com/KhronosGroup/glslang/blob/main/SPIRV/GlslangToSpv.cpp",
+      "concepts": [
+        "code-generation-backend",
+        "intermediate-representation"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "conformance-tests",
+      "title": "glslang Test directory — shader test corpus with expected outputs",
+      "url": "https://github.com/KhronosGroup/glslang/tree/main/Test",
+      "concepts": [
+        "testing"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "directory",
+      "access": "open",
+      "implementation": "glslang"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "ANGLE shader translator — glslang.y (GLSL ES grammar)",
+      "url": "https://github.com/google/angle/blob/main/src/compiler/translator/glslang.y",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "ANGLE"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "ANGLE shader translator — glslang.l (GLSL ES lexer)",
+      "url": "https://github.com/google/angle/blob/main/src/compiler/translator/glslang.l",
+      "concepts": [
+        "lexer"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "ANGLE"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "naga (wgpu) — GLSL front end parser",
+      "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/front/glsl/parser.rs",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "naga"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "naga (wgpu) — GLSL back end (IR to GLSL)",
+      "url": "https://github.com/gfx-rs/wgpu/blob/trunk/naga/src/back/glsl/mod.rs",
+      "concepts": [
+        "code-generation-backend"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "naga"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "SPIRV-Cross — spirv_glsl.cpp (SPIR-V to GLSL decompiler)",
+      "url": "https://github.com/KhronosGroup/SPIRV-Cross/blob/main/spirv_glsl.cpp",
+      "concepts": [
+        "code-generation-backend",
+        "interoperability"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "SPIRV-Cross"
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "shaderc — Google GLSL/HLSL to SPIR-V compiler tools and library",
+      "url": "https://github.com/google/shaderc",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "implementation": "shaderc"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Mesa — GLSL compiler parser (glsl_parser.yy)",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/src/compiler/glsl/glsl_parser.yy",
+      "concepts": [
+        "parser",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Mesa",
+      "notes": "gitlab.freedesktop.org may require sign-in for automated clients"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Mesa — GLSL AST to HIR translation (ast_to_hir.cpp)",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/src/compiler/glsl/ast_to_hir.cpp",
+      "concepts": [
+        "semantic-analysis",
+        "intermediate-representation"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "implementation": "Mesa",
+      "notes": "gitlab.freedesktop.org may require sign-in for automated clients"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LearnOpenGL — Shaders (GLSL introduction)",
+      "url": "https://learnopengl.com/Getting-started/Shaders",
+      "concepts": [
+        "hello-world",
+        "primitive-types",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LearnOpenGL — Hello Triangle (first vertex and fragment shader)",
+      "url": "https://learnopengl.com/Getting-started/Hello-Triangle",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LearnOpenGL — Advanced GLSL (built-ins, interface blocks, UBOs)",
+      "url": "https://learnopengl.com/Advanced-OpenGL/Advanced-GLSL",
+      "concepts": [
+        "shader-pipeline",
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders (Gonzalez Vivo, Lowe)",
+      "url": "https://thebookofshaders.com/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open",
+      "authors": [
+        "Patricio Gonzalez Vivo",
+        "Jen Lowe"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders — Hello World",
+      "url": "https://thebookofshaders.com/02/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders — Uniforms",
+      "url": "https://thebookofshaders.com/03/",
+      "concepts": [
+        "shader-pipeline",
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders — Shaping functions",
+      "url": "https://thebookofshaders.com/05/",
+      "concepts": [
+        "functions",
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders — Colors (vec types and swizzling)",
+      "url": "https://thebookofshaders.com/06/",
+      "concepts": [
+        "primitive-types",
+        "arrays"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders — Shapes",
+      "url": "https://thebookofshaders.com/07/",
+      "concepts": [
+        "functions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "book",
+      "title": "The Book of Shaders — Noise",
+      "url": "https://thebookofshaders.com/11/",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "WebGL2 Fundamentals — WebGL Shaders and GLSL",
+      "url": "https://webgl2fundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html",
+      "concepts": [
+        "shader-pipeline",
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "MDN — GLSL shaders",
+      "url": "https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "opengl-tutorial.org — The first triangle (shaders)",
+      "url": "https://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Core Language (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Core_Language_(GLSL)",
+      "concepts": [
+        "lexical-structure",
+        "preprocessor",
+        "functions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Data Type (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Data_Type_(GLSL)",
+      "concepts": [
+        "primitive-types",
+        "arrays",
+        "records-structs"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Type Qualifier (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Type_Qualifier_(GLSL)",
+      "concepts": [
+        "storage-duration",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Layout Qualifier (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Layout_Qualifier_(GLSL)",
+      "concepts": [
+        "annotations-attributes"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Interface Block (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Interface_Block_(GLSL)",
+      "concepts": [
+        "records-structs",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Uniform (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Uniform_(GLSL)",
+      "concepts": [
+        "variables",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Built-in Variable (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Built-in_Variable_(GLSL)",
+      "concepts": [
+        "standard-library",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Sampler (GLSL)",
+      "url": "https://wikis.khronos.org/opengl/Sampler_(GLSL)",
+      "concepts": [
+        "primitive-types"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Shader Compilation",
+      "url": "https://wikis.khronos.org/opengl/Shader_Compilation",
+      "concepts": [
+        "separate-compilation",
+        "tooling"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — GLSL: common mistakes",
+      "url": "https://wikis.khronos.org/opengl/GLSL_:_common_mistakes",
+      "concepts": [
+        "style-conventions"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Shader Storage Buffer Object",
+      "url": "https://wikis.khronos.org/opengl/Shader_Storage_Buffer_Object",
+      "concepts": [
+        "memory-model"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "wiki",
+      "title": "OpenGL Wiki — Compute Shader",
+      "url": "https://wikis.khronos.org/opengl/Compute_Shader",
+      "concepts": [
+        "parallelism",
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "video",
+      "title": "The Art of Code — Shadertoy/GLSL tutorials (YouTube channel)",
+      "url": "https://www.youtube.com/@TheArtofCodeIsCool",
+      "scope": "whole",
+      "authority": "community",
+      "format": "video",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — OpenGL Shading Language",
+      "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia GLSL — Versions",
+      "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions",
+      "concepts": [
+        "versioning-compatibility"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia GLSL — Operators",
+      "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Operators",
+      "concepts": [
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia GLSL — Functions and control structures",
+      "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Functions_and_control_structures",
+      "concepts": [
+        "functions",
+        "conditionals",
+        "loops"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia GLSL — Compilation and execution",
+      "url": "https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Compilation_and_execution",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "PLDB — GLSL",
+      "url": "https://pldb.io/concepts/glsl.html",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "code-collection",
+      "title": "Shadertoy — community GLSL ES fragment shaders",
+      "url": "https://www.shadertoy.com/",
+      "concepts": [
+        "shader-pipeline"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "interactive",
+      "access": "open"
+    }
+  ]
 }

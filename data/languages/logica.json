@@ -1,0 +1,33 @@
+{
+ "id": "logica",
+ "name": "Logica",
+ "categories": ["query", "logic"],
+ "paradigms": ["logic", "declarative"],
+ "typing": ["dynamic"],
+ "first_appeared": 2021,
+ "designers": ["Evgeny Skvortsov", "Google"],
+ "summary": "Logica is an open-source Datalog-family logic programming language from Google that compiles to SQL (BigQuery, PostgreSQL, SQLite, DuckDB), adding aggregation, functional predicates and modules for data analysis.",
+ "status": "active",
+ "defined_by": ["reference-implementation"],
+ "file_extensions": [".l"],
+ "homepage": "https://logica.dev/",
+ "influenced_by": ["datalog"],
+ "related": [{"id": "sql", "relation": "compiles-to"}, {"id": "datalog", "relation": "variant-of"}],
+ "level_notes": {
+  "0": "The Python compiler in EvgSkv/logica is the definition.",
+  "1": "No formal spec; the README and tutorial notebook document the language.",
+  "3": "PLDB only."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "EvgSkv/logica — compiler", "url": "https://github.com/EvgSkv/logica", "implementation": "Logica (Python)", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+  {"level": 0, "kind": "implementation-source", "title": "parser_py/parse.py — parser", "url": "https://github.com/EvgSkv/logica/blob/main/parser_py/parse.py", "implementation": "Logica (Python)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
+  {"level": 0, "kind": "implementation-source", "title": "compiler/universe.py — program compilation", "url": "https://github.com/EvgSkv/logica/blob/main/compiler/universe.py", "implementation": "Logica (Python)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis"]},
+  {"level": 0, "kind": "implementation-source", "title": "compiler/rule_translate.py — rule to SQL", "url": "https://github.com/EvgSkv/logica/blob/main/compiler/rule_translate.py", "implementation": "Logica (Python)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
+  {"level": 0, "kind": "implementation-source", "title": "compiler/dialects.py — SQL dialects", "url": "https://github.com/EvgSkv/logica/blob/main/compiler/dialects.py", "implementation": "Logica (Python)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interoperability"]},
+  {"level": 1, "kind": "reference-manual", "title": "Logica README — language overview", "url": "https://github.com/EvgSkv/logica/blob/main/README.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["hello-world"]},
+  {"level": 2, "kind": "tutorial", "title": "Logica tutorial notebook", "url": "https://github.com/EvgSkv/logica/blob/main/tutorial/Logica_tutorial.ipynb", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["aggregation", "recursive-queries"]},
+  {"level": 2, "kind": "guide", "title": "logica.dev — home", "url": "https://logica.dev/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 2, "kind": "article", "title": "Logica: organizing your data queries, making them reusable (Google Open Source Blog)", "url": "https://opensource.googleblog.com/2021/04/logica-organizing-your-data-queries.html", "scope": "section", "authority": "designer", "year": 2021, "format": "html", "access": "open", "concepts": ["design-rationale"]},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Logica", "url": "https://pldb.io/concepts/logica.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}

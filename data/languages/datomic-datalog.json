@@ -1,0 +1,36 @@
+{
+ "id": "datomic-datalog",
+ "name": "Datomic Datalog",
+ "aliases": ["Datomic query", "Datalog (Datomic dialect)"],
+ "categories": ["query", "logic"],
+ "paradigms": ["logic", "declarative"],
+ "typing": ["dynamic"],
+ "first_appeared": 2012,
+ "designers": ["Rich Hickey", "Cognitect / Nubank"],
+ "summary": "Datomic's query language is a Datalog dialect written as EDN data: :find/:where clauses of entity-attribute-value patterns, rules, aggregates, pull expressions and as-of/history queries over an immutable database of facts; DataScript, Datahike and XTDB implement variants.",
+ "status": "active",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "homepage": "https://docs.datomic.com/",
+ "influenced_by": ["datalog", "clojure"],
+ "related": [{"id": "datalog", "relation": "variant-of"}, {"id": "clojure", "relation": "embeds"}],
+ "level_notes": {
+  "0": "Datomic itself is closed-source (free binaries); DataScript is an open re-implementation of the query dialect.",
+  "1": "Datomic's Query Reference is the definition.",
+  "2": "The well-known Learn Datalog Today tutorial site was unreachable at verification time and is omitted."
+ },
+ "resources": [
+  {"level": 0, "kind": "implementation-repository", "title": "tonsky/datascript — in-memory Datomic-style database", "url": "https://github.com/tonsky/datascript", "implementation": "DataScript", "scope": "whole", "authority": "community", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "DataScript — query.cljc (Datalog engine)", "url": "https://github.com/tonsky/datascript/blob/master/src/datascript/query.cljc", "implementation": "DataScript", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["interpreter", "unification", "joins"]},
+  {"level": 0, "kind": "implementation-source", "title": "DataScript — parser.cljc (query grammar)", "url": "https://github.com/tonsky/datascript/blob/master/src/datascript/parser.cljc", "implementation": "DataScript", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "DataScript — pull_api.cljc", "url": "https://github.com/tonsky/datascript/blob/master/src/datascript/pull_api.cljc", "implementation": "DataScript", "scope": "section", "authority": "community", "format": "source-file", "access": "open", "concepts": ["selection-projection"]},
+  {"level": 0, "kind": "implementation-repository", "title": "replikativ/datahike — durable Datalog database", "url": "https://github.com/replikativ/datahike", "implementation": "Datahike", "scope": "whole", "authority": "community", "format": "repository", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Datomic — Query data reference", "url": "https://docs.datomic.com/query/query-data-reference.html", "scope": "whole", "authority": "vendor", "format": "html", "access": "open", "concepts": ["grammar", "selection-projection", "aggregation", "recursive-queries"]},
+  {"level": 1, "kind": "reference-manual", "title": "Datomic — Executing queries", "url": "https://docs.datomic.com/query/query-executing.html", "scope": "whole", "authority": "vendor", "format": "html", "access": "open"},
+  {"level": 1, "kind": "reference-manual", "title": "Datomic — Pull", "url": "https://docs.datomic.com/query/query-pull.html", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["selection-projection", "path-expressions"]},
+  {"level": 1, "kind": "reference-manual", "title": "Datomic — Data model", "url": "https://docs.datomic.com/whatis/data-model.html", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["data-model"]},
+  {"level": 1, "kind": "reference-manual", "title": "Datomic — Schema reference", "url": "https://docs.datomic.com/schema/schema-reference.html", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["data-definition"]},
+  {"level": 1, "kind": "reference-manual", "title": "Datomic — Transaction processing", "url": "https://docs.datomic.com/transactions/transaction-processing.html", "scope": "section", "authority": "vendor", "format": "html", "access": "open", "concepts": ["transactions", "data-manipulation"]},
+  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Datomic", "url": "https://en.wikipedia.org/wiki/Datomic", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "catalog", "title": "PLDB — Datomic", "url": "https://pldb.io/concepts/datomic.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
+ ]
+}
