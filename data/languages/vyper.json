@@ -1,56 +1,686 @@
 {
  "id": "vyper",
  "name": "Vyper",
- "categories": ["smart-contract"],
- "paradigms": ["imperative", "contract-oriented"],
- "typing": ["static", "strong"],
+ "categories": [
+  "smart-contract"
+ ],
+ "paradigms": [
+  "imperative",
+  "contract-oriented"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
  "first_appeared": 2017,
- "designers": ["Vitalik Buterin"],
+ "designers": [
+  "Vitalik Buterin"
+ ],
  "summary": "Pythonic, deliberately restricted smart-contract language for the EVM: no inheritance, no operator overloading, bounded loops and decidable gas bounds, with built-in re-entrancy locks and a module system since 0.4.",
  "status": "active",
- "defined_by": ["reference-implementation", "informal"],
- "file_extensions": [".vy", ".vyi"],
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".vy",
+  ".vyi"
+ ],
  "homepage": "https://vyperlang.org/",
- "influenced_by": ["python", "serpent-eth"],
- "related": [{"id": "solidity", "relation": "family"}, {"id": "serpent-eth", "relation": "successor-of"}],
- "level_notes": {"1": "No formal specification; the official documentation at docs.vyperlang.org is the reference.", "0": "Single compiler written in Python (vyperlang/vyper) with a legacy IR and the newer Venom SSA IR."},
+ "influenced_by": [
+  "python",
+  "serpent-eth"
+ ],
+ "related": [
+  {
+   "id": "solidity",
+   "relation": "family"
+  },
+  {
+   "id": "serpent-eth",
+   "relation": "successor-of"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal specification; the official documentation at docs.vyperlang.org is the reference.",
+  "0": "Single compiler written in Python (vyperlang/vyper) with a legacy IR and the newer Venom SSA IR."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "vyperlang/vyper — the Vyper compiler", "url": "https://github.com/vyperlang/vyper", "implementation": "vyper", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/ast/parse.py — parsing via Python ast", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/ast/parse.py", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "ast"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/semantics/analysis/local.py — function-local semantic analysis", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/semantics/analysis/local.py", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/semantics/types/subscriptable.py — arrays, mappings, tuples types", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/semantics/types/subscriptable.py", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["arrays", "maps-dictionaries"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/compiler/phases.py — compiler phases", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/compiler/phases.py", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/venom/README.md — Venom SSA IR", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/venom/README.md", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["intermediate-representation", "optimization"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/ir/compile_ir.py — IR to EVM assembly", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/ir/compile_ir.py", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
-  {"level": 0, "kind": "implementation-source", "title": "vyper vyper/builtins/functions.py — built-in functions", "url": "https://github.com/vyperlang/vyper/blob/master/vyper/builtins/functions.py", "implementation": "vyper", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
-
-  {"level": 1, "kind": "reference-manual", "title": "Vyper documentation", "url": "https://docs.vyperlang.org/en/latest/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Structure of a contract", "url": "https://docs.vyperlang.org/en/latest/structure-of-a-contract.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["program-structure"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Imports", "url": "https://docs.vyperlang.org/en/latest/structure-of-a-contract.html#imports", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["imports", "modules"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Types", "url": "https://docs.vyperlang.org/en/latest/types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Strings", "url": "https://docs.vyperlang.org/en/latest/types.html#strings", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["strings"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Flags", "url": "https://docs.vyperlang.org/en/latest/types.html#flags", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["enums"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Dynamic arrays", "url": "https://docs.vyperlang.org/en/latest/types.html#dynamic-arrays", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Structs", "url": "https://docs.vyperlang.org/en/latest/types.html#structs", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Mappings", "url": "https://docs.vyperlang.org/en/latest/types.html#mappings", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Type conversions", "url": "https://docs.vyperlang.org/en/latest/types.html#type-conversions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-conversion"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Functions and decorators", "url": "https://docs.vyperlang.org/en/latest/control-structures.html#functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions", "visibility", "annotations-attributes"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Non-reentrancy locks", "url": "https://docs.vyperlang.org/en/latest/control-structures.html#nonreentrancy-locks", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["security-considerations", "synchronization"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — If statements", "url": "https://docs.vyperlang.org/en/latest/control-structures.html#if-statements", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — For loops", "url": "https://docs.vyperlang.org/en/latest/control-structures.html#for-loops", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops", "iteration-foreach"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Assertions and exceptions", "url": "https://docs.vyperlang.org/en/latest/statements.html#assertions-and-exceptions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["assertions", "error-handling"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Scoping rules", "url": "https://docs.vyperlang.org/en/latest/scoping-and-declarations.html#scoping-rules", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["scope"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Built-in functions", "url": "https://docs.vyperlang.org/en/latest/built-in-functions.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Interfaces", "url": "https://docs.vyperlang.org/en/latest/interfaces.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["interfaces-protocols"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Event logging", "url": "https://docs.vyperlang.org/en/latest/event-logging.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — Using modules", "url": "https://docs.vyperlang.org/en/latest/using-modules.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules"]},
-  {"level": 1, "kind": "reference-manual", "title": "Vyper docs — NatSpec metadata", "url": "https://docs.vyperlang.org/en/latest/natspec.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["documentation-comments"]},
-  {"level": 1, "kind": "release-notes", "title": "Vyper docs — Release notes", "url": "https://docs.vyperlang.org/en/latest/release-notes.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["language-evolution"]},
-
-  {"level": 2, "kind": "by-example", "title": "Vyper by Example", "url": "https://docs.vyperlang.org/en/latest/vyper-by-example/index.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
-  {"level": 2, "kind": "comparison-guide", "title": "Vyper docs — differences from Solidity", "url": "https://docs.vyperlang.org/en/latest/solidity-differences.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison", "design-rationale"]},
-  {"level": 2, "kind": "style-guide", "title": "Vyper style guide", "url": "https://docs.vyperlang.org/en/latest/style-guide.html", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["style-conventions"]},
-
-  {"level": 3, "kind": "catalog", "title": "PLDB — Vyper", "url": "https://pldb.io/concepts/vyper.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "vyperlang/vyper — the Vyper compiler",
+   "url": "https://github.com/vyperlang/vyper",
+   "implementation": "vyper",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/ast/parse.py — parsing via Python ast",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/ast/parse.py",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/semantics/analysis/local.py — function-local semantic analysis",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/semantics/analysis/local.py",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/semantics/types/subscriptable.py — arrays, mappings, tuples types",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/semantics/types/subscriptable.py",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/compiler/phases.py — compiler phases",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/compiler/phases.py",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/venom/README.md — Venom SSA IR",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/venom/README.md",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation",
+    "optimization"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/ir/compile_ir.py — IR to EVM assembly",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/ir/compile_ir.py",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "vyper vyper/builtins/functions.py — built-in functions",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/builtins/functions.py",
+   "implementation": "vyper",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "vyper (Python)",
+   "title": "vyper/ast/grammar.lark — Lark grammar of Vyper",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/ast/grammar.lark",
+   "concepts": [
+    "grammar",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "implementation": "vyper (Python)",
+   "title": "vyper/ast/pre_parser.py — Vyper source pre-parser",
+   "url": "https://github.com/vyperlang/vyper/blob/master/vyper/ast/pre_parser.py",
+   "concepts": [
+    "lexer",
+    "parser"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper documentation",
+   "url": "https://docs.vyperlang.org/en/latest/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Structure of a contract",
+   "url": "https://docs.vyperlang.org/en/latest/structure-of-a-contract.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Imports",
+   "url": "https://docs.vyperlang.org/en/latest/structure-of-a-contract.html#imports",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Types",
+   "url": "https://docs.vyperlang.org/en/latest/types.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Strings",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#strings",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Flags",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#flags",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Dynamic arrays",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#dynamic-arrays",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Structs",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#structs",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Mappings",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#mappings",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Type conversions",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#type-conversions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Functions and decorators",
+   "url": "https://docs.vyperlang.org/en/latest/control-structures.html#functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "visibility",
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Non-reentrancy locks",
+   "url": "https://docs.vyperlang.org/en/latest/control-structures.html#nonreentrancy-locks",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations",
+    "synchronization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — If statements",
+   "url": "https://docs.vyperlang.org/en/latest/control-structures.html#if-statements",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — For loops",
+   "url": "https://docs.vyperlang.org/en/latest/control-structures.html#for-loops",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Assertions and exceptions",
+   "url": "https://docs.vyperlang.org/en/latest/statements.html#assertions-and-exceptions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assertions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Scoping rules",
+   "url": "https://docs.vyperlang.org/en/latest/scoping-and-declarations.html#scoping-rules",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Built-in functions",
+   "url": "https://docs.vyperlang.org/en/latest/built-in-functions.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Interfaces",
+   "url": "https://docs.vyperlang.org/en/latest/interfaces.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Event logging",
+   "url": "https://docs.vyperlang.org/en/latest/event-logging.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — Using modules",
+   "url": "https://docs.vyperlang.org/en/latest/using-modules.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Vyper docs — NatSpec metadata",
+   "url": "https://docs.vyperlang.org/en/latest/natspec.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "documentation-comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "release-notes",
+   "title": "Vyper docs — Release notes",
+   "url": "https://docs.vyperlang.org/en/latest/release-notes.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Types: Boolean operators",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#operators",
+   "concepts": [
+    "operators",
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Types: Signed Integer (N bit)",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#signed-integer-n-bit",
+   "concepts": [
+    "integers",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Types: Fixed-size Lists",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#fixed-size-lists",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Types: Initial Values",
+   "url": "https://docs.vyperlang.org/en/latest/types.html#initial-values",
+   "concepts": [
+    "variables",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Statements: Control Flow (break, continue, pass, return)",
+   "url": "https://docs.vyperlang.org/en/latest/statements.html#control-flow",
+   "concepts": [
+    "loop-control",
+    "return"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Statements: raise",
+   "url": "https://docs.vyperlang.org/en/latest/statements.html#raise",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Variable Declaration",
+   "url": "https://docs.vyperlang.org/en/latest/scoping-and-declarations.html#variable-declaration",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Tuple Assignment",
+   "url": "https://docs.vyperlang.org/en/latest/scoping-and-declarations.html#tuple-assignment",
+   "concepts": [
+    "tuples",
+    "destructuring",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Custom Constants",
+   "url": "https://docs.vyperlang.org/en/latest/constants-and-vars.html#custom-constants",
+   "concepts": [
+    "constants"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Environment Variables",
+   "url": "https://docs.vyperlang.org/en/latest/constants-and-vars.html#environment-variables",
+   "concepts": [
+    "blockchain-execution",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Vyper documentation — Pragmas",
+   "url": "https://docs.vyperlang.org/en/latest/structure-of-a-contract.html#pragmas",
+   "concepts": [
+    "annotations-attributes",
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Vyper by Example",
+   "url": "https://docs.vyperlang.org/en/latest/vyper-by-example/index.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "comparison-guide",
+   "title": "Vyper docs — differences from Solidity",
+   "url": "https://docs.vyperlang.org/en/latest/solidity-differences.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Vyper style guide",
+   "url": "https://docs.vyperlang.org/en/latest/style-guide.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Vyper",
+   "url": "https://pldb.io/concepts/vyper.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
  ]
 }

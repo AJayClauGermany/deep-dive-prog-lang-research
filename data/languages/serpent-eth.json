@@ -1,29 +1,162 @@
 {
  "id": "serpent-eth",
  "name": "Serpent",
- "categories": ["smart-contract", "historical"],
- "paradigms": ["imperative"],
- "typing": ["dynamic", "untyped"],
+ "categories": [
+  "smart-contract",
+  "historical"
+ ],
+ "paradigms": [
+  "imperative"
+ ],
+ "typing": [
+  "dynamic",
+  "untyped"
+ ],
  "first_appeared": 2014,
- "designers": ["Vitalik Buterin"],
+ "designers": [
+  "Vitalik Buterin"
+ ],
  "summary": "Early Python-like high-level language for Ethereum contracts compiling via LLL to EVM bytecode; deprecated after security audits in 2017 in favour of Solidity and Vyper.",
  "status": "historical",
- "defined_by": ["reference-implementation"],
- "file_extensions": [".se"],
- "influenced_by": ["python"],
- "related": [{"id": "vyper", "relation": "family"}, {"id": "evm-bytecode", "relation": "compiles-to"}],
- "level_notes": {"1": "No specification; the README and the old Ethereum wiki page were the documentation.", "0": "C++ compiler in ethereum/serpent (develop branch).", "2": "Secondary literature is limited to old blog posts and the 2017 Zeppelin audit."},
+ "defined_by": [
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".se"
+ ],
+ "influenced_by": [
+  "python"
+ ],
+ "related": [
+  {
+   "id": "vyper",
+   "relation": "family"
+  },
+  {
+   "id": "evm-bytecode",
+   "relation": "compiles-to"
+  }
+ ],
+ "level_notes": {
+  "1": "No specification; the README and the old Ethereum wiki page were the documentation.",
+  "0": "C++ compiler in ethereum/serpent (develop branch).",
+  "2": "Secondary literature is limited to old blog posts and the 2017 Zeppelin audit."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "ethereum/serpent — Serpent compiler", "url": "https://github.com/ethereum/serpent", "implementation": "serpent", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "serpent parser.cpp — parser", "url": "https://github.com/ethereum/serpent/blob/develop/parser.cpp", "implementation": "serpent", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "implementation-source", "title": "serpent rewriter.cpp — macro rewriter", "url": "https://github.com/ethereum/serpent/blob/develop/rewriter.cpp", "implementation": "serpent", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["macros", "rewriting"]},
-  {"level": 0, "kind": "implementation-source", "title": "serpent compiler.cpp — compiler to EVM", "url": "https://github.com/ethereum/serpent/blob/develop/compiler.cpp", "implementation": "serpent", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
-  {"level": 0, "kind": "implementation-source", "title": "serpent opcodes.cpp — EVM opcodes table", "url": "https://github.com/ethereum/serpent/blob/develop/opcodes.cpp", "implementation": "serpent", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["instruction-set"]},
-  {"level": 0, "kind": "implementation-source", "title": "serpent lllparser.cpp — LLL parser", "url": "https://github.com/ethereum/serpent/blob/develop/lllparser.cpp", "implementation": "serpent", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["intermediate-representation"]},
-
-  {"level": 1, "kind": "reference-manual", "title": "Serpent README", "url": "https://github.com/ethereum/serpent/blob/develop/README.md", "scope": "whole", "authority": "official", "format": "source-file", "access": "open"},
-
-  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Serpent (programming language)", "url": "https://en.wikipedia.org/wiki/Serpent_(programming_language)", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 3, "kind": "catalog", "title": "PLDB — Serpent", "url": "https://pldb.io/concepts/serpent.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "ethereum/serpent — Serpent compiler",
+   "url": "https://github.com/ethereum/serpent",
+   "implementation": "serpent",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serpent parser.cpp — parser",
+   "url": "https://github.com/ethereum/serpent/blob/develop/parser.cpp",
+   "implementation": "serpent",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serpent rewriter.cpp — macro rewriter",
+   "url": "https://github.com/ethereum/serpent/blob/develop/rewriter.cpp",
+   "implementation": "serpent",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "rewriting"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serpent compiler.cpp — compiler to EVM",
+   "url": "https://github.com/ethereum/serpent/blob/develop/compiler.cpp",
+   "implementation": "serpent",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serpent opcodes.cpp — EVM opcodes table",
+   "url": "https://github.com/ethereum/serpent/blob/develop/opcodes.cpp",
+   "implementation": "serpent",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "instruction-set"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "serpent lllparser.cpp — LLL parser",
+   "url": "https://github.com/ethereum/serpent/blob/develop/lllparser.cpp",
+   "implementation": "serpent",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Serpent README",
+   "url": "https://github.com/ethereum/serpent/blob/develop/README.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Serpent (programming language)",
+   "url": "https://en.wikipedia.org/wiki/Serpent_(programming_language)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Serpent",
+   "url": "https://pldb.io/concepts/serpent.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
  ]
 }

@@ -1,60 +1,574 @@
 {
  "id": "func-ton",
  "name": "FunC / Tact (TON)",
- "aliases": ["FunC", "Tact", "Tolk"],
- "categories": ["smart-contract"],
- "paradigms": ["imperative", "procedural"],
- "typing": ["static", "strong"],
+ "aliases": [
+  "FunC",
+  "Tact",
+  "Tolk"
+ ],
+ "categories": [
+  "smart-contract"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
  "first_appeared": 2019,
- "designers": ["Nikolai Durov"],
+ "designers": [
+  "Nikolai Durov"
+ ],
  "summary": "FunC is the C-like, statically typed low-level language for TON blockchain smart contracts compiling to Fift assembly for the TVM; Tact is a higher-level, TypeScript-flavoured TON contract language (2023) built on top of it.",
  "status": "active",
- "defined_by": ["vendor-specification", "reference-implementation"],
- "file_extensions": [".fc", ".func", ".tact"],
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".fc",
+  ".func",
+  ".tact"
+ ],
  "homepage": "https://docs.ton.org/languages/func/overview",
- "influenced_by": ["c"],
- "level_notes": {"1": "FunC and Tact each have official documentation; Tact also has OTP evolution proposals.", "0": "FunC compiler in ton-blockchain/ton crypto/func (C++); Tact compiler in tact-lang/tact (TypeScript).", "3": "No dedicated encyclopedia entry; the TON Wikipedia article covers the platform."},
+ "influenced_by": [
+  "c"
+ ],
+ "level_notes": {
+  "1": "FunC and Tact each have official documentation; Tact also has OTP evolution proposals.",
+  "0": "FunC compiler in ton-blockchain/ton crypto/func (C++); Tact compiler in tact-lang/tact (TypeScript).",
+  "3": "No dedicated encyclopedia entry; the TON Wikipedia article covers the platform."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "ton-blockchain/ton — includes the FunC compiler", "url": "https://github.com/ton-blockchain/ton", "implementation": "func", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "FunC crypto/func/parse-func.cpp — FunC parser", "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/func/parse-func.cpp", "implementation": "func", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "implementation-source", "title": "FunC crypto/func/func.cpp — FunC driver", "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/func/func.cpp", "implementation": "func", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "FunC crypto/func/gen-abscode.cpp — abstract code generation", "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/func/gen-abscode.cpp", "implementation": "func", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
-  {"level": 0, "kind": "implementation-source", "title": "FunC crypto/smartcont/stdlib.fc — stdlib.fc", "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/smartcont/stdlib.fc", "implementation": "func", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
-  {"level": 0, "kind": "reference-implementation", "title": "tact-lang/tact — Tact compiler", "url": "https://github.com/tact-lang/tact", "implementation": "tact", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-
-  {"level": 1, "kind": "reference-manual", "title": "FunC documentation — overview", "url": "https://docs.ton.org/languages/func/overview", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Types", "url": "https://docs.ton.org/languages/func/types", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types", "tuples"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Comments", "url": "https://docs.ton.org/languages/func/comments", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["comments"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Literals", "url": "https://docs.ton.org/languages/func/literals", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["literals"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Operators", "url": "https://docs.ton.org/languages/func/operators", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["operators"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Expressions", "url": "https://docs.ton.org/languages/func/expressions", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["expressions"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Statements", "url": "https://docs.ton.org/languages/func/statements", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["conditionals", "loops", "statements"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Functions", "url": "https://docs.ton.org/languages/func/functions", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["functions"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Global variables", "url": "https://docs.ton.org/languages/func/global-variables", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["variables"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Compiler directives", "url": "https://docs.ton.org/languages/func/compiler-directives", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["preprocessor", "imports"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Assembler functions", "url": "https://docs.ton.org/languages/func/asm-functions", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["instruction-set", "ffi"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Special functions", "url": "https://docs.ton.org/languages/func/special-functions", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Standard library", "url": "https://docs.ton.org/languages/func/stdlib", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["standard-library"]},
-  {"level": 1, "kind": "reference-manual", "title": "FunC docs — Changelog", "url": "https://docs.ton.org/languages/func/changelog", "scope": "section", "authority": "official", "version": "FunC", "format": "html", "access": "open", "concepts": ["language-evolution"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact documentation — the Book", "url": "https://docs.tact-lang.org/book", "scope": "whole", "authority": "official", "version": "Tact", "format": "html", "access": "open"},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Types", "url": "https://docs.tact-lang.org/book/types", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["type-system"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Integers", "url": "https://docs.tact-lang.org/book/integers", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["integers"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Maps", "url": "https://docs.tact-lang.org/book/maps", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Structs and messages", "url": "https://docs.tact-lang.org/book/structs-and-messages", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["records-structs"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Optionals", "url": "https://docs.tact-lang.org/book/optionals", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["null-optional"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Functions", "url": "https://docs.tact-lang.org/book/functions", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["functions"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Statements", "url": "https://docs.tact-lang.org/book/statements", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["conditionals", "loops"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Operators", "url": "https://docs.tact-lang.org/book/operators", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["operators"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Contracts", "url": "https://docs.tact-lang.org/book/contracts", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["program-structure", "classes"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Receive messages", "url": "https://docs.tact-lang.org/book/receive", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Imports", "url": "https://docs.tact-lang.org/book/import", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["imports"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Exit codes", "url": "https://docs.tact-lang.org/book/exit-codes", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["error-handling"]},
-  {"level": 1, "kind": "reference-manual", "title": "Tact docs — Core library — math", "url": "https://docs.tact-lang.org/ref/core-math", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["standard-library"]},
-
-  {"level": 2, "kind": "by-example", "title": "Learn Tact in Y minutes", "url": "https://docs.tact-lang.org/book/learn-tact-in-y-minutes", "scope": "whole", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["hello-world"]},
-  {"level": 2, "kind": "guide", "title": "Tact — security best practices", "url": "https://docs.tact-lang.org/book/security-best-practices", "scope": "section", "authority": "official", "version": "Tact", "format": "html", "access": "open", "concepts": ["security-considerations"]},
-  {"level": 2, "kind": "by-example", "title": "FunC cookbook", "url": "https://docs.ton.org/languages/func/cookbook", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-
-  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — TON (blockchain)", "url": "https://en.wikipedia.org/wiki/TON_(blockchain)", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "ton-blockchain/ton — includes the FunC compiler",
+   "url": "https://github.com/ton-blockchain/ton",
+   "implementation": "func",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FunC crypto/func/parse-func.cpp — FunC parser",
+   "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/func/parse-func.cpp",
+   "implementation": "func",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FunC crypto/func/func.cpp — FunC driver",
+   "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/func/func.cpp",
+   "implementation": "func",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FunC crypto/func/gen-abscode.cpp — abstract code generation",
+   "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/func/gen-abscode.cpp",
+   "implementation": "func",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "FunC crypto/smartcont/stdlib.fc — stdlib.fc",
+   "url": "https://github.com/ton-blockchain/ton/blob/master/crypto/smartcont/stdlib.fc",
+   "implementation": "func",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "tact-lang/tact — Tact compiler",
+   "url": "https://github.com/tact-lang/tact",
+   "implementation": "tact",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC documentation — overview",
+   "url": "https://docs.ton.org/languages/func/overview",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Types",
+   "url": "https://docs.ton.org/languages/func/types",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types",
+    "tuples"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Comments",
+   "url": "https://docs.ton.org/languages/func/comments",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Literals",
+   "url": "https://docs.ton.org/languages/func/literals",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Operators",
+   "url": "https://docs.ton.org/languages/func/operators",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Expressions",
+   "url": "https://docs.ton.org/languages/func/expressions",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Statements",
+   "url": "https://docs.ton.org/languages/func/statements",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "statements",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Functions",
+   "url": "https://docs.ton.org/languages/func/functions",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Global variables",
+   "url": "https://docs.ton.org/languages/func/global-variables",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Compiler directives",
+   "url": "https://docs.ton.org/languages/func/compiler-directives",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "preprocessor",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Assembler functions",
+   "url": "https://docs.ton.org/languages/func/asm-functions",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "instruction-set",
+    "ffi"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Reserved functions (split_prepare / split_install)",
+   "url": "https://docs.ton.org/languages/func/special-functions",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Standard library",
+   "url": "https://docs.ton.org/languages/func/stdlib",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "FunC docs — Changelog",
+   "url": "https://docs.ton.org/languages/func/changelog",
+   "scope": "section",
+   "authority": "official",
+   "version": "FunC",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "language-evolution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact documentation — the Book",
+   "url": "https://docs.tact-lang.org/book",
+   "scope": "whole",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Types",
+   "url": "https://docs.tact-lang.org/book/types",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Integers",
+   "url": "https://docs.tact-lang.org/book/integers",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Maps",
+   "url": "https://docs.tact-lang.org/book/maps",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Structs and messages",
+   "url": "https://docs.tact-lang.org/book/structs-and-messages",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Optionals",
+   "url": "https://docs.tact-lang.org/book/optionals",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Functions",
+   "url": "https://docs.tact-lang.org/book/functions",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Statements",
+   "url": "https://docs.tact-lang.org/book/statements",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops",
+    "exceptions",
+    "assignment"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Operators",
+   "url": "https://docs.tact-lang.org/book/operators",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Contracts",
+   "url": "https://docs.tact-lang.org/book/contracts",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "classes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Receive messages",
+   "url": "https://docs.tact-lang.org/book/receive",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Imports",
+   "url": "https://docs.tact-lang.org/book/import",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Exit codes",
+   "url": "https://docs.tact-lang.org/book/exit-codes",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Tact docs — Core library — math",
+   "url": "https://docs.tact-lang.org/ref/core-math",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "Learn Tact in Y minutes",
+   "url": "https://docs.tact-lang.org/book/learn-tact-in-y-minutes",
+   "scope": "whole",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Tact — security best practices",
+   "url": "https://docs.tact-lang.org/book/security-best-practices",
+   "scope": "section",
+   "authority": "official",
+   "version": "Tact",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "security-considerations"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "title": "FunC cookbook",
+   "url": "https://docs.ton.org/languages/func/cookbook",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — TON (blockchain)",
+   "url": "https://en.wikipedia.org/wiki/TON_(blockchain)",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
  ]
 }

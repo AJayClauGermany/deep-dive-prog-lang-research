@@ -1,45 +1,365 @@
 {
  "id": "noir",
  "name": "Noir",
- "categories": ["domain-specific", "smart-contract"],
- "paradigms": ["imperative", "functional"],
- "typing": ["static", "strong", "inferred"],
+ "categories": [
+  "domain-specific",
+  "smart-contract"
+ ],
+ "paradigms": [
+  "imperative",
+  "functional"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "inferred"
+ ],
  "first_appeared": 2022,
- "designers": ["Aztec Labs"],
+ "designers": [
+  "Aztec Labs"
+ ],
  "summary": "Rust-like domain-specific language for writing zero-knowledge proof circuits; programs compile to the backend-agnostic ACIR intermediate representation and are proved with backends such as Barretenberg.",
  "status": "active",
- "defined_by": ["reference-implementation", "informal"],
- "file_extensions": [".nr"],
+ "defined_by": [
+  "reference-implementation",
+  "informal"
+ ],
+ "file_extensions": [
+  ".nr"
+ ],
  "homepage": "https://noir-lang.org/",
- "influenced_by": ["rust"],
- "related": [{"id": "circom", "relation": "family"}],
- "level_notes": {"1": "No formal specification; the official documentation is the reference.", "0": "Single compiler (nargo / noirc) in noir-lang/noir, written in Rust.", "3": "No encyclopedia entry found."},
+ "influenced_by": [
+  "rust"
+ ],
+ "related": [
+  {
+   "id": "circom",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "No formal specification; the official documentation is the reference.",
+  "0": "Single compiler (nargo / noirc) in noir-lang/noir, written in Rust.",
+  "3": "No encyclopedia entry found."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "noir-lang/noir — Noir compiler and nargo", "url": "https://github.com/noir-lang/noir", "implementation": "nargo", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "noir lexer", "url": "https://github.com/noir-lang/noir/blob/master/compiler/noirc_frontend/src/lexer/lexer.rs", "implementation": "nargo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
-  {"level": 0, "kind": "implementation-source", "title": "noir parser", "url": "https://github.com/noir-lang/noir/blob/master/compiler/noirc_frontend/src/parser/parser.rs", "implementation": "nargo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "standard-library-source", "title": "noir standard library lib.nr", "url": "https://github.com/noir-lang/noir/blob/master/noir_stdlib/src/lib.nr", "implementation": "nargo", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
-
-  {"level": 1, "kind": "reference-manual", "title": "Noir documentation", "url": "https://noir-lang.org/docs/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Data types", "url": "https://noir-lang.org/docs/language/data_types", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "primitive-types"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Functions", "url": "https://noir-lang.org/docs/language/functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Control flow", "url": "https://noir-lang.org/docs/language/control_flow", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Assert", "url": "https://noir-lang.org/docs/language/assert", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["assertions"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Generics", "url": "https://noir-lang.org/docs/language/generics", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Traits", "url": "https://noir-lang.org/docs/language/traits", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["traits-typeclasses"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Lambdas", "url": "https://noir-lang.org/docs/language/lambdas", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Mutability", "url": "https://noir-lang.org/docs/language/mutability", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Operators", "url": "https://noir-lang.org/docs/language/ops", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Comments", "url": "https://noir-lang.org/docs/language/comments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Comptime and metaprogramming", "url": "https://noir-lang.org/docs/language/comptime", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["compile-time-evaluation", "macros"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Unconstrained functions", "url": "https://noir-lang.org/docs/language/unconstrained", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["purity"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Attributes", "url": "https://noir-lang.org/docs/language/attributes", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["annotations-attributes"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Modules", "url": "https://noir-lang.org/docs/project_structure/modules", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "imports"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Globals", "url": "https://noir-lang.org/docs/language/globals", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["constants"]},
-  {"level": 1, "kind": "reference-manual", "title": "Noir docs — Testing", "url": "https://noir-lang.org/docs/tooling/tests", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["testing"]},
-  {"level": 1, "kind": "specification", "title": "ACIR — Abstract Circuit Intermediate Representation reference", "url": "https://noir-lang.github.io/noir/docs/acir/circuit/index.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["intermediate-representation"]},
-
-  {"level": 2, "kind": "guide", "title": "Noir docs — Thinking in circuits", "url": "https://noir-lang.org/docs/guides/thinking_in_circuits", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["design-rationale"]},
-  {"level": 2, "kind": "tutorial", "title": "Noir — Getting started", "url": "https://noir-lang.org/docs/installation", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "noir-lang/noir — Noir compiler and nargo",
+   "url": "https://github.com/noir-lang/noir",
+   "implementation": "nargo",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "noir lexer",
+   "url": "https://github.com/noir-lang/noir/blob/master/compiler/noirc_frontend/src/lexer/lexer.rs",
+   "implementation": "nargo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "noir parser",
+   "url": "https://github.com/noir-lang/noir/blob/master/compiler/noirc_frontend/src/parser/parser.rs",
+   "implementation": "nargo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "noir standard library lib.nr",
+   "url": "https://github.com/noir-lang/noir/blob/master/noir_stdlib/src/lib.nr",
+   "implementation": "nargo",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir documentation",
+   "url": "https://noir-lang.org/docs/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Data types",
+   "url": "https://noir-lang.org/docs/language/data_types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Functions",
+   "url": "https://noir-lang.org/docs/language/functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Control flow",
+   "url": "https://noir-lang.org/docs/language/control_flow",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Assert",
+   "url": "https://noir-lang.org/docs/language/assert",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assertions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Generics",
+   "url": "https://noir-lang.org/docs/language/generics",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Traits",
+   "url": "https://noir-lang.org/docs/language/traits",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "traits-typeclasses"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Lambdas",
+   "url": "https://noir-lang.org/docs/language/lambdas",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Mutability",
+   "url": "https://noir-lang.org/docs/language/mutability",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Operators",
+   "url": "https://noir-lang.org/docs/language/ops",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Comments",
+   "url": "https://noir-lang.org/docs/language/comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Comptime and metaprogramming",
+   "url": "https://noir-lang.org/docs/language/comptime",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compile-time-evaluation",
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Unconstrained functions",
+   "url": "https://noir-lang.org/docs/language/unconstrained",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "purity"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Attributes",
+   "url": "https://noir-lang.org/docs/language/attributes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Modules",
+   "url": "https://noir-lang.org/docs/project_structure/modules",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Globals",
+   "url": "https://noir-lang.org/docs/language/globals",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "constants",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Noir docs — Testing",
+   "url": "https://noir-lang.org/docs/tooling/tests",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "internals-guide",
+   "title": "acir crate docs (rustdoc) — ACIR circuit module",
+   "url": "https://noir-lang.github.io/noir/docs/acir/circuit/index.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Noir docs — Thinking in circuits",
+   "url": "https://noir-lang.org/docs/guides/thinking_in_circuits",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Noir — Getting started",
+   "url": "https://noir-lang.org/docs/installation",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  }
  ]
 }

@@ -1,53 +1,669 @@
 {
  "id": "cairo",
  "name": "Cairo",
- "categories": ["smart-contract", "domain-specific"],
- "paradigms": ["functional", "imperative"],
- "typing": ["static", "strong", "inferred", "linear"],
+ "categories": [
+  "smart-contract",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "functional",
+  "imperative"
+ ],
+ "typing": [
+  "static",
+  "strong",
+  "inferred",
+  "linear"
+ ],
  "first_appeared": 2020,
- "designers": ["Lior Goldberg", "Shahar Papini", "Michael Riabzev"],
+ "designers": [
+  "Lior Goldberg",
+  "Shahar Papini",
+  "Michael Riabzev"
+ ],
  "summary": "StarkWare's language for provable computation (STARKs) and Starknet smart contracts; Cairo 1.x is a Rust-like language with traits, generics and linear ownership that compiles through the Sierra safe IR to CASM for the Cairo CPU-style VM.",
  "status": "active",
- "defined_by": ["reference-implementation", "academic-paper"],
- "file_extensions": [".cairo"],
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".cairo"
+ ],
  "homepage": "https://www.cairo-lang.org/",
- "influenced_by": ["rust"],
- "level_notes": {"1": "The Cairo whitepaper defines the Cairo VM/AIR; there is no language specification for Cairo 1 beyond the compiler and the official Cairo Book.", "2": "The Cairo Book (starknet.io/cairo-book) is the official tutorial and de facto reference.", "0": "starkware-libs/cairo (Rust) holds the Cairo 1 compiler, Sierra and corelib; cairo-lang (Python) the legacy Cairo 0; lambdaclass/cairo-vm is an alternative VM."},
+ "influenced_by": [
+  "rust"
+ ],
+ "level_notes": {
+  "1": "The Cairo whitepaper defines the Cairo VM/AIR; there is no language specification for Cairo 1 beyond the compiler and the official Cairo Book.",
+  "2": "The Cairo Book (starknet.io/cairo-book) is the official tutorial and de facto reference.",
+  "0": "starkware-libs/cairo (Rust) holds the Cairo 1 compiler, Sierra and corelib; cairo-lang (Python) the legacy Cairo 0; lambdaclass/cairo-vm is an alternative VM."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "starkware-libs/cairo — Cairo 1 compiler, Sierra, corelib", "url": "https://github.com/starkware-libs/cairo", "implementation": "cairo (Rust)", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "cairo crates/cairo-lang-parser/src/lexer.rs — lexer", "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-parser/src/lexer.rs", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
-  {"level": 0, "kind": "implementation-source", "title": "cairo crates/cairo-lang-parser/src/parser.rs — parser", "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-parser/src/parser.rs", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "implementation-source", "title": "cairo crates/cairo-lang-syntax-codegen/src/cairo_spec.rs — syntax tree specification", "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-syntax-codegen/src/cairo_spec.rs", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "ast"]},
-  {"level": 0, "kind": "implementation-source", "title": "cairo crates/cairo-lang-semantic/src/expr/compute.rs — expression semantic analysis and inference", "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-semantic/src/expr/compute.rs", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["semantic-analysis", "type-inference"]},
-  {"level": 0, "kind": "implementation-source", "title": "cairo crates/cairo-lang-sierra/src/lib.rs — Sierra intermediate representation", "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-sierra/src/lib.rs", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["intermediate-representation"]},
-  {"level": 0, "kind": "implementation-source", "title": "cairo crates/cairo-lang-sierra-to-casm/src/compiler.rs — Sierra to CASM compiler", "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-sierra-to-casm/src/compiler.rs", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["code-generation-backend"]},
-  {"level": 0, "kind": "standard-library-source", "title": "cairo corelib/src/array.cairo — corelib Array", "url": "https://github.com/starkware-libs/cairo/blob/main/corelib/src/array.cairo", "implementation": "cairo (Rust)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["arrays", "standard-library"]},
-  {"level": 0, "kind": "implementation-repository", "title": "starkware-libs/cairo-lang — Cairo 0 toolchain (Python)", "url": "https://github.com/starkware-libs/cairo-lang", "implementation": "cairo-lang (Cairo 0)", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
-  {"level": 0, "kind": "implementation-repository", "title": "lambdaclass/cairo-vm — Cairo VM in Rust", "url": "https://github.com/lambdaclass/cairo-vm", "implementation": "cairo-vm", "scope": "whole", "authority": "community", "format": "repository", "access": "open", "concepts": ["virtual-machine"]},
-
-  {"level": 1, "kind": "original-paper", "title": "Cairo – a Turing-complete STARK-friendly CPU architecture", "url": "https://eprint.iacr.org/2021/1063", "scope": "whole", "authority": "designer", "authors": ["Lior Goldberg", "Shahar Papini", "Michael Riabzev"], "year": 2021, "format": "html", "access": "open", "concepts": ["virtual-machine", "instruction-set", "design-rationale"]},
-
-  {"level": 2, "kind": "book", "title": "The Cairo Programming Language (Cairo Book)", "url": "https://www.starknet.io/cairo-book/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Hello, World", "url": "https://www.starknet.io/cairo-book/ch01-02-hello-world.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Variables and mutability", "url": "https://www.starknet.io/cairo-book/ch02-01-variables-and-mutability.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables", "constants"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Data types", "url": "https://www.starknet.io/cairo-book/ch02-02-data-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["primitive-types", "integers"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Functions", "url": "https://www.starknet.io/cairo-book/ch02-03-functions.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Control flow", "url": "https://www.starknet.io/cairo-book/ch02-05-control-flow.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals", "loops"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Arrays", "url": "https://www.starknet.io/cairo-book/ch03-01-arrays.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["arrays"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Dictionaries", "url": "https://www.starknet.io/cairo-book/ch03-02-dictionaries.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["maps-dictionaries"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Ownership", "url": "https://www.starknet.io/cairo-book/ch04-01-what-is-ownership.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["ownership-borrowing", "linear-types"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Structs", "url": "https://www.starknet.io/cairo-book/ch05-01-defining-and-instantiating-structs.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["records-structs"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Enums", "url": "https://www.starknet.io/cairo-book/ch06-01-enums.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["enums", "algebraic-data-types"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — match", "url": "https://www.starknet.io/cairo-book/ch06-02-the-match-control-flow-construct.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["pattern-matching"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Modules", "url": "https://www.starknet.io/cairo-book/ch07-02-defining-modules-to-control-scope.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["modules", "visibility"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Generics", "url": "https://www.starknet.io/cairo-book/ch08-01-generic-data-types.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["generics"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Traits", "url": "https://www.starknet.io/cairo-book/ch08-02-traits-in-cairo.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["traits-typeclasses"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Recoverable errors", "url": "https://www.starknet.io/cairo-book/ch09-02-recoverable-errors.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["error-handling"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Closures", "url": "https://www.starknet.io/cairo-book/ch11-01-closures.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["closures"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Macros", "url": "https://www.starknet.io/cairo-book/ch12-05-macros.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Starknet contract storage", "url": "https://www.starknet.io/cairo-book/ch101-01-00-contract-storage.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
-  {"level": 2, "kind": "book", "title": "Cairo Book — Cairo VM introduction", "url": "https://www.starknet.io/cairo-book/ch200-introduction.html", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["virtual-machine"]},
-
-  {"level": 3, "kind": "catalog", "title": "PLDB — Cairo", "url": "https://pldb.io/concepts/cairo.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "starkware-libs/cairo — Cairo 1 compiler, Sierra, corelib",
+   "url": "https://github.com/starkware-libs/cairo",
+   "implementation": "cairo (Rust)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cairo crates/cairo-lang-parser/src/lexer.rs — lexer",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-parser/src/lexer.rs",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cairo crates/cairo-lang-parser/src/parser.rs — parser",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-parser/src/parser.rs",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cairo crates/cairo-lang-syntax-codegen/src/cairo_spec.rs — syntax tree specification",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-syntax-codegen/src/cairo_spec.rs",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cairo crates/cairo-lang-semantic/src/expr/compute.rs — expression semantic analysis and inference",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-semantic/src/expr/compute.rs",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-inference"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cairo crates/cairo-lang-sierra/src/lib.rs — Sierra intermediate representation",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-sierra/src/lib.rs",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "cairo crates/cairo-lang-sierra-to-casm/src/compiler.rs — Sierra to CASM compiler",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-sierra-to-casm/src/compiler.rs",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "code-generation-backend"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "cairo corelib/src/array.cairo — corelib Array",
+   "url": "https://github.com/starkware-libs/cairo/blob/main/corelib/src/array.cairo",
+   "implementation": "cairo (Rust)",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "starkware-libs/cairo-lang — Cairo 0 toolchain (Python)",
+   "url": "https://github.com/starkware-libs/cairo-lang",
+   "implementation": "cairo-lang (Cairo 0)",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "lambdaclass/cairo-vm — Cairo VM in Rust",
+   "url": "https://github.com/lambdaclass/cairo-vm",
+   "implementation": "cairo-vm",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Cairo – a Turing-complete STARK-friendly CPU architecture",
+   "url": "https://eprint.iacr.org/2021/1063",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Lior Goldberg",
+    "Shahar Papini",
+    "Michael Riabzev"
+   ],
+   "year": 2021,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "virtual-machine",
+    "instruction-set",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "The Cairo Programming Language (Cairo Book)",
+   "url": "https://www.starknet.io/cairo-book/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Hello, World",
+   "url": "https://www.starknet.io/cairo-book/ch01-02-hello-world.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Variables and mutability",
+   "url": "https://www.starknet.io/cairo-book/ch02-01-variables-and-mutability.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "constants"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Data types",
+   "url": "https://www.starknet.io/cairo-book/ch02-02-data-types.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "integers"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Functions",
+   "url": "https://www.starknet.io/cairo-book/ch02-03-functions.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Control flow",
+   "url": "https://www.starknet.io/cairo-book/ch02-05-control-flow.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Arrays",
+   "url": "https://www.starknet.io/cairo-book/ch03-01-arrays.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Dictionaries",
+   "url": "https://www.starknet.io/cairo-book/ch03-02-dictionaries.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Ownership",
+   "url": "https://www.starknet.io/cairo-book/ch04-01-what-is-ownership.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "ownership-borrowing",
+    "linear-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Structs",
+   "url": "https://www.starknet.io/cairo-book/ch05-01-defining-and-instantiating-structs.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Enums",
+   "url": "https://www.starknet.io/cairo-book/ch06-01-enums.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "enums",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — match",
+   "url": "https://www.starknet.io/cairo-book/ch06-02-the-match-control-flow-construct.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "pattern-matching"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Modules",
+   "url": "https://www.starknet.io/cairo-book/ch07-02-defining-modules-to-control-scope.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "modules",
+    "visibility"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Generics",
+   "url": "https://www.starknet.io/cairo-book/ch08-01-generic-data-types.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "generics"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Traits",
+   "url": "https://www.starknet.io/cairo-book/ch08-02-traits-in-cairo.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "traits-typeclasses"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Recoverable errors",
+   "url": "https://www.starknet.io/cairo-book/ch09-02-recoverable-errors.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Closures",
+   "url": "https://www.starknet.io/cairo-book/ch11-01-closures.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "closures"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Macros",
+   "url": "https://www.starknet.io/cairo-book/ch12-05-macros.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Starknet contract storage",
+   "url": "https://www.starknet.io/cairo-book/ch101-01-00-contract-storage.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Cairo Book — Cairo VM introduction",
+   "url": "https://www.starknet.io/cairo-book/ch200-introduction.html",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Comments",
+   "url": "https://www.starknet.io/cairo-book/ch02-04-comments.html",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Appendix A: Keywords",
+   "url": "https://www.starknet.io/cairo-book/appendix-01-keywords.html",
+   "concepts": [
+    "keywords",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Appendix B: Operators and Symbols",
+   "url": "https://www.starknet.io/cairo-book/appendix-02-operators-and-symbols.html",
+   "concepts": [
+    "operators",
+    "lexical-structure"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Appendix D: The Cairo Prelude",
+   "url": "https://www.starknet.io/cairo-book/appendix-04-cairo-prelude.html",
+   "concepts": [
+    "standard-library",
+    "imports"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Bringing Paths into Scope with the use Keyword",
+   "url": "https://www.starknet.io/cairo-book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html",
+   "concepts": [
+    "imports",
+    "scope"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Unrecoverable Errors with panic",
+   "url": "https://www.starknet.io/cairo-book/ch09-01-unrecoverable-errors-with-panic.html",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Method Syntax",
+   "url": "https://www.starknet.io/cairo-book/ch05-03-method-syntax.html",
+   "concepts": [
+    "methods"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Operator Overloading",
+   "url": "https://www.starknet.io/cairo-book/ch12-03-operator-overloading.html",
+   "concepts": [
+    "operator-overloading"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — References and Snapshots",
+   "url": "https://www.starknet.io/cairo-book/ch04-02-references-and-snapshots.html",
+   "concepts": [
+    "pointers-references",
+    "ownership-borrowing"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Cairo VM memory",
+   "url": "https://www.starknet.io/cairo-book/ch202-00-memory.html",
+   "concepts": [
+    "memory-model",
+    "memory-management"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Cairo VM execution model",
+   "url": "https://www.starknet.io/cairo-book/ch203-00-execution-model.html",
+   "concepts": [
+    "virtual-machine",
+    "instruction-set"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Sierra intermediate representation",
+   "url": "https://www.starknet.io/cairo-book/appendix-09-sierra.html",
+   "concepts": [
+    "intermediate-representation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — Interacting with another contract",
+   "url": "https://www.starknet.io/cairo-book/ch102-02-interacting-with-another-contract.html",
+   "concepts": [
+    "blockchain-execution",
+    "interfaces-protocols"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "title": "Cairo Book — How To Write Tests",
+   "url": "https://www.starknet.io/cairo-book/ch10-01-how-to-write-tests.html",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Cairo",
+   "url": "https://pldb.io/concepts/cairo.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
  ]
 }

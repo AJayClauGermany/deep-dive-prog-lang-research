@@ -1,31 +1,258 @@
 {
- "id": "quil",
- "name": "Quil",
- "categories": ["quantum", "assembly", "intermediate-representation"],
- "paradigms": ["imperative"],
- "typing": ["untyped"],
- "first_appeared": 2016,
- "designers": ["Robert S. Smith", "Michael J. Curtis", "William J. Zeng"],
- "summary": "Rigetti's quantum instruction language with shared classical memory (Quantum Abstract Machine model), gate definitions, parametric gates and, in Quil-T, pulse-level timing control.",
- "status": "active",
- "defined_by": ["community-specification", "academic-paper"],
- "file_extensions": [".quil"],
- "homepage": "https://quil-lang.github.io/",
- "related": [{"id": "openqasm", "relation": "family"}],
- "level_notes": {"1": "Reference specification in quil-lang/quil plus the 2016 paper defining the Quantum Abstract Machine.", "0": "quilc optimizing compiler and QVM simulator (Common Lisp); pyQuil Python bindings."},
- "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "quil-lang/quilc — optimizing Quil compiler", "url": "https://github.com/quil-lang/quilc", "implementation": "quilc", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "quilc parser.lisp", "url": "https://github.com/quil-lang/quilc/blob/master/src/parser.lisp", "implementation": "quilc", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser"]},
-  {"level": 0, "kind": "implementation-repository", "title": "quil-lang/qvm — Quantum Virtual Machine", "url": "https://github.com/quil-lang/qvm", "implementation": "QVM", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["virtual-machine", "quantum-operations"]},
-  {"level": 0, "kind": "tooling-source", "title": "rigetti/pyquil", "url": "https://github.com/rigetti/pyquil", "implementation": "pyQuil", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["interoperability"]},
-  {"level": 0, "kind": "grammar-source", "title": "Quil ANTLR grammar", "url": "https://github.com/quil-lang/quil/blob/master/grammars/Quil.g4", "implementation": "spec", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar"]},
-
-  {"level": 1, "kind": "specification", "title": "Quil specification (quil-lang.github.io)", "url": "https://quil-lang.github.io/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["quantum-operations"]},
-  {"level": 1, "kind": "specification", "title": "quil-lang/quil — specification repository and RFCs", "url": "https://github.com/quil-lang/quil", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
-  {"level": 1, "kind": "original-paper", "title": "A Practical Quantum Instruction Set Architecture", "url": "https://arxiv.org/abs/1608.03355", "scope": "whole", "authority": "designer", "authors": ["Robert S. Smith", "Michael J. Curtis", "William J. Zeng"], "year": 2016, "format": "html", "access": "open", "concepts": ["quantum-operations", "design-rationale", "instruction-set"]},
-
-  {"level": 2, "kind": "guide", "title": "pyQuil documentation", "url": "https://pyquil-docs.rigetti.com/en/stable/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
-
-  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Quil (instruction set architecture)", "url": "https://en.wikipedia.org/wiki/Quil_(instruction_set_architecture)", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
- ]
+  "id": "quil",
+  "name": "Quil",
+  "categories": [
+    "quantum",
+    "assembly",
+    "intermediate-representation"
+  ],
+  "paradigms": [
+    "imperative"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 2016,
+  "designers": [
+    "Robert S. Smith",
+    "Michael J. Curtis",
+    "William J. Zeng"
+  ],
+  "summary": "Rigetti's quantum instruction language with shared classical memory (Quantum Abstract Machine model), gate definitions, parametric gates and, in Quil-T, pulse-level timing control.",
+  "status": "active",
+  "defined_by": [
+    "community-specification",
+    "academic-paper"
+  ],
+  "file_extensions": [
+    ".quil"
+  ],
+  "homepage": "https://quil-lang.github.io/",
+  "related": [
+    {
+      "id": "openqasm",
+      "relation": "family"
+    }
+  ],
+  "level_notes": {
+    "1": "Reference specification in quil-lang/quil plus the 2016 paper defining the Quantum Abstract Machine.",
+    "0": "quilc optimizing compiler and QVM simulator (Common Lisp); pyQuil Python bindings."
+  },
+  "resources": [
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "quil-lang/quilc — optimizing Quil compiler",
+      "url": "https://github.com/quil-lang/quilc",
+      "implementation": "quilc",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "compiler-architecture"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "quilc parser.lisp",
+      "url": "https://github.com/quil-lang/quilc/blob/master/src/parser.lisp",
+      "implementation": "quilc",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "quil-lang/qvm — Quantum Virtual Machine",
+      "url": "https://github.com/quil-lang/qvm",
+      "implementation": "QVM",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "virtual-machine",
+        "quantum-operations"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "rigetti/pyquil",
+      "url": "https://github.com/rigetti/pyquil",
+      "implementation": "pyQuil",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "interoperability"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "Quil ANTLR grammar",
+      "url": "https://github.com/quil-lang/quil/blob/master/grammars/Quil.g4",
+      "implementation": "spec",
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "grammar"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "Quil specification (quil-lang.github.io)",
+      "url": "https://quil-lang.github.io/",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "quantum-operations"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "quil-lang/quil — specification repository and RFCs",
+      "url": "https://github.com/quil-lang/quil",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "A Practical Quantum Instruction Set Architecture",
+      "url": "https://arxiv.org/abs/1608.03355",
+      "scope": "whole",
+      "authority": "designer",
+      "authors": [
+        "Robert S. Smith",
+        "Michael J. Curtis",
+        "William J. Zeng"
+      ],
+      "year": 2016,
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "quantum-operations",
+        "design-rationale",
+        "instruction-set"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "pyQuil documentation",
+      "url": "https://pyquil-docs.rigetti.com/en/stable/",
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "hello-world"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Quil (instruction set architecture)",
+      "url": "https://en.wikipedia.org/wiki/Quil_(instruction_set_architecture)",
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "pyQuil: Programs and gates",
+      "url": "https://pyquil-docs.rigetti.com/en/stable/programs_and_gates.html",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "quantum-operations"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "pyQuil: Getting started",
+      "url": "https://pyquil-docs.rigetti.com/en/stable/getting_started.html",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": []
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "pyQuil: The Quil compiler",
+      "url": "https://pyquil-docs.rigetti.com/en/stable/compiler.html",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "compiler-architecture"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "pyQuil: Noise and quantum computation",
+      "url": "https://pyquil-docs.rigetti.com/en/stable/noise.html",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "quantum-operations"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "pyQuil: Quil-T (pulse-level control)",
+      "url": "https://pyquil-docs.rigetti.com/en/stable/quilt.html",
+      "scope": "section",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "quantum-operations"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "rigetti/quil-rs — Rust Quil parser and toolkit",
+      "url": "https://github.com/rigetti/quil-rs",
+      "implementation": "quil-rs",
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "parser"
+      ]
+    }
+  ]
 }

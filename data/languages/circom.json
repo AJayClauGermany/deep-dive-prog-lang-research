@@ -1,49 +1,434 @@
 {
  "id": "circom",
  "name": "Circom",
- "categories": ["domain-specific", "hardware-description"],
- "paradigms": ["declarative", "constraint"],
- "typing": ["untyped", "signal-based"],
+ "categories": [
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "constraint"
+ ],
+ "typing": [
+  "untyped",
+  "signal-based"
+ ],
  "first_appeared": 2018,
- "designers": ["Jordi Baylina", "iden3"],
+ "designers": [
+  "Jordi Baylina",
+  "iden3"
+ ],
  "summary": "Circuit description language for zero-knowledge proofs: templates of signals and constraints compile to R1CS plus a witness generator (WebAssembly or C++), used with snarkjs for Groth16/PLONK proofs.",
  "status": "active",
- "defined_by": ["reference-implementation", "academic-paper"],
- "file_extensions": [".circom"],
+ "defined_by": [
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".circom"
+ ],
  "homepage": "https://iden3.io/circom",
- "related": [{"id": "noir", "relation": "family"}],
- "level_notes": {"1": "Documentation (docs.circom.io, sourced from mkdocs/ in the repo; linked through GitHub here since the doc site was unreachable from the sandbox) plus the IEEE TSE paper.", "3": "No encyclopedia entry."},
+ "related": [
+  {
+   "id": "noir",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "Documentation (docs.circom.io, sourced from mkdocs/ in the repo; linked through GitHub here since the doc site was unreachable from the sandbox) plus the IEEE TSE paper.",
+  "3": "No encyclopedia entry."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "iden3/circom — Circom 2 compiler (Rust)", "url": "https://github.com/iden3/circom", "implementation": "circom", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "grammar-source", "title": "circom LALRPOP grammar", "url": "https://github.com/iden3/circom/blob/master/parser/src/lang.lalrpop", "implementation": "circom", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["grammar", "parser"]},
-  {"level": 0, "kind": "standard-library-source", "title": "iden3/circomlib — circuit library", "url": "https://github.com/iden3/circomlib", "implementation": "circom", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["standard-library"]},
-  {"level": 0, "kind": "tooling-source", "title": "iden3/snarkjs — proving/verification toolkit", "url": "https://github.com/iden3/snarkjs", "implementation": "snarkjs", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["tooling", "verification"]},
-
-  {"level": 1, "kind": "reference-manual", "title": "Circom documentation — index", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/index.md", "scope": "whole", "authority": "official", "format": "source-file", "access": "open"},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Signals", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/signals.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["variables", "constraints"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Variables and mutability", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/variables-and-mutability.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["variables"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Templates and components", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/templates-and-components.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["functions", "modules"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Pragma", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/pragma.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["versioning-compatibility"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Functions", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/functions.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["functions"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Include", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/include.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["imports"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — The main component", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/the-main-component.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["program-structure"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Comment lines", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/comment-lines.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["comments"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Identifiers", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/identifiers.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["identifiers"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Reserved keywords", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/reserved-keywords.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["keywords"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Basic operators", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/basic-operators.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["operators"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Constraint generation", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/constraint-generation.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["constraints"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Control flow", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/control-flow.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["conditionals", "loops"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Data types", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/data-types.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["type-system", "arrays"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Scoping", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/scoping.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["scope"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Anonymous components and tuples", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/anonymous-components-and-tuples.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["tuples"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Tags", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/tags.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["annotations-attributes"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Buses", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/buses.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["records-structs"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Code assertion", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/code-quality/code-assertion.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["assertions"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Compiler phases", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/circom-insight/circom-phases.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 1, "kind": "reference-manual", "title": "Circom docs — Constraint simplification", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/circom-insight/simplification.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["optimization"]},
-  {"level": 1, "kind": "original-paper", "title": "Circom: A Circuit Description Language for Building Zero-Knowledge Applications (IEEE TSE 2023)", "url": "https://ieeexplore.ieee.org/document/10002421", "scope": "whole", "authority": "designer", "authors": ["Marta Bellés-Muñoz", "Miguel Isabel", "Jose Luis Muñoz-Tapia", "Albert Rubio", "Jordi Baylina"], "year": 2023, "format": "html", "access": "paywalled", "concepts": ["design-rationale"]},
-
-  {"level": 2, "kind": "tutorial", "title": "Circom docs — Writing circuits", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/getting-started/writing-circuits.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["hello-world"]},
-  {"level": 2, "kind": "guide", "title": "Circom docs — Background in ZK", "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/background/background.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["design-rationale"]}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "iden3/circom — Circom 2 compiler (Rust)",
+   "url": "https://github.com/iden3/circom",
+   "implementation": "circom",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "circom LALRPOP grammar",
+   "url": "https://github.com/iden3/circom/blob/master/parser/src/lang.lalrpop",
+   "implementation": "circom",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "parser"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "standard-library-source",
+   "title": "iden3/circomlib — circuit library",
+   "url": "https://github.com/iden3/circomlib",
+   "implementation": "circom",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "iden3/snarkjs — proving/verification toolkit",
+   "url": "https://github.com/iden3/snarkjs",
+   "implementation": "snarkjs",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "tooling",
+    "verification"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom documentation — index",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/index.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Signals",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/signals.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables",
+    "constraints"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Variables and mutability",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/variables-and-mutability.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Templates and components",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/templates-and-components.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "modules"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Pragma",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/pragma.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "versioning-compatibility"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Functions",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/functions.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Include",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/include.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "imports"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — The main component",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/the-main-component.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Comment lines",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/comment-lines.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Identifiers",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/identifiers.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Reserved keywords",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/reserved-keywords.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "keywords"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Basic operators",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/basic-operators.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Constraint generation",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/constraint-generation.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "constraints"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Control flow",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/control-flow.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Data types",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/data-types.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "arrays"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Scoping",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/scoping.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "scope"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Anonymous components and tuples",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/anonymous-components-and-tuples.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "tuples"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Tags",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/tags.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Buses",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/buses.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Code assertion",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/code-quality/code-assertion.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "assertions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Compiler phases",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/circom-insight/circom-phases.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Circom docs — Constraint simplification",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/circom-language/circom-insight/simplification.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "optimization"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Circom: A Circuit Description Language for Building Zero-Knowledge Applications (IEEE TSE 2023)",
+   "url": "https://ieeexplore.ieee.org/document/10002421",
+   "scope": "whole",
+   "authority": "designer",
+   "authors": [
+    "Marta Bellés-Muñoz",
+    "Miguel Isabel",
+    "Jose Luis Muñoz-Tapia",
+    "Albert Rubio",
+    "Jordi Baylina"
+   ],
+   "year": 2023,
+   "format": "html",
+   "access": "paywalled",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Circom docs — Writing circuits",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/getting-started/writing-circuits.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Circom docs — Background in ZK",
+   "url": "https://github.com/iden3/circom/blob/master/mkdocs/docs/background/background.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  }
  ]
 }
