@@ -1,48 +1,621 @@
 {
  "id": "michelson",
  "name": "Michelson",
- "categories": ["smart-contract", "concatenative", "bytecode"],
- "paradigms": ["stack-based", "functional"],
- "typing": ["static", "strong"],
+ "categories": [
+  "smart-contract",
+  "concatenative",
+  "bytecode"
+ ],
+ "paradigms": [
+  "stack-based",
+  "functional"
+ ],
+ "typing": [
+  "static",
+  "strong"
+ ],
  "first_appeared": 2018,
- "designers": ["Arthur Breitman", "Benjamin Canou", "Pierre Chambart"],
+ "designers": [
+  "Arthur Breitman",
+  "Benjamin Canou",
+  "Pierre Chambart"
+ ],
  "summary": "Strongly typed, stack-based smart-contract language of the Tezos blockchain whose instructions have precise big-step semantics designed to make formal verification of contracts tractable.",
  "status": "active",
- "defined_by": ["vendor-specification", "reference-implementation"],
- "file_extensions": [".tz"],
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "file_extensions": [
+  ".tz"
+ ],
  "homepage": "https://octez.tezos.com/docs/active/michelson.html",
- "related": [{"id": "ligo", "relation": "family"}],
- "level_notes": {"1": "The Michelson chapter of the Octez/Tezos documentation gives typing rules and big-step semantics; Mi-Cho-Coq is a Coq formalisation.", "0": "The reference interpreter and type checker are part of the Tezos economic protocol (OCaml) in the tezos/tezos GitLab repository."},
+ "related": [
+  {
+   "id": "ligo",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The Michelson chapter of the Octez/Tezos documentation gives typing rules and big-step semantics; Mi-Cho-Coq is a Coq formalisation.",
+  "0": "The reference interpreter and type checker are part of the Tezos economic protocol (OCaml) in the tezos/tezos GitLab repository."
+ },
  "resources": [
-  {"level": 0, "kind": "reference-implementation", "title": "tezos/tezos (Octez) — Tezos node and protocol including Michelson", "url": "https://gitlab.com/tezos/tezos", "implementation": "Octez", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
-  {"level": 0, "kind": "implementation-source", "title": "Tezos protocol script_interpreter.ml — Michelson interpreter", "url": "https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/script_interpreter.ml", "implementation": "Octez", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["interpreter"]},
-  {"level": 0, "kind": "implementation-source", "title": "Tezos protocol script_ir_translator.ml — type checker / translator to typed IR", "url": "https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/script_ir_translator.ml", "implementation": "Octez", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["semantic-analysis", "type-system"]},
-  {"level": 0, "kind": "implementation-source", "title": "Tezos protocol script_typed_ir.ml — typed IR definitions", "url": "https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/script_typed_ir.ml", "implementation": "Octez", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["intermediate-representation", "ast"]},
-  {"level": 0, "kind": "implementation-repository", "title": "Mi-Cho-Coq — Coq formalisation of Michelson", "url": "https://gitlab.com/nomadic-labs/mi-cho-coq", "implementation": "Mi-Cho-Coq", "scope": "whole", "authority": "academic", "format": "repository", "access": "open", "concepts": ["formal-semantics", "verification"]},
-
-  {"level": 1, "kind": "specification", "title": "Michelson: the language of smart contracts in Tezos", "url": "https://octez.tezos.com/docs/active/michelson.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Semantics of smart contracts and transactions", "url": "https://octez.tezos.com/docs/active/michelson.html#semantics-of-smart-contracts-and-transactions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Failures", "url": "https://octez.tezos.com/docs/active/michelson.html#failures", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["error-handling", "exceptions"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Language semantics (big-step rules)", "url": "https://octez.tezos.com/docs/active/michelson.html#language-semantics", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["formal-semantics"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Type system", "url": "https://octez.tezos.com/docs/active/michelson.html#introduction-to-the-type-system-and-notations", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Typing rules", "url": "https://octez.tezos.com/docs/active/michelson.html#typing-rules", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["type-system", "type-soundness"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Types and instructions", "url": "https://octez.tezos.com/docs/active/michelson.html#types-and-instructions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["instruction-set", "primitive-types"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Macros", "url": "https://octez.tezos.com/docs/active/michelson.html#macros", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["macros"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Concrete syntax", "url": "https://octez.tezos.com/docs/active/michelson.html#concrete-syntax", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["lexical-structure", "grammar"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Constants", "url": "https://octez.tezos.com/docs/active/michelson.html#constants", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["literals"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Main program structure", "url": "https://octez.tezos.com/docs/active/michelson.html#main-program-structure", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["program-structure"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Annotations", "url": "https://octez.tezos.com/docs/active/michelson.html#annotations-ushuaia", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["annotations-attributes"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Entrypoints", "url": "https://octez.tezos.com/docs/active/michelson.html#entrypoints", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["functions"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Views", "url": "https://octez.tezos.com/docs/active/michelson.html#views", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["purity", "functions"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Full grammar", "url": "https://octez.tezos.com/docs/active/michelson.html#full-grammar", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["grammar", "formal-grammars"]},
-  {"level": 1, "kind": "specification", "title": "Michelson spec — Examples", "url": "https://octez.tezos.com/docs/active/michelson.html#examples", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]},
-  {"level": 1, "kind": "library-reference", "title": "Michelson reference (instruction-by-instruction)", "url": "https://tezos.gitlab.io/michelson-reference/", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["instruction-set"]},
-  {"level": 1, "kind": "formal-semantics", "title": "Mi-Cho-Coq, a framework for certifying Tezos smart contracts", "url": "https://arxiv.org/abs/1909.08671", "scope": "whole", "authority": "academic", "authors": ["Bruno Bernardo", "Raphaël Cauderlier", "Zhenlei Hu", "Basile Pesin", "Julien Tesson"], "year": 2019, "format": "html", "access": "open", "concepts": ["formal-semantics", "verification"]},
-
-  {"level": 2, "kind": "guide", "title": "docs.tezos.com — Michelson", "url": "https://docs.tezos.com/smart-contracts/languages/michelson", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 2, "kind": "course", "title": "OpenTezos — Michelson module", "url": "https://opentezos.com/michelson/", "scope": "whole", "authority": "community", "format": "html", "access": "open"},
-
-  {"level": 3, "kind": "encyclopedia", "title": "Wikipedia — Tezos", "url": "https://en.wikipedia.org/wiki/Tezos", "scope": "whole", "authority": "official", "format": "html", "access": "open", "concepts": ["history"]},
-  {"level": 3, "kind": "catalog", "title": "PLDB — Michelson", "url": "https://pldb.io/concepts/michelson.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "tezos/tezos (Octez) — Tezos node and protocol including Michelson",
+   "url": "https://gitlab.com/tezos/tezos",
+   "implementation": "Octez",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tezos protocol script_interpreter.ml — Michelson interpreter",
+   "url": "https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/script_interpreter.ml",
+   "implementation": "Octez",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tezos protocol script_ir_translator.ml — type checker / translator to typed IR",
+   "url": "https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/script_ir_translator.ml",
+   "implementation": "Octez",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "semantic-analysis",
+    "type-system"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Tezos protocol script_typed_ir.ml — typed IR definitions",
+   "url": "https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/script_typed_ir.ml",
+   "implementation": "Octez",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "intermediate-representation",
+    "ast"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Mi-Cho-Coq — Coq formalisation of Michelson",
+   "url": "https://gitlab.com/nomadic-labs/mi-cho-coq",
+   "implementation": "Mi-Cho-Coq",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson: the language of smart contracts in Tezos",
+   "url": "https://octez.tezos.com/docs/active/michelson.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Semantics of smart contracts and transactions",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#semantics-of-smart-contracts-and-transactions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Failures",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#failures",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling",
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Language semantics (big-step rules)",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#language-semantics",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Type system",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#introduction-to-the-type-system-and-notations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Typing rules",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#typing-rules",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system",
+    "type-soundness"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Types and instructions",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#types-and-instructions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "instruction-set",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Macros",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#macros",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Concrete syntax",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#concrete-syntax",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Constants",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#constants",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "literals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Main program structure",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#main-program-structure",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Annotations",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#annotations-ushuaia",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Entrypoints",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#entrypoints",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Views",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#views",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "purity",
+    "functions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Full grammar",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#full-grammar",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Michelson spec — Examples",
+   "url": "https://octez.tezos.com/docs/active/michelson.html#examples",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "library-reference",
+   "title": "Michelson reference (instruction-by-instruction)",
+   "url": "https://tezos.gitlab.io/michelson-reference/",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "instruction-set"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "formal-semantics",
+   "title": "Mi-Cho-Coq, a framework for certifying Tezos smart contracts",
+   "url": "https://arxiv.org/abs/1909.08671",
+   "scope": "whole",
+   "authority": "academic",
+   "authors": [
+    "Bruno Bernardo",
+    "Raphaël Cauderlier",
+    "Zhenlei Hu",
+    "Basile Pesin",
+    "Julien Tesson"
+   ],
+   "year": 2019,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "verification"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "docs.tezos.com — Michelson",
+   "url": "https://docs.tezos.com/smart-contracts/languages/michelson",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "OpenTezos — Michelson module",
+   "url": "https://opentezos.com/michelson/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson smart contracts: parameter and entrypoints",
+   "url": "https://opentezos.com/michelson/smart-contracts/#parameter-entrypoints",
+   "concepts": [
+    "program-structure",
+    "blockchain-execution"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson: stack-based language",
+   "url": "https://opentezos.com/michelson/smart-contracts/#stack-based-language",
+   "concepts": [
+    "virtual-machine"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson: static typing",
+   "url": "https://opentezos.com/michelson/smart-contracts/#static-typing",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson: explicit failure",
+   "url": "https://opentezos.com/michelson/smart-contracts/#explicit-failure",
+   "concepts": [
+    "exceptions",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson tutorial: primitive types",
+   "url": "https://opentezos.com/michelson/tutorial/#primitive-types-support",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson tutorial: complex data structures",
+   "url": "https://opentezos.com/michelson/tutorial/#working-with-complex-data-structures",
+   "concepts": [
+    "records-structs",
+    "tuples",
+    "algebraic-data-types"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson tutorial: lambda functions",
+   "url": "https://opentezos.com/michelson/tutorial/#lambda-functions",
+   "concepts": [
+    "functions",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson tutorial: iterative processing",
+   "url": "https://opentezos.com/michelson/tutorial/#iterative-processing",
+   "concepts": [
+    "loops",
+    "iteration-foreach"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson instructions: control structures",
+   "url": "https://opentezos.com/michelson/instructions-reference/#control-structures",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson instructions: operations on strings",
+   "url": "https://opentezos.com/michelson/instructions-reference/#operations-on-strings",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson instructions: operations on numbers",
+   "url": "https://opentezos.com/michelson/instructions-reference/#operations-on-numbers",
+   "concepts": [
+    "integers",
+    "operators"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson instructions: maps and big_maps",
+   "url": "https://opentezos.com/michelson/instructions-reference/#operations-on-mapsbig_maps",
+   "concepts": [
+    "maps-dictionaries"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson instructions: lists",
+   "url": "https://opentezos.com/michelson/instructions-reference/#operations-on-lists",
+   "concepts": [
+    "lists"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson instructions: optional values",
+   "url": "https://opentezos.com/michelson/instructions-reference/#operations-on-optional-values",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson macros and syntactic sugar",
+   "url": "https://opentezos.com/michelson/instructions-reference/#macros-and-syntactic-sugar",
+   "concepts": [
+    "macros"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "by-example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "title": "OpenTezos — Michelson examples",
+   "url": "https://opentezos.com/michelson/examples/",
+   "concepts": [
+    "loops",
+    "higher-order-functions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Tezos",
+   "url": "https://en.wikipedia.org/wiki/Tezos",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Michelson",
+   "url": "https://pldb.io/concepts/michelson.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  }
  ]
 }
