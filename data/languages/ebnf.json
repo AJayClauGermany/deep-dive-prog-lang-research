@@ -1,0 +1,948 @@
+{
+ "id": "ebnf",
+ "name": "EBNF (ISO/IEC 14977 and W3C notation)",
+ "aliases": [
+  "Extended Backus-Naur Form",
+  "Wirth syntax notation",
+  "ISO EBNF",
+  "W3C EBNF"
+ ],
+ "categories": [
+  "grammar-notation"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "untyped"
+ ],
+ "first_appeared": 1977,
+ "designers": [
+  "Niklaus Wirth",
+  "Roger S. Scowen (ISO 14977 editor)"
+ ],
+ "summary": "Family of metalanguages extending BNF with optional ([ ]), repetition ({ }) and grouping constructs. ISO/IEC 14977:1996 standardised one dialect; the W3C XML spec defined a regex-flavoured dialect (?, *, +, character classes) reused across W3C languages; many language specifications use their own variant.",
+ "status": "active",
+ "defined_by": [
+  "international-standard",
+  "consortium-standard",
+  "academic-paper"
+ ],
+ "standards": [
+  "ISO/IEC 14977:1996",
+  "W3C XML 1.0 §6 Notation"
+ ],
+ "file_extensions": [
+  ".ebnf"
+ ],
+ "homepage": "https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf",
+ "influenced_by": [
+  "bnf"
+ ],
+ "related": [
+  {
+   "id": "bnf",
+   "relation": "successor-of"
+  },
+  {
+   "id": "abnf",
+   "relation": "family"
+  },
+  {
+   "id": "peg",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "ISO/IEC 14977 is freely available (ISO PAS and a copy on Markus Kuhn's site; PDF so no section anchors). Most entries here are the notation sections of other language specifications, showing the dialects actually in use.",
+  "0": "No reference implementation; listed tools parse/verify or visualise EBNF dialects (Go x/exp/ebnf, rr, Lark)."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 14977:1996 Information technology — Syntactic metalanguage — Extended BNF (free copy)",
+   "url": "https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf",
+   "concepts": [
+    "grammar",
+    "formal-grammars",
+    "lexical-structure",
+    "comments"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 1996,
+   "version": "ISO/IEC 14977:1996",
+   "format": "pdf",
+   "notes": "Clause 4 gives the form of each syntactic element (definitions-list, exceptions, optional/repeated/grouped sequences, special sequences); clause 8 defines EBNF in itself.",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 14977:1996 — ISO Publicly Available Standards download (zip)",
+   "url": "https://standards.iso.org/ittf/PubliclyAvailableStandards/s026153_ISO_IEC_14977_1996(E).zip",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 1996,
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "standard",
+   "title": "ISO/IEC 14977:1996 — ISO catalogue page",
+   "url": "https://www.iso.org/standard/26153.html",
+   "concepts": [
+    "standardization"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "year": 1996,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Niklaus Wirth: What Can We Do About the Unnecessary Diversity of Notation for Syntactic Definitions? (CACM 20(11), 1977)",
+   "url": "https://doi.org/10.1145/359863.359883",
+   "concepts": [
+    "grammar",
+    "design-rationale",
+    "history"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Niklaus Wirth"
+   ],
+   "year": 1977,
+   "authority": "designer",
+   "access": "paywalled",
+   "notes": "Introduces Wirth Syntax Notation, the direct ancestor of EBNF.",
+   "format": "html"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "W3C XML 1.0 (Fifth Edition) — 6 Notation (the W3C EBNF dialect)",
+   "url": "https://www.w3.org/TR/xml/#sec-notation",
+   "concepts": [
+    "grammar",
+    "regular-expressions",
+    "characters"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "XML 1.0 5th ed.",
+   "year": 2008,
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "W3C XML 1.0 — Character data and markup (productions in W3C EBNF)",
+   "url": "https://www.w3.org/TR/xml/#syntax",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Namespaces in XML 1.0 — A Note on Notation and Usage",
+   "url": "https://www.w3.org/TR/REC-xml-names/#notation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XQuery 3.1 — A.1.1 EBNF Notation",
+   "url": "https://www.w3.org/TR/xquery-31/#EBNFNotation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "3.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XQuery 3.1 — A.1 EBNF grammar",
+   "url": "https://www.w3.org/TR/xquery-31/#id-grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "3.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XQuery 3.1 — A.1.3 Grammar Notes (extra-grammatical constraints)",
+   "url": "https://www.w3.org/TR/xquery-31/#notes-on-parsing",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "XPath 3.1 — A.1.1 EBNF Notation",
+   "url": "https://www.w3.org/TR/xpath-31/#EBNFNotation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "version": "3.1",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "SPARQL 1.1 Query — 19 SPARQL Grammar (W3C EBNF)",
+   "url": "https://www.w3.org/TR/sparql11-query/#grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RDF 1.1 Turtle — 6.5 Grammar (W3C EBNF)",
+   "url": "https://www.w3.org/TR/turtle/#sec-grammar-grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "JSON-LD 1.1 — Syntax Tokens and Keywords",
+   "url": "https://www.w3.org/TR/json-ld11/#syntax-tokens-and-keywords",
+   "concepts": [
+    "keywords"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Go Programming Language Specification — Notation (Wirth-style EBNF)",
+   "url": "https://go.dev/ref/spec#Notation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Python Language Reference — 1.2 Notation",
+   "url": "https://docs.python.org/3/reference/introduction.html#notation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Python Language Reference — 1.2.1 Lexical and syntactic definitions",
+   "url": "https://docs.python.org/3/reference/introduction.html#notation-lexical-vs-syntactic",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Python Language Reference — 10 Full Grammar specification",
+   "url": "https://docs.python.org/3/reference/grammar.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Rust Reference — Notation: Grammar",
+   "url": "https://doc.rust-lang.org/reference/notation.html#grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Rust Reference — Notation: the hard cut operator",
+   "url": "https://doc.rust-lang.org/reference/notation.html#the-hard-cut-operator",
+   "concepts": [
+    "grammar",
+    "parser"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMAScript Language Specification — 5.1.6 Grammar Notation",
+   "url": "https://tc39.es/ecma262/#sec-grammar-notation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMAScript Language Specification — 5.1.1 Context-Free Grammars",
+   "url": "https://tc39.es/ecma262/#sec-context-free-grammars",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "ECMAScript Language Specification — 5.1.3 The Lexical and RegExp Grammars",
+   "url": "https://tc39.es/ecma262/#sec-lexical-and-regexp-grammars",
+   "concepts": [
+    "lexical-structure"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Java Language Specification (SE 21) — 2.4 Grammar Notation",
+   "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-2.html#jls-2.4",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Java Language Specification (SE 21) — 2.1 Context-Free Grammars",
+   "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-2.html#jls-2.1",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authority": "vendor",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Kotlin Language Specification — Syntax and grammar: Notation",
+   "url": "https://kotlinlang.org/spec/syntax-and-grammar.html#notation",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Lua 5.4 Reference Manual — 9 The Complete Syntax of Lua (extended BNF)",
+   "url": "https://www.lua.org/manual/5.4/manual.html#9",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Ada 2022 Reference Manual — 1.1.4 Method of Description and Syntax Notation",
+   "url": "http://www.ada-auth.org/standards/22rm/html/RM-1-1-4.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "The Programming Language Oberon-07 (Revised Report) — EBNF-defined syntax",
+   "url": "https://people.inf.ethz.ch/wirth/Oberon/Oberon07.Report.pdf",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Niklaus Wirth"
+   ],
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Niklaus Wirth: Compiler Construction — ch. 2-3 on syntax and EBNF",
+   "url": "https://people.inf.ethz.ch/wirth/CompilerConstruction/CompilerConstruction1.pdf",
+   "concepts": [
+    "grammar",
+    "parser",
+    "formal-grammars"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Niklaus Wirth"
+   ],
+   "year": 1996,
+   "authority": "designer",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "cheatsheet",
+   "title": "Markus Kuhn: A summary of the ISO EBNF notation",
+   "url": "https://www.cl.cam.ac.uk/~mgk25/iso-ebnf.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "authors": [
+    "Markus Kuhn"
+   ],
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "David A. Wheeler: Don't Use ISO/IEC 14977:1996 Extended Backus-Naur Form (EBNF)",
+   "url": "https://dwheeler.com/essays/dont-use-iso-14977-ebnf.html",
+   "concepts": [
+    "comparison",
+    "design-rationale"
+   ],
+   "scope": "whole",
+   "authors": [
+    "David A. Wheeler"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "Richard E. Pattis: EBNF — A Notation to Describe Syntax",
+   "url": "https://ics.uci.edu/~pattis/misc/ebnf2.pdf",
+   "concepts": [
+    "grammar",
+    "recursion"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Richard E. Pattis"
+   ],
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Vadim Zaytsev: BNF WAS HERE — What Have We Done About the Unnecessary Diversity of Notation for Syntactic Definitions (SAC 2012)",
+   "url": "https://grammarware.net/text/2012/bnf-was-here.pdf",
+   "concepts": [
+    "comparison",
+    "history",
+    "grammar"
+   ],
+   "scope": "whole",
+   "authors": [
+    "Vadim Zaytsev"
+   ],
+   "year": 2012,
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "golang.org/x/exp/ebnf — EBNF parser and verifier (Go-spec dialect)",
+   "url": "https://github.com/golang/exp/blob/master/ebnf/ebnf.go",
+   "concepts": [
+    "grammar",
+    "semantic-analysis"
+   ],
+   "scope": "section",
+   "implementation": "x/exp/ebnf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "golang.org/x/exp/ebnf parser.go",
+   "url": "https://github.com/golang/exp/blob/master/ebnf/parser.go",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "x/exp/ebnf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "ebnflint — verifies EBNF productions embedded in HTML (used on the Go spec)",
+   "url": "https://github.com/golang/exp/blob/master/ebnflint/ebnflint.go",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "implementation": "x/exp/ebnf",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Railroad Diagram Generator (rr) — W3C-EBNF to syntax diagrams",
+   "url": "https://github.com/GuntherRademacher/rr",
+   "concepts": [
+    "tooling",
+    "grammar"
+   ],
+   "scope": "whole",
+   "implementation": "rr",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "ebnf-convert — converts grammars between notations to W3C EBNF",
+   "url": "https://github.com/GuntherRademacher/ebnf-convert",
+   "concepts": [
+    "tooling",
+    "grammar"
+   ],
+   "scope": "whole",
+   "implementation": "ebnf-convert",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Railroad Diagram Generator (online)",
+   "url": "https://www.bottlecaps.de/rr/ui",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "REx Parser Generator (W3C EBNF input)",
+   "url": "https://www.bottlecaps.de/rex/",
+   "concepts": [
+    "parser",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "interactive",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "tabatkins/railroad-diagrams — railroad.py",
+   "url": "https://github.com/tabatkins/railroad-diagrams/blob/gh-pages/railroad.py",
+   "concepts": [
+    "tooling"
+   ],
+   "scope": "section",
+   "implementation": "railroad-diagrams",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "tooling-source",
+   "title": "Lark — EBNF-style grammar loader (load_grammar.py)",
+   "url": "https://github.com/lark-parser/lark/blob/master/lark/load_grammar.py",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "Lark",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Lark — the Lark grammar language written in itself (lark.lark)",
+   "url": "https://github.com/lark-parser/lark/blob/master/lark/grammars/lark.lark",
+   "concepts": [
+    "grammar",
+    "bootstrapping"
+   ],
+   "scope": "section",
+   "implementation": "Lark",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Extended Backus–Naur form",
+   "url": "https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form",
+   "concepts": [
+    "history",
+    "comparison"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Wirth syntax notation",
+   "url": "https://en.wikipedia.org/wiki/Wirth_syntax_notation",
+   "concepts": [
+    "history"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Syntax diagram",
+   "url": "https://en.wikipedia.org/wiki/Syntax_diagram",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: EBNF",
+   "url": "https://pldb.io/concepts/ebnf.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "C# Language Specification — Annex A Grammar (A.2 Lexical grammar)",
+   "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar#a2-lexical-grammar",
+   "concepts": [
+    "lexical-structure",
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "C# Language Specification — Annex A.3 Syntactic grammar",
+   "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar#a3-syntactic-grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "Haskell 2010 Report — 2.1 Notational Conventions (BNF-like with {} [] and difference)",
+   "url": "https://www.haskell.org/onlinereport/haskell2010/haskellch2.html#x7-150002.1",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Zig Language Reference — Grammar appendix",
+   "url": "https://ziglang.org/documentation/master/#Grammar",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "RELAX NG Compact Syntax — 2 Syntax (EBNF)",
+   "url": "https://relaxng.org/compact-20021121.html#syntax",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "standards-body",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Crafting Interpreters — 5.1 Context-Free Grammars",
+   "url": "https://craftinginterpreters.com/representing-code.html#context-free-grammars",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "section",
+   "authors": [
+    "Robert Nystrom"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Crafting Interpreters — ch. 5 Representing Code (incl. 5.1.2 Enhancing our notation)",
+   "url": "https://craftinginterpreters.com/representing-code.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authors": [
+    "Robert Nystrom"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "book",
+   "title": "Crafting Interpreters — 5.1.3 A Grammar for Lox expressions",
+   "url": "https://craftinginterpreters.com/representing-code.html#a-grammar-for-lox-expressions",
+   "concepts": [
+    "grammar",
+    "expressions"
+   ],
+   "scope": "section",
+   "authors": [
+    "Robert Nystrom"
+   ],
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "Go spec source (doc/go_spec.html) — EBNF productions checked by ebnflint",
+   "url": "https://github.com/golang/go/blob/master/doc/go_spec.html",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "implementation": "Go",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Instaparse — Clojure parser generator from EBNF/ABNF",
+   "url": "https://github.com/Engelberg/instaparse",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "scope": "whole",
+   "implementation": "Instaparse",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Instaparse cfg.cljc — the EBNF notation parser",
+   "url": "https://github.com/Engelberg/instaparse/blob/master/src/instaparse/cfg.cljc",
+   "concepts": [
+    "parser"
+   ],
+   "scope": "section",
+   "implementation": "Instaparse",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "TatSu — PEG parser generator from EBNF-style grammars (Python)",
+   "url": "https://github.com/neogeny/TatSu",
+   "concepts": [
+    "parser",
+    "code-generation"
+   ],
+   "scope": "whole",
+   "implementation": "TatSu",
+   "authority": "community",
+   "format": "repository",
+   "access": "open"
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "brag — Racket parser generator using EBNF-like #lang (3.1 Syntax and terminology)",
+   "url": "https://docs.racket-lang.org/brag/#%28part._brag-syntax%29",
+   "concepts": [
+    "grammar"
+   ],
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia: Context-free grammar",
+   "url": "https://en.wikipedia.org/wiki/Context-free_grammar",
+   "concepts": [
+    "formal-grammars"
+   ],
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

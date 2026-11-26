@@ -1,0 +1,31 @@
+{
+ "id": "pact",
+ "name": "Pact",
+ "categories": ["smart-contract", "functional"],
+ "paradigms": ["functional", "declarative"],
+ "typing": ["dynamic", "optional-static", "type-annotations"],
+ "first_appeared": 2016,
+ "designers": ["Stuart Popejoy", "Will Martino"],
+ "summary": "Kadena's human-readable, Lisp-syntax, non-Turing-complete (no unbounded recursion) smart-contract language with keysets and capabilities for authorization, database tables, multi-step pacts and a property checker backed by Z3; Pact 5 is the current rewrite.",
+ "status": "active",
+ "defined_by": ["vendor-specification", "reference-implementation"],
+ "file_extensions": [".pact", ".repl"],
+ "homepage": "https://kadena.io/",
+ "influenced_by": ["lisp"],
+ "level_notes": {"1": "The Pact language reference, built-in function list and property-checking docs (docs/en in kadena-io/pact) are the reference; docs.kadena.io is a client-rendered site that cannot be verified here.", "2": "No stable secondary literature verified.", "0": "kadena-io/pact (Pact 4, Haskell) and kadena-io/pact-5 (Haskell CEK interpreter)."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "kadena-io/pact-5 — Pact 5 interpreter", "url": "https://github.com/kadena-io/pact-5", "implementation": "pact-5", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "pact-5 Syntax/Lexer.x — lexer (Alex)", "url": "https://github.com/kadena-io/pact-5/blob/master/pact/Pact/Core/Syntax/Lexer.x", "implementation": "pact-5", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["lexer"]},
+  {"level": 0, "kind": "implementation-source", "title": "pact-5 Syntax/Parser.y — parser (Happy grammar)", "url": "https://github.com/kadena-io/pact-5/blob/master/pact/Pact/Core/Syntax/Parser.y", "implementation": "pact-5", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "grammar"]},
+  {"level": 0, "kind": "implementation-source", "title": "pact-5 IR/Eval/CEK/Evaluator.hs — CEK evaluator", "url": "https://github.com/kadena-io/pact-5/blob/master/pact/Pact/Core/IR/Eval/CEK/Evaluator.hs", "implementation": "pact-5", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter"]},
+  {"level": 0, "kind": "implementation-source", "title": "pact-5 Builtin.hs — builtin functions", "url": "https://github.com/kadena-io/pact-5/blob/master/pact/Pact/Core/Builtin.hs", "implementation": "pact-5", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+  {"level": 0, "kind": "implementation-repository", "title": "kadena-io/pact — Pact 4 implementation and docs", "url": "https://github.com/kadena-io/pact", "implementation": "pact 4", "scope": "whole", "authority": "official", "format": "repository", "access": "open"},
+
+  {"level": 1, "kind": "reference-manual", "title": "Pact language reference", "url": "https://github.com/kadena-io/pact/blob/master/docs/en/pact-reference.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["program-structure", "type-system"]},
+  {"level": 1, "kind": "library-reference", "title": "Pact built-in functions", "url": "https://github.com/kadena-io/pact/blob/master/docs/en/pact-functions.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["standard-library"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pact property checking system", "url": "https://github.com/kadena-io/pact/blob/master/docs/en/pact-properties.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["verification"]},
+  {"level": 1, "kind": "reference-manual", "title": "Pact property and invariant functions API", "url": "https://github.com/kadena-io/pact/blob/master/docs/en/pact-properties-api.md", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["verification", "assertions"]},
+
+  {"level": 3, "kind": "catalog", "title": "PLDB — Pact", "url": "https://pldb.io/concepts/pact.html", "scope": "whole", "authority": "official", "format": "html", "access": "open"}
+ ]
+}
