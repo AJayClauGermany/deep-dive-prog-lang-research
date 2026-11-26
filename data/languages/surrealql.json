@@ -1,18 +1,44 @@
 {
  "id": "surrealql",
  "name": "SurrealQL",
- "categories": ["query", "domain-specific"],
- "paradigms": ["declarative", "multi-model", "graph"],
- "typing": ["dynamic", "optional-schema"],
+ "categories": [
+  "query",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "multi-model",
+  "graph"
+ ],
+ "typing": [
+  "dynamic",
+  "optional-schema"
+ ],
  "first_appeared": 2022,
- "designers": ["Tobie Morgan Hitchcock", "Jaime Morgan Hitchcock", "SurrealDB Ltd"],
+ "designers": [
+  "Tobie Morgan Hitchcock",
+  "Jaime Morgan Hitchcock",
+  "SurrealDB Ltd"
+ ],
  "summary": "SurrealQL is the SQL-like query language of SurrealDB, a multi-model (document, graph, relational) database: record links and RELATE graph edges, idiom paths, schemaless or schemafull tables, embedded scripting functions and transactions.",
  "status": "active",
- "defined_by": ["reference-implementation", "vendor-specification"],
- "file_extensions": [".surql"],
+ "defined_by": [
+  "reference-implementation",
+  "vendor-specification"
+ ],
+ "file_extensions": [
+  ".surql"
+ ],
  "homepage": "https://surrealdb.com/",
- "influenced_by": ["sql"],
- "related": [{"id": "sql", "relation": "family"}],
+ "influenced_by": [
+  "sql"
+ ],
+ "related": [
+  {
+   "id": "sql",
+   "relation": "family"
+  }
+ ],
  "level_notes": {
   "0": "SurrealDB (Rust); the hand-written SurrealQL lexer/parser lives in surrealdb/core/src/syn.",
   "1": "The SurrealQL documentation is the reference.",
@@ -20,29 +46,322 @@
   "3": "No Wikipedia/PLDB page found."
  },
  "resources": [
-  {"level": 0, "kind": "implementation-repository", "title": "surrealdb/surrealdb — database server", "url": "https://github.com/surrealdb/surrealdb", "implementation": "SurrealDB", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
-  {"level": 0, "kind": "implementation-source", "title": "surrealdb/core syn — SurrealQL lexer and parser", "url": "https://github.com/surrealdb/surrealdb/blob/main/surrealdb/core/src/syn/mod.rs", "implementation": "SurrealDB", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["parser", "lexer"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL documentation", "url": "https://surrealdb.com/docs/surrealql", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — SELECT", "url": "https://surrealdb.com/docs/surrealql/statements/select", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["selection-projection", "sorting-limiting"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — CREATE", "url": "https://surrealdb.com/docs/surrealql/statements/create", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["data-manipulation"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — UPDATE", "url": "https://surrealdb.com/docs/surrealql/statements/update", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["data-manipulation"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — DELETE", "url": "https://surrealdb.com/docs/surrealql/statements/delete", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["data-manipulation"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — RELATE (graph edges)", "url": "https://surrealdb.com/docs/surrealql/statements/relate", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["graph-patterns"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — DEFINE", "url": "https://surrealdb.com/docs/surrealql/statements/define", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["data-definition"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — DEFINE TABLE", "url": "https://surrealdb.com/docs/surrealql/statements/define/table", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["data-definition", "schema-validation"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — DEFINE INDEX", "url": "https://surrealdb.com/docs/surrealql/statements/define/index", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["indexes"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — BEGIN", "url": "https://surrealdb.com/docs/surrealql/statements/begin", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["transactions"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — IF ELSE", "url": "https://surrealdb.com/docs/surrealql/statements/if", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["conditionals"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — FOR", "url": "https://surrealdb.com/docs/surrealql/statements/for", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["loops"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — LET", "url": "https://surrealdb.com/docs/surrealql/statements/let", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["variables"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — THROW", "url": "https://surrealdb.com/docs/surrealql/statements/throw", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["exceptions"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Data model", "url": "https://surrealdb.com/docs/surrealql/datamodel", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["data-model", "primitive-types"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Idioms (paths)", "url": "https://surrealdb.com/docs/surrealql/datamodel/idioms", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["path-expressions"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — NONE and NULL", "url": "https://surrealdb.com/docs/surrealql/datamodel/none-and-null", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["null-semantics", "null-optional"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Functions", "url": "https://surrealdb.com/docs/surrealql/functions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["standard-library"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Operators", "url": "https://surrealdb.com/docs/surrealql/operators", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["operators"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Comments", "url": "https://surrealdb.com/docs/surrealql/comments", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comments"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Parameters", "url": "https://surrealdb.com/docs/surrealql/parameters", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parameters-arguments", "variables"]},
-  {"level": 1, "kind": "reference-manual", "title": "SurrealQL — Transactions", "url": "https://surrealdb.com/docs/surrealql/transactions", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["transactions"]}
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "surrealdb/surrealdb — database server",
+   "url": "https://github.com/surrealdb/surrealdb",
+   "implementation": "SurrealDB",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "surrealdb/core syn — SurrealQL lexer and parser",
+   "url": "https://github.com/surrealdb/surrealdb/blob/main/surrealdb/core/src/syn/mod.rs",
+   "implementation": "SurrealDB",
+   "scope": "section",
+   "authority": "official",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "lexer"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL documentation",
+   "url": "https://surrealdb.com/docs/reference/query-language",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open"
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — SELECT",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/select",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection",
+    "sorting-limiting"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — CREATE",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/create",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — UPDATE",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/update",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — DELETE",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/delete",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-manipulation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — RELATE (graph edges)",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/relate",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — DEFINE",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/define/overview",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — DEFINE TABLE",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/define/table",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-definition",
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — DEFINE INDEX",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/define/indexes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "indexes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — BEGIN",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/begin",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — IF ELSE",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/if-else",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — FOR",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/for",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — LET",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/let",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — THROW",
+   "url": "https://surrealdb.com/docs/reference/query-language/statements/throw",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "exceptions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Data model",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/data-types",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Idioms (paths)",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/idioms",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — NONE and NULL",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/none-and-null",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-semantics",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Functions",
+   "url": "https://surrealdb.com/docs/reference/query-language/functions/database-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Operators",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Comments",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/comments",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comments"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Parameters",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/parameters",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "parameters-arguments",
+    "variables"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "SurrealQL — Transactions",
+   "url": "https://surrealdb.com/docs/reference/query-language/language-primitives/transactions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "transactions"
+   ]
+  }
  ]
 }
