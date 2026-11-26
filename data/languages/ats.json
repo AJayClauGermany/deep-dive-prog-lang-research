@@ -1,449 +1,53 @@
 {
  "id": "ats",
  "name": "ATS",
- "aliases": [
-  "Applied Type System",
-  "ATS2",
-  "ATS/Postiats",
-  "ATS3 (Xanadu)"
- ],
- "categories": [
-  "general-purpose",
-  "systems",
-  "functional"
- ],
- "paradigms": [
-  "functional",
-  "imperative"
- ],
- "typing": [
-  "static",
-  "dependent",
-  "linear"
- ],
+ "aliases": ["Applied Type System", "ATS2", "ATS/Postiats", "ATS3 (Xanadu)"],
+ "categories": ["general-purpose", "systems", "functional"],
+ "paradigms": ["functional", "imperative"],
+ "typing": ["static", "dependent", "linear"],
  "first_appeared": 2006,
- "designers": [
-  "Hongwei Xi"
- ],
+ "designers": ["Hongwei Xi"],
  "summary": "Applied Type System: an ML-family language combining dependent types (over static index terms), linear types/views for safe low-level memory manipulation, and theorem proving in ATS/LF, compiling to C with performance comparable to C.",
  "status": "maintained",
- "defined_by": [
-  "reference-implementation",
-  "academic-paper"
- ],
- "file_extensions": [
-  ".dats",
-  ".sats",
-  ".hats"
- ],
+ "defined_by": ["reference-implementation", "academic-paper"],
+ "file_extensions": [".dats", ".sats", ".hats"],
  "homepage": "https://www.cs.bu.edu/~hwxi/atslangweb/",
- "influenced_by": [
-  "standard-ml",
-  "dml"
- ],
+ "influenced_by": ["standard-ml"],
  "related": [
-  {
-   "id": "c",
-   "relation": "compiles-to"
-  }
+  {"id": "c", "relation": "compiles-to"}
  ],
  "level_notes": {
   "1": "No formal specification; Xi's papers define the type theory and 'Introduction to Programming in ATS' is the de facto reference.",
   "0": "ATS2 = githwxi/ATS-Postiats; ATS3 = githwxi/ATS-Xanadu."
  },
  "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "githwxi/ATS-Postiats — ATS2 compiler",
-   "url": "https://github.com/githwxi/ATS-Postiats",
-   "concepts": [
-    "compiler-architecture"
-   ],
-   "scope": "section",
-   "implementation": "ATS2 (ATS-Postiats)",
-   "authority": "official",
-   "format": "repository",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "src/pats_lexing.dats — lexer",
-   "url": "https://github.com/githwxi/ATS-Postiats/blob/master/src/pats_lexing.dats",
-   "concepts": [
-    "lexer"
-   ],
-   "scope": "section",
-   "implementation": "ATS2 (ATS-Postiats)",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "src/pats_parsing.dats — parser",
-   "url": "https://github.com/githwxi/ATS-Postiats/blob/master/src/pats_parsing.dats",
-   "concepts": [
-    "parser"
-   ],
-   "scope": "section",
-   "implementation": "ATS2 (ATS-Postiats)",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "src/pats_ccomp.dats — compilation to C",
-   "url": "https://github.com/githwxi/ATS-Postiats/blob/master/src/pats_ccomp.dats",
-   "concepts": [
-    "code-generation-backend"
-   ],
-   "scope": "section",
-   "implementation": "ATS2 (ATS-Postiats)",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "standard-library-source",
-   "title": "prelude/basics_pre.sats — prelude basics",
-   "url": "https://github.com/githwxi/ATS-Postiats/blob/master/prelude/basics_pre.sats",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "section",
-   "implementation": "ATS2 (ATS-Postiats)",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "ATS-Xanadu (ATS3) README",
-   "url": "https://github.com/githwxi/ATS-Xanadu/blob/master/README.md",
-   "concepts": [
-    "language-evolution"
-   ],
-   "scope": "whole",
-   "implementation": "ATS3 (Xanadu)",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Applied Type System (TYPES 2003) — foundation of ATS",
-   "url": "https://www.cs.bu.edu/~hwxi/atslangweb/MYDATA/ATSfoundation.pdf",
-   "concepts": [
-    "dependent-types",
-    "logic-foundations",
-    "design-rationale"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "authors": [
-    "Hongwei Xi"
-   ],
-   "year": 2004,
-   "format": "pdf",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Combining Programming with Theorem Proving (ICFP 2005)",
-   "url": "https://www.cs.bu.edu/~hwxi/atslangweb/MYDATA/CPwTP-icfp05.pdf",
-   "concepts": [
-    "verification",
-    "linear-types"
-   ],
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
-    "Chiyan Chen",
-    "Hongwei Xi"
-   ],
-   "year": 2005,
-   "format": "pdf",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Dependent ML: an approach to practical programming with dependent types (JFP 2007)",
-   "url": "https://www.cs.bu.edu/~hwxi/atslangweb/MYDATA/DML-jfp07.pdf",
-   "concepts": [
-    "dependent-types",
-    "refinement-types"
-   ],
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
-    "Hongwei Xi"
-   ],
-   "year": 2007,
-   "format": "pdf",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/book1.html",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "designer",
-   "authors": [
-    "Hongwei Xi"
-   ],
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Names, bindings and scopes",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x162.html",
-   "concepts": [
-    "variables",
-    "scope"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Primitive types",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x240.html",
-   "concepts": [
-    "primitive-types"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Records and record types",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x322.html",
-   "concepts": [
-    "records-structs"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Conditional expressions",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x350.html",
-   "concepts": [
-    "conditionals"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Functions",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c412.html",
-   "concepts": [
-    "functions",
-    "recursion",
-    "closures"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Tail-call and tail-recursion",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x620.html",
-   "concepts": [
-    "tail-calls"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Datatypes and pattern matching",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c909.html",
-   "concepts": [
-    "algebraic-data-types",
-    "pattern-matching"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Parametric polymorphism",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c1126.html",
-   "concepts": [
-    "generics"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Effectful programming features",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c1379.html",
-   "concepts": [
-    "exceptions",
-    "arrays",
-    "pointers-references"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Modularity",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c1714.html",
-   "concepts": [
-    "modules"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Interaction with C",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c2016.html",
-   "concepts": [
-    "ffi"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Introduction to dependent types",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c2243.html",
-   "concepts": [
-    "dependent-types"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Theorem-proving in ATS/LF",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c2867.html",
-   "concepts": [
-    "verification"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Views and viewtypes",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c3321.html",
-   "concepts": [
-    "linear-types",
-    "memory-management",
-    "ownership-borrowing"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "book",
-   "title": "Introduction to Programming in ATS — Function templates",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c4479.html",
-   "concepts": [
-    "generics",
-    "code-generation"
-   ],
-   "scope": "section",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "A Tutorial on Programming Features in ATS",
-   "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/ATS2TUTORIAL/HTML/book1.html",
-   "scope": "whole",
-   "authority": "designer",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "ATS (programming language) — Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/ATS_(programming_language)",
-   "concepts": [
-    "history"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "ATS — PLDB",
-   "url": "https://pldb.io/concepts/ats.html",
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  }
+  {"level": 0, "kind": "implementation-repository", "title": "githwxi/ATS-Postiats — ATS2 compiler", "url": "https://github.com/githwxi/ATS-Postiats", "concepts": ["compiler-architecture"], "scope": "section", "implementation": "ATS2 (ATS-Postiats)", "authority": "official", "format": "repository", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "src/pats_lexing.dats — lexer", "url": "https://github.com/githwxi/ATS-Postiats/blob/master/src/pats_lexing.dats", "concepts": ["lexer"], "scope": "section", "implementation": "ATS2 (ATS-Postiats)", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "src/pats_parsing.dats — parser", "url": "https://github.com/githwxi/ATS-Postiats/blob/master/src/pats_parsing.dats", "concepts": ["parser"], "scope": "section", "implementation": "ATS2 (ATS-Postiats)", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "src/pats_ccomp.dats — compilation to C", "url": "https://github.com/githwxi/ATS-Postiats/blob/master/src/pats_ccomp.dats", "concepts": ["code-generation-backend"], "scope": "section", "implementation": "ATS2 (ATS-Postiats)", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "standard-library-source", "title": "prelude/basics_pre.sats — prelude basics", "url": "https://github.com/githwxi/ATS-Postiats/blob/master/prelude/basics_pre.sats", "concepts": ["standard-library"], "scope": "section", "implementation": "ATS2 (ATS-Postiats)", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 0, "kind": "implementation-source", "title": "ATS-Xanadu (ATS3) README", "url": "https://github.com/githwxi/ATS-Xanadu/blob/master/README.md", "concepts": ["language-evolution"], "scope": "whole", "implementation": "ATS3 (Xanadu)", "authority": "official", "format": "source-file", "access": "open"},
+  {"level": 1, "kind": "original-paper", "title": "Applied Type System (TYPES 2003) — foundation of ATS", "url": "https://www.cs.bu.edu/~hwxi/atslangweb/MYDATA/ATSfoundation.pdf", "concepts": ["dependent-types", "logic-foundations", "design-rationale"], "scope": "section", "authority": "designer", "authors": ["Hongwei Xi"], "year": 2004, "format": "pdf", "access": "open"},
+  {"level": 1, "kind": "original-paper", "title": "Combining Programming with Theorem Proving (ICFP 2005)", "url": "https://www.cs.bu.edu/~hwxi/atslangweb/MYDATA/CPwTP-icfp05.pdf", "concepts": ["verification", "linear-types"], "scope": "whole", "authority": "designer", "authors": ["Chiyan Chen", "Hongwei Xi"], "year": 2005, "format": "pdf", "access": "open"},
+  {"level": 1, "kind": "original-paper", "title": "Dependent ML: an approach to practical programming with dependent types (JFP 2007)", "url": "https://www.cs.bu.edu/~hwxi/atslangweb/MYDATA/DML-jfp07.pdf", "concepts": ["dependent-types", "refinement-types"], "scope": "whole", "authority": "designer", "authors": ["Hongwei Xi"], "year": 2007, "format": "pdf", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/book1.html", "concepts": ["hello-world"], "scope": "whole", "authority": "designer", "authors": ["Hongwei Xi"], "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Names, bindings and scopes", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x162.html", "concepts": ["variables", "scope"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Primitive types", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x240.html", "concepts": ["primitive-types"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Records and record types", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x322.html", "concepts": ["records-structs"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Conditional expressions", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x350.html", "concepts": ["conditionals"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Functions", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c412.html", "concepts": ["functions", "recursion", "closures"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Tail-call and tail-recursion", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/x620.html", "concepts": ["tail-calls"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Datatypes and pattern matching", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c909.html", "concepts": ["algebraic-data-types", "pattern-matching"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Parametric polymorphism", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c1126.html", "concepts": ["generics"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Effectful programming features", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c1379.html", "concepts": ["exceptions", "arrays", "pointers-references"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Modularity", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c1714.html", "concepts": ["modules"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Interaction with C", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c2016.html", "concepts": ["ffi"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Introduction to dependent types", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c2243.html", "concepts": ["dependent-types"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Theorem-proving in ATS/LF", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c2867.html", "concepts": ["verification"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Views and viewtypes", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c3321.html", "concepts": ["linear-types", "memory-management", "ownership-borrowing"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "book", "title": "Introduction to Programming in ATS — Function templates", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/c4479.html", "concepts": ["generics", "code-generation"], "scope": "section", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 2, "kind": "tutorial", "title": "A Tutorial on Programming Features in ATS", "url": "https://ats-lang.github.io/FROZEN000/DOCUMENT/ATS2TUTORIAL/HTML/book1.html", "scope": "whole", "authority": "designer", "format": "html", "access": "open"},
+  {"level": 3, "kind": "encyclopedia", "title": "ATS (programming language) — Wikipedia", "url": "https://en.wikipedia.org/wiki/ATS_(programming_language)", "concepts": ["history"], "scope": "whole", "authority": "community", "format": "html", "access": "open"},
+  {"level": 3, "kind": "catalog", "title": "ATS — PLDB", "url": "https://pldb.io/concepts/ats.html", "scope": "whole", "authority": "community", "format": "html", "access": "open"}
  ]
 }
