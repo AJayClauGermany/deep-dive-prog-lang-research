@@ -113,6 +113,10 @@ python3 tools/q.py serve        # builds explorer/data.json, then serves http://
 | People | Designers and authors, and the languages each one links together |
 | Saved | Links starred while browsing; copy as Markdown, URLs or JSON to hand to a follow-up research task |
 
+The same page is published to GitHub Pages from `main` by `.github/workflows/explorer.yml`, which rebuilds the data
+on every push (repository Settings → Pages → Source must be "GitHub Actions"):
+<https://ajayclaugermany.github.io/deep-dive-prog-lang-research/>
+
 Any filtered list can be copied as Markdown. `explorer/data.json` is generated (`tools/build_explorer.py`) and not
 committed; `tools/build_explorer.py --page DIR` also writes a single-file build of the page.
 
@@ -144,6 +148,7 @@ tools/q.py                command-line queries and exports
 tools/build_explorer.py   reshapes catalog.json into explorer/data.json
 tools/test_tools.py       smoke tests for the three files above
 explorer/                 static browsable explorer (index.html, app.js, style.css)
+.github/workflows/        tool smoke tests on pull requests; explorer deploy to GitHub Pages from main
 docs/AUTHORING.md         conventions for adding entries
 ```
 
