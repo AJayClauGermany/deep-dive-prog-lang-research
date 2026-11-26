@@ -1,96 +1,309 @@
 {
- "id": "cloudformation",
- "name": "AWS CloudFormation templates",
- "categories": [
-  "configuration"
- ],
- "paradigms": [
-  "declarative"
- ],
- "typing": [
-  "dynamic"
- ],
- "first_appeared": 2011,
- "designers": [
-  "Amazon Web Services"
- ],
- "summary": "AWS's JSON/YAML template language declaring Resources, Parameters, Mappings, Conditions and Outputs, with intrinsic functions (Ref, Fn::GetAtt, Fn::Sub ...) evaluated by the CloudFormation service.",
- "status": "active",
- "defined_by": [
-  "vendor-specification"
- ],
- "file_extensions": [
-  ".template",
-  ".yaml",
-  ".json"
- ],
- "homepage": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html",
- "related": [
-  {
-   "id": "yaml",
-   "relation": "embeds"
+  "id": "cloudformation",
+  "name": "AWS CloudFormation templates",
+  "categories": [
+    "configuration"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [
+    "dynamic"
+  ],
+  "first_appeared": 2011,
+  "designers": [
+    "Amazon Web Services"
+  ],
+  "summary": "AWS's JSON/YAML template language declaring Resources, Parameters, Mappings, Conditions and Outputs, with intrinsic functions (Ref, Fn::GetAtt, Fn::Sub ...) evaluated by the CloudFormation service.",
+  "status": "active",
+  "defined_by": [
+    "vendor-specification"
+  ],
+  "file_extensions": [
+    ".template",
+    ".yaml",
+    ".json"
+  ],
+  "homepage": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html",
+  "related": [
+    {
+      "id": "yaml",
+      "relation": "embeds"
+    },
+    {
+      "id": "json",
+      "relation": "embeds"
+    }
+  ],
+  "level_notes": {
+    "1": "AWS CloudFormation User Guide and Template Reference.",
+    "0": "Service is closed; cfn-lint embeds the published resource specification schemas.",
+    "2": "AWS's own material is reference-style (level 1); no canonical tutorial book is linked yet."
   },
-  {
-   "id": "json",
-   "relation": "embeds"
-  }
- ],
- "level_notes": {
-  "1": "AWS CloudFormation User Guide and Template Reference.",
-  "0": "Service is closed; cfn-lint embeds the published resource specification schemas."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "tooling-source",
-   "title": "aws-cloudformation/cfn-lint — template linter with resource schemas",
-   "url": "https://github.com/aws-cloudformation/cfn-lint",
-   "implementation": "cfn-lint",
-   "authority": "official",
-   "scope": "whole",
-   "format": "repository",
-   "access": "open",
-   "concepts": [
-    "schema-validation"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "CloudFormation template sections (anatomy)",
-   "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "document-structure",
-    "program-structure"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "Intrinsic function reference",
-   "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "functions",
-    "references-anchors"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — AWS CloudFormation",
-   "url": "https://en.wikipedia.org/wiki/AWS_CloudFormation",
-   "scope": "whole",
-   "format": "html",
-   "authority": "community",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "aws-cloudformation/cfn-lint — template linter with resource schemas",
+      "url": "https://github.com/aws-cloudformation/cfn-lint",
+      "implementation": "cfn-lint",
+      "authority": "official",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open",
+      "concepts": [
+        "schema-validation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation template sections (anatomy)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "document-structure",
+        "program-structure"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "Intrinsic function reference",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "functions",
+        "references-anchors"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — AWS CloudFormation",
+      "url": "https://en.wikipedia.org/wiki/AWS_CloudFormation",
+      "scope": "whole",
+      "format": "html",
+      "authority": "community",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation template formats (JSON and YAML)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "encoding-wire-format",
+        "comments"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Parameters section",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables",
+        "primitive-types"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Resources section",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "data-model"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Outputs section",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "modules"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Mappings section",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "maps-dictionaries"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Conditions section",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Rules section (parameter validation)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/rules-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "schema-validation"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation templates — Transform section (macros)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "macros"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation intrinsic function — Ref",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-ref.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "references-anchors"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation intrinsic function — Fn::GetAtt",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-getatt.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "references-anchors"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation intrinsic function — Fn::Sub (string substitution)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-sub.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "strings"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation condition functions (Fn::If, Fn::And, Fn::Equals ...)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-conditions.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals",
+        "operators"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation intrinsic function — Fn::ForEach (language extensions)",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-foreach.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "loops"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation pseudo parameters",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "CloudFormation resource and property types reference",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "schema-validation"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "tooling-source",
+      "title": "cloudformation-guard — policy-as-code validation of templates",
+      "url": "https://github.com/aws-cloudformation/cloudformation-guard",
+      "authority": "official",
+      "scope": "whole",
+      "format": "repository",
+      "access": "open",
+      "implementation": "cfn-guard",
+      "concepts": [
+        "schema-validation"
+      ]
+    }
+  ]
 }

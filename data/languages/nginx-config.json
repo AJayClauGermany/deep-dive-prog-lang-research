@@ -1,98 +1,232 @@
 {
- "id": "nginx-config",
- "name": "nginx configuration language",
- "categories": [
-  "configuration"
- ],
- "paradigms": [
-  "declarative"
- ],
- "typing": [
-  "untyped"
- ],
- "first_appeared": 2004,
- "designers": [
-  "Igor Sysoev"
- ],
- "summary": "nginx's block-structured directive language: semicolon-terminated simple directives, nested context blocks (http, server, location), variables, include and regex location matching.",
- "status": "active",
- "defined_by": [
-  "reference-implementation"
- ],
- "file_extensions": [
-  ".conf"
- ],
- "homepage": "https://nginx.org/en/docs/",
- "level_notes": {
-  "0": "src/core/ngx_conf_file.c is the parser."
- },
- "resources": [
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "nginx src/core/ngx_conf_file.c — configuration file parser",
-   "url": "https://github.com/nginx/nginx/blob/master/src/core/ngx_conf_file.c",
-   "implementation": "nginx",
-   "authority": "official",
-   "scope": "section",
-   "format": "source-file",
-   "access": "open",
-   "concepts": [
-    "parser",
-    "lexer"
-   ]
+  "id": "nginx-config",
+  "name": "nginx configuration language",
+  "categories": [
+    "configuration"
+  ],
+  "paradigms": [
+    "declarative"
+  ],
+  "typing": [
+    "untyped"
+  ],
+  "first_appeared": 2004,
+  "designers": [
+    "Igor Sysoev"
+  ],
+  "summary": "nginx's block-structured directive language: semicolon-terminated simple directives, nested context blocks (http, server, location), variables, include and regex location matching.",
+  "status": "active",
+  "defined_by": [
+    "reference-implementation"
+  ],
+  "file_extensions": [
+    ".conf"
+  ],
+  "homepage": "https://nginx.org/en/docs/",
+  "level_notes": {
+    "0": "src/core/ngx_conf_file.c is the parser."
   },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "nginx Beginner's Guide — Configuration File's Structure",
-   "url": "https://nginx.org/en/docs/beginners_guide.html#conf_structure",
-   "scope": "section",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "document-structure",
-    "comments",
-    "scope"
-   ]
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "ngx_http_core_module — location directive",
-   "url": "https://nginx.org/en/docs/http/ngx_http_core_module.html#location",
-   "scope": "section",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "pattern-matching",
-    "regular-expressions"
-   ]
-  },
-  {
-   "level": 2,
-   "kind": "guide",
-   "title": "How nginx processes a request",
-   "url": "https://nginx.org/en/docs/http/request_processing.html",
-   "scope": "whole",
-   "format": "html",
-   "authority": "official",
-   "access": "open",
-   "concepts": [
-    "evaluation-order"
-   ]
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — Nginx",
-   "url": "https://en.wikipedia.org/wiki/Nginx",
-   "scope": "whole",
-   "format": "html",
-   "authority": "community",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "nginx src/core/ngx_conf_file.c — configuration file parser",
+      "url": "https://github.com/nginx/nginx/blob/master/src/core/ngx_conf_file.c",
+      "implementation": "nginx",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "concepts": [
+        "parser",
+        "lexer"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "nginx Beginner's Guide — Configuration File's Structure",
+      "url": "https://nginx.org/en/docs/beginners_guide.html#conf_structure",
+      "scope": "section",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "document-structure",
+        "comments",
+        "scope"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "ngx_http_core_module — location directive",
+      "url": "https://nginx.org/en/docs/http/ngx_http_core_module.html#location",
+      "scope": "section",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "pattern-matching",
+        "regular-expressions"
+      ]
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "How nginx processes a request",
+      "url": "https://nginx.org/en/docs/http/request_processing.html",
+      "scope": "whole",
+      "format": "html",
+      "authority": "official",
+      "access": "open",
+      "concepts": [
+        "evaluation-order"
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — Nginx",
+      "url": "https://en.wikipedia.org/wiki/Nginx",
+      "scope": "whole",
+      "format": "html",
+      "authority": "community",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx docs — Configuration file measurement units (sizes)",
+      "url": "https://nginx.org/en/docs/syntax.html#size",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "scalars",
+        "literals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx docs — Configuration file measurement units (time intervals)",
+      "url": "https://nginx.org/en/docs/syntax.html#time",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "scalars",
+        "literals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx core module — include directive",
+      "url": "https://nginx.org/en/docs/ngx_core_module.html#include",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "imports"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx rewrite module — if directive",
+      "url": "https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "conditionals"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx rewrite module — set directive",
+      "url": "https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#set",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx rewrite module — rewrite directive",
+      "url": "https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "regular-expressions"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx rewrite module — internals (script bytecode)",
+      "url": "https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#internals",
+      "authority": "official",
+      "scope": "section",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "interpreter"
+      ]
+    },
+    {
+      "level": 1,
+      "kind": "reference-manual",
+      "title": "nginx docs — Alphabetical index of variables",
+      "url": "https://nginx.org/en/docs/varindex.html",
+      "authority": "official",
+      "scope": "whole",
+      "format": "html",
+      "access": "open",
+      "concepts": [
+        "variables"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "nginx variables implementation (ngx_http_variables.c)",
+      "url": "https://github.com/nginx/nginx/blob/master/src/http/ngx_http_variables.c",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nginx",
+      "concepts": [
+        "variables"
+      ]
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "nginx rewrite module (ngx_http_rewrite_module.c)",
+      "url": "https://github.com/nginx/nginx/blob/master/src/http/modules/ngx_http_rewrite_module.c",
+      "authority": "official",
+      "scope": "section",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "nginx",
+      "concepts": [
+        "conditionals"
+      ]
+    }
+  ]
 }
