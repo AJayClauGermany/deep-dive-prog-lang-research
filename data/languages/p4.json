@@ -1,402 +1,402 @@
 {
- "id": "p4",
- "name": "P4",
- "aliases": [
-  "P4_16",
-  "Programming Protocol-independent Packet Processors"
- ],
- "categories": [
-  "domain-specific",
-  "protocol"
- ],
- "paradigms": [
-  "declarative",
-  "imperative"
- ],
- "typing": [
-  "static",
-  "strong"
- ],
- "first_appeared": 2014,
- "designers": [
-  "Pat Bosshart",
-  "Nick McKeown",
-  "Jennifer Rexford",
-  "P4 Language Consortium"
- ],
- "status": "active",
- "defined_by": [
-  "consortium-standard",
-  "reference-implementation"
- ],
- "summary": "Domain-specific language for programming packet-processing data planes: parsers are state machines that extract headers, control blocks apply match-action tables and actions, and deparsers re-emit packets; the P4_16 core is target-independent while architectures (v1model, PSA, PNA) describe targets.",
- "homepage": "https://p4.org/",
- "file_extensions": [
-  ".p4"
- ],
- "influenced_by": [
-  "c"
- ],
- "resources": [
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 Language Specification (working draft, HTML)",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html",
-   "concepts": [
-    "grammar",
-    "type-system"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 Language Specification v1.2.5 (release, 2024)",
-   "url": "https://p4.org/wp-content/uploads/sites/53/2024/10/P4-16-spec-v1.2.5.html",
-   "concepts": [
-    "grammar"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "1.2.5",
-   "year": 2024
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Overview",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#_overview",
-   "concepts": [
-    "design-rationale"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: P4 architecture model",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-arch",
-   "concepts": [
-    "program-structure"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Lexical constructs",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-lexical",
-   "concepts": [
-    "lexical-structure",
-    "keywords",
-    "literals",
-    "comments"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Calling convention: copy-in/copy-out",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-calling-convention",
-   "concepts": [
-    "parameters-arguments",
-    "value-reference-semantics"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Name resolution",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-name-resolution",
-   "concepts": [
-    "scope",
-    "namespaces"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Base types",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-base-types",
-   "concepts": [
-    "primitive-types",
-    "integers",
-    "booleans",
-    "strings"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Derived types",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-derived-types",
-   "concepts": [
-    "records-structs",
-    "enums",
-    "union-intersection-types",
-    "arrays",
-    "tuples"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Expressions",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-exprs",
-   "concepts": [
-    "expressions",
-    "operators"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Casts",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-casts",
-   "concepts": [
-    "type-conversion"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Statements",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-stmts",
-   "concepts": [
-    "statements"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Packet parsing",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-packet-parsing",
-   "concepts": [
-    "automata",
-    "pattern-matching"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Tables",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-tables",
-   "concepts": [
-    "maps-dictionaries"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Parameterization",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-parameterization",
-   "concepts": [
-    "generics"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Deparsing",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-deparse",
-   "concepts": [
-    "serialization",
-    "encoding-wire-format"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Abstract machine: evaluation",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-p4-abstract-mach",
-   "concepts": [
-    "formal-semantics"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4_16 spec: Annotations",
-   "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-annotations",
-   "concepts": [
-    "annotations-attributes"
-   ],
-   "scope": "section",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "reference-implementation",
-   "title": "p4c: reference P4_16 compiler",
-   "url": "https://github.com/p4lang/p4c",
-   "concepts": [
-    "compiler-architecture",
-    "intermediate-representation"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "repository",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-repository",
-   "title": "behavioral-model (bmv2) software switch",
-   "url": "https://github.com/p4lang/behavioral-model",
-   "concepts": [
-    "runtime-system",
-    "virtual-machine"
-   ],
-   "scope": "whole",
-   "authority": "official",
-   "format": "repository",
-   "access": "open"
-  },
-  {
-   "level": 0,
-   "kind": "grammar-source",
-   "title": "P4_16 grammar (p4c Bison parser)",
-   "url": "https://github.com/p4lang/p4c/blob/main/frontends/parsers/p4/p4parser.ypp",
-   "concepts": [
-    "grammar",
-    "parser"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "P4 language specification sources (p4lang/p4-spec)",
-   "url": "https://github.com/p4lang/p4-spec",
-   "concepts": [
-    "standardization"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "repository",
-   "access": "open"
-  },
-  {
-   "level": 1,
-   "kind": "formal-semantics",
-   "title": "P4-SpecTec: executable formal P4 specification",
-   "url": "https://kaist-plrg.github.io/p4-spectec/p4/P4-16-spec-release.html",
-   "concepts": [
-    "formal-semantics"
-   ],
-   "scope": "whole",
-   "authority": "academic",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "P4 tutorials (p4lang/tutorials exercises)",
-   "url": "https://github.com/p4lang/tutorials",
-   "concepts": [
-    "hello-world",
-    "tooling"
-   ],
-   "scope": "whole",
-   "authority": "official",
-   "format": "repository",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "P4 (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/P4_(programming_language)",
-   "concepts": [
-    "history"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "P4 on PLDB",
-   "url": "https://pldb.io/concepts/p4.html",
-   "concepts": [
-    "history"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  }
- ]
+  "id": "p4",
+  "name": "P4",
+  "aliases": [
+    "P4_16",
+    "Programming Protocol-independent Packet Processors"
+  ],
+  "categories": [
+    "domain-specific",
+    "protocol"
+  ],
+  "paradigms": [
+    "declarative",
+    "imperative"
+  ],
+  "typing": [
+    "static",
+    "strong"
+  ],
+  "first_appeared": 2014,
+  "designers": [
+    "Pat Bosshart",
+    "Nick McKeown",
+    "Jennifer Rexford",
+    "P4 Language Consortium"
+  ],
+  "status": "active",
+  "defined_by": [
+    "consortium-standard",
+    "reference-implementation"
+  ],
+  "summary": "Domain-specific language for programming packet-processing data planes: parsers are state machines that extract headers, control blocks apply match-action tables and actions, and deparsers re-emit packets; the P4_16 core is target-independent while architectures (v1model, PSA, PNA) describe targets.",
+  "homepage": "https://p4.org/",
+  "file_extensions": [
+    ".p4"
+  ],
+  "influenced_by": [
+    "c"
+  ],
+  "resources": [
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 Language Specification (working draft, HTML)",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html",
+      "concepts": [
+        "grammar",
+        "type-system"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 Language Specification v1.2.5 (release, 2024)",
+      "url": "https://p4.org/wp-content/uploads/sites/53/2024/10/P4-16-spec-v1.2.5.html",
+      "concepts": [
+        "grammar"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "1.2.5",
+      "year": 2024
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Overview",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#_overview",
+      "concepts": [
+        "design-rationale"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: P4 architecture model",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-arch",
+      "concepts": [
+        "program-structure"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Lexical constructs",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-lexical",
+      "concepts": [
+        "lexical-structure",
+        "keywords",
+        "literals",
+        "comments"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Calling convention: copy-in/copy-out",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-calling-convention",
+      "concepts": [
+        "parameters-arguments",
+        "value-reference-semantics"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Name resolution",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-name-resolution",
+      "concepts": [
+        "scope",
+        "namespaces"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Base types",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-base-types",
+      "concepts": [
+        "primitive-types",
+        "integers",
+        "booleans",
+        "strings"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Derived types",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-derived-types",
+      "concepts": [
+        "records-structs",
+        "enums",
+        "union-intersection-types",
+        "arrays",
+        "tuples"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Expressions",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-exprs",
+      "concepts": [
+        "expressions",
+        "operators"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Casts",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-casts",
+      "concepts": [
+        "type-conversion"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Statements",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-stmts",
+      "concepts": [
+        "statements"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Packet parsing",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-packet-parsing",
+      "concepts": [
+        "automata",
+        "pattern-matching"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Tables",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-tables",
+      "concepts": [
+        "maps-dictionaries"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Parameterization",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-parameterization",
+      "concepts": [
+        "generics"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Deparsing",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-deparse",
+      "concepts": [
+        "serialization",
+        "encoding-wire-format"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Abstract machine: evaluation",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-p4-abstract-mach",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4_16 spec: Annotations",
+      "url": "https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html#sec-annotations",
+      "concepts": [
+        "annotations-attributes"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "reference-implementation",
+      "title": "p4c: reference P4_16 compiler",
+      "url": "https://github.com/p4lang/p4c",
+      "concepts": [
+        "compiler-architecture",
+        "intermediate-representation"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-repository",
+      "title": "behavioral-model (bmv2) software switch",
+      "url": "https://github.com/p4lang/behavioral-model",
+      "concepts": [
+        "runtime-system",
+        "virtual-machine"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "P4_16 grammar (p4c Bison parser)",
+      "url": "https://github.com/p4lang/p4c/blob/main/frontends/parsers/p4/p4parser.ypp",
+      "concepts": [
+        "grammar",
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "P4 language specification sources (p4lang/p4-spec)",
+      "url": "https://github.com/p4lang/p4-spec",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 1,
+      "kind": "formal-semantics",
+      "title": "P4-SpecTec: executable formal P4 specification",
+      "url": "https://kaist-plrg.github.io/p4-spectec/p4/P4-16-spec-release.html",
+      "concepts": [
+        "formal-semantics"
+      ],
+      "scope": "whole",
+      "authority": "academic",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "P4 tutorials (p4lang/tutorials exercises)",
+      "url": "https://github.com/p4lang/tutorials",
+      "concepts": [
+        "hello-world",
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "repository",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "P4 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/P4_(programming_language)",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "P4 on PLDB",
+      "url": "https://pldb.io/concepts/p4.html",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
 }

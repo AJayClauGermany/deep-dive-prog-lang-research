@@ -1,489 +1,489 @@
 {
- "id": "openmp",
- "name": "OpenMP directives",
- "aliases": [
-  "OpenMP",
-  "Open Multi-Processing"
- ],
- "categories": [
-  "domain-specific",
-  "scientific"
- ],
- "paradigms": [
-  "shared-memory parallel",
-  "fork-join",
-  "directive-based",
-  "task-parallel",
-  "data-parallel"
- ],
- "typing": [
-  "inherits base language"
- ],
- "first_appeared": 1997,
- "designers": [
-  "OpenMP Architecture Review Board"
- ],
- "summary": "Directive-based API (pragmas in C/C++, sentinel comments in Fortran) plus runtime routines and environment variables for shared-memory fork-join, task, SIMD and accelerator-offload parallelism, specified by the OpenMP Architecture Review Board.",
- "status": "active",
- "defined_by": [
-  "consortium-standard"
- ],
- "standards": [
-  "OpenMP API 1.0 (1997, Fortran)",
-  "OpenMP 4.0 (2013)",
-  "OpenMP 5.2 (2021)",
-  "OpenMP 6.0 (2024)"
- ],
- "homepage": "https://www.openmp.org/",
- "influenced_by": [
-  "high-performance-fortran",
-  "c",
-  "fortran",
-  "cpp"
- ],
- "related": [
-  {
-   "id": "openacc",
-   "relation": "family"
+  "id": "openmp",
+  "name": "OpenMP directives",
+  "aliases": [
+    "OpenMP",
+    "Open Multi-Processing"
+  ],
+  "categories": [
+    "domain-specific",
+    "scientific"
+  ],
+  "paradigms": [
+    "shared-memory parallel",
+    "fork-join",
+    "directive-based",
+    "task-parallel",
+    "data-parallel"
+  ],
+  "typing": [
+    "inherits base language"
+  ],
+  "first_appeared": 1997,
+  "designers": [
+    "OpenMP Architecture Review Board"
+  ],
+  "summary": "Directive-based API (pragmas in C/C++, sentinel comments in Fortran) plus runtime routines and environment variables for shared-memory fork-join, task, SIMD and accelerator-offload parallelism, specified by the OpenMP Architecture Review Board.",
+  "status": "active",
+  "defined_by": [
+    "consortium-standard"
+  ],
+  "standards": [
+    "OpenMP API 1.0 (1997, Fortran)",
+    "OpenMP 4.0 (2013)",
+    "OpenMP 5.2 (2021)",
+    "OpenMP 6.0 (2024)"
+  ],
+  "homepage": "https://www.openmp.org/",
+  "influenced_by": [
+    "high-performance-fortran",
+    "c",
+    "fortran",
+    "cpp"
+  ],
+  "related": [
+    {
+      "id": "openacc",
+      "relation": "family"
+    },
+    {
+      "id": "c",
+      "relation": "embeds"
+    },
+    {
+      "id": "fortran",
+      "relation": "embeds"
+    },
+    {
+      "id": "cpp",
+      "relation": "embeds"
+    }
+  ],
+  "level_notes": {
+    "1": "The OpenMP API specification (free PDF; version 5.2 also as multi-page HTML) is normative; companion Examples document is informative.",
+    "0": "Implemented inside compilers: Clang/LLVM (front end + libomp runtime), GCC (libgomp), Flang, Intel, NVIDIA HPC SDK."
   },
-  {
-   "id": "c",
-   "relation": "embeds"
-  },
-  {
-   "id": "fortran",
-   "relation": "embeds"
-  },
-  {
-   "id": "cpp",
-   "relation": "embeds"
-  }
- ],
- "level_notes": {
-  "1": "The OpenMP API specification (free PDF; version 5.2 also as multi-page HTML) is normative; companion Examples document is informative.",
-  "0": "Implemented inside compilers: Clang/LLVM (front end + libomp runtime), GCC (libgomp), Flang, Intel, NVIDIA HPC SDK."
- },
- "resources": [
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP Application Programming Interface 6.0 (PDF)",
-   "url": "https://www.openmp.org/wp-content/uploads/OpenMP-API-Specification-6-0.pdf",
-   "concepts": [
-    "standardization"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "pdf",
-   "access": "open",
-   "year": 2024,
-   "version": "6.0"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP API 5.2 specification (HTML)",
-   "url": "https://www.openmp.org/spec-html/5.2/openmp.html",
-   "concepts": [
-    "standardization"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "year": 2021,
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — Memory model",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse4.html",
-   "concepts": [
-    "memory-model"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — Directive format",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse14.html",
-   "concepts": [
-    "annotations-attributes",
-    "grammar"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — Data-sharing attribute rules",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse23.html",
-   "concepts": [
-    "scope",
-    "variables"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — Reduction clauses and directives",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse27.html",
-   "concepts": [
-    "aggregation",
-    "parallelism"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — parallel construct",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse57.html",
-   "concepts": [
-    "parallelism",
-    "threads"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — Worksharing-loop constructs",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse66.html",
-   "concepts": [
-    "loops",
-    "parallelism"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — task construct",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse73.html",
-   "concepts": [
-    "concurrency",
-    "async-await"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — target construct (device offload)",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse85.html",
-   "concepts": [
-    "parallelism",
-    "memory-management"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — critical construct",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpse90.html",
-   "concepts": [
-    "synchronization"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "specification",
-   "title": "OpenMP 5.2 — atomic construct",
-   "url": "https://www.openmp.org/spec-html/5.2/openmpsu125.html",
-   "concepts": [
-    "atomics-memory-ordering"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "html",
-   "access": "open",
-   "version": "5.2"
-  },
-  {
-   "level": 1,
-   "kind": "original-paper",
-   "title": "Dagum, Menon — OpenMP: an industry standard API for shared-memory programming (IEEE CSE 1998)",
-   "url": "https://doi.org/10.1109/99.660313",
-   "concepts": [
-    "history",
-    "design-rationale"
-   ],
-   "scope": "whole",
-   "authority": "designer",
-   "format": "html",
-   "access": "paywalled",
-   "authors": [
-    "Leonardo Dagum",
-    "Ramesh Menon"
-   ],
-   "year": 1998
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "Clang — ParseOpenMP.cpp (directive and clause parsing)",
-   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Parse/ParseOpenMP.cpp",
-   "concepts": [
-    "parser"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "Clang/LLVM"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "Clang — SemaOpenMP.cpp (data-sharing and nesting checks)",
-   "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Sema/SemaOpenMP.cpp",
-   "concepts": [
-    "semantic-analysis",
-    "scope"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "Clang/LLVM"
-  },
-  {
-   "level": 0,
-   "kind": "grammar-source",
-   "title": "LLVM — OMP.td (TableGen definition of all directives and clauses)",
-   "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/Frontend/OpenMP/OMP.td",
-   "concepts": [
-    "grammar",
-    "keywords"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "Clang/LLVM"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "LLVM libomp — kmp_runtime.cpp (fork/join runtime)",
-   "url": "https://github.com/llvm/llvm-project/blob/main/openmp/runtime/src/kmp_runtime.cpp",
-   "concepts": [
-    "runtime-system",
-    "threads"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "LLVM libomp"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "LLVM libomp — kmp_tasking.cpp (tasks)",
-   "url": "https://github.com/llvm/llvm-project/blob/main/openmp/runtime/src/kmp_tasking.cpp",
-   "concepts": [
-    "runtime-system",
-    "concurrency"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "LLVM libomp"
-  },
-  {
-   "level": 0,
-   "kind": "implementation-source",
-   "title": "GCC libgomp — parallel.c",
-   "url": "https://github.com/gcc-mirror/gcc/blob/master/libgomp/parallel.c",
-   "concepts": [
-    "runtime-system",
-    "threads"
-   ],
-   "scope": "section",
-   "authority": "official",
-   "format": "source-file",
-   "access": "open",
-   "implementation": "GCC libgomp"
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "LLVM/OpenMP documentation",
-   "url": "https://openmp.llvm.org/",
-   "concepts": [
-    "tooling"
-   ],
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "implementation": "Clang/LLVM"
-  },
-  {
-   "level": 1,
-   "kind": "reference-manual",
-   "title": "GNU libgomp manual",
-   "url": "https://gcc.gnu.org/onlinedocs/libgomp/",
-   "concepts": [
-    "runtime-system",
-    "standard-library"
-   ],
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open",
-   "implementation": "GCC libgomp"
-  },
-  {
-   "level": 2,
-   "kind": "by-example",
-   "title": "OpenMP Application Programming Interface Examples 6.0 (PDF)",
-   "url": "https://www.openmp.org/wp-content/uploads/openmp-examples-6.0.pdf",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "standards-body",
-   "format": "pdf",
-   "access": "open",
-   "year": 2024
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LLNL — OpenMP tutorial (Blaise Barney)",
-   "url": "https://hpc-tutorials.llnl.gov/openmp/",
-   "concepts": [
-    "hello-world"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LLNL OpenMP tutorial — Programming model",
-   "url": "https://hpc-tutorials.llnl.gov/openmp/programming_model",
-   "concepts": [
-    "concurrency",
-    "memory-model"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LLNL OpenMP tutorial — PARALLEL region construct",
-   "url": "https://hpc-tutorials.llnl.gov/openmp/parallel_construct",
-   "concepts": [
-    "parallelism",
-    "threads"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LLNL OpenMP tutorial — REDUCTION clause",
-   "url": "https://hpc-tutorials.llnl.gov/openmp/reduction_clause",
-   "concepts": [
-    "aggregation"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 2,
-   "kind": "tutorial",
-   "title": "LLNL OpenMP tutorial — Run-time library routines",
-   "url": "https://hpc-tutorials.llnl.gov/openmp/run_time_routines",
-   "concepts": [
-    "standard-library"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "catalog",
-   "title": "OpenMP.org — compilers and tools supporting OpenMP",
-   "url": "https://www.openmp.org/resources/openmp-compilers-tools/",
-   "concepts": [
-    "tooling"
-   ],
-   "scope": "whole",
-   "authority": "official",
-   "format": "html",
-   "access": "open"
-  },
-  {
-   "level": 3,
-   "kind": "encyclopedia",
-   "title": "Wikipedia — OpenMP",
-   "url": "https://en.wikipedia.org/wiki/OpenMP",
-   "concepts": [
-    "history"
-   ],
-   "scope": "whole",
-   "authority": "community",
-   "format": "html",
-   "access": "open"
-  }
- ]
+  "resources": [
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP Application Programming Interface 6.0 (PDF)",
+      "url": "https://www.openmp.org/wp-content/uploads/OpenMP-API-Specification-6-0.pdf",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "pdf",
+      "access": "open",
+      "year": 2024,
+      "version": "6.0"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP API 5.2 specification (HTML)",
+      "url": "https://www.openmp.org/spec-html/5.2/openmp.html",
+      "concepts": [
+        "standardization"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "year": 2021,
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — Memory model",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse4.html",
+      "concepts": [
+        "memory-model"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — Directive format",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse14.html",
+      "concepts": [
+        "annotations-attributes",
+        "grammar"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — Data-sharing attribute rules",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse23.html",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — Reduction clauses and directives",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse27.html",
+      "concepts": [
+        "aggregation",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — parallel construct",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse57.html",
+      "concepts": [
+        "parallelism",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — Worksharing-loop constructs",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse66.html",
+      "concepts": [
+        "loops",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — task construct",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse73.html",
+      "concepts": [
+        "concurrency",
+        "parallelism"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — target construct (device offload)",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse85.html",
+      "concepts": [
+        "parallelism",
+        "memory-management"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — critical construct",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpse90.html",
+      "concepts": [
+        "synchronization"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "specification",
+      "title": "OpenMP 5.2 — atomic construct",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpsu125.html",
+      "concepts": [
+        "atomics-memory-ordering"
+      ],
+      "scope": "section",
+      "authority": "standards-body",
+      "format": "html",
+      "access": "open",
+      "version": "5.2"
+    },
+    {
+      "level": 1,
+      "kind": "original-paper",
+      "title": "Dagum, Menon — OpenMP: an industry standard API for shared-memory programming (IEEE CSE 1998)",
+      "url": "https://doi.org/10.1109/99.660313",
+      "concepts": [
+        "history",
+        "design-rationale"
+      ],
+      "scope": "whole",
+      "authority": "designer",
+      "format": "html",
+      "access": "paywalled",
+      "authors": [
+        "Leonardo Dagum",
+        "Ramesh Menon"
+      ],
+      "year": 1998
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clang — ParseOpenMP.cpp (directive and clause parsing)",
+      "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Parse/ParseOpenMP.cpp",
+      "concepts": [
+        "parser"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Clang/LLVM"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "Clang — SemaOpenMP.cpp (data-sharing and nesting checks)",
+      "url": "https://github.com/llvm/llvm-project/blob/main/clang/lib/Sema/SemaOpenMP.cpp",
+      "concepts": [
+        "semantic-analysis",
+        "scope"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Clang/LLVM"
+    },
+    {
+      "level": 0,
+      "kind": "grammar-source",
+      "title": "LLVM — OMP.td (TableGen definition of all directives and clauses)",
+      "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/Frontend/OpenMP/OMP.td",
+      "concepts": [
+        "grammar",
+        "keywords"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "Clang/LLVM"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "LLVM libomp — kmp_runtime.cpp (fork/join runtime)",
+      "url": "https://github.com/llvm/llvm-project/blob/main/openmp/runtime/src/kmp_runtime.cpp",
+      "concepts": [
+        "runtime-system",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "LLVM libomp"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "LLVM libomp — kmp_tasking.cpp (tasks)",
+      "url": "https://github.com/llvm/llvm-project/blob/main/openmp/runtime/src/kmp_tasking.cpp",
+      "concepts": [
+        "runtime-system",
+        "concurrency"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "LLVM libomp"
+    },
+    {
+      "level": 0,
+      "kind": "implementation-source",
+      "title": "GCC libgomp — parallel.c",
+      "url": "https://github.com/gcc-mirror/gcc/blob/master/libgomp/parallel.c",
+      "concepts": [
+        "runtime-system",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "official",
+      "format": "source-file",
+      "access": "open",
+      "implementation": "GCC libgomp"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "LLVM/OpenMP documentation",
+      "url": "https://openmp.llvm.org/",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "Clang/LLVM"
+    },
+    {
+      "level": 2,
+      "kind": "guide",
+      "title": "GNU libgomp manual",
+      "url": "https://gcc.gnu.org/onlinedocs/libgomp/",
+      "concepts": [
+        "runtime-system",
+        "standard-library"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open",
+      "implementation": "GCC libgomp"
+    },
+    {
+      "level": 2,
+      "kind": "by-example",
+      "title": "OpenMP Application Programming Interface Examples 6.0 (PDF)",
+      "url": "https://www.openmp.org/wp-content/uploads/openmp-examples-6.0.pdf",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "standards-body",
+      "format": "pdf",
+      "access": "open",
+      "year": 2024
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LLNL — OpenMP tutorial (Blaise Barney)",
+      "url": "https://hpc-tutorials.llnl.gov/openmp/",
+      "concepts": [
+        "hello-world"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LLNL OpenMP tutorial — Programming model",
+      "url": "https://hpc-tutorials.llnl.gov/openmp/programming_model",
+      "concepts": [
+        "concurrency",
+        "memory-model"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LLNL OpenMP tutorial — PARALLEL region construct",
+      "url": "https://hpc-tutorials.llnl.gov/openmp/parallel_construct",
+      "concepts": [
+        "parallelism",
+        "threads"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LLNL OpenMP tutorial — REDUCTION clause",
+      "url": "https://hpc-tutorials.llnl.gov/openmp/reduction_clause",
+      "concepts": [
+        "aggregation"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 2,
+      "kind": "tutorial",
+      "title": "LLNL OpenMP tutorial — Run-time library routines",
+      "url": "https://hpc-tutorials.llnl.gov/openmp/run_time_routines",
+      "concepts": [
+        "standard-library"
+      ],
+      "scope": "section",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "catalog",
+      "title": "OpenMP.org — compilers and tools supporting OpenMP",
+      "url": "https://www.openmp.org/resources/openmp-compilers-tools/",
+      "concepts": [
+        "tooling"
+      ],
+      "scope": "whole",
+      "authority": "official",
+      "format": "html",
+      "access": "open"
+    },
+    {
+      "level": 3,
+      "kind": "encyclopedia",
+      "title": "Wikipedia — OpenMP",
+      "url": "https://en.wikipedia.org/wiki/OpenMP",
+      "concepts": [
+        "history"
+      ],
+      "scope": "whole",
+      "authority": "community",
+      "format": "html",
+      "access": "open"
+    }
+  ]
 }
