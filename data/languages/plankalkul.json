@@ -1,0 +1,643 @@
+{
+ "id": "plankalkul",
+ "name": "Plankalkül",
+ "aliases": [
+  "Plankalkuel",
+  "Plan Calculus"
+ ],
+ "categories": [
+  "general-purpose",
+  "historical"
+ ],
+ "paradigms": [
+  "imperative",
+  "procedural"
+ ],
+ "typing": [
+  "static"
+ ],
+ "first_appeared": 1948,
+ "designers": [
+  "Konrad Zuse"
+ ],
+ "summary": "Konrad Zuse's 1942-45 high-level notation for his Z-series computers, with hierarchical bit-based data types (arrays, tuples/records), assignment, guarded conditionals, iteration, assertions and subroutines in a two-dimensional notation; first published in 1948 and fully in 1972, and first implemented decades later.",
+ "status": "historical",
+ "defined_by": [
+  "academic-paper"
+ ],
+ "level_notes": {
+  "1": "The only definition is Zuse's own 1945 manuscript (published 1972 as GMD Bericht 63, English translation GMD Bericht 106); no open scan of either is available, so the original notation is accessed via Bauer & Wössner (1972) and Knuth & Trabb Pardo (1976). Level 1 therefore has no linkable entry.",
+  "0": "Zuse never implemented it. Implementations: Hohmann (1975 dissertation, not available), FU Berlin compiler (Rojas et al., 2000; report record linked), and a 2025 Python interpreter on GitHub/PyPI using a linearized notation. Line anchors refer to the main branch.",
+  "2": "Secondary literature is mainly historical papers and student theses.",
+  "3": "Encyclopedic coverage only (Wikipedia en/de, PLDB)."
+ },
+ "resources": [
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "Zaneham/Plankalkul — Python interpreter for Plankalkül (2025)",
+   "url": "https://github.com/Zaneham/Plankalkul",
+   "scope": "whole",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — whole interpreter (lexer, parser, tree-walking evaluator)",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "lexer",
+    "parser"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — TokenType — token kinds of the linear notation",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L70",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "keywords",
+    "operators"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — Lexer",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L144",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "lexer",
+    "lexical-structure"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — TypeAnnotation — bit-structure type notation [:8.0], [:n×m.0]",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L384",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "type-annotations",
+    "primitive-types",
+    "arrays"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — AST node classes (Variable, Literal, BinaryOp, Assignment, Conditional, loops)",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L414",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "ast"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — Conditional node — guarded statement (→)",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L446",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — WhileLoop / ForLoop / CountedLoop nodes — W iteration forms",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L452",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "loops"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — ArrayAccess node — component indexing",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L479",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — Parser — recursive-descent parser for Plankalkül programs",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L505",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "grammar"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — expression parsing and operator precedence",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L710",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operator-precedence"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul interpreter.py — Interpreter — tree-walking evaluator",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/plankalkul/interpreter.py#L790",
+   "scope": "section",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "evaluation-order"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-source",
+   "title": "Zaneham/Plankalkul README — syntax summary and examples",
+   "url": "https://github.com/Zaneham/Plankalkul/blob/main/README.md",
+   "scope": "whole",
+   "authority": "community",
+   "format": "source-file",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "variables",
+    "type-annotations"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "plankalkul on PyPI",
+   "url": "https://pypi.org/project/plankalkul/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "package-management"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 2,
+   "kind": "interactive",
+   "title": "Zuse Chess 1942 — Plankalkül chess programs running in the browser",
+   "url": "https://zaneham.github.io/zuse-chess-1942/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world"
+   ],
+   "implementation": "plankalkul (Python)"
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "Rojas et al. — Plankalkül: The First High-Level Programming Language and its Implementation (FU Berlin TR B-3/2000)",
+   "url": "https://refubium.fu-berlin.de/handle/fub188/18216",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "compiler-architecture",
+    "history"
+   ],
+   "authors": [
+    "Raúl Rojas",
+    "Cüneyt Göktekin",
+    "Gerald Friedland",
+    "Mike Krüger",
+    "Olaf Langmack",
+    "Denis Kuniß"
+   ],
+   "year": 2000,
+   "implementation": "FU Berlin Plankalkül compiler"
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Bauer & Wössner — The \"Plankalkül\" of Konrad Zuse: A Forerunner of Today's Programming Languages (CACM 15(7), 1972)",
+   "url": "https://web.njit.edu/~evank/download/plankalkul.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "history",
+    "type-system",
+    "records-structs",
+    "arrays"
+   ],
+   "authors": [
+    "Friedrich L. Bauer",
+    "Hans Wössner"
+   ],
+   "year": 1972
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Bauer & Wössner — The Plankalkül of Konrad Zuse (publisher DOI)",
+   "url": "https://doi.org/10.1145/361454.361515",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "paywalled",
+   "concepts": [
+    "history"
+   ],
+   "year": 1972
+  },
+  {
+   "level": 2,
+   "kind": "history",
+   "title": "Knuth & Trabb Pardo — The Early Development of Programming Languages (covers Plankalkül in depth)",
+   "url": "http://www.bitsavers.org/pdf/stanford/Stanford_CS_TR_Collection_2025-12-12/PDF/1976/STAN-CS-76-562_EarlyDevelPgmgLang_Aug76.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "history",
+    "comparison"
+   ],
+   "authors": [
+    "Donald E. Knuth",
+    "Luis Trabb Pardo"
+   ],
+   "year": 1976
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Giloi — Konrad Zuse's Plankalkül: The First High-Level, \"non von Neumann\" Programming Language (IEEE Annals 19(2), 1997)",
+   "url": "https://doi.org/10.1109/85.586068",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "paywalled",
+   "concepts": [
+    "history",
+    "design-rationale"
+   ],
+   "authors": [
+    "Wolfgang K. Giloi"
+   ],
+   "year": 1997
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Bruines — Plankalkül (Radboud University bachelor thesis, 2010): syntax, semantics and examples",
+   "url": "https://www.cs.ru.nl/bachelors-theses/2010/Bram_Bruines___0213837___Plankalkul.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-semantics",
+    "type-system"
+   ],
+   "authors": [
+    "Bram Bruines"
+   ],
+   "year": 2010
+  },
+  {
+   "level": 2,
+   "kind": "paper",
+   "title": "Mo — linPlank: a semantics-based implementation of Plankalkül (NUS honours thesis)",
+   "url": "https://www.comp.nus.edu.sg/~henz/students/jimmo_thesis.pdf",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "pdf",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "interpreter"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "course",
+   "title": "Comparative Studies of Programming Languages — course lecture notes (arXiv 1007.2123)",
+   "url": "https://arxiv.org/abs/1007.2123",
+   "scope": "whole",
+   "authority": "academic",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "comparison",
+    "history"
+   ],
+   "year": 2010
+  },
+  {
+   "level": 2,
+   "kind": "article",
+   "title": "Chessprogramming wiki — Konrad Zuse — Plankalkül and chess",
+   "url": "https://www.chessprogramming.org/Konrad_Zuse#plankalkül-and-chess",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — History of programming",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#History_of_programming",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Description",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Description",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Data types",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Data_types",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types",
+    "type-system",
+    "records-structs",
+    "tuples"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Data types — examples",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Examples",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Identifiers (V, Z, R, C variables)",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Identifiers",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "identifiers",
+    "variables",
+    "constants"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Accessing elements by index",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Accessing_elements_by_index",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "arrays"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Two-dimensional syntax",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Two-dimensional_syntax",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lexical-structure",
+    "whitespace-layout"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Assignment operation",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Assignment_operation",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "assignment"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Control flow",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Control_flow",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "loops"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Terminology",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Terminology",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Plankalkül — Example program",
+   "url": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl#Example",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "functions"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia (de) — Plankalkül",
+   "url": "https://de.wikipedia.org/wiki/Plankalk%C3%BCl",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia (de) — Plankalkül — Beschreibung",
+   "url": "https://de.wikipedia.org/wiki/Plankalk%C3%BCl#Beschreibung",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "type-system"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia (de) — Plankalkül — Geschichte",
+   "url": "https://de.wikipedia.org/wiki/Plankalk%C3%BCl#Geschichte",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "encyclopedia",
+   "title": "Wikipedia — Konrad Zuse — Career 1939–1945",
+   "url": "https://en.wikipedia.org/wiki/Konrad_Zuse#1939–1945",
+   "scope": "section",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "history"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB — Plankalkül",
+   "url": "https://pldb.io/concepts/plankalkul.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

@@ -1,0 +1,669 @@
+{
+ "id": "cedar",
+ "name": "Cedar (authorization policy language)",
+ "aliases": [
+  "Cedar"
+ ],
+ "categories": [
+  "policy",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative"
+ ],
+ "typing": [
+  "static (schema-based validation)",
+  "dynamic evaluation"
+ ],
+ "first_appeared": 2023,
+ "designers": [
+  "Amazon Web Services"
+ ],
+ "summary": "Open-source authorization policy language from AWS (used by Amazon Verified Permissions and AWS Verified Access): permit/forbid policies over principal, action, resource and context with when/unless conditions, entity hierarchies, schemas for validation, templates, and a Lean-formalized semantics designed for SMT-based analysis.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation",
+  "academic-paper"
+ ],
+ "file_extensions": [
+  ".cedar",
+  ".cedarschema"
+ ],
+ "homepage": "https://www.cedarpolicy.com/",
+ "related": [
+  {
+   "id": "rego",
+   "relation": "family"
+  },
+  {
+   "id": "cel",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "The Cedar Policy Language Reference Guide (docs.cedarpolicy.com) incl. a full grammar page; cedar-spec holds the Lean formalization.",
+  "0": "cedar-policy/cedar (Rust) is the reference implementation; cedar-spec has Lean proofs and differential testing.",
+  "3": "PLDB entry; OOPSLA 2024 paper."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Basic policy construction",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "program-structure",
+    "grammar"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Policy effect (permit/forbid)",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html#term-policy-effect",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "statements"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Policy scope (principal, action, resource)",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html#term-policy-scope",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "selection-projection"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — when clause",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html#term-parc-context-when",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — unless clause",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html#term-parc-context-unless",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Annotations",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html#term-parc-annotations",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "annotations-attributes"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Entities",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-entity.html#entity-overview",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "objects"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Namespaces",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-entity.html#entity-namespace",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Entity attributes",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-entity.html#entity-attribute",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "properties"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Boolean",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-bool",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — String",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-string",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Long",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-long",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Set",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-set",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sets"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Record",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-record",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Extension types",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-extension",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — datetime",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-datetime",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — decimal",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-decimal",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "floating-point"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Operators overview",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operators-overview",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — like (wildcard matching)",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operators-string-like",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Comparison operators",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operators-comparison",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Logical operators",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operators-logical",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "short-circuit"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — if-then-else",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operator-if",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "conditionals",
+    "expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Arithmetic operators",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operators-math",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "operators"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — in (hierarchy membership)",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operator-in",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "graph-patterns"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — has (attribute presence)",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operator-has",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — is (entity type test)",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#operator-is",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Set functions",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-operators.html#functions-set",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "sets",
+    "standard-library"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Grammar — Policy",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-grammar.html#grammar-policy",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Grammar — Expr",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-grammar.html#grammar-expr",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "expressions",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Schema — entity types",
+   "url": "https://docs.cedarpolicy.com/schema/human-readable-schema.html#schema-entityTypes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "data-definition"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Schema — actions",
+   "url": "https://docs.cedarpolicy.com/schema/human-readable-schema.html#schema-actions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Schema — common types",
+   "url": "https://docs.cedarpolicy.com/schema/human-readable-schema.html#schema-commonTypes",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-aliases"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Authorization algorithm",
+   "url": "https://docs.cedarpolicy.com/auth/authorization.html#request-authorization-algorithm",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar — Policy evaluation",
+   "url": "https://docs.cedarpolicy.com/auth/authorization.html#policy-evaluation",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "grammar",
+   "title": "Cedar policy grammar",
+   "url": "https://docs.cedarpolicy.com/policies/syntax-grammar.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "formal-grammars"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar policy validation",
+   "url": "https://docs.cedarpolicy.com/policies/validation.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "type-system"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar policy templates",
+   "url": "https://docs.cedarpolicy.com/policies/templates.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "templating"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar JSON policy format",
+   "url": "https://docs.cedarpolicy.com/policies/json-format.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "ast"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar entities JSON syntax",
+   "url": "https://docs.cedarpolicy.com/auth/entities-syntax.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "reference-manual",
+   "title": "Cedar JSON schema format",
+   "url": "https://docs.cedarpolicy.com/schema/schema.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Cedar terminology",
+   "url": "https://docs.cedarpolicy.com/overview/terminology.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "style-guide",
+   "title": "Cedar best practices: naming conventions",
+   "url": "https://docs.cedarpolicy.com/bestpractices/bp-naming-conventions.html",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "style-conventions",
+    "identifiers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "original-paper",
+   "title": "Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization (OOPSLA 2024)",
+   "url": "https://arxiv.org/abs/2403.04651",
+   "scope": "whole",
+   "authority": "official",
+   "year": 2024,
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale",
+    "formal-semantics",
+    "verification"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "cedar-policy/cedar (Rust)",
+   "url": "https://github.com/cedar-policy/cedar",
+   "scope": "whole",
+   "implementation": "cedar-policy",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "parser",
+    "interpreter",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "cedar-policy/cedar-spec (Lean formalization, differential testing)",
+   "url": "https://github.com/cedar-policy/cedar-spec",
+   "scope": "whole",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "formal-semantics",
+    "verification",
+    "testing"
+   ]
+  },
+  {
+   "level": 3,
+   "kind": "catalog",
+   "title": "PLDB: Cedar",
+   "url": "https://pldb.io/concepts/cedar.html",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open"
+  }
+ ]
+}

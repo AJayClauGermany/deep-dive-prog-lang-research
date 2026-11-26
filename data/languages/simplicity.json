@@ -1,0 +1,32 @@
+{
+ "id": "simplicity",
+ "name": "Simplicity",
+ "categories": ["smart-contract", "functional", "calculus"],
+ "paradigms": ["functional", "combinator-based"],
+ "typing": ["static", "strong"],
+ "first_appeared": 2017,
+ "designers": ["Russell O'Connor"],
+ "summary": "Blockstream's low-level, non-Turing-complete combinator language for blockchain programs with a formal denotational semantics in Coq, static resource bounds and jets (optimised primitives); deployed on Liquid, with SimplicityHL as a Rust-like high-level front end.",
+ "status": "active",
+ "defined_by": ["academic-paper", "reference-implementation"],
+ "homepage": "https://simplicity-lang.org/",
+ "related": [{"id": "bitcoin-script", "relation": "family"}],
+ "level_notes": {"1": "Defined by O'Connor's 2017 paper and the technical report (blockstream.com/simplicity.pdf); the Coq development is the formal semantics.", "2": "docs.simplicity-lang.org documents SimplicityHL and the execution model.", "3": "No encyclopedia entry found.", "0": "BlockstreamResearch/simplicity holds Coq, Haskell and C (consensus) implementations; rust-simplicity and SimplicityHL are Rust implementations."},
+ "resources": [
+  {"level": 0, "kind": "reference-implementation", "title": "BlockstreamResearch/simplicity — Coq, Haskell and C implementations", "url": "https://github.com/BlockstreamResearch/simplicity", "implementation": "simplicity", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["formal-semantics"]},
+  {"level": 0, "kind": "implementation-source", "title": "simplicity Coq/Simplicity/Core.v — core combinators in Coq", "url": "https://github.com/BlockstreamResearch/simplicity/blob/master/Coq/Simplicity/Core.v", "implementation": "simplicity (Coq)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["formal-semantics", "combinators"]},
+  {"level": 0, "kind": "implementation-source", "title": "simplicity C/eval.c — Bit Machine evaluator in C", "url": "https://github.com/BlockstreamResearch/simplicity/blob/master/C/eval.c", "implementation": "simplicity (C)", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["interpreter", "virtual-machine"]},
+  {"level": 0, "kind": "implementation-source", "title": "rust-simplicity src/bit_machine/mod.rs — Bit Machine in Rust", "url": "https://github.com/BlockstreamResearch/rust-simplicity/blob/master/src/bit_machine/mod.rs", "implementation": "rust-simplicity", "scope": "section", "authority": "official", "format": "source-file", "access": "open", "concepts": ["virtual-machine"]},
+  {"level": 0, "kind": "implementation-repository", "title": "SimplicityHL — high-level language compiling to Simplicity", "url": "https://github.com/BlockstreamResearch/SimplicityHL", "implementation": "SimplicityHL", "scope": "whole", "authority": "official", "format": "repository", "access": "open", "concepts": ["compiler-architecture"]},
+
+  {"level": 1, "kind": "original-paper", "title": "Simplicity: A New Language for Blockchains", "url": "https://arxiv.org/abs/1711.03028", "scope": "whole", "authority": "designer", "authors": ["Russell O'Connor"], "year": 2017, "format": "html", "access": "open", "concepts": ["design-rationale", "formal-semantics"]},
+  {"level": 1, "kind": "specification", "title": "Simplicity technical report (blockstream.com/simplicity.pdf)", "url": "https://blockstream.com/simplicity.pdf", "scope": "whole", "authority": "designer", "authors": ["Russell O'Connor"], "format": "pdf", "access": "open", "concepts": ["formal-semantics", "type-system"]},
+
+  {"level": 2, "kind": "guide", "title": "Simplicity documentation", "url": "https://docs.simplicity-lang.org/", "scope": "whole", "authority": "official", "format": "html", "access": "open"},
+  {"level": 2, "kind": "guide", "title": "Simplicity docs — Execution model", "url": "https://docs.simplicity-lang.org/documentation/execution-model/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["blockchain-execution"]},
+  {"level": 2, "kind": "guide", "title": "Simplicity docs — Jets", "url": "https://docs.simplicity-lang.org/documentation/jets/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["optimization", "standard-library"]},
+  {"level": 2, "kind": "guide", "title": "Simplicity docs — Simplicity compared", "url": "https://docs.simplicity-lang.org/documentation/simplicity-compared/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["comparison"]},
+  {"level": 2, "kind": "guide", "title": "Simplicity docs — Witness", "url": "https://docs.simplicity-lang.org/documentation/witness/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["parameters-arguments"]},
+  {"level": 2, "kind": "guide", "title": "Simplicity docs — Quickstart", "url": "https://docs.simplicity-lang.org/getting-started/quickstart/", "scope": "section", "authority": "official", "format": "html", "access": "open", "concepts": ["hello-world"]}
+ ]
+}

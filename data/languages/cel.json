@@ -1,0 +1,503 @@
+{
+ "id": "cel",
+ "name": "Common Expression Language (CEL)",
+ "aliases": [
+  "CEL"
+ ],
+ "categories": [
+  "policy",
+  "domain-specific"
+ ],
+ "paradigms": [
+  "declarative",
+  "functional (expression-only)"
+ ],
+ "typing": [
+  "gradual",
+  "static (optional type checking)",
+  "protocol-buffer based"
+ ],
+ "first_appeared": 2018,
+ "designers": [
+  "Google"
+ ],
+ "summary": "Non-Turing-complete expression language from Google for evaluating safe, fast, side-effect-free expressions (policies, validation rules, filters) over protocol-buffer and JSON data; used in Kubernetes validation rules, Envoy, Firebase/Cloud IAM conditions and protovalidate.",
+ "status": "active",
+ "defined_by": [
+  "vendor-specification",
+  "reference-implementation"
+ ],
+ "standards": [
+  "cel-spec language definition"
+ ],
+ "file_extensions": [
+  ".cel"
+ ],
+ "homepage": "https://cel.dev/",
+ "related": [
+  {
+   "id": "rego",
+   "relation": "family"
+  },
+  {
+   "id": "cedar",
+   "relation": "family"
+  }
+ ],
+ "level_notes": {
+  "1": "google/cel-spec doc/langdef.md is the language definition (syntax EBNF, values, gradual type checking, evaluation, standard definitions).",
+  "0": "cel-go (Go) and cel-cpp are Google's implementations, cel-java and community cel-rust follow; cel-spec ships the conformance test suite.",
+  "3": "No Wikipedia/PLDB article found."
+ },
+ "resources": [
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md",
+   "scope": "whole",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "type-system",
+    "formal-semantics"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Syntax (EBNF grammar)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#syntax",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "grammar",
+    "lexical-structure",
+    "operator-precedence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Name Resolution",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#name-resolution",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "scope",
+    "namespaces"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Numeric Values",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#numeric-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers",
+    "floating-point",
+    "primitive-types"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — String and Bytes Values",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#string-and-bytes-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "strings",
+    "literals",
+    "escaping"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Aggregate Values (lists, maps, messages)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#aggregate-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "lists",
+    "maps-dictionaries",
+    "records-structs"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Booleans and Null",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#booleans-and-null",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "booleans",
+    "null-optional"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Protocol Buffer Data Conversion",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#protocol-buffer-data-conversion",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "data-model",
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Dynamic Values",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#dynamic-values",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "dynamic-typing"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — JSON Data Conversion",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#json-data-conversion",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "serialization",
+    "data-model"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Gradual Type Checking",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#gradual-type-checking",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "gradual-typing",
+    "type-inference",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Runtime Errors",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#runtime-errors",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "error-handling"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Logical Operators (commutative error/unknown absorption)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#logical-operators",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "short-circuit",
+    "evaluation-order"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Macros (has, all, exists, map, filter)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#macros",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "macros",
+    "comprehensions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Field Selection",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#field-selection",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "path-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Performance (time/space complexity, limits)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#performance",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "performance",
+    "complexity",
+    "turing-completeness"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Functions and Extension Functions",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "functions",
+    "overloading",
+    "methods"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Equality",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#equality",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "operators",
+    "type-equivalence"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Overflow",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#overflow",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "integers"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Regular Expressions (RE2)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#regular-expressions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "regular-expressions"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Date/Time Functions",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#datetime-functions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "date-time"
+   ]
+  },
+  {
+   "level": 1,
+   "kind": "specification",
+   "title": "CEL Language Definition — Types and Conversions",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/langdef.md#types-and-conversions",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "type-conversion"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "CEL Introduction (cel-spec intro.md)",
+   "url": "https://github.com/google/cel-spec/blob/master/doc/intro.md",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "cel.dev — Common Expression Language home",
+   "url": "https://cel.dev/",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "design-rationale"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "tutorial",
+   "title": "CEL Get Started tutorial (Go)",
+   "url": "https://cel.dev/tutorials/cel-get-started-tutorial",
+   "scope": "section",
+   "authority": "official",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "hello-world",
+    "tooling"
+   ]
+  },
+  {
+   "level": 2,
+   "kind": "guide",
+   "title": "Kubernetes: Common Expression Language in Kubernetes",
+   "url": "https://kubernetes.io/docs/reference/using-api/cel/",
+   "scope": "whole",
+   "authority": "community",
+   "format": "html",
+   "access": "open",
+   "concepts": [
+    "schema-validation",
+    "interoperability"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "reference-implementation",
+   "title": "google/cel-go",
+   "url": "https://github.com/google/cel-go",
+   "scope": "whole",
+   "implementation": "cel-go",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter",
+    "parser",
+    "semantic-analysis"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "google/cel-cpp",
+   "url": "https://github.com/google/cel-cpp",
+   "scope": "whole",
+   "implementation": "cel-cpp",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "google/cel-java",
+   "url": "https://github.com/google/cel-java",
+   "scope": "whole",
+   "implementation": "cel-java",
+   "authority": "official",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "implementation-repository",
+   "title": "cel-rust/cel-rust",
+   "url": "https://github.com/cel-rust/cel-rust",
+   "scope": "whole",
+   "implementation": "cel-rust",
+   "authority": "community",
+   "format": "repository",
+   "access": "open",
+   "concepts": [
+    "interpreter"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "conformance-tests",
+   "title": "cel-spec conformance tests",
+   "url": "https://github.com/google/cel-spec/tree/master/tests/simple/testdata",
+   "scope": "whole",
+   "authority": "official",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "testing"
+   ]
+  },
+  {
+   "level": 0,
+   "kind": "grammar-source",
+   "title": "cel-spec Protocol Buffer definitions (syntax/checked AST)",
+   "url": "https://github.com/google/cel-spec/tree/master/proto/cel/expr",
+   "scope": "whole",
+   "authority": "official",
+   "format": "directory",
+   "access": "open",
+   "concepts": [
+    "ast",
+    "intermediate-representation"
+   ]
+  }
+ ]
+}
